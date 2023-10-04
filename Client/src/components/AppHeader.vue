@@ -6,7 +6,7 @@
           <div class="text-xl font-semibold">Curseek</div>
           <nav class="space-x-4">
             <router-link to="/" class="hover:bg-purple-800 px-3 py-1 rounded transition">Home</router-link>
-            <router-link to="/utn" class="hover:bg-purple-800 px-3 py-1 rounded transition">UTN</router-link>
+            <router-link to="/cursos" class="hover:bg-purple-800 px-3 py-1 rounded transition">UTN</router-link>
           </nav>
         </div>
       </div>

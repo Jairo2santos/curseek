@@ -3,7 +3,7 @@
 <template>
   <div>
     <AppHeader />
-    <div class="container mx-auto px-4">
+    <div class="px-4">
   
       <router-view />
     </div>
