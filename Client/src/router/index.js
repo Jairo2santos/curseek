@@ -20,6 +20,7 @@ const routes = [
     component: cursosCategory,
     props: true
   }
+  
 ];
 
 const router = createRouter({

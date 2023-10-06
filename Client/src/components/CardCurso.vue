@@ -21,6 +21,7 @@
         </div>
         <CategoriaBadge :categoria="course.category"/>
         <div class="mt-2 text-sm text-gray-400">{{ course.startDate }}</div>
+
       </div>
     </div>
   </a>
