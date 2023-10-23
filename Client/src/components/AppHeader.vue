@@ -1,6 +1,6 @@
 <template>
   <div class="bg-white shadow-md">
-    <div class="container mx-auto px-4 py-2">
+    <div class="container mx-auto px-4 py-2" style="border-bottom: 1px solid lightgray;">
       <div class="flex items-center justify-between">
         <div class="flex items-center text-xl font-semibold text-purple-900">
           <a href="/">

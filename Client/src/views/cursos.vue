@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="bg-white">
     <Portada :totalCourses="courses.length" />
 
     <div class="flex container mx-auto p-4 bg-gray-100">
