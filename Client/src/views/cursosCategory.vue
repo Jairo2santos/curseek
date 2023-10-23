@@ -1,8 +1,10 @@
 <template>
   <div>
     <h1 class="text-2xl mb-4 text-center">Cursos de {{ categoria }} de la UTN</h1> 
-    <div v-for="course in courses" :key="course._id">
-      <CardCurso :course="course" />
+    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+      <div v-for="course in courses" :key="course._id">
+        <CardCurso :course="course" />
+      </div>
     </div>
     <Paginacion
       :currentPage="currentPage"
@@ -11,6 +13,7 @@
     />
   </div>
 </template>
+
 
 <script>
 import axios from "axios";

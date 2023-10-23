@@ -1,41 +1,37 @@
-<!-- Cursos.vue -->
 <template>
-  <Portada 
-    
-  :totalCourses="courses.length"
-      
-    />
-  <div class="flex container mx-auto p-4">
-    <!-- Sidebar a la izquierda -->
-    <div>
-      <Sidebar
-        :categories="categories"
-        @filter-by-category="handleCategoryFilter"
-      />
-    </div>
+  <div>
+    <Portada :totalCourses="courses.length" />
 
-    <!-- Contenido a la derecha del Sidebar -->
-    <div class="flex flex-col w-full ml-4">
-      <!-- Filtros arriba -->
+    <div class="flex container mx-auto p-4 bg-gray-100">
+      <!-- Sidebar a la izquierda -->
       <div>
-        <Filtros @filter-changed="handleFilterChange" />
+        <Sidebar :categories="categories" @filter-by-category="handleCategoryFilter" />
       </div>
 
-      <!-- Cursos abajo -->
-      <div>
-        <div v-for="course in courses" :key="course._id" class="mb-4 min-w-max">
-          <CardCurso :course="course" />
+      <!-- Contenido a la derecha del Sidebar -->
+      <div class="flex flex-col w-full ml-4">
+        <!-- Filtros arriba -->
+        <div>
+          <Filtros @filter-changed="handleFilterChange" />
         </div>
 
-        <Paginacion
-          :currentPage="currentPage"
-          :totalPages="totalPages"
-          @changePage="handlePageChange"
-        />
+        <!-- Cursos abajo -->
+        <div>
+          <div v-for="course in courses" :key="course._id" class="mb-4">
+            <CardCurso :course="course" />
+          </div>
+
+          <Paginacion
+            :currentPage="currentPage"
+            :totalPages="totalPages"
+            @changePage="handlePageChange"
+          />
+        </div>
       </div>
     </div>
   </div>
 </template>
+
 
 <script>
 import axios from "axios";
