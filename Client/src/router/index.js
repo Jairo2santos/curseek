@@ -6,7 +6,7 @@ import cursosCategory from '../views/cursosCategory.vue';
 import EditarTitulo from "../views/EditarTitulo.vue";
 import DetalleCurso from "../views/DetalleCurso.vue";
 import profile from  "../views/profile.vue";
-import singup from  "../views/singup.vue";
+import signUp from  "../views/signUp.vue";
 
 const routes = [
   {
@@ -49,9 +49,9 @@ const routes = [
     props: true
   },
   {
-    path: '/signup',
-    name: 'singup',
-    component: singup,
+    path: '/signUp',
+    name: 'signUp',
+    component: signUp,
   },
   
 ];

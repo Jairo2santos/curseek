@@ -37,7 +37,7 @@
       </button>
 
       <p class="mt-3 text-center">
-        ¿Nuevo en CurSeek? <router-link class="text-blue-500" to="/signup">Regístrate</router-link>
+        ¿Nuevo en CurSeek? <router-link class="text-blue-500" to="/signUp">Regístrate</router-link>
       </p>
     </form>
   </div>
