@@ -5,13 +5,6 @@
     </div>
 
     <div class="max-w-screen-xl mx-auto w-full flex items-center justify-center">
-      <!-- Imagen con enlace del lado derecho -->
-      <div class="w-2/3 md:w-1/3 md:ml-auto md:mr-0 mt-6">
-        <a href="https://ccweb.imgix.net/https%3A%2F%2Fwww.classcentral.com%2Fimages%2F%2Fillustrations%2Fhomepage-hero%2Fhero-halloween.png?auto=format&h=650&ixlib=php-4.1.0&s=88e0a1846e26c03246b7913d5f900bda" target="_blank">
-          <img class="w-full" src="https://ccweb.imgix.net/https%3A%2F%2Fwww.classcentral.com%2Fimages%2F%2Fillustrations%2Fhomepage-hero%2Fhero-halloween.png?auto=format&h=650&ixlib=php-4.1.0&s=88e0a1846e26c03246b7913d5f900bda" alt="Never stop learning.">
-        </a>
-      </div>
-
       <!-- Campo de búsqueda con sombra y título alineado a la izquierda -->
       <div class="w-full md:w-2/3 md:ml-0 md:mr-auto">
         <form @submit.prevent="search" class="flex items-center border rounded-lg overflow-hidden shadow-md p-2">
@@ -21,6 +14,12 @@
           <input v-model="query" placeholder="Busca 500 cursos..." class="p-2 flex-grow outline-none" @focus="blurBackground" @blur="unblurBackground"/>
           <!-- <button type="submit" class="px-4 bg-purple-900 text-white">Buscar</button> -->
         </form>
+      </div>
+      <!-- Imagen con enlace del lado derecho -->
+      <div class="w-2/3 md:w-1/3 md:ml-auto md:mr-0 mt-6">
+        <a href="https://ccweb.imgix.net/https%3A%2F%2Fwww.classcentral.com%2Fimages%2F%2Fillustrations%2Fhomepage-hero%2Fhero-halloween.png?auto=format&h=650&ixlib=php-4.1.0&s=88e0a1846e26c03246b7913d5f900bda" target="_blank">
+          <img class="w-full" src="https://ccweb.imgix.net/https%3A%2F%2Fwww.classcentral.com%2Fimages%2F%2Fillustrations%2Fhomepage-hero%2Fhero-halloween.png?auto=format&h=650&ixlib=php-4.1.0&s=88e0a1846e26c03246b7913d5f900bda" alt="Never stop learning.">
+        </a>
       </div>
     </div>
 
