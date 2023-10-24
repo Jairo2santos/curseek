@@ -2,8 +2,10 @@
 @tailwind components;
 @tailwind utilities;
 
+/* @import url('https://fonts.googleapis.com/css?family=Open+Sans:400,600,700'); */
+
 @layer base {
-    html {
-      font-family: Proxima Nova, system-ui, sans-serif;
-    }
+  html {
+    font-family: Open Sans, sans-serif;
   }
+}

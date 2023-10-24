@@ -1,12 +1,19 @@
 <template>
-  <div class="p-4 border-r bg-white border-gray-200 rounded-lg md:max-w-md lg:max-w-lg">
-    <svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 -960 960 960" width="24"><path d="M440-120v-240h80v80h320v80H520v80h-80Zm-320-80v-80h240v80H120Zm160-160v-80H120v-80h160v-80h80v240h-80Zm160-80v-80h400v80H440Zm160-160v-240h80v80h160v80H680v80h-80Zm-480-80v-80h400v80H120Z"/></svg>
-    <h2 class="font-bold mb-4">Filtrar por</h2>
+  <div>
+    <div class="flex items-center mb-6">
+      <svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 -960 960 960" width="24">
+        <path d="M440-120v-240h80v80h320v80H520v80h-80Zm-320-80v-80h240v80H120Zm160-160v-80H120v-80h160v-80h80v240h-80Zm160-80v-80h400v80H440Zm160-160v-240h80v80h160v80H680v80h-80Zm-480-80v-80h400v80H120Z"/>
+      </svg>
+      <h2 class="font-bold ml-2">Filtrar por</h2>
+    </div>
+
+
+  <div class="p-6 border-r bg-white border-gray-200 rounded-lg md:max-w-md lg:max-w-lg">
     <ul>
       <li
         v-for="category in categories"
         :key="category"
-        class="my-2 hover:bg-gray-200 rounded-lg p-2"
+        class="my-1 hover:bg-gray-100 rounded-lg p-2"
       >
         <div class="flex items-center">
           <input
@@ -28,6 +35,8 @@
       </li>
     </ul>
   </div>
+
+</div>
 </template>
 
 <script>

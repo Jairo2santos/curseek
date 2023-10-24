@@ -2,14 +2,14 @@
   <div class="bg-white">
     <Portada :totalCourses="courses.length" />
 
-    <div class="flex container mx-auto p-4 bg-gray-100">
+    <div class="flex container mx-auto p-20 bg-gray-100">
       <!-- Sidebar a la izquierda -->
       <div>
         <Sidebar :categories="categories" @filter-by-category="handleCategoryFilter" />
       </div>
 
       <!-- Contenido a la derecha del Sidebar -->
-      <div class="flex flex-col w-full ml-4">
+      <div class="flex flex-col w-full ml-6">
         <!-- Filtros arriba -->
         <div>
           <Filtros @filter-changed="handleFilterChange" />
