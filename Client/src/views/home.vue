@@ -53,10 +53,10 @@ export default {
           }
       },
       blurBackground() {
-        document.querySelector('.p-4').style.backgroundColor = 'rgba(255, 255, 255, 0.7)';
+        document.querySelector('.p-4').style.filter = 'blur(5px)';
       },
       unblurBackground() {
-        document.querySelector('.p-4').style.backgroundColor = 'transparent';
+        document.querySelector('.p-4').style.filter = 'none';
       },
   }
 };
