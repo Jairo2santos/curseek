@@ -6,14 +6,6 @@
     </a>
   </template>
   
-  <script>
-  export default {
-    props: {
-      categoria: {
-        type: String,
-        required: true
-      }
-    }
-  }
-  </script>
-  
+<script setup>
+const { categoria } = defineProps(['categoria']);
+</script>

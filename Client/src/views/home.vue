@@ -33,33 +33,30 @@
   </div>
 </template>
 
-<script>
+<script setup>
+import { ref } from 'vue';
 import CardCurso from '../components/CardCurso.vue';
 import axios from 'axios';
 
-export default {
-  components: { CardCurso },
-  data() {
-      return {
-          query: '',
-          courses: []
-      };
-  },
-  methods: {
-      async search() {
-          try {
-              const response = await axios.get(`http://localhost:3333/cursos/search?q=${this.query}`);
-              this.courses = response.data;
-          } catch (error) {
-              console.error("Error al buscar cursos:", error);
-          }
-      },
-      blurBackground() {
-        document.querySelector('.p-4').style.filter = 'blur(5px)';
-      },
-      unblurBackground() {
-        document.querySelector('.p-4').style.filter = 'none';
-      },
-  }
-};
+    const query = ref('');
+    const courses = ref([]);
+
+    const search = async () => {
+      try {
+        const response = await axios.get(`http://localhost:3333/cursos/search?q=${query.value}`);
+        courses.value = response.data;
+      } catch (error) {
+        console.error("Error al buscar cursos:", error);
+      }
+    };
+
+    const blurBackground = () => {
+      document.querySelector('.p-4').style.filter = 'blur(5px)';
+    };
+
+    const unblurBackground = () => {
+      document.querySelector('.p-4').style.filter = 'none';
+    };
+
+
 </script>

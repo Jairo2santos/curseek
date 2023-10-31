@@ -31,27 +31,21 @@
   
   
   
-  <script>
-  export default {
-    name: "Footer",
-    data() {
-      return {
-        loggedInUsername: localStorage.getItem('loggedInUsername')
-      };
-    },
-    watch: {
-      '$route': function() {
-        this.loggedInUsername = localStorage.getItem('loggedInUsername');
-      }
-    },
-    methods: {
-      logout() {
-        localStorage.removeItem('loggedInUsername');
-        this.loggedInUsername = null;
-        this.$router.push('/login');
-      }
-    }
+  <script setup>
+  import { ref, watch } from 'vue';
+  import { useRouter } from 'vue-router';
+  
+  const loggedInUsername = ref(localStorage.getItem('loggedInUsername'));
+  const router = useRouter();
+  
+  watch(() => router.currentRoute, () => {
+    loggedInUsername.value = localStorage.getItem('loggedInUsername');
+  });
+  
+  const logout = () => {
+    localStorage.removeItem('loggedInUsername');
+    loggedInUsername.value = null;
+    router.push('/login');
   };
   </script>
-  
   

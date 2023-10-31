@@ -10,33 +10,28 @@
 
 </template>
 
-<script>
-// Importa la imagen aquí
+<script setup>
+import { computed } from 'vue';
 import defaultImage from '../assets/logo-utn.jpg';
 
-export default {
-  props: {
-    title: {
-      type: String,
-      default: "Universidad Tecnológica Nacional (UTN) "
-    },
-    description: {
-      type: String,
-      default: "Esta es una universidad argentina que viene de la Universidad Obrera Nacional. Es la única en Argentina que se enfoca principalmente en ingenierías y que está en todo el país. Aunque su oficina principal está en Buenos Aires, tiene 30 sedes en diferentes lugares de Argentina. Es la universidad de ingeniería con más estudiantes en el país."
-    },
-    totalCourses: {
-      type: Number,
-      default: 0
-    },
-    imageSrc: {
-      type: String,
-      default: defaultImage
-    }
+const props = defineProps({
+  title: {
+    type: String,
+    default: "Universidad Tecnológica Nacional (UTN) "
   },
-  computed: {
-    computedImageSrc() {
-      return this.imageSrc;
-    }
+  description: {
+    type: String,
+    default: "Esta es una universidad argentina que viene de la Universidad Obrera Nacional. Es la única en Argentina que se enfoca principalmente en ingenierías y que está en todo el país. Aunque su oficina principal está en Buenos Aires, tiene 30 sedes en diferentes lugares de Argentina. Es la universidad de ingeniería con más estudiantes en el país."
+  },
+  totalCourses: {
+    type: Number,
+    default: 0
+  },
+  imageSrc: {
+    type: String,
+    default: defaultImage
   }
-}
+});
+
+const computedImageSrc = computed(() => props.imageSrc);
 </script>

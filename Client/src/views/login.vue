@@ -5,34 +5,20 @@
 
       <div class="mb-6">
         <label for="username" class="block font-bold">Nombre de Usuario</label>
-        <input
-          type="text"
-          id="username"
-          v-model="username"
-          placeholder="Nombre de Usuario"
-          required
-          class="w-full px-3 py-2 border rounded-md focus:outline-none focus:ring focus:border-blue-300"
-        />
+        <input type="text" id="username" v-model="username" placeholder="Nombre de Usuario" required
+          class="w-full px-3 py-2 border rounded-md focus:outline-none focus:ring focus:border-blue-300" />
       </div>
 
       <div class="mb-6">
         <label for="password" class="block font-bold">Contraseña</label>
-        <input
-          type="password"
-          id="password"
-          v-model="password"
-          placeholder="Contraseña"
-          required
-          class="w-full px-3 py-2 border rounded-md focus:outline-none focus:ring focus:border-blue-300"
-        />
+        <input type="password" id="password" v-model="password" placeholder="Contraseña" required
+          class="w-full px-3 py-2 border rounded-md focus:outline-none focus:ring focus:border-blue-300" />
       </div>
 
       <p class="mb-4 text-gray-500">usuario: user pass: 12345</p>
 
-      <button
-        type="submit"
-        class="w-full bg-blue-500 text-white rounded-md py-2 hover:bg-blue-600 transition duration-300"
-      >
+      <button type="submit"
+        class="w-full bg-blue-500 text-white rounded-md py-2 hover:bg-blue-600 transition duration-300">
         Ingresar
       </button>
 
@@ -44,37 +30,34 @@
 </template>
 
 
-<script>
+<script setup>
+import { ref } from 'vue';
 import axios from 'axios';
+import { useRouter } from 'vue-router';
 
-export default {
-  data() {
-    return {
-      username: localStorage.getItem('loggedInUsername') || '',
-      password: '',
-      userData: {},
-      isPasswordShown: false,
-    };
-  },
-  methods: {
-    async login() {
-      try {
-        const response = await axios.post('http://localhost:3333/users/login', {
-          username: this.username,
-          password: this.password,
-        });
+const router = useRouter();
 
-        if (response.status === 200) {
-          localStorage.setItem('loggedInUsername', this.username);
-          this.$router.push('/profile');
-        }
+const username = ref(localStorage.getItem('loggedInUsername') || '');
+const password = ref('');
+const userData = ref({});
+const isPasswordShown = ref(false);
 
-        console.log('Usuario logueado:', response.data);
-        this.$router.push('/profile');
-      } catch (error) {
-        console.error('Error al iniciar sesión:', error);
-      }
-    },
-  },
+const login = async () => {
+  try {
+    const response = await axios.post('http://localhost:3333/users/login', {
+      username: username.value,
+      password: password.value,
+    });
+
+    if (response.status === 200) {
+      localStorage.setItem('loggedInUsername', username.value);
+      router.push('/profile');
+    }
+
+    console.log('Usuario logueado:', response.data);
+    router.push('/profile');
+  } catch (error) {
+    console.error('Error al iniciar sesión:', error);
+  }
 };
 </script>

@@ -2,23 +2,26 @@
   <div class="bg-white">
     <Portada :totalCourses="courses.length" />
 
-    <div class="flex container mx-auto p-20 bg-gray-100">
+    <div class="flex flex-col md:flex-row container mx-auto p-4 md:p-20 bg-gray-100">
       <!-- Sidebar a la izquierda -->
-      <div>
-        <Sidebar :categories="categories" @filter-by-category="handleCategoryFilter" />
+      <div class="mb-4 md:mb-0 w-full md:w-auto">
+        <Sidebar
+          :categories="categories"
+          @filter-by-category="handleCategoryFilter"
+        />
       </div>
 
       <!-- Contenido a la derecha del Sidebar -->
-      <div class="flex flex-col w-full ml-6">
+      <div class="flex flex-col w-full ml-0 md:ml-6">
         <!-- Filtros arriba -->
-        <div>
+        <div class="mb-4">
           <Filtros @filter-changed="handleFilterChange" />
         </div>
 
         <!-- Cursos abajo -->
         <div>
           <div v-for="course in courses" :key="course._id" class="mb-4">
-            <CardCurso :course="course" />
+            <CardCurso class="max-w-full" :course="course" />
           </div>
 
           <Paginacion
@@ -33,7 +36,9 @@
 </template>
 
 
-<script>
+<script setup>
+
+import { ref, onMounted} from 'vue';
 import axios from "axios";
 import CardCurso from "../components/CardCurso.vue";
 import Paginacion from "../components/Paginacion.vue";
@@ -41,83 +46,68 @@ import Portada from "../components/Portada.vue";
 import Sidebar from "../components/Sidebar.vue";
 import Filtros from "../components/Filtros.vue";
 
-export default {
-  components: {
-    CardCurso,
-    Paginacion,
-    Portada,
-    Sidebar,
-    Filtros,
-  },
-  data() {
-    return {
-      courses: [],
-      currentPage: 1,
-      totalPages: 1,
-      totalCourses: 0,
-      categories: [],
-    };
-  },
-  async created() {
-    this.loadCursos(this.currentPage);
-    this.loadCategories();
-  },
-  methods: {
-    editCourse() {
-        this.$router.push(`/editar-curso/${this.course._id}`);
-    },
-    async loadCategories() {
-      try {
-        const response = await axios.get(`http://localhost:3333/categorias`); // Ajusta la URL si es necesario.
-        this.categories = response.data;
-      } catch (error) {
-        console.error("Error al obtener las categorías:", error);
-      }
-    },
-    async loadCursos(page, filterType = null) {
-      const filterQueryParam = filterType ? `&filter=${filterType}` : "";
-      try {
-        const response = await axios.get(
-          `http://localhost:3333/cursos?page=${page}${filterQueryParam}`
-        );
-        this.courses = response.data.courses;
-        this.totalPages = response.data.totalPages;
-        this.totalCourses = response.data.totalCourses;
-      } catch (error) {
+
+
+axios.defaults.baseURL = 'http://localhost:3333';
+
+// Estado
+const courses = ref([]);
+const currentPage = ref(1);
+const totalPages = ref(1);
+const totalCourses = ref(0);
+const categories = ref([]);
+
+// Métodos y handlers
+const loadCourses = async (page, filterType = null) => {
+    const filterQueryParam = filterType ? `&filter=${filterType}` : "";
+    try {
+        const { data } = await axios.get(`cursos?page=${page}${filterQueryParam}`);
+        courses.value = data.courses;
+        totalPages.value = data.totalPages;
+        totalCourses.value = data.totalCourses;
+    } catch (error) {
         console.error("Error al obtener los cursos:", error);
-      }
-    },
-    handleFilterChange(filterType) {
-      this.loadCursos(1, filterType);
-      console.log("Filtro recibido en Cursos.vue:", filterType);
-    },
-    handlePageChange(newPage) {
-      this.currentPage = newPage;
-      this.loadCursos(newPage);
-      this.loadCategories();
-    },
-    async handleCategoryFilter(selectedCategories) {
-      this.courses = [];
-      this.currentPage = 1;
-      console.log("Categorías recibidas en Cursos.vue:", selectedCategories);
-
-      // Construcción de la URL
-      const url = `http://localhost:3333/cursos?categories=${selectedCategories.join(
-        ","
-      )}`;
-      console.log("URL de petición:", url); // Agregamos el log para revisar la URL
-
-      try {
-        const response = await axios.get(url); // Usamos la constante url
-        console.log("Respuesta del servidor:", response.data); // Agregamos el log para revisar la respuesta del servidor
-
-        this.courses = response.data.courses;
-        this.totalPages = response.data.totalPages;
-        this.totalCourses = response.data.totalCourses;
-      } catch (error) {
-        console.error("Error al filtrar los cursos:", error);
-      }
-    },
-  },
+    }
 };
+
+const handleCategoryFilter = async (selectedCategories) => {
+    courses.value = [];
+    currentPage.value = 1;
+    const url = `cursos?categories=${selectedCategories.join(",")}`;
+    try {
+        const { data } = await axios.get(url);
+        courses.value = data.courses;
+        totalPages.value = data.totalPages;
+        totalCourses.value = data.totalCourses;
+    } catch (error) {
+        console.error("Error al filtrar los cursos:", error);
+    }
+};
+
+const loadCategories = async () => {
+    try {
+        const { data } = await axios.get('categorias');
+        categories.value = data;
+    } catch (error) {
+        console.error("Error al obtener las categorías:", error);
+    }
+};
+
+const handleFilterChange = (filterType) => {
+    loadCourses(1, filterType);
+};
+
+const handlePageChange = (newPage) => {
+    currentPage.value = newPage;
+    loadCourses(newPage);
+    loadCategories();
+};
+
+
+
+// Montaje
+onMounted(() => {
+    loadCourses(currentPage.value);
+    loadCategories();
+});
 </script>

@@ -11,18 +11,13 @@
   </div>
 </template>
 
-<script>
-export default {
-  data() {
-    return {
-      selectedFilter: "priceAsc" // Por defecto, seleccionamos el filtro "Precio: Menor a Mayor".
-    };
-  },
-  methods: {
-    applyFilter() {
-      this.$emit('filter-changed', this.selectedFilter);
-      console.log("Emite el filtro:", this.selectedFilter);
-    }
-  }
+<script setup>
+import { ref } from 'vue';
+
+const selectedFilter = ref("priceAsc"); // Por defecto, seleccionamos el filtro "Precio: Menor a Mayor".
+
+const applyFilter = () => {
+  emit('filter-changed', selectedFilter.value);
+  console.log("Emite el filtro:", selectedFilter.value);
 };
 </script>

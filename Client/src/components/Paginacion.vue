@@ -47,51 +47,53 @@
   </div>
 </template>
 
-<script>
-export default {
-  props: {
-    currentPage: {
-      type: Number,
-      required: true,
-    },
-    totalPages: {
-      type: Number,
-      required: true,
-    },
+<script setup>
+import { computed } from 'vue';
+
+const props = defineProps({
+  currentPage: {
+    type: Number,
+    required: true,
   },
-  computed: {
-    startPage() {
-      if (this.currentPage <= 3) return 1;
-      if (this.currentPage > this.totalPages - 2) return this.totalPages - 4;
-      return this.currentPage - 2;
-    },
-    endPage() {
-      if (this.currentPage <= 3) return 5;
-      if (this.currentPage > this.totalPages - 2) return this.totalPages;
-      return this.currentPage + 2;
-    },
-    displayedPages() {
-      let pages = [];
-      for (let i = this.startPage; i <= this.endPage; i++) {
-        pages.push(i);
-      }
-      return pages;
-    },
+  totalPages: {
+    type: Number,
+    required: true,
   },
-  methods: {
-    changePage(page) {
-      this.$emit("changePage", page);
-    },
-    nextPage() {
-      if (this.currentPage < this.totalPages) {
-        this.$emit("changePage", this.currentPage + 1);
-      }
-    },
-    prevPage() {
-      if (this.currentPage > 1) {
-        this.$emit("changePage", this.currentPage - 1);
-      }
-    },
-  },
+});
+
+const startPage = computed(() => {
+  if (props.currentPage <= 3) return 1;
+  if (props.currentPage > props.totalPages - 2) return props.totalPages - 4;
+  return props.currentPage - 2;
+});
+
+const endPage = computed(() => {
+  if (props.currentPage <= 3) return 5;
+  if (props.currentPage > props.totalPages - 2) return props.totalPages;
+  return props.currentPage + 2;
+});
+
+const displayedPages = computed(() => {
+  let pages = [];
+  for (let i = startPage.value; i <= endPage.value; i++) {
+    pages.push(i);
+  }
+  return pages;
+});
+
+const changePage = (page) => {
+  emit("changePage", page);
+};
+
+const nextPage = () => {
+  if (props.currentPage < props.totalPages) {
+    emit("changePage", props.currentPage + 1);
+  }
+};
+
+const prevPage = () => {
+  if (props.currentPage > 1) {
+    emit("changePage", props.currentPage - 1);
+  }
 };
 </script>

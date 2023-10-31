@@ -39,25 +39,21 @@
 </div>
 </template>
 
-<script>
-export default {
-  props: {
-    categories: {
-      type: Array,
-      default: () => [],
-    },
+<script setup>
+import { ref, watch } from 'vue';
+
+const props = defineProps({
+  categories: {
+    type: Array,
+    default: () => [],
   },
-  data() {
-    return {
-      selectedCategories: '',
-    };
-  },
-  watch: {
-    selectedCategories() {
-      // Emitimos el valor como un array para mantener compatibilidad con el código anterior
-      this.$emit('filter-by-category', [this.selectedCategories]);
-      console.log('Emitiendo evento con categoría:', this.selectedCategories);
-    },
-  },
-};
+});
+
+const selectedCategories = ref('');
+
+watch(selectedCategories, (newVal) => {
+  // Emitimos el valor como un array para mantener compatibilidad con el código anterior
+  emit('filter-by-category', [newVal]);
+  console.log('Emitiendo evento con categoría:', newVal);
+});
 </script>

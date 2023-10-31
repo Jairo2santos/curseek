@@ -13,14 +13,7 @@
 </template>
 
 
-<script>
+<script setup>
 import AppHeader from './components/AppHeader.vue';
 import Footer from './components/Footer.vue';
-
-export default {
-  components: {
-    AppHeader,
-    Footer
-  }
-};
 </script>
