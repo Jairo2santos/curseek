@@ -21,7 +21,17 @@ app.use('/categorias', categoriesRoutes);
 app.use('/users', usersRoutes);
 
 // Conectar con MongoDB
+const db = mongoose.connection;
+
 mongoose.connect('mongodb://localhost:27017/cursosApp', { useNewUrlParser: true, useUnifiedTopology: true });
+
+db.on('error', (err) => {
+    console.error("Error conectando a MongoDB:", err);
+});
+
+db.once('open', () => {
+    console.log("Conexión exitosa a MongoDB");
+});
 
 // Manejador de errores globales
 app.use((error, req, res, next) => {

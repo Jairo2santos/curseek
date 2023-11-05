@@ -1,13 +1,18 @@
 <template>
-<div class="flex justify-between items-center p-4 rounded-lg mb-6 w-full mx-auto .max-w-screen-xl">
+  <div class="flex justify-between items-center p-4 rounded-lg mb-6 w-full mx-auto max-w-screen-xl">
     <div>
-        <h1 class="text-2xl font-bold mb-2">{{ title }}</h1>
-        <p class="text-gray-600 mb-2">{{ description }}</p>
+      <slot name="title">
+        <h1 class="text-4xl lg:text-5xl font-extrabold text-gray-800 mb-4">{{ title }}</h1>
+      </slot>
+      <slot name="description">
+        <p class="text-gray-600 mb-2 mr-2">{{ description }}</p>
+      </slot>
+      <slot name="course-info">
         <span class="text-sm bg-gray-200 py-2 px-4 rounded-full">Cursos totales: {{ totalCourses }}</span>
+      </slot>
     </div>
-    <img :src="computedImageSrc" alt="UTN Logo" class="w-80" />
-</div>
-
+    <img :src="computedImageSrc" :alt="altText" class="w-80 mr-auto" />
+  </div>
 </template>
 
 <script setup>
@@ -17,11 +22,11 @@ import defaultImage from '../assets/logo-utn.jpg';
 const props = defineProps({
   title: {
     type: String,
-    default: "Universidad Tecnológica Nacional (UTN) "
+    default: "Universidad Tecnológica Nacional (UTN)"
   },
   description: {
     type: String,
-    default: "Esta es una universidad argentina que viene de la Universidad Obrera Nacional. Es la única en Argentina que se enfoca principalmente en ingenierías y que está en todo el país. Aunque su oficina principal está en Buenos Aires, tiene 30 sedes en diferentes lugares de Argentina. Es la universidad de ingeniería con más estudiantes en el país."
+    default: "Descripción predeterminada del curso o institución."
   },
   totalCourses: {
     type: Number,
@@ -30,6 +35,10 @@ const props = defineProps({
   imageSrc: {
     type: String,
     default: defaultImage
+  },
+  altText: {
+    type: String,
+    default: "Imagen de portada"
   }
 });
 

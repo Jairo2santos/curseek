@@ -48,8 +48,10 @@
 </template>
 
 <script setup>
-import { computed } from 'vue';
+import { computed, } from 'vue';
 
+
+//
 const props = defineProps({
   currentPage: {
     type: Number,
@@ -60,6 +62,7 @@ const props = defineProps({
     required: true,
   },
 });
+const emit = defineEmits(['changePage']);
 
 const startPage = computed(() => {
   if (props.currentPage <= 3) return 1;

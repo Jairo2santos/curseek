@@ -1,5 +1,5 @@
 <template>
-  <a :href="'/curso/' + course._id" class="block bg-white shadow-md mt-2 min-w-max rounded-lg p-4 hover:shadow-lg transition-shadow">
+  <a :href="'/curso/' + course._id" class="block max-w-full bg-white shadow-md mt-2 rounded-lg p-4 hover:shadow-lg transition-shadow">
     
     <!-- Contenido Principal de la Card -->
     <div class="flex flex-col md:flex-row items-start md:items-center">

@@ -6,7 +6,8 @@
           <a href="/">
             <img src="../assets/logo-curseek.png" alt="logo curseek" width="194">
           </a>
-          <router-link to="/cursos" class="ml-4 hover:bg-purple-200 px-3 py-1 rounded transition text-lg" style="color: #5154a4;">Cursos</router-link>
+          <router-link to="/cursos/utn" class="ml-4 hover:bg-purple-200 px-3 py-1 rounded transition text-lg" style="color: #5154a4;">Cursos UTN</router-link>
+          <router-link to="/cursos/udemy" class="ml-4 hover:bg-purple-200 px-3 py-1 rounded transition text-lg" style="color: #5154a4;">Cursos UDEMY</router-link>
         </div>
         <nav class="space-x-4">
           <div v-if="loggedInUsername" class="flex items-center">

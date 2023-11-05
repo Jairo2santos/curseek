@@ -11,14 +11,15 @@ const CourseSchema = new mongoose.Schema({
   link: String,
   imgUrl: String,
   category: String,
+
 });
 
 const Course = mongoose.model('course', CourseSchema, 'cursos_UTN');
-
 
 module.exports = Course;
 
 
 
- 
+
+
 

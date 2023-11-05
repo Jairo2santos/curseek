@@ -10,14 +10,14 @@
     </select>
   </div>
 </template>
-
 <script setup>
-import { ref } from 'vue';
+import { ref} from 'vue';
 
 const selectedFilter = ref("priceAsc"); // Por defecto, seleccionamos el filtro "Precio: Menor a Mayor".
+const emits = defineEmits(["filter-changed"]);
 
 const applyFilter = () => {
-  emit('filter-changed', selectedFilter.value);
+  emits('filter-changed', selectedFilter.value);
   console.log("Emite el filtro:", selectedFilter.value);
 };
 </script>

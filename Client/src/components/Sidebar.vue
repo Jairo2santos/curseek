@@ -42,6 +42,7 @@
 <script setup>
 import { ref, watch } from 'vue';
 
+//
 const props = defineProps({
   categories: {
     type: Array,
@@ -49,7 +50,9 @@ const props = defineProps({
   },
 });
 
-const selectedCategories = ref('');
+const emit = defineEmits(['filter-by-category']); 
+const selectedCategories = ref([]);
+
 
 watch(selectedCategories, (newVal) => {
   // Emitimos el valor como un array para mantener compatibilidad con el código anterior

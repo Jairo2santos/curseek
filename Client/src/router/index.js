@@ -1,9 +1,11 @@
 import { createRouter, createWebHistory } from 'vue-router';
 import Home from '../views/Home.vue';
-import cursos from '../views/cursos.vue';
+import cursosUTN from '../views/coursesViews/utn/cursosUTN.vue';
+import cursosUDEMY from '../views/coursesViews/udemy/cursosUDEMY.vue';
 import login from '../views/login.vue';
 import cursosCategory from '../views/cursosCategory.vue';
-import DetalleCurso from "../views/DetalleCurso.vue";
+import DetalleCurso from '../views/coursesViews/utn/detalleCursoUTN.vue';
+import DetalleCursoUdemy from '../views/coursesViews/udemy/detalleCursoUDEMY.vue';
 import profile from  "../views/profile.vue";
 import signUp from  "../views/signUp.vue";
 
@@ -14,9 +16,14 @@ const routes = [
     component: Home
   },
   {
-    path: '/cursos',
+    path: '/cursos/utn',
     name: 'Cursos UTN',
-    component: cursos
+    component: cursosUTN
+  },
+  {
+    path: '/cursos/udemy',
+    name: 'Cursos UDEMY',
+    component: cursosUDEMY
   },
   {
     path: '/login',
@@ -33,6 +40,12 @@ const routes = [
     path: "/curso/:id",
     name: "DetalleCurso",
     component: DetalleCurso,
+    props: true
+  },
+  {
+    path: '/udemy/cursos/:id',
+    name: 'DetalleCursoUdemy',
+    component: DetalleCursoUdemy,
     props: true
   },
   {
