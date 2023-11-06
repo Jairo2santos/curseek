@@ -1,24 +1,26 @@
 <template>
-    <div class="bg-gray-100 p-4 md:p-6 max-w-screen-xl mx-auto">
+  <div class="bg-gray-100 p-12">
+    <div class="md:p-6 max-w-screen-xl mx-auto">
       <!-- Grilla Principal -->
       <div class="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-6">
         <!-- Columna 1 y 2 (Contenido principal) -->
         <div class="md:col-span-2">
           <!-- Sección de Título y Precio -->
-          <div class="bg-white p-4 md:p-6 rounded shadow-lg mb-4 flex justify-between items-center">
+          <div class="bg-white p-4 md:p-6 rounded hover:shadow-lg transition mb-4 justify-between items-center">
             <h1 class="text-2xl md:text-3xl font-bold text-gray-800">{{ udemyCourse.title }}</h1>
-            <h2 class="text-3xl md:text-4xl font-bold text-green-500" v-if="!udemyCourse.is_paid">{{ udemyCourse.price }}</h2>
+            <h2 class="text-3xl md:text-3xl font-semibold text-green-500" v-if="!udemyCourse.is_paid">{{ udemyCourse.price }}</h2>
           </div>
           
           <!-- Sección de Descripción -->
-          <div class="bg-white p-4 md:p-6 rounded shadow-lg mb-4">
+          <div class="bg-white p-4 md:p-6 rounded hover:shadow-lg transition mb-4">
+            <h3 class="text-xl mb-2 font-bold">Resumen</h3>
             <p class="text-gray-700 text-lg md:text-xl mb-4">{{ udemyCourse.headline }}</p>
           </div>
   
           <!-- Sección de Detalles del Instructor -->
-          <div class="bg-white p-4 md:p-6 rounded shadow-lg">
+          <div class="bg-white p-4 md:p-6 rounded hover:shadow-lg transition">
             <div v-if="udemyCourse.instructors && udemyCourse.instructors.length">
-              <h3 class="text-lg md:text-xl font-semibold text-gray-800 mb-2">Instructores</h3>
+              <h3 class="text-xl mb-2 font-bold">Profesores</h3>
               <div v-for="instructor in udemyCourse.instructors" :key="instructor._id" class="flex items-center mb-4">
                 <img :src="instructor.image_100x100" alt="Foto del Instructor" class="rounded-full mr-4">
                 <div>
@@ -31,14 +33,20 @@
         </div>
   
         <!-- Columna 3 (Barra Lateral con Imagen y Botón) -->
-        <div class="bg-white p-4 md:p-6 rounded shadow-lg">
+        <div class="bg-white p-4 md:p-6 rounded hover:shadow-lg transition">
           <img :src="udemyCourse.image_480x270" alt="Imagen del Curso" class="rounded mb-4">
           <a :href="`https://www.udemy.com${udemyCourse.url}`" target="_blank"
-             class="block bg-purple-600 text-white text-center py-2 px-4 rounded hover:bg-purple-700 transition-colors duration-300 ease-in-out w-full">Ir al curso</a>
+            class="flex bg-purple-600 text-white text-center py-2 px-4 rounded hover:bg-purple-700 transition-colors duration-300 ease-in-out w-full items-center justify-center">
+            Ir al curso
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960" width="24" class="ml-2">
+              <path d="M200-120q-33 0-56.5-23.5T120-200v-560q0-33 23.5-56.5T200-840h280v80H200v560h560v-280h80v280q0 33-23.5 56.5T760-120H200Zm188-212-56-56 372-372H560v-80h280v280h-80v-144L388-332Z" fill="#fff" />
+            </svg>
+          </a>
         </div>
       </div>
     </div>
-  </template>
+  </div>
+</template>
   
   
   <script setup>

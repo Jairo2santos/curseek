@@ -1,47 +1,49 @@
 <template>
-  <div class="bg-gray-100 p-6 max-w-screen-xl mx-auto">
-    <!-- Grilla Principal -->
-    <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
-      <!-- Columna 1 y 2 (Contenido principal) -->
-      <div class="lg:col-span-2">
-        <!-- Sección de Título, Duración y Precio -->
-        <div class="bg-white p-6 rounded shadow-lg mb-4  items-center justify-between">
-          <div class="flex">
-            <h1 class="text-3xl inline-block mr-4">{{ course.title }}</h1>
-
+  <div class="bg-gray-100 p-12">
+    <div class="md:p-6 max-w-screen-xl mx-auto">
+      <!-- Grilla Principal -->
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-6">
+        <!-- Columna 1 y 2 (Contenido principal) -->
+        <div class="md:col-span-2">
+          <!-- Sección de Título, Duración y Precio -->
+          <div class="bg-white p-4 md:p-6 rounded hover:shadow-lg transition mb-4 justify-between items-center">
+            <h1 class="text-2xl md:text-3xl font-bold text-gray-800">{{ course.title }}</h1>
+            <p class="text-xl mb-2 ">{{ course.duration }}</p>
+            <h2 class="text-3xl md:text-3xl font-semibold text-green-500">{{ course.price }}</h2>
           </div>
-          <div>
-            <p class="text-xl mb-2">{{ course.duration }}</p>
-            <h2 class="text-2xl text-purple-600">{{ course.price }}</h2>
+
+          <!-- Sección de Resumen -->
+          <div class="bg-white p-6 rounded hover:shadow-lg transition mb-4">
+            <h3 class="text-xl mb-2 font-bold">Resumen</h3>
+            <p>{{ course.summary }}</p>
+          </div>
+
+          <!-- Sección de Modalidades -->
+          <div class="bg-white p-6 rounded hover:shadow-lg transition mb-4">
+            <h3 class="text-xl mb-2 font-bold">Modalidades</h3>
+            <ul class="list-disc pl-8">
+              <li v-for="modality in course.modalities" :key="modality">{{ modality }}</li>
+            </ul>
+          </div>
+
+          <!-- Sección de Profesores -->
+          <div class="bg-white p-6 rounded hover:shadow-lg transition mb-4">
+            <h3 class="text-xl mb-2 font-bold">Profesores</h3>
+            <p>{{ course.teachers }}</p>
           </div>
         </div>
 
-        <!-- Sección de Resumen -->
-        <div class="bg-white p-6 rounded shadow-lg mb-4">
-          <h3 class="text-xl mb-2">Resumen del curso</h3>
-          <p>{{ course.summary }}</p>
+        <!-- Columna 3 (Barra Lateral) -->
+        <div class="bg-white p-4 md:p-6 rounded hover:shadow-lg transition">
+          <img :src="course.imgUrl" alt="Imagen del Curso" class="rounded mb-4">
+          <a :href="course.link" target="_blank"
+            class="flex bg-purple-600 text-white text-center py-2 px-4 rounded hover:bg-purple-700 transition-colors duration-300 ease-in-out w-full items-center justify-center">
+            Ir al curso
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960" width="24" class="ml-2">
+              <path d="M200-120q-33 0-56.5-23.5T120-200v-560q0-33 23.5-56.5T200-840h280v80H200v560h560v-280h80v280q0 33-23.5 56.5T760-120H200Zm188-212-56-56 372-372H560v-80h280v280h-80v-144L388-332Z" fill="#fff" />
+            </svg>
+          </a>
         </div>
-
-        <!-- Sección de Modalidades -->
-        <div class="bg-white p-6 rounded shadow-lg mb-4">
-          <h3 class="text-xl mb-2">Modalidades</h3>
-          <ul class="list-disc pl-8">
-            <li v-for="modality in course.modalities" :key="modality">{{ modality }}</li>
-          </ul>
-        </div>
-
-        <!-- Sección de Profesores -->
-        <div class="bg-white p-6 rounded shadow-lg mb-4">
-          <h3 class="text-xl mb-2">Profesores</h3>
-          <p>{{ course.teachers }}</p>
-        </div>
-      </div>
-
-      <!-- Columna 3 (Barra Lateral) -->
-      <div class="bg-white p-6 rounded shadow-lg">
-        <img :src="course.imgUrl" alt="Imagen del Curso" class="mb-4">
-        <a :href="course.link" target="_blank"
-          class="block bg-purple-600 text-white text-center py-2 px-4 rounded hover:bg-purple-700 w-full">Ir al curso</a>
       </div>
     </div>
   </div>
