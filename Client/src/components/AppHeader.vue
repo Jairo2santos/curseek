@@ -36,8 +36,8 @@
               </summary>
               <ul class="mt-3 absolute bg-white p-2">
                 <li class="m-1 flex items-center">
-                  <a href="/profile" class="hover:bg-gray-200" style="color: #4a4a4a; display: inline-flex; align-items: center; justify-content: space-between; width: 100%;">
-                    <span class="text-lg p-1">Perfil</span>
+                  <a href="/profile" class="hover:text-purple-200 text-black">
+                    <span class="text-lg p-1">Mi perfil</span>
                     <!-- <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960" width="24"><path d="M504-480 320-664l56-56 240 240-240 240-56-56 184-184Z" fill="#ababab"/></svg> -->
                   </a>
                 </li>
