@@ -22,13 +22,28 @@
         <div class="mb-4">
           <Filtros @filter-changed="handleFilterChange" />
         </div>
-
-        <!-- Cursos abajo -->
         <div>
-          <div v-for="course in courses" :key="course._id" class="mb-4">
-            <CardCurso class="max-w-full" :course="course" />
-          </div>
-
+        <div v-for="course in courses" :key="course._id" class="mb-4">
+          <!-- Aquí comienza la tarjeta individual para cada curso -->
+          <a :href="'/curso/' + course._id" class="block max-w-full bg-white shadow-md mt-2 rounded-lg p-4 hover:shadow-lg transition-shadow">
+            <div class="flex flex-col md:flex-row items-start md:items-center">
+              <img :src="course.imgUrl" alt="Imagen del curso" class="w-full md:w-1/4 rounded mb-4 md:mb-0 md:mr-4">
+              <div class="flex-grow">
+                <h2 class="text-lg md:text-xl mb-2">{{ course.title }}</h2>
+                <div class="flex flex-col md:flex-row justify-between items-start md:items-center mt-4">
+                  <a :href="'/modalidad/' + course.modalidad" class="text-blue-500 hover:underline mb-2 md:mb-0">{{ course.modalidad }}</a>
+                  <span class="text-gray-500">{{ course.price }}</span>
+                </div>
+                <!-- Aquí se integra la etiqueta de categoría directamente -->
+                <span class="text-sm bg-blue-200 text-blue-700 py-1 px-2 rounded">
+                  {{ course.category }}
+                </span>
+                <div class="mt-2 text-xs md:text-sm text-gray-400">{{ course.startDate }}</div>
+              </div>
+            </div>
+          </a>
+          <!-- Aquí termina la tarjeta individual -->
+        </div>
           <Paginacion
             :currentPage="currentPage"
             :totalPages="totalPages"
@@ -43,7 +58,6 @@
 <script setup>
 import { ref, onMounted } from "vue";
 import axios from "axios";
-import CardCurso from "../../../components/CardCurso.vue";
 import Paginacion from "../../../components/Paginacion.vue";
 import Portada from "../../../components/Portada.vue";
 import Sidebar from "../../../components/Sidebar.vue";

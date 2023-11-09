@@ -1,3 +1,4 @@
+//courses.services
 const UTNCourse = require('../models/utn.models.js'); // Modelo para los cursos UTN
 const UdemyCourse = require('../models/udemy.models'); // Modelo para los cursos Udemy
 
@@ -25,7 +26,7 @@ async function searchAndCombineCourses(query, page, limit) {
   };
 }
 
-// Reimplementar servicios comunes aquí...
+
 
 exports.getAllCoursesService = async (category, page = 1, limit = 10, filterType) => {
   let query = {};

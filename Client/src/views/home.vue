@@ -28,14 +28,12 @@
 
     <!-- Resultados -->
     <div class="mt-1 w-xl p-1"> <!-- Reducido el margen superior -->
-      <CardCurso v-for="course in courses" :key="course._id" :course="course" />
     </div>
   </div>
 </template>
 
 <script setup>
 import { ref } from 'vue';
-import CardCurso from '../components/CardCurso.vue';
 import axios from 'axios';
 
     const query = ref('');

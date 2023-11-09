@@ -1,84 +1,85 @@
 <template>
   <div class="bg-white">
+    <!-- Portada -->
     <Portada
       title="Cursos de UDEMY"
-      description="Udemy es una plataforma en línea que ofrece cursos en video sobre una amplia variedad de temas. Estos cursos son creados por instructores individuales o empresas y están diseñados para ayudar a las personas a aprender nuevas habilidades o mejorar sus conocimientos en áreas específicas. "
+      description="Udemy es una plataforma en línea que ofrece cursos en video sobre una amplia variedad de temas..."
       :totalCourses="totalCourses"
       :imageSrc="logoUdemy"
     />
 
+    <!-- Contenido principal con Sidebar y Tarjetas de Cursos -->
     <div class="container mx-auto p-4 md:p-20 bg-gray-100">
-      <!-- Contenido principal -->
-      <div class="flex flex-wrap -mx-4">
-        <!-- Tarjetas de Cursos -->
-        <div
-          v-for="course in courses"
-          :key="course.id"
-          class="p-4 w-full sm:w-1/2 lg:w-1/3"
-        >
+      <div class="flex flex-col md:flex-row -mx-4">
+
+        <!-- Sidebar a la izquierda -->
+        <div class="w-full md:w-1/4 px-4 mb-4">
+          <Sidebar
+            :categories="categories"
+            @filter-by-category="handleCategoryFilter"
+          />
+        </div>
+
+        <!-- Contenedor de Tarjetas de Cursos al lado del Sidebar -->
+        <div class="w-full md:w-3/4 px-4">
+          <!-- Tarjetas de Cursos una debajo de la otra -->
           <div
-            :class="{
-              'bg-green-100': course.is_free,
-              'bg-white': !course.is_free,
-            }"
-            class="p-6 rounded-lg shadow-lg transition duration-300 ease-in-out hover:shadow-2xl"
+            v-for="course in courses"
+            :key="course.id"
+            class="mb-4"
           >
+            <!-- Tarjeta de Curso -->
             <router-link
-              :to="{ name: 'DetalleCursoUdemy', params: { id: course._id } }"
-              class="block hover:no-underline"
+      :to="{ name: 'DetalleCursoUdemy', params: { id: course._id } }"
+      class="block bg-white shadow-md rounded-lg p-4 hover:shadow-lg transition-shadow"
+    >
+      <div class="flex flex-col md:flex-row items-start md:items-center">
+        <img :src="course.image_480x270" alt="Imagen del curso" class="w-full md:w-48 rounded mb-4 md:mb-0 md:mr-4">
+        <div class="flex-grow">
+          <h2 class="text-lg md:text-xl mb-2">{{ course.title }}</h2>
+          <p class="text-gray-700 text-base mb-4">{{ course.headline }}</p>
+          <div class="flex justify-between items-center mt-4">
+            <div>
+              <div v-if="course.instructors && course.instructors.length" class="flex items-center mb-4">
+                <img :src="course.instructors[0].image_100x100" alt="Instructor" class="rounded-full w-12 h-12 mr-2">
+                <span class="text-sm">{{ course.instructors[0].name }}</span>
+              </div>
+              <span class="text-sm bg-blue-200 text-blue-700 py-1 px-2 rounded">
+                {{ course.primary_category?.title || 'Categoría' }}
+              </span>
+            </div>
+            <span
+              :class="course.is_free ? 'text-green-800 bg-green-200 font-semibold px-2 py-1 rounded-full' : 'text-gray-500'"
             >
-              <img
-                :src="course.image_480x270"
-                alt="Imagen del Curso"
-                class="rounded w-full mb-6 hover:opacity-90"
-              />
-              <h3 class="text-lg font-semibold mb-2 hover:text-blue-600">
-                {{ course.title }}
-              </h3>
-              <p class="text-gray-700 text-base mb-4">{{ course.headline }}</p>
-              <div
-                v-for="instructor in course.instructors"
-                :key="instructor._id"
-                class="flex items-center mb-4"
-              >
-                <img
-                  :src="instructor.image_100x100"
-                  alt="Instructor"
-                  class="rounded-full w-12 h-12 mr-2"
-                />
-                <span class="text-sm">{{ instructor.name }}</span>
-              </div>
-              <div class="flex justify-between items-center mt-4">
-                <span :class="course.price === 'Free' || course.price === 'Gratis' ? 'text-green-800 text-lg bg-green-200 font-semibold px-2 py-1 rounded-full text-sm' : 'text-xl font-bold'">
-  {{ course.price }}
-</span>
-                <span
-                  class="inline-block bg-blue-500 text-white text-xl font-bold py-2 px-4 rounded-full hover:bg-blue-600 cursor-pointer"
-                >
-                  Ver Detalles
-                </span>
-              </div>
-            </router-link>
+              {{ course.is_free ? 'Gratis' : course.price }}
+            </span>
+          </div>
+        </div>
+      </div>
+    </router-link>
           </div>
         </div>
       </div>
     </div>
-  </div>
 
-  <!-- Paginación -->
-  <Paginacion
-    :currentPage="currentPage"
-    :totalPages="totalPages"
-    @changePage="handlePageChange"
-  />
+    <!-- Paginación -->
+    <Paginacion
+      :currentPage="currentPage"
+      :totalPages="totalPages"
+      @changePage="handlePageChange"
+    />
+  </div>
 </template>
 
 <script setup>
 import { ref, onMounted } from "vue";
+
 import axios from "axios";
 import Paginacion from "../../../components/Paginacion.vue";
 import Portada from "../../../components/Portada.vue";
 import logoUdemy from "../../../assets/logo-udemy.png";
+import Sidebar from "../../../components/Sidebar.vue";
+
 axios.defaults.baseURL = "http://localhost:3333";
 
 // Estado
@@ -86,14 +87,21 @@ const courses = ref([]);
 const currentPage = ref(1);
 const totalPages = ref(1);
 const totalCourses = ref(0);
+const categories = ref([]);
 
-// Métodos y handlers
-const loadCourses = async (page) => {
+
+
+const loadCourses = async (page, selectedCategory = '') => {
+  let queryParams = `page=${page}`;
+
+  if (selectedCategory) {
+    queryParams += `&category=${encodeURIComponent(selectedCategory)}`;
+  }
+
   try {
-    const { data } = await axios.get(`cursos/udemy?page=${page}`);
+    const { data } = await axios.get(`cursos/udemy?${queryParams}`);
     courses.value = data.courses;
-    totalPages.value =
-      typeof data.totalPages === "number" ? data.totalPages : 1;
+    totalPages.value = typeof data.totalPages === "number" ? data.totalPages : 1;
     totalCourses.value = data.totalCourses;
   } catch (error) {
     console.error("Error al obtener los cursos de Udemy:", error);
@@ -101,14 +109,33 @@ const loadCourses = async (page) => {
   }
 };
 
+
+const loadCategories = async () => {
+  try {
+    const { data } = await axios.get("categorias/udemy");
+    categories.value = data;
+  } catch (error) {
+    console.error("Error al obtener las categorías de Udemy:", error);
+  }
+};
+
+
+
 const handlePageChange = (newPage) => {
   currentPage.value = newPage;
   loadCourses(currentPage.value);
+};
+const handleCategoryFilter = async (selectedCategory) => {
+  // Asegúrate de que estamos enviando la categoría correcta al backend
+  console.log('Filtrando por la categoría:', selectedCategory);
+  currentPage.value = 1; // Reinicia la paginación al filtrar por categoría
+  await loadCourses(currentPage.value, selectedCategory);
 };
 
 // Montaje
 onMounted(() => {
   loadCourses(currentPage.value);
+  loadCategories();
 });
 console.log(courses.value);
 </script>

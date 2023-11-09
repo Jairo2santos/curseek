@@ -3,7 +3,6 @@ import Home from '../views/Home.vue';
 import cursosUTN from '../views/coursesViews/utn/cursosUTN.vue';
 import cursosUDEMY from '../views/coursesViews/udemy/cursosUDEMY.vue';
 import login from '../views/login.vue';
-import cursosCategory from '../views/cursosCategory.vue';
 import DetalleCurso from '../views/coursesViews/utn/detalleCursoUTN.vue';
 import DetalleCursoUdemy from '../views/coursesViews/udemy/detalleCursoUDEMY.vue';
 import profile from  "../views/profile.vue";
@@ -30,12 +29,7 @@ const routes = [
     name: 'login',
     component: login
   },
-  {
-    path: '/categoria/:categoria',
-    name: 'cursosCategory',
-    component: cursosCategory,
-    props: true
-  },
+ 
    {
     path: "/curso/:id",
     name: "DetalleCurso",

@@ -6,10 +6,11 @@ exports.getSingleUdemyCourseService = async (id) => {
 };
 
 // Servicio para obtener todos los cursos de Udemy
-exports.getUdemyCoursesService = async (category, page, limit, filterType) => {
+exports.getUdemyCoursesService = async (category, page, limit) => {
     let query = {};
     if (category) {
-        query.category = category;
+        // Asegúrate de usar la ruta correcta del documento para filtrar
+        query['primary_category.title'] = category;
     }
 
     const totalCourses = await UdemyCourse.countDocuments(query);

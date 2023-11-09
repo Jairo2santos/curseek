@@ -1,14 +1,12 @@
-// modelsUdemy.js
 const mongoose = require('mongoose');
 
-
 const LocaleSchema = new mongoose.Schema({
-    _class: String,
-    locale: String,
-    title: String,
-    english_title: String,
-    simple_english_title: String
-  });
+  _class: String,
+  locale: String,
+  title: String,
+  english_title: String,
+  simple_english_title: String
+});
 
 const InstructorSchema = new mongoose.Schema({
   title: String,
@@ -30,12 +28,25 @@ const UdemyCourseSchema = new mongoose.Schema({
   image_240x135: String,
   image_480x270: String,
   published_title: String,
-  locale: String,
-  headline: String,
   locale: LocaleSchema,
-
+  headline: String,
+  archive_time: Date,
+  avg_rating: Number,
+  completion_ratio: Number,
+  created: Date,
+  description: String,
+  favorite_time: Date,
+  num_lectures: Number,
+  num_quizzes: Number,
+  num_subscribers: Number,
+  primary_category: {
+    type: mongoose.Schema.Types.Mixed,
+  },
+  primary_subcategory: {
+    type: mongoose.Schema.Types.Mixed,
+  }
+  
 });
 
-
-module.exports = mongoose.model('cursos_UDEMY', UdemyCourseSchema, 'cursos_UDEMY');
-
+// Configura el nombre de la colección específicamente
+module.exports = mongoose.model('UdemyCourse', UdemyCourseSchema, 'cursos_UDEMY');
