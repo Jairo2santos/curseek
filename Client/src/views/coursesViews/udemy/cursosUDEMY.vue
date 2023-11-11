@@ -13,11 +13,10 @@
       <div class="flex flex-col md:flex-row -mx-4">
 
         <!-- Sidebar a la izquierda -->
-        <div class="w-full md:w-1/4 px-4 mb-4">
-          <Sidebar
-            :categories="categories"
-            @filter-by-category="handleCategoryFilter"
-          />
+        <div class="mb-4 md:mb-0 w-full md:w-auto flex">
+          <Sidebar :categories="categories" @filter-by-category="handleCategoryFilter"/>
+          <!-- Filtros arriba -->
+          <Filtros @filter-changed="handleFilterChange"/>
         </div>
 
         <!-- Contenedor de Tarjetas de Cursos al lado del Sidebar -->
@@ -79,6 +78,7 @@ import Paginacion from "../../../components/Paginacion.vue";
 import Portada from "../../../components/Portada.vue";
 import logoUdemy from "../../../assets/logo-udemy.png";
 import Sidebar from "../../../components/Sidebar.vue";
+import Filtros from "../../../components/Filtros.vue";
 
 axios.defaults.baseURL = "http://localhost:3333";
 

@@ -8,16 +8,14 @@
 
     <div class="flex flex-col md:flex-row container mx-auto p-4 md:p-20 bg-gray-100">
       <!-- Sidebar a la izquierda -->
-      <div class="mb-4 md:mb-0 w-full md:w-auto">
-        <Sidebar :categories="categories" @filter-by-category="handleCategoryFilter" />
+      <div class="mb-4 md:mb-0 w-full md:w-auto flex">
+        <Sidebar :categories="categories" @filter-by-category="handleCategoryFilter"/>
+        <!-- Filtros arriba -->
+        <Filtros @filter-changed="handleFilterChange"/>
       </div>
 
       <!-- Contenido a la derecha del Sidebar -->
       <div class="flex flex-col w-full md:ml-6">
-        <!-- Filtros arriba -->
-        <div class="mb-4">
-          <Filtros @filter-changed="handleFilterChange" />
-        </div>
 
         <div>
           <div v-for="course in courses" :key="course._id" class="mb-4">
