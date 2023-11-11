@@ -1,5 +1,5 @@
 <template>
-  <div class="flex justify-center my-4">
+  <div class="flex flex-wrap justify-center my-4 space-x-2">
     <button
       @click="prevPage"
       :disabled="currentPage <= 1"
@@ -8,7 +8,7 @@
       Anterior
     </button>
 
-    <span v-if="currentPage > 3" class="mx-1">...</span>
+    <span v-if="currentPage > 3" class="mx-1 hidden lg:inline">...</span>
 
     <div v-for="page in displayedPages" :key="page" class="mx-1">
       <button
@@ -24,7 +24,7 @@
       </button>
     </div>
 
-    <span v-if="currentPage < totalPages - 2" class="mx-1">...</span>
+    <span v-if="currentPage < totalPages - 2" class="mx-1 hidden lg:inline">...</span>
     <button
       @click="changePage(totalPages)"
       :class="
@@ -48,10 +48,8 @@
 </template>
 
 <script setup>
-import { computed, } from 'vue';
+import { computed } from 'vue';
 
-
-//
 const props = defineProps({
   currentPage: {
     type: Number,
@@ -71,7 +69,7 @@ const startPage = computed(() => {
 });
 
 const endPage = computed(() => {
-  if (props.currentPage <= 3) return 5;
+  if (props.currentPage <= 3) return 2;
   if (props.currentPage > props.totalPages - 2) return props.totalPages;
   return props.currentPage + 2;
 });

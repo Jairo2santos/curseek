@@ -44,12 +44,12 @@
                 <img :src="course.instructors[0].image_100x100" alt="Instructor" class="rounded-full w-12 h-12 mr-2">
                 <span class="text-sm">{{ course.instructors[0].name }}</span>
               </div>
-              <span class="text-sm bg-blue-200 text-blue-700 py-1 px-2 rounded">
+              <span class="text-sm bg-blue-100 text-blue-700 py-1 px-2 rounded">
                 {{ course.primary_category?.title || 'Categoría' }}
               </span>
             </div>
             <span
-              :class="course.is_free ? 'text-green-800 bg-green-200 font-semibold px-2 py-1 rounded-full' : 'text-gray-500'"
+              :class="course.is_free ? 'text-green-700' : 'text-gray-500'"
             >
               {{ course.is_free ? 'Gratis' : course.price }}
             </span>

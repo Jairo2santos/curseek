@@ -1,6 +1,8 @@
 <template>
-  <div class="flex justify-between items-center p-4 rounded-lg mb-6 w-full mx-auto max-w-screen-xl">
-    <div>
+  <div class="flex flex-col lg:flex-row justify-between items-center p-4 rounded-lg mb-6 w-full mx-auto max-w-screen-xl">
+    <img :src="computedImageSrc" :alt="altText" class="w-full lg:w-80 mb-4 lg:mb-0" />
+
+    <div class="lg:ml-4">
       <slot name="title">
         <h1 class="text-4xl lg:text-5xl font-extrabold text-gray-800 mb-4">{{ title }}</h1>
       </slot>
@@ -11,7 +13,6 @@
         <span class="text-sm bg-gray-200 py-2 px-4 rounded-full">Cursos totales: {{ totalCourses }}</span>
       </slot>
     </div>
-    <img :src="computedImageSrc" :alt="altText" class="w-80 mr-auto" />
   </div>
 </template>
 

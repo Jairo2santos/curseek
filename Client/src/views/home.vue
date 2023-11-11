@@ -27,8 +27,7 @@
     </div>
 
     <!-- Resultados -->
-    <div class="mt-1 w-xl p-1"> <!-- Reducido el margen superior -->
-    </div>
+    <div class="mt-1 w-xl p-1"> <!-- Reducido el margen superior --></div>
   </div>
 </template>
 

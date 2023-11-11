@@ -24,6 +24,7 @@ Nota: Asegúrate de tener configurada la conexión a tu base de datos para eso c
 node servidor.js corres el server http://localhost:3000
 
 MongoDB:
-nombre: cursosApp
+nombre db: cursosApp
 coleccion cursos: cursos_UTN
+coleccion cursos: cursos_UDEMY
 coleccion usuarios: users

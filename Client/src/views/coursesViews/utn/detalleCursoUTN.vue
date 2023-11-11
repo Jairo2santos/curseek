@@ -1,5 +1,5 @@
 <template>
-  <div class="bg-gray-100 p-12">
+  <div class="bg-gray-100 p-4">
     <div class="md:p-6 max-w-screen-xl mx-auto">
       <!-- Grilla Principal -->
       <div class="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-6">
