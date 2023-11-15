@@ -7,7 +7,7 @@
       :imageSrc="logoUdemy"
     />
 
-    <div class="flex flex-col md:flex-row container mx-auto p-4 md:p-20 bg-gray-100">
+    <div class="flex flex-col md:flex-row container mx-auto pt-6 md:px-40 bg-gray-100 p-4">
       <!-- Sidebar a la izquierda -->
       <div class="mb-4 md:mb-0 w-full md:w-auto">
         <Sidebar :categories="categories" @filter-by-category="handleCategoryFilter" />
@@ -21,7 +21,7 @@
         </div>
 
         <!-- Contenedor de Tarjetas de Cursos al lado del Sidebar -->
-        <div class="w-full md:w-1/1 px-4">
+        <div class="w-full md:w-1/1">
           <!-- Tarjetas de Cursos una debajo de la otra -->
           <div
             v-for="course in courses"
@@ -77,7 +77,7 @@ import { ref, onMounted } from "vue";
 import axios from "axios";
 import Paginacion from "../../../components/Paginacion.vue";
 import Portada from "../../../components/Portada.vue";
-import logoUdemy from "../../../assets/logo-udemy.png";
+import logoUdemy from "../../../assets/logo-udemy.jpg";
 import Sidebar from "../../../components/Sidebar.vue";
 import Filtros from "../../../components/Filtros.vue";
 

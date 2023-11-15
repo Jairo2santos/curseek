@@ -23,7 +23,7 @@ import defaultImage from '../assets/logo-utn.jpg';
 const props = defineProps({
   title: {
     type: String,
-    default: "Universidad Tecnológica Nacional (UTN)"
+    default: "Institucion Educativa"
   },
   description: {
     type: String,
