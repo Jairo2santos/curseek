@@ -1,6 +1,5 @@
 <template>
   <div class="bg-white">
-    <!-- Portada -->
     <Portada
       title="Cursos de UDEMY"
       description="Udemy es una plataforma en línea que ofrece cursos en video sobre una amplia variedad de temas..."
@@ -8,24 +7,26 @@
       :imageSrc="logoUdemy"
     />
 
-    <!-- Contenido principal con Sidebar y Tarjetas de Cursos -->
-    <div class="container mx-auto p-4 md:p-20 bg-gray-100">
-      <div class="flex flex-col md:flex-row -mx-4">
-
-        <!-- Sidebar a la izquierda -->
-        <div class="mb-4 md:mb-0 w-full md:w-auto flex">
-          <Sidebar :categories="categories" @filter-by-category="handleCategoryFilter"/>
-          <!-- Filtros arriba -->
-          <Filtros @filter-changed="handleFilterChange"/>
+    <div class="flex flex-col md:flex-row container mx-auto p-4 md:p-20 bg-gray-100">
+      <!-- Sidebar a la izquierda -->
+      <div class="mb-4 md:mb-0 w-full md:w-auto">
+        <Sidebar :categories="categories" @filter-by-category="handleCategoryFilter" />
+      </div>
+      
+      <!-- Contenido a la derecha del Sidebar -->
+      <div class="flex flex-col w-full md:ml-6">
+        <!-- Filtros arriba -->
+        <div class="mb-4">
+          <Filtros @filter-changed="handleFilterChange" />
         </div>
 
         <!-- Contenedor de Tarjetas de Cursos al lado del Sidebar -->
-        <div class="w-full md:w-3/4 px-4">
+        <div class="w-full md:w-1/1 px-4">
           <!-- Tarjetas de Cursos una debajo de la otra -->
           <div
             v-for="course in courses"
             :key="course.id"
-            class="mb-4"
+            class="mb-5"
           >
             <!-- Tarjeta de Curso -->
             <router-link

@@ -60,4 +60,3 @@ watch(selectedCategories, (newVal) => {
   console.log('Emitiendo evento con categoría:', newVal);
 });
 </script>
-  

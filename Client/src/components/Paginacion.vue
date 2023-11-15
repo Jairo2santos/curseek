@@ -1,9 +1,9 @@
 <template>
-  <div class="flex flex-wrap justify-center my-4 space-x-2">
+  <div class="flex flex-wrap justify-center my-5 space-x-2">
     <button
       @click="prevPage"
       :disabled="currentPage <= 1"
-      class="mx-1 px-4 py-2 border rounded-lg bg-gray-200"
+      class="p-2 border rounded-lg bg-gray-200"
     >
       Anterior
     </button>
@@ -15,7 +15,7 @@
         @click="changePage(page)"
         :class="
           page === currentPage
-            ? 'text-white bg-blue-500'
+            ? 'text-white bg-purple-600'
             : 'text-black bg-gray-200'
         "
         class="px-4 py-2 border rounded-lg"
@@ -29,7 +29,7 @@
       @click="changePage(totalPages)"
       :class="
         currentPage === totalPages
-          ? 'text-white bg-blue-500'
+          ? 'text-white bg-purple-600'
           : 'text-black hover:bg-gray-500 bg-gray-400'
       "
       class="mx-1 px-4 py-2 border rounded-lg"
@@ -40,7 +40,7 @@
     <button
       @click="nextPage"
       :disabled="currentPage >= totalPages"
-      class="mx-1 px-4 py-2 border rounded-lg bg-gray-200"
+      class="p-2 border rounded-lg bg-gray-200"
     >
       Siguiente
     </button>
