@@ -22,11 +22,11 @@
         <div>
           <div v-for="course in courses" :key="course._id" class="mb-5">
             <!-- Tarjeta individual para cada curso -->
-            <router-link :to="'/curso/' + course._id" class="block max-w-full bg-white shadow-md mt-2 rounded-lg p-4 hover:shadow-lg transition-shadow">
+            <router-link :to="'/curso/' + course._id" class="block max-w-full bg-white mt-2 rounded-lg p-4 hover:shadow-lg transition">
               <div class="flex flex-col md:flex-row items-start md:items-center">
                 <img :src="course.imgUrl" alt="Imagen del curso" class="w-full md:w-1/4 rounded mb-4 md:mb-0 md:mr-4">
                 <div class="flex-grow">
-                  <h2 class="text-lg md:text-xl mb-2">{{ course.title }}</h2>
+                  <h2 class="text-lg md:text-xl mb-2 font-semibold hover:underline">{{ course.title }}</h2>
                   <div class="flex flex-col md:flex-row justify-between items-start md:items-center mt-4">
                     <router-link :to="'/modalidad/' + course.modalidad" class="text-blue-500 hover:underline mb-2 md:mb-0">{{ course.modalidad }}</router-link>
                     <span class="text-gray-500">{{ course.price }}</span>

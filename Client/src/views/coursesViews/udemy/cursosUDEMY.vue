@@ -31,12 +31,12 @@
             <!-- Tarjeta de Curso -->
             <router-link
       :to="{ name: 'DetalleCursoUdemy', params: { id: course._id } }"
-      class="block bg-white shadow-md rounded-lg p-4 hover:shadow-lg transition-shadow"
+      class="block bg-white rounded-lg p-4 hover:shadow-lg transition"
     >
       <div class="flex flex-col md:flex-row items-start md:items-center">
         <img :src="course.image_480x270" alt="Imagen del curso" class="w-full md:w-48 rounded mb-4 md:mb-0 md:mr-4">
         <div class="flex-grow">
-          <h2 class="text-lg md:text-xl mb-2">{{ course.title }}</h2>
+          <h2 class="text-lg md:text-xl mb-2 font-semibold hover:underline">{{ course.title }}</h2>
           <p class="text-gray-700 text-base mb-4">{{ course.headline }}</p>
           <div class="flex justify-between items-center mt-4">
             <div>

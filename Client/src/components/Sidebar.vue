@@ -1,14 +1,14 @@
 <template>
   <div>
     <div class="flex items-center mb-6">
-      <svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 -960 960 960" width="24">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960" width="24">
         <path d="M440-120v-240h80v80h320v80H520v80h-80Zm-320-80v-80h240v80H120Zm160-160v-80H120v-80h160v-80h80v240h-80Zm160-80v-80h400v80H440Zm160-160v-240h80v80h160v80H680v80h-80Zm-480-80v-80h400v80H120Z"/>
       </svg>
       <h2 class="font-semibold ml-2">Filtrar por</h2>
       <button
         v-if="selectedCategories.length > 0"
         @click="clearSelectedCategory"
-        class="ml-8 bg-gray-200 text-blue-700 font-semibold px-2 rounded-full"
+        class="ml-10 bg-gray-200 text-blue-700 font-semibold px-2 rounded-full"
       >
         Limpiar selección
       </button>
@@ -19,7 +19,7 @@
         <li
           v-for="category in categories"
           :key="category"
-          class="my-1 hover:bg-gray-100 rounded-lg p-2 pr-40"
+          class="my-1 hover:bg-gray-100 transition rounded-lg p-2"
         >
           <div class="flex items-center">
             <input
@@ -30,7 +30,7 @@
               v-model="selectedCategories"
               :value="category"
             />
-            <label :for="category" class="flex items-center cursor-pointer w-full">
+            <label :for="category" class="flex items-center cursor-pointer w-full pr-40">
               <span
                 class="w-5 h-5 inline-block mr-2 rounded-full border border-gray-400 flex-shrink-0"
                 :class="{'bg-blue-500': selectedCategories.includes(category)}"
