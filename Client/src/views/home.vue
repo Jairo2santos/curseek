@@ -1,7 +1,7 @@
 <template>
-  <div :class="{ 'bg-red-500': isInputClicked }" class="p-0 min-h-screen bg-indigo-500">
+  <div class="p-0 min-h-screen bg-indigo-500">
     <!-- Banner -->
-    <div class="text-white text-center p-12">
+    <div :class="{ 'blurred-background': isInputClicked }" class="text-white text-center p-12">
       <h1 class="text-2xl font-semibold">Encuentra tu curso</h1>
     </div>
 
@@ -11,7 +11,8 @@
         <button type="submit" class="p-2">
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960" width="24">
             <path
-            d="M784-120 532-372q-30 24-69 38t-83 14q-109 0-184.5-75.5T120-580q0-109 75.5-184.5T380-840q109 0 184.5 75.5T640-580q0 44-14 83t-38 69l252 252-56 56ZM380-400q75 0 127.5-52.5T560-580q0-75-52.5-127.5T380-760q-75 0-127.5 52.5T200-580q0 75 52.5 127.5T380-400Z" />
+              d="M784-120 532-372q-30 24-69 38t-83 14q-109 0-184.5-75.5T120-580q0-109 75.5-184.5T380-840q109 0 184.5 75.5T640-580q0 44-14 83t-38 69l252 252-56 56ZM380-400q75 0 127.5-52.5T560-580q0-75-52.5-127.5T380-760q-75 0-127.5 52.5T200-580q0 75 52.5 127.5T380-400Z"
+            />
           </svg>
         </button>
         <input
@@ -34,7 +35,7 @@
       <!-- Aquí deberías tener tu componente CardCurso -->
     </div>
 
-    <div class="flex flex-col md:flex-row container mx-auto md:px-40 p-0 bg-white mx-auto">
+    <div :class="{ 'blurred-background': isInputClicked }" class="flex flex-col md:flex-row container mx-auto md:px-40 p-0 bg-white mx-auto">
       <img src="../assets/banner-1.jpg" alt="Descripción de la imagen" width="700" />
       <p class="p-12">
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Laudantium earum fugit molestiae in tenetur ad hic et
@@ -43,6 +44,12 @@
     </div>
   </div>
 </template>
+
+<style scoped>
+.blurred-background {
+  filter: blur(5px);
+}
+</style>
 
 <script setup>
 import { ref } from 'vue';
@@ -59,14 +66,6 @@ const search = async () => {
   } catch (error) {
     console.error("Error al buscar cursos:", error);
   }
-};
-
-const blurBackground = () => {
-  document.querySelector('.p-4').style.filter = 'blur(5px)';
-};
-
-const unblurBackground = () => {
-  document.querySelector('.p-4').style.filter = 'none';
 };
 
 const clearSearch = () => {
