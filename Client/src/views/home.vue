@@ -17,7 +17,7 @@
         </button>
         <input
           v-model="query"
-          placeholder="Buscar..."
+          placeholder="Buscar más de 5,000 cursos"
           class="rounded-xl p-3 flex-grow outline-none"
           @focus="setInputClicked(true)"
           @blur="setInputClicked(false)"

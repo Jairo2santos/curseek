@@ -8,9 +8,9 @@
       <button
         v-if="selectedCategories.length > 0"
         @click="clearSelectedCategory"
-        class="ml-10 bg-gray-200 text-blue-700 font-semibold px-2 rounded-full"
+        class="ml-20 bg-gray-200 text-blue-700 font-semibold px-2 rounded-full"
       >
-        Limpiar selección
+        Limpiar todo
       </button>
     </div>
 
