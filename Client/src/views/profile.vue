@@ -1,13 +1,15 @@
 <template>
   <div class="profile-card-container flex justify-center items-center min-h-screen bg-gray-100">
     <div class="profile-card bg-white p-6 rounded-lg shadow-lg md:max-w-xl">
+      
+      <h1 class="text-center font-bold text-xl p-4">Mi Perfil</h1>     
       <img :src="userData.profilePicture || 'ruta/a/imagen/placeholder.png'" alt="Foto de perfil"
-        class="w-32 h-32 rounded-full mx-auto mb-4" />
-
+      class="w-32 h-32 rounded-full mx-auto mb-4" />
+      
       <div class="text-center mx-auto">
-        <h1 class="text-xl font-bold mb-3">@{{ editing ? 'Editando perfil de ' + userData.username : userData.username }}</h1>
-        <p v-if="!editing" class="text-gray-600 mb-2">{{ userData.email }}</p>
-        <p v-if="!editing" class="text-gray-500 mb-2">{{ userData.address }}</p>
+        <h2 class="text-lg font-bold mb-3">@{{ editing ? 'Editando perfil de ' + userData.username : userData.username }}</h2>
+        <p v-if="!editing" class="text-gray-700 mb-2">{{ userData.email }}</p>
+        <p v-if="!editing" class="text-gray-700 mb-2">{{ userData.address }}</p>
 
         <div class="password-section m-auto mb-4 text-center items-center">
           <input :value="displayedPassword" readonly class="border bg-gray-100 px-3 py-2 rounded" />
@@ -47,16 +49,16 @@
         </div>
 
         <!-- Botones -->
-        <div v-if="!editing" class="mt-4">
-          <button @click="editing = true" class="btn-primary">Editar perfil</button>
+        <div v-if="!editing" class="pt-4">
+          <button @click="editing = true" class="btn text-blue-600 font-semibold text-lg">Editar perfil</button>
         </div>
         <div v-if="!editing" class="mt-3">
-          <button @click="logout" class="btn-danger">Logout</button>
+          <button @click="logout" class="btn text-red-600 font-semibold text-lg">Logout</button>
         </div>
 
-        <div v-if="editing" class="mt-4 space-x-2">
-          <button @click="saveProfile" class="btn-success">Guardar</button>
-          <button @click="editing = false" class="btn-danger">Cancelar</button>
+        <div v-if="editing" class="mt-4 space-x-5">
+          <button @click="saveProfile" class="btn text-green-600 font-semibold text-lg">Guardar cambios</button>
+          <button @click="editing = false" class="btn text-red-600 font-semibold text-lg">Cancelar</button>
         </div>
       </div>
     </div>

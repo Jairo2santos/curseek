@@ -1,8 +1,8 @@
 <template>
-  <div class="p-0 min-h-screen bg-indigo-500">
+  <div class="p-0 min-h-screen bg-indigo-700">
     <!-- Banner -->
     <div :class="{ 'blurred-background': isInputClicked }" class="text-white text-center p-12">
-      <h1 class="text-2xl font-semibold">Encuentra tu curso</h1>
+      <h1 class="font-semibold text-xl">Encuentra tu curso</h1>
     </div>
 
     <!-- Campo de búsqueda -->

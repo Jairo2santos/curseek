@@ -72,7 +72,6 @@
             <!-- Fin de la tarjeta individual -->
           </div>
 
-
           <Paginacion
             :currentPage="currentPage"
             :totalPages="totalPages"
