@@ -1,5 +1,5 @@
 <template>
-  <div class="p-0 min-h-screen bg-indigo-700">
+  <div class="p-0 min-h-screen bg-gray-400">
     <!-- Banner -->
     <div :class="{ 'blurred-background': isInputClicked }" class="text-white text-center p-12">
       <h1 class="font-semibold text-xl">Encuentra tu curso</h1>
@@ -17,7 +17,7 @@
         </button>
         <input
           v-model="query"
-          placeholder="Buscar más de 5,000 cursos"
+          placeholder="Buscar más de 10,000 cursos"
           class="rounded-xl p-3 flex-grow outline-none"
           @focus="setInputClicked(true)"
           @blur="setInputClicked(false)"

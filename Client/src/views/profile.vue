@@ -2,14 +2,14 @@
   <div class="profile-card-container flex justify-center items-center min-h-screen bg-gray-100">
     <div class="profile-card bg-white p-6 rounded-lg shadow-lg md:max-w-xl">
       
-      <h1 class="text-center font-bold text-xl p-4">Mi Perfil</h1>     
+      <h1 class="text-center font-bold text-xl p-8">Mi Perfil</h1>     
       <img :src="userData.profilePicture || 'ruta/a/imagen/placeholder.png'" alt="Foto de perfil"
       class="w-32 h-32 rounded-full mx-auto mb-4" />
       
       <div class="text-center mx-auto">
         <h2 class="text-lg font-bold mb-3">@{{ editing ? 'Editando perfil de ' + userData.username : userData.username }}</h2>
-        <p v-if="!editing" class="text-gray-700 mb-2">{{ userData.email }}</p>
-        <p v-if="!editing" class="text-gray-700 mb-2">{{ userData.address }}</p>
+        <p v-if="!editing" class="text-gray-700 mb-2">mail {{ userData.email }}</p>
+        <p v-if="!editing" class="text-gray-700 mb-2">home {{ userData.address }}</p>
 
         <div class="password-section m-auto mb-4 text-center items-center">
           <input :value="displayedPassword" readonly class="border bg-gray-100 px-3 py-2 rounded" />

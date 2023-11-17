@@ -6,21 +6,21 @@
             <a href="/">
               <img src="../assets/logo-curseek.png" alt="logo gorro curseek" width="120">
             </a>
-            <p class="text-xl font-semibold text-purple-900 mt-2">&copy; 2023 CurSeek</p>
+            <p class="text-xl font-semibold text-indigo-900 mt-2">&copy; 2023 CurSeek</p>
           </div>
           <div class="md:flex md:items-center md:space-x-4">
             <ul>
                 <li>
-                    <a href="/about" class="text-gray-600 hover:text-purple-900 transition">Acerca de nosotros</a>
+                    <a href="/about" class="text-gray-600 hover:text-indigo-900 transition">Acerca de nosotros</a>
                 </li>
                 <li>
-                    <a href="/contact" class="text-gray-600 hover:text-purple-900 transition">Contáctanos</a>
+                    <a href="/contact" class="text-gray-600 hover:text-indigo-900 transition">Contáctanos</a>
                 </li>
                 <li>
-                    <a href="/terms" class="text-gray-600 hover:text-purple-900 transition">Términos y condiciones</a>
+                    <a href="/terms" class="text-gray-600 hover:text-indigo-900 transition">Términos y condiciones</a>
                 </li>
                 <li>
-                    <a href="/privacy" class="text-gray-600 hover:text-purple-900 transition">Política de privacidad</a>
+                    <a href="/privacy" class="text-gray-600 hover:text-indigo-900 transition">Política de privacidad</a>
                 </li>
             </ul>
           </div>

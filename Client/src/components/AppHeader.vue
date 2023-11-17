@@ -1,6 +1,6 @@
 <template>
   <div class="bg-white shadow-md">
-    <div class="container mx-auto px-4 py-2" style="border-bottom: 1px solid lightgray;">
+    <div class="mx-auto px-4 py-2" style="border-bottom: 1px solid lightgray;">
       <div class="flex items-center justify-between">
         <div class="flex items-center text-xl font-semibold" style="color: #5154a4;">
           <button @click="toggleMenu1" class="lg:hidden mr-12">
@@ -18,20 +18,20 @@
           </button>
         </div>
 
-        <nav class="hidden lg:flex space-x-4 text-lg font-semibold">
-          <details class="ml-12">
-            <summary class="cursor-pointer text-purple-900">Cursos</summary>
-            <ul class="mt-3 absolute bg-white p-2">
+        <nav class="hidden lg:flex space-x-4 text-md">
+          <details class="p-0">
+            <summary class="cursor-pointer text-indigo-900 font-semibold">Cursos</summary>
+            <ul class="mt-3 absolute text-sm bg-white p-0">
               <li class="m-1 flex items-center">
-                <a href="/cursos/utn" class="hover:bg-white" style="color: #4a4a4a; display: inline-flex; align-items: center; justify-content: space-between; width: 100%;">
-                  <span style="margin-right: 5rem;" class="text-lg p-1">UTN.BA</span>
-                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24"><path d="M504-480 320-664l56-56 240 240-240 240-56-56 184-184Z" fill="#ababab"/></svg>
+                <a href="/cursos/utn" class="text-black bg-white hover:bg-gray-200 transition px-4 inline-flex items-center w-full">
+                  <span class="p-1">UTN.BA</span>
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24"><path d="M9.41 7.41L14.83 12l-5.42 5.41L10 18l6-6-6-6-1.59 1.41Z"/></svg>
                 </a>
               </li>
               <li class="m-1 flex items-center">
-                <a href="/cursos/udemy" class="hover:bg-white" style="color: #4a4a4a; display: inline-flex; align-items: center; justify-content: space-between; width: 100%;">
-                  <span style="margin-right: 5rem;" class="text-lg p-1">Udemy</span>
-                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24"><path d="M504-480 320-664l56-56 240 240-240 240-56-56 184-184Z" fill="#ababab"/></svg>
+                <a href="/cursos/udemy" class="text-black bg-white hover:bg-gray-200 transition px-4 inline-flex items-center w-full">
+                  <span class="p-1">Udemy</span>
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24"><path d="M9.41 7.41L14.83 12l-5.42 5.41L10 18l6-6-6-6-1.59 1.41Z"/></svg>
                 </a>
               </li>
             </ul>

@@ -1,10 +1,10 @@
 <template>
   <div class="flex justify-center items-center h-screen bg-gray-100">
     <form
-      class="bg-white p-6 rounded-lg shadow-lg max-w-screen-md w-full"
+      class="bg-white p-6 rounded-lg shadow-lg max-w-screen-sm w-full"
       @submit.prevent="registerUser"
     >
-      <h2 class="text-xl font-bold mb-4 text-center">Crea tu cuenta</h2>
+      <h1 class="text-xl font-bold mb-4 text-center">Crea tu cuenta</h1>
 
       <div class="mb-4">
         <label for="username" class="block text-sm font-medium text-gray-600"
