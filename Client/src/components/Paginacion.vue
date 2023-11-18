@@ -15,7 +15,7 @@
         @click="changePage(page)"
         :class="
           page === currentPage
-            ? 'text-white bg-purple-600'
+            ? 'text-white bg-indigo-600'
             : 'text-black bg-gray-200'
         "
         class="px-4 py-2 border rounded-lg"
@@ -29,7 +29,7 @@
       @click="changePage(totalPages)"
       :class="
         currentPage === totalPages
-          ? 'text-white bg-purple-600'
+          ? 'text-white bg-indigo-600'
           : 'text-black hover:bg-gray-500 bg-gray-400'
       "
       class="mx-1 px-4 py-2 border rounded-lg"

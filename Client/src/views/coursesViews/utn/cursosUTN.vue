@@ -18,8 +18,8 @@
         <div class="mb-4">
           <Filtros @filter-changed="handleFilterChange" />
         </div>
-        <div>
-          
+        
+        <div>          
           <!-- <div class="p-0">
             <span class="text-sm font-bold text-indigo-900">Mostrando {{ totalCourses }} cursos</span>
           </div> -->
@@ -75,11 +75,12 @@
             <!-- Fin de la tarjeta individual -->
           </div>
 
-          <Paginacion
-            :currentPage="currentPage"
-            :totalPages="totalPages"
-            @changePage="handlePageChange"
-          />
+          <!-- Paginación -->
+            <Paginacion
+              :currentPage="currentPage"
+              :totalPages="totalPages"
+              @changePage="handlePageChange"
+            />
         </div>
       </div>
     </div>
@@ -168,11 +169,4 @@ onMounted(() => {
   loadCourses(currentPage.value, filterType.value, selectedCategories.value);
   loadCategories();
 });
-
-// const props = defineProps({
-//   totalCourses: {
-//     type: Number,
-//     default: 0
-//   }
-// });
 </script>

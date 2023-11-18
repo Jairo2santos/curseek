@@ -82,15 +82,15 @@
 
           </div>
         </div>
+        <!-- Paginación -->
+        <Paginacion
+          :currentPage="currentPage"
+          :totalPages="totalPages"
+          @changePage="handlePageChange"
+        />
       </div>
     </div>
 
-    <!-- Paginación -->
-    <Paginacion
-      :currentPage="currentPage"
-      :totalPages="totalPages"
-      @changePage="handlePageChange"
-    />
   </div>
 </template>
 
