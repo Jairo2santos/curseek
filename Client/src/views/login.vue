@@ -18,12 +18,12 @@
       <p class="text-sm text-red-500"><b>usuario:</b> user | <b>passwd:</b> 12345</p>
 
       <button type="submit"
-        class="w-full bg-blue-500 text-white rounded-md py-2 hover:bg-blue-600 transition duration-300">
+        class="w-full bg-indigo-600 text-white rounded-md py-2 hover:bg-indigo-800 transition duration-300">
         Ingresar
       </button>
 
       <p class="mt-4 text-center text-sm">
-        ¿Eres Nuevo? <router-link class="text-blue-500" to="/signUp">Regístrate</router-link>
+        ¿Eres Nuevo? <router-link class="text-indigo-500" to="/signUp">Regístrate</router-link>
       </p>
     </form>
   </div>

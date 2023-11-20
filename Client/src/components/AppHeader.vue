@@ -1,8 +1,8 @@
 <template>
   <div class="bg-white shadow-md">
-    <div class="mx-auto px-4 py-2" style="border-bottom: 1px solid lightgray;">
+    <div class="mx-auto px-4 py-2 border-b border-gray-300">
       <div class="flex items-center justify-between">
-        <div class="flex items-center text-xl font-semibold" style="color: #5154a4;">
+        <div class="flex items-center text-xl font-semibold">
           <button @click="toggleMenu1" class="lg:hidden mr-12">
             <svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 -960 960 960" width="24">
               <path d="M120-240v-80h720v80H120Zm0-200v-80h720v80H120Zm0-200v-80h720v80H120Z"/>
@@ -20,7 +20,7 @@
 
         <nav class="hidden lg:flex space-x-4 text-md">
           <details class="p-0">
-            <summary class="cursor-pointer text-indigo-900 font-semibold">Cursos</summary>
+            <summary class="cursor-pointer text-indigo-600 font-semibold">Cursos</summary>
             <ul class="mt-3 absolute text-sm bg-white p-0">
               <li class="m-1 flex items-center">
                 <a href="/cursos/utn" class="text-black bg-white hover:bg-gray-200 transition px-4 inline-flex items-center w-full">

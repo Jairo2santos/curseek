@@ -96,7 +96,7 @@
 
       <button
         type="submit"
-        class="w-full bg-blue-500 text-white p-2 rounded hover:bg-blue-600"
+        class="w-full bg-indigo-600 text-white p-2 rounded hover:bg-indigo-800"
       >
         Registrarse
       </button>
