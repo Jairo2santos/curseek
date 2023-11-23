@@ -24,9 +24,9 @@
     <div class="w-full md:w-1/1">
       <div v-for="course in courses" :key="course.id" class="mb-5">
         <!-- Tarjeta individual para cada curso -->
-            <router-link :to="{ name: 'DetalleCursoUdemy', params: { id: course._id } }"
-            class="block max-w-full bg-white mt-2 rounded-lg p-4 hover:shadow-lg transition">
+        <div @click="navigateToCourse(course._id)" class="block max-w-full bg-white mt-2 rounded-lg p-4 hover:shadow-lg transition">
 
+            
               <div class="flex flex-col md:flex-row items-start md:items-start">
                 <!-- Imagen del curso -->
                 <img
@@ -41,10 +41,12 @@
                   <h2 class="md:text-lg font-semibold mb-2 hover:underline mr-6">
                     {{ course.title }}
                   </h2>
+                  
                   <!-- Descripción del curso -->
                   <p class="text-sm text-gray-600 mr-20">
                     {{ course.headline }}
                   </p>
+
                 </div>
 
                 <!-- Sección derecha con categoría, precio y cursada -->
@@ -88,7 +90,10 @@
                   </ul>
                 </div>
               </div>
-            </router-link>
+              <Favoritos :courseId="course._id" :courseType="'UDEMY'" :isFavorited="course.isFavorited" class="mt-8"/>
+
+            </div>
+
 
           </div>
         </div>
@@ -113,6 +118,8 @@ import Portada from "../../../components/Portada.vue";
 import logoUdemy from "../../../assets/logo-udemy.jpg";
 import Sidebar from "../../../components/Sidebar.vue";
 import Filtros from "../../../components/Filtros.vue";
+import Favoritos from '../../../components/Favoritos.vue';
+
 
 axios.defaults.baseURL = "http://localhost:3333";
 
@@ -157,7 +164,10 @@ const loadCategories = async () => {
   }
 };
 
-
+const navigateToCourse = (courseId) => {
+  // Esta función navega a la página de detalles del curso cuando se hace clic en el contenido de la tarjeta
+  router.push({ name: 'DetalleCursoUdemy', params: { id: courseId } });
+};
 
 const handlePageChange = (newPage) => {
   currentPage.value = newPage;

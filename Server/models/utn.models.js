@@ -14,9 +14,9 @@ const CourseSchema = new mongoose.Schema({
 
 });
 
-const Course = mongoose.model('course', CourseSchema, 'cursos_UTN');
+const utnCourse = mongoose.model('course', CourseSchema, 'cursos_UTN');
 
-module.exports = Course;
+module.exports = utnCourse;
 
 
 

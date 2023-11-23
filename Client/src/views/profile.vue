@@ -1,125 +1,242 @@
 <template>
-  <div class="profile-card-container flex justify-center items-center min-h-screen bg-gray-100">
-    <div class="profile-card bg-white p-6 rounded-lg shadow-lg md:max-w-xl">
-      
-      <h1 class="text-center font-bold text-xl p-8">Mi Perfil</h1>     
+  <div class="min-h-screen bg-gray-100 flex flex-wrap justify-center items-start md:items-center p-4 gap-4">
+   <!-- notificacion -->
+    <transition name="slide-down">
+    <div v-if="showNotification" class="fixed top-0 inset-x-0 z-50">
+      <div :class="{
+        'bg-green-500': notificationType === 'success',
+        'bg-red-500': notificationType === 'error'
+      }" class="text-white text-center py-3">
+        {{ notificationMessage }}
+      </div>
+    </div>
+  </transition>
+   
+    <!-- Profile Card -->
+    <div class="profile-card bg-white p-6 rounded-lg shadow-lg w-full md:w-1/2">
+      <h1 class="text-center font-bold text-xl">Mi Perfil</h1>
       <img :src="userData.profilePicture || 'ruta/a/imagen/placeholder.png'" alt="Foto de perfil"
-      class="w-32 h-32 rounded-full mx-auto mb-4" />
-      
-      <div class="text-center mx-auto">
-        <h2 class="text-lg font-bold mb-3">@{{ editing ? 'Editando perfil de ' + userData.username : userData.username }}</h2>
-        <p v-if="!editing" class="text-gray-700 mb-2">mail {{ userData.email }}</p>
-        <p v-if="!editing" class="text-gray-700 mb-2">home {{ userData.address }}</p>
+        class="w-32 h-32 rounded-full mx-auto mb-4" />
 
-        <div class="password-section m-auto mb-4 text-center items-center">
-          <input :value="displayedPassword" readonly class="border bg-gray-100 px-3 py-2 rounded" />
-          <button @click="togglePasswordVisibility" class="ml-2 text-blue-500">
-            <i v-if="isPasswordShown" class="material-icons">
-              <svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 -960 960 960" width="24">
-                  <path d="M480-320q75 0 127.5-52.5T660-500q0-75-52.5-127.5T480-680q-75 0-127.5 52.5T300-500q0 75 52.5 127.5T480-320Zm0-72q-45 0-76.5-31.5T372-500q0-45 31.5-76.5T480-608q45 0 76.5 31.5T588-500q0 45-31.5 76.5T480-392Zm0 192q-146 0-266-81.5T40-500q54-137 174-218.5T480-800q146 0 266 81.5T920-500q-54 137-174 218.5T480-200Zm0-300Zm0 220q113 0 207.5-59.5T832-500q-50-101-144.5-160.5T480-720q-113 0-207.5 59.5T128-500q50 101 144.5 160.5T480-280Z" />
-              </svg>
-            </i>
-
-            <i v-else class="material-icons">
-              <svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 -960 960 960" width="24">
-                  <path d="m644-428-58-58q9-47-27-88t-93-32l-58-58q17-8 34.5-12t37.5-4q75 0 127.5 52.5T660-500q0 20-4 37.5T644-428Zm128 126-58-56q38-29 67.5-63.5T832-500q-50-101-143.5-160.5T480-720q-29 0-57 4t-55 12l-62-62q41-17 84-25.5t90-8.5q151 0 269 83.5T920-500q-23 59-60.5 109.5T772-302Zm20 246L624-222q-35 11-70.5 16.5T480-200q-151 0-269-83.5T40-500q21-53 53-98.5t73-81.5L56-792l56-56 736 736-56 56ZM222-624q-29 26-53 57t-41 67q50 101 143.5 160.5T480-280q20 0 39-2.5t39-5.5l-36-38q-11 3-21 4.5t-21 1.5q-75 0-127.5-52.5T300-500q0-11 1.5-21t4.5-21l-84-82Zm319 93Zm-151 75Z" />
-              </svg>
-            </i>
-          </button>
+      <!-- Editable fields -->
+      <div v-if="editing" class="space-y-4">
+        <div class="flex flex-col">
+          <label for="username" class="text-sm font-medium text-gray-700">Nombre de Usuario</label>
+          <input id="username" type="text" v-model="editableUserData.username" class="form-input mt-1 block w-full bg-gray-200" placeholder="Nombre de usuario">
         </div>
 
-        <!-- Campos editables -->
-        <div v-if="editing" class="space-y-4">
-          <label class="mb-2">Nombre de Usuario</label>
-          <input v-model="userData.username" class="block w-full border p-2 rounded mb-2" />
+        <div class="flex flex-col">
+          <label for="address" class="text-sm font-medium text-gray-700">Dirección</label>
+          <input id="address" type="text" v-model="editableUserData.address" class="form-input mt-1 block w-full bg-gray-200" placeholder="Dirección">
+        </div>
 
-          <label class="mb-2">Correo Electrónico</label>
-          <input v-model="userData.email" class="block w-full border p-2 rounded mb-2" />
-
-          <label class="mb-2">Dirección</label>
-          <input v-model="userData.address" class="block w-full border p-2 rounded mb-2" />
-
-          <label class="mb-2">Contraseña</label>
+        <div class="flex flex-col">
+          <label for="newPassword" class="text-sm font-medium text-gray-700">Nueva Contraseña</label>
           <div class="relative">
-            <input :type="isPasswordShown ? 'text' : 'password'" v-model="userData.password" placeholder="Contraseña"
-              class="block w-full border p-2 rounded pr-10 mb-2" />
-            <button @click="togglePasswordVisibility" class="ml-2 text-blue-500">
+            <input :type="isPasswordShown ? 'text' : 'password'" id="newPassword" v-model="newPassword" class="form-input mt-1 block w-full" placeholder="Nueva Contraseña">
+            <button type="button" @click="togglePasswordVisibility" class="absolute inset-y-0 right-0 pr-3 flex items-center text-sm leading-5">
+              <span>{{ isPasswordShown ? 'Ocultar' : 'Mostrar' }}</span>
             </button>
           </div>
         </div>
 
-        <!-- Botones -->
-        <div v-if="!editing" class="pt-4">
-          <button @click="editing = true" class="btn text-blue-600 font-semibold text-lg">Editar perfil</button>
+        <div class="flex flex-col space-y-4">
+          <div class="flex gap-2 justify-end">
+            <button @click="saveProfile" class="px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600">Guardar cambios</button>
+            <button @click="cancelEdit" class="px-4 py-2 bg-gray-500 text-white rounded hover:bg-gray-600">Cancelar</button>
+          </div>
         </div>
-        <div v-if="!editing" class="mt-3">
-          <button @click="logout" class="btn text-red-600 font-semibold text-lg">Logout</button>
-        </div>
+      </div>
 
-        <div v-if="editing" class="mt-4 space-x-5">
-          <button @click="saveProfile" class="btn text-green-600 font-semibold text-lg">Guardar cambios</button>
-          <button @click="editing = false" class="btn text-red-600 font-semibold text-lg">Cancelar</button>
+      <!-- Display fields -->
+      <div v-else>
+  <div class="text-center mx-auto">
+    <h2 class="text-2xl font-semibold mb-4">{{ userData.username }}</h2>
+    <div class="mb-4">
+      <p class="text-gray-600 text-sm">
+        
+        📧  E-mail: {{ userData.email }}
+      </p>
+    </div>
+    <div class="mb-4">
+      <p class="text-gray-600 text-sm">
+       
+        🏡 Dirección: {{ userData.address }}
+      </p>
+    </div>
+  </div>
+
+
+
+        <div class="flex flex-col items-center">
+          <button @click="startEdit" class="btn text-blue-600 font-semibold text-lg">Editar perfil</button>
+          <button @click="logout" class="btn text-red-600 font-semibold text-lg mt-2">Logout</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="profile-card bg-white p-6 rounded-lg shadow-lg w-full md:w-1/2 mx-auto">
+  <h2 class="text-2xl font-bold mb-4">Mis Cursos Favoritos</h2>
+  <div class="flex flex-col gap-4">
+    <!-- Loop through favorite courses -->
+    <div v-for="course in favoriteCourses" :key="course._id" class="bg-white rounded-lg shadow overflow-hidden">
+      <div class="flex flex-col md:flex-row">
+        <!-- Imagen del curso a la izquierda -->
+        <img :src="course.image_480x270" alt="Imagen del curso" class="md:w-48 w-full h-48 object-cover rounded-t-lg md:rounded-t-none md:rounded-l-lg">
+
+        <!-- Contenido del curso a la derecha -->
+        <div class="p-4 flex-grow">
+          <h3 class="font-semibold text-lg mb-2">{{ course.title }}</h3>
+          <p class="text-gray-600 text-sm mb-4">{{ course.headline }}</p>
+          <div class="flex items-center mb-4">
+            <img :src="course.instructors[0].image_100x100" alt="Instructor" class="w-10 h-10 rounded-full mr-2">
+            <span class="text-sm font-semibold">{{ course.instructors[0].name }}</span>
+          </div>
+          <router-link :to="{ name: 'DetalleCursoUdemy', params: { id: course._id } }"
+  class="inline-block bg-indigo-500 hover:bg-indigo-600 text-white text-sm font-bold py-2 px-4 rounded transition duration-300 ease-in-out">
+  Ver Detalle
+</router-link>
+
+<button @click="removeFromFavorites(course._id)" 
+  class="inline-block bg-red-500 hover:bg-red-700 text-white text-sm font-bold py-2 px-4 rounded ml-2">
+  Eliminar de Favoritos
+</button>
         </div>
       </div>
     </div>
   </div>
+</div>
+</div>
 </template>
 
 <script setup>
-import { ref, computed, onMounted } from 'vue';
+import { ref, reactive, onMounted } from 'vue';
 import axios from 'axios';
 import { useRouter } from 'vue-router';
 
 const router = useRouter();
-
-const username = ref(localStorage.getItem("loggedInUsername"));
+const userId = ref(localStorage.getItem("loggedInUserId"));
 const userData = ref({});
+const editableUserData = reactive({}); // Datos editables del usuario
+const newPassword = ref(''); // Nueva contraseña
 const isPasswordShown = ref(false);
 const editing = ref(false);
+const favoriteCourses = ref([]);
+const showNotification = ref(false);
+const notificationMessage = ref('');
+const notificationType = ref('');
 
-const displayedPassword = computed(() => {
-  return isPasswordShown.value ? userData.value.password : "*****";
-});
-
+// Función para alternar la visibilidad de la contraseña
 const togglePasswordVisibility = () => {
   isPasswordShown.value = !isPasswordShown.value;
 };
 
+// Función para cerrar sesión
 const logout = () => {
-  localStorage.removeItem('loggedInUsername');
-  username.value = null;
+  localStorage.clear();
   router.push('/login');
 };
 
+// Función para obtener el perfil del usuario
 const fetchUserProfile = async () => {
-  if (!username.value) {
-    console.error("Usuario no identificado.");
+  if (!userId.value) {
+    console.error("ID de usuario no identificado.");
+   
     return;
   }
 
   try {
-    const response = await axios.get(`http://localhost:3333/users/profile/${username.value}`);
+    const response = await axios.get(`http://localhost:3333/users/profile/id/${userId.value}`);
     userData.value = response.data;
+    Object.assign(editableUserData, response.data); // Copiar datos del usuario a editableUserData
   } catch (error) {
     console.error("Error al obtener el perfil del usuario:", error);
   }
 };
 
-const saveProfile = async () => {
+const removeFromFavorites = async (courseId) => {
   try {
-    await axios.put(`http://localhost:3333/users/profile/${userData.value._id}`, userData.value);
-    console.log('Perfil actualizado exitosamente');
-    editing.value = false;
+    await axios.post('http://localhost:3333/users/favorites/remove', { userId: userId.value, courseId });
+    // Actualizar la lista de favoritos en la vista
+    favoriteCourses.value = favoriteCourses.value.filter(course => course._id !== courseId);
   } catch (error) {
-    console.error('Error al actualizar perfil:', error);
+    console.error('Error al eliminar curso de favoritos:', error);
+    // Puedes mostrar un mensaje de error al usuario aquí
   }
 };
 
-onMounted(fetchUserProfile);
+// Función para cargar cursos favoritos
+const loadFavoriteCourses = async () => {
+  if (!userId.value) {
+    return;
+  }
 
+  try {
+    const response = await axios.get(`http://localhost:3333/users/favorites/${userId.value}`);
+    favoriteCourses.value = response.data;
+  } catch (error) {
+    console.error("Error al cargar cursos favoritos:", error);
+  }
+};
+const startEdit = () => {
+  editing.value = true;
+};
+
+const cancelEdit = () => {
+  editing.value = false;
+  // Reset password field and editable user data
+  newPassword.value = '';
+  Object.assign(editableUserData, userData.value);
+};
+
+// Función para guardar los cambios del perfil
+const saveProfile = async () => {
+  const updatedData = {
+    ...editableUserData,
+    password: newPassword.value ? newPassword.value : undefined
+  };
+
+  try {
+    const response = await axios.put(`http://localhost:3333/users/profile/${userId.value}`, updatedData);
+    console.log('Perfil actualizado exitosamente');
+
+    // Aquí actualizamos las propiedades reactivas para mostrar la notificación de éxito
+    notificationMessage.value = 'Perfil actualizado con éxito.';
+    notificationType.value = 'success';
+    showNotification.value = true;
+
+    // Ocultar la notificación después de 3 segundos
+    setTimeout(() => {
+      showNotification.value = false;
+    }, 3000);
+
+    editing.value = false;
+    newPassword.value = ''; // Limpiar la nueva contraseña
+  } catch (error) {
+    console.error('Error al actualizar perfil:', error);
+
+    // Si deseas, también puedes mostrar una notificación de error
+    notificationMessage.value = 'Error al actualizar el perfil. Por favor, intente de nuevo.';
+    notificationType.value = 'error';
+    showNotification.value = true;
+
+    // Ocultar la notificación después de 3 segundos
+    setTimeout(() => {
+      showNotification.value = false;
+    }, 3000);
+  }
+};
+
+
+onMounted(() => {
+  fetchUserProfile();
+  loadFavoriteCourses();
+});
 </script>
 
+
 <style scoped>
+
   .profile-card {
     min-width: 300px;
     width: 80%;
@@ -133,7 +250,13 @@ onMounted(fetchUserProfile);
     cursor: pointer;
     transition: background-color 0.3s;
   }
-
+  .slide-down-enter-active, .slide-down-leave-active {
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+.slide-down-enter-from, .slide-down-leave-to {
+  transform: translateY(-100%);
+  opacity: 0;
+}
   .btn-primary:hover {
     background-color: #2779bd;
   }

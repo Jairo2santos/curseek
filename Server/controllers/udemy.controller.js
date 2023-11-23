@@ -28,7 +28,7 @@ exports.getUdemyCourses = async (req, res) => {
 
 exports.getSingleUdemyCourse = async (req, res) => {
     const { id } = req.params;
-    console.log("ID recibido:", id);
+
 
     if (!mongoose.Types.ObjectId.isValid(id)) {
         return res.status(400).send("ID inválido");

@@ -1,46 +1,45 @@
-const User = require('../models/user.models');
+const userService = require('../services/user.services');
+
 
 exports.getAllUsers = async (req, res) => {
-    try {
-        const users = await User.find();
-        res.status(200).json(users);
-    } catch (error) {
-        console.error("Error al obtener los usuarios:", error);
-        res.status(500).send("Error interno del servidor");
-    }
+  try {
+    const users = await userService.getAllUsers();
+    res.status(200).json(users);
+  } catch (error) {
+    console.error("Error al obtener los usuarios:", error.message);
+    res.status(500).send("Error interno del servidor");
+  }
 };
-
-
 exports.login = async (req, res) => {
   const { username, password } = req.body;
   try {
-    const user = await User.findOne({ username, password });
-    if (user) {
-      res.status(200).json(user);
-    } else {
-      res.status(400).send('Usuario o contraseña incorrectos');
-    }
+    const user = await userService.login(username, password);
+    res.status(200).json(user);
   } catch (error) {
-    console.error('Error al iniciar sesión:', error);
-    res.status(500).send('Error interno del servidor');
+    res.status(error.status || 500).send(error.message);
   }
 };
 
-exports.getUserProfile = async (req, res) => {
-    const { username } = req.params;
-    
-    try {
-        const user = await User.findOne({ username: username });
-        
-        if (user) {
-            res.status(200).json(user);
-        } else {
-            res.status(404).send("Usuario no encontrado");
-        }
-    } catch (error) {
-        console.error("Error al obtener el perfil del usuario:", error);
-        res.status(500).send("Error interno del servidor");
-    }
+// user.controller.js
+
+exports.getUserProfileByUsername = async (req, res) => {
+  const { username } = req.params;
+  try {
+    const user = await userService.getUserByUsername(username);
+    res.status(200).json(user);
+  } catch (error) {
+    res.status(error.status || 500).send(error.message);
+  }
+};
+
+exports.getUserProfileById = async (req, res) => {
+  const { userId } = req.params;
+  try {
+    const user = await userService.getUserById(userId);
+    res.status(200).json(user);
+  } catch (error) {
+    res.status(error.status || 500).send(error.message);
+  }
 };
 
 
@@ -48,33 +47,89 @@ exports.updateUserProfile = async (req, res) => {
   const { id } = req.params;
   const updatedData = req.body;
   try {
-    await User.findByIdAndUpdate(id, updatedData);
+    await userService.updateUserProfile(id, updatedData);
     res.status(200).send('Perfil actualizado con éxito');
   } catch (error) {
-    console.error('Error al actualizar el perfil del usuario:', error);
-    res.status(500).send('Error interno del servidor');
+    res.status(error.status || 500).send(error.message);
   }
 };
-exports.register = async (req, res) => {
-  const { username, email, password, address, profilePicture } = req.body;
-  try {
-    // Verificar si el usuario ya existe
-    const existingUser = await User.findOne({ username });
-    if (existingUser) {
-      return res.status(400).send('El nombre de usuario ya está en uso');
-    }
-    const newUser = new User({
-      username,
-      email,
-      password, 
-      address,           
-      profilePicture 
 
-    });
-    await newUser.save();
+exports.register = async (req, res) => {
+  try {
+    const newUser = req.body;
+    await userService.register(newUser);
     res.status(201).send('Usuario creado exitosamente');
   } catch (error) {
-    console.error('Error al registrar el usuario:', error);
-    res.status(500).send('Error interno del servidor');
+    res.status(500).send(error.message);
+  }
+};
+exports.addFavoriteCourse = async (req, res) => {
+  const { userId, courseId, courseType } = req.body;
+  try {
+    await userService.addFavoriteToUser(userId, courseId, courseType);
+    res.status(200).send('Curso agregado a favoritos');
+  } catch (error) {
+    res.status(error.status || 500).send(error.message);
+  }
+};
+
+exports.getUserProfile = async (req, res) => {
+  const { username } = req.params;
+  try {
+    const user = await userService.getUserProfile(username);
+    res.status(200).json(user);
+  } catch (error) {
+    res.status(error.status || 500).send(error.message);
+  }
+};
+
+
+exports.removeFavoriteCourse = async (req, res) => {
+  const { userId, courseId } = req.body;
+  try {
+    await userService.removeFavoriteFromUser(userId, courseId);
+    res.status(200).send('Curso eliminado de favoritos');
+  } catch (error) {
+    res.status(error.status || 500).send(error.message);
+  }
+};
+exports.checkFavoriteCourse = async (req, res) => {
+  const { userId, courseId } = req.params;
+  try {
+    const isFavorited = await userService.checkIfCourseIsFavorited(userId, courseId);
+    res.status(200).json({ isFavorited });
+  } catch (error) {
+    res.status(500).send(error.message);
+  }
+};
+
+exports.getFavoriteCourses = async (req, res) => {
+  const userId = req.params.userId;  
+  try {
+    const favoriteCourses = await userService.getFavoriteCoursesForUser(userId);
+    res.json(favoriteCourses);
+  } catch (error) {
+    res.status(error.status || 500).send(error.message);
+  }
+};
+
+exports.getUserById = async (req, res) => {
+  const userId = req.params.userId; // Obtiene el ID de los parámetros de la URL
+  try {
+    const user = await userService.getUserById(userId);
+    res.status(200).json(user);
+  } catch (error) {
+    res.status(error.status || 500).send(error.message);
+  }
+};
+
+exports.updateUserProfile = async (req, res) => {
+  const { id } = req.params;
+  const updatedData = req.body;
+  try {
+    const user = await userService.updateUserProfile(id, updatedData);
+    res.status(200).json(user);
+  } catch (error) {
+    res.status(500).send(error.message);
   }
 };

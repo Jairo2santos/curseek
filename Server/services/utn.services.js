@@ -1,8 +1,8 @@
-const UTNCourse = require('../models/utn.models.js'); // Modelo para los cursos UTN
+const utnCourse = require('../models/utn.models.js'); // Modelo para los cursos UTN
 
 // Servicio para obtener un curso único de UTN por ID
 exports.getSingleUTNCourseService = async (id) => {
-    return await UTNCourse.findById(id);
+    return await utnCourse.findById(id);
 };
 
 exports.getUTNCoursesService = async (category, page, limit) => {
@@ -11,9 +11,9 @@ exports.getUTNCoursesService = async (category, page, limit) => {
         query.category = category;
     }
 
-    const totalCourses = await UTNCourse.countDocuments(query);
+    const totalCourses = await utnCourse.countDocuments(query);
 
-    let courses = await UTNCourse.find(query)
+    let courses = await utnCourse.find(query)
         .skip((page - 1) * limit)
         .limit(limit);
 
@@ -26,7 +26,7 @@ exports.getUTNCoursesService = async (category, page, limit) => {
 
 // Servicio para buscar cursos en UTN
 exports.searchUTNCoursesService = async (searchQuery) => {
-    return await UTNCourse.find({
+    return await utnCourse.find({
         title: { $regex: new RegExp(searchQuery, 'i') }
     });
 };

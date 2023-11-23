@@ -15,7 +15,7 @@
           class="w-full px-3 py-2 border rounded-md focus:outline-none focus:ring focus:border-blue-300" />
       </div>
 
-      <p class="text-sm text-red-500"><b>usuario:</b> user | <b>passwd:</b> 12345</p>
+  
 
       <button type="submit"
         class="w-full bg-indigo-600 text-white rounded-md py-2 hover:bg-indigo-800 transition duration-300">
@@ -42,6 +42,8 @@ const password = ref('');
 const userData = ref({});
 const isPasswordShown = ref(false);
 
+
+
 const login = async () => {
   try {
     const response = await axios.post('http://localhost:3333/users/login', {
@@ -49,13 +51,13 @@ const login = async () => {
       password: password.value,
     });
 
-    if (response.status === 200) {
+    if (response.status === 200 && response.data._id) {
       localStorage.setItem('loggedInUsername', username.value);
+      localStorage.setItem('loggedInUserId', response.data._id); // Asegúrate de que el ID se devuelve en la respuesta
       router.push('/profile');
+    } else {
+      console.error('Error al iniciar sesión: Credenciales incorrectas');
     }
-
-    console.log('Usuario logueado:', response.data);
-    router.push('/profile');
   } catch (error) {
     console.error('Error al iniciar sesión:', error);
   }

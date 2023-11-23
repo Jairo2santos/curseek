@@ -25,8 +25,6 @@ exports.getUdemyCategories = async (req, res) => {
 
         const categoryTitles = categories.map(cat => cat._id); // Extraemos los títulos de las categorías
 
-        console.log("Categorías encontradas:", categoryTitles);
-
         if (categoryTitles.length === 0) {
             res.status(404).json({ message: "No se encontraron categorías." });
         } else {
