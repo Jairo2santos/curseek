@@ -15,3 +15,7 @@ Apellido y nombre: Ramirez Jairo, Friz Tomás, Varas Matias
 Docente: Santiago Gallino
 
 Carácter de entrega (2do parcial).
+
+Idea del proyecto:
+CurSeek es una web en donde se van a almacenar miles de cursos a disposición
+del usuario para que pueda navegar y encontrar el curso perfecto.

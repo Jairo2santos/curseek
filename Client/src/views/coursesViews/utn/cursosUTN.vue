@@ -50,7 +50,7 @@
                 </div>
                 
                 <!-- Sección derecha con categoría, precio y cursada -->
-                <div class="md:w-1/4 md:flex md:flex-col md:items-end text-left p-0 border-l border-gray-100">
+                <div class="md:w-1/4 md:flex md:flex-col md:items-end text-left px-4 border-l border-gray-100">
                   <ul>
                     <!-- Categoría -->
                     <li class="flex text-sm text-gray-800 p-2 border-b border-gray-100">
