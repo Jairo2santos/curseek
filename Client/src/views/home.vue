@@ -111,37 +111,47 @@
           
           <!-- Contenido de Futuro -->
           <div class="text-center">
-            <h2 class="text-2xl font-bold mb-2 pb-4">Futuras Instituciones</h2>
+            <h2 class="text-2xl font-bold mb-2 pb-4">Próximamente</h2>
             <ul class="list-none text-left">
               <li class="flex items-center justify-center">
-                <button class="hover:scale-110 hover:bg-indigo-300 rounded-lg transform transition duration-200 ease-in-out w-full sm:w-60 flex items-center">
-                  <img class="w-12" src="../assets/instituciones/UNAM.png" alt="Logo Universidad de México UNAM">
-                  <span class="ml-2 text-xl font-semibold text-black">UNAM</span>
-                </button>
+                <a href="https://www.unam.mx/" target="_blank">
+                  <button class="hover:scale-110 hover:bg-indigo-300 rounded-lg transform transition duration-200 ease-in-out w-full sm:w-60 flex items-center">
+                    <img class="w-12" src="../assets/instituciones/UNAM.png" alt="Logo Universidad de México UNAM">
+                    <span class="ml-2 text-xl font-semibold text-black">UNAM</span>
+                  </button>
+                </a>
               </li>
               <li class="flex items-center justify-center">
-                <button class="hover:scale-110 hover:bg-indigo-300 rounded-lg transform transition duration-200 ease-in-out w-full sm:w-60 flex items-center">
-                  <img class="w-12" src="../assets/instituciones/Universidad_de_Chile.png" alt="Logo Universidad de Chile">
-                  <span class="ml-2 text-xl font-semibold text-black">U. de Chile</span>
-                </button>
+                <a href="https://uchile.cl/" target="_blank">
+                  <button class="hover:scale-110 hover:bg-indigo-300 rounded-lg transform transition duration-200 ease-in-out w-full sm:w-60 flex items-center">
+                    <img class="w-12" src="../assets/instituciones/Universidad_de_Chile.png" alt="Logo Universidad de Chile">
+                    <span class="ml-2 text-xl font-semibold text-black">U. de Chile</span>
+                  </button>
+                </a>
               </li>
               <li class="flex items-center justify-center">
-                <button class="hover:scale-110 hover:bg-indigo-300 rounded-lg transform transition duration-200 ease-in-out w-full sm:w-60 flex items-center">
-                  <img class="w-12" src="../assets/instituciones/coursera.png" alt="Logo Coursera">
-                  <span class="ml-2 text-xl font-semibold text-black">Coursera</span>
-                </button>
+                <a href="https://www.coursera.org" target="_blank">
+                  <button class="hover:scale-110 hover:bg-indigo-300 rounded-lg transform transition duration-200 ease-in-out w-full sm:w-60 flex items-center">
+                    <img class="w-12" src="../assets/instituciones/coursera.png" alt="Logo Coursera">
+                    <span class="ml-2 text-xl font-semibold text-black">Coursera</span>
+                  </button>
+                </a>
               </li>
               <li class="flex items-center justify-center">
-                <button class="hover:scale-110 hover:bg-indigo-300 rounded-lg transform transition duration-200 ease-in-out w-full sm:w-60 flex items-center">
-                  <img class="w-12" src="../assets/instituciones/Universidad_Central_de_Venezuela.png" alt="Logo Universidad_Central_de_Venezuela">
-                  <span class="ml-2 text-xl font-semibold text-black">U. C. Venezuela</span>
-                </button>
+                <a href="http://www.ucv.ve/" target="_blank">
+                  <button class="hover:scale-110 hover:bg-indigo-300 rounded-lg transform transition duration-200 ease-in-out w-full sm:w-60 flex items-center">
+                    <img class="w-12" src="../assets/instituciones/Universidad_Central_de_Venezuela.png" alt="Logo Universidad_Central_de_Venezuela">
+                    <span class="ml-2 text-xl font-semibold text-black">U. C. Venezuela</span>
+                  </button>
+                </a>
               </li>
               <li class="flex items-center justify-center">
-                <button class="hover:scale-110 hover:bg-indigo-300 rounded-lg transform transition duration-200 ease-in-out w-full sm:w-60 flex items-center">
-                  <img class="w-12" src="../assets/instituciones/edX.png" alt="Logo edX">
-                  <span class="ml-2 text-xl font-semibold text-black">edX</span>
-                </button>
+                <a href="https://www.edx.org/es" target="_blank">
+                  <button class="hover:scale-110 hover:bg-indigo-300 rounded-lg transform transition duration-200 ease-in-out w-full sm:w-60 flex items-center">
+                    <img class="w-12" src="../assets/instituciones/edX.png" alt="Logo edX">
+                    <span class="ml-2 text-xl font-semibold text-black">edX</span>
+                  </button>
+                </a>
               </li>
             </ul>
           </div>

@@ -43,9 +43,10 @@
                   </h2>
                   
                   <!-- Descripción del curso -->
-                  <p class="text-sm text-gray-600 mr-20">
-                    {{ course.summary }} 
-                  </p>
+                  <!-- <p class="text-sm text-gray-600 mr-20" >
+                    {{ course.summary }}
+                  </p> -->
+                  
                 </div>
                 
                 <!-- Sección derecha con categoría, precio y cursada -->
@@ -121,7 +122,7 @@ import axios from "axios";
 import Paginacion from "../../../components/Paginacion.vue";
 import Portada from "../../../components/Portada.vue";
 import Sidebar from "../../../components/Sidebar.vue";
-  // import Filtros from "../../../components/Filtros.vue";
+// import Filtros from "../../../components/Filtros.vue";
 import Favoritos from "../../../components/Favoritos.vue";
 
 axios.defaults.baseURL = "http://localhost:3333";
@@ -188,12 +189,12 @@ const loadCategories = async () => {
   }
 };
 
-const handleFilterChange = (newFilterType) => {
-  filterType.value = newFilterType;
-  courses.value = [];
-  currentPage.value = 1;
-  loadCourses(currentPage.value, filterType.value, selectedCategories.value);
-};
+// const handleFilterChange = (newFilterType) => {
+//   filterType.value = newFilterType;
+//   courses.value = [];
+//   currentPage.value = 1;
+//   loadCourses(currentPage.value, filterType.value, selectedCategories.value);
+// };
 
 const handlePageChange = (newPage) => {
   currentPage.value = newPage;
