@@ -1,7 +1,7 @@
 <template>
-  <div class="flex justify-center items-center h-screen bg-gray-100">
+  <div class="flex flex-col max-w-screen-full md:flex-row mx-auto md:px-60 bg-gray-100 p-6 bg-gray-100">
     <form
-      class="bg-white p-6 rounded-lg shadow-lg max-w-screen-sm w-full"
+      class="bg-white px-12 py-8 max-w-screen-sm w-full"
       @submit.prevent="registerUser"
     >
       <h1 class="text-xl font-bold mb-4 text-center">Crea tu cuenta</h1>
@@ -14,7 +14,6 @@
           type="text"
           id="username"
           v-model="username"
-          placeholder="Nombre de Usuario"
           class="mt-1 p-2 w-full border rounded-md"
           required
         />
@@ -28,7 +27,6 @@
           type="email"
           id="email"
           v-model="email"
-          placeholder="Email"
           class="mt-1 p-2 w-full border rounded-md"
           required
         />
@@ -42,7 +40,6 @@
           type="password"
           id="password"
           v-model="password"
-          placeholder="Contraseña"
           class="mt-1 p-2 w-full border rounded-md"
           required
         />
@@ -58,7 +55,6 @@
           type="password"
           id="confirmPassword"
           v-model="confirmPassword"
-          placeholder="Confirmar Contraseña"
           class="mt-1 p-2 w-full border rounded-md"
           required
         />
@@ -74,7 +70,6 @@
         <textarea
           id="address"
           v-model="address"
-          placeholder="Dirección"
           class="mt-1 p-2 w-full border rounded-md h-24"
         ></textarea>
       </div>
@@ -83,13 +78,12 @@
         <label
           for="profilePicture"
           class="block text-sm font-medium text-gray-600"
-          >Link de Imagen</label
+          >Link URL de Imagen</label
         >
         <input
           type="text"
           id="profilePicture"
           v-model="profilePicture"
-          placeholder="URL de tu imagen"
           class="mt-1 p-2 w-full border rounded-md"
         />
       </div>
@@ -101,6 +95,24 @@
         Registrarse
       </button>
     </form>
+
+    <div class="border-l border-gray-200 px-8 py-40 bg-white text-left">
+      <h1 class="font-bold pb-2 text-lg">Únete a CurSeek! Gratis</h1>
+      <ul>
+        <li class="text-sm pt-4">
+          <svg class="inline mr-2" fill="#6366f1" xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 -960 960 960" width="24"><path d="M224.615-120q-26.846 0-45.731-18.884Q160-157.769 160-184.615v-444.846q-17.231-7.154-28.616-23.116Q120-668.538 120-689.231v-86.154q0-26.846 18.884-45.731Q157.769-840 184.615-840h590.77q26.846 0 45.731 18.884Q840-802.231 840-775.385v86.154q0 20.693-11.384 36.654-11.385 15.962-28.616 23.116v444.846q0 26.846-18.884 45.731Q762.231-120 735.385-120h-510.77ZM200-624.615v436.154q0 12.307 8.846 20.384T230.769-160h504.616q10.769 0 17.692-6.923T760-184.615v-440H200Zm-15.385-40h590.77q10.769 0 17.692-6.924Q800-678.462 800-689.231v-86.154q0-10.769-6.923-17.692T775.385-800h-590.77q-10.769 0-17.692 6.923T160-775.385v86.154q0 10.769 6.923 17.692 6.923 6.924 17.692 6.924Zm190.77 219.231h209.23V-480h-209.23v34.616ZM480-392.308Z"/></svg>
+          <b> Descubre 10,000 cursos </b> de las principales universidades como UTN, U. de Chile, UNAM y muchas más.
+        </li>
+        <li class="text-sm pt-4">
+          <svg class="inline mr-2" fill="#6366f1" xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 -960 960 960" width="24"><path d="M184.615-200Q157-200 138.5-218.5 120-237 120-264.615v-430.77Q120-723 138.5-741.5 157-760 184.615-760h590.77Q803-760 821.5-741.5 840-723 840-695.385v430.77Q840-237 821.5-218.5 803-200 775.385-200h-590.77ZM480-475.384 160-684.615v420q0 10.769 6.923 17.692T184.615-240h590.77q10.769 0 17.692-6.923T800-264.615v-420L480-475.384ZM480-520l307.692-200H172.308L480-520ZM160-684.615V-720v455.385q0 10.769 6.923 17.692T184.615-240H160v-444.615Z"/></svg>
+          <b> Nunca te pierdas un curso </b> con nuestro botón de Seguir para la educación.
+        </li>
+        <li class="text-sm pt-4">
+          <svg class="inline mr-2" fill="#6366f1" xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 -960 960 960" width="24"><path d="M240-180v-555.385Q240-763 258.5-781.5 277-800 304.615-800h350.77Q683-800 701.5-781.5 720-763 720-735.385V-180L480-283.077 240-180Zm40-62 200-86 200 86v-493.385q0-9.23-7.692-16.923Q664.615-760 655.385-760h-350.77q-9.23 0-16.923 7.692Q280-744.615 280-735.385V-242Zm0-518h400-400Z"/></svg>
+          <b> Marca cursos </b> o crea trayectorias de aprendizaje desde cualquier recurso en la web.
+        </li>
+      </ul>
+    </div>
   </div>
 </template>
 

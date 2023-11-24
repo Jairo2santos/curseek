@@ -1,13 +1,13 @@
 <template>
-  <div class="p-0 min-h-screen bg-gray-400">
+  <div class="p-0 min-h-screen bg-white">
     <!-- Banner -->
-    <div :class="{ 'blurred-background': isInputClicked }" class="text-white text-center p-12">
-      <h1 class="font-semibold text-xl">Encuentra tu curso</h1>
+    <div :class="{ 'blurred-background': isInputClicked }" class="pt-12">
+      <h1 class="text-center font-bold text-3xl text-gray-900 pt-4">Encuentra tu próximo curso</h1>
     </div>
 
     <!-- Campo de búsqueda -->
     <div class="max-w-lg mx-auto pt-8 p-4">
-      <form @submit.prevent="search" class="flex p-1 bg-white items-center border rounded-xl overflow-hidden " >
+      <form @submit.prevent="search" class="flex p-1 bg-white items-center border rounded-xl overflow-hidden shadow-lg" >
         <button type="submit" class="p-2">
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960" width="24">
             <path
@@ -50,18 +50,62 @@
        </ul>
     </div>    
    </div>
-<!-- fin del buscador -->
+
     <div :class="{ 'blurred-background': isInputClicked }" class="flex flex-col md:flex-row container mx-auto md:px-40 p-0 bg-white mx-auto">
-      <img src="../assets/banner-1.jpg" alt="Descripción de la imagen" width="700" />
-      <p class="p-12">
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Laudantium earum fugit molestiae in tenetur ad hic et
-        repellat aliquid voluptates quibusdam, , ullam sapiente, recusandae ab consectetur cupiditate porro quasi velit!
-      </p>
+      <img src="../assets/banner-1.jpg" alt="Descripción de la imagen" class="md:w-1/2 object-cover md:h-full" />
+        <div class="md:w-1/2 p-12 items-center">
+          <h2 class="text-left text-2xl font-semibold pb-4">Acerca de Nosotros</h2>
+          <p>
+            Somos una plataforma web y aplicación móvil que funciona como un buscador de 
+            cursos. Seguimos un enfoque similar al de los populares motores de búsqueda 
+            de vuelos y hoteles. Sin embargo, nuestro principal propósito es recopilar y 
+            presentar los cursos de mayor calidad y mejor valorados disponibles en línea. 
+            Nos dedicamos a reunir información de una amplia gama de cursos educativos de 
+            diversas temáticas y niveles de dificultad, provenientes de fuentes 
+            diversas en Internet.
+          </p>
+        </div>
     </div>
+    
+    <div class="block flex-col md:flex-row container mx-auto px-24 py-12 bg-indigo-100 mx-auto">
+      <h2 class="text-center text-4xl font-bold pb-4 text-indigo-900">
+        El curso que quieras, cuando quieras
+      </h2>
+      <img src="../assets/banner-curseek.png" alt="Descripción de la imagen" class="md:w-1/2 object-cover md:w-full" />
+      
+      <div class="container mx-auto p-2">
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 justify-center">
+        <div class="text-center  sm:border-r border-gray-400">
+            <h2 class="text-2xl font-bold mb-2 pb-4">Proveedores</h2>
+            <ul class="list-none text-left border-r">
+                <li class="flex items-center justify-center">
+                    <button class="hover:scale-110 hover:bg-indigo-300 rounded-lg transform transition duration-200 ease-in-out w-full sm:w-60 flex items-center">
+                        <img class="w-12" src="../assets/instituciones/Udemy.png" alt="">
+                        <span class="ml-2 text-xl font-semibold text-black">Udemy</span>
+                    </button>
+                </li>
+            </ul>
+        </div>
+
+        <div class="text-center  sm:border-r border-gray-400">
+            <h2 class="text-2xl font-bold mb-2 pb-4">Universidades</h2>
+            <ul class="list-none text-left border-r">
+                <li class="flex items-center justify-center">
+                    <button class="hover:scale-110 hover:bg-indigo-300 rounded-lg transform transition duration-200 ease-in-out w-full sm:w-60 flex items-center">
+                        <img class="w-12" src="../assets/instituciones/utn.png" alt="">
+                        <span class="ml-2 text-xl font-semibold text-black">UTN</span>
+                    </button>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+
+    </div>
+
   </div>
 </template>
-
-
 
 <script setup>
 import { ref } from 'vue';

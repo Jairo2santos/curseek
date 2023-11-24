@@ -7,24 +7,24 @@
       :imageSrc="logoUdemy"
     />
 
-  <div class="flex flex-col max-w-screen-full md:flex-row mx-auto pt-6 md:px-40 bg-gray-100 p-4">
-  <!-- Sidebar a la izquierda -->
-  <div class="mb-4 md:mb-0 w-full md:w-auto mt-4">
-    <Sidebar :categories="categories" @filter-by-category="handleCategoryFilter" />
-  </div>
+    <div class="flex flex-col max-w-screen-full md:flex-row mx-auto pt-6 md:px-40 bg-gray-100 p-4">
+      <!-- Sidebar a la izquierda -->
+      <div class="mb-4 md:mb-0 w-full md:w-auto mt-4">
+        <Sidebar :categories="categories" @filter-by-category="handleCategoryFilter" />
+      </div>
 
-  <!-- Contenido a la derecha del Sidebar -->
-  <div class="flex flex-col w-full md:ml-6">
-    <!-- Filtros arriba -->
-    <div class="mb-4">
-      
-    </div>
+      <!-- Contenido a la derecha del Sidebar -->
+      <div class="flex flex-col w-full md:ml-6">
+        <!-- Filtros arriba -->
+        <div class="mb-4">
+          <Filtros @filter-changed="handleFilterChange" />
+        </div>
 
     <!-- Contenedor de Tarjetas de Cursos al lado del Sidebar -->
     <div class="w-full md:w-1/1">
       <div v-for="course in courses" :key="course.id" class="mb-5">
         <!-- Tarjeta individual para cada curso -->
-        <div @click="navigateToCourse(course._id)" class="block max-w-full bg-white mt-2 rounded-lg p-4 hover:shadow-lg transition">
+        <div @click="navigateToCourse(course._id)" class="block max-w-full bg-white mt-2 rounded-lg p-4 hover:shadow-lg transition cursor-pointer">
 
             
               <div class="flex flex-col md:flex-row items-start md:items-start">

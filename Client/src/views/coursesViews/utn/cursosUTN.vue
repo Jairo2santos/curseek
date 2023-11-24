@@ -90,7 +90,7 @@
                   </ul>
                 </div>
               </div>
-              <Favoritos :courseId="course._id" :courseType="'UTN'" :isFavorited="course.isFavorited" class="mt-2"/>
+              <Favoritos :courseId="course._id" :courseType="'UTN'" :isFavorited="course.isFavorited" class="hover:text-indigo-500"/>
 
             </div>
             <!-- Fin de la tarjeta individual -->

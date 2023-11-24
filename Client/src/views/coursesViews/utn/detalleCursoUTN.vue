@@ -13,17 +13,17 @@
 
           <!-- Sección de Resumen -->
           <div class="bg-white p-6 rounded mb-4 border border-gray-200">
-            <h3 class="text-md mb-2 font-bold">Resumen</h3>
+            <h3 class="text-xl mb-2 font-bold">Resumen</h3>
             <p class="text-md">{{ course.summary }}</p>
           </div>
 
           <!-- Sección de Modalidades -->
-          <div class="bg-white p-6 rounded mb-4 border border-gray-200">
+          <!-- <div class="bg-white p-6 rounded mb-4 border border-gray-200">
             <h3 class="text-lg mb-2 font-bold">Modalidades</h3>
             <ul class="list-disc pl-8">
               <li v-for="modality in course.modalities" :key="modality">{{ modality }}</li>
             </ul>
-          </div>
+          </div> -->
 
           <!-- Sección de Profesores -->
           <div class="bg-white p-6 rounded mb-4 border border-gray-200">

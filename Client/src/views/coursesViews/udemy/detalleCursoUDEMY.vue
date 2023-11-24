@@ -13,41 +13,42 @@
         
         <!-- Sección de Descripción Larga -->
         <div class="bg-white p-4 md:p-6 rounded mb-4 border border-gray-200">
+          <h3 class="text-xl mb-2 font-bold">Resumen</h3>
           <div v-html="udemyCourse.description" class="700 md:text-md bold-4"></div>
         </div>
 
         <!-- Sección de Contenido del Curso -->
-        <div class="bg-white p-4 md:p-6 rounded mb-4 border border-gray-200">
-          <h3 class="md:text-lg font-bold text-gray-800 mb-2">Contenido del Curso</h3>
+        <!-- <div class="bg-white p-4 md:p-6 rounded mb-4 border border-gray-200"> -->
+          <!-- <h3 class="md:text-lg font-bold text-gray-800 mb-2">Contenido del Curso</h3> -->
           <!-- Itera y muestra el contenido aquí -->
-        </div>
+        <!-- </div> -->
 
         <!-- Sección de Valoraciones -->
-        <div class="bg-white p-4 md:p-6 rounded mb-4 border border-gray-200">
+        <!-- <div class="bg-white p-4 md:p-6 rounded mb-4 border border-gray-200">
           <h3 class="md:text-lg font-bold text-gray-800 mb-2">Valoraciones</h3>
           <div v-for="review in udemyCourse.reviews" :key="review._id" class="border-b border-gray-300 mb-4 pb-4">
-            <div class="flex items-center mb-1">
+            <div class="flex items-center mb-1"> -->
               <!-- Componente de estrellas aquí -->
-              <rating-component :rating="review.rating"></rating-component>
+              <!-- <rating-component :rating="review.rating"></rating-component>
               <span class="text-gray-600 text-sm ml-2">({{ review.rating }})</span>
             </div>
             <p class="text-gray-800 font-semibold">{{ review.title }}</p>
             <p class="text-gray-600">{{ review.content }}</p>
           </div>
-        </div>
+        </div> -->
 
         <!-- Sección de Categorías -->
-        <div class="bg-white p-4 md:p-6 rounded border border-gray-200">
+        <!-- <div class="bg-white p-4 md:p-6 rounded border border-gray-200">
           <h3 class="md:text-lg font-bold text-gray-800 mb-2">Categorías</h3>
           <div class="text-sm md:text-base font-medium text-gray-900">{{ udemyCourse.primary_category }}</div>
-        </div>
+        </div> -->
 
         <!-- Nueva Sección de Profesor -->
         <div class="bg-white p-4 md:p-6 rounded border border-gray-200">
-          <h3 class="md:text-lg font-bold text-gray-800 mb-2">Profesor</h3>
-          <div class="flex text-sm text-black p-2 border-b border-gray-100">
+          <h3 class="text-xl mb-2 font-bold">Profesores</h3>
+          <div v-if="udemyCourse.instructorImage || (udemyCourse.instructors && udemyCourse.instructors.length > 0)">
             <div class="flex items-center">
-              <img :src="udemyCourse.instructorImage" alt="Imagen del Profesor" class="rounded-full w-6 mr-2">
+              <img :src="udemyCourse.instructorImage || udemyCourse.instructors[0]?.image_100x100 || 'ruta_por_defecto_del_profesor.jpg'" alt="Imagen del Profesor" class="rounded-full w-12 mr-4">
               <span>{{ udemyCourse.instructors[0]?.name || 'Nombre del Profesor' }}</span>
             </div>
           </div>
