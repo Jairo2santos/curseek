@@ -16,9 +16,16 @@ exports.login = async (req, res) => {
     const user = await userService.login(username, password);
     res.status(200).json(user);
   } catch (error) {
-    res.status(error.status || 500).send(error.message);
+    if (error.message === 'Usuario no encontrado' || error.message === 'Credenciales incorrectas') {
+      // Errores de autenticación, devuelve un código 401
+      res.status(401).send(error.message);
+    } else {
+      // Otros errores del servidor, devuelve un código 500
+      res.status(500).send('Error interno del servidor.');
+    }
   }
 };
+
 
 // user.controller.js
 

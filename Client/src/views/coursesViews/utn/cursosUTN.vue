@@ -43,9 +43,9 @@
                   </h2>
                   
                   <!-- Descripción del curso -->
-                  <!-- <p class="text-sm text-gray-600 mr-20" >
-                    {{ course.summary }}
-                  </p> -->
+                 <p class="text-sm text-gray-600 mr-20" >
+                  {{ truncateText(course.summary, 80) }}
+                  </p> 
                   
                 </div>
                 
@@ -196,6 +196,11 @@ const loadCategories = async () => {
 //   loadCourses(currentPage.value, filterType.value, selectedCategories.value);
 // };
 
+const truncateText = (text, limit) => {
+  if (!text) return ''; // Retorna una cadena vacía si el texto no está definido
+  const words = text.split(' ', limit);
+  return words.length >= limit ? `${words.join(' ')}...` : text;
+};
 const handlePageChange = (newPage) => {
   currentPage.value = newPage;
   loadCourses(currentPage.value, filterType.value, selectedCategories.value);

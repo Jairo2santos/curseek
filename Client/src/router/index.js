@@ -7,7 +7,7 @@ import DetalleCursoUTN from '../views/coursesViews/utn/detalleCursoUTN.vue';
 import DetalleCursoUdemy from '../views/coursesViews/udemy/detalleCursoUDEMY.vue';
 import profile from  "../views/profile.vue";
 import signUp from  "../views/signUp.vue";
-
+import error404 from  "../views/error404.vue";
 const routes = [
   {
     path: '/',
@@ -53,7 +53,7 @@ const routes = [
     name: 'signUp',
     component: signUp,
   },
-  
+  { path: '/:pathMatch(.*)*', name: 'error404', component: error404 },
 ];
 
 const router = createRouter({
