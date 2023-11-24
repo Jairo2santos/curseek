@@ -74,7 +74,7 @@
       <h2 class="text-center text-4xl font-bold pb-4 text-indigo-900">
         El curso que quieras, cuando quieras
       </h2>
-      <img src="../assets/banner-curseek.png" alt="Descripción de la imagen" class="object-cover md:w-full" />
+      <img src="../assets/banner-curseek.png" alt="Imágen ilustrativa mapa" class="object-cover md:w-full" />
 
       <!-- Lista de Proveedores y Universidades -->
       <div class="container mx-auto p-2">
