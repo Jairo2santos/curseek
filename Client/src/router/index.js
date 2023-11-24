@@ -3,7 +3,7 @@ import Home from '../views/Home.vue';
 import cursosUTN from '../views/coursesViews/utn/cursosUTN.vue';
 import cursosUDEMY from '../views/coursesViews/udemy/cursosUDEMY.vue';
 import login from '../views/login.vue';
-import DetalleCurso from '../views/coursesViews/utn/detalleCursoUTN.vue';
+import DetalleCursoUTN from '../views/coursesViews/utn/detalleCursoUTN.vue';
 import DetalleCursoUdemy from '../views/coursesViews/udemy/detalleCursoUDEMY.vue';
 import profile from  "../views/profile.vue";
 import signUp from  "../views/signUp.vue";
@@ -31,9 +31,9 @@ const routes = [
   },
  
    {
-    path: "/curso/:id",
-    name: "DetalleCurso",
-    component: DetalleCurso,
+    path: "/utn/curso/:id",
+    name: "DetalleCursoUTN",
+    component: DetalleCursoUTN,
     props: true
   },
   {

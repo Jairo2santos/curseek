@@ -82,20 +82,19 @@
     <div v-for="course in favoriteCourses" :key="course._id" class="bg-white rounded-lg shadow overflow-hidden">
       <div class="flex flex-col md:flex-row">
         <!-- Imagen del curso a la izquierda -->
-        <img :src="course.image_480x270" alt="Imagen del curso" class="md:w-48 w-full h-48 object-cover rounded-t-lg md:rounded-t-none md:rounded-l-lg">
+        <img :src="courseImage(course)" alt="Imagen del curso" class="md:w-48 w-full h-48 object-cover rounded-t-lg md:rounded-t-none md:rounded-l-lg">
 
         <!-- Contenido del curso a la derecha -->
         <div class="p-4 flex-grow">
           <h3 class="font-semibold text-lg mb-2">{{ course.title }}</h3>
-          <p class="text-gray-600 text-sm mb-4">{{ course.headline }}</p>
-          <div class="flex items-center mb-4">
-            <img :src="course.instructors[0].image_100x100" alt="Instructor" class="w-10 h-10 rounded-full mr-2">
-            <span class="text-sm font-semibold">{{ course.instructors[0].name }}</span>
-          </div>
-          <router-link :to="{ name: 'DetalleCursoUdemy', params: { id: course._id } }"
+          <p class="text-gray-600 text-sm mb-4">{{ courseDescription(course) }}</p>
+      
+
+
+<button @click="() => goToCourseDetail(course)"
   class="inline-block bg-indigo-500 hover:bg-indigo-600 text-white text-sm font-bold py-2 px-4 rounded transition duration-300 ease-in-out">
-  Ver Detalle
-</router-link>
+    Ver Detalle
+  </button>
 
 <button @click="removeFromFavorites(course._id)" 
   class="inline-block bg-red-500 hover:bg-red-700 text-white text-sm font-bold py-2 px-4 rounded ml-2">
@@ -110,7 +109,7 @@
 </template>
 
 <script setup>
-import { ref, reactive, onMounted } from 'vue';
+import { ref, reactive, onMounted,computed  } from 'vue';
 import axios from 'axios';
 import { useRouter } from 'vue-router';
 
@@ -126,6 +125,32 @@ const showNotification = ref(false);
 const notificationMessage = ref('');
 const notificationType = ref('');
 
+
+//ajustes para diferencia de utn y udemy 
+const goToCourseDetail = (course) => {
+  console.log("Curso actual:", course);
+  console.log("Tipo de curso:", course.courseType);
+
+  if (course.courseType === 'UDEMY') {
+    router.push({ name: 'DetalleCursoUdemy', params: { id: course._id } });
+  } else if (course.courseType === 'UTN') {
+    router.push({ name: 'DetalleCursoUTN', params: { id: course._id } });
+  } else {
+    router.push({ name: 'Home' });
+  }
+};
+
+
+const courseImage = (course) => {
+  return course.image_480x270 || course.imgUrl;
+};
+
+const courseDescription = (course) => {
+  
+  return course.headline || course.summary;
+
+
+};
 // Función para alternar la visibilidad de la contraseña
 const togglePasswordVisibility = () => {
   isPasswordShown.value = !isPasswordShown.value;
@@ -173,6 +198,7 @@ const loadFavoriteCourses = async () => {
 
   try {
     const response = await axios.get(`http://localhost:3333/users/favorites/${userId.value}`);
+    console.log("Cursos favoritos recibidos:", response.data);
     favoriteCourses.value = response.data;
   } catch (error) {
     console.error("Error al cargar cursos favoritos:", error);

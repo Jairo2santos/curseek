@@ -94,12 +94,15 @@ const getFavoriteCoursesForUser = async (userId) => {
       const udemyCourses = udemyFavorites.length ? await UdemyCourse.find({ '_id': { $in: udemyFavorites } }) : [];
       const utnCourses = utnFavorites.length ? await utnCourse.find({ '_id': { $in: utnFavorites } }) : [];
   
-      return [...udemyCourses, ...utnCourses];
+      // Agrega el tipo de curso y retorna la lista combinada
+      const udemyCoursesWithTypes = udemyCourses.map(course => ({ ...course.toObject(), courseType: 'UDEMY' }));
+      const utnCoursesWithTypes = utnCourses.map(course => ({ ...course.toObject(), courseType: 'UTN' }));
+
+      return [...udemyCoursesWithTypes, ...utnCoursesWithTypes];
     } catch (error) {
       throw new Error('Error al obtener cursos favoritos.');
     }
-  };
-  
+};
   const getUserProfile = async (username) => {
     try {
       const user = await User.findOne({ username });

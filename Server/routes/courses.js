@@ -1,15 +1,17 @@
+// courses.js
 const express = require('express');
 const router = express.Router();
 const coursesController = require('../controllers/courses.controller.js');
 const utnController = require('../controllers/utn.controller.js');
 const udemyController = require('../controllers/udemy.controller.js'); // Asegúrate de que la extensión .js esté presente si es necesario.
+const buscadorController = require('../controllers/buscador.controller');
 
 // Rutas específicas primero
 router.get('/utn', utnController.getUtnCourses);
 router.get('/udemy', udemyController.getUdemyCourses);
 
 // Luego las rutas de búsqueda
-router.get('/search', coursesController.searchCourses);
+router.get('/search', buscadorController.searchCourses);
 
 // Ruta general para obtener todos los cursos - deberías considerar si esta ruta podría tener conflictos con las rutas parametrizadas
 router.get('/', coursesController.getAllCourses);
@@ -17,8 +19,5 @@ router.get('/', coursesController.getAllCourses);
 router.get('/utn/:id', utnController.getSingleCourse);
 // En tu archivo de rutas de Express.js (o similar)
 router.get('/udemy/:id', udemyController.getSingleUdemyCourse);
-
-
-
 
 module.exports = router;

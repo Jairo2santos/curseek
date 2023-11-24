@@ -25,7 +25,7 @@
           </div> -->
           <div v-for="course in courses" :key="course._id" class="mb-5">
             <!-- Tarjeta individual para cada curso -->
-            <router-link :to="'/curso/' + course._id" class="block max-w-full bg-white mt-2 rounded-lg p-4 hover:shadow-lg transition">
+            <div @click="navigateToCourse(course._id)" class="block max-w-full bg-white mt-2 rounded-lg p-4 hover:shadow-lg transition cursor-pointer">
 
               <div class="flex flex-col md:flex-row items-start md:items-start">
                 <!-- Imagen del curso -->
@@ -40,8 +40,7 @@
                   
                   <!-- Descripción del curso -->
                   <p class="text-sm text-gray-600 mr-20">
-                    <!-- {{ course.description }} -->
-                    Bienvenidos al curso gratuito "Curso inicial en Criptomonedas y trading: Bitcoin ETH XRP" donde aprenderás
+                    <!-- {{ course.summary }}  -->
                   </p>
                 </div>
                 
@@ -91,7 +90,9 @@
                   </ul>
                 </div>
               </div>
-            </router-link>
+              <Favoritos :courseId="course._id" :courseType="'UTN'" :isFavorited="course.isFavorited" class="mt-2"/>
+
+            </div>
             <!-- Fin de la tarjeta individual -->
           </div>
 
@@ -108,12 +109,16 @@
 </template>
 
 <script setup>
+import { useRouter } from 'vue-router';
+const router = useRouter();
+
 import { ref, onMounted } from "vue";
 import axios from "axios";
 import Paginacion from "../../../components/Paginacion.vue";
 import Portada from "../../../components/Portada.vue";
 import Sidebar from "../../../components/Sidebar.vue";
 import Filtros from "../../../components/Filtros.vue";
+import Favoritos from "../../../components/Favoritos.vue";
 
 axios.defaults.baseURL = "http://localhost:3333";
 
@@ -128,6 +133,9 @@ const totalCourses = ref(0);
 const categories = ref([]);
 const selectedCategories = ref([]);
 const filterType = ref(null);
+
+
+
 
 // Métodos y handlers
 const loadCourses = async (page, filterType = null, selectedCategories = []) => {
@@ -154,6 +162,9 @@ const loadCourses = async (page, filterType = null, selectedCategories = []) => 
       error.response?.data?.message || "Error al cargar los cursos";
     alert(errorMessage);
   }
+};
+const navigateToCourse = (courseId) => {
+  router.push({ name: 'DetalleCursoUTN', params: { id: courseId } });
 };
 
 const handleCategoryFilter = async (categories) => {

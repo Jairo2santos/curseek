@@ -17,7 +17,7 @@
   <div class="flex flex-col w-full md:ml-6">
     <!-- Filtros arriba -->
     <div class="mb-4">
-      <Filtros @filter-changed="handleFilterChange" />
+      
     </div>
 
     <!-- Contenedor de Tarjetas de Cursos al lado del Sidebar -->
@@ -111,15 +111,15 @@
 
 <script setup>
 import { ref, onMounted } from "vue";
-
+import { useRouter } from 'vue-router';
 import axios from "axios";
 import Paginacion from "../../../components/Paginacion.vue";
 import Portada from "../../../components/Portada.vue";
 import logoUdemy from "../../../assets/logo-udemy.jpg";
 import Sidebar from "../../../components/Sidebar.vue";
 import Filtros from "../../../components/Filtros.vue";
-import Favoritos from '../../../components/Favoritos.vue';
-
+import Favoritos from "../../../components/Favoritos.vue";
+const router = useRouter();
 
 axios.defaults.baseURL = "http://localhost:3333";
 
