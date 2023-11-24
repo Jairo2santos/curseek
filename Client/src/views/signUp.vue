@@ -1,5 +1,5 @@
 <template>
-  <div class="flex flex-col max-w-screen-full md:flex-row mx-auto md:px-60 bg-gray-100 p-6 bg-gray-100">
+  <div class="flex flex-col max-w-screen-full md:flex-row mx-auto md:px-60 bg-gray-100 p-6">
     <form
       class="bg-white px-12 py-8 max-w-screen-sm w-full"
       @submit.prevent="registerUser"

@@ -3,14 +3,15 @@ proyecto de buscador de cursos
 Instrucciones de Instalación
 
 Clonar el Repositorio:
-Cliente: Dirígete a la carpeta del cliente:
-Instala las dependencias:
 
-npm install
+### Dirígete a la carpeta del Client:
+cd Client
 
-Para ejecutar el cliente en modo desarrollo:
+### Instala las dependencias:
+npm i
 
-npm run dev
+### Para ejecutar el cliente:
+npm start
 
 El cliente debería ahora estar corriendo en http://localhost:5173 (o el puerto que Vite use por defecto).
 
@@ -23,8 +24,13 @@ Nota: Asegúrate de tener configurada la conexión a tu base de datos para eso c
 
 node servidor.js corres el server http://localhost:3000
 
-MongoDB:
+# MongoDB:
+
 nombre db: cursosApp
-coleccion cursos: cursos_UTN
-coleccion cursos: cursos_UDEMY
-coleccion usuarios: users
+
+Estructura_
+
+todos los cursos: cursos_ALL
+cursos: cursos_UTN
+cursos: cursos_UDEMY
+usuarios: users

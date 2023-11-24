@@ -1,24 +1,24 @@
 <template>
   <div class="min-h-screen bg-gray-100 flex flex-wrap justify-center items-start md:items-center p-4 gap-4">
-   <!-- notificacion -->
+    <!-- Notificación -->
     <transition name="slide-down">
-    <div v-if="showNotification" class="fixed top-0 inset-x-0 z-50">
-      <div :class="{
-        'bg-green-500': notificationType === 'success',
-        'bg-red-500': notificationType === 'error'
-      }" class="text-white text-center py-3">
-        {{ notificationMessage }}
+      <div v-if="showNotification" class="fixed top-0 inset-x-0 z-50">
+        <div :class="{
+          'bg-green-500': notificationType === 'success',
+          'bg-red-500': notificationType === 'error'
+        }" class="text-white text-center py-3">
+          {{ notificationMessage }}
+        </div>
       </div>
-    </div>
-  </transition>
-   
-    <!-- Profile Card -->
+    </transition>
+
+    <!-- Perfil -->
     <div class="profile-card bg-white p-6 rounded-lg shadow-lg w-full md:w-1/2">
       <h1 class="text-center font-bold text-xl">Mi Perfil</h1>
       <img :src="userData.profilePicture || 'ruta/a/imagen/placeholder.png'" alt="Foto de perfil"
         class="w-32 h-32 rounded-full mx-auto mb-4" />
 
-      <!-- Editable fields -->
+      <!-- Campos editables -->
       <div v-if="editing" class="space-y-4">
         <div class="flex flex-col">
           <label for="username" class="text-sm font-medium text-gray-700">Nombre de Usuario</label>
@@ -48,25 +48,29 @@
         </div>
       </div>
 
-      <!-- Display fields -->
+      <!-- Campos de visualización -->
       <div v-else>
-  <div class="text-center mx-auto">
-    <h2 class="text-2xl font-semibold mb-4">{{ userData.username }}</h2>
-    <div class="mb-4">
-      <p class="text-gray-600 text-sm">
-        
-        📧  E-mail: {{ userData.email }}
-      </p>
-    </div>
-    <div class="mb-4">
-      <p class="text-gray-600 text-sm">
-       
-        🏡 Dirección: {{ userData.address }}
-      </p>
-    </div>
-  </div>
-
-
+        <div class="mx-auto text-center">
+          <h2 class="text-2xl font-semibold mb-4">@{{ userData.username }}</h2>
+          <div class="mb-4">
+            <div class="flex items-center justify-center">
+              <svg class="mr-2" xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 -960 960 960" width="24">
+                <path d="M184.615-200Q157-200 138.5-218.5 120-237 120-264.615v-430.77Q120-723 138.5-741.5 157-760 184.615-760h590.77Q803-760 821.5-741.5 840-723 840-695.385v430.77Q840-237 821.5-218.5 803-200 775.385-200h-590.77ZM480-475.384 160-684.615v420q0 10.769 6.923 17.692T184.615-240h590.77q10.769 0 17.692-6.923T800-264.615v-420L480-475.384ZM480-520l307.692-200H172.308L480-520ZM160-684.615V-720v455.385q0 10.769 6.923 17.692T184.615-240H160v-444.615Z"/>
+              </svg>
+              <!-- Usa el filtro capitalize -->
+              <span>{{ userData.email }}</span>
+            </div>
+          </div>
+          <div class="mb-4">
+            <div class="flex items-center justify-center">
+              <svg class="mr-2" xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 -960 960 960" width="24">
+                <path d="M480.136-490.769q26.71 0 45.595-19.021 18.884-19.021 18.884-45.731t-19.02-45.594Q506.574-620 479.864-620t-45.595 19.021q-18.884 19.02-18.884 45.731 0 26.71 19.02 45.594 19.021 18.885 45.731 18.885ZM480-172.923q112.769-98.154 178.308-199.654 65.538-101.5 65.538-175.577 0-109.769-69.5-181.192T480-800.769q-104.846 0-174.346 71.423t-69.5 181.192q0 74.077 65.538 175.577Q367.231-271.077 480-172.923Zm0 53.692Q339-243.923 267.577-351.808q-71.423-107.884-71.423-196.346 0-126.923 82.654-209.385Q361.461-840 480-840t201.192 82.461q82.654 82.462 82.654 209.385 0 88.462-71.423 196.346Q621-243.923 480-119.231Zm0-436.154Z"/>
+              </svg>
+              <!-- Usa el filtro capitalize -->
+              <span>{{ userData.address }}</span>
+            </div>
+          </div>
+        </div>
 
         <div class="flex flex-col items-center">
           <button @click="startEdit" class="btn text-blue-600 font-semibold text-lg">Editar perfil</button>
@@ -75,37 +79,36 @@
       </div>
     </div>
 
+    <!-- Cursos favoritos -->
     <div class="profile-card bg-white p-6 rounded-lg shadow-lg w-full md:w-1/2 mx-auto">
-  <h2 class="text-2xl font-bold mb-4">Mis Cursos Favoritos</h2>
-  <div class="flex flex-col gap-4">
-    <!-- Loop through favorite courses -->
-    <div v-for="course in favoriteCourses" :key="course._id" class="bg-white rounded-lg shadow overflow-hidden">
-      <div class="flex flex-col md:flex-row">
-        <!-- Imagen del curso a la izquierda -->
-        <img :src="courseImage(course)" alt="Imagen del curso" class="md:w-48 w-full h-48 object-cover rounded-t-lg md:rounded-t-none md:rounded-l-lg">
+      <h2 class="text-2xl font-bold mb-4">Mis Cursos Favoritos</h2>
+      <div class="flex flex-col gap-4">
+        <!-- Bucle para los cursos favoritos -->
+        <div v-for="course in favoriteCourses" :key="course._id" class="bg-white rounded-lg shadow overflow-hidden">
+          <div class="flex flex-col md:flex-row">
+            <!-- Imagen del curso a la izquierda -->
+            <img :src="courseImage(course)" alt="Imagen del curso" class="md:w-48 w-full h-48 object-cover rounded-t-lg md:rounded-t-none md:rounded-l-lg">
 
-        <!-- Contenido del curso a la derecha -->
-        <div class="p-4 flex-grow">
-          <h3 class="font-semibold text-lg mb-2">{{ course.title }}</h3>
-          <p class="text-gray-600 text-sm mb-4">{{ courseDescription(course) }}</p>
-      
+            <!-- Contenido del curso a la derecha -->
+            <div class="p-4 flex-grow">
+              <h3 class="font-semibold text-lg mb-2">{{ course.title }}</h3>
+              <p class="text-gray-600 text-sm mb-4">{{ courseDescription(course) }}</p>
 
+              <button @click="() => goToCourseDetail(course)"
+                class="inline-block bg-indigo-500 hover:bg-indigo-600 text-white text-sm font-bold py-2 px-4 rounded transition duration-300 ease-in-out">
+                Ver Detalle
+              </button>
 
-<button @click="() => goToCourseDetail(course)"
-  class="inline-block bg-indigo-500 hover:bg-indigo-600 text-white text-sm font-bold py-2 px-4 rounded transition duration-300 ease-in-out">
-    Ver Detalle
-  </button>
-
-<button @click="removeFromFavorites(course._id)" 
-  class="inline-block bg-red-500 hover:bg-red-700 text-white text-sm font-bold py-2 px-4 rounded ml-2">
-  Eliminar de Favoritos
-</button>
+              <button @click="removeFromFavorites(course._id)" 
+                class="inline-block bg-red-500 hover:bg-red-700 text-white text-sm font-bold py-2 px-4 rounded ml-2">
+                Eliminar de Favoritos
+              </button>
+            </div>
+          </div>
         </div>
       </div>
     </div>
   </div>
-</div>
-</div>
 </template>
 
 <script setup>

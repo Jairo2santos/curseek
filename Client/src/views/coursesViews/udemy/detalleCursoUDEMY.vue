@@ -56,8 +56,8 @@
 
       </div>
 
-      <!-- Columna 3 (Barra Lateral con Imagen y Botón) -->
-      <div class="bg-white p-4 md:p-6 rounded border border-gray-200">
+       <!-- Columna 3 (Barra Lateral con Imagen y Botón) -->
+       <div class="bg-white p-4 md:p-6 rounded border border-gray-200">
         <img :src="udemyCourse.image" alt="Imagen del Curso" class="rounded-sm mb-4 w-full">
         <a :href="`https://www.udemy.com${udemyCourse.url}`" target="_blank"
            class="flex bg-indigo-600 text-white text-center py-2 px-4 rounded hover:bg-indigo-800 transition-colors duration-300 ease-in-out w-full items-center text-md justify-center font-semibold">

@@ -16,17 +16,16 @@
       <!-- Contenido a la derecha del Sidebar -->
       <div class="flex flex-col w-full md:ml-6">
         <!-- Filtros arriba -->
-        <div class="mb-4">
+        <!-- <div class="mb-4">
           <Filtros @filter-changed="handleFilterChange" />
-        </div>
+        </div> -->
 
-    <!-- Contenedor de Tarjetas de Cursos al lado del Sidebar -->
-    <div class="w-full md:w-1/1">
-      <div v-for="course in courses" :key="course.id" class="mb-5">
-        <!-- Tarjeta individual para cada curso -->
-        <div @click="navigateToCourse(course._id)" class="block max-w-full bg-white mt-2 rounded-lg p-4 hover:shadow-lg transition cursor-pointer">
+        <!-- Contenedor de Tarjetas de Cursos al lado del Sidebar -->
+        <div class="w-full md:w-1/1">
+          <div v-for="course in courses" :key="course.id" class="mb-5">
+            <!-- Tarjeta individual para cada curso -->
+            <div @click="navigateToCourse(course._id)" class="block max-w-full bg-white mt-2 rounded-lg p-4 hover:shadow-lg transition cursor-pointer">
 
-            
               <div class="flex flex-col md:flex-row items-start md:items-start">
                 <!-- Imagen del curso -->
                 <img
@@ -41,7 +40,7 @@
                   <h2 class="md:text-lg font-semibold mb-2 hover:underline mr-6">
                     {{ course.title }}
                   </h2>
-                  
+
                   <!-- Descripción del curso -->
                   <p class="text-sm text-gray-600 mr-20">
                     {{ course.headline }}
@@ -94,7 +93,6 @@
 
             </div>
 
-
           </div>
         </div>
         <!-- Paginación -->
@@ -109,6 +107,7 @@
   </div>
 </template>
 
+
 <script setup>
 import { ref, onMounted } from "vue";
 import { useRouter } from 'vue-router';
@@ -117,7 +116,7 @@ import Paginacion from "../../../components/Paginacion.vue";
 import Portada from "../../../components/Portada.vue";
 import logoUdemy from "../../../assets/logo-udemy.jpg";
 import Sidebar from "../../../components/Sidebar.vue";
-import Filtros from "../../../components/Filtros.vue";
+// import Filtros from "../../../components/Filtros.vue";
 import Favoritos from "../../../components/Favoritos.vue";
 const router = useRouter();
 

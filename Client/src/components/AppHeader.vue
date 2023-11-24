@@ -53,7 +53,7 @@
       <div v-if="menu1Visible" class="lg:hidden p-4 bg-white text-black" style="border-top: 1px solid lightgray;">
         <!-- <router-link v-if="!loggedInUsername" to="/login" class="block mb-4">Login</router-link> -->
         <!-- <a v-else @click="logout" class="block mb-4 cursor-pointer">Logout</a> -->
-        <a href="/cursos/utn" class="block mb-4 flex justify-between items-center">
+        <a href="/cursos/utn" class="mb-4 flex justify-between items-center">
           <span>UTN.BA</span>
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24"><path d="M9.41 7.41L14.83 12l-5.42 5.41L10 18l6-6-6-6-1.59 1.41Z"/></svg>
         </a>

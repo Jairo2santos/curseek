@@ -51,59 +51,103 @@
     </div>    
    </div>
 
-    <div :class="{ 'blurred-background': isInputClicked }" class="flex flex-col md:flex-row container mx-auto md:px-40 p-0 bg-white mx-auto">
+    <!-- Acerca de Nosotros -->
+    <div :class="{ 'blurred-background': isInputClicked }" class="flex flex-col md:flex-row container mx-auto md:px-40 p-0 bg-white">
       <img src="../assets/banner-1.jpg" alt="Descripción de la imagen" class="md:w-1/2 object-cover md:h-full" />
-        <div class="md:w-1/2 p-12 items-center">
-          <h2 class="text-left text-2xl font-semibold pb-4">Acerca de Nosotros</h2>
-          <p>
-            Somos una plataforma web y aplicación móvil que funciona como un buscador de 
-            cursos. Seguimos un enfoque similar al de los populares motores de búsqueda 
-            de vuelos y hoteles. Sin embargo, nuestro principal propósito es recopilar y 
-            presentar los cursos de mayor calidad y mejor valorados disponibles en línea. 
-            Nos dedicamos a reunir información de una amplia gama de cursos educativos de 
-            diversas temáticas y niveles de dificultad, provenientes de fuentes 
-            diversas en Internet.
-          </p>
-        </div>
+      <div class="md:w-1/2 p-12 items-center">
+        <!-- Contenido Acerca de Nosotros -->
+        <h2 class="text-left text-2xl font-semibold pb-4">Acerca de Nosotros</h2>
+        <p>
+          Somos una plataforma web y aplicación móvil que funciona como un buscador de 
+          cursos. Seguimos un enfoque similar al de los populares motores de búsqueda 
+          de vuelos y hoteles. Sin embargo, nuestro principal propósito es recopilar y 
+          presentar los cursos de mayor calidad y mejor valorados disponibles en línea. 
+          Nos dedicamos a reunir información de una amplia gama de cursos educativos de 
+          diversas temáticas y niveles de dificultad, provenientes de fuentes 
+          diversas en Internet.
+        </p>
+      </div>
     </div>
-    
-    <div class="block flex-col md:flex-row container mx-auto px-24 py-12 bg-indigo-100 mx-auto">
+
+    <!-- El curso que quieras, cuando quieras -->
+    <div class="block flex-col md:flex-row container mx-auto px-24 py-12 bg-indigo-100">
       <h2 class="text-center text-4xl font-bold pb-4 text-indigo-900">
         El curso que quieras, cuando quieras
       </h2>
-      <img src="../assets/banner-curseek.png" alt="Descripción de la imagen" class="md:w-1/2 object-cover md:w-full" />
-      
+      <img src="../assets/banner-curseek.png" alt="Descripción de la imagen" class="object-cover md:w-full" />
+
+      <!-- Lista de Proveedores y Universidades -->
       <div class="container mx-auto p-2">
-    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 justify-center">
-        <div class="text-center  sm:border-r border-gray-400">
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 justify-center">
+          <!-- Contenido de Proveedores -->
+          <div class="text-center sm:border-r border-gray-400">
             <h2 class="text-2xl font-bold mb-2 pb-4">Proveedores</h2>
-            <ul class="list-none text-left border-r">
-                <li class="flex items-center justify-center">
-                    <button class="hover:scale-110 hover:bg-indigo-300 rounded-lg transform transition duration-200 ease-in-out w-full sm:w-60 flex items-center">
-                        <img class="w-12" src="../assets/instituciones/Udemy.png" alt="">
-                        <span class="ml-2 text-xl font-semibold text-black">Udemy</span>
-                    </button>
-                </li>
+            <ul class="list-none text-left">
+              <li class="flex items-center justify-center">
+                <a href="/cursos/udemy">
+                  <button class="hover:scale-110 hover:bg-indigo-300 rounded-lg transform transition duration-200 ease-in-out w-full sm:w-60 flex items-center">
+                    <img class="w-12" src="../assets/instituciones/Udemy.png" alt="Logo Udemy">
+                    <span class="ml-2 text-xl font-semibold text-black">Udemy</span>
+                  </button>
+                </a>
+              </li>
             </ul>
-        </div>
+          </div>
 
-        <div class="text-center  sm:border-r border-gray-400">
+          <!-- Contenido de Universidades -->
+          <div class="text-center sm:border-r border-gray-400">
             <h2 class="text-2xl font-bold mb-2 pb-4">Universidades</h2>
-            <ul class="list-none text-left border-r">
-                <li class="flex items-center justify-center">
-                    <button class="hover:scale-110 hover:bg-indigo-300 rounded-lg transform transition duration-200 ease-in-out w-full sm:w-60 flex items-center">
-                        <img class="w-12" src="../assets/instituciones/utn.png" alt="">
-                        <span class="ml-2 text-xl font-semibold text-black">UTN</span>
-                    </button>
-                </li>
+            <ul class="list-none text-left">
+              <li class="flex items-center justify-center">
+                <a href="/cursos/utn">
+                  <button class="hover:scale-110 hover:bg-indigo-300 rounded-lg transform transition duration-200 ease-in-out w-full sm:w-60 flex items-center">
+                    <img class="w-12" src="../assets/instituciones/utn.png" alt="Logo Universidad UTN">
+                    <span class="ml-2 text-xl font-semibold text-black">UTN</span>
+                  </button>
+                </a>
+              </li>
             </ul>
+          </div>
+          
+          <!-- Contenido de Futuro -->
+          <div class="text-center">
+            <h2 class="text-2xl font-bold mb-2 pb-4">Futuras Instituciones</h2>
+            <ul class="list-none text-left">
+              <li class="flex items-center justify-center">
+                <button class="hover:scale-110 hover:bg-indigo-300 rounded-lg transform transition duration-200 ease-in-out w-full sm:w-60 flex items-center">
+                  <img class="w-12" src="../assets/instituciones/UNAM.png" alt="Logo Universidad de México UNAM">
+                  <span class="ml-2 text-xl font-semibold text-black">UNAM</span>
+                </button>
+              </li>
+              <li class="flex items-center justify-center">
+                <button class="hover:scale-110 hover:bg-indigo-300 rounded-lg transform transition duration-200 ease-in-out w-full sm:w-60 flex items-center">
+                  <img class="w-12" src="../assets/instituciones/Universidad_de_Chile.png" alt="Logo Universidad de Chile">
+                  <span class="ml-2 text-xl font-semibold text-black">U. de Chile</span>
+                </button>
+              </li>
+              <li class="flex items-center justify-center">
+                <button class="hover:scale-110 hover:bg-indigo-300 rounded-lg transform transition duration-200 ease-in-out w-full sm:w-60 flex items-center">
+                  <img class="w-12" src="../assets/instituciones/coursera.png" alt="Logo Coursera">
+                  <span class="ml-2 text-xl font-semibold text-black">Coursera</span>
+                </button>
+              </li>
+              <li class="flex items-center justify-center">
+                <button class="hover:scale-110 hover:bg-indigo-300 rounded-lg transform transition duration-200 ease-in-out w-full sm:w-60 flex items-center">
+                  <img class="w-12" src="../assets/instituciones/Universidad_Central_de_Venezuela.png" alt="Logo Universidad_Central_de_Venezuela">
+                  <span class="ml-2 text-xl font-semibold text-black">U. C. Venezuela</span>
+                </button>
+              </li>
+              <li class="flex items-center justify-center">
+                <button class="hover:scale-110 hover:bg-indigo-300 rounded-lg transform transition duration-200 ease-in-out w-full sm:w-60 flex items-center">
+                  <img class="w-12" src="../assets/instituciones/edX.png" alt="Logo edX">
+                  <span class="ml-2 text-xl font-semibold text-black">edX</span>
+                </button>
+              </li>
+            </ul>
+          </div>
         </div>
+      </div>
     </div>
-</div>
-
-
-    </div>
-
   </div>
 </template>
 

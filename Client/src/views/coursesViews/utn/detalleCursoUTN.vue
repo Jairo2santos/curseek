@@ -1,6 +1,7 @@
 <template>
   <div class="bg-gray-100 p-4 md:p-6 max-w-screen-full mx-auto">
     <h1 class="text-center pb-6 text-sm text-gray-500">CurSeek cuenta con el apoyo del alumno. Cuando compra a través de enlaces en nuestro sitio, podemos ganar una comisión de afiliado.</h1>
+    
     <div class="max-w-screen-xl mx-auto">
       <!-- Grilla Principal -->
       <div class="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-6">
@@ -35,8 +36,8 @@
         <!-- Columna 3 (Barra Lateral) -->
         <div class="bg-white p-4 md:p-6 rounded border border-gray-200">
           <img :src="course.imgUrl" alt="Imagen del Curso" class="rounded-sm mb-4 w-full">
-          <a :href="course.link" target="_blank"
-            class="flex bg-indigo-600 text-white text-center py-2 px-4 rounded hover:bg-indigo-800 transition-colors duration-300 ease-in-out w-full items-center text-md justify-center font-semibold">
+          
+          <a :href="course.link" target="_blank" class="flex bg-indigo-600 text-white text-center py-2 px-4 rounded hover:bg-indigo-800 transition-colors duration-300 ease-in-out w-full items-center text-md justify-center font-semibold">
             Ir al curso
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960" width="24" class="ml-2">
               <path d="M200-120q-33 0-56.5-23.5T120-200v-560q0-33 23.5-56.5T200-840h280v80H200v560h560v-280h80v280q0 33-23.5 56.5T760-120H200Zm188-212-56-56 372-372H560v-80h280v280h-80v-144L388-332Z" fill="#fff" />
@@ -54,6 +55,7 @@
                   <span style="min-width: 120px;">{{ capitalizeFirstLetter(course.category) }}</span>
                 </div>
               </li>
+
               <!-- Institución -->
               <li class="flex text-sm text-gray-800 p-2 border-b border-gray-100">
                 <div class="flex items-center">
@@ -64,6 +66,7 @@
                   <span style="min-width: 120px; text-transform: capitalize;">UTN</span>
                 </div>
               </li>
+
               <!-- Duración -->
               <li class="flex text-sm text-black p-2 border-b border-gray-100">
                 <div class="flex items-center">
@@ -73,6 +76,7 @@
                   <span class="text-sm">{{ course.duration }}</span>
                 </div>
               </li>
+
               <!-- Precio -->
               <li class="flex text-sm text-black p-2 border-b border-gray-100">
                 <svg class="mr-2" fill="#057500" xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 -960 960 960" width="24">
@@ -80,8 +84,9 @@
                 </svg>
                 <h4 class="text-sm">{{ course.price }}</h4>
               </li>
+
               <!-- Cursada -->
-              <li class="flex text-sm text-black p-2 text-red-700">
+              <li class="flex text-sm p-2 text-red-700">
                 <h4>{{ course.startDate }}</h4>
               </li>
             </ul>
@@ -91,6 +96,7 @@
     </div>
   </div>
 </template>
+
 
 <script>
 import axios from 'axios';

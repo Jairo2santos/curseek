@@ -1,23 +1,20 @@
 <template>
-     <button @click.stop="toggleFavorite" class= "focus:outline-none transition text-cyan-500 text-sm hover:text-cyan-600 focus:outline-none transition">
-      
-    
-      <span :class="isFavorited ? 'text-lg text-red-500' : 'text-lg text-cyan-500'">
-  {{ isFavorited ? '♥' : '♡' }}
-</span>
-Favorito
+  <div>
+    <button @click.stop="toggleFavorite" class="focus:outline-none transition text-cyan-500 text-sm hover:text-cyan-600">
+      <span :class="isFavorited ? 'text-3xl text-red-500' : 'text-3xl text-cyan-500'">
+        {{ isFavorited ? '♥' : '♡' }}
+      </span>
     </button>
 
-
     <transition name="slide-down">
-    <div v-if="showNotification" class="fixed top-0 inset-x-0 z-50">
-      <div :class="notificationClass" class="text-white text-center py-3">
-        {{ notificationMessage }}
+      <div v-if="showNotification" class="fixed top-0 inset-x-0 z-50">
+        <div :class="notificationClass" class="text-white text-center py-3">
+          {{ notificationMessage }}
+        </div>
       </div>
-    </div>
-  </transition>
-  </template>
-
+    </transition>
+  </div>
+</template>
 
 <script setup>
 import { ref } from 'vue';

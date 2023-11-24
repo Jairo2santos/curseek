@@ -15,9 +15,9 @@
       <!-- Contenido a la derecha del Sidebar -->
       <div class="flex flex-col w-full md:ml-6">
         <!-- Filtros arriba -->
-        <div class="mb-4">
+        <!-- <div class="mb-4">
           <Filtros @filter-changed="handleFilterChange" />
-        </div>
+        </div> -->
         
         <div>          
           <!-- <div class="p-0">
@@ -40,7 +40,7 @@
                   
                   <!-- Descripción del curso -->
                   <p class="text-sm text-gray-600 mr-20">
-                    <!-- {{ course.summary }}  -->
+                    {{ course.summary }} 
                   </p>
                 </div>
                 
@@ -117,7 +117,7 @@ import axios from "axios";
 import Paginacion from "../../../components/Paginacion.vue";
 import Portada from "../../../components/Portada.vue";
 import Sidebar from "../../../components/Sidebar.vue";
-import Filtros from "../../../components/Filtros.vue";
+// import Filtros from "../../../components/Filtros.vue";
 import Favoritos from "../../../components/Favoritos.vue";
 
 axios.defaults.baseURL = "http://localhost:3333";
@@ -133,8 +133,6 @@ const totalCourses = ref(0);
 const categories = ref([]);
 const selectedCategories = ref([]);
 const filterType = ref(null);
-
-
 
 
 // Métodos y handlers
@@ -200,4 +198,5 @@ onMounted(() => {
   loadCourses(currentPage.value, filterType.value, selectedCategories.value);
   loadCategories();
 });
+
 </script>
