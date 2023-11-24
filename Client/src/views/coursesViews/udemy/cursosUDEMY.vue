@@ -20,11 +20,19 @@
           <Filtros @filter-changed="handleFilterChange" />
         </div> -->
 
-        <!-- Contenedor de Tarjetas de Cursos al lado del Sidebar -->
-        <div class="w-full md:w-1/1">
-          <div v-for="course in courses" :key="course.id" class="mb-5">
-            <!-- Tarjeta individual para cada curso -->
-            <div @click="navigateToCourse(course._id)" class="block max-w-full bg-white mt-2 rounded-lg p-4 hover:shadow-lg transition cursor-pointer">
+
+<!-- loader -->
+        <div v-if="isLoading" class="flex justify-center items-center h-64">
+    <div class="animate-spin rounded-full h-32 w-32 border-b-2 border-gray-900"></div>
+  </div>
+ 
+  <div v-else class="transition-opacity duration-500" :class="{ 'opacity-0': isLoading, 'opacity-100': !isLoading }">
+
+    <!-- Contenedor de Tarjetas de Cursos al lado del Sidebar -->
+    <div class="w-full md:w-1/1">
+      <div v-for="course in courses" :key="course.id" class="mb-5">
+        <!-- Tarjeta individual para cada curso -->
+        <div @click="navigateToCourse(course._id)" class="block max-w-full bg-white mt-2 rounded-lg p-4 hover:shadow-lg transition cursor-pointer">
 
               <div class="flex flex-col md:flex-row items-start md:items-start">
                 <!-- Imagen del curso -->
@@ -103,7 +111,7 @@
         />
       </div>
     </div>
-
+  </div>
   </div>
 </template>
 
@@ -132,12 +140,12 @@ const currentPage = ref(1);
 const totalPages = ref(1);
 const totalCourses = ref(0);
 const categories = ref([]);
-
+const isLoading = ref(false);
 
 
 const loadCourses = async (page, selectedCategory = '') => {
   let queryParams = `page=${page}`;
-
+  isLoading.value = true; 
   if (selectedCategory) {
     queryParams += `&category=${encodeURIComponent(selectedCategory)}`;
   }
@@ -150,6 +158,8 @@ const loadCourses = async (page, selectedCategory = '') => {
   } catch (error) {
     console.error("Error al obtener los cursos de Udemy:", error);
     alert("Error al cargar los cursos");
+  } finally {
+    isLoading.value = false; // Finaliza la carga
   }
 };
 
@@ -178,6 +188,9 @@ const handleCategoryFilter = async (selectedCategory) => {
   currentPage.value = 1; // Reinicia la paginación al filtrar por categoría
   await loadCourses(currentPage.value, selectedCategory);
 };
+
+
+//loader
 
 // Montaje
 onMounted(() => {

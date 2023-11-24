@@ -20,9 +20,13 @@
         </div> -->
         
         <div>          
-          <!-- <div class="p-0">
-            <span class="text-sm font-bold text-indigo-900">Mostrando {{ totalCourses }} cursos</span>
-          </div> -->
+       
+
+<!-- loader -->
+<div v-if="isLoading" class="flex justify-center items-center h-64">
+    <div class="animate-spin rounded-full h-32 w-32 border-b-2 border-gray-900"></div>
+  </div>
+ 
           <div v-for="course in courses" :key="course._id" class="mb-5">
             <!-- Tarjeta individual para cada curso -->
             <div @click="navigateToCourse(course._id)" class="block max-w-full bg-white mt-2 rounded-lg p-4 hover:shadow-lg transition cursor-pointer">
@@ -133,10 +137,11 @@ const totalCourses = ref(0);
 const categories = ref([]);
 const selectedCategories = ref([]);
 const filterType = ref(null);
-
+const isLoading = ref(false);
 
 // Métodos y handlers
 const loadCourses = async (page, filterType = null, selectedCategories = []) => {
+  isLoading.value = true; 
   let queryParams = `page=${page}`;
 
   if (filterType) {
@@ -159,6 +164,8 @@ const loadCourses = async (page, filterType = null, selectedCategories = []) => 
     const errorMessage =
       error.response?.data?.message || "Error al cargar los cursos";
     alert(errorMessage);
+  }finally {
+    isLoading.value = false; // Finaliza la carga
   }
 };
 const navigateToCourse = (courseId) => {
