@@ -21,12 +21,12 @@
         </div> -->
 
 
-<!-- loader -->
+        <!-- loader -->
         <div v-if="isLoading" class="flex justify-center items-center h-64">
-    <div class="animate-spin rounded-full h-32 w-32 border-b-2 border-gray-900"></div>
-  </div>
- 
-  <div v-else class="transition-opacity duration-500" :class="{ 'opacity-0': isLoading, 'opacity-100': !isLoading }">
+          <div class="animate-spin rounded-full h-32 w-32 border-b-2 border-gray-900"></div>
+        </div>
+        
+        <div v-else class="transition-opacity duration-500" :class="{ 'opacity-0': isLoading, 'opacity-100': !isLoading }">
 
     <!-- Contenedor de Tarjetas de Cursos al lado del Sidebar -->
     <div class="w-full md:w-1/1">
@@ -57,7 +57,7 @@
                 </div>
 
                 <!-- Sección derecha con categoría, precio y cursada -->
-                <div class="md:w-1/4 md:flex md:flex-col md:items-end text-left p-2 border-l border-gray-100">
+                <div class="md:w-1/4 md:flex md:flex-col md:items-end text-left p-0 border-l border-gray-100">
                   <ul>
                     <!-- Categoría -->
                     <li class="flex text-sm text-black p-2 border-b border-gray-100">

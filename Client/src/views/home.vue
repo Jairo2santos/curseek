@@ -54,7 +54,7 @@
     <!-- Acerca de Nosotros -->
     <div :class="{ 'blurred-background': isInputClicked }" class="flex flex-col md:flex-row container mx-auto md:px-40 p-0 bg-white">
       <img src="../assets/banner-1.jpg" alt="Descripción de la imagen" class="md:w-1/2 object-cover md:h-full" />
-      <div class="md:w-1/2 p-12 items-center">
+      <div class="md:w-1/2 p-8 items-center">
         <!-- Contenido Acerca de Nosotros -->
         <h2 class="text-left text-2xl font-semibold pb-4">Acerca de Nosotros</h2>
         <p>
@@ -70,7 +70,7 @@
     </div>
 
     <!-- El curso que quieras, cuando quieras -->
-    <div class="block flex-col md:flex-row container mx-auto px-24 py-12 bg-indigo-100">
+    <div class="block flex-col md:flex-row max-w-screen-full mx-auto px-24 py-12 bg-indigo-100">
       <h2 class="text-center text-4xl font-bold pb-4 text-indigo-900">
         El curso que quieras, cuando quieras
       </h2>

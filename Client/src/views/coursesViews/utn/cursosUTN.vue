@@ -22,10 +22,10 @@
         <div>          
        
 
-<!-- loader -->
-<div v-if="isLoading" class="flex justify-center items-center h-64">
-    <div class="animate-spin rounded-full h-32 w-32 border-b-2 border-gray-900"></div>
-  </div>
+      <!-- loader -->
+      <div v-if="isLoading" class="flex justify-center items-center h-64">
+        <div class="animate-spin rounded-full h-32 w-32 border-b-2 border-gray-900"></div>
+      </div>
  
           <div v-for="course in courses" :key="course._id" class="mb-5">
             <!-- Tarjeta individual para cada curso -->
@@ -49,7 +49,7 @@
                 </div>
                 
                 <!-- Sección derecha con categoría, precio y cursada -->
-                <div class="md:w-1/4 md:flex md:flex-col md:items-end text-left p-2 border-l border-gray-100">
+                <div class="md:w-1/4 md:flex md:flex-col md:items-end text-left p-0 border-l border-gray-100">
                   <ul>
                     <!-- Categoría -->
                     <li class="flex text-sm text-gray-800 p-2 border-b border-gray-100">
@@ -121,7 +121,7 @@ import axios from "axios";
 import Paginacion from "../../../components/Paginacion.vue";
 import Portada from "../../../components/Portada.vue";
 import Sidebar from "../../../components/Sidebar.vue";
-// import Filtros from "../../../components/Filtros.vue";
+  // import Filtros from "../../../components/Filtros.vue";
 import Favoritos from "../../../components/Favoritos.vue";
 
 axios.defaults.baseURL = "http://localhost:3333";
