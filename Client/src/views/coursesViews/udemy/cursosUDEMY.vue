@@ -16,9 +16,9 @@
       <!-- Contenido a la derecha del Sidebar -->
       <div class="flex flex-col w-full md:ml-6">
         <!-- Filtros arriba -->
-        <!-- <div class="mb-4">
+        <div class="mb-4">
           <Filtros @filter-changed="handleFilterChange" />
-        </div> -->
+        </div>
 
 
         <!-- loader -->
@@ -124,7 +124,7 @@ import Paginacion from "../../../components/Paginacion.vue";
 import Portada from "../../../components/Portada.vue";
 import logoUdemy from "../../../assets/logo-udemy.jpg";
 import Sidebar from "../../../components/Sidebar.vue";
-// import Filtros from "../../../components/Filtros.vue";
+import Filtros from "../../../components/Filtros.vue";
 import Favoritos from "../../../components/Favoritos.vue";
 const router = useRouter();
 
