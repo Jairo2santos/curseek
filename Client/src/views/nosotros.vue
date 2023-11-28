@@ -116,20 +116,25 @@
             </div>
 
 
-            <!-- Información sobre "Acerca de Nosotros" -->
-            <div v-if="$route.hash === '#/acerca'" class="md:mt-8">
-                <h3 class="text-3xl font-semibold mb-4">Acerca de Nosotros</h3>
-                <p>
-                    CurSeek es una plataforma web y aplicación móvil que funciona como un buscador de cursos,
-                    siguiendo un enfoque similar al de los populares motores de búsqueda de vuelos y hoteles.
-                    Sin embargo, su principal propósito es recopilar y presentar los cursos de mayor calidad
-                    y mejor valorados disponibles en línea.
-                    La plataforma se dedica a reunir información de una amplia gama de cursos educativos de
-                    diversas temáticas y niveles de dificultad, provenientes de fuentes diversas en Internet.
+            <div v-if="$route.hash === '#/acerca'" class="md:mt-8 md:flex">
+                <div class="w-1/1">
+                    <img class="max-w-sm" src="../assets/gorro-curseek.png" alt="Icono logo gorro CurSeek png">                
+                </div>
 
-                </p>
-                <!-- Puedes agregar más contenido o imágenes aquí -->
+                <div class="w-1/2 pt-6 md:pr-4">
+                    <h3 class="text-3xl font-semibold mb-4">Acerca de Nosotros</h3>
+                    <p>
+                        CurSeek es una plataforma web y aplicación móvil que funciona como un buscador de cursos,
+                        siguiendo un enfoque similar al de los populares motores de búsqueda de vuelos y hoteles.
+                        Sin embargo, su principal propósito es recopilar y presentar los cursos de mayor calidad
+                        y mejor valorados disponibles en línea.
+                        La plataforma se dedica a reunir información de una amplia gama de cursos educativos de
+                        diversas temáticas y niveles de dificultad, provenientes de fuentes diversas en Internet.
+                    </p>
+                    <!-- Puedes agregar más contenido aquí -->
+                </div>
             </div>
+
 
             <!-- Información sobre "Políticas de Privacidad" -->
             <div v-if="$route.hash === '#/privacidad'" class="md:mt-8">
@@ -210,13 +215,34 @@
             <!-- Información sobre "soporte" -->
             <div v-if="$route.hash === '#/soporte'" class="md:mt-8">
                 <h3 class="text-3xl font-semibold mb-4">Soporte</h3>
-                <p>
+
+                <p class="pb-4">
                     ¿Tienes preguntas o comentarios? ¡Estamos aquí para ayudarte!
-                    Ponte en soporte con nuestro equipo de soporte a través de [tu dirección de correo electrónico]
-                    o llámanos al [tu número de teléfono].
+                    Ponte en soporte con nuestro equipo de soporte a través de curseek@gmail.com
+                    o llámanos al +54 11 456 789.
                 </p>
-                <!-- Puedes agregar más contenido o imágenes aquí -->
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <!-- Tarjeta para el correo electrónico -->
+                    <div class="bg-white p-4 rounded-lg shadow-md">
+                        <h4 class="text-lg font-semibold mb-2">Correo Electrónico</h4>
+                        <p>
+                            ¿Tienes preguntas o comentarios? Estamos aquí para ayudarte.
+                            Ponte en contacto con nuestro equipo de soporte a través de:
+                        </p>
+                        <a href="mailto:curseek@gmail.com" class="text-blue-500 hover:underline">curseek@gmail.com</a>
+                    </div>
+
+                    <!-- Tarjeta para el número de teléfono -->
+                    <div class="bg-white p-4 rounded-lg shadow-md">
+                        <h4 class="text-lg font-semibold mb-2">Número de Teléfono</h4>
+                        <p>
+                            ¿Prefieres hablar directamente con nosotros? Llámanos o envía un SMS al siguiente número:
+                        </p>
+                        <a href="tel:+123456789" class="text-blue-500 hover:underline">+54 11 456 789</a>
+                    </div>
+                </div>
             </div>
+
         </div>
     </div>
 </template>
@@ -284,7 +310,7 @@ export default {
                 {
                     pregunta: "¿Cómo puedo contactar al soporte de CurSeek si tengo problemas?",
                     respuesta:
-                        "Si encuentras problemas o tienes preguntas, puedes ponerte en contacto con nuestro equipo de soporte a través del formulario de contacto en la sección 'Contacto'. Estamos aquí para ayudarte.",
+                        "Si encuentras problemas o tienes preguntas, puedes ponerte en contacto con nuestro equipo de soporte a través del formulario de contacto en la sección 'Soporte'. Estamos aquí para ayudarte.",
                     abierta: false,
                 },
             ],

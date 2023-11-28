@@ -242,7 +242,7 @@
           </div>
         </div>
 
-        <div class="py-6 px-12 md:px-40">
+        <div class="py-6 px-14 md:px-60">
           <p class="text-center text-md text-gray-700">
             Con nuestra plataforma impulsada por una visión digital avanzada, 
             obtén los datos y perspicacia esenciales para destacar en el emocionante 
