@@ -122,7 +122,7 @@
           <div class="text-center">
             <h3 class="text-2xl font-bold mb-2 pb-4">Próximamente</h3>
             <ul class="list-none text-left">
-              <li class="flex items-center justify-center">
+              <!-- <li class="flex items-center justify-center">
                 <a href="https://www.unam.mx/" target="_blank">
                   <button class="hover:scale-110 hover:bg-indigo-300 rounded-lg transform transition duration-200 ease-in-out w-full sm:w-60 flex items-center">
                     <img class="w-12" src="../assets/instituciones/UNAM.png" alt="Logo Universidad de México UNAM">
@@ -137,7 +137,7 @@
                     <span class="ml-2 text-xl font-semibold text-black">U. de Chile</span>
                   </button>
                 </a>
-              </li>
+              </li> -->
               <li class="flex items-center justify-center">
                 <a href="https://www.coursera.org" target="_blank">
                   <button class="hover:scale-110 hover:bg-indigo-300 rounded-lg transform transition duration-200 ease-in-out w-full sm:w-60 flex items-center">
@@ -146,7 +146,7 @@
                   </button>
                 </a>
               </li>
-              <li class="flex items-center justify-center">
+              <!-- <li class="flex items-center justify-center">
                 <a href="http://www.ucv.ve/" target="_blank">
                   <button class="hover:scale-110 hover:bg-indigo-300 rounded-lg transform transition duration-200 ease-in-out w-full sm:w-60 flex items-center">
                     <img class="w-12" src="../assets/instituciones/Universidad_Central_de_Venezuela.png" alt="Logo Universidad_Central_de_Venezuela">
@@ -161,7 +161,7 @@
                     <span class="ml-2 text-xl font-semibold text-black">edX</span>
                   </button>
                 </a>
-              </li>
+              </li> -->
             </ul>
           </div>
         </div>
@@ -169,8 +169,8 @@
     </div>
 
 
-    <div :class="{ 'blurred-background': isInputClicked }" class="justify-center items-center bg-gray-100 p-12">
-      <h2 class="text-center font-semibold text-3xl text-indigo-900 pt-0 pb-6 w-full">
+    <div :class="{ 'blurred-background': isInputClicked }" class="justify-center items-center bg-gray-100 p-8">
+      <h2 class="text-center font-semibold text-3xl text-indigo-900 pt-0 pb-12 w-full">
         Otra sección dentro de la Home
       </h2>
 
@@ -290,6 +290,6 @@ const redirectToCourse = (course) => {
 <style scoped>
 .blurred-background {
   filter: blur(5px);
-  transition: all .5s;
+  transition: all .3s;
 }
 </style>
