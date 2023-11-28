@@ -1,79 +1,88 @@
 <template>
   <div class="p-0 min-h-screen bg-white">
-    <!-- Banner -->
-    <div :class="{ 'blurred-background': isInputClicked }" class="pt-12">
-      <h1 class="text-center font-bold text-3xl text-gray-900 pt-4">Encuentra tu próximo curso</h1>
-    </div>
 
-    <!-- Campo de búsqueda -->
-    <div class="max-w-lg mx-auto pt-8 p-4">
-      <form @submit.prevent="search" class="flex p-1 bg-white items-center border rounded-xl overflow-hidden shadow-lg" >
-        <button type="submit" class="p-2">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960" width="24">
-            <path
-              d="M784-120 532-372q-30 24-69 38t-83 14q-109 0-184.5-75.5T120-580q0-109 75.5-184.5T380-840q109 0 184.5 75.5T640-580q0 44-14 83t-38 69l252 252-56 56ZM380-400q75 0 127.5-52.5T560-580q0-75-52.5-127.5T380-760q-75 0-127.5 52.5T200-580q0 75 52.5 127.5T380-400Z"
+    <!-- Buscador -->
+    <div class="flex flex-col md:flex-row container mx-auto md:pl-40 pl-0 bg-white pb-12">
+      
+      <!-- Contenedor del buscador y resultados -->
+      <div class="md:w-1/2 p-8 flex flex-col justify-center">
+        <!-- Título -->
+        <h1 :class="{ 'blurred-background': isInputClicked }" class="text-left font-semibold text-4xl text-gray-900 pb-3">
+          Encuentra hoy mismo tu próximo curso sin esfuerzo.
+        </h1>
+        
+        <!-- Campo de búsqueda -->
+        <div class="max-w-lg m-0 p-0 border-b border-gray-200 pb-12">
+          <form @submit.prevent="search" class="flex p-1 bg-white items-center border rounded-xl overflow-hidden shadow-lg" >
+            <button type="submit" class="p-2">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960" width="24">
+                <path d="M784-120 532-372q-30 24-69 38t-83 14q-109 0-184.5-75.5T120-580q0-109 75.5-184.5T380-840q109 0 184.5 75.5T640-580q0 44-14 83t-38 69l252 252-56 56ZM380-400q75 0 127.5-52.5T560-580q0-75-52.5-127.5T380-760q-75 0-127.5 52.5T200-580q0 75 52.5 127.5T380-400Z"/>
+              </svg>
+            </button>
+            <input
+              v-model="query"
+              placeholder="Buscar más de 10,000 cursos"
+              class="rounded-xl p-3 flex-grow outline-none "
+              @focus="setInputClicked(true)"
+              @blur="setInputClicked(false)"
             />
-          </svg>
-        </button>
-        <input
-          v-model="query"
-          placeholder="Buscar más de 10,000 cursos"
-          class="rounded-xl p-3 flex-grow outline-none "
-          @focus="setInputClicked(true)"
-          @blur="setInputClicked(false)"
-        />
-        <button v-if="query" type="button" @click="clearSearch" class="p-2">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="18">
-            <path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z" />
-          </svg>
-        </button>
-      </form>
-    </div>
+            <button v-if="query" type="button" @click="clearSearch" class="p-2">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="18">
+                <path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/>
+              </svg>
+            </button>
+          </form>
+        </div>
 
-    <!-- Resultados -->
-  <div class="flex justify-center">
-    <div v-if="courses.length > 0" class="absolute max-w-3xl   mt-1 bg-white shadow-lg max-h-96 overflow-y-auto z-10">
-      <p class="px-4 py-2 text-sm text-gray-500 border-b">Los cursos que se relacionan con"{{ query }}"</p>
-      <ul>
-        <li v-for="course in courses" :key="course._id" class="border-b last:border-b-0">
-          <a
-            @click="redirectToCourse(course)"
-            class="flex items-center p-4 hover:bg-gray-100 cursor-pointer"
-          >
-            <img :src="course.image" alt="Course" class="w-16 h-16 rounded-full object-cover mr-4">
-            <div>
-              <h2 class="font-bold">{{ course.title }}</h2>
-              <p class="text-xs text-gray-600">{{ course.source}}</p>
-            </div>
-          </a>
-         </li>
-       </ul>
-    </div>    
-   </div>
+        <!-- Resultados -->
+        <div class="flex justify-center">
+          <div v-if="courses.length > 0" class="absolute max-w-3xl mt-1 bg-white shadow-lg max-h-96 overflow-y-auto z-10">
+            <p class="px-4 py-2 text-sm text-gray-500 border-b">Los cursos que se relacionan con"{{ query }}"</p>
+            <ul>
+              <li v-for="course in courses" :key="course._id" class="border-b last:border-b-0">
+                <a
+                  @click="redirectToCourse(course)"
+                  class="flex items-center p-4 hover:bg-gray-100 cursor-pointer"
+                >
+                  <img :src="course.image" alt="Course" class="w-16 h-16 rounded-full object-cover mr-4">
+                  <div>
+                    <h2 class="font-bold">{{ course.title }}</h2>
+                    <p class="text-xs text-gray-600">{{ course.source}}</p>
+                  </div>
+                </a>
+              </li>
+            </ul>
+          </div>    
+        </div>
 
-    <!-- Acerca de Nosotros -->
-    <div :class="{ 'blurred-background': isInputClicked }" class="flex flex-col md:flex-row container mx-auto md:px-40 p-0 bg-white">
-      <img src="../assets/banner-1.jpg" alt="Descripción de la imagen" class="md:w-1/2 object-cover md:h-full" />
-      <div class="md:w-1/2 p-8 items-center">
-        <!-- Contenido Acerca de Nosotros -->
-        <h2 class="text-left text-2xl font-semibold pb-4">Acerca de Nosotros</h2>
-        <p>
-          Somos una plataforma web y aplicación móvil que funciona como un buscador de 
-          cursos. Seguimos un enfoque similar al de los populares motores de búsqueda 
-          de vuelos y hoteles. Sin embargo, nuestro principal propósito es recopilar y 
-          presentar los cursos de mayor calidad y mejor valorados disponibles en línea. 
-          Nos dedicamos a reunir información de una amplia gama de cursos educativos de 
-          diversas temáticas y niveles de dificultad, provenientes de fuentes 
-          diversas en Internet.
-        </p>
+        <!-- Botones de búsquedas frecuentes -->
+        <div class="mt-4 pr-0 md:pr-60">
+          <h2 class="text-lg font-bold p-2">Búsquedas frecuentes</h2>
+          <button class="text-sm bg-gray-100 text-gray-800 hover:bg-indigo-200 border border-gray-200 transition py-1 px-2 rounded-full m-1">Udemy</button>
+          <button class="text-sm bg-gray-100 text-gray-800 hover:bg-indigo-200 border border-gray-200 transition py-1 px-2 rounded-full m-1">UTN</button>
+          <button class="text-sm bg-gray-100 text-gray-800 hover:bg-indigo-200 border border-gray-200 transition py-1 px-2 rounded-full m-1">Java</button>
+          <button class="text-sm bg-gray-100 text-gray-800 hover:bg-indigo-200 border border-gray-200 transition py-1 px-2 rounded-full m-1">Javascript</button>
+          <button class="text-sm bg-gray-100 text-gray-800 hover:bg-indigo-200 border border-gray-200 transition py-1 px-2 rounded-full m-1">css</button>
+          <button class="text-sm bg-gray-100 text-gray-800 hover:bg-indigo-200 border border-gray-200 transition py-1 px-2 rounded-full m-1">php</button>
+          <button class="text-sm bg-gray-100 text-gray-800 hover:bg-indigo-200 border border-gray-200 transition py-1 px-2 rounded-full m-1">administración</button>
+          <button class="text-sm bg-gray-100 text-gray-800 hover:bg-indigo-200 border border-gray-200 transition py-1 px-2 rounded-full m-1">html</button>
+          <button class="text-sm bg-gray-100 text-gray-800 hover:bg-indigo-200 border border-gray-200 transition py-1 px-2 rounded-full m-1">física</button>
+          <button class="text-sm bg-gray-100 text-gray-800 hover:bg-indigo-200 border border-gray-200 transition py-1 px-2 rounded-full m-1">Matemática</button>
+        </div>        
       </div>
+
+        <!-- Imagen -->
+        <img
+          :class="{ 'blurred-background': isInputClicked }"
+          src="../assets/banner-1-izquierda.jpg"
+          alt="Imagen ilustrativa hombre sentado estudiando"
+          class="md:w-1/2 object-cover md:h-full"
+        />
     </div>
+
 
     <!-- El curso que quieras, cuando quieras -->
-    <div class="block flex-col md:flex-row max-w-screen-full mx-auto px-24 py-12 bg-indigo-100">
-      <h2 class="text-center text-4xl font-bold pb-4 text-indigo-900">
-        El curso que quieras, cuando quieras
-      </h2>
+    <div :class="{ 'blurred-background': isInputClicked }" class="block flex-col md:flex-row max-w-screen-full mx-auto px-24 py-12 pt-4 bg-indigo-100">
       <img src="../assets/banner-curseek.png" alt="Imágen ilustrativa mapa" class="object-cover md:w-full" />
 
       <!-- Lista de Proveedores y Universidades -->
@@ -81,7 +90,7 @@
         <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 justify-center">
           <!-- Contenido de Proveedores -->
           <div class="text-center sm:border-r border-gray-400">
-            <h2 class="text-2xl font-bold mb-2 pb-4">Proveedores</h2>
+            <h3 class="text-2xl font-bold mb-2 pb-4">Proveedores</h3>
             <ul class="list-none text-left">
               <li class="flex items-center justify-center">
                 <a href="/cursos/udemy">
@@ -96,7 +105,7 @@
 
           <!-- Contenido de Universidades -->
           <div class="text-center sm:border-r border-gray-400">
-            <h2 class="text-2xl font-bold mb-2 pb-4">Universidades</h2>
+            <h3 class="text-2xl font-bold mb-2 pb-4">Universidades</h3>
             <ul class="list-none text-left">
               <li class="flex items-center justify-center">
                 <a href="/cursos/utn">
@@ -111,7 +120,7 @@
           
           <!-- Contenido de Futuro -->
           <div class="text-center">
-            <h2 class="text-2xl font-bold mb-2 pb-4">Próximamente</h2>
+            <h3 class="text-2xl font-bold mb-2 pb-4">Próximamente</h3>
             <ul class="list-none text-left">
               <li class="flex items-center justify-center">
                 <a href="https://www.unam.mx/" target="_blank">
@@ -158,6 +167,86 @@
         </div>
       </div>
     </div>
+
+
+    <div :class="{ 'blurred-background': isInputClicked }" class="justify-center items-center bg-gray-100 p-12">
+      <h2 class="text-center font-semibold text-3xl text-indigo-900 pt-0 pb-6 w-full">
+        Otra sección dentro de la Home
+      </h2>
+
+      <div class="flex flex-wrap pb-6 md:px-40">
+        <!-- Card 1 -->
+        <div class="max-w-xs mx-auto bg-white shadow-lg rounded-lg overflow-hidden transform transition-transform ease-in-out hover:scale-105 hover:shadow-xl px-4 py-2 mb-2">
+          <svg class="inline mr-2" fill="#6366f1" xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960" width="63">
+            <path d="M224.615-120q-26.846 0-45.731-18.884Q160-157.769 160-184.615v-444.846q-17.231-7.154-28.616-23.116Q120-668.538 120-689.231v-86.154q0-26.846 18.884-45.731Q157.769-840 184.615-840h590.77q26.846 0 45.731 18.884Q840-802.231 840-775.385v86.154q0 20.693-11.384 36.654-11.385 15.962-28.616 23.116v444.846q0 26.846-18.884 45.731Q762.231-120 735.385-120h-510.77ZM200-624.615v436.154q0 12.307 8.846 20.384T230.769-160h504.616q10.769 0 17.692-6.923T760-184.615v-440H200Zm-15.385-40h590.77q10.769 0 17.692-6.924Q800-678.462 800-689.231v-86.154q0-10.769-6.923-17.692T775.385-800h-590.77q-10.769 0-17.692 6.923T160-775.385v86.154q0 10.769 6.923 17.692 6.923 6.924 17.692 6.924Zm190.77 219.231h209.23V-480h-209.23v34.616ZM480-392.308Z"/>
+          </svg>
+
+          <div class="p-4">
+            <h3 class="text-lg font-bold mb-4 text-left">Descubrimiento</h3>
+            <ul>
+              <li class="flex items-center">
+                <p class="text-sm ">
+                  Explora más de 10,000 cursos ofrecidos por destacadas universidades como UTN, U. de Chile, UNAM, y muchas otras.
+                </p>
+              </li>
+            </ul>              
+          </div>
+        </div>
+        
+        <!-- Card 2 -->
+        <div class="max-w-xs mx-auto bg-white shadow-lg rounded-lg overflow-hidden transform transition-transform ease-in-out hover:scale-105 hover:shadow-xl px-4 py-2 mb-2">
+          <svg class="inline mr-2" fill="#6366f1" xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960" width="63">
+            <path d="M184.615-200Q157-200 138.5-218.5 120-237 120-264.615v-430.77Q120-723 138.5-741.5 157-760 184.615-760h590.77Q803-760 821.5-741.5 840-723 840-695.385v430.77Q840-237 821.5-218.5 803-200 775.385-200h-590.77ZM480-475.384 160-684.615v420q0 10.769 6.923 17.692T184.615-240h590.77q10.769 0 17.692-6.923T800-264.615v-420L480-475.384ZM480-520l307.692-200H172.308L480-520ZM160-684.615V-720v455.385q0 10.769 6.923 17.692T184.615-240H160v-444.615Z"/>
+          </svg>
+
+          <div class="p-4">
+            <h3 class="text-lg font-bold mb-4 text-left">Seguimiento (próximamente)</h3>
+            <ul>
+              <li class="flex items-center">
+                <p class="text-sm ">
+                  Utiliza nuestro botón de "Seguir" para asegurarte de no perderte nunca un curso importante en tu trayectoria educativa.
+                </p>
+              </li>
+            </ul>              
+          </div>
+        </div>
+      
+        <!-- Card 3 -->
+        <div class="max-w-xs mx-auto bg-white shadow-lg rounded-lg overflow-hidden transform transition-transform ease-in-out hover:scale-105 hover:shadow-xl px-4 py-2 mb-2">
+          <svg class="inline mr-2" fill="#6366f1" xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960" width="63">
+            <path d="m480-173.846-30.308-27.385q-97.923-89.461-162-153.153-64.077-63.693-101.154-112.347-37.077-48.654-51.807-88.038Q120-594.154 120-634q0-76.308 51.846-128.154Q223.692-814 300-814q52.769 0 99 27t81 78.538Q514.769-760 561-787t99-27q76.308 0 128.154 51.846Q840-710.308 840-634q0 39.846-14.731 79.231-14.73 39.384-51.807 88.038-37.077 48.654-100.769 112.347Q609-290.692 510.308-201.231L480-173.846ZM480-228q96-86.769 158-148.654 62-61.884 98-107.384t50-80.616q14-35.115 14-69.346 0-60-40-100t-100-40q-47.769 0-88.154 27.269-40.384 27.269-72.307 82.116h-39.078q-32.692-55.616-72.692-82.5Q347.769-774 300-774q-59.231 0-99.615 40Q160-694 160-634q0 34.231 14 69.346 14 35.116 50 80.616t98 107q62 61.5 158 149.038Zm0-273Z"/>
+          </svg>
+
+          <div class="p-4">
+            <h3 class="text-lg font-bold mb-4 text-left">Favoritos</h3>
+            <ul>
+              <li class="flex items-center">
+                <p class="text-sm ">
+                  Marca tus cursos favoritos o crea trayectorias personalizadas de aprendizaje utilizando recursos de cualquier parte de la web.
+                </p>
+              </li>
+            </ul>              
+          </div>
+        </div>
+
+        <div class="py-6 md:px-40">
+          <p class="text-center text-md text-gray-700">
+            Con nuestra plataforma impulsada por una visión digital avanzada, 
+            obtén los datos y perspicacia esenciales para destacar en el emocionante 
+            ámbito de la educación en línea. Descubre, aprende y alcanza tus metas 
+            académicas con Curseek.
+          </p>
+          
+          <a href="/signUp" class="flex items-center text-lg font-bold justify-center mt-6 text-gray-500 hover:text-blue-700 transition duration-300">
+            <span>Únete ahora!</span>
+            <svg class="ml-2" fill="none" stroke="currentColor" width="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+            </svg>
+          </a>
+        </div>
+      </div>
+
+    </div>
   </div>
 </template>
 
@@ -201,5 +290,6 @@ const redirectToCourse = (course) => {
 <style scoped>
 .blurred-background {
   filter: blur(5px);
+  transition: all .5s;
 }
 </style>

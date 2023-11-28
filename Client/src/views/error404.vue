@@ -1,7 +1,6 @@
 <template>
   <div class="p-0 min-h-screen bg-white">
 
-    <div class="md:mx-80 bg-white rounded-t-lg">
       <!-- Banner -->
       <div :class="{ 'blurred-background': isInputClicked }" class="pt-12">
         <h1 class="text-center text-4xl font-bold pb-4 text-indigo-900">404. Página no encontrada</h1>
@@ -32,7 +31,6 @@
           </button>
         </form>
       </div>
-    </div>
 
     <!-- Resultados -->
     <div class="flex justify-center">
@@ -55,8 +53,8 @@
       </div>
     </div>
 
-    <div class="flex items-center justify-center mt-0 bg-white mx-80 rounded-b-lg">
-      <img src="../assets/404.jpg" alt="Imágen Error 404" class="object-cover max-w-screen-sm h-auto my-24 mt-0"/>
+    <div class="flex items-center justify-center mt-0 bg-white">
+      <img src="../assets/404.jpg" alt="Imágen Error 404" class="object-cover max-w-screen-sm h-auto mt-1"/>
     </div>
   </div>
 </template>

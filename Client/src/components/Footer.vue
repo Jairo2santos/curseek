@@ -1,33 +1,48 @@
 <template>
-  <footer class="bg-gray-200 shadow-md p-8">
-    <div class="container mx-auto px-4">
-      <div class="flex flex-col md:flex-row items-center justify-between">
-        <div class="mb-4 md:mb-12 md:flex md:flex-col md:items-start">
+  <footer class="bg-gray-200 text-blak md:pb-40 pb-20 pt-12 px-20 md:px-40">
+    <div class="container mx-auto flex flex-col md:flex-row justify-between">
+      <div class="block">
+        <!-- Logo -->
+        <div class="mb-4 md:mb-0 pb-2">
           <a href="/">
-            <img src="../assets/logo-curseek.png" alt="logo gorro curseek" width="120">
+            <img src="../assets/logo-curseek.png" alt="Curseek Logo" class="w-48"> 
           </a>
-          <p class="text-xl font-semibold text-indigo-900 mt-2">&copy; 2023 CurSeek</p>
+          <p class="text-center text-indigo-800">&copy; Copyright 2023</p>
         </div>
-        <!-- <div class="md:flex md:items-center md:space-x-4">
+      </div>
+
+      <!-- Enlaces de navegación -->
+      <div class="flex flex-col md:flex-row">
+        <!-- Sección de Ayuda -->
+        <div class="mb-4 md:mb-0 md:mr-8">
+          <h4 class="text-md font-bold mb-2">Ayuda</h4>
           <ul>
-              <li>
-                  <a href="/about" class="text-gray-600 hover:text-indigo-900 transition">Acerca de nosotros</a>
-              </li>
-              <li>
-                  <a href="/contact" class="text-gray-600 hover:text-indigo-900 transition">Contáctanos</a>
-              </li>
-              <li>
-                  <a href="/terms" class="text-gray-600 hover:text-indigo-900 transition">Términos y condiciones</a>
-              </li>
-              <li>
-                  <a href="/privacy" class="text-gray-600 hover:text-indigo-900 transition">Política de privacidad</a>
-              </li>
+            <li class="text-sm text-gray-700 hover:text-indigo-500 transition pb-1"><a href="/nosotros/#/preguntasFrecuentes">Preguntas frecuentes</a></li>
+            <li class="text-sm text-gray-700 hover:text-indigo-500 transition pb-1"><a href="/nosotros/#/soporte">Soporte técnico</a></li>
           </ul>
-        </div> -->
+        </div>
+
+        <!-- Sección de Nosotros -->
+        <div class="mb-4 md:mb-0 md:mr-8">
+          <h4 class="text-md font-bold mb-2">Nosotros</h4>
+          <ul>
+            <li class="text-sm text-gray-700 hover:text-indigo-500 transition pb-1"><a href="/nosotros/#/acerca">Sobre nosotros</a></li>
+            <li class="text-sm text-gray-700 hover:text-indigo-500 transition pb-1"><a href="/nosotros/#/nuestroEquipo">Nuestro equipo</a></li>
+          </ul>
+        </div>
+
+        <!-- Sección de Términos y Condiciones -->
+        <div class="mb-4 md:mb-0 md:mr-8">
+          <h4 class="text-md font-bold mb-2">Términos y Condiciones</h4>
+          <ul>
+            <li class="text-sm text-gray-700 hover:text-indigo-500 transition pb-1"><a href="/nosotros/#/privacidad">Política de privacidad</a></li>
+            <li class="text-sm text-gray-700 hover:text-indigo-500 transition pb-1"><a href="/nosotros/#/terminos">Términos y condiciones</a></li>
+          </ul>
+        </div>
       </div>
     </div>
   </footer>
-</template>  
+</template>
 
 <script setup>
 import { ref, watch } from 'vue';
