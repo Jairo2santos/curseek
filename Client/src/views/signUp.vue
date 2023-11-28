@@ -96,7 +96,7 @@
       </button>
     </form>
 
-    <div class="border-l border-gray-200 px-8 py-40 bg-white text-left">
+    <div class="border-l border-gray-200 px-8 pt-4 pb-12 md:py-40 bg-white text-left">
       <h1 class="font-bold pb-2 text-lg">Únete a CurSeek! Gratis</h1>
       <ul>
         <li class="text-sm pt-4">

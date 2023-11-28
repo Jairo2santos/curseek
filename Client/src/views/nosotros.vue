@@ -60,8 +60,11 @@
                             ▼
                         </span>
                     </h4>
-                    <p v-show="pregunta.abierta" class="px-4 py-2 bg-gray-100 rounded-b-xl text-sm">{{ pregunta.respuesta }}
-                    </p>
+                    <ul>
+                        <li v-show="pregunta.abierta" class="text-sm bg-gray-100 rounded-b-xl px-6 py-4">
+                            {{ pregunta.respuesta }}
+                        </li>
+                    </ul>
                 </div>
             </div>
 
@@ -78,7 +81,7 @@
                         <img src="https://lh3.googleusercontent.com/a-/ALV-UjUOdWbneS_2U1P8VDsQFxjmSkp8Xv0xitK1IIF5rOuBWA=s48-p"
                             alt="Imágen del Programador 1" class="w-24 object-cover mb-4 rounded-full">
                         <h4 class="text-xl font-semibold">Jairo Ramirez Dos Santos</h4>
-                        <h5 class="text-sm text-gray-600 italic mb-2">Founder and CEO</h5>
+                        <h5 class="text-sm text-gray-600 italic mb-2">Founder</h5>
                         <p class="text-black">
                             Jairo, fundador y CEO apasionado de CurSeek, canaliza su amor por la programación web hacia
                             una misión única. Originario de Venezuela y ahora radicado en Buenos Aires, ha forjado CurSeek
@@ -98,7 +101,7 @@
                         <img src="https://lh3.googleusercontent.com/a/ACg8ocKl8CKX-qlmOjBcBxtZCsS5KPVD3yELG44p0-2iMxf9nIo=s48-p"
                             alt="Imágen del Programador 1" class="w-24 object-cover mb-4 rounded-full">
                         <h4 class="text-xl font-semibold">Matias Alejo Varas</h4>
-                        <h5 class="text-sm text-gray-600 italic mb-2">Co-Founder and COO</h5>
+                        <h5 class="text-sm text-gray-600 italic mb-2">Co-Founder</h5>
                         <p class="text-black">Matías, co-fundador y COO de CurSeek, desempeñando un
                             papel esencial desde los inicios del proyecto en 2023. Iniciaron esta emocionante travesía
                             juntos, construyendo CurSeek desde cero con pasión y determinación.

@@ -12,7 +12,7 @@
         </h1>
         
         <!-- Campo de búsqueda -->
-        <div class="max-w-lg m-0 p-0 border-b border-gray-200 pb-12">
+        <div class="max-w-lg m-0 p-0">
           <form @submit.prevent="search" class="flex p-1 bg-white items-center border rounded-xl overflow-hidden shadow-lg" >
             <button type="submit" class="p-2">
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960" width="24">
@@ -55,20 +55,33 @@
           </div>    
         </div>
 
+        <!-- Saber más -->
+        <div :class="{ 'blurred-background': isInputClicked }"
+             class="border-b border-gray-200 mt-2 pb-8 ml-2">
+            <a href="/nosotros/#/preguntasFrecuentes" :class="{ 'blurred-background': isInputClicked }">
+            <button class="flex text-sm font-semibold hover:underline hover:bg-indigo-100 transition text-black p-0">
+              Ayuda
+              <svg class="ml-1" xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 0 24 24" width="24px" fill="#000000">
+                <path d="M0 0h24v24H0V0z" fill="none"/><path d="M11.5 2C6.81 2 3 5.81 3 10.5S6.81 19 11.5 19h.5v3c4.86-2.34 8-7 8-11.5C20 5.81 16.19 2 11.5 2zm1 14.5h-2v-2h2v2zm0-3.5h-2c0-3.25 3-3 3-5 0-1.1-.9-2-2-2s-2 .9-2 2h-2c0-2.21 1.79-4 4-4s4 1.79 4 4c0 2.5-3 2.75-3 5z"/>
+              </svg>
+            </button>
+          </a>
+        </div>
+
         <!-- Botones de búsquedas frecuentes -->
         <div class="mt-4 pr-0 md:pr-60">
           <h2 class="text-lg font-bold p-2">Búsquedas frecuentes</h2>
-          <button class="text-sm bg-gray-100 text-gray-800 hover:bg-indigo-200 border border-gray-200 transition py-1 px-2 rounded-full m-1">Udemy</button>
-          <button class="text-sm bg-gray-100 text-gray-800 hover:bg-indigo-200 border border-gray-200 transition py-1 px-2 rounded-full m-1">UTN</button>
-          <button class="text-sm bg-gray-100 text-gray-800 hover:bg-indigo-200 border border-gray-200 transition py-1 px-2 rounded-full m-1">Java</button>
-          <button class="text-sm bg-gray-100 text-gray-800 hover:bg-indigo-200 border border-gray-200 transition py-1 px-2 rounded-full m-1">Javascript</button>
-          <button class="text-sm bg-gray-100 text-gray-800 hover:bg-indigo-200 border border-gray-200 transition py-1 px-2 rounded-full m-1">css</button>
-          <button class="text-sm bg-gray-100 text-gray-800 hover:bg-indigo-200 border border-gray-200 transition py-1 px-2 rounded-full m-1">php</button>
-          <button class="text-sm bg-gray-100 text-gray-800 hover:bg-indigo-200 border border-gray-200 transition py-1 px-2 rounded-full m-1">administración</button>
-          <button class="text-sm bg-gray-100 text-gray-800 hover:bg-indigo-200 border border-gray-200 transition py-1 px-2 rounded-full m-1">html</button>
-          <button class="text-sm bg-gray-100 text-gray-800 hover:bg-indigo-200 border border-gray-200 transition py-1 px-2 rounded-full m-1">física</button>
-          <button class="text-sm bg-gray-100 text-gray-800 hover:bg-indigo-200 border border-gray-200 transition py-1 px-2 rounded-full m-1">Matemática</button>
-        </div>        
+          <button class="text-sm bg-gray-100 text-gray-800 hover:bg-indigo-200 border border-gray-200 transition py-1 px-2 rounded-full mb-1 mr-1">Udemy</button>
+          <button class="text-sm bg-gray-100 text-gray-800 hover:bg-indigo-200 border border-gray-200 transition py-1 px-2 rounded-full mb-1 mr-1">UTN</button>
+          <button class="text-sm bg-gray-100 text-gray-800 hover:bg-indigo-200 border border-gray-200 transition py-1 px-2 rounded-full mb-1 mr-1">Java</button>
+          <button class="text-sm bg-gray-100 text-gray-800 hover:bg-indigo-200 border border-gray-200 transition py-1 px-2 rounded-full mb-1 mr-1">Javascript</button>
+          <button class="text-sm bg-gray-100 text-gray-800 hover:bg-indigo-200 border border-gray-200 transition py-1 px-2 rounded-full mb-1 mr-1">css</button>
+          <button class="text-sm bg-gray-100 text-gray-800 hover:bg-indigo-200 border border-gray-200 transition py-1 px-2 rounded-full mb-1 mr-1">php</button>
+          <button class="text-sm bg-gray-100 text-gray-800 hover:bg-indigo-200 border border-gray-200 transition py-1 px-2 rounded-full mb-1 mr-1">administración</button>
+          <button class="text-sm bg-gray-100 text-gray-800 hover:bg-indigo-200 border border-gray-200 transition py-1 px-2 rounded-full mb-1 mr-1">html</button>
+          <button class="text-sm bg-gray-100 text-gray-800 hover:bg-indigo-200 border border-gray-200 transition py-1 px-2 rounded-full mb-1 mr-1">física</button>
+          <button class="text-sm bg-gray-100 text-gray-800 hover:bg-indigo-200 border border-gray-200 transition py-1 px-2 rounded-full mb-1 mr-1">Matemática</button>
+        </div>
       </div>
 
         <!-- Imagen -->
@@ -169,9 +182,9 @@
     </div>
 
 
-    <div :class="{ 'blurred-background': isInputClicked }" class="justify-center items-center bg-gray-100 p-8">
+    <div :class="{ 'blurred-background': isInputClicked }" class="justify-center items-center bg-gray-100 py-12">
       <h2 class="text-center font-semibold text-3xl text-indigo-900 pt-0 pb-12 w-full">
-        Otra sección dentro de la Home
+        Adéntrate a CurSeek y descubre!
       </h2>
 
       <div class="flex flex-wrap pb-6 md:px-40">
@@ -186,7 +199,7 @@
             <ul>
               <li class="flex items-center">
                 <p class="text-sm ">
-                  Explora más de 10,000 cursos ofrecidos por destacadas universidades como UTN, U. de Chile, UNAM, y muchas otras.
+                  Explora cursos por destacadas universidades como UTN, U. de Chile, UNAM, y muchas otras.
                 </p>
               </li>
             </ul>              
@@ -229,7 +242,7 @@
           </div>
         </div>
 
-        <div class="py-6 md:px-40">
+        <div class="py-6 px-12 md:px-40">
           <p class="text-center text-md text-gray-700">
             Con nuestra plataforma impulsada por una visión digital avanzada, 
             obtén los datos y perspicacia esenciales para destacar en el emocionante 
@@ -237,7 +250,7 @@
             académicas con Curseek.
           </p>
           
-          <a href="/signUp" class="flex items-center text-lg font-bold justify-center mt-6 text-gray-500 hover:text-blue-700 transition duration-300">
+          <a href="/signUp" class="flex items-center justify-center text-lg font-bold text-gray-500 hover:text-blue-700 transition duration-200 mt-6">
             <span>Únete ahora!</span>
             <svg class="ml-2" fill="none" stroke="currentColor" width="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
