@@ -42,8 +42,8 @@
 
         <div class="flex flex-col space-y-4">
           <div class="flex gap-2 justify-end">
-            <button @click="saveProfile" class="px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600">Guardar cambios</button>
-            <button @click="cancelEdit" class="px-4 py-2 bg-gray-500 text-white rounded hover:bg-gray-600">Cancelar</button>
+            <button @click="saveProfile" class="px-4 py-2 bg-indigo-600 text-white rounded-md hover:bg-indigo-800 transition">Guardar</button>
+            <button @click="cancelEdit" class="px-4 py-2 text-gray-700">Cancelar</button>
           </div>
         </div>
       </div>
@@ -72,8 +72,8 @@
           </div>
         </div>
 
-        <div class="flex flex-col items-center">
-          <button @click="startEdit" class="btn text-blue-600 font-semibold text-lg">Editar perfil</button>
+        <div class="text-center items-center">
+          <button @click="startEdit" class="btn text-sm font-bold text-black rounded-md border border-gray-300 p-2 mr-4">Editar perfil</button>
           <button @click="logout" class="btn text-red-600 font-semibold text-lg mt-2">Logout</button>
         </div>
       </div>
@@ -84,26 +84,27 @@
       <h2 class="text-2xl font-bold mb-4">Mis Cursos Favoritos</h2>
       <div class="flex flex-col gap-4">
         <!-- Bucle para los cursos favoritos -->
-        <div v-for="course in favoriteCourses" :key="course._id" class="bg-white rounded-lg shadow overflow-hidden">
-          <div class="flex flex-col md:flex-row">
+        <div v-for="course in favoriteCourses" :key="course._id"
+        class="bg-white hover:shadow-md transition rounded-lg overflow-hidden">
+          
+          <div class="flex flex-col md:flex-row cursor-pointer border-gray-100 border">
             <!-- Imagen del curso a la izquierda -->
-            <img :src="courseImage(course)" alt="Imagen del curso" class="md:w-48 w-full h-48 object-cover rounded-t-lg md:rounded-t-none md:rounded-l-lg">
+            <img :src="courseImage(course)" alt="Imagen del curso" 
+            class="md:w-40 w-full object-contain rounded-t-lg md:rounded-t-none md:rounded-l-lg">
 
             <!-- Contenido del curso a la derecha -->
-            <div class="p-4 flex-grow">
-              <h3 class="font-semibold text-lg mb-2">{{ course.title }}</h3>
-              <p class="text-gray-600 text-sm mb-4">{{ courseDescription(course) }}</p>
-
-              <button @click="() => goToCourseDetail(course)"
-                class="inline-block bg-indigo-500 hover:bg-indigo-600 text-white text-sm font-bold py-2 px-4 rounded transition duration-300 ease-in-out">
-                Ver Detalle
-              </button>
-
-              <button @click="removeFromFavorites(course._id)" 
-                class="inline-block bg-red-500 hover:bg-red-700 text-white text-sm font-bold py-2 px-4 rounded ml-2">
-                Eliminar de Favoritos
-              </button>
+            <div class="p-2 flex-grow">
+              <h3  @click="() => goToCourseDetail(course)"
+                 class="font-semibold text-lg  hover:underline">{{ course.title || 'Curso Seleccionado' }}</h3>
+              <!-- <p class="text-gray-600 text-sm mb-4">{{ courseDescription(course) || 'En el ámbito actual, al guiar a individuos, equipos y organizaciones a través de procesos de desarrollo del talento humano, se...'}}</p> -->
+              
             </div>
+            <button @click="removeFromFavorites(course._id)" title="Eliminar curso"
+              class="p-2">
+              <svg fill="#FF0000" xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960" width="24">
+                <path d="M304.615-160q-26.846 0-45.731-18.884Q240-197.769 240-224.615V-720h-40v-40h160v-30.77h240V-760h160v40h-40v495.385Q720-197 701.5-178.5 683-160 655.385-160h-350.77ZM680-720H280v495.385q0 10.769 6.923 17.692T304.615-200h350.77q9.23 0 16.923-7.692Q680-215.385 680-224.615V-720ZM392.307-280h40.001v-360h-40.001v360Zm135.385 0h40.001v-360h-40.001v360ZM280-720v520-520Z"/>
+              </svg>
+            </button>
           </div>
         </div>
       </div>
@@ -262,57 +263,3 @@ onMounted(() => {
   loadFavoriteCourses();
 });
 </script>
-
-
-<style scoped>
-
-  .profile-card {
-    min-width: 300px;
-    width: 80%;
-  }
-
-  .btn-primary {
-    background-color: #3490dc;
-    color: #fff;
-    padding: 0.5rem 1rem;
-    border-radius: 0.25rem;
-    cursor: pointer;
-    transition: background-color 0.3s;
-  }
-  .slide-down-enter-active, .slide-down-leave-active {
-  transition: transform 0.3s ease, opacity 0.3s ease;
-}
-.slide-down-enter-from, .slide-down-leave-to {
-  transform: translateY(-100%);
-  opacity: 0;
-}
-  .btn-primary:hover {
-    background-color: #2779bd;
-  }
-
-  .btn-danger {
-    background-color: #e3342f;
-    color: #fff;
-    padding: 0.5rem 1rem;
-    border-radius: 0.25rem;
-    cursor: pointer;
-    transition: background-color 0.3s;
-  }
-
-  .btn-danger:hover {
-    background-color: #cc1f1a;
-  }
-
-  .btn-success {
-    background-color: #38c172;
-    color: #fff;
-    padding: 0.5rem 1rem;
-    border-radius: 0.25rem;
-    cursor: pointer;
-    transition: background-color 0.3s;
-  }
-
-  .btn-success:hover {
-    background-color: #2d8e60;
-  }
-</style>

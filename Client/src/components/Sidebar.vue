@@ -35,7 +35,7 @@
                 class="w-5 h-5 inline-block mr-2 rounded-full border border-gray-400 flex-shrink-0"
                 :class="{'bg-indigo-500': selectedCategories.includes(category)}"
               ></span>
-              {{ category }}
+              {{ capitalize(category) }}
             </label>
           </div>
         </li>
@@ -59,6 +59,10 @@ const selectedCategories = ref([]);
 
 const clearSelectedCategory = () => {
   selectedCategories.value = [];
+};
+
+const capitalize = (str) => {
+  return str.charAt(0).toUpperCase() + str.slice(1);
 };
 
 watch(selectedCategories, (newVal) => {

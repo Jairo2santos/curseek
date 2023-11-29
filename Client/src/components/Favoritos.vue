@@ -41,7 +41,7 @@ const notificationClass = ref('');
 const triggerNotification = (message, type) => {
   notificationMessage.value = message;
   // Aplicar la clase de color de fondo según el tipo de mensaje
-  notificationClass.value = type === 'success' ? 'bg-green-500' : 'bg-red-500';
+  notificationClass.value = type === 'success' ? 'bg-green-500 bg-opacity-75' : 'bg-red-500 bg-opacity-75';
   showNotification.value = true;
 
   // Ocultar la notificación después de 3 segundos
@@ -62,7 +62,7 @@ const toggleFavorite = async () => {
   try {
     const userId = localStorage.getItem('loggedInUserId');
     if (!userId) {
-      triggerNotification('Debe iniciar sesión para agregar a favoritos', 'error');
+      triggerNotification('Debes iniciar sesión para agregar a favoritos', 'error');
       return;
     }
     
@@ -77,7 +77,7 @@ const toggleFavorite = async () => {
     isFavorited.value = !isFavorited.value;
 
     // Si la acción fue 'remove', significa que se eliminó de favoritos, y se debe pasar 'error' para mostrar la notificación roja.
-    triggerNotification(`Curso ${action === 'add' ? 'agregado a' : 'eliminado de'} favoritos`, action === 'add' ? 'success' : 'error');
+    triggerNotification(`Tu curso ${action === 'add' ? 'se ha agregado a' : 'eliminado de'} favoritos`, action === 'add' ? 'success' : 'error');
     
   } catch (error) {
     console.error('Error al actualizar favoritos:', error);
