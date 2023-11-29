@@ -1,6 +1,6 @@
 <template>
   <div class="bg-gray-100 p-4 md:p-6 max-w-screen-full">
-    <h1 class="text-center pb-6 text-sm text-gray-500">CurSeek cuenta con el apoyo del alumno. Cuando compra a través de enlaces en nuestro sitio, podemos ganar una comisión de afiliado.</h1>
+    <h1 class="hidden md:block text-center pb-6 text-sm text-gray-500">CurSeek cuenta con el apoyo del alumno. Cuando compra a través de enlaces en nuestro sitio, podemos ganar una comisión de afiliado.</h1>
     <!-- Grilla Principal -->
     <div class="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-6 max-w-screen-xl mx-auto">
       <!-- Columna 1 y 2 (Contenido principal) -->
@@ -57,14 +57,15 @@
       </div>
 
        <!-- Columna 3 (Barra Lateral con Imagen y Botón) -->
-       <div class="bg-white p-4 md:p-6 rounded border border-gray-200">
-        <img :src="udemyCourse.image" alt="Imagen del Curso" class="rounded-sm mb-4 w-full">
-        <a :href="`https://www.udemy.com${udemyCourse.url}`" target="_blank"
-           class="flex bg-indigo-600 text-white text-center py-2 px-4 rounded hover:bg-indigo-800 transition-colors duration-300 ease-in-out w-full items-center text-md justify-center font-semibold">
-           Ir al curso
-           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960" width="24" class="ml-2">
-               <path d="M200-120q-33 0-56.5-23.5T120-200v-560q0-33 23.5-56.5T200-840h280v80H200v560h560v-280h80v280q0 33-23.5 56.5T760-120H200Zm188-212-56-56 372-372H560v-80h280v280h-80v-144L388-332Z" fill="#fff" />
-           </svg>
+       <!-- Columna 3 (Barra Lateral) -->
+       <div class="order-first md:order-last bg-white p-4 md:p-6 rounded border border-gray-200">
+          <img :src="udemyCourse.image" alt="Imagen del Curso" class="rounded-sm mb-4 w-full">
+          
+          <a :href="`https://www.udemy.com${udemyCourse.url}`" class="flex bg-indigo-600 text-white text-center py-2 px-4 rounded hover:bg-indigo-800 transition-colors duration-300 ease-in-out w-full items-center text-md justify-center font-semibold">
+            Ir al curso
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960" width="24" class="ml-2">
+              <path d="M200-120q-33 0-56.5-23.5T120-200v-560q0-33 23.5-56.5T200-840h280v80H200v560h560v-280h80v280q0 33-23.5 56.5T760-120H200Zm188-212-56-56 372-372H560v-80h280v280h-80v-144L388-332Z" fill="#fff" />
+            </svg>
           </a>
           
           <div class="px-2 py-6 text-md">

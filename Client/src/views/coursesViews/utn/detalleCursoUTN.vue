@@ -1,6 +1,6 @@
 <template>
   <div class="bg-gray-100 p-4 md:p-6 max-w-screen-full mx-auto">
-    <h1 class="text-center pb-6 text-sm text-gray-500">CurSeek cuenta con el apoyo del alumno. Cuando compra a través de enlaces en nuestro sitio, podemos ganar una comisión de afiliado.</h1>
+    <h1 class="hidden md:block text-center pb-6 text-sm text-gray-500">CurSeek cuenta con el apoyo del alumno. Cuando compra a través de enlaces en nuestro sitio, podemos ganar una comisión de afiliado.</h1>
     
     <div class="max-w-screen-xl mx-auto">
       <!-- Grilla Principal -->
@@ -34,7 +34,7 @@
         </div>
 
         <!-- Columna 3 (Barra Lateral) -->
-        <div class="bg-white p-4 md:p-6 rounded border border-gray-200">
+        <div class="order-first md:order-last bg-white p-4 md:p-6 rounded border border-gray-200">
           <img :src="course.imgUrl" alt="Imagen del Curso" class="rounded-sm mb-4 w-full">
           
           <a :href="course.link" target="_blank" class="flex bg-indigo-600 text-white text-center py-2 px-4 rounded hover:bg-indigo-800 transition-colors duration-300 ease-in-out w-full items-center text-md justify-center font-semibold">
