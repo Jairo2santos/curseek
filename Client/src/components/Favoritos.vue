@@ -1,7 +1,7 @@
 <template>
   <div>
-    <button @click.stop="toggleFavorite" class="focus:outline-none transition text-cyan-500 text-sm hover:text-cyan-600">
-      <span :class="isFavorited ? 'text-3xl text-red-500' : 'text-3xl text-cyan-500'">
+    <button @click.stop="toggleFavorite" class="focus:outline-none">
+      <span :class="isFavorited ? 'text-3xl text-red-500' : 'text-3xl text-indigo-400'">
         {{ isFavorited ? '♥' : '♡' }}
       </span>
     </button>

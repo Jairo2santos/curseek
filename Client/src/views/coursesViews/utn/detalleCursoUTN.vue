@@ -9,13 +9,13 @@
         <div class="md:col-span-2">
           <!-- Sección de Título, Duración y Precio -->
           <div class="bg-white p-4 md:p-6 rounded mb-4 justify-between items-center border border-gray-200">
-            <h2 class="text-2xl md:text-3xl font-bold text-gray-800">{{ course.title }}</h2>
+            <h2 class="text-2xl md:text-3xl font-bold text-gray-800">{{ course.title || 'Error' }}</h2>
           </div>
 
           <!-- Sección de Resumen -->
           <div class="bg-white p-6 rounded mb-4 border border-gray-200">
             <h3 class="text-xl mb-2 font-bold">Resumen</h3>
-            <p class="text-md">{{ course.summary }}</p>
+            <p class="text-md">{{ course.summary || 'Error' }}</p>
           </div>
 
           <!-- Sección de Modalidades -->
@@ -29,7 +29,7 @@
           <!-- Sección de Profesores -->
           <div class="bg-white p-6 rounded mb-4 border border-gray-200">
             <h3 class="text-xl mb-2 font-bold">Profesores</h3>
-            <p>{{ course.teachers }}</p>
+            <p>{{ course.teachers || 'Error' }}</p>
           </div>
         </div>
 
@@ -46,6 +46,22 @@
 
           <div class="px-2 py-6 text-md">
             <ul>
+              <!-- Institución -->
+              <li class="flex text-sm text-gray-800 p-2 border-b border-gray-100">
+                <div class="flex items-center">
+                  <svg class="mr-2" xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 -960 960 960" width="24">
+                    <path d="M400-420h139.231v-40H400v40Zm0-120h278.462v-40H400v40Zm0-120h278.462v-40H400v40Zm-75.385 380Q297-280 278.5-298.5 260-317 260-344.615v-430.77Q260-803 278.5-821.5 297-840 324.615-840h430.77Q783-840 801.5-821.5 820-803 820-775.385v430.77Q820-317 801.5-298.5 783-280 755.385-280h-430.77Zm0-40h430.77q9.231 0 16.923-7.692Q780-335.385 780-344.615v-430.77q0-9.23-7.692-16.923Q764.616-800 755.385-800h-430.77q-9.23 0-16.923 7.692Q300-784.615 300-775.385v430.77q0 9.23 7.692 16.923Q315.385-320 324.615-320Zm-120 160Q177-160 158.5-178.5 140-197 140-224.615v-470.77h40v470.77q0 9.231 7.692 16.923Q195.384-200 204.615-200h470.77v40h-470.77ZM300-800v480-480Z"/>
+                  </svg>
+                  <a href="/cursos/utn">
+                    <button class="flex hover:underline transition" title="Ir a cursos de UTN">
+                      <span>UTN</span>
+                        <svg class="ml-1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="20" fill="#000000">
+                          <path d="M0 0h24v24H0V0z" fill="none"/><path d="M11.5 2C6.81 2 3 5.81 3 10.5S6.81 19 11.5 19h.5v3c4.86-2.34 8-7 8-11.5C20 5.81 16.19 2 11.5 2zm1 14.5h-2v-2h2v2zm0-3.5h-2c0-3.25 3-3 3-5 0-1.1-.9-2-2-2s-2 .9-2 2h-2c0-2.21 1.79-4 4-4s4 1.79 4 4c0 2.5-3 2.75-3 5z"/>
+                        </svg>
+                    </button>
+                  </a>
+                </div>
+              </li>
               <!-- Categoría -->
               <li class="flex text-sm text-black p-2 border-b border-gray-100">
                 <div class="flex items-center">
@@ -55,39 +71,25 @@
                   <span style="min-width: 120px;">{{ capitalizeFirstLetter(course.category) }}</span>
                 </div>
               </li>
-
-              <!-- Institución -->
-              <li class="flex text-sm text-gray-800 p-2 border-b border-gray-100">
-                <div class="flex items-center">
-                  <svg class="mr-2" xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 -960 960 960" width="24">
-                    <path d="M400-420h139.231v-40H400v40Zm0-120h278.462v-40H400v40Zm0-120h278.462v-40H400v40Zm-75.385 380Q297-280 278.5-298.5 260-317 260-344.615v-430.77Q260-803 278.5-821.5 297-840 324.615-840h430.77Q783-840 801.5-821.5 820-803 820-775.385v430.77Q820-317 801.5-298.5 783-280 755.385-280h-430.77Zm0-40h430.77q9.231 0 16.923-7.692Q780-335.385 780-344.615v-430.77q0-9.23-7.692-16.923Q764.616-800 755.385-800h-430.77q-9.23 0-16.923 7.692Q300-784.615 300-775.385v430.77q0 9.23 7.692 16.923Q315.385-320 324.615-320Zm-120 160Q177-160 158.5-178.5 140-197 140-224.615v-470.77h40v470.77q0 9.231 7.692 16.923Q195.384-200 204.615-200h470.77v40h-470.77ZM300-800v480-480Z"/>
-                  </svg>
-                  <!-- Usa el filtro capitalize -->
-                  <span style="min-width: 120px; text-transform: capitalize;">UTN</span>
-                </div>
-              </li>
-
               <!-- Duración -->
               <li class="flex text-sm text-black p-2 border-b border-gray-100">
                 <div class="flex items-center">
                   <svg class="mr-2" xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 -960 960 960" width="24">
                     <path d="m625.846-305.846 28.308-28.308L500-488.326V-680h-40v208.308l165.846 165.846ZM480.134-120q-74.673 0-140.41-28.339-65.737-28.34-114.365-76.922-48.627-48.582-76.993-114.257Q120-405.194 120-479.866q0-74.673 28.339-140.41 28.34-65.737 76.922-114.365 48.582-48.627 114.257-76.993Q405.194-840 479.866-840q74.673 0 140.41 28.339 65.737 28.34 114.365 76.922 48.627 48.582 76.993 114.257Q840-554.806 840-480.134q0 74.673-28.339 140.41-28.34 65.737-76.922 114.365-48.582 48.627-114.257 76.993Q554.806-120 480.134-120ZM480-480Zm0 320q133 0 226.5-93.5T800-480q0-133-93.5-226.5T480-800q-133 0-226.5 93.5T160-480q0 133 93.5 226.5T480-160Z"/>
                   </svg> 
-                  <span class="text-sm">{{ course.duration }}</span>
+                  <span class="text-sm">{{ course.duration || 'Error' }}</span>
                 </div>
               </li>
-
               <!-- Precio -->
               <li class="flex text-sm text-black p-2 border-b border-gray-100">
                 <svg class="mr-2" fill="#057500" xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 -960 960 960" width="24">
                   <path d="M542.308-131.692q-11.529 11.461-28.573 11.461-17.043 0-28.504-11.461l-352-352q-6.385-6.385-9.808-14.02T120-514v-286q0-16.077 11.961-28.039Q143.923-840 160-840h286q7.769 0 15.452 3.166 7.683 3.167 13.317 8.526l352 352.231Q839-463.846 839.385-446.5q.384 17.346-11.077 28.808l-286 286ZM259.91-660q16.629 0 28.359-11.64Q300-683.281 300-699.909q0-16.63-11.64-28.36Q276.72-740 260.09-740q-16.629 0-28.359 11.64Q220-716.719 220-700.091q0 16.63 11.64 28.36Q243.28-660 259.91-660Z"/>
                 </svg>
-                <h4 class="text-sm">{{ course.price }}</h4>
+                <h4 class="text-sm">{{ course.price || 'Error' }}</h4>
               </li>
-
               <!-- Cursada -->
               <li class="flex text-sm p-2 text-red-700">
-                <h4>{{ course.startDate }}</h4>
+                <h4>{{ course.startDate || 'Error' }}</h4>
               </li>
             </ul>
           </div>
