@@ -54,7 +54,7 @@
     </div>
 
     <div class="flex items-center justify-center mt-0 bg-white">
-      <img src="../assets/404.jpg" alt="Imágen Error 404" class="object-cover max-w-screen-sm h-auto mt-1"/>
+      <img src="../assets/404.png" alt="Imágen Error 404" class="object-cover max-w-screen-sm h-auto mt-1"/>
     </div>
   </div>
 </template>

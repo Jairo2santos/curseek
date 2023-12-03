@@ -96,6 +96,9 @@
 
     <!-- El curso que quieras, cuando quieras -->
     <div :class="{ 'blurred-background': isInputClicked }" class="block flex-col md:flex-row max-w-screen-full mx-auto px-24 py-12 pt-4 bg-indigo-100">
+      <h2 :class="{ 'blurred-background': isInputClicked }" class="text-center font-semibold text-4xl text-indigo-800 py-4">
+        El curso que quieras, cuando quieras
+      </h2>
       <img src="../assets/banner-curseek.png" alt="Imágen ilustrativa mapa" class="object-cover md:w-full" />
 
       <!-- Lista de Proveedores y Universidades -->

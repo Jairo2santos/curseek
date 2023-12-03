@@ -49,7 +49,7 @@
             <router-view></router-view>
 
             <!-- Preguntas Frecuentes -->
-            <div v-if="$route.hash === '#/preguntasFrecuentes'" class="md:mt-8">
+            <div v-if="$route.hash === '#/preguntasFrecuentes'">
                 <h3 class="text-3xl font-semibold mb-4">Preguntas Frecuentes</h3>
 
                 <div v-for="(pregunta, index) in preguntas" :key="index" class="mb-3">
@@ -68,7 +68,7 @@
                 </div>
             </div>
 
-            <div v-if="$route.hash === '#/nuestroEquipo'" class="md:mt-8">
+            <div v-if="$route.hash === '#/nuestroEquipo'">
                 <h3 class="text-3xl font-semibold mb-4">Nuestro Equipo</h3>
                 <p class="md:pr-40">
                     CurSeek es impulsado por un equipo apasionado y dedicado de profesionales. Aquí te presentamos a algunos
@@ -115,29 +115,75 @@
                 </div>
             </div>
 
-
-            <div v-if="$route.hash === '#/acerca'" class="md:mt-8 md:flex">
-                <div class="w-1/1">
-                    <img class="max-w-sm" src="../assets/gorro-curseek.png" alt="Icono logo gorro CurSeek png">                
-                </div>
-
-                <div class="w-1/2 pt-6 md:pr-4">
-                    <h3 class="text-3xl font-semibold mb-4">Acerca de Nosotros</h3>
-                    <p>
+            
+            <div v-if="$route.hash === '#/acerca'">
+                
+                <h3 class="text-3xl font-semibold mb-4">Acerca de Nosotros</h3>
+                <div class="flex px-4 md:px-40 items-center justify-center">
+                    <div class="w-1/1">
+                        <img class="max-w-xs" src="../assets/team.jpg" alt="Imágen equipo team work">                
+                    </div>
+                    <!-- <p class="text-black text-md">
                         CurSeek es una plataforma web y aplicación móvil que funciona como un buscador de cursos,
                         siguiendo un enfoque similar al de los populares motores de búsqueda de vuelos y hoteles.
                         Sin embargo, su principal propósito es recopilar y presentar los cursos de mayor calidad
                         y mejor valorados disponibles en línea.
                         La plataforma se dedica a reunir información de una amplia gama de cursos educativos de
                         diversas temáticas y niveles de dificultad, provenientes de fuentes diversas en Internet.
-                    </p>
-                    <!-- Puedes agregar más contenido aquí -->
+                    </p> -->
                 </div>
+                    
+
+                    <div class="block px-20">
+                        <h3 class="text-xl font-semibold mb-2">Nuestro objetivo es hacer que la educación en línea funcione para todos.</h3>
+                        <p class="text-black text-md mb-4">
+                            CurSeek es un directorio de cursos en línea. Recopilamos cursos de muchos proveedores para facilitar la
+                            búsqueda de los mejores cursos sobre casi cualquier tema, dondequiera que existan. Sea cual sea tu
+                            interés de aprendizaje, es muy probable que nuestro catálogo incluya un curso que satisfaga tus
+                            necesidades.
+                            
+                            A través de CurSeek, puedes encontrar cursos; revisar los cursos que has tomado (y leer las reseñas de
+                            otras personas); seguir universidades, temas y cursos para recibir actualizaciones personalizadas; y
+                            también planificar y realizar un seguimiento de tu aprendizaje.
+                        </p>
+                        
+                        <h3 class="text-xl font-semibold mb-2">Impulsado por la comunidad</h3>
+                        <p class="text-black text-md mb-4">
+                            CurSeek es una empresa remota sin oficinas físicas. Nuestro equipo está formado por aprendices cuyas
+                            vidas han sido impactadas por la educación en línea. Entre todos nosotros, hemos realizado más de 400
+                            cursos en línea y 3 grados en línea. Si nuestros nombres te resultan familiares, puede ser porque hayas
+                            leído artículos que hemos escrito o incluso porque uno de nosotros ha sido mentor en un curso que
+                            tomaste.
+                            
+                            Nuestro objetivo es hacer que la educación en línea funcione para todos, así que estamos trabajando
+                            constantemente en nuevas características. Si tienes una idea para hacer que CurSeek sea más útil, por
+                            favor háznoslo saber.
+                        </p>
+                        
+                        <h3 class="text-xl font-semibold mb-2">El Informe</h3>
+                        <p class="text-black text-md mb-4">
+                            Estamos en el negocio de educar a las personas sobre la educación. Además de nuestro catálogo, El
+                            Informe de CurSeek mantiene un seguimiento del estado general del panorama de la educación en línea. Nos
+                            gusta especialmente descubrir historias pasadas por alto y determinar tendencias que otros aún no han
+                            informado.
+                        </p>
+                        
+                        <h3 class="text-xl font-semibold mb-2">¿Cómo ganamos dinero?</h3>
+                        <p class="text-black text-md mb-4">
+                        CurSeek genera ingresos a través de la publicidad y los enlaces de afiliados. Hemos tratado de indicar
+                        claramente los anuncios y los resultados de búsqueda patrocinados. Ganamos una comisión cuando alguien
+                        hace clic en un proveedor de cursos y se actualiza a una oferta de pago. Para una parte sustancial de
+                        nuestro catálogo, no tenemos asociaciones de afiliados. Nuestras relaciones de afiliación y publicidad
+                        no influyen en la lista de cursos, ni afectan las reseñas de los usuarios. Lo más importante para
+                        nosotros es mantener una relación de confianza con nuestros usuarios, por lo que queremos ser
+                        transparentes sobre cómo se pagan las facturas.
+                        </p>
+                    </div>
             </div>
 
 
             <!-- Información sobre "Políticas de Privacidad" -->
-            <div v-if="$route.hash === '#/privacidad'" class="md:mt-8">
+            <div v-if="$route.hash === '#/privacidad'">
                 <h3 class="text-3xl font-semibold mb-4">Políticas de Privacidad</h3>
                 <p>
                     En Curseek, nos tomamos la privacidad en serio.
@@ -174,7 +220,7 @@
 
 
             <!-- Información sobre "Términos y Condiciones" -->
-            <div v-if="$route.hash === '#/terminos'" class="md:mt-8">
+            <div v-if="$route.hash === '#/terminos'">
                 <h3 class="text-3xl font-semibold mb-4">Términos y Condiciones</h3>
                 <p>
                     Al utilizar nuestros servicios, aceptas nuestros términos y condiciones.
@@ -213,7 +259,7 @@
 
 
             <!-- Información sobre "soporte" -->
-            <div v-if="$route.hash === '#/soporte'" class="md:mt-8">
+            <div v-if="$route.hash === '#/soporte'">
                 <h3 class="text-3xl font-semibold mb-4">Soporte</h3>
 
                 <p class="pb-4">
