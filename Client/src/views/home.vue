@@ -47,7 +47,7 @@
                   <img :src="course.image" alt="Course" class="w-16 h-16 rounded-full object-cover mr-4">
                   <div>
                     <h2 class="font-bold">{{ course.title }}</h2>
-                    <p class="text-xs text-gray-600">{{ course.source}}</p>
+                    <p class="text-xs text-gray-600">{{ course.source }}</p>
                   </div>
                 </a>
               </li>

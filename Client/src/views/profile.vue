@@ -14,29 +14,46 @@
 
     <!-- Perfil -->
     <div class="profile-card bg-white p-6 rounded-lg shadow-lg w-full md:w-1/2">
-      <h1 class="text-center font-bold text-xl">Mi Perfil</h1>
+      <h1 class="text-center font-bold text-xl mb-4">Mi Perfil</h1>
       <img :src="userData.profilePicture || 'ruta/a/imagen/placeholder.png'" alt="Foto de perfil"
         class="w-32 h-32 rounded-full mx-auto mb-4" />
 
       <!-- Campos editables -->
       <div v-if="editing" class="space-y-4">
         <div class="flex flex-col">
-          <label for="username" class="text-sm font-medium text-gray-700">Nombre de Usuario</label>
-          <input id="username" type="text" v-model="editableUserData.username" class="form-input mt-1 block w-full bg-gray-200" placeholder="Nombre de usuario">
+          <label for="username" class="text-sm font-medium text-gray-700 mb-1">Nombre de Usuario</label>
+          <span class="flex items-center">
+            <svg class="mr-1" xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960" width="24">
+              <path d="M480-120q-74.539 0-140.276-28.339-65.737-28.34-114.365-76.922-48.627-48.582-76.993-114.257Q120-405.194 120-479.866q0-74.673 28.339-140.41 28.34-65.737 76.922-114.365 48.582-48.627 114.257-76.993Q405.194-840 479.866-840q74.673 0 140.41 28.35t114.365 76.95q48.627 48.6 76.993 114.3Q840-554.7 840-480v39.539q0 50.538-34.714 85.5Q770.572-320 720-320q-35.769 0-65.231-19.615-29.461-19.615-43.538-52.231Q588.385-359 554.192-339.5 520-320 480-320q-66.846 0-113.423-46.577T320-480q0-66.846 46.577-113.423T480-640q66.846 0 113.423 46.577T640-480v39.539q0 32.923 23.539 56.692Q687.077-360 720-360t56.462-23.769Q800-407.538 800-440.461V-480q0-134-93-227t-227-93q-134 0-227 93t-93 227q0 134 93 227t227 93h200v40H480Zm0-240q50 0 85-35t35-85q0-50-35-85t-85-35q-50 0-85 35t-35 85q0 50 35 85t85 35Z"/>
+            </svg>       
+            <input id="username" type="text" v-model="editableUserData.username" class="form-input text-sm mt-1 p-2 rounded-lg block w-full bg-gray-100" placeholder="Nombre de usuario">
+          </span>
         </div>
 
         <div class="flex flex-col">
-          <label for="address" class="text-sm font-medium text-gray-700">Dirección</label>
-          <input id="address" type="text" v-model="editableUserData.address" class="form-input mt-1 block w-full bg-gray-200" placeholder="Dirección">
+          <label for="address" class="text-sm font-medium text-gray-700 mb-1">Dirección</label>
+          <span class="flex items-center">
+            <svg class="mr-1" xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960" width="24">
+              <path d="M480.136-490.769q26.71 0 45.595-19.021 18.884-19.021 18.884-45.731t-19.02-45.594Q506.574-620 479.864-620t-45.595 19.021q-18.884 19.02-18.884 45.731 0 26.71 19.02 45.594 19.021 18.885 45.731 18.885ZM480-172.923q112.769-98.154 178.308-199.654 65.538-101.5 65.538-175.577 0-109.769-69.5-181.192T480-800.769q-104.846 0-174.346 71.423t-69.5 181.192q0 74.077 65.538 175.577Q367.231-271.077 480-172.923Zm0 53.692Q339-243.923 267.577-351.808q-71.423-107.884-71.423-196.346 0-126.923 82.654-209.385Q361.461-840 480-840t201.192 82.461q82.654 82.462 82.654 209.385 0 88.462-71.423 196.346Q621-243.923 480-119.231Zm0-436.154Z"/>
+            </svg>
+            <input id="address" type="text" v-model="editableUserData.address" class="form-input text-sm mt-1 p-2 rounded-lg block w-full bg-gray-100" placeholder="Dirección">
+          </span>
         </div>
 
         <div class="flex flex-col">
           <label for="newPassword" class="text-sm font-medium text-gray-700">Nueva Contraseña</label>
           <div class="relative">
-            <input :type="isPasswordShown ? 'text' : 'password'" id="newPassword" v-model="newPassword" class="form-input mt-1 block w-full" placeholder="Nueva Contraseña">
+            <input :type="isPasswordShown ? 'text' : 'password'" id="newPassword" v-model="newPassword" class="form-input text-sm mt-1 p-2 rounded-lg bg-gray-100 block w-full" placeholder="Nueva Contraseña">
             <button type="button" @click="togglePasswordVisibility" class="absolute inset-y-0 right-0 pr-3 flex items-center text-sm leading-5">
-              <span>{{ isPasswordShown ? 'Ocultar' : 'Mostrar' }}</span>
+                <span>{{ isPasswordShown ? '' : '' }}</span>
+                <svg v-if="isPasswordShown" class="ml-1" xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 -960 960 960" width="24">
+                  <path d="M480.181-353.846q60.973 0 103.473-42.681t42.5-103.654q0-60.973-42.681-103.473t-103.654-42.5q-60.973 0-103.473 42.681t-42.5 103.654q0 60.973 42.681 103.473t103.654 42.5ZM480-392q-45 0-76.5-31.5T372-500q0-45 31.5-76.5T480-608q45 0 76.5 31.5T588-500q0 45-31.5 76.5T480-392Zm.11 152q-129.956 0-236.879-70.731Q136.307-381.461 83.077-500q53.23-118.539 160.044-189.269Q349.934-760 479.89-760q129.956 0 236.879 70.731Q823.693-618.539 876.923-500q-53.23 118.539-160.044 189.269Q610.066-240 480.11-240ZM480-500Zm0 220q113 0 207.5-59.5T832-500q-50-101-144.5-160.5T480-720q-113 0-207.5 59.5T128-500q50 101 144.5 160.5T480-280Z"/>
+                </svg>
+                <svg v-else xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 -960 960 960" width="24">
+                  <path d="M617.846-454.154 586-486q9-52.385-29.692-90.692Q517.615-615 466-606l-31.846-31.846q10.077-4.154 21.038-6.231 10.962-2.077 24.808-2.077 61.154 0 103.654 42.5 42.5 42.5 42.5 103.654 0 13.846-2.077 25.577-2.077 11.731-6.231 20.269Zm126.462 122.923L714-358q38-29 67.5-63.5T832-500q-50-101-143.5-160.5T480-720q-29 0-57 4t-55 12l-31.231-31.231q34.846-13.154 70.923-18.962Q443.769-760 480-760q130.231 0 238.231 71.577T876.923-500q-21.461 48.231-54.346 90.654-32.884 42.423-78.269 78.115Zm44.615 216.77L633.231-269.692q-26.539 11.769-65.885 20.731Q528-240 480-240q-131 0-238.231-71.577T83.077-500q23.307-53 61.461-99.269 38.154-46.269 81.462-77.654l-111.539-112 28.308-28.308 674.462 674.462-28.308 28.308ZM254.307-648.615Q219.923-624.154 184-584.308 148.077-544.461 128-500q50 101 143.5 160.5T480-280q34.615 0 69.769-6.731 35.154-6.73 52.846-13.577L537.385-366q-9.462 5.308-26.385 8.731-16.923 3.423-31 3.423-61.154 0-103.654-42.5-42.5-42.5-42.5-103.654 0-13.308 3.423-29.846 3.423-16.539 8.731-27.539l-91.693-91.23ZM541-531Zm-112.539 56.539Z"/>
+                </svg>
             </button>
+
           </div>
         </div>
 
@@ -51,7 +68,14 @@
       <!-- Campos de visualización -->
       <div v-else>
         <div class="mx-auto text-center">
-          <h2 class="text-2xl font-semibold mb-4">@{{ userData.username }}</h2>
+          <div class="flex flex-col justify-center items-center mb-4">
+            <span class="flex">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960" width="24">
+                <path d="M480-120q-74.539 0-140.276-28.339-65.737-28.34-114.365-76.922-48.627-48.582-76.993-114.257Q120-405.194 120-479.866q0-74.673 28.339-140.41 28.34-65.737 76.922-114.365 48.582-48.627 114.257-76.993Q405.194-840 479.866-840q74.673 0 140.41 28.35t114.365 76.95q48.627 48.6 76.993 114.3Q840-554.7 840-480v39.539q0 50.538-34.714 85.5Q770.572-320 720-320q-35.769 0-65.231-19.615-29.461-19.615-43.538-52.231Q588.385-359 554.192-339.5 520-320 480-320q-66.846 0-113.423-46.577T320-480q0-66.846 46.577-113.423T480-640q66.846 0 113.423 46.577T640-480v39.539q0 32.923 23.539 56.692Q687.077-360 720-360t56.462-23.769Q800-407.538 800-440.461V-480q0-134-93-227t-227-93q-134 0-227 93t-93 227q0 134 93 227t227 93h200v40H480Zm0-240q50 0 85-35t35-85q0-50-35-85t-85-35q-50 0-85 35t-35 85q0 50 35 85t85 35Z"/>
+              </svg>       
+              <h2 class="text-2xl font-bold">{{ userData.username }}</h2>
+            </span>
+          </div>
           <div class="mb-4">
             <div class="flex items-center justify-center">
               <svg class="mr-2" xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 -960 960 960" width="24">

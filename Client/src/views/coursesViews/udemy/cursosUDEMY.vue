@@ -61,8 +61,8 @@
                 </div>
 
                 <!-- Sección 3: Botones (usando el componente Favoritos) -->
-                <div class="hidden md:block items-end">
-                  <button class="mr-3" title="Agregar a Favoritos">
+                <div class="bg-gray-200 md:bg-white items-end m-2 rounded-lg md:m-0">
+                  <button class="mx-3" title="Agregar a Favoritos">
                     <Favoritos :courseId="course._id" :courseType="'UDEMY'" :isFavorited="course.isFavorited"/>
                   </button>
                   <!-- <a href="/cursos/udemy">
@@ -86,12 +86,11 @@
                     <li class="flex text-sm text-black p-2 border-b border-gray-100">
                       <div class="flex items-center">
                         <a href="/cursos/udemy">
-                          <button class="flex text-left hover:underline transition">
+                          <button class="flex hover:underline transition" title="Ir a cursos de Udemy">
                             <svg class="mr-2" xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 -960 960 960" width="24">
                               <path d="M400-420h139.231v-40H400v40Zm0-120h278.462v-40H400v40Zm0-120h278.462v-40H400v40Zm-75.385 380Q297-280 278.5-298.5 260-317 260-344.615v-430.77Q260-803 278.5-821.5 297-840 324.615-840h430.77Q783-840 801.5-821.5 820-803 820-775.385v430.77Q820-317 801.5-298.5 783-280 755.385-280h-430.77Zm0-40h430.77q9.231 0 16.923-7.692Q780-335.385 780-344.615v-430.77q0-9.23-7.692-16.923Q764.616-800 755.385-800h-430.77q-9.23 0-16.923 7.692Q300-784.615 300-775.385v430.77q0 9.23 7.692 16.923Q315.385-320 324.615-320Zm-120 160Q177-160 158.5-178.5 140-197 140-224.615v-470.77h40v470.77q0 9.231 7.692 16.923Q195.384-200 204.615-200h470.77v40h-470.77ZM300-800v480-480Z"/>
                             </svg>
-                            <!-- Usa el filtro capitalize -->
-                            <span style="min-width: 120px; text-transform: capitalize;">Udemy</span>
+                            <span>Udemy</span>
                           </button>
                         </a>
                       </div>

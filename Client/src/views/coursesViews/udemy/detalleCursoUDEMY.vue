@@ -56,7 +56,6 @@
 
       </div>
 
-       <!-- Columna 3 (Barra Lateral con Imagen y Botón) -->
        <!-- Columna 3 (Barra Lateral) -->
        <div class="order-first md:order-last bg-white p-4 md:p-6 rounded border border-gray-200">
           <img :src="udemyCourse.image" alt="Imagen del Curso" class="rounded-sm mb-4 w-full">
