@@ -65,7 +65,7 @@ const login = async () => {
 
     if (response.status === 200 && response.data._id) {
       showNotification.value = true;
-      notificationMessage.value = 'Inicio de sesión exitoso.';
+      notificationMessage.value = 'Inicio de sesión exitoso!';
       notificationType.value = 'success';
       localStorage.setItem('loggedInUsername', username.value);
       localStorage.setItem('loggedInUserId', response.data._id); 

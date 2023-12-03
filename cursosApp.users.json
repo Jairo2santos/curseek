@@ -41,4 +41,26 @@
   "password": "bobbyWorld456",
   "profilePicture": "https://example.com/images/bobBrown.jpg",
   "address": "101 Pine Path, Star City"
+},
+{
+  "_id": {
+    "$oid": "656cedf2d23941d95d2e102d"
+  },
+  "username": "mati",
+  "email": "matias.varas@davinci.edu.ar",
+  "password": "$2b$10$yeLeQQTVAW1I6PBS4KJfee75KqaJEF6mT63CDxEURPlbKTxWwftHK",
+  "profilePicture": "https://lh3.googleusercontent.com/a/ACg8ocKl8CKX-qlmOjBcBxtZCsS5KPVD3yELG44p0-2iMxf9nIo=s48-p",
+  "address": "Buenos Aires (CABA)",
+  "favorites": [
+    {
+      "courseId": {
+        "$oid": "654a93a52b442e00d506f8f8"
+      },
+      "courseType": "UDEMY",
+      "_id": {
+        "$oid": "656cef0dd23941d95d2e1073"
+      }
+    }
+  ],
+  "__v": 1
 }]

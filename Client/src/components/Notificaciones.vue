@@ -25,7 +25,8 @@ const emits = defineEmits(['close']);
 const visible = ref(true);
 
 const backgroundColor = computed(() => {
-  return props.type === 'error' ? 'bg-red-500' : 'bg-green-500';
+  return props.type === 'error' ? 'bg-red-500 bg-opacity-75 my-4 mx-60 rounded-lg' 
+  : 'bg-green-500 bg-opacity-75 my-4 mx-60 rounded-lg';
 });
 
 function close() {
