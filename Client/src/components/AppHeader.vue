@@ -17,7 +17,7 @@
             </svg>
           </button>
 
-          <div class="relative ml-12">
+          <div class="relative ml-12 hidden md:block">
             <button @click="toggleDropdown" class="text-indigo-600 font-semibold focus:outline-none w-full">
               <span :class="{ 'border-b-2 border-indigo-600 pb-5': dropdownActive }">Cursos</span>
             </button>
