@@ -30,6 +30,17 @@
           </span>
         </div>
 
+        <!-- Campo de correo electrónico -->
+        <div class="flex flex-col">
+          <label for="email" class="text-sm font-medium text-gray-700 mb-1">Correo Electrónico</label>
+          <span class="flex items-center">
+            <svg class="mr-1" xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 -960 960 960" width="24">
+              <path d="M184.615-200Q157-200 138.5-218.5 120-237 120-264.615v-430.77Q120-723 138.5-741.5 157-760 184.615-760h590.77Q803-760 821.5-741.5 840-723 840-695.385v430.77Q840-237 821.5-218.5 803-200 775.385-200h-590.77ZM480-475.384 160-684.615v420q0 10.769 6.923 17.692T184.615-240h590.77q10.769 0 17.692-6.923T800-264.615v-420L480-475.384ZM480-520l307.692-200H172.308L480-520ZM160-684.615V-720v455.385q0 10.769 6.923 17.692T184.615-240H160v-444.615Z"/>
+            </svg>
+            <input id="email" type="email" v-model="editableUserData.email" class="form-input text-sm mt-1 p-2 rounded-lg block w-full bg-gray-100" placeholder="Correo Electrónico">
+          </span>
+        </div>
+
         <div class="flex flex-col">
           <label for="address" class="text-sm font-medium text-gray-700 mb-1">Dirección</label>
           <span class="flex items-center">
@@ -67,36 +78,36 @@
 
       <!-- Campos de visualización -->
       <div v-else>
-        <div class="mx-auto text-center">
-          <div class="flex flex-col justify-center items-center mb-4">
-            <span class="flex">
+        <div class="md:mx-56">
+          <div class="flex flex-col mb-4">
+            <span class="flex justify-center">
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960" width="24">
                 <path d="M480-120q-74.539 0-140.276-28.339-65.737-28.34-114.365-76.922-48.627-48.582-76.993-114.257Q120-405.194 120-479.866q0-74.673 28.339-140.41 28.34-65.737 76.922-114.365 48.582-48.627 114.257-76.993Q405.194-840 479.866-840q74.673 0 140.41 28.35t114.365 76.95q48.627 48.6 76.993 114.3Q840-554.7 840-480v39.539q0 50.538-34.714 85.5Q770.572-320 720-320q-35.769 0-65.231-19.615-29.461-19.615-43.538-52.231Q588.385-359 554.192-339.5 520-320 480-320q-66.846 0-113.423-46.577T320-480q0-66.846 46.577-113.423T480-640q66.846 0 113.423 46.577T640-480v39.539q0 32.923 23.539 56.692Q687.077-360 720-360t56.462-23.769Q800-407.538 800-440.461V-480q0-134-93-227t-227-93q-134 0-227 93t-93 227q0 134 93 227t227 93h200v40H480Zm0-240q50 0 85-35t35-85q0-50-35-85t-85-35q-50 0-85 35t-35 85q0 50 35 85t85 35Z"/>
               </svg>       
-              <h2 class="text-2xl font-bold">{{ userData.username }}</h2>
+              <h2 class="text-2xl font-bold mb-2">{{ userData.username }}</h2>
             </span>
           </div>
           <div class="mb-4">
-            <div class="flex items-center justify-center">
+            <div class="flex">
               <svg class="mr-2" xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 -960 960 960" width="24">
                 <path d="M184.615-200Q157-200 138.5-218.5 120-237 120-264.615v-430.77Q120-723 138.5-741.5 157-760 184.615-760h590.77Q803-760 821.5-741.5 840-723 840-695.385v430.77Q840-237 821.5-218.5 803-200 775.385-200h-590.77ZM480-475.384 160-684.615v420q0 10.769 6.923 17.692T184.615-240h590.77q10.769 0 17.692-6.923T800-264.615v-420L480-475.384ZM480-520l307.692-200H172.308L480-520ZM160-684.615V-720v455.385q0 10.769 6.923 17.692T184.615-240H160v-444.615Z"/>
               </svg>
               <!-- Usa el filtro capitalize -->
-              <span>{{ userData.email }}</span>
+              <span class="mb-2">{{ userData.email }}</span>
             </div>
           </div>
           <div class="mb-4">
-            <div class="flex items-center justify-center">
+            <div class="flex">
               <svg class="mr-2" xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 -960 960 960" width="24">
                 <path d="M480.136-490.769q26.71 0 45.595-19.021 18.884-19.021 18.884-45.731t-19.02-45.594Q506.574-620 479.864-620t-45.595 19.021q-18.884 19.02-18.884 45.731 0 26.71 19.02 45.594 19.021 18.885 45.731 18.885ZM480-172.923q112.769-98.154 178.308-199.654 65.538-101.5 65.538-175.577 0-109.769-69.5-181.192T480-800.769q-104.846 0-174.346 71.423t-69.5 181.192q0 74.077 65.538 175.577Q367.231-271.077 480-172.923Zm0 53.692Q339-243.923 267.577-351.808q-71.423-107.884-71.423-196.346 0-126.923 82.654-209.385Q361.461-840 480-840t201.192 82.461q82.654 82.462 82.654 209.385 0 88.462-71.423 196.346Q621-243.923 480-119.231Zm0-436.154Z"/>
               </svg>
               <!-- Usa el filtro capitalize -->
-              <span>{{ userData.address }}</span>
+              <span class="mb-2">{{ userData.address }}</span>
             </div>
           </div>
         </div>
 
-        <div class="text-center items-center">
+        <div class="text-right">
           <button @click="startEdit" class="btn text-sm font-bold text-black rounded-md border border-gray-300 p-2 mr-4">Editar perfil</button>
           <button @click="logout" class="btn text-red-600 font-semibold text-lg mt-2">Logout</button>
         </div>

@@ -149,7 +149,7 @@ import axios from "axios";
 import Paginacion from "../../../components/Paginacion.vue";
 import Portada from "../../../components/Portada.vue";
 import Sidebar from "../../../components/Sidebar.vue";
-  import Filtros from "../../../components/Filtros.vue";
+import Filtros from "../../../components/Filtros.vue";
 import Favoritos from "../../../components/Favoritos.vue";
 
 axios.defaults.baseURL = "http://localhost:3333";

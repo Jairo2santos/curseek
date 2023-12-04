@@ -1,7 +1,7 @@
 <template>
   <div class="flex flex-col max-w-screen-full md:flex-row mx-auto md:px-60 bg-gray-100 p-6">
     <form
-      class="bg-white px-12 py-8 max-w-screen-sm w-full"
+      class="bg-white px-6 md:px-16 py-8 max-w-screen-sm w-full"
       @submit.prevent="registerUser"
     >
       <h1 class="text-xl font-bold mb-4 text-center">Crea tu cuenta</h1>
