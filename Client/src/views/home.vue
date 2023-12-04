@@ -99,7 +99,7 @@
       <!-- <h2 class="text-center font-semibold text-4xl text-indigo-800 py-4">
         El curso que quieras, cuando quieras
       </h2> -->
-      <img src="../assets/banner-curseek.png" alt="Imágen ilustrativa mapa" class="object-cover md:w-full" />
+      <img src="../assets/banner-curseek-2.png" alt="Imágen ilustrativa" class="object-cover md:w-full" />
 
       <!-- Lista de Proveedores y Universidades -->
       <div class="container mx-auto p-2">
