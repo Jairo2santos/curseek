@@ -10,12 +10,12 @@
         <p class="text-gray-600 mb-6 mr-2">{{ description }}</p>
       </slot>
       <slot name="course-info">
-        <span class="text-sm bg-gray-200 py-2 px-4 font-bold text-indigo-900 rounded-full">{{ totalCourses.toLocaleString() }} cursos</span>
+        <span class="text-sm bg-gray-200 py-2 px-4 font-bold text-indigo-900 rounded-full">{{
+          totalCourses.toLocaleString() }} cursos</span>
       </slot>
     </div>
   </div>
 </template>
-
 <script setup>
 import { computed } from 'vue';
 import defaultImage from '../assets/logo-utn.jpg';
