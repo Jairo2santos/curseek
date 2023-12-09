@@ -9,7 +9,7 @@ const userSchema = new mongoose.Schema({
   // Agregar el nuevo campo para los favoritos
   favorites: [{
     courseId: { type: mongoose.Schema.Types.ObjectId, ref: 'Course' },
-    courseType: { type: String, enum: ['UDEMY', 'UTN'] } 
+    courseType: { type: String, enum: ['UDEMY', 'UTN'] }
   }]
 });
 

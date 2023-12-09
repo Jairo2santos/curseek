@@ -1,6 +1,5 @@
-
 // controllers/udemy.controller.js
-const { getUdemyCoursesService, getSingleUdemyCourseService} = require('../services/udemy.services'); // Asegúrate de que la ruta sea correcta
+const { getUdemyCoursesService, getSingleUdemyCourseService } = require('../services/udemy.services'); // Asegúrate de que la ruta sea correcta
 const mongoose = require('mongoose');
 
 exports.getUdemyCourses = async (req, res) => {
@@ -12,7 +11,6 @@ exports.getUdemyCourses = async (req, res) => {
             category,
             filterType: filter
         };
-
         const result = await getUdemyCoursesService(options.category, options.page, options.limit, options.filterType);
         res.status(200).json({
             courses: result.courses,
@@ -28,12 +26,9 @@ exports.getUdemyCourses = async (req, res) => {
 
 exports.getSingleUdemyCourse = async (req, res) => {
     const { id } = req.params;
-
-
     if (!mongoose.Types.ObjectId.isValid(id)) {
         return res.status(400).send("ID inválido");
     }
-
     try {
         const course = await getSingleUdemyCourseService(id);
         if (!course) {

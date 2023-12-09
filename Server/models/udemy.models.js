@@ -45,7 +45,6 @@ const UdemyCourseSchema = new mongoose.Schema({
   primary_subcategory: {
     type: mongoose.Schema.Types.Mixed,
   }
-  
 });
 
 // Configura el nombre de la colección específicamente

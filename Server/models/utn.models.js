@@ -11,15 +11,8 @@ const CourseSchema = new mongoose.Schema({
   link: String,
   imgUrl: String,
   category: String,
-
 });
 
 const utnCourse = mongoose.model('course', CourseSchema, 'cursos_UTN');
 
 module.exports = utnCourse;
-
-
-
-
-
-
