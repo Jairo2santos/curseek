@@ -3,30 +3,20 @@
   <div class="flex container mx-auto p-4">
     <!-- Sidebar a la izquierda -->
     <div>
-      <Sidebar
-        :categories="categories"
-        @filter-by-category="handleCategoryFilter"
-      />
+      <Sidebar :categories="categories" @filter-by-category="handleCategoryFilter" />
     </div>
-
     <!-- Contenido a la derecha del Sidebar -->
     <div class="flex flex-col w-full ml-4">
       <!-- Filtros arriba -->
       <div>
         <Filtros @filter-changed="handleFilterChange" />
       </div>
-
       <!-- Cursos abajo -->
       <div>
         <div v-for="course in courses" :key="course._id" class="mb-4 min-w-max">
           <CardCurso :course="course" />
         </div>
-
-        <Paginacion
-          :currentPage="currentPage"
-          :totalPages="totalPages"
-          @changePage="handlePageChange"
-        />
+        <Paginacion :currentPage="currentPage" :totalPages="totalPages" @changePage="handlePageChange" />
       </div>
     </div>
   </div>
@@ -63,7 +53,7 @@ export default {
   },
   methods: {
     editCourse() {
-        this.$router.push(`/editar-curso/${this.course._id}`);
+      this.$router.push(`/editar-curso/${this.course._id}`);
     },
     async loadCategories() {
       try {

@@ -1,7 +1,6 @@
 const express = require('express');
 const mongoose = require('mongoose');
 const cors = require('cors');
-
 const app = express();
 
 // Rutas
@@ -27,4 +26,3 @@ app.use((error, req, res, next) => {
 app.listen(3000, () => {
   console.log('Servidor escuchando en el puerto 3000');
 });
-

@@ -1,13 +1,12 @@
 <template>
-<div class="flex justify-between items-center p-4 rounded-lg mb-6 w-full mx-auto .max-w-screen-xl">
+  <div class="flex justify-between items-center p-4 rounded-lg mb-6 w-full mx-auto .max-w-screen-xl">
     <div>
-        <h1 class="text-2xl font-bold mb-2">{{ title }}</h1>
-        <p class="text-gray-600 mb-2">{{ description }}</p>
-        <span class="text-sm bg-gray-200 py-2 px-4 rounded-full">Cursos totales: {{ totalCourses }}</span>
+      <h1 class="text-2xl font-bold mb-2">{{ title }}</h1>
+      <p class="text-gray-600 mb-2">{{ description }}</p>
+      <span class="text-sm bg-gray-200 py-2 px-4 rounded-full">Cursos totales: {{ totalCourses }}</span>
     </div>
     <img :src="computedImageSrc" alt="UTN Logo" class="w-80" />
-</div>
-
+  </div>
 </template>
 
 <script>

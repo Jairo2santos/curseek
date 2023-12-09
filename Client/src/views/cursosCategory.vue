@@ -1,14 +1,10 @@
 <template>
   <div>
-    <h1 class="text-2xl mb-4 text-center">Cursos de {{ categoria }} de la UTN</h1> 
+    <h1 class="text-2xl mb-4 text-center">Cursos de {{ categoria }} de la UTN</h1>
     <div v-for="course in courses" :key="course._id">
       <CardCurso :course="course" />
     </div>
-    <Paginacion
-      :currentPage="currentPage"
-      :totalPages="totalPages"
-      @changePage="handlePageChange"
-    />
+    <Paginacion :currentPage="currentPage" :totalPages="totalPages" @changePage="handlePageChange" />
   </div>
 </template>
 
@@ -51,9 +47,9 @@ export default {
       }
     },
     handlePageChange(newPage) {
-        this.currentPage = newPage;  // Asegúrate de que esta línea está presente
-        this.loadCursos(newPage);
-}
+      this.currentPage = newPage;  // Asegúrate de que esta línea está presente
+      this.loadCursos(newPage);
+    }
   },
 };
 </script>

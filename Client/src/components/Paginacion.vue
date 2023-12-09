@@ -3,13 +3,10 @@
     <button
       @click="prevPage"
       :disabled="currentPage <= 1"
-      class="mx-1 px-4 py-2 border rounded-lg bg-gray-200"
-    >
+      class="mx-1 px-4 py-2 border rounded-lg bg-gray-200">
       Anterior
     </button>
-
     <span v-if="currentPage > 3" class="mx-1">...</span>
-
     <div v-for="page in displayedPages" :key="page" class="mx-1">
       <button
         @click="changePage(page)"
@@ -18,12 +15,10 @@
             ? 'text-white bg-blue-500'
             : 'text-black bg-gray-200'
         "
-        class="px-4 py-2 border rounded-lg"
-      >
+        class="px-4 py-2 border rounded-lg">
         {{ page }}
       </button>
     </div>
-
     <span v-if="currentPage < totalPages - 2" class="mx-1">...</span>
     <button
       @click="changePage(totalPages)"
@@ -32,16 +27,13 @@
           ? 'text-white bg-blue-500'
           : 'text-black hover:bg-gray-500 bg-gray-400'
       "
-      class="mx-1 px-4 py-2 border rounded-lg"
-    >
+      class="mx-1 px-4 py-2 border rounded-lg">
       {{ totalPages }}
     </button>
-
     <button
       @click="nextPage"
       :disabled="currentPage >= totalPages"
-      class="mx-1 px-4 py-2 border rounded-lg bg-gray-200"
-    >
+      class="mx-1 px-4 py-2 border rounded-lg bg-gray-200">
       Siguiente
     </button>
   </div>
