@@ -48,7 +48,7 @@
         </div>
         <!-- Saber más -->
         <div :class="{ 'blurred-background': isInputClicked }" class="border-b border-gray-200 mt-2 pb-8 ml-2">
-          <a href="/nosotros/#/preguntasFrecuentes" :class="{ 'blurred-background': isInputClicked }">
+          <a href="#" :class="{ 'blurred-background': isInputClicked }">
             <button class="flex text-sm font-semibold hover:underline hover:bg-indigo-100 transition text-black p-0">
               Ayuda
               <svg class="ml-1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="20" fill="#000000">
