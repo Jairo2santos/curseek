@@ -5,7 +5,7 @@
         <!-- Logo -->
         <div class="mb-4 md:mb-0 pb-2">
           <a href="/">
-            <img src="../assets/logo-curseek.png" alt="Curseek Logo" class="w-48">
+            <img src="../assets/logo-curseek.png" alt="Imagen de logo curseek" class="w-48">
           </a>
           <p class="text-center text-indigo-800">&copy; Copyright 2023</p>
         </div>

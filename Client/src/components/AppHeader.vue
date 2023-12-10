@@ -9,7 +9,7 @@
             </svg>
           </button>
           <a href="/">
-            <img src="../assets/logo-curseek.png" alt="logo curseek" width="194">
+            <img src="../assets/logo-curseek.png" alt="Imagen de logo curseek" width="194">
           </a>
           <button @click="toggleMenu2" class="lg:hidden ml-12">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960" width="32">

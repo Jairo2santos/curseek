@@ -32,7 +32,7 @@
           <li v-for="course in courses" :key="course._id" class="border-b last:border-b-0">
             <a @click="redirectToCourse(course)"
               class="flex items-center p-4 hover:bg-gray-100 transition cursor-pointer">
-              <img :src="course.image" alt="Course" class="w-16 h-16 rounded-full object-cover mr-4">
+              <img :src="course.image" alt="Imagen de curso" class="w-16 h-16 rounded-full object-cover mr-4">
               <div>
                 <h2 class="font-bold">{{ course.title }}</h2>
                 <p class="text-xs text-gray-600">{{ course.source }}</p>
@@ -43,7 +43,7 @@
       </div>
     </div>
     <div class="flex items-center justify-center mt-0 bg-white">
-      <img src="../assets/404.png" alt="Imágen Error 404" class="object-cover max-w-screen-sm h-auto mt-1" />
+      <img src="../assets/404.png" alt="Imagen de Error 404" class="object-cover max-w-screen-sm h-auto mt-1" />
     </div>
   </div>
 </template>

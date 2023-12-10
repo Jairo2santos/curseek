@@ -36,7 +36,7 @@
             <ul>
               <li v-for="course in courses" :key="course._id" class="border-b last:border-b-0">
                 <a @click="redirectToCourse(course)" class="flex items-center p-4 hover:bg-gray-100 cursor-pointer">
-                  <img :src="course.image" alt="Course" class="w-16 h-16 rounded-full object-cover mr-4">
+                  <img :src="course.image" alt="Imagen de curso" class="w-16 h-16 rounded-full object-cover mr-4">
                   <div>
                     <h2 class="font-bold">{{ course.title }}</h2>
                     <p class="text-xs text-gray-600">{{ course.source }}</p>
@@ -94,7 +94,7 @@
       <!-- <h2 class="text-center font-semibold text-4xl text-indigo-800 py-4">
         El curso que quieras, cuando quieras
       </h2> -->
-      <img src="../assets/banner-curseek-2.png" alt="Imágen ilustrativa" class="object-cover md:w-full" />
+      <img src="../assets/banner-curseek-2.png" alt="Imágen ilustrativa curseek" class="object-cover md:w-full" />
       <!-- Lista de Proveedores y Universidades -->
       <div class="container mx-auto p-2">
         <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 justify-center">
@@ -106,7 +106,7 @@
                 <a href="/cursos/udemy">
                   <button
                     class="hover:scale-110 hover:bg-indigo-300 rounded-lg transform transition duration-200 ease-in-out w-full sm:w-60 flex items-center">
-                    <img class="w-12" src="../assets/instituciones/Udemy.png" alt="Logo Udemy">
+                    <img class="w-12" src="../assets/instituciones/Udemy.png" alt="Imagen de Logo Udemy">
                     <span class="ml-2 text-xl font-semibold text-black">Udemy</span>
                   </button>
                 </a>
@@ -121,7 +121,7 @@
                 <a href="/cursos/utn">
                   <button
                     class="hover:scale-110 hover:bg-indigo-300 rounded-lg transform transition duration-200 ease-in-out w-full sm:w-60 flex items-center">
-                    <img class="w-12" src="../assets/instituciones/utn.png" alt="Logo Universidad UTN">
+                    <img class="w-12" src="../assets/instituciones/utn.png" alt="Imagen de Logo Universidad UTN">
                     <span class="ml-2 text-xl font-semibold text-black">UTN</span>
                   </button>
                 </a>
@@ -135,7 +135,7 @@
               <!-- <li class="flex items-center justify-center">
                 <a href="https://www.unam.mx/" target="_blank">
                   <button class="hover:scale-110 hover:bg-indigo-300 rounded-lg transform transition duration-200 ease-in-out w-full sm:w-60 flex items-center">
-                    <img class="w-12" src="../assets/instituciones/UNAM.png" alt="Logo Universidad de México UNAM">
+                    <img class="w-12" src="../assets/instituciones/UNAM.png" alt="Imagen de Logo Universidad de México UNAM">
                     <span class="ml-2 text-xl font-semibold text-black">UNAM</span>
                   </button>
                 </a>
@@ -143,7 +143,7 @@
               <li class="flex items-center justify-center">
                 <a href="https://uchile.cl/" target="_blank">
                   <button class="hover:scale-110 hover:bg-indigo-300 rounded-lg transform transition duration-200 ease-in-out w-full sm:w-60 flex items-center">
-                    <img class="w-12" src="../assets/instituciones/Universidad_de_Chile.png" alt="Logo Universidad de Chile">
+                    <img class="w-12" src="../assets/instituciones/Universidad_de_Chile.png" alt="Imagen de Logo Universidad de Chile">
                     <span class="ml-2 text-xl font-semibold text-black">U. de Chile</span>
                   </button>
                 </a>
@@ -152,7 +152,7 @@
                 <a href="https://www.coursera.org" target="_blank">
                   <button
                     class="hover:scale-110 hover:bg-indigo-300 rounded-lg transform transition duration-200 ease-in-out w-full sm:w-60 flex items-center">
-                    <img class="w-12" src="../assets/instituciones/coursera.png" alt="Logo Coursera">
+                    <img class="w-12" src="../assets/instituciones/coursera.png" alt="Imagen de Logo Coursera">
                     <span class="ml-2 text-xl font-semibold text-black">Coursera</span>
                   </button>
                 </a>
@@ -160,7 +160,7 @@
               <!-- <li class="flex items-center justify-center">
                 <a href="http://www.ucv.ve/" target="_blank">
                   <button class="hover:scale-110 hover:bg-indigo-300 rounded-lg transform transition duration-200 ease-in-out w-full sm:w-60 flex items-center">
-                    <img class="w-12" src="../assets/instituciones/Universidad_Central_de_Venezuela.png" alt="Logo Universidad_Central_de_Venezuela">
+                    <img class="w-12" src="../assets/instituciones/Universidad_Central_de_Venezuela.png" alt="Imagen de Logo Universidad_Central_de_Venezuela">
                     <span class="ml-2 text-xl font-semibold text-black">U. C. Venezuela</span>
                   </button>
                 </a>
@@ -168,7 +168,7 @@
               <li class="flex items-center justify-center">
                 <a href="https://www.edx.org/es" target="_blank">
                   <button class="hover:scale-110 hover:bg-indigo-300 rounded-lg transform transition duration-200 ease-in-out w-full sm:w-60 flex items-center">
-                    <img class="w-12" src="../assets/instituciones/edX.png" alt="Logo edX">
+                    <img class="w-12" src="../assets/instituciones/edX.png" alt="Imagen de Logo edX">
                     <span class="ml-2 text-xl font-semibold text-black">edX</span>
                   </button>
                 </a>
