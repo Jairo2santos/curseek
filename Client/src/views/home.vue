@@ -60,28 +60,76 @@
           </a>
         </div>
         <!-- Botones de búsquedas frecuentes -->
-        <div class="mt-4 pr-0 md:pr-60">
+        <div class="mt-4 pr-0 md:pr-20">
           <h2 class="text-lg font-bold p-2">Búsquedas frecuentes</h2>
-          <button
-            class="text-sm bg-gray-100 text-gray-800 hover:bg-indigo-200 border border-gray-200 transition py-1 px-2 rounded-full mb-1 mr-1">Udemy</button>
-          <button
-            class="text-sm bg-gray-100 text-gray-800 hover:bg-indigo-200 border border-gray-200 transition py-1 px-2 rounded-full mb-1 mr-1">UTN</button>
-          <button
-            class="text-sm bg-gray-100 text-gray-800 hover:bg-indigo-200 border border-gray-200 transition py-1 px-2 rounded-full mb-1 mr-1">Java</button>
-          <button
-            class="text-sm bg-gray-100 text-gray-800 hover:bg-indigo-200 border border-gray-200 transition py-1 px-2 rounded-full mb-1 mr-1">Javascript</button>
-          <button
-            class="text-sm bg-gray-100 text-gray-800 hover:bg-indigo-200 border border-gray-200 transition py-1 px-2 rounded-full mb-1 mr-1">css</button>
-          <button
-            class="text-sm bg-gray-100 text-gray-800 hover:bg-indigo-200 border border-gray-200 transition py-1 px-2 rounded-full mb-1 mr-1">php</button>
-          <button
-            class="text-sm bg-gray-100 text-gray-800 hover:bg-indigo-200 border border-gray-200 transition py-1 px-2 rounded-full mb-1 mr-1">administración</button>
-          <button
-            class="text-sm bg-gray-100 text-gray-800 hover:bg-indigo-200 border border-gray-200 transition py-1 px-2 rounded-full mb-1 mr-1">html</button>
-          <button
-            class="text-sm bg-gray-100 text-gray-800 hover:bg-indigo-200 border border-gray-200 transition py-1 px-2 rounded-full mb-1 mr-1">física</button>
-          <button
-            class="text-sm bg-gray-100 text-gray-800 hover:bg-indigo-200 border border-gray-200 transition py-1 px-2 rounded-full mb-1 mr-1">Matemática</button>
+          <button @click="handleSearch('Udemy')"
+            class="text-sm bg-gray-100 text-gray-800 hover:bg-indigo-200 border border-gray-200 transition py-1 px-2 rounded-full mb-1 mr-1">
+            Udemy
+          </button>
+          <button @click="handleSearch('UTN')"
+            class="text-sm bg-gray-100 text-gray-800 hover:bg-indigo-200 border border-gray-200 transition py-1 px-2 rounded-full mb-1 mr-1">
+            UTN
+          </button>
+          <button @click="handleSearch('Java')"
+            class="text-sm bg-gray-100 text-gray-800 hover:bg-indigo-200 border border-gray-200 transition py-1 px-2 rounded-full mb-1 mr-1">
+            Java
+          </button>
+          <button @click="handleSearch('Desarrollo web')"
+            class="text-sm bg-gray-100 text-gray-800 hover:bg-indigo-200 border border-gray-200 transition py-1 px-2 rounded-full mb-1 mr-1">
+            Desarrollo web
+          </button>
+          <button @click="handleSearch('Javascript')"
+            class="text-sm bg-gray-100 text-gray-800 hover:bg-indigo-200 border border-gray-200 transition py-1 px-2 rounded-full mb-1 mr-1">
+            Javascript
+          </button>
+          <button @click="handleSearch('css')"
+            class="text-sm bg-gray-100 text-gray-800 hover:bg-indigo-200 border border-gray-200 transition py-1 px-2 rounded-full mb-1 mr-1">
+            curso css
+          </button>
+          <button @click="handleSearch('php')"
+            class="text-sm bg-gray-100 text-gray-800 hover:bg-indigo-200 border border-gray-200 transition py-1 px-2 rounded-full mb-1 mr-1">
+            php
+          </button>
+          <button @click="handleSearch('administración')"
+            class="text-sm bg-gray-100 text-gray-800 hover:bg-indigo-200 border border-gray-200 transition py-1 px-2 rounded-full mb-1 mr-1">
+            Administración de empresas
+          </button>
+          <button @click="handleSearch('seguridad')"
+            class="text-sm bg-gray-100 text-gray-800 hover:bg-indigo-200 border border-gray-200 transition py-1 px-2 rounded-full mb-1 mr-1">
+            seguridad
+          </button>
+          <button @click="handleSearch('mate')"
+            class="text-sm bg-gray-100 text-gray-800 hover:bg-indigo-200 border border-gray-200 transition py-1 px-2 rounded-full mb-1 mr-1">
+            mate
+          </button>
+          <button @click="handleSearch('bases SQL')"
+            class="text-sm bg-gray-100 text-gray-800 hover:bg-indigo-200 border border-gray-200 transition py-1 px-2 rounded-full mb-1 mr-1">
+            bases SQL
+          </button>
+          <button @click="handleSearch('html')"
+            class="text-sm bg-gray-100 text-gray-800 hover:bg-indigo-200 border border-gray-200 transition py-1 px-2 rounded-full mb-1 mr-1">
+            html
+          </button>
+          <button @click="handleSearch('física')"
+            class="text-sm bg-gray-100 text-gray-800 hover:bg-indigo-200 border border-gray-200 transition py-1 px-2 rounded-full mb-1 mr-1">
+            física
+          </button>
+          <button @click="handleSearch('Tejer')"
+            class="text-sm bg-gray-100 text-gray-800 hover:bg-indigo-200 border border-gray-200 transition py-1 px-2 rounded-full mb-1 mr-1">
+            Tejer
+          </button>
+          <button @click="handleSearch('Matemática')"
+            class="text-sm bg-gray-100 text-gray-800 hover:bg-indigo-200 border border-gray-200 transition py-1 px-2 rounded-full mb-1 mr-1">
+            Matemática
+          </button>
+          <button @click="handleSearch('YouTube')"
+            class="text-sm bg-gray-100 text-gray-800 hover:bg-indigo-200 border border-gray-200 transition py-1 px-2 rounded-full mb-1 mr-1">
+            YouTube
+          </button>
+          <button @click="handleSearch('meditación')"
+            class="text-sm bg-gray-100 text-gray-800 hover:bg-indigo-200 border border-gray-200 transition py-1 px-2 rounded-full mb-1 mr-1">
+            meditación
+          </button>
         </div>
       </div>
       <!-- Imagen -->
@@ -292,6 +340,13 @@ const redirectToCourse = (course) => {
     router.push({ name: 'DetalleCursoUTN', params: { id: course.originalId } });
   }
 };
+
+const handleSearch = (value) => {
+  // Establece el contenido del campo de búsqueda al hacer clic en un botón de búsqueda frecuente
+  query.value = value;
+  search(); // Realiza la búsqueda automáticamente al establecer el contenido del campo
+};
+
 </script>
 <style scoped>.blurred-background {
   filter: blur(5px);
