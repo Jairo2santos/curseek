@@ -164,9 +164,9 @@ const goToCourseDetail = (course) => {
 const courseImage = (course) => {
   return course.image_480x270 || course.imgUrl;
 };
-const courseDescription = (course) => {
-  return course.headline || course.summary;
-};
+// const courseDescription = (course) => {
+//   return course.headline || course.summary;
+// };
 // Función para alternar la visibilidad de la contraseña
 const togglePasswordVisibility = () => {
   isPasswordShown.value = !isPasswordShown.value;
