@@ -34,7 +34,7 @@
         <ul>
           <li v-for="course in courses" :key="course._id" class="border-b last:border-b-0">
             <a @click="redirectToCourse(course)" class="flex items-center p-4 hover:bg-gray-100 transition cursor-pointer">
-              <img :src="course.image" alt="Imagen de curso" class="w-24 h-16 rounded object-cover mr-2">
+              <img :src="course.image" alt="" class="w-24 h-16 rounded object-cover mr-2">
               <div class="flex-grow">
                 <div>
                   <h2 class="text-sm font-semibold hover:underline w-80">{{ course.title || 'Aprende con este curso y descubre oportunidades' }}</h2>
@@ -51,7 +51,7 @@
     </div>
     
     <div class="flex items-center justify-center mt-0 bg-white">
-      <img src="../assets/404.png" alt="Imagen de Error 404" class="object-cover max-w-screen-sm h-auto mt-1" />
+      <img src="../assets/404.png" alt="Error 404" class="object-cover max-w-screen-sm h-auto mt-1" />
     </div>
   </div>
 </template>

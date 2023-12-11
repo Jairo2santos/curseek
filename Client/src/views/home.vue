@@ -37,7 +37,7 @@
             <ul>
               <li v-for="course in courses" :key="course._id" class="border-b last:border-b-0 pb-2 md:pb-0">
                 <a @click="redirectToCourse(course)" class="flex flex-col md:flex-row items-center p-4 hover:bg-gray-100 transition cursor-pointer">
-                  <img :src="course.image" alt="Imagen de curso" class="w-full h-24 md:w-16 md:h-16 lg:w-20 lg:h-16 xl:w-24 xl:h-16 rounded object-cover md:mr-2">
+                  <img :src="course.image" alt="" class="w-full h-24 md:w-16 md:h-16 lg:w-20 lg:h-16 xl:w-24 xl:h-16 rounded object-cover md:mr-2">
                   <div class="flex-grow p-2 md:p-0">
                     <div>
                       <h2 class="text-sm font-semibold hover:underline md:w-80">{{ course.title || 'Aprende con este curso y descubre oportunidades' }}</h2>
@@ -141,7 +141,7 @@
       </div>
       <!-- Imagen -->
       <img :class="{ 'blurred-background': isInputClicked }" src="../assets/banner-1-izquierda.jpg"
-        alt="Imagen ilustrativa hombre sentado estudiando" class="md:w-1/2 object-cover md:h-full hidden md:block" />
+        alt="" class="md:w-1/2 object-cover md:h-full hidden md:block" />
     </div>
     <!-- El curso que quieras, cuando quieras -->
     <div :class="{ 'blurred-background': isInputClicked }"
@@ -149,7 +149,7 @@
       <h2 class="text-center font-semibold text-3xl text-indigo-900 py-12">
         El curso que quieras, cuando quieras
       </h2>
-      <img src="../assets/banner-curseek-2.png" alt="Imágen ilustrativa curseek" class="object-cover md:w-full" />
+      <img src="../assets/banner-curseek-2.png" alt="" class="object-cover md:w-full" />
       
       <!-- Lista de Proveedores y Universidades -->
       <div class="container mx-auto px-20 py-12">
@@ -162,7 +162,7 @@
                 <a href="/cursos/udemy">
                   <button
                     class="hover:scale-110 hover:bg-indigo-200 rounded-lg transform transition duration-100 ease-in-out w-full sm:w-60 flex items-center">
-                    <img class="w-12" src="../assets/instituciones/Udemy.png" alt="Imagen de Logo Udemy">
+                    <img class="w-12" src="../assets/instituciones/Udemy.png" alt="Udemy">
                     <span class="ml-2 text-lg font-semibold text-black">Udemy</span>
                   </button>
                 </a>
@@ -177,7 +177,7 @@
                 <a href="/cursos/utn">
                   <button
                     class="hover:scale-110 hover:bg-indigo-200 rounded-lg transform transition duration-100 ease-in-out w-full sm:w-60 flex items-center">
-                    <img class="w-12" src="../assets/instituciones/utn.png" alt="Imagen de Logo Universidad UTN">
+                    <img class="w-12" src="../assets/instituciones/utn.png" alt="Universidad Tecnológica Nacional">
                     <span class="ml-2 text-lg font-semibold text-black">UTN</span>
                   </button>
                 </a>
@@ -191,7 +191,7 @@
               <!-- <li class="flex items-center justify-center">
                 <a href="https://www.unam.mx/" target="_blank">
                   <button class="hover:scale-110 hover:bg-indigo-200 rounded-lg transform transition duration-100 ease-in-out w-full sm:w-60 flex items-center">
-                    <img class="w-12" src="../assets/instituciones/UNAM.png" alt="Imagen de Logo Universidad de México UNAM">
+                    <img class="w-12" src="../assets/instituciones/UNAM.png" alt="Universidad de México UNAM">
                     <span class="ml-2 text-lg font-semibold text-black">UNAM</span>
                   </button>
                 </a>
@@ -199,7 +199,7 @@
               <li class="flex items-center justify-center">
                 <a href="https://uchile.cl/" target="_blank">
                   <button class="hover:scale-110 hover:bg-indigo-200 rounded-lg transform transition duration-100 ease-in-out w-full sm:w-60 flex items-center">
-                    <img class="w-12" src="../assets/instituciones/Universidad_de_Chile.png" alt="Imagen de Logo Universidad de Chile">
+                    <img class="w-12" src="../assets/instituciones/Universidad_de_Chile.png" alt="Universidad de Chile">
                     <span class="ml-2 text-lg font-semibold text-black">U. de Chile</span>
                   </button>
                 </a>
@@ -208,7 +208,7 @@
                 <a href="https://www.coursera.org" target="_blank">
                   <button
                     class="hover:scale-110 hover:bg-indigo-200 rounded-lg transform transition duration-100 ease-in-out w-full sm:w-60 flex items-center">
-                    <img class="w-12" src="../assets/instituciones/coursera.png" alt="Imagen de Logo Coursera">
+                    <img class="w-12" src="../assets/instituciones/coursera.png" alt="Coursera">
                     <span class="ml-2 text-lg font-semibold text-black">Coursera</span>
                   </button>
                 </a>
@@ -216,7 +216,7 @@
               <!-- <li class="flex items-center justify-center">
                 <a href="http://www.ucv.ve/" target="_blank">
                   <button class="hover:scale-110 hover:bg-indigo-200 rounded-lg transform transition duration-100 ease-in-out w-full sm:w-60 flex items-center">
-                    <img class="w-12" src="../assets/instituciones/Universidad_Central_de_Venezuela.png" alt="Imagen de Logo Universidad_Central_de_Venezuela">
+                    <img class="w-12" src="../assets/instituciones/Universidad_Central_de_Venezuela.png" alt="Universidad_Central_de_Venezuela">
                     <span class="ml-2 text-lg font-semibold text-black">U. C. Venezuela</span>
                   </button>
                 </a>
@@ -224,7 +224,7 @@
               <li class="flex items-center justify-center">
                 <a href="https://www.edx.org/es" target="_blank">
                   <button class="hover:scale-110 hover:bg-indigo-200 rounded-lg transform transition duration-100 ease-in-out w-full sm:w-60 flex items-center">
-                    <img class="w-12" src="../assets/instituciones/edX.png" alt="Imagen de Logo edX">
+                    <img class="w-12" src="../assets/instituciones/edX.png" alt="edX">
                     <span class="ml-2 text-lg font-semibold text-black">edX</span>
                   </button>
                 </a>

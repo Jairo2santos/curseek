@@ -39,7 +39,7 @@ const props = defineProps({
   },
   altText: {
     type: String,
-    default: "Imagen de portada"
+    default: "Institución educativa"
   }
 });
 

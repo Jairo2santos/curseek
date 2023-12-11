@@ -46,7 +46,7 @@
             <div class="flex items-center">
               <img
                 :src="udemyCourse.instructorImage || udemyCourse.instructors[0]?.image_100x100 || 'ruta_por_defecto_del_profesor.jpg'"
-                alt="Imagen del Profesor" class="rounded-full w-12 mr-4">
+                alt="" class="rounded-full w-12 mr-4">
               <span>{{ udemyCourse.instructors[0]?.name || 'Profesor' }}</span>
             </div>
           </div>
@@ -54,7 +54,7 @@
       </div>
       <!-- Columna 3 (Barra Lateral) -->
       <div class="order-first md:order-last bg-white p-4 md:p-6 rounded border border-gray-200">
-        <img :src="udemyCourse.image" alt="Imagen del Curso" class="rounded-sm mb-4 w-full">
+        <img :src="udemyCourse.image" alt="" class="rounded-sm mb-4 w-full">
         <a :href="`https://www.udemy.com${udemyCourse.url}`" target="_blank"
           class="flex bg-indigo-600 text-white text-center py-2 px-4 rounded hover:bg-indigo-800 transition-colors duration-300 ease-in-out w-full items-center text-md justify-center font-semibold">
           Ir al curso

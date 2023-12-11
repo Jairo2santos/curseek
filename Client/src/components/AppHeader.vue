@@ -12,7 +12,7 @@
               </svg>
             </button>
             <a href="/" class="mx-12 md:mx-0"> <!-- Añadido el margen para separar el logo de los botones -->
-              <img src="../assets/logo-curseek.png" alt="Imagen de logo curseek" width="194">
+              <img src="../assets/logo-curseek.png" alt="CurSeek" width="194">
             </a>
             <button @click="toggleMenu2" class="lg:hidden">
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960" width="32">
