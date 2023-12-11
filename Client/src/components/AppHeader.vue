@@ -67,7 +67,7 @@
       <!-- Desplegable -->
       <div class="relative">
         <transition name="fade">
-          <ul v-if="dropdownVisible" class="border max-h-96 overflow-y-auto border-gray-300 ml-40 py-2 absolute text-sm shadow-md bg-white p-0 w-80">
+          <ul v-if="dropdownVisible" class="border-r border-l border-b max-h-96 overflow-y-auto border-gray-100 ml-40 py-2 absolute text-sm shadow-md bg-white p-0 w-80">
             <li class="my-0.5 flex items-center">
               <a href="/cursos/utn" class="hover:bg-gray-200 transition px-4 flex items-center w-full justify-between">
                 <span class="text-gray-500 py-1.5 px-1">UTN.BA</span>

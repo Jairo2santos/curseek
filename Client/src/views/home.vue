@@ -5,11 +5,11 @@
       <!-- Contenedor del buscador y resultados -->
       <div class="md:w-1/2 p-8 flex flex-col justify-center">
         <!-- Título -->
-        <h1 :class="{ 'blurred-background': isInputClicked }" class="text-left font-semibold text-4xl text-gray-900 pb-3">
+        <h1 :class="{ 'blurred-background': isInputClicked }" class="text-left font-semibold text-3xl md:text-4xl text-gray-900 pb-3">
           Encuentra hoy mismo tu próximo curso sin esfuerzo.
         </h1>
         <!-- Campo de búsqueda -->
-        <div class="max-w-lg m-0 p-0">
+        <div class="max-w-xl m-0 p-0">
           <form @submit.prevent="search"
             class="flex p-1 bg-white items-center border rounded-xl overflow-hidden shadow-lg">
             <button type="submit" class="p-2">
@@ -29,23 +29,30 @@
             </button>
           </form>
         </div>
+
         <!-- Resultados -->
-        <div class="flex justify-center">
-          <div v-if="courses.length > 0" class="absolute max-w-3xl mt-1 bg-white shadow-lg max-h-96 overflow-y-auto z-10">
-            <p class="px-4 py-2 text-sm text-gray-500 border-b">Los cursos que se relacionan con"{{ query }}"</p>
+        <div class="flex flex-col md:flex-row container mx-0 justify-center">
+          <div v-if="courses.length > 0" class="md:absolute md:max-w-full mt-1 bg-white shadow-lg max-h-96 overflow-y-auto z-10">
+            <p class="px-4 py-2 text-sm text-gray-500 border-b">Los cursos que se relacionan con "{{ query }}"</p>
             <ul>
-              <li v-for="course in courses" :key="course._id" class="border-b last:border-b-0">
-                <a @click="redirectToCourse(course)" class="flex items-center p-4 hover:bg-gray-100 cursor-pointer">
-                  <img :src="course.image" alt="Imagen de curso" class="w-16 h-16 rounded-full object-cover mr-4">
-                  <div>
-                    <h2 class="font-bold">{{ course.title }}</h2>
-                    <p class="text-xs text-gray-600">{{ course.source }}</p>
+              <li v-for="course in courses" :key="course._id" class="border-b last:border-b-0 pb-2 md:pb-0">
+                <a @click="redirectToCourse(course)" class="flex flex-col md:flex-row items-center p-4 hover:bg-gray-100 transition cursor-pointer">
+                  <img :src="course.image" alt="Imagen de curso" class="w-full h-24 md:w-16 md:h-16 lg:w-20 lg:h-16 xl:w-24 xl:h-16 rounded object-cover md:mr-2">
+                  <div class="flex-grow p-2 md:p-0">
+                    <div>
+                      <h2 class="text-sm font-semibold hover:underline md:w-80">{{ course.title || 'Aprende con este curso y descubre oportunidades' }}</h2>
+                      <p class="text-xs text-gray-600 pt-1">{{ course.source || 'Curso' }}</p>
+                    </div>
+                  </div>
+                  <div class="flex items-end text-sm font-semibold text-green-700">
+                    <p>{{ course.price || 'Gratis' }}</p>
                   </div>
                 </a>
               </li>
             </ul>
           </div>
         </div>
+
         <!-- Saber más -->
         <div :class="{ 'blurred-background': isInputClicked }" class="border-b border-gray-200 mt-2 pb-8 ml-2">
           <a href="#" :class="{ 'blurred-background': isInputClicked }">
@@ -62,100 +69,101 @@
         <!-- Botones de búsquedas frecuentes -->
         <div class="mt-4 pr-0 md:pr-20">
           <h2 class="text-lg font-bold p-2">Búsquedas frecuentes</h2>
-          <button @click="handleSearch('Udemy')"
-            class="text-sm bg-gray-100 text-gray-800 hover:bg-indigo-200 border border-gray-200 transition py-1 px-2 rounded-full mb-1 mr-1">
-            Udemy
-          </button>
-          <button @click="handleSearch('UTN')"
-            class="text-sm bg-gray-100 text-gray-800 hover:bg-indigo-200 border border-gray-200 transition py-1 px-2 rounded-full mb-1 mr-1">
-            UTN
-          </button>
-          <button @click="handleSearch('Java')"
+          <button @click="handleSearch('Java')" @focus="setInputClicked(true)" @blur="setInputClicked(false)"
             class="text-sm bg-gray-100 text-gray-800 hover:bg-indigo-200 border border-gray-200 transition py-1 px-2 rounded-full mb-1 mr-1">
             Java
           </button>
-          <button @click="handleSearch('Desarrollo web')"
+          <button @click="handleSearch('Desarrollo web')" @focus="setInputClicked(true)" @blur="setInputClicked(false)"
             class="text-sm bg-gray-100 text-gray-800 hover:bg-indigo-200 border border-gray-200 transition py-1 px-2 rounded-full mb-1 mr-1">
             Desarrollo web
           </button>
-          <button @click="handleSearch('Javascript')"
+          <button @click="handleSearch('Javascript')" @focus="setInputClicked(true)" @blur="setInputClicked(false)"
             class="text-sm bg-gray-100 text-gray-800 hover:bg-indigo-200 border border-gray-200 transition py-1 px-2 rounded-full mb-1 mr-1">
             Javascript
           </button>
-          <button @click="handleSearch('css')"
+          <button @click="handleSearch('Estilos CSS')" @focus="setInputClicked(true)" @blur="setInputClicked(false)"
             class="text-sm bg-gray-100 text-gray-800 hover:bg-indigo-200 border border-gray-200 transition py-1 px-2 rounded-full mb-1 mr-1">
             curso css
           </button>
-          <button @click="handleSearch('php')"
+          <button @click="handleSearch('Curso de php')" @focus="setInputClicked(true)" @blur="setInputClicked(false)"
             class="text-sm bg-gray-100 text-gray-800 hover:bg-indigo-200 border border-gray-200 transition py-1 px-2 rounded-full mb-1 mr-1">
-            php
+            Curso de php
           </button>
-          <button @click="handleSearch('administración')"
+          <button @click="handleSearch('Administración de empresas')" @focus="setInputClicked(true)" @blur="setInputClicked(false)"
             class="text-sm bg-gray-100 text-gray-800 hover:bg-indigo-200 border border-gray-200 transition py-1 px-2 rounded-full mb-1 mr-1">
             Administración de empresas
           </button>
-          <button @click="handleSearch('seguridad')"
+          <button @click="handleSearch('React js')" @focus="setInputClicked(true)" @blur="setInputClicked(false)"
+            class="text-sm bg-gray-100 text-gray-800 hover:bg-indigo-200 border border-gray-200 transition py-1 px-2 rounded-full mb-1 mr-1">
+            React js
+          </button>
+          <button @click="handleSearch('seguridad')" @focus="setInputClicked(true)" @blur="setInputClicked(false)"
             class="text-sm bg-gray-100 text-gray-800 hover:bg-indigo-200 border border-gray-200 transition py-1 px-2 rounded-full mb-1 mr-1">
             seguridad
           </button>
-          <button @click="handleSearch('mate')"
-            class="text-sm bg-gray-100 text-gray-800 hover:bg-indigo-200 border border-gray-200 transition py-1 px-2 rounded-full mb-1 mr-1">
-            mate
-          </button>
-          <button @click="handleSearch('bases SQL')"
+          <button @click="handleSearch('bases SQL')" @focus="setInputClicked(true)" @blur="setInputClicked(false)"
             class="text-sm bg-gray-100 text-gray-800 hover:bg-indigo-200 border border-gray-200 transition py-1 px-2 rounded-full mb-1 mr-1">
             bases SQL
           </button>
-          <button @click="handleSearch('html')"
+          <button @click="handleSearch('html')" @focus="setInputClicked(true)" @blur="setInputClicked(false)"
             class="text-sm bg-gray-100 text-gray-800 hover:bg-indigo-200 border border-gray-200 transition py-1 px-2 rounded-full mb-1 mr-1">
             html
           </button>
-          <button @click="handleSearch('física')"
+          <button @click="handleSearch('física')" @focus="setInputClicked(true)" @blur="setInputClicked(false)"
             class="text-sm bg-gray-100 text-gray-800 hover:bg-indigo-200 border border-gray-200 transition py-1 px-2 rounded-full mb-1 mr-1">
             física
           </button>
-          <button @click="handleSearch('Tejer')"
+          <button @click="handleSearch('Tejer')" @focus="setInputClicked(true)" @blur="setInputClicked(false)"
             class="text-sm bg-gray-100 text-gray-800 hover:bg-indigo-200 border border-gray-200 transition py-1 px-2 rounded-full mb-1 mr-1">
             Tejer
           </button>
-          <button @click="handleSearch('Matemática')"
+          <button @click="handleSearch('Matemática')" @focus="setInputClicked(true)" @blur="setInputClicked(false)"
             class="text-sm bg-gray-100 text-gray-800 hover:bg-indigo-200 border border-gray-200 transition py-1 px-2 rounded-full mb-1 mr-1">
             Matemática
           </button>
-          <button @click="handleSearch('YouTube')"
+          <button @click="handleSearch('YouTube')" @focus="setInputClicked(true)" @blur="setInputClicked(false)"
             class="text-sm bg-gray-100 text-gray-800 hover:bg-indigo-200 border border-gray-200 transition py-1 px-2 rounded-full mb-1 mr-1">
             YouTube
           </button>
-          <button @click="handleSearch('meditación')"
+          <button @click="handleSearch('meditación')" @focus="setInputClicked(true)" @blur="setInputClicked(false)"
             class="text-sm bg-gray-100 text-gray-800 hover:bg-indigo-200 border border-gray-200 transition py-1 px-2 rounded-full mb-1 mr-1">
             meditación
+          </button>
+          <button @click="handleSearch('Vue 3')" @focus="setInputClicked(true)" @blur="setInputClicked(false)"
+            class="text-sm bg-gray-100 text-gray-800 hover:bg-indigo-200 border border-gray-200 transition py-1 px-2 rounded-full mb-1 mr-1">
+            Vue 3
+          </button>
+          <button @click="handleSearch('Salud')" @focus="setInputClicked(true)" @blur="setInputClicked(false)"
+            class="text-sm bg-gray-100 text-gray-800 hover:bg-indigo-200 border border-gray-200 transition py-1 px-2 rounded-full mb-1 mr-1">
+            Salud
           </button>
         </div>
       </div>
       <!-- Imagen -->
       <img :class="{ 'blurred-background': isInputClicked }" src="../assets/banner-1-izquierda.jpg"
-        alt="Imagen ilustrativa hombre sentado estudiando" class="md:w-1/2 object-cover md:h-full" />
+        alt="Imagen ilustrativa hombre sentado estudiando" class="md:w-1/2 object-cover md:h-full hidden md:block" />
     </div>
     <!-- El curso que quieras, cuando quieras -->
     <div :class="{ 'blurred-background': isInputClicked }"
-      class="block flex-col md:flex-row max-w-screen-full mx-auto px-24 py-12 pt-4 bg-indigo-100">
-      <!-- <h2 class="text-center font-semibold text-4xl text-indigo-800 py-4">
+      class="block flex-col md:flex-row max-w-screen-full bg-indigo-100">
+      <h2 class="text-center font-semibold text-3xl text-indigo-900 py-12">
         El curso que quieras, cuando quieras
-      </h2> -->
+      </h2>
       <img src="../assets/banner-curseek-2.png" alt="Imágen ilustrativa curseek" class="object-cover md:w-full" />
+      
       <!-- Lista de Proveedores y Universidades -->
-      <div class="container mx-auto p-2">
+      <div class="container mx-auto px-20 py-12">
         <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 justify-center">
           <!-- Contenido de Proveedores -->
-          <div class="text-center sm:border-r border-gray-400">
+          <div class="text-center sm:border-r border-gray-400 hidden md:block">
             <h3 class="text-2xl font-bold mb-2 pb-4">Proveedores</h3>
             <ul class="list-none text-left">
               <li class="flex items-center justify-center">
                 <a href="/cursos/udemy">
                   <button
-                    class="hover:scale-110 hover:bg-indigo-300 rounded-lg transform transition duration-200 ease-in-out w-full sm:w-60 flex items-center">
+                    class="hover:scale-110 hover:bg-indigo-200 rounded-lg transform transition duration-100 ease-in-out w-full sm:w-60 flex items-center">
                     <img class="w-12" src="../assets/instituciones/Udemy.png" alt="Imagen de Logo Udemy">
-                    <span class="ml-2 text-xl font-semibold text-black">Udemy</span>
+                    <span class="ml-2 text-lg font-semibold text-black">Udemy</span>
                   </button>
                 </a>
               </li>
@@ -168,56 +176,56 @@
               <li class="flex items-center justify-center">
                 <a href="/cursos/utn">
                   <button
-                    class="hover:scale-110 hover:bg-indigo-300 rounded-lg transform transition duration-200 ease-in-out w-full sm:w-60 flex items-center">
+                    class="hover:scale-110 hover:bg-indigo-200 rounded-lg transform transition duration-100 ease-in-out w-full sm:w-60 flex items-center">
                     <img class="w-12" src="../assets/instituciones/utn.png" alt="Imagen de Logo Universidad UTN">
-                    <span class="ml-2 text-xl font-semibold text-black">UTN</span>
+                    <span class="ml-2 text-lg font-semibold text-black">UTN</span>
                   </button>
                 </a>
               </li>
             </ul>
           </div>
           <!-- Contenido de Futuro -->
-          <div class="text-center">
+          <div class="text-center hidden md:block">
             <h3 class="text-2xl font-bold mb-2 pb-4">Próximamente</h3>
             <ul class="list-none text-left">
               <!-- <li class="flex items-center justify-center">
                 <a href="https://www.unam.mx/" target="_blank">
-                  <button class="hover:scale-110 hover:bg-indigo-300 rounded-lg transform transition duration-200 ease-in-out w-full sm:w-60 flex items-center">
+                  <button class="hover:scale-110 hover:bg-indigo-200 rounded-lg transform transition duration-100 ease-in-out w-full sm:w-60 flex items-center">
                     <img class="w-12" src="../assets/instituciones/UNAM.png" alt="Imagen de Logo Universidad de México UNAM">
-                    <span class="ml-2 text-xl font-semibold text-black">UNAM</span>
+                    <span class="ml-2 text-lg font-semibold text-black">UNAM</span>
                   </button>
                 </a>
               </li>
               <li class="flex items-center justify-center">
                 <a href="https://uchile.cl/" target="_blank">
-                  <button class="hover:scale-110 hover:bg-indigo-300 rounded-lg transform transition duration-200 ease-in-out w-full sm:w-60 flex items-center">
+                  <button class="hover:scale-110 hover:bg-indigo-200 rounded-lg transform transition duration-100 ease-in-out w-full sm:w-60 flex items-center">
                     <img class="w-12" src="../assets/instituciones/Universidad_de_Chile.png" alt="Imagen de Logo Universidad de Chile">
-                    <span class="ml-2 text-xl font-semibold text-black">U. de Chile</span>
+                    <span class="ml-2 text-lg font-semibold text-black">U. de Chile</span>
                   </button>
                 </a>
               </li> -->
               <li class="flex items-center justify-center">
                 <a href="https://www.coursera.org" target="_blank">
                   <button
-                    class="hover:scale-110 hover:bg-indigo-300 rounded-lg transform transition duration-200 ease-in-out w-full sm:w-60 flex items-center">
+                    class="hover:scale-110 hover:bg-indigo-200 rounded-lg transform transition duration-100 ease-in-out w-full sm:w-60 flex items-center">
                     <img class="w-12" src="../assets/instituciones/coursera.png" alt="Imagen de Logo Coursera">
-                    <span class="ml-2 text-xl font-semibold text-black">Coursera</span>
+                    <span class="ml-2 text-lg font-semibold text-black">Coursera</span>
                   </button>
                 </a>
               </li>
               <!-- <li class="flex items-center justify-center">
                 <a href="http://www.ucv.ve/" target="_blank">
-                  <button class="hover:scale-110 hover:bg-indigo-300 rounded-lg transform transition duration-200 ease-in-out w-full sm:w-60 flex items-center">
+                  <button class="hover:scale-110 hover:bg-indigo-200 rounded-lg transform transition duration-100 ease-in-out w-full sm:w-60 flex items-center">
                     <img class="w-12" src="../assets/instituciones/Universidad_Central_de_Venezuela.png" alt="Imagen de Logo Universidad_Central_de_Venezuela">
-                    <span class="ml-2 text-xl font-semibold text-black">U. C. Venezuela</span>
+                    <span class="ml-2 text-lg font-semibold text-black">U. C. Venezuela</span>
                   </button>
                 </a>
               </li>
               <li class="flex items-center justify-center">
                 <a href="https://www.edx.org/es" target="_blank">
-                  <button class="hover:scale-110 hover:bg-indigo-300 rounded-lg transform transition duration-200 ease-in-out w-full sm:w-60 flex items-center">
+                  <button class="hover:scale-110 hover:bg-indigo-200 rounded-lg transform transition duration-100 ease-in-out w-full sm:w-60 flex items-center">
                     <img class="w-12" src="../assets/instituciones/edX.png" alt="Imagen de Logo edX">
-                    <span class="ml-2 text-xl font-semibold text-black">edX</span>
+                    <span class="ml-2 text-lg font-semibold text-black">edX</span>
                   </button>
                 </a>
               </li> -->
@@ -226,9 +234,9 @@
         </div>
       </div>
     </div>
-    <div :class="{ 'blurred-background': isInputClicked }" class="justify-center items-center bg-gray-100 py-12">
-      <h2 class="text-center font-semibold text-3xl text-indigo-900 pt-0 pb-12 w-full">
-        Adéntrate a CurSeek y descubre!
+    <div :class="{ 'blurred-background': isInputClicked }" class="block flex-col md:flex-row max-w-screen-full bg-gray-100">
+      <h2 class="text-center font-semibold text-3xl text-indigo-900 py-12">
+        ¡Adéntrate a CurSeek y descubre!
       </h2>
       <div class="flex flex-wrap pb-6 md:px-40">
         <!-- Card 1 -->
@@ -287,7 +295,7 @@
             </ul>
           </div>
         </div>
-        <div class="py-6 px-14 md:px-60">
+        <div class="pt-6 pb-12 px-14 md:px-60">
           <p class="text-center text-md text-gray-700">
             Con nuestra plataforma impulsada por una visión digital avanzada,
             obtén los datos y perspicacia esenciales para destacar en el emocionante
@@ -295,7 +303,7 @@
             académicas con Curseek.
           </p>
           <a href="/signUp"
-            class="flex items-center justify-center text-lg font-bold text-gray-500 hover:text-blue-700 transition duration-200 mt-6">
+            class="flex items-center justify-center text-lg font-bold text-indigo-700 hover:text-gray-500 transition duration-100 mt-6">
             <span>Únete ahora!</span>
             <svg class="ml-2" fill="none" stroke="currentColor" width="24" viewBox="0 0 24 24"
               xmlns="http://www.w3.org/2000/svg">

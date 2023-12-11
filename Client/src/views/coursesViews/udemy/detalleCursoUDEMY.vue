@@ -8,7 +8,7 @@
       <div class="md:col-span-2">
         <!-- Sección de Título y Precio -->
         <div class="bg-white p-4 md:p-6 rounded mb-4 justify-between items-center border border-gray-200">
-          <h2 class="md:text-3xl font-bold text-gray-800">{{ udemyCourse.title }}</h2>
+          <h2 class="md:text-3xl font-bold text-gray-800">{{ udemyCourse.title || 'Aprende con este Curso de Udemy'}}</h2>
           <!-- <h2 class="md:text-xl font-semibold text-green-500 py-1" v-if="!udemyCourse.is_paid">$ {{ udemyCourse.price }}</h2> -->
         </div>
         <!-- Sección de Descripción Larga -->
@@ -47,7 +47,7 @@
               <img
                 :src="udemyCourse.instructorImage || udemyCourse.instructors[0]?.image_100x100 || 'ruta_por_defecto_del_profesor.jpg'"
                 alt="Imagen del Profesor" class="rounded-full w-12 mr-4">
-              <span>{{ udemyCourse.instructors[0]?.name || 'Error' }}</span>
+              <span>{{ udemyCourse.instructors[0]?.name || 'Profesor' }}</span>
             </div>
           </div>
         </div>
@@ -122,7 +122,7 @@
                 <path
                   d="M542.308-131.692q-11.529 11.461-28.573 11.461-17.043 0-28.504-11.461l-352-352q-6.385-6.385-9.808-14.02T120-514v-286q0-16.077 11.961-28.039Q143.923-840 160-840h286q7.769 0 15.452 3.166 7.683 3.167 13.317 8.526l352 352.231Q839-463.846 839.385-446.5q.384 17.346-11.077 28.808l-286 286ZM259.91-660q16.629 0 28.359-11.64Q300-683.281 300-699.909q0-16.63-11.64-28.36Q276.72-740 260.09-740q-16.629 0-28.359 11.64Q220-716.719 220-700.091q0 16.63 11.64 28.36Q243.28-660 259.91-660Z" />
               </svg>
-              <span class="text-sm">{{ udemyCourse.price || 'Error' }}</span>
+              <span class="text-sm">{{ udemyCourse.price || 'Gratis' }}</span>
             </li>
           </ul>
         </div>
