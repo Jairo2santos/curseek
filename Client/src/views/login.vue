@@ -1,5 +1,5 @@
 <template>
-  <div class="min-h-screen flex items-center justify-center bg-gray-100">
+  <div class="md:min-h-screen py-12 flex items-center justify-center bg-gray-100">
     <Notificationes v-if="showNotification" :message="notificationMessage" :type="notificationType"
       @close="showNotification = false" />
     <form class="bg-white rounded shadow-md p-6 w-80" @submit.prevent="login">
