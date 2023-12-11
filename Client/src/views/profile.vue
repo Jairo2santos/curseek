@@ -14,7 +14,7 @@
     <!-- Perfil -->
     <div class="profile-card bg-white p-6 rounded-lg shadow-lg w-full md:w-1/2">
       <h1 class="text-center font-bold text-xl mb-4">Mi Perfil</h1>
-      <img :src="userData.profilePicture || 'ruta/a/imagen/placeholder.png'" alt=""
+      <img :src="userData.profilePicture || 'Mi perfil'" alt=""
         class="w-32 h-32 rounded-full mx-auto mb-4" />
       <!-- Campos editables -->
       <div v-if="editing" class="space-y-4">
