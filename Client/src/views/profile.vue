@@ -4,8 +4,8 @@
     <transition name="slide-down">
       <div v-if="showNotification" class="fixed top-0 inset-x-0 z-50">
         <div :class="{
-          'bg-green-500': notificationType === 'success',
-          'bg-red-500': notificationType === 'error'
+          'bg-green-700 bg-opacity-75 fixed bottom-0 inset-x-0 z-50': notificationType === 'success',
+          'bg-red-700 bg-opacity-75 fixed bottom-0 inset-x-0 z-50': notificationType === 'error'
         }" class="text-white text-center py-3">
           {{ notificationMessage }}
         </div>
@@ -76,7 +76,7 @@
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960" width="24">
                 <path d="M480-120q-74.539 0-140.276-28.339-65.737-28.34-114.365-76.922-48.627-48.582-76.993-114.257Q120-405.194 120-479.866q0-74.673 28.339-140.41 28.34-65.737 76.922-114.365 48.582-48.627 114.257-76.993Q405.194-840 479.866-840q74.673 0 140.41 28.35t114.365 76.95q48.627 48.6 76.993 114.3Q840-554.7 840-480v39.539q0 50.538-34.714 85.5Q770.572-320 720-320q-35.769 0-65.231-19.615-29.461-19.615-43.538-52.231Q588.385-359 554.192-339.5 520-320 480-320q-66.846 0-113.423-46.577T320-480q0-66.846 46.577-113.423T480-640q66.846 0 113.423 46.577T640-480v39.539q0 32.923 23.539 56.692Q687.077-360 720-360t56.462-23.769Q800-407.538 800-440.461V-480q0-134-93-227t-227-93q-134 0-227 93t-93 227q0 134 93 227t227 93h200v40H480Zm0-240q50 0 85-35t35-85q0-50-35-85t-85-35q-50 0-85 35t-35 85q0 50 35 85t85 35Z"/>
               </svg>
-              <h2 class="text-2xl font-bold mb-2">{{ userData.username }}</h2>
+              <h2 class="text-xl font-bold mb-2">{{ userData.username }}</h2>
             </span>
           </div>
           <div class="mb-4">
@@ -117,7 +117,7 @@
             class="md:w-40 w-full object-contain rounded-t-lg md:rounded-t-none md:rounded-l-lg">
             <!-- Contenido del curso a la derecha -->
             <div class="p-2 flex-grow">
-              <h3  @click="() => goToCourseDetail(course)" class="font-semibold text-lg  hover:underline">{{ course.title || 'Curso Seleccionado' }}</h3>
+              <h3  @click="() => goToCourseDetail(course)" class="font-semibold text-md  hover:underline">{{ course.title || 'Curso Seleccionado' }}</h3>
               <!-- <p class="text-gray-600 text-sm mb-4">{{ courseDescription(course) || 'En el ámbito actual, al guiar a individuos, equipos y organizaciones a través de procesos de desarrollo del talento humano, se...'}}</p> -->
             </div>
             <button @click="removeFromFavorites(course._id)" title="Eliminar curso"

@@ -5,8 +5,8 @@
         {{ isFavorited ? '♥' : '♡' }}
       </span>
     </button>
-    <transition name="slide-down">
-      <div v-if="showNotification" class="fixed top-0 inset-x-60 z-50">
+    <transition name="slide-up">
+      <div v-if="showNotification" class="fixed bottom-0 inset-x-0 z-50">
         <div :class="notificationClass" class="text-white text-center py-3 flex items-center justify-center">
           <svg v-if="notificationType === 'success'" class="w-6 h-6 mr-2" fill="none" stroke="currentColor"
             viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
@@ -44,8 +44,8 @@ const notificationType = ref('');
 const triggerNotification = (message, type) => {
   notificationMessage.value = message;
   notificationType.value = type;  // Agregamos el tipo de notificación
-  notificationClass.value = type === 'success' ? 'bg-green-500 bg-opacity-75 my-4 mx-60 rounded-lg'
-    : 'bg-red-500 bg-opacity-75 my-4 mx-60 rounded-lg';
+  notificationClass.value = type === 'success' ? 'bg-green-700 bg-opacity-75'
+    : 'bg-red-700 bg-opacity-75';
   showNotification.value = true;
   setTimeout(() => {
     showNotification.value = false;
