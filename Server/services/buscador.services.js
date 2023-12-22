@@ -1,5 +1,4 @@
 // buscador.services.js
-
 const UnifiedCourse = require('../models/unifiedCourse.model');
 
 // Función para buscar cursos basada en una cadena de búsqueda

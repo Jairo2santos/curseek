@@ -31,7 +31,7 @@ const combineCourses = async () => {
   for (const course of utnCourses) {
     const unifiedCourse = new UnifiedCourse({
       title: course.title,
-       description: course.summary || 'Este curso de la UTN no tiene descripción disponible.',
+      description: course.summary || 'Este curso de la UTN no tiene descripción disponible.',
       price: course.price,
       originalId: course._id.toString(),
       image: course.imgUrl,
@@ -40,7 +40,6 @@ const combineCourses = async () => {
     });
     await unifiedCourse.save();
   }
-
   console.log('Todos los cursos han sido combinados en la colección cursos_ALL');
 };
 

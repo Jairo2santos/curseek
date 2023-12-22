@@ -9,24 +9,19 @@ async function searchAndCombineCourses(query, page, limit) {
     UTNCourse.find(query).skip((page - 1) * limit).limit(limit),
     UTNCourse.countDocuments(query),
   ]);
-
   // Busca y cuenta los cursos de Udemy
   const [udemyCourses, totalUdemyCourses] = await Promise.all([
     UdemyCourse.find(query).skip((page - 1) * limit).limit(limit),
     UdemyCourse.countDocuments(query),
   ]);
-
   // Combina los cursos
   let combinedCourses = utnCourses.concat(udemyCourses);
-
   // Retorna los cursos combinados y los totales
   return {
     combinedCourses,
     totalCourses: totalUTNCourses + totalUdemyCourses,
   };
 }
-
-
 
 exports.getAllCoursesService = async (category, page = 1, limit = 10, filterType) => {
   let query = {};
@@ -36,7 +31,7 @@ exports.getAllCoursesService = async (category, page = 1, limit = 10, filterType
 
   const { combinedCourses, totalCourses } = await searchAndCombineCourses(query, page, limit);
 
- // Mover la lógica de los filtros aquí
+  // Mover la lógica de los filtros aquí
   if (filterType) {
     switch (filterType) {
       case "priceAsc":
@@ -63,12 +58,9 @@ exports.searchCoursesService = async (searchQuery) => {
   let regex = new RegExp(searchQuery, 'i');
   let utnSearch = UTNCourse.find({ title: regex });
   let udemySearch = UdemyCourse.find({ title: regex });
-
   // Ejecuta ambas búsquedas de manera concurrente
   let [utnCourses, udemyCourses] = await Promise.all([utnSearch, udemySearch]);
-
   // Combina los resultados de ambas búsquedas
   let combinedCourses = utnCourses.concat(udemyCourses);
-
   return combinedCourses;
 };

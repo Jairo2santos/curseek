@@ -10,13 +10,10 @@ exports.getUTNCoursesService = async (category, page, limit) => {
     if (category) {
         query.category = category;
     }
-
     const totalCourses = await utnCourse.countDocuments(query);
-
     let courses = await utnCourse.find(query)
         .skip((page - 1) * limit)
         .limit(limit);
-
     return {
         courses: courses,
         totalPages: Math.ceil(totalCourses / limit),

@@ -8,7 +8,7 @@ const userSchema = new mongoose.Schema({
   address: String,
   favorites: [{
     courseId: { type: mongoose.Schema.Types.ObjectId, ref: 'Course' },
-    courseType: { type: String, enum: ['UDEMY', 'UTN'] } 
+    courseType: { type: String, enum: ['UDEMY', 'UTN'] }
   }]
 });
 

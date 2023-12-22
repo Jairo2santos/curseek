@@ -14,15 +14,12 @@ async function saveUdemyCourses() {
     let totalCoursesSaved = 0;
     const PAGE_SIZE = 50; // Use the maximum page size allowed by the API
     const MAX_COURSES = 10000;
-
     while (totalCoursesSaved < MAX_COURSES) {
       const response = await axios.get(`https://www.udemy.com/api-2.0/courses/?fields[course]=${fields}&page=${page}&page_size=${PAGE_SIZE}`, { headers });
       const coursesData = response.data.results;
-
       if (coursesData.length === 0) {
         break;
       }
-
       for (const data of coursesData) {
         const course = {
           id: data.id,
@@ -50,18 +47,15 @@ async function saveUdemyCourses() {
           primary_subcategory: data.primary_subcategory,
           status_label: data.status_label,
         };
-
         const existingCourse = await UdemyCourse.findOne({ id: course.id });
         if (!existingCourse) {
           await UdemyCourse.create(course);
           totalCoursesSaved++;
         }
-
         if (totalCoursesSaved >= MAX_COURSES) {
           break;
         }
       }
-
       page++;
     }
   } catch (error) {

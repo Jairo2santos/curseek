@@ -42,16 +42,13 @@
                 </a>
             </ul>
         </div>
-
         <!-- Contenido principal -->
         <div class="flex-1 p-8">
             <!-- Contenido basado en la ruta actual -->
             <router-view></router-view>
-
             <!-- Preguntas Frecuentes -->
             <div v-if="$route.hash === '#/preguntasFrecuentes'">
                 <h3 class="text-3xl font-semibold mb-4">Preguntas Frecuentes</h3>
-
                 <div v-for="(pregunta, index) in preguntas" :key="index" class="mb-3">
                     <h4 @click="togglePregunta(index)"
                         class="cursor-pointer text-md hover:shadow-md shadow-sm font-semibold mb-0 transition p-2">
@@ -67,14 +64,12 @@
                     </ul>
                 </div>
             </div>
-
             <div v-if="$route.hash === '#/nuestroEquipo'">
                 <h3 class="text-3xl font-semibold mb-4">Nuestro Equipo</h3>
                 <p class="md:pr-40">
                     CurSeek es impulsado por un equipo apasionado y dedicado de profesionales. Aquí te presentamos a algunos
                     de los miembros clave de nuestro equipo:
                 </p>
-
                 <div class="grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-6">
                     <!-- Card 1 -->
                     <div class="bg-white p-6 rounded-lg shadow-md md:mx-40 mb-4">
@@ -105,7 +100,6 @@
                         <p class="text-black">Matías, co-fundador y COO de CurSeek, desempeñando un
                             papel esencial desde los inicios del proyecto en 2023. Iniciaron esta emocionante travesía
                             juntos, construyendo CurSeek desde cero con pasión y determinación.
-
                             Su conexión con Jairo se forjó en la escuela DaVinci, específicamente en clases de programación
                             web. Desde la capital federal de Argentina, Matías aporta su energía y habilidades
                             excepcionales, encontrando inspiración tanto en la música como en la programación. Juntos, han
@@ -114,14 +108,11 @@
                     </div>
                 </div>
             </div>
-
-            
             <div v-if="$route.hash === '#/acerca'">
-                
                 <h3 class="text-3xl font-semibold mb-4">Acerca de Nosotros</h3>
                 <div class="flex px-4 md:px-40 items-center justify-center">
                     <div class="w-1/1">
-                        <img class="max-w-xs" src="../assets/team.jpg" alt="Imágen equipo team work">                
+                        <img class="max-w-xs" src="../assets/team.jpg" alt="Imágen equipo team work">
                     </div>
                     <!-- <p class="text-black text-md">
                         CurSeek es una plataforma web y aplicación móvil que funciona como un buscador de cursos,
@@ -132,56 +123,59 @@
                         diversas temáticas y niveles de dificultad, provenientes de fuentes diversas en Internet.
                     </p> -->
                 </div>
-                    
-
-                    <div class="block px-20">
-                        <h3 class="text-xl font-semibold mb-2">Nuestro objetivo es hacer que la educación en línea funcione para todos.</h3>
-                        <p class="text-black text-md mb-4">
-                            CurSeek es un directorio de cursos en línea. Recopilamos cursos de muchos proveedores para facilitar la
-                            búsqueda de los mejores cursos sobre casi cualquier tema, dondequiera que existan. Sea cual sea tu
-                            interés de aprendizaje, es muy probable que nuestro catálogo incluya un curso que satisfaga tus
-                            necesidades.
-                            
-                            A través de CurSeek, puedes encontrar cursos; revisar los cursos que has tomado (y leer las reseñas de
-                            otras personas); seguir universidades, temas y cursos para recibir actualizaciones personalizadas; y
-                            también planificar y realizar un seguimiento de tu aprendizaje.
-                        </p>
-                        
-                        <h3 class="text-xl font-semibold mb-2">Impulsado por la comunidad</h3>
-                        <p class="text-black text-md mb-4">
-                            CurSeek es una empresa remota sin oficinas físicas. Nuestro equipo está formado por aprendices cuyas
-                            vidas han sido impactadas por la educación en línea. Entre todos nosotros, hemos realizado más de 400
-                            cursos en línea y 3 grados en línea. Si nuestros nombres te resultan familiares, puede ser porque hayas
-                            leído artículos que hemos escrito o incluso porque uno de nosotros ha sido mentor en un curso que
-                            tomaste.
-                            
-                            Nuestro objetivo es hacer que la educación en línea funcione para todos, así que estamos trabajando
-                            constantemente en nuevas características. Si tienes una idea para hacer que CurSeek sea más útil, por
-                            favor háznoslo saber.
-                        </p>
-                        
-                        <h3 class="text-xl font-semibold mb-2">El Informe</h3>
-                        <p class="text-black text-md mb-4">
-                            Estamos en el negocio de educar a las personas sobre la educación. Además de nuestro catálogo, El
-                            Informe de CurSeek mantiene un seguimiento del estado general del panorama de la educación en línea. Nos
-                            gusta especialmente descubrir historias pasadas por alto y determinar tendencias que otros aún no han
-                            informado.
-                        </p>
-                        
-                        <h3 class="text-xl font-semibold mb-2">¿Cómo ganamos dinero?</h3>
-                        <p class="text-black text-md mb-4">
-                        CurSeek genera ingresos a través de la publicidad y los enlaces de afiliados. Hemos tratado de indicar
-                        claramente los anuncios y los resultados de búsqueda patrocinados. Ganamos una comisión cuando alguien
-                        hace clic en un proveedor de cursos y se actualiza a una oferta de pago. Para una parte sustancial de
-                        nuestro catálogo, no tenemos asociaciones de afiliados. Nuestras relaciones de afiliación y publicidad
+                <div class="block px-20">
+                    <h3 class="text-xl font-semibold mb-2">Nuestro objetivo es hacer que la educación en línea funcione para
+                        todos.</h3>
+                    <p class="text-black text-md mb-4">
+                        CurSeek es un directorio de cursos en línea. Recopilamos cursos de muchos proveedores para facilitar
+                        la
+                        búsqueda de los mejores cursos sobre casi cualquier tema, dondequiera que existan. Sea cual sea tu
+                        interés de aprendizaje, es muy probable que nuestro catálogo incluya un curso que satisfaga tus
+                        necesidades.
+                        A través de CurSeek, puedes encontrar cursos; revisar los cursos que has tomado (y leer las reseñas
+                        de
+                        otras personas); seguir universidades, temas y cursos para recibir actualizaciones personalizadas; y
+                        también planificar y realizar un seguimiento de tu aprendizaje.
+                    </p>
+                    <h3 class="text-xl font-semibold mb-2">Impulsado por la comunidad</h3>
+                    <p class="text-black text-md mb-4">
+                        CurSeek es una empresa remota sin oficinas físicas. Nuestro equipo está formado por aprendices cuyas
+                        vidas han sido impactadas por la educación en línea. Entre todos nosotros, hemos realizado más de
+                        400
+                        cursos en línea y 3 grados en línea. Si nuestros nombres te resultan familiares, puede ser porque
+                        hayas
+                        leído artículos que hemos escrito o incluso porque uno de nosotros ha sido mentor en un curso que
+                        tomaste.
+                        Nuestro objetivo es hacer que la educación en línea funcione para todos, así que estamos trabajando
+                        constantemente en nuevas características. Si tienes una idea para hacer que CurSeek sea más útil,
+                        por
+                        favor háznoslo saber.
+                    </p>
+                    <h3 class="text-xl font-semibold mb-2">El Informe</h3>
+                    <p class="text-black text-md mb-4">
+                        Estamos en el negocio de educar a las personas sobre la educación. Además de nuestro catálogo, El
+                        Informe de CurSeek mantiene un seguimiento del estado general del panorama de la educación en línea.
+                        Nos
+                        gusta especialmente descubrir historias pasadas por alto y determinar tendencias que otros aún no
+                        han
+                        informado.
+                    </p>
+                    <h3 class="text-xl font-semibold mb-2">¿Cómo ganamos dinero?</h3>
+                    <p class="text-black text-md mb-4">
+                        CurSeek genera ingresos a través de la publicidad y los enlaces de afiliados. Hemos tratado de
+                        indicar
+                        claramente los anuncios y los resultados de búsqueda patrocinados. Ganamos una comisión cuando
+                        alguien
+                        hace clic en un proveedor de cursos y se actualiza a una oferta de pago. Para una parte sustancial
+                        de
+                        nuestro catálogo, no tenemos asociaciones de afiliados. Nuestras relaciones de afiliación y
+                        publicidad
                         no influyen en la lista de cursos, ni afectan las reseñas de los usuarios. Lo más importante para
                         nosotros es mantener una relación de confianza con nuestros usuarios, por lo que queremos ser
                         transparentes sobre cómo se pagan las facturas.
-                        </p>
-                    </div>
+                    </p>
+                </div>
             </div>
-
-
             <!-- Información sobre "Políticas de Privacidad" -->
             <div v-if="$route.hash === '#/privacidad'">
                 <h3 class="text-3xl font-semibold mb-4">Políticas de Privacidad</h3>
@@ -190,7 +184,6 @@
                     Consulta nuestra política de privacidad para obtener detalles sobre cómo
                     recopilamos, utilizamos y protegemos tu información personal.
                 </p>
-
                 <section>
                     <h3 class="text-xl font-semibold mb-4 mt-8">1. Introducción</h3>
                     <p>
@@ -199,7 +192,6 @@
                         información personal que compartes con nosotros.
                     </p>
                 </section>
-
                 <section class="mt-8">
                     <h3 class="text-xl font-semibold mb-4">2. Información que Recopilamos</h3>
                     <p>
@@ -207,7 +199,6 @@
                         Esto puede incluir detalles como tus consultas de búsqueda, cursos vistos y preferencias.
                     </p>
                 </section>
-
                 <section class="mt-8">
                     <h3 class="text-xl font-semibold mb-4">3. Uso de la Información</h3>
                     <p>
@@ -217,8 +208,6 @@
                 </section>
                 <!-- Puedes seguir agregando más secciones según sea necesario -->
             </div>
-
-
             <!-- Información sobre "Términos y Condiciones" -->
             <div v-if="$route.hash === '#/terminos'">
                 <h3 class="text-3xl font-semibold mb-4">Términos y Condiciones</h3>
@@ -227,7 +216,6 @@
                     Asegúrate de leerlos detenidamente para comprender las reglas y pautas que
                     rigen el uso de Curseek.
                 </p>
-
                 <section>
                     <h3 class="text-xl font-semibold mb-4 mt-8">1. Uso del Sitio</h3>
                     <p>
@@ -237,7 +225,6 @@
                         Curseek por parte de otras personas.
                     </p>
                 </section>
-
                 <section class="mt-8">
                     <h3 class="text-xl font-semibold mb-4">2. Contenido del Usuario</h3>
                     <p>
@@ -246,7 +233,6 @@
                         derechos de terceros.
                     </p>
                 </section>
-
                 <section class="mt-8">
                     <h3 class="text-xl font-semibold mb-4">3. Privacidad</h3>
                     <p>
@@ -256,12 +242,9 @@
                 </section>
                 <!-- Puedes seguir agregando más secciones según sea necesario -->
             </div>
-
-
             <!-- Información sobre "soporte" -->
             <div v-if="$route.hash === '#/soporte'">
                 <h3 class="text-3xl font-semibold mb-4">Soporte</h3>
-
                 <p class="pb-4">
                     ¿Tienes preguntas o comentarios? ¡Estamos aquí para ayudarte!
                     Ponte en soporte con nuestro equipo de soporte a través de curseek@gmail.com
@@ -277,7 +260,6 @@
                         </p>
                         <a href="mailto:curseek@gmail.com" class="text-blue-500 hover:underline">curseek@gmail.com</a>
                     </div>
-
                     <!-- Tarjeta para el número de teléfono -->
                     <div class="bg-white p-4 rounded-lg shadow-md">
                         <h4 class="text-lg font-semibold mb-2">Número de Teléfono</h4>
@@ -288,11 +270,10 @@
                     </div>
                 </div>
             </div>
-
         </div>
     </div>
 </template>
-  
+
 <script>
 export default {
     name: 'Documentacion',
@@ -367,6 +348,5 @@ export default {
             this.preguntas[index].abierta = !this.preguntas[index].abierta;
         },
     },
-
 }
 </script>

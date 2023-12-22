@@ -1,6 +1,5 @@
 const userService = require('../services/user.services');
 
-
 exports.getAllUsers = async (req, res) => {
   try {
     const users = await userService.getAllUsers();
@@ -10,6 +9,7 @@ exports.getAllUsers = async (req, res) => {
     res.status(500).send("Error interno del servidor");
   }
 };
+
 exports.login = async (req, res) => {
   const { username, password } = req.body;
   try {
@@ -26,9 +26,7 @@ exports.login = async (req, res) => {
   }
 };
 
-
 // user.controller.js
-
 exports.getUserProfileByUsername = async (req, res) => {
   const { username } = req.params;
   try {
@@ -48,7 +46,6 @@ exports.getUserProfileById = async (req, res) => {
     res.status(error.status || 500).send(error.message);
   }
 };
-
 
 exports.updateUserProfile = async (req, res) => {
   const { id } = req.params;
@@ -70,6 +67,7 @@ exports.register = async (req, res) => {
     res.status(500).send(error.message);
   }
 };
+
 exports.addFavoriteCourse = async (req, res) => {
   const { userId, courseId, courseType } = req.body;
   try {
@@ -90,7 +88,6 @@ exports.getUserProfile = async (req, res) => {
   }
 };
 
-
 exports.removeFavoriteCourse = async (req, res) => {
   const { userId, courseId } = req.body;
   try {
@@ -100,6 +97,7 @@ exports.removeFavoriteCourse = async (req, res) => {
     res.status(error.status || 500).send(error.message);
   }
 };
+
 exports.checkFavoriteCourse = async (req, res) => {
   const { userId, courseId } = req.params;
   try {
@@ -111,7 +109,7 @@ exports.checkFavoriteCourse = async (req, res) => {
 };
 
 exports.getFavoriteCourses = async (req, res) => {
-  const userId = req.params.userId;  
+  const userId = req.params.userId;
   try {
     const favoriteCourses = await userService.getFavoriteCoursesForUser(userId);
     res.json(favoriteCourses);

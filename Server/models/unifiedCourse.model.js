@@ -36,4 +36,3 @@ const UnifiedCourse = mongoose.model('UnifiedCourse', UnifiedCourseSchema, 'curs
 UnifiedCourseSchema.index({ title: 'text', summary: 'text', description: 'text' });
 
 module.exports = UnifiedCourse;
-

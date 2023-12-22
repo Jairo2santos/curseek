@@ -1,19 +1,13 @@
 <template>
-    <transition name="slide-down">
-      <div v-if="visible" :class="`fixed top-0 inset-x-0 z-50 text-white text-center py-3 ${backgroundColor}`">
-        {{ message }}
-        <span class="absolute top-0 bottom-0 right-0 px-4 py-3" @click="close">
-          <svg class="fill-current h-6 w-6" role="button" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
-            <title>Cerrar</title>
-            <path d="M14.348 14.849a.5.5 0 0 1-.708 0L10 11.207l-3.65 3.65a.5.5 0 0 1-.707-.708l3.65-3.65-3.65-3.65a.5.5 0 1 1 .707-.708l3.65 3.65 3.65-3.65a.5.5 0 0 1 .708.708L10.707 10l3.65 3.65a.5.5 0 0 1 0 .708z"/>
-          </svg>
-        </span>
-      </div>
-    </transition>
-  </template>
-  
+  <transition name="slide-down">
+    <div v-if="visible" :class="`fixed bottom-0 inset-x-0 z-50 text-white text-center py-3 ${backgroundColor}`">
+      {{ message }}
+    </div>
+  </transition>
+</template>
+
 <script setup>
-import { ref, computed} from 'vue';
+import { ref, computed, onMounted } from 'vue';
 
 const props = defineProps({
   message: String,
@@ -21,12 +15,17 @@ const props = defineProps({
 });
 
 const emits = defineEmits(['close']);
-
 const visible = ref(true);
-
 const backgroundColor = computed(() => {
-  return props.type === 'error' ? 'bg-red-500 bg-opacity-75 my-4 mx-60 rounded-lg' 
-  : 'bg-green-500 bg-opacity-75 my-4 mx-60 rounded-lg';
+  return props.type === 'error' ? 'bg-red-700 bg-opacity-75'
+    : 'bg-green-700 bg-opacity-75';
+});
+
+onMounted(() => {
+  // Cerrar automáticamente después de 3000 milisegundos (3 segundos)
+  setTimeout(() => {
+    close();
+  }, 5000);
 });
 
 function close() {
@@ -34,4 +33,3 @@ function close() {
   emits('close');
 }
 </script>
-  

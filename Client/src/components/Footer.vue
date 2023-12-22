@@ -5,38 +5,41 @@
         <!-- Logo -->
         <div class="mb-4 md:mb-0 pb-2">
           <a href="/">
-            <img src="../assets/logo-curseek.png" alt="Curseek Logo" class="w-48"> 
+            <img src="../assets/logo-curseek.png" alt="CurSeek" class="w-48">
           </a>
           <p class="text-center text-indigo-800">&copy; Copyright 2023</p>
         </div>
       </div>
-
       <!-- Enlaces de navegación -->
       <div class="flex flex-col md:flex-row">
         <!-- Sección de Ayuda -->
         <div class="mb-4 md:mb-0 md:mr-8">
           <h4 class="text-md font-bold mb-2">Ayuda</h4>
           <ul>
-            <li class="text-sm text-gray-700 hover:text-indigo-500 transition pb-1"><a href="/nosotros/#/preguntasFrecuentes">Preguntas frecuentes</a></li>
-            <li class="text-sm text-gray-700 hover:text-indigo-500 transition pb-1"><a href="/nosotros/#/soporte">Soporte técnico</a></li>
+            <li class="text-sm text-gray-700 hover:text-indigo-500 transition pb-1"><a
+                href="#">Preguntas frecuentes</a></li>
+            <li class="text-sm text-gray-700 hover:text-indigo-500 transition pb-1"><a href="#">Soporte
+                técnico</a></li>
           </ul>
         </div>
-
         <!-- Sección de Nosotros -->
         <div class="mb-4 md:mb-0 md:mr-8">
           <h4 class="text-md font-bold mb-2">Nosotros</h4>
           <ul>
-            <li class="text-sm text-gray-700 hover:text-indigo-500 transition pb-1"><a href="/nosotros/#/acerca">Sobre nosotros</a></li>
-            <li class="text-sm text-gray-700 hover:text-indigo-500 transition pb-1"><a href="/nosotros/#/nuestroEquipo">Nuestro equipo</a></li>
+            <li class="text-sm text-gray-700 hover:text-indigo-500 transition pb-1"><a href="#">Sobre
+                nosotros</a></li>
+            <li class="text-sm text-gray-700 hover:text-indigo-500 transition pb-1"><a
+                href="#">Nuestro equipo</a></li>
           </ul>
         </div>
-
         <!-- Sección de Términos y Condiciones -->
         <div class="mb-4 md:mb-0 md:mr-8">
           <h4 class="text-md font-bold mb-2">Términos y Condiciones</h4>
           <ul>
-            <li class="text-sm text-gray-700 hover:text-indigo-500 transition pb-1"><a href="/nosotros/#/privacidad">Política de privacidad</a></li>
-            <li class="text-sm text-gray-700 hover:text-indigo-500 transition pb-1"><a href="/nosotros/#/terminos">Términos y condiciones</a></li>
+            <li class="text-sm text-gray-700 hover:text-indigo-500 transition pb-1"><a
+                href="#">Política de privacidad</a></li>
+            <li class="text-sm text-gray-700 hover:text-indigo-500 transition pb-1"><a
+                href="#">Términos y condiciones</a></li>
           </ul>
         </div>
       </div>
@@ -52,12 +55,12 @@ const loggedInUsername = ref(localStorage.getItem('loggedInUsername'));
 const router = useRouter();
 
 watch(() => router.currentRoute, () => {
-loggedInUsername.value = localStorage.getItem('loggedInUsername');
+  loggedInUsername.value = localStorage.getItem('loggedInUsername');
 });
 
 const logout = () => {
-localStorage.removeItem('loggedInUsername');
-loggedInUsername.value = null;
-router.push('/login');
+  localStorage.removeItem('loggedInUsername');
+  loggedInUsername.value = null;
+  router.push('/login');
 };
 </script>
