@@ -4,19 +4,19 @@ const mongoose = require('mongoose');
 const UnifiedCourseSchema = new mongoose.Schema({
   title: {
     type: String,
-    required: true, // Asegúrate de que el título siempre esté presente
+    required: true, 
   },
   description: {
     type: String,
-    required: false, // La descripción también es esencial
+    required: false, 
   },
   price: {
     type: String,
-    required: false, // Podrías querer asegurarte de que siempre hay un precio definido, incluso si es 'Gratis'
+    required: false, 
   },
   originalId: {
     type: String,
-    required: true, // Útil para rastrear el documento original
+    required: true, 
   },
   image: {
     type: String,
@@ -24,13 +24,12 @@ const UnifiedCourseSchema = new mongoose.Schema({
   },
   link: {
     type: String,
-    required: true, // Enlace al curso
+    required: true, 
   },
   source: {
     type: String,
-    required: true, // Fuente del curso ('UDEMY' o 'UTN')
+    required: true,
   },
-  // Añade cualquier otro campo que consideres relevante
 });
 
 const UnifiedCourse = mongoose.model('UnifiedCourse', UnifiedCourseSchema, 'cursos_ALL');

@@ -6,19 +6,19 @@ router.post('/login', userController.login);
 router.post('/register', userController.register);
 
 // Rutas para perfil de usuario
-router.get('/profile/username/:username', userController.getUserProfileByUsername); // Obtiene perfil por nombre de usuario
-router.get('/profile/id/:userId', userController.getUserProfileById); // Obtiene perfil por ID
-router.put('/profile/:id', userController.updateUserProfile); // Actualiza perfil
+router.get('/profile/username/:username', userController.getUserProfileByUsername); 
+router.get('/profile/id/:userId', userController.getUserProfileById); 
+router.put('/profile/:id', userController.updateUserProfile); 
 
 // Rutas para cursos favoritos
 router.post('/favorites/add', userController.addFavoriteCourse);
 router.post('/favorites/remove', userController.removeFavoriteCourse);
-router.get('/favorites/:userId', userController.getFavoriteCourses); // Obtiene cursos favoritos por ID de usuario
+router.get('/favorites/:userId', userController.getFavoriteCourses); 
 router.get('/favorites/check/:userId/:courseId', userController.checkFavoriteCourse);
 
 // Rutas generales de usuario
 router.get('/', userController.getAllUsers);
-router.get('/:userId', userController.getUserById); // Obtiene un usuario por ID
+router.get('/:userId', userController.getUserById); 
 
 
 

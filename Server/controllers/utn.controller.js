@@ -6,7 +6,6 @@ exports.getUtnCourses = async (req, res) => {
     const { page = 1, limit = 10, categories } = req.query;
 
     try {
-        // Aquí se usa el servicio en lugar de interactuar directamente con el modelo
         const result = await utnService.getUTNCoursesService(categories, page, limit);
 
         res.status(200).json({

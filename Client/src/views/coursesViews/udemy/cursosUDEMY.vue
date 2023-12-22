@@ -17,7 +17,7 @@
       <div class="flex flex-col w-full md:ml-6">
         <!-- Filtros arriba -->
         <div class="mb-4">
-          <Filtros @filter-changed="handleFilterChange" />
+          <!-- <Filtros @filter-changed="handleFilterChange" /> -->
         </div>
 
 
@@ -158,7 +158,7 @@ import Paginacion from "../../../components/Paginacion.vue";
 import Portada from "../../../components/Portada.vue";
 import logoUdemy from "../../../assets/logo-udemy.jpg";
 import Sidebar from "../../../components/Sidebar.vue";
-import Filtros from "../../../components/Filtros.vue";
+//import Filtros from "../../../components/Filtros.vue";
 import Favoritos from "../../../components/Favoritos.vue";
 const router = useRouter();
 
@@ -193,7 +193,7 @@ const loadCourses = async (page, selectedCategory = '') => {
     console.error("Error al obtener los cursos de Udemy:", error);
     alert("Error al cargar los cursos");
   } finally {
-    isLoading.value = false; // Finaliza la carga
+    isLoading.value = false; 
   }
 };
 
@@ -208,7 +208,6 @@ const loadCategories = async () => {
 };
 
 const navigateToCourse = (courseId) => {
-  // Esta función navega a la página de detalles del curso cuando se hace clic en el contenido de la tarjeta
   router.push({ name: 'DetalleCursoUdemy', params: { id: courseId } });
 };
 
@@ -217,9 +216,8 @@ const handlePageChange = (newPage) => {
   loadCourses(currentPage.value);
 };
 const handleCategoryFilter = async (selectedCategory) => {
-  // Asegúrate de que estamos enviando la categoría correcta al backend
   console.log('Filtrando por la categoría:', selectedCategory);
-  currentPage.value = 1; // Reinicia la paginación al filtrar por categoría
+  currentPage.value = 1; 
   await loadCourses(currentPage.value, selectedCategory);
 };
 

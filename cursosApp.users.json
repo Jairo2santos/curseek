@@ -7,7 +7,28 @@
   "email": "john.doe@eexample.com",
   "password": "password123",
   "profilePicture": "https://picsum.photos/300",
-  "address": "123 Elm Street, Springfieldddasdassff"
+  "address": "123 Elm Street, Springfieldddasdassff",
+  "favorites": [
+    {
+      "courseId": {
+        "$oid": "654a93a52b442e00d506f8b6"
+      },
+      "courseType": "UDEMY",
+      "_id": {
+        "$oid": "655eb1f34398c40c9fa2b91d"
+      }
+    },
+    {
+      "courseId": {
+        "$oid": "654a93a52b442e00d506f8d9"
+      },
+      "courseType": "UDEMY",
+      "_id": {
+        "$oid": "655eb4584398c40c9fa2b959"
+      }
+    }
+  ],
+  "__v": 14
 },
 {
   "_id": {
@@ -29,7 +50,19 @@
   "email": "alice.johnson@example.com",
   "password": "12345",
   "profilePicture": "https://picsum.photos/300",
-  "address": "789 Birch Boulevard, Gotham"
+  "address": "789 Birch Boulevard, Gotham",
+  "__v": 1,
+  "favorites": [
+    {
+      "courseId": {
+        "$oid": "654a93a52b442e00d506f8b6"
+      },
+      "courseType": "UDEMY",
+      "_id": {
+        "$oid": "655ebf0c91d70312a3c9e9ce"
+      }
+    }
+  ]
 },
 {
   "_id": {
@@ -44,6 +77,7 @@
 },
 {
   "_id": {
+<<<<<<< Updated upstream
     "$oid": "656cedf2d23941d95d2e102d"
   },
   "username": "mati",
@@ -63,4 +97,186 @@
     }
   ],
   "__v": 1
+=======
+    "$oid": "6524616c53cce7d7e09e7bc8"
+  },
+  "username": "asdadad22",
+  "email": "jasid@dasad.com",
+  "password": "12345",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "652463a853cce7d7e09e7bcb"
+  },
+  "username": "userasd",
+  "email": "sada@dsada-com",
+  "password": "1234",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "652467c42c3c58902ef11631"
+  },
+  "username": "pruebitas",
+  "email": "asda@dasdas.commmm",
+  "password": "1234",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "652468452c3c58902ef11637"
+  },
+  "username": "useras",
+  "email": "asdad@gg.com",
+  "password": "321",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6524691a2f6e8fdc5257f8af"
+  },
+  "username": "pablito",
+  "email": "pablito@pablito.com",
+  "password": "12345",
+  "profilePicture": "https://trading.quantfury.com/static/media/logo.43b5b920d235bdbd87489c021092a0b7.svg",
+  "address": "pablñito vive",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "655f43915172d46c15132be5"
+  },
+  "username": "jairo",
+  "email": "doblejairo@gmail.com",
+  "password": "$2b$10$n6g3kCGyKXw2fat7vhn12uvMsYwbfAobjY.aviUoM2An3qfiqOnoS",
+  "profilePicture": "https://elandroidefeliz.com/wp-content/uploads/2019/09/Como-poner-un-GIF-en-la-foto-de-perfil-de-Google-696x425.jpg",
+  "address": "calle lara",
+  "favorites": [
+    {
+      "_id": {
+        "$oid": "655f7f867c65036c271384a8"
+      }
+    },
+    {
+      "courseId": {
+        "$oid": "6514e72575a1911f8b105b7e"
+      },
+      "courseType": "UTN",
+      "_id": {
+        "$oid": "655fafb245b2641e39e8ac0a"
+      }
+    }
+  ],
+  "__v": 90
+},
+{
+  "_id": {
+    "$oid": "6560a63174f0948b582e9b47"
+  },
+  "username": "jairo2",
+  "email": "dosantosjairo@gmail.com",
+  "password": "123456",
+  "profilePicture": "https://elandroidefeliz.com/wp-content/uploads/2019/09/Como-poner-un-GIF-en-la-foto-de-perfil-de-Google-696x425.jpg",
+  "address": "calle op",
+  "favorites": [
+    {
+      "courseId": {
+        "$oid": "6514e72575a1911f8b105b85"
+      },
+      "courseType": "UTN",
+      "_id": {
+        "$oid": "656230c1ea9e2f468e7ffe60"
+      }
+    },
+    {
+      "courseId": {
+        "$oid": "6514e72575a1911f8b105b84"
+      },
+      "courseType": "UTN",
+      "_id": {
+        "$oid": "656230c2ea9e2f468e7ffe64"
+      }
+    }
+  ],
+  "__v": 13
+},
+{
+  "_id": {
+    "$oid": "6566205d993da51ac706bc9f"
+  },
+  "username": "jairoo2",
+  "email": "doblejaisssro@gmail.com",
+  "password": "$2b$10$kR4PM097Dwsc4zu7T8q8a.TXhomYqaNEjSqBviez89HI5J8kuhtYS",
+  "profilePicture": "data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAkGBw8QDxAPDw0ODRAQEQ8QDxAPDw8ODQ8PFxEWFhYRFRMZHyggGBonJxUVJDQhJiorLjA6FyAzRDMsNygtLisBCgoKDg0OGxAQGzUmICUvLy04LTAtLS0tLS03LS0tLS8tKy0rLS0tLS0rLS0tLS8tLS0tLS0tLS0tLS0tLS0rLf/AABEIAK8BHwMBEQACEQEDEQH/xAAbAAEAAgIDAAAAAAAAAAAAAAAABgcBBQIDBP/EADoQAAICAQEEBwUHAgcBAAAAAAABAgMRBAYSITEFE0FRYXGBByJCkaEyUmJyscHRFOEjJGOCkqLwF//EABsBAQACAwEBAAAAAAAAAAAAAAAFBgECBAMH/8QAMBEBAAIBAwMDAQcEAwEAAAAAAAECAwQFERIhMRNBUWEGIjJxgaGxFSNC0RYzkRT/2gAMAwEAAhEDEQA/AKNAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAZSM8D06PQ22y3aq52PujFyZ0Y9LkyeIeWTNTHHNp4SLSbC6ufGfV0p/flmXyjkkKbVb/KUZl3vTU8d/ybKr2eP4tUk/w1tr6s942unvLjt9oa+1P3LfZ28e7qk3+KtpfRidrp7SV+0Nf8qNXrNhtZWswjXcv9OfvfKWDmybXaPwu3DvWmyeZ4/OEd1Oksrk42QnXJc4yi4v5Mj8mnvTtMJSmSt45rPMOho8eG7BgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAHZXW5NJJtvCSSy2zemObzxDEzxHMpzs7sRlKzV5iuaqTxJ/nfZ5L6E7pdvrX71/Ku67e4pzTD5+U30ul",
+  "address": "asda",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "65662c50279bd3d0ce0d7aae"
+  },
+  "username": "jairo22123sadas",
+  "email": "doblejairdaso@gmail.com",
+  "password": "$2b$10$0m/lq3EiHWlt/7sDcqI9pu.e31N9E2L5sv946jy0/2Oakx7lY4/RO",
+  "profilePicture": "https://derecho.uncuyo.edu.ar/cache/derechos-de-autor-01_999_750.jpghttps://derecho.uncuyo.edu.ar/cache/derechos-de-autor-01_999_750.jpg",
+  "address": "asda",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "65662c71279bd3d0ce0d7ab1"
+  },
+  "username": "jairo22123sadasweqe",
+  "email": "doblejairdaswqeqo@gmail.com",
+  "password": "$2b$10$dPy/Q0OBmI5LqEMTyDu/q.v.V4CCdi0AO1GthZCovrp9VthqWK3Oi",
+  "profilePicture": "https://derecho.uncuyo.edu.ar/cache/derechos-de-autor-01_999_750.jpghttps://derecho.uncuyo.edu.ar/cache/derechos-de-autor-01_999_750.jpg",
+  "address": "asda",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "65662e0e279bd3d0ce0d7ab8"
+  },
+  "username": "jairo2w",
+  "email": "doblejairo3@gmail.com",
+  "password": "$2b$10$7ijRlDd7.w7Ccmua65WDm.6xy8lQVkpyiDRK.65ZxtRK21w1WKdfm",
+  "profilePicture": "https://trading.quantfury.com/static/media/logo.43b5b920d235bdbd87489c021092a0b7.svg",
+  "address": "qeqwe",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "656641f4ebf093b84b8e8cbd"
+  },
+  "username": "jairo3",
+  "email": "doblejawiro@gmail.com",
+  "password": "$2b$10$bAp83QcMyqhEzgTk2FZQq.sgpJT/6Yu6YPVXF1rFRiuTJISFvlvqO",
+  "profilePicture": "https://trading.quantfury.com/static/media/logo.43b5b920d235bdbd87489c021092a0b7.svg",
+  "address": "sadafsghdrherhrtnygr",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "65665c85db0a64dec9c0a34b"
+  },
+  "username": "jair",
+  "email": "dobleja123iro@gmail.com",
+  "password": "$2b$10$/MUvgH8qGHxiJSWNF/1Z4eBTpheDZULF26ty22BtcqsQNWC2XL8vi",
+  "profilePicture": "https://derecho.uncuyo.edu.ar/cache/derechos-de-autor-01_999_750.jpghttps://derecho.uncuyo.edu.ar/cache/derechos-de-autor-01_999_750.jpg",
+  "address": "asfdasfsdgsdgsd",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6566a7787aa2428ec12290d6"
+  },
+  "username": "admin",
+  "email": "admin@example.com",
+  "password": "$2b$10$/MUvgH8qGHxiJSWNF/1Z4eBTpheDZULF26ty22BtcqsQNWC2XL8vi",
+  "profilePicture": "https://blogs.stthom.edu/wp-content/uploads/2022/03/BeYourBold_Blog_NetworkAdministrator-1024x684.jpg",
+  "address": "1234 Admin Street, Admin City",
+  "role": "admin",
+  "__v": 0
+>>>>>>> Stashed changes
 }]

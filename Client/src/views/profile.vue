@@ -221,11 +221,9 @@ const fetchUserProfile = async () => {
 const removeFromFavorites = async (courseId) => {
   try {
     await axios.post('http://localhost:3333/users/favorites/remove', { userId: userId.value, courseId });
-    // Actualizar la lista de favoritos en la vista
     favoriteCourses.value = favoriteCourses.value.filter(course => course._id !== courseId);
   } catch (error) {
     console.error('Error al eliminar curso de favoritos:', error);
-    // Puedes mostrar un mensaje de error al usuario aquí
   }
 };
 
@@ -265,7 +263,6 @@ const saveProfile = async () => {
     const response = await axios.put(`http://localhost:3333/users/profile/${userId.value}`, updatedData);
     console.log('Perfil actualizado exitosamente');
 
-    // Aquí actualizamos las propiedades reactivas para mostrar la notificación de éxito
     notificationMessage.value = 'Perfil actualizado con éxito.';
     notificationType.value = 'success';
     showNotification.value = true;
@@ -276,7 +273,7 @@ const saveProfile = async () => {
     }, 3000);
 
     editing.value = false;
-    newPassword.value = ''; // Limpiar la nueva contraseña
+    newPassword.value = ''; 
   } catch (error) {
     console.error('Error al actualizar perfil:', error);
 

@@ -1,9 +1,19 @@
 <template>
   <div class="flex flex-col max-w-screen-full md:flex-row mx-auto md:px-60 bg-gray-100 p-6">
+
     <form
       class="bg-white px-6 md:px-16 py-8 max-w-screen-sm w-full"
       @submit.prevent="registerUser"
     >
+        <!-- Mensaje de éxito -->
+  <p v-if="registrationSuccess" class="text-sm text-green-500">
+    Registro exitoso. Redirigiendo al login...
+  </p>
+
+  <!-- Mensaje de error -->
+  <p v-if="registrationError" class="text-sm text-red-500">
+    Error en el registro: {{ registrationErrorMessage }}
+  </p>
       <h1 class="text-xl font-bold mb-4 text-center">Crea tu cuenta</h1>
 
       <div class="mb-4">
@@ -136,6 +146,9 @@ const confirmPassword = ref("");
 const address = ref("");
 const profilePicture = ref("");
 const passwordsDoNotMatch = ref(false);
+const registrationSuccess = ref(false);
+const registrationError = ref(false);
+const registrationErrorMessage = ref("");
 
 const registerUser = async () => {
   if (password.value !== confirmPassword.value) {
@@ -154,8 +167,11 @@ const registerUser = async () => {
       profilePicture: profilePicture.value,
     });
 
-    router.push("/login");
-  } catch (error) {
+    registrationSuccess.value = true;
+    setTimeout(() => router.push("/login"), 2000); 
+    } catch (error) {
+    registrationError.value = true;
+    registrationErrorMessage.value = error.response.data.message || "Error desconocido";
     console.error("Error al registrar el usuario:", error);
   }
 };

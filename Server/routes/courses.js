@@ -3,7 +3,7 @@ const express = require('express');
 const router = express.Router();
 const coursesController = require('../controllers/courses.controller.js');
 const utnController = require('../controllers/utn.controller.js');
-const udemyController = require('../controllers/udemy.controller.js'); // Asegúrate de que la extensión .js esté presente si es necesario.
+const udemyController = require('../controllers/udemy.controller.js'); 
 const buscadorController = require('../controllers/buscador.controller');
 
 // Rutas específicas primero

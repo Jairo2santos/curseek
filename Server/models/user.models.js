@@ -6,7 +6,6 @@ const userSchema = new mongoose.Schema({
   password: { type: String, required: true },
   profilePicture: String,
   address: String,
-  // Agregar el nuevo campo para los favoritos
   favorites: [{
     courseId: { type: mongoose.Schema.Types.ObjectId, ref: 'Course' },
     courseType: { type: String, enum: ['UDEMY', 'UTN'] } 

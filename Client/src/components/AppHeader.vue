@@ -122,7 +122,7 @@ export default {
       }
     },
     closeDropdownOnClickOutside(event) {
-      const dropdown = this.$el; // Use the root element of the component
+      const dropdown = this.$el; 
       if (dropdown && !dropdown.contains(event.target)) {
         this.dropdownVisible = false;
         this.dropdownActive = false;

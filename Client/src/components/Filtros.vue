@@ -13,7 +13,7 @@
 <script setup>
 import { ref} from 'vue';
 
-const selectedFilter = ref("priceAsc"); // Por defecto, seleccionamos el filtro "Precio: Menor a Mayor".
+const selectedFilter = ref("priceAsc");
 const emits = defineEmits(["filter-changed"]);
 
 const applyFilter = () => {

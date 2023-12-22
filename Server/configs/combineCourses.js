@@ -7,20 +7,20 @@ const UnifiedCourse = require('../models/unifiedCourse.model');
 mongoose.connect('mongodb://localhost:27017/cursosApp');
 
 const combineCourses = async () => {
-  // Obtén todos los cursos de Udemy y UTN
+  // todos los cursos de Udemy y UTN
   const udemyCourses = await UdemyCourse.find({});
   const utnCourses = await UtnCourse.find({});
 
   // Combinar los cursos de Udemy
   for (const course of udemyCourses) {
-    const imageUrl = course.image_240x135 || course.image_480x270; // Asegúrate de tener una URL de imagen predeterminada
+    const imageUrl = course.image_240x135 || course.image_480x270;
 
     const unifiedCourse = new UnifiedCourse({
       title: course.title,
-      description: course.headline, // o cualquier campo que sea la descripción
+      description: course.headline, 
       price: course.is_paid ? course.price : 'Gratis',
       originalId: course._id.toString(),
-      image: imageUrl, // Usa la imagen o una predeterminada
+      image: imageUrl, 
       link: course.url,
       source: 'UDEMY',
       // ... otros campos
