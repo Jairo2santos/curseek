@@ -20,11 +20,13 @@
           :class="{ 'opacity-0': isLoading, 'opacity-100': !isLoading }">
           <!-- Contenedor de Tarjetas de Cursos al lado del Sidebar -->
           <div class="w-full md:w-1/1">
-            <div v-for="course in courses" :key="course.id" class="mb-5">
+            <div v-for="course in courses" :key="course.slug" class="mb-5">
               <!-- Tarjeta individual para cada curso -->
-              <div @click="navigateToCourse(course._id)"
+              <div @click="navigateToCourse(course.slug)" 
+              
                 class="block max-w-full bg-white mt-2 rounded-lg p-4 hover:shadow-md transition cursor-pointer">
                 <div class="flex flex-col md:flex-row items-start md:items-start">
+                  
                   <div class="flex flex-col">
                     <div class="flex flex-col items-start">
                       <!-- Sección 1: Imagen y Título -->
@@ -158,6 +160,7 @@ const totalPages = ref(1);
 const totalCourses = ref(0);
 const categories = ref([]);
 const isLoading = ref(false);
+
 const loadCourses = async (page, selectedCategory = '') => {
   let queryParams = `page=${page}`;
   isLoading.value = true;
@@ -184,8 +187,12 @@ const loadCategories = async () => {
     console.error("Error al obtener las categorías de Udemy:", error);
   }
 };
-const navigateToCourse = (courseId) => {
-  router.push({ name: 'DetalleCursoUdemy', params: { id: courseId } });
+const navigateToCourse = (courseSlug) => {
+  if (!courseSlug) {
+    console.error('No slug provided for navigation');
+    return;
+  }
+  router.push({ name: 'DetalleCursoUdemy', params: { slug: courseSlug } });
 };
 const handlePageChange = (newPage) => {
   currentPage.value = newPage;
@@ -201,6 +208,7 @@ const handleCategoryFilter = async (selectedCategory) => {
 onMounted(() => {
   loadCourses(currentPage.value);
   loadCategories();
+  console.log(courses.value);
 });
-console.log(courses.value);
+
 </script>

@@ -2,13 +2,20 @@
 const UnifiedCourse = require('../models/unifiedCourse.model');
 
 // Función para buscar cursos basada en una cadena de búsqueda
-const searchCourses = async (query) => {
+const searchCourses = async (query, all = false) => {
   try {
-    return await UnifiedCourse.find({
+    const queryOptions = {
       $text: { $search: query }
-    }, {
-      score: { $meta: "textScore" }
-    }).sort({ score: { $meta: "textScore" } });
+    };
+
+    const findQuery = UnifiedCourse.find(queryOptions, { score: { $meta: "textScore" } })
+      .sort({ score: { $meta: "textScore" } });
+
+    if (!all) {
+      findQuery.limit(15); // Limitar a 15 resultados
+    }
+
+    return await findQuery;
   } catch (error) {
     throw error;
   }
@@ -16,5 +23,4 @@ const searchCourses = async (query) => {
 
 module.exports = {
   searchCourses,
-  // ... otras funciones que puedas necesitar
 };

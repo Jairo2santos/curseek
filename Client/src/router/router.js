@@ -35,15 +35,14 @@ const routes = [
     name: 'login',
     component: login
   },
-
   {
-    path: "/utn/curso/:id",
+    path: "/utn/curso/:slug",
     name: "DetalleCursoUTN",
     component: DetalleCursoUTN,
     props: true
   },
   {
-    path: '/udemy/cursos/:id',
+    path: '/udemy/cursos/:slug',
     name: 'DetalleCursoUdemy',
     component: DetalleCursoUdemy,
     props: true

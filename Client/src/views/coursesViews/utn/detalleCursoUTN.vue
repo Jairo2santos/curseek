@@ -1,7 +1,7 @@
 <template>
   <div class="bg-gray-100 p-4 md:p-6 max-w-screen-full mx-auto">
-    <h1 class="hidden md:block text-center pb-6 text-sm text-gray-500">CurSeek cuenta con el apoyo del alumno. Cuando
-      compra a través de enlaces en nuestro sitio, podemos ganar una comisión de afiliado.</h1>
+    <p class="hidden md:block text-center pb-6 text-sm text-gray-500">CurSeek cuenta con el apoyo del alumno. Cuando
+      compra a través de enlaces en nuestro sitio, podemos ganar una comisión de afiliado.</p>
     <div class="max-w-screen-xl mx-auto">
       <!-- Grilla Principal -->
       <div class="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-6">
@@ -9,7 +9,7 @@
         <div class="md:col-span-2">
           <!-- Sección de Título, Duración y Precio -->
           <div class="bg-white p-4 md:p-6 rounded mb-4 justify-between items-center border border-gray-200">
-            <h2 class="text-2xl md:text-3xl font-bold text-gray-800">{{ course.title || 'Aprende con este Curso de UTN' }}</h2>
+            <h1 class="text-2xl md:text-3xl font-bold text-gray-800">{{ course.title || 'Aprende con este Curso de UTN' }}</h1>
           </div>
           <!-- Sección de Resumen -->
           <div class="bg-white p-6 rounded mb-4 border border-gray-200">
@@ -114,9 +114,9 @@ export default {
     };
   },
   async created() {
-    const courseId = this.$route.params.id;
+    const courseSlug = this.$route.params.slug; 
     try {
-      const response = await axios.get(`http://localhost:3333/cursos/utn/${courseId}`);
+      const response = await axios.get(`http://localhost:3333/cursos/utn/${courseSlug}`);
       this.course = response.data;
     } catch (error) {
       console.error("Error obteniendo el detalle del curso:", error);

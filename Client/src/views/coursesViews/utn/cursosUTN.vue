@@ -17,9 +17,9 @@
           <div v-if="isLoading" class="flex justify-center items-center h-64">
             <div class="animate-spin rounded-full h-32 w-32 border-b-2 border-gray-900"></div>
           </div>
-          <div v-for="course in courses" :key="course._id" class="mb-5">
+          <div v-for="course in courses" :key="course.slug" class="mb-5">
             <!-- Tarjeta individual para cada curso -->
-            <div @click="navigateToCourse(course._id)"
+            <div @click="navigateToCourse(course.slug)"
               class="block max-w-full bg-white mt-2 rounded-lg p-4 hover:shadow-md transition cursor-pointer">
               <div class="flex flex-col md:flex-row items-start md:items-start">
                 <div class="flex flex-col">
@@ -175,9 +175,15 @@ const loadCourses = async (page, filterType = null, selectedCategories = []) => 
     isLoading.value = false; // Finaliza la carga
   }
 };
-const navigateToCourse = (courseId) => {
-  router.push({ name: 'DetalleCursoUTN', params: { id: courseId } });
+
+const navigateToCourse = (courseSlug) => {
+  if (!courseSlug) {
+    console.error('No slug provided for navigation');
+    return;
+  }
+  router.push({ name: 'DetalleCursoUTN', params: { slug: courseSlug } });
 };
+
 const handleCategoryFilter = async (categories) => {
   selectedCategories.value = categories;
   courses.value = [];

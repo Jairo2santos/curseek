@@ -16,9 +16,9 @@ exports.getUtnCourses = async (req, res) => {
 };
 
 exports.getSingleCourse = async (req, res) => {
-    const courseId = req.params.id;
+    const { slug } = req.params;
     try {
-        const course = await utnService.getSingleUTNCourseService(courseId);
+        const course = await utnService.getSingleUTNCourseBySlugService(slug);
         if (!course) {
             return res.status(404).json({ message: "Curso no encontrado" });
         }

@@ -1,14 +1,11 @@
 // buscador.controller.js
-const UnifiedCourse = require('../models/unifiedCourse.model');
+
+const { searchCourses } = require('../services/buscador.services');
 
 exports.searchCourses = async (req, res) => {
-  const { q } = req.query;
+  const { q, all } = req.query;
   try {
-    const courses = await UnifiedCourse.find({
-      $text: { $search: q }
-    }, {
-      score: { $meta: "textScore" }
-    }).sort({ score: { $meta: "textScore" } });
+    const courses = await searchCourses(q, all === 'true');
     res.json(courses);
   } catch (error) {
     console.error("Error al buscar cursos:", error);

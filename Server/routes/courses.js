@@ -14,8 +14,7 @@ router.get('/search', buscadorController.searchCourses);
 // Ruta general para obtener todos los cursos - deberías considerar si esta ruta podría tener conflictos con las rutas parametrizadas
 router.get('/', coursesController.getAllCourses);
 // Finalmente, la ruta parametrizada para evitar conflictos con las anteriores
-router.get('/utn/:id', utnController.getSingleCourse);
-// En tu archivo de rutas de Express.js (o similar)
-router.get('/udemy/:id', udemyController.getSingleUdemyCourse);
+router.get('/utn/:slug', utnController.getSingleCourse);
+router.get('/udemy/:slug', udemyController.getSingleUdemyCourse);
 
-module.exports = router;
+  module.exports = router;

@@ -1,4 +1,5 @@
 const mongoose = require('mongoose');
+const normalizeText = require('../middlewares/normalize.middleware'); 
 
 const LocaleSchema = new mongoose.Schema({
   _class: String,
@@ -22,6 +23,7 @@ const UdemyCourseSchema = new mongoose.Schema({
   title: String,
   url: String,
   is_paid: Boolean,
+  
   price: String,
   instructors: [InstructorSchema],
   image_125_H: String,
@@ -44,8 +46,19 @@ const UdemyCourseSchema = new mongoose.Schema({
   },
   primary_subcategory: {
     type: mongoose.Schema.Types.Mixed,
+  },
+  slug: {
+    type: String,
+    unique: true
   }
 });
 
+UdemyCourseSchema.pre('save', function(next) {
+  if (this.isModified('title') || this.isNew) {
+    this.slug = normalizeText(this.title);
+    console.log('Slug generado:', this.slug);
+  }
+  next();
+});
 // Configura el nombre de la colección específicamente
 module.exports = mongoose.model('UdemyCourse', UdemyCourseSchema, 'cursos_UDEMY');

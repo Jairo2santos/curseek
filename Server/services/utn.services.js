@@ -1,10 +1,14 @@
 const utnCourse = require('../models/utn.models.js'); // Modelo para los cursos UTN
 
 // Servicio para obtener un curso único de UTN por ID
-exports.getSingleUTNCourseService = async (id) => {
-    return await utnCourse.findById(id);
+exports.getSingleUTNCourseBySlugService = async (slug) => {
+    try {
+        return await utnCourse.findOne({ slug });
+    } catch (error) {
+        console.error("Error en getSingleUTNCourseBySlugService:", error);
+        throw error;
+    }
 };
-
 exports.getUTNCoursesService = async (category, page, limit) => {
     let query = {};
     if (category) {

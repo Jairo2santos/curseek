@@ -1,8 +1,13 @@
 const UdemyCourse = require('../models/udemy.models'); // Modelo para los cursos Udemy
 
 // Servicio para obtener un curso único de Udemy por ID
-exports.getSingleUdemyCourseService = async (id) => {
-    return await UdemyCourse.findById(id);
+exports.getSingleUdemyCourseBySlugService = async (slug) => {
+    try {
+        return await UdemyCourse.findOne({ slug });
+    } catch (error) {
+        console.error("Error al obtener el curso de Udemy:", error);
+        throw error;
+    }
 };
 
 // Servicio para obtener todos los cursos de Udemy

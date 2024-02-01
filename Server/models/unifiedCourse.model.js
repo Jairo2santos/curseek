@@ -1,5 +1,8 @@
 // models/unifiedCourse.model.js
 const mongoose = require('mongoose');
+const normalizeText = require('../middlewares/normalize.middleware'); 
+
+
 
 const UnifiedCourseSchema = new mongoose.Schema({
   title: {
@@ -30,9 +33,21 @@ const UnifiedCourseSchema = new mongoose.Schema({
     type: String,
     required: true,
   },
+  slug: {
+    type: String,
+    unique: true
+  }
 });
 
+UnifiedCourseSchema.pre('save', function(next) {
+  if (this.isModified('title') || this.isNew) {
+    this.slug = normalizeText(this.title);
+  }
+  next();
+});
+
+UnifiedCourseSchema.index({ title: 'text', description: 'text', slug: 'text' });
+
 const UnifiedCourse = mongoose.model('UnifiedCourse', UnifiedCourseSchema, 'cursos_ALL');
-UnifiedCourseSchema.index({ title: 'text', summary: 'text', description: 'text' });
 
 module.exports = UnifiedCourse;

@@ -1,14 +1,14 @@
 <template>
   <div class="bg-gray-100 p-4 md:p-6 max-w-screen-full">
-    <h1 class="hidden md:block text-center pb-6 text-sm text-gray-500">CurSeek cuenta con el apoyo del alumno. Cuando
-      compra a través de enlaces en nuestro sitio, podemos ganar una comisión de afiliado.</h1>
+    <p class="hidden md:block text-center pb-6 text-sm text-gray-500">CurSeek cuenta con el apoyo del alumno. Cuando
+      compra a través de enlaces en nuestro sitio, podemos ganar una comisión de afiliado.</p>
     <!-- Grilla Principal -->
     <div class="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-6 max-w-screen-xl mx-auto">
       <!-- Columna 1 y 2 (Contenido principal) -->
       <div class="md:col-span-2">
         <!-- Sección de Título y Precio -->
         <div class="bg-white p-4 md:p-6 rounded mb-4 justify-between items-center border border-gray-200">
-          <h2 class="md:text-3xl font-bold text-gray-800">{{ udemyCourse.title || 'Aprende con este Curso de Udemy'}}</h2>
+          <h1 class="md:text-3xl font-bold text-gray-800">{{ udemyCourse.title || 'Aprende con este Curso de Udemy'}}</h1>
           <!-- <h2 class="md:text-xl font-semibold text-green-500 py-1" v-if="!udemyCourse.is_paid">$ {{ udemyCourse.price }}</h2> -->
         </div>
         <!-- Sección de Descripción Larga -->
@@ -133,7 +133,7 @@
 
 <script setup>
 import { ref, onMounted } from 'vue';
-import { useRoute } from 'vue-router';
+import { useRoute, useRouter } from 'vue-router';
 import axios from 'axios';
 
 const udemyCourse = ref({
@@ -153,16 +153,30 @@ const udemyCourse = ref({
 });
 const route = useRoute();
 const categories = ref([]);
+const router = useRouter(); 
 
-async function fetchUdemyCourse(courseId) {
+async function fetchUdemyCourse(courseSlug) {
   try {
-    const response = await axios.get(`http://localhost:3333/cursos/udemy/${courseId}`);
-    udemyCourse.value = { ...udemyCourse.value, ...response.data };
-    udemyCourse.value.image = udemyCourse.value.image_480x270;
+    const response = await axios.get(`http://localhost:3333/cursos/udemy/${courseSlug}`);
+    if (response.data) {
+      udemyCourse.value = { ...udemyCourse.value, ...response.data };
+      udemyCourse.value.image = udemyCourse.value.image_480x270;
+    } else {
+      throw new Error('Curso no encontrado');
+    }
   } catch (error) {
-    console.error("Error obteniendo el detalle del curso de Udemy:", error);
+    if (error.response && error.response.status === 404) {
+      router.push({ name: 'error404' });
+    } else {
+      console.error("Error obteniendo el detalle del curso de Udemy:", error);
+    }
   }
 }
+onMounted(() => {
+  fetchUdemyCourse(route.params.slug);
+  loadCategories();
+});
+
 const loadCategories = async () => {
   try {
     const { data } = await axios.get("categorias/udemy");
@@ -173,10 +187,9 @@ const loadCategories = async () => {
 };
 
 onMounted(() => {
-  console.log('Curso ID:', route.params.id);
   udemyCourse.value.instructorImage = route.params.instructorImage || '';
   udemyCourse.value.category = route.params.category || '';
-  fetchUdemyCourse(route.params.id);
+  fetchUdemyCourse(route.params.slug);
   loadCategories();
 });
 </script>

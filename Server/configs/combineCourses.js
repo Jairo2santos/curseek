@@ -1,4 +1,3 @@
-// scripts/combineCourses.js
 const mongoose = require('mongoose');
 const UdemyCourse = require('../models/udemy.models');
 const UtnCourse = require('../models/utn.models');
@@ -7,29 +6,41 @@ const UnifiedCourse = require('../models/unifiedCourse.model');
 mongoose.connect('mongodb://localhost:27017/cursosApp');
 
 const combineCourses = async () => {
-  // todos los cursos de Udemy y UTN
   const udemyCourses = await UdemyCourse.find({});
   const utnCourses = await UtnCourse.find({});
+
+  // Función para tratar de insertar o actualizar cursos unificados
+  const tryInsertOrUpdate = async (unifiedCourseData) => {
+    const existingCourse = await UnifiedCourse.findOne({ slug: unifiedCourseData.slug });
+    if (existingCourse) {
+      console.log(`El slug ya existe, omitiendo o actualizando: ${unifiedCourseData.slug}`);
+      // Opción 1: Omitir la inserción si el curso ya existe
+      // Opción 2: Actualizar el curso existente con nueva información
+      // await UnifiedCourse.updateOne({ _id: existingCourse._id }, unifiedCourseData);
+    } else {
+      const unifiedCourse = new UnifiedCourse(unifiedCourseData);
+      await unifiedCourse.save();
+    }
+  };
 
   // Combinar los cursos de Udemy
   for (const course of udemyCourses) {
     const imageUrl = course.image_240x135 || course.image_480x270;
-
-    const unifiedCourse = new UnifiedCourse({
+    await tryInsertOrUpdate({
       title: course.title,
-      description: course.headline, 
+      description: course.headline,
       price: course.is_paid ? course.price : 'Gratis',
       originalId: course._id.toString(),
-      image: imageUrl, 
+      image: imageUrl,
       link: course.url,
       source: 'UDEMY',
-      // ... otros campos
+      slug: course.slug,
     });
-    await unifiedCourse.save();
   }
+
   // Combinar los cursos de UTN
   for (const course of utnCourses) {
-    const unifiedCourse = new UnifiedCourse({
+    await tryInsertOrUpdate({
       title: course.title,
       description: course.summary || 'Este curso de la UTN no tiene descripción disponible.',
       price: course.price,
@@ -37,9 +48,10 @@ const combineCourses = async () => {
       image: course.imgUrl,
       link: course.link,
       source: 'UTN',
+      slug: course.slug,
     });
-    await unifiedCourse.save();
   }
+
   console.log('Todos los cursos han sido combinados en la colección cursos_ALL');
 };
 
