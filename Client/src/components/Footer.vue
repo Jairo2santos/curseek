@@ -17,8 +17,8 @@
           <h4 class="text-md font-bold mb-2">Ayuda</h4>
           <ul>
             <li class="text-sm text-gray-700 hover:text-indigo-500 transition pb-1"><a
-                href="#">Preguntas frecuentes</a></li>
-            <li class="text-sm text-gray-700 hover:text-indigo-500 transition pb-1"><a href="#">Soporte
+                href="/nosotros/#/preguntasFrecuentes">Preguntas frecuentes</a></li>
+            <li class="text-sm text-gray-700 hover:text-indigo-500 transition pb-1"><a href="/nosotros/#/soporte">Soporte
                 técnico</a></li>
           </ul>
         </div>
@@ -26,10 +26,10 @@
         <div class="mb-4 md:mb-0 md:mr-8">
           <h4 class="text-md font-bold mb-2">Nosotros</h4>
           <ul>
-            <li class="text-sm text-gray-700 hover:text-indigo-500 transition pb-1"><a href="#">Sobre
+            <li class="text-sm text-gray-700 hover:text-indigo-500 transition pb-1"><a href="/nosotros/#/acerca">Sobre
                 nosotros</a></li>
             <li class="text-sm text-gray-700 hover:text-indigo-500 transition pb-1"><a
-                href="#">Nuestro equipo</a></li>
+                href="/nosotros/#/nuestroEquipo">Nuestro equipo</a></li>
           </ul>
         </div>
         <!-- Sección de Términos y Condiciones -->
@@ -37,9 +37,9 @@
           <h4 class="text-md font-bold mb-2">Términos y Condiciones</h4>
           <ul>
             <li class="text-sm text-gray-700 hover:text-indigo-500 transition pb-1"><a
-                href="#">Política de privacidad</a></li>
+                href="/nosotros/#/privacidad">Política de privacidad</a></li>
             <li class="text-sm text-gray-700 hover:text-indigo-500 transition pb-1"><a
-                href="#">Términos y condiciones</a></li>
+                href="/nosotros/#/terminos">Términos y condiciones</a></li>
           </ul>
         </div>
       </div>

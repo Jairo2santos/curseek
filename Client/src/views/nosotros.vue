@@ -1,47 +1,30 @@
 <template>
     <div class="flex min-h-screen bg-white">
         <!-- Menú lateral -->
-        <div class="bg-gray-200 text-black w-1/4 px-6 py-6">
-            <h2 class="text-2xl font-semibold mb-8">Documentación</h2>
+        <div class="bg-white border-r border-gray-200 w-1/5 pl-16 py-6"> <!-- Añadí 'text-center' para centrar el texto -->
+            <h2 class="text-sm font-semibold mb-4">Documentación</h2>
             <ul>
-                <a href="#/acerca">
-                    <li
-                        class="pb-1 rounded-lg bg-gray-100 hover:bg-indigo-100 border-b border-r border-gray-300 transition p-2">
-                        Acerca de Nosotros
-                    </li>
-                </a>
-                <a href="#/preguntasFrecuentes">
-                    <li
-                        class="pb-1 rounded-lg bg-gray-100 hover:bg-indigo-100 border-b border-r border-gray-300 transition p-2">
-                        Preguntas Frecuentes
-                    </li>
-                </a>
-                <a href="#/nuestroEquipo">
-                    <li
-                        class="pb-1 rounded-lg bg-gray-100 hover:bg-indigo-100 border-b border-r border-gray-300 transition p-2">
-                        Nuestro Equipo
-                    </li>
-                </a>
-                <a href="#/privacidad">
-                    <li
-                        class="pb-1 rounded-lg bg-gray-100 hover:bg-indigo-100 border-b border-r border-gray-300 transition p-2">
-                        Políticas de Privacidad
-                    </li>
-                </a>
-                <a href="#/terminos">
-                    <li
-                        class="pb-1 rounded-lg bg-gray-100 hover:bg-indigo-100 border-b border-r border-gray-300 transition p-2">
-                        Términos y Condiciones
-                    </li>
-                </a>
-                <a href="#/soporte">
-                    <li
-                        class="pb-1 rounded-lg bg-gray-100 hover:bg-indigo-100 border-b border-r border-gray-300 transition p-2">
-                        Soporte
-                    </li>
-                </a>
+                <li :class="{ 'pb-2': true, 'text-sm': true, 'text-gray-500': true, 'text-indigo-700 font-semibold': selectedOption === 'acerca' }" @click="selectedOption = 'acerca'">
+                    <a href="#/acerca" class="hover:text-black transition">Acerca de Nosotros</a>
+                </li>
+                <li :class="{ 'pb-2': true, 'text-sm': true, 'text-gray-500': true, 'text-indigo-700 font-semibold': selectedOption === 'preguntasFrecuentes' }" @click="selectedOption = 'preguntasFrecuentes'">
+                    <a href="#/preguntasFrecuentes" class="hover:text-black transition">Preguntas Frecuentes</a>
+                </li>
+                <li :class="{ 'pb-2': true, 'text-sm': true, 'text-gray-500': true, 'text-indigo-700 font-semibold': selectedOption === 'nuestroEquipo' }" @click="selectedOption = 'nuestroEquipo'">
+                    <a href="#/nuestroEquipo" class="hover:text-black transition">Nuestro Equipo</a>
+                </li>
+                <li :class="{ 'pb-2': true, 'text-sm': true, 'text-gray-500': true, 'text-indigo-700 font-semibold': selectedOption === 'privacidad' }" @click="selectedOption = 'privacidad'">
+                    <a href="#/privacidad" class="hover:text-black transition">Políticas de Privacidad</a>
+                </li>
+                <li :class="{ 'pb-2': true, 'text-sm': true, 'text-gray-500': true, 'text-indigo-700 font-semibold': selectedOption === 'terminos' }" @click="selectedOption = 'terminos'">
+                    <a href="#/terminos" class="hover:text-black transition">Términos y Condiciones</a>
+                </li>
+                <li :class="{ 'pb-2': true, 'text-sm': true, 'text-gray-500': true, 'text-indigo-700 font-semibold': selectedOption === 'soporte' }" @click="selectedOption = 'soporte'">
+                    <a href="#/soporte" class="hover:text-black transition">Soporte</a>
+                </li>
             </ul>
         </div>
+
         <!-- Contenido principal -->
         <div class="flex-1 p-8">
             <!-- Contenido basado en la ruta actual -->
@@ -246,9 +229,8 @@
             <div v-if="$route.hash === '#/soporte'">
                 <h3 class="text-3xl font-semibold mb-4">Soporte</h3>
                 <p class="pb-4">
-                    ¿Tienes preguntas o comentarios? ¡Estamos aquí para ayudarte!
-                    Ponte en soporte con nuestro equipo de soporte a través de curseek@gmail.com
-                    o llámanos al +54 11 456 789.
+                    ¡Estamos aquí para ayudarte!
+                    Ponte en contacto con nuestro equipo de soporte.
                 </p>
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
                     <!-- Tarjeta para el correo electrónico -->
@@ -256,7 +238,7 @@
                         <h4 class="text-lg font-semibold mb-2">Correo Electrónico</h4>
                         <p>
                             ¿Tienes preguntas o comentarios? Estamos aquí para ayudarte.
-                            Ponte en contacto con nuestro equipo de soporte a través de:
+                            Ponte en contacto con nuestro equipo:
                         </p>
                         <a href="mailto:curseek@gmail.com" class="text-blue-500 hover:underline">curseek@gmail.com</a>
                     </div>

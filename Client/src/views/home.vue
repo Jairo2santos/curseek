@@ -113,7 +113,7 @@
           :class="{ 'blurred-background': isInputClicked }"
           class="border-b border-gray-200 mt-2 pb-8 ml-2"
         >
-          <a href="#" :class="{ 'blurred-background': isInputClicked }">
+          <a href="/nosotros/#/preguntasFrecuentes" :class="{ 'blurred-background': isInputClicked }">
             <button
               class="flex text-sm font-semibold hover:underline hover:bg-indigo-100 transition text-black p-0"
             >
