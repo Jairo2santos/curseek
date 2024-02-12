@@ -57,7 +57,7 @@
             v-if="courses.length > 0"
             class="md:absolute md:max-w-full mt-1 bg-white shadow-lg max-h-96 overflow-y-auto z-10"
           >
-            <p class="px-4 py-2 text-sm text-gray-500 border-b">
+            <p class="px-4 py-2 text-sm font-semibold text-indigo-600 border-b">
               Los cursos que se relacionan con "{{ query }}"
             </p>
 
@@ -97,10 +97,10 @@
                 </a>
               </li>
             </ul>
-            <div class="flex justify-center">
+            <div class="flex justify-center py-4">
               <button
                 @click="toggleViewAll"
-                class="px-4 py-2 bg-indigo-600 text-white font-semibold rounded-lg shadow-md hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-opacity-75 transition ease-in duration-300"
+                class="px-4 py-2 border border-indigo-600 text-indigo-600 font-semibold rounded-lg hover:bg-indigo-600 hover:text-white focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-opacity-75 transition ease-in duration-300"
               >
                 {{ limitResults ? "Ver Todos" : "Ver Menos" }}
               </button>
