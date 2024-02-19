@@ -1,6 +1,7 @@
 //categories.controller.js
 const UTNCourse = require('../models/utn.models.js');
 const UdemyCourse = require('../models/udemy.models.js');
+const CourseraCourse = require('../models/courseraCourse.model.js');
 
 exports.getUTNCategories = async (req, res) => {
     try {
@@ -28,5 +29,16 @@ exports.getUdemyCategories = async (req, res) => {
     } catch (error) {
         console.error("Error al obtener las categorías de Udemy:", error);
         res.status(500).send(`Error interno del servidor: ${error.message}`);
+    }
+};
+
+exports.getCourseraCategories = async (req, res) => {
+    try {
+        // Suponiendo que 'mainCategory' es el campo que contiene la categoría principal de cada curso
+        const categories = await CourseraCourse.distinct("mainCategory");
+        res.json(categories);
+    } catch (error) {
+        console.error("Error al obtener las categorías de Coursera:", error);
+        res.status(500).send("Error interno del servidor");
     }
 };

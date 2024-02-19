@@ -1,11 +1,15 @@
+//loadProveedores.js
 const mongoose = require('mongoose');
-const saveUdemyCourses = require('./udemy/saveUdemyCourses');
+//const saveUdemyCourses = require('./udemy/saveUdemyCourses');
+const fetchEdxCourses = require('./edx/saveEdxCourses'); // Asegúrate de que la ruta sea correcta
 
 async function loadProveedores() {
   // Conexión a MongoDB
   await mongoose.connect('mongodb://localhost:27017/cursosApp', { useNewUrlParser: true, useUnifiedTopology: true });
   // Carga de cursos Udemy
-  await saveUdemyCourses();
+  //await saveUdemyCourses();
+  // Carga de cursos EDX
+  await fetchEdxCourses();
   // Cierra la conexión a la base de datos
   mongoose.connection.close();
 }
