@@ -48,7 +48,7 @@
       </button>
     </form>
     <div class="border-l border-gray-200 px-8 pt-4 pb-12 md:py-40 bg-white text-left">
-      <h1 class="font-bold pb-2 text-lg">Únete a CurSeek! Gratis</h1>
+      <h1 class="font-bold pb-2 t first-letter:ext-lg">¡Únete a CurSeek! Gratis</h1>
       <ul>
         <li class="text-sm pt-4">
           <svg class="inline mr-2" fill="#6366f1" xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 -960 960 960"
