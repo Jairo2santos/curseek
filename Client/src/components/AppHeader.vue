@@ -73,12 +73,18 @@
       <!-- Desplegable -->
       <div class="relative">
         <div name="fade">
-          <ul class="border-r border-l border-b max-h-96 overflow-y-auto border-gray-100 ml-40 absolute text-sm shadow-md bg-white p-0 w-60">
+          <ul class="border-r border-l border-b max-h-96 overflow-y-auto border-gray-100 ml-40 absolute text-sm shadow-md bg-white w-60">
+            <li v-if="dropdownVisible"
+            @mouseenter="showModal = true"
+            @mouseleave="showModal = false"
+            class="font-semibold my-0.5 flex items-center px-4 w-full justify-between">
+              <span class="text-indigo-700 py-1.5 px-1">Buscar por</span>
+            </li>
             <li v-if="dropdownVisible"
             @mouseenter="showModal = true"
             @mouseleave="showModal = false"
             class="my-0.5 flex items-center hover:bg-gray-200 transition px-4 cursor-pointer w-full justify-between">
-              <span class="text-gray-500 py-1.5 px-1">Proveedores</span>
+              <span class="text-gray-800 py-1.5 px-1">Proveedores</span>
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24">
                 <path d="M9.41 7.41L14.83 12l-5.42 5.41L10 18l6-6-6-6-1.59 1.41Z" />
               </svg>
@@ -86,8 +92,8 @@
             <li v-if="dropdownVisible"
             @mouseenter="showModal2 = true"
             @mouseleave="showModal2 = false"
-            class="my-0.5 flex items-center hover:bg-gray-200 transition px-4 cursor-pointer w-full justify-between">
-              <span class="text-gray-500 py-1.5 px-1">Universidades</span>
+            class="mb-2 my-0.5 flex items-center hover:bg-gray-200 transition px-4 cursor-pointer w-full justify-between">
+              <span class="text-gray-800 py-1.5 px-1">Universidades</span>
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24">
                 <path d="M9.41 7.41L14.83 12l-5.42 5.41L10 18l6-6-6-6-1.59 1.41Z" />
               </svg>
@@ -98,29 +104,24 @@
         <div v-if="showModal" 
           @mouseenter="showModal = true" 
           @mouseleave="showModal = false" 
-          class="border-l max-h-96 overflow-y-auto border-gray-100 absolute text-sm shadow-md bg-white p-0 w-60 left-80 mt-0 ml-20">
+          class="border-l max-h-96 overflow-y-auto border-gray-100 absolute text-sm shadow-md bg-white py-2 w-60 left-80 mt-0 ml-20">
           <ul>
             <li class="my-0.5 flex items-center">
               <a href="/cursos/udemy" class="hover:bg-gray-200 transition px-4 flex items-center w-full justify-between">
-                <span class="text-gray-500 py-1.5 px-1">Udemy</span>
-              </a>
-            </li>
-            <li class="my-0.5 flex items-center">
-              <a href="/cursos/udemy" class="hover:bg-gray-200 transition px-4 flex items-center w-full justify-between">
-                <span class="text-gray-500 py-1.5 px-1">Coursera</span>
-              </a>
-            </li>
-            <li class="my-0.5 flex items-center">
-              <a href="/cursos/udemy" class="hover:bg-gray-200 transition px-4 flex items-center w-full justify-between">
-                <span class="text-gray-500 py-1.5 px-1">Edx</span>
+                <img class="w-8" src="../assets/instituciones/udemy.png" alt="Coursera" />
+                <span class="flex-1 text-gray-800 py-1.5 px-1">Udemy</span>
               </a>
             </li>
             <li class="my-0.5 flex items-center">
               <a href="/cursos/Coursera" class="hover:bg-gray-200 transition px-4 flex items-center w-full justify-between">
-                <span class="text-gray-500 py-1.5 px-1">Coursera</span>
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24">
-                  <path d="M9.41 7.41L14.83 12l-5.42 5.41L10 18l6-6-6-6-1.59 1.41Z" />
-                </svg>
+                <img class="w-8" src="../assets/instituciones/coursera.png" alt="Coursera" />
+                <span class="flex-1 text-gray-800 py-1.5 px-1">Coursera</span>
+              </a>
+            </li>
+            <li class="my-0.5 flex items-center">
+              <a href="/cursos/udemy" class="hover:bg-gray-200 transition px-4 flex items-center w-full justify-between">
+                <img class="w-8" src="../assets/instituciones/edx.png" alt="Coursera" />
+                <span class="flex-1 text-gray-800 py-1.5 px-1">Edx</span>
               </a>
             </li>
           </ul>
@@ -129,26 +130,36 @@
         <div v-if="showModal2" 
           @mouseenter="showModal2 = true"
           @mouseleave="showModal2 = false"
-          class="max-h-96 overflow-y-auto absolute text-sm shadow-md bg-white p-0 w-60 left-80 mt-0 ml-20">
+          class="max-h-96 overflow-y-auto absolute text-sm shadow-md bg-white py-2 w-60 left-80 mt-0 ml-20">
           <ul>
             <li class="my-0.5 flex items-center">
               <a href="/cursos/utn" class="hover:bg-gray-200 transition px-4 flex items-center w-full justify-between">
-                <span class="text-gray-500 py-1.5 px-1">UTN.BA</span>
+               <img class="w-8" src="../assets/instituciones/utn.png" alt="Coursera" />
+                <span class="flex-1 text-gray-800 py-1.5 px-1">UTN.BA</span>
               </a>
             </li>
             <li class="my-0.5 flex items-center">
               <a href="/cursos/utn" class="hover:bg-gray-200 transition px-4 flex items-center w-full justify-between">
-                <span class="text-gray-500 py-1.5 px-1">UNAM</span>
+               <img class="w-8" src="../assets/instituciones/unam.png" alt="Coursera" />
+                <span class="flex-1 text-gray-800 py-1.5 px-1">UNAM</span>
               </a>
             </li>
             <li class="my-0.5 flex items-center">
               <a href="/cursos/utn" class="hover:bg-gray-200 transition px-4 flex items-center w-full justify-between">
-                <span class="text-gray-500 py-1.5 px-1">U. de Chile</span>
+               <img class="w-8" src="../assets/instituciones/Universidad_de_Chile.png" alt="Coursera" />
+                <span class="flex-1 text-gray-800 py-1.5 px-1">U. de Chile</span>
               </a>
             </li>
             <li class="my-0.5 flex items-center">
               <a href="/cursos/utn" class="hover:bg-gray-200 transition px-4 flex items-center w-full justify-between">
-                <span class="text-gray-500 py-1.5 px-1">U de Colombia</span>
+               <img class="w-8" src="../assets/instituciones/uab.png" alt="Coursera" />
+                <span class="flex-1 text-gray-800 py-1.5 px-1">UAB</span>
+              </a>
+            </li>
+            <li class="my-0.5 flex items-center">
+              <a href="/cursos/utn" class="hover:bg-gray-200 transition px-4 flex items-center w-full justify-between">
+                <img class="w-8" src="../assets/instituciones/Universidad_Central_de_Venezuela.png" alt="Universidad_Central_de_Venezuela">
+                <span class="flex-1 text-gray-800 py-1.5 px-1">U. C. Venezuela</span>
               </a>
             </li>
           </ul>

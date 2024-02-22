@@ -1,6 +1,9 @@
 <template>
   <div class="bg-white">
-    <Portada :title="pageTitle" :description="pageDescription" :totalCourses="totalCourses" />
+    <Portada :title="pageTitle" :description="pageDescription" :totalCourses="totalCourses" 
+    :instagramLink="'https://www.instagram.com/utn.rec.ar/'"
+    :twitterLink="'https://twitter.com/frbautn'"
+    :facebookLink="'https://www.facebook.com/UniversidadTecnologicaNacional'" />
     <div class="flex flex-col max-w-screen-full md:flex-row mx-auto pt-6 md:px-40 bg-gray-100 p-4">
       <!-- Sidebar a la izquierda -->
       <div class="mb-4 md:mb-0 w-full md:w-auto mt-4">

@@ -188,7 +188,7 @@
                 </a>
               </li>
               <li class="flex items-center justify-center">
-                <a href="https://www.coursera.org" target="_blank">
+                <a href="/cursos/coursera">
                   <button
                     class="hover:scale-110 hover:bg-indigo-200 rounded-lg transform transition duration-100 ease-in-out w-full sm:w-60 flex items-center">
                     <img class="w-12" src="../assets/instituciones/coursera.png" alt="Coursera" />
@@ -217,6 +217,15 @@
                     class="hover:scale-110 hover:bg-indigo-200 rounded-lg transform transition duration-100 ease-in-out w-full sm:w-60 flex items-center">
                     <img class="w-12" src="../assets/instituciones/Universidad_de_Chile.png" alt="Universidad de Chile">
                     <span class="ml-2 text-lg font-semibold text-black">U. de Chile</span>
+                  </button>
+                </a>
+              </li>
+              <li class="flex items-center justify-center">
+                <a href="https://uchile.cl/" target="_blank">
+                  <button
+                    class="hover:scale-110 hover:bg-indigo-200 rounded-lg transform transition duration-100 ease-in-out w-full sm:w-60 flex items-center">
+                    <img class="w-12" src="../assets/instituciones/UAB.png" alt="Universidad Autónoma de Barcelona">
+                    <span class="ml-2 text-lg font-semibold text-black">UAB</span>
                   </button>
                 </a>
               </li>
