@@ -48,7 +48,7 @@
       </section>
     </main>
     <!-- Barra lateral con detalles del curso -->
-    <aside class="w-full md:w-1/4 bg-white p-4 rounded-lg gap-6 shadow-md">
+    <aside class="w-full md:w-1/4 bg-white p-4 rounded-lg shadow-md">
       <img :src="course.imgUrl" alt="Imagen del curso" class="rounded-lg mb-4" />
       <a :href="course.courseUrl" target="_blank"
         class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded block text-center mb-4">
@@ -56,7 +56,7 @@
       </a>
       <div class="space-y-2">
         <div class="flex items-center">
-          <rating-component :rating="course.rating"></rating-component>
+          <h4 class="text-lg font-bold mb-2">Estrellas de este curso: {{course.rating}}</h4>
         </div>
         <div class="text-gray-600">Nivel: {{ course.level }}</div>
         <div class="text-gray-600">
