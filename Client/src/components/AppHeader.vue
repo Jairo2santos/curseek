@@ -72,22 +72,47 @@
       </div>
       <!-- Desplegable -->
       <div class="relative">
-        <transition name="fade">
-          <ul v-if="dropdownVisible" class="border-r border-l border-b max-h-96 overflow-y-auto border-gray-100 ml-40 py-2 absolute text-sm shadow-md bg-white p-0 w-80">
+        <div name="fade">
+          <ul class="border-r border-l border-b max-h-96 overflow-y-auto border-gray-100 ml-40 absolute text-sm shadow-md bg-white p-0 w-60">
+            <li v-if="dropdownVisible"
+            @mouseenter="showModal = true"
+            @mouseleave="showModal = false"
+            class="my-0.5 flex items-center hover:bg-gray-200 transition px-4 cursor-pointer w-full justify-between">
+              <span class="text-gray-500 py-1.5 px-1">Proveedores</span>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24">
+                <path d="M9.41 7.41L14.83 12l-5.42 5.41L10 18l6-6-6-6-1.59 1.41Z" />
+              </svg>
+            </li>
+            <li v-if="dropdownVisible"
+            @mouseenter="showModal2 = true"
+            @mouseleave="showModal2 = false"
+            class="my-0.5 flex items-center hover:bg-gray-200 transition px-4 cursor-pointer w-full justify-between">
+              <span class="text-gray-500 py-1.5 px-1">Universidades</span>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24">
+                <path d="M9.41 7.41L14.83 12l-5.42 5.41L10 18l6-6-6-6-1.59 1.41Z" />
+              </svg>
+            </li>
+          </ul>
+        </div>
+        
+        <div v-if="showModal" 
+          @mouseenter="showModal = true" 
+          @mouseleave="showModal = false" 
+          class="border-l max-h-96 overflow-y-auto border-gray-100 absolute text-sm shadow-md bg-white p-0 w-60 left-80 mt-0 ml-20">
+          <ul>
             <li class="my-0.5 flex items-center">
-              <a href="/cursos/utn" class="hover:bg-gray-200 transition px-4 flex items-center w-full justify-between">
-                <span class="text-gray-500 py-1.5 px-1">UTN.BA</span>
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24">
-                  <path d="M9.41 7.41L14.83 12l-5.42 5.41L10 18l6-6-6-6-1.59 1.41Z" />
-                </svg>
+              <a href="/cursos/udemy" class="hover:bg-gray-200 transition px-4 flex items-center w-full justify-between">
+                <span class="text-gray-500 py-1.5 px-1">Udemy</span>
               </a>
             </li>
             <li class="my-0.5 flex items-center">
               <a href="/cursos/udemy" class="hover:bg-gray-200 transition px-4 flex items-center w-full justify-between">
-                <span class="text-gray-500 py-1.5 px-1">Udemy</span>
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24">
-                  <path d="M9.41 7.41L14.83 12l-5.42 5.41L10 18l6-6-6-6-1.59 1.41Z" />
-                </svg>
+                <span class="text-gray-500 py-1.5 px-1">Coursera</span>
+              </a>
+            </li>
+            <li class="my-0.5 flex items-center">
+              <a href="/cursos/udemy" class="hover:bg-gray-200 transition px-4 flex items-center w-full justify-between">
+                <span class="text-gray-500 py-1.5 px-1">Edx</span>
               </a>
             </li>
             <li class="my-0.5 flex items-center">
@@ -99,7 +124,36 @@
               </a>
             </li>
           </ul>
-        </transition>
+        </div>
+
+        <div v-if="showModal2" 
+          @mouseenter="showModal2 = true"
+          @mouseleave="showModal2 = false"
+          class="max-h-96 overflow-y-auto absolute text-sm shadow-md bg-white p-0 w-60 left-80 mt-0 ml-20">
+          <ul>
+            <li class="my-0.5 flex items-center">
+              <a href="/cursos/utn" class="hover:bg-gray-200 transition px-4 flex items-center w-full justify-between">
+                <span class="text-gray-500 py-1.5 px-1">UTN.BA</span>
+              </a>
+            </li>
+            <li class="my-0.5 flex items-center">
+              <a href="/cursos/utn" class="hover:bg-gray-200 transition px-4 flex items-center w-full justify-between">
+                <span class="text-gray-500 py-1.5 px-1">UNAM</span>
+              </a>
+            </li>
+            <li class="my-0.5 flex items-center">
+              <a href="/cursos/utn" class="hover:bg-gray-200 transition px-4 flex items-center w-full justify-between">
+                <span class="text-gray-500 py-1.5 px-1">U. de Chile</span>
+              </a>
+            </li>
+            <li class="my-0.5 flex items-center">
+              <a href="/cursos/utn" class="hover:bg-gray-200 transition px-4 flex items-center w-full justify-between">
+                <span class="text-gray-500 py-1.5 px-1">U de Colombia</span>
+              </a>
+            </li>
+          </ul>
+        </div>
+        
       </div>
     </div>
   </div>
@@ -115,6 +169,9 @@ export default {
       menu2Visible: false,
       dropdownVisible: false,
       dropdownActive: false,
+      dropdownVisible: false,
+      showModal: false,
+      showModal2: false,
     };
   },
   watch: {
