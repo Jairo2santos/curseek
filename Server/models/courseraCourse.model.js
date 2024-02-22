@@ -21,8 +21,15 @@ const courseraCourseSchema = new mongoose.Schema({
   courseUrl: String,
   imgUrl: String,
   university: String, 
-});
+  slug: { type: String, unique: true, required: true } 
 
+});
+courseraCourseSchema.pre('save', function(next) {
+    if (this.isModified('title') || this.isNew) {
+      this.slug = normalizeText(this.title);
+    }
+    next();
+  });
 const CourseraCourse = mongoose.model('CourseraCourse', courseraCourseSchema,'cursos_COURSERA_Uni' );
 
 module.exports = CourseraCourse;

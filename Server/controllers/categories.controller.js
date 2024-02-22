@@ -34,7 +34,6 @@ exports.getUdemyCategories = async (req, res) => {
 
 exports.getCourseraCategories = async (req, res) => {
     try {
-        // Suponiendo que 'mainCategory' es el campo que contiene la categoría principal de cada curso
         const categories = await CourseraCourse.distinct("mainCategory");
         res.json(categories);
     } catch (error) {

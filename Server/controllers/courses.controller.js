@@ -21,7 +21,6 @@ exports.getAllCourses = async (req, res) => {
     const page = Number(req.query.page) || 1;
     const limit = Number(req.query.limit) || 10; // Cambiado a 10 para mantener consistencia
     try {
-        // Asegúrate de que el servicio espera 'categories' como parte de su interfaz
         const result = await courseService.getAllCoursesService({ categories, filterType, page, limit });
         res.status(200).json({
             courses: result.courses,
@@ -33,3 +32,4 @@ exports.getAllCourses = async (req, res) => {
         res.status(500).send("Error interno del servidor");
     }
 }
+

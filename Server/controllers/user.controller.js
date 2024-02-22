@@ -1,3 +1,5 @@
+// user.controller.js
+
 const userService = require('../services/user.services');
 
 exports.getAllUsers = async (req, res) => {
@@ -17,16 +19,13 @@ exports.login = async (req, res) => {
     res.status(200).json(user);
   } catch (error) {
     if (error.message === 'Usuario no encontrado' || error.message === 'Credenciales incorrectas') {
-      // Errores de autenticación, devuelve un código 401
       res.status(401).send(error.message);
     } else {
-      // Otros errores del servidor, devuelve un código 500
       res.status(500).send('Error interno del servidor.');
     }
   }
 };
 
-// user.controller.js
 exports.getUserProfileByUsername = async (req, res) => {
   const { username } = req.params;
   try {

@@ -56,6 +56,12 @@
               <path d="M9.41 7.41L14.83 12l-5.42 5.41L10 18l6-6-6-6-1.59 1.41Z" />
             </svg>
           </a>
+          <a href="/cursos/Coursera" class="flex justify-between items-center">
+            <span>Coursera</span>
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24">
+              <path d="M9.41 7.41L14.83 12l-5.42 5.41L10 18l6-6-6-6-1.59 1.41Z" />
+            </svg>
+          </a>
         </div>
         
         <div v-if="menu2Visible" class="lg:hidden border-r border-l border-b border-gray-300 mx-2 shadow-xl p-4 bg-white text-black">
@@ -79,6 +85,14 @@
             <li class="my-0.5 flex items-center">
               <a href="/cursos/udemy" class="hover:bg-gray-200 transition px-4 flex items-center w-full justify-between">
                 <span class="text-gray-500 py-1.5 px-1">Udemy</span>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24">
+                  <path d="M9.41 7.41L14.83 12l-5.42 5.41L10 18l6-6-6-6-1.59 1.41Z" />
+                </svg>
+              </a>
+            </li>
+            <li class="my-0.5 flex items-center">
+              <a href="/cursos/Coursera" class="hover:bg-gray-200 transition px-4 flex items-center w-full justify-between">
+                <span class="text-gray-500 py-1.5 px-1">Coursera</span>
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24">
                   <path d="M9.41 7.41L14.83 12l-5.42 5.41L10 18l6-6-6-6-1.59 1.41Z" />
                 </svg>

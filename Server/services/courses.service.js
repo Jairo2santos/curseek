@@ -31,22 +31,21 @@ exports.getAllCoursesService = async (category, page = 1, limit = 10, filterType
 
   const { combinedCourses, totalCourses } = await searchAndCombineCourses(query, page, limit);
 
-  // Mover la lógica de los filtros aquí
-  if (filterType) {
-    switch (filterType) {
-      case "priceAsc":
-        combinedCourses.sort((a, b) => parseFloat(a.price.replace(/\D/g, '')) - parseFloat(b.price.replace(/\D/g, '')));
-        break;
-      case "priceDesc":
-        combinedCourses.sort((a, b) => parseFloat(b.price.replace(/\D/g, '')) - parseFloat(a.price.replace(/\D/g, '')));
-        break;
-      case "dateDesc":
-        combinedCourses.sort((a, b) => new Date(b.startDate) - new Date(a.startDate));
-        break;
-      default:
-        throw new Error(`Invalid filterType provided: ${filterType}`);
-    }
-  }
+  // if (filterType) {
+  //   switch (filterType) {
+  //     case "priceAsc":
+  //       combinedCourses.sort((a, b) => parseFloat(a.price.replace(/\D/g, '')) - parseFloat(b.price.replace(/\D/g, '')));
+  //       break;
+  //     case "priceDesc":
+  //       combinedCourses.sort((a, b) => parseFloat(b.price.replace(/\D/g, '')) - parseFloat(a.price.replace(/\D/g, '')));
+  //       break;
+  //     case "dateDesc":
+  //       combinedCourses.sort((a, b) => new Date(b.startDate) - new Date(a.startDate));
+  //       break;
+  //     default:
+  //       throw new Error(`Invalid filterType provided: ${filterType}`);
+  //   }
+  // }
   return {
     courses: combinedCourses,
     totalPages: Math.ceil(totalCourses / limit),

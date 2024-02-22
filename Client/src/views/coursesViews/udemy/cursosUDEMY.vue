@@ -10,7 +10,6 @@
       <div class="flex flex-col w-full md:ml-6">
         <!-- Filtros arriba -->
         <div class="mb-4">
-          <!-- <Filtros @filter-changed="handleFilterChange" /> -->
         </div>
         <!-- loader -->
         <div v-if="isLoading" class="flex justify-center items-center h-64">

@@ -12,13 +12,15 @@ router.get('/utn', utnController.getUtnCourses);
 router.get('/udemy', udemyController.getUdemyCourses);
 // Luego las rutas de búsqueda
 router.get('/search', buscadorController.searchCourses);
-// Ruta general para obtener todos los cursos - deberías considerar si esta ruta podría tener conflictos con las rutas parametrizadas
+// Ruta general para obtener todos los cursos 
 router.get('/', coursesController.getAllCourses);
-//  la ruta parametrizada para evitar conflictos con las anteriores
+//  la ruta parametrizada CURSO
 router.get('/utn/:slug', utnController.getSingleCourse);
 router.get('/udemy/:slug', udemyController.getSingleUdemyCourse);
+router.get('/coursera/:slug', courseraController.getSingleCourseraCourse);
+router.get('/coursera/:university', courseraController.getCourseraCoursesByUni);
 // Ruta para obtener todos los cursos de Coursera
 router.get('/coursera', courseraController.getCourseraCourses);
-router.get('/coursera/:university', courseraController.getCourseraCoursesByUni);
+
 
   module.exports = router;

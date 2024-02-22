@@ -1,51 +1,30 @@
 const mongoose = require('mongoose');
-const UTNCourse = require('../models/utn.models');
-const UdemyCourse = require('../models/udemy.models');
+const normalizeText = require('../middlewares/normalize.middleware'); // Asegúrate de que la ruta sea correcta
+const CourseraCourse = require('../models/courseraCourse.model'); // Asegúrate de que la ruta al modelo sea correcta
 
+// Conexión a MongoDB
 mongoose.connect('mongodb://localhost:27017/cursosApp', {
   useNewUrlParser: true,
   useUnifiedTopology: true,
-});
+}).then(() => console.log("Conectado a MongoDB"))
+  .catch(err => console.error("Error al conectar a MongoDB", err));
 
-const normalizeText = (text) => {
-  return text
-    .normalize('NFD')
-    .replace(/[\u0300-\u036f]/g, '')
-    .toLowerCase()
-    .replace(/[^a-z0-9]+/g, '-')
-    .replace(/^-+|-+$/g, '');
-};
+const generateAndUpdateSlugs = async () => {
+  try {
+    const courses = await CourseraCourse.find({}); // Obtiene todos los cursos
 
-const generateUniqueSlug = async (Model, slug, originalId) => {
-  let uniqueSlug = slug;
-  let count = 1;
-  while (await Model.findOne({ slug: uniqueSlug, _id: { $ne: originalId } })) {
-    uniqueSlug = `${slug}-${count}`;
-    count++;
+    for (let course of courses) {
+      const slug = normalizeText(course.title); // Genera el slug a partir del título
+      await CourseraCourse.findByIdAndUpdate(course._id, { slug }); // Actualiza el curso con el nuevo slug
+      console.log(`Slug actualizado para ${course.title}: ${slug}`);
+    }
+
+    console.log("Todos los slugs han sido actualizados.");
+  } catch (error) {
+    console.error("Error al generar y actualizar slugs:", error);
+  } finally {
+    mongoose.disconnect();
   }
-  return uniqueSlug;
 };
 
-const generateSlugsForModel = async (Model) => {
-  const courses = await Model.find({});
-  
-  for (let course of courses) {
-    const slug = normalizeText(course.title);
-    const uniqueSlug = await generateUniqueSlug(Model, slug, course._id);
-    
-    course.slug = uniqueSlug;
-    await course.save();
-  }
-
-  console.log(`Slugs generados para modelo: ${Model.modelName}`);
-};
-
-const generateAllSlugs = async () => {
-  await generateSlugsForModel(UTNCourse);
-  await generateSlugsForModel(UdemyCourse);
-  console.log('Todos los slugs han sido generados y guardados.');
-};
-
-generateAllSlugs().then(() => {
-  mongoose.disconnect();
-});
+generateAndUpdateSlugs();
