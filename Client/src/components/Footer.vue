@@ -13,20 +13,18 @@
         <div class="flex flex-col md:flex-row">
           <!-- Buscar por Proveedores -->
           <div class="mb-4 md:mb-0 md:mr-8">
-            <h4 class="text-md font-semibold mb-2 border-b border-gray-300">Buscar por proveedores</h4>
+            <h4 class="text-md font-semibold mb-2 border-b border-gray-300">Buscar por Proveedores</h4>
             <ul>
               <li class="text-sm text-gray-800 hover:underline transition pb-1"><a href="/cursos/udemy">Udemy</a></li>
               <li class="text-sm text-gray-800 hover:underline transition pb-1"><a href="/cursos/Coursera">Coursera</a></li>
-              <li class="text-sm text-gray-800 hover:underline transition pb-1"><a href="/">Edx</a></li>
             </ul>
           </div>
           <!-- Buscar por Universidades -->
           <div class="mb-4 md:mb-0 md:mr-8">
-            <h4 class="text-md font-semibold mb-2 border-b border-gray-300">Buscar por proveedores</h4>
+            <h4 class="text-md font-semibold mb-2 border-b border-gray-300">Buscar por Universidades</h4>
             <ul>
               <li class="text-sm text-gray-800 hover:underline transition pb-1"><a href="/cursos/utn">UTN.BA</a></li>
-              <li class="text-sm text-gray-800 hover:underline transition pb-1"><a href="/">UNAM</a></li>
-              <li class="text-sm text-gray-800 hover:underline transition pb-1"><a href="/">UAB</a></li>
+              <li class="text-sm text-gray-800 hover:underline transition pb-1"><a href="/cursos/Coursera">UAB</a></li>
             </ul>
           </div>
           <!-- Sección de Ayuda -->
@@ -59,7 +57,7 @@
     <!-- Copyright -->
     <div class="text-sm mb-4 md:mb-0 pt-4 mr-0 md:mr-8 border-t border-gray-300">
       <p class="">Courseek &copy; 2023-2024
-        <a href="/nosotros/#/privacidad" class="hover border-b border-gray-300">
+        <a href="/nosotros/#/privacidad" class="hover:underline">
           Política de Privacidad
         </a>
       </p>

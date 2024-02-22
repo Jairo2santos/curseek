@@ -104,7 +104,7 @@
         <div v-if="showModal" 
           @mouseenter="showModal = true" 
           @mouseleave="showModal = false" 
-          class="border-l max-h-96 overflow-y-auto border-gray-100 absolute text-sm shadow-md bg-white py-2 w-60 left-80 mt-0 ml-20">
+          class="border-l max-h-96 overflow-y-auto border-gray-100 absolute text-sm shadow-md bg-white py-4 w-60 left-80 mt-0 ml-20">
           <ul>
             <li class="my-0.5 flex items-center">
               <a href="/cursos/udemy" class="hover:bg-gray-200 transition px-4 flex items-center w-full justify-between">
@@ -118,19 +118,13 @@
                 <span class="flex-1 text-gray-800 py-1.5 px-1">Coursera</span>
               </a>
             </li>
-            <li class="my-0.5 flex items-center">
-              <a href="/cursos/udemy" class="hover:bg-gray-200 transition px-4 flex items-center w-full justify-between">
-                <img class="w-8" src="../assets/instituciones/edx.png" alt="Coursera" />
-                <span class="flex-1 text-gray-800 py-1.5 px-1">Edx</span>
-              </a>
-            </li>
           </ul>
         </div>
 
         <div v-if="showModal2" 
           @mouseenter="showModal2 = true"
           @mouseleave="showModal2 = false"
-          class="max-h-96 overflow-y-auto absolute text-sm shadow-md bg-white py-2 w-60 left-80 mt-0 ml-20">
+          class="max-h-96 overflow-y-auto absolute text-sm shadow-md bg-white py-4 w-60 left-80 mt-0 ml-20">
           <ul>
             <li class="my-0.5 flex items-center">
               <a href="/cursos/utn" class="hover:bg-gray-200 transition px-4 flex items-center w-full justify-between">
@@ -139,27 +133,9 @@
               </a>
             </li>
             <li class="my-0.5 flex items-center">
-              <a href="/cursos/utn" class="hover:bg-gray-200 transition px-4 flex items-center w-full justify-between">
-               <img class="w-8" src="../assets/instituciones/unam.png" alt="Coursera" />
-                <span class="flex-1 text-gray-800 py-1.5 px-1">UNAM</span>
-              </a>
-            </li>
-            <li class="my-0.5 flex items-center">
-              <a href="/cursos/utn" class="hover:bg-gray-200 transition px-4 flex items-center w-full justify-between">
-               <img class="w-8" src="../assets/instituciones/Universidad_de_Chile.png" alt="Coursera" />
-                <span class="flex-1 text-gray-800 py-1.5 px-1">U. de Chile</span>
-              </a>
-            </li>
-            <li class="my-0.5 flex items-center">
-              <a href="/cursos/utn" class="hover:bg-gray-200 transition px-4 flex items-center w-full justify-between">
+              <a href="/cursos/Coursera" class="hover:bg-gray-200 transition px-4 flex items-center w-full justify-between">
                <img class="w-8" src="../assets/instituciones/uab.png" alt="Coursera" />
                 <span class="flex-1 text-gray-800 py-1.5 px-1">UAB</span>
-              </a>
-            </li>
-            <li class="my-0.5 flex items-center">
-              <a href="/cursos/utn" class="hover:bg-gray-200 transition px-4 flex items-center w-full justify-between">
-                <img class="w-8" src="../assets/instituciones/Universidad_Central_de_Venezuela.png" alt="Universidad_Central_de_Venezuela">
-                <span class="flex-1 text-gray-800 py-1.5 px-1">U. C. Venezuela</span>
               </a>
             </li>
           </ul>
