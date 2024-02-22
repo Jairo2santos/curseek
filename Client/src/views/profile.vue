@@ -110,15 +110,30 @@
       <div class="flex flex-col gap-4">
         <!-- Bucle para los cursos favoritos -->
         <div v-for="course in favoriteCourses" :key="course._id"
-        class="bg-white hover:shadow-md transition rounded-lg overflow-hidden">
-          <div class="flex flex-col md:flex-row cursor-pointer border-gray-100 border">
+        class="bg-white hover:shadow-md transition overflow-hidden">
+          <div class="flex flex-col md:flex-row cursor-pointer">
             <!-- Imagen del curso a la izquierda -->
-            <img :src="courseImage(course)" alt="" 
-            class="md:w-40 w-full object-contain rounded-t-lg md:rounded-t-none md:rounded-l-lg">
+            <img :src="courseImage(course)" alt=""
+            class="md:w-24 w-full object-contain rounded-t-lg md:rounded-t-none md:rounded-l-lg">
             <!-- Contenido del curso a la derecha -->
             <div class="p-2 flex-grow">
-              <h3  @click="() => goToCourseDetail(course)" class="font-semibold text-md  hover:underline">{{ course.title || 'Curso Seleccionado' }}</h3>
-              <!-- <p class="text-gray-600 text-sm mb-4">{{ courseDescription(course) || 'En el ámbito actual, al guiar a individuos, equipos y organizaciones a través de procesos de desarrollo del talento humano, se...'}}</p> -->
+              <h3 @click="() => goToCourseDetail(course)" class="font-semibold text-md  hover:underline">{{ course.title || 'Curso Seleccionado' }}</h3>
+              <div class="flex">
+                <svg class="mr-1" fill="#6366f1" xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 -960 960 960"
+                  width="24">
+                  <path
+                    d="M260-318.462q52.385 0 101.885 12.039 49.5 12.038 98.115 39.192v-392.461q-43.308-30.923-95.462-46.385Q312.385-721.538 260-721.538q-36 0-63.039 4.307-27.038 4.308-60.038 16-9.231 3.077-13.077 8.846-3.846 5.77-3.846 12.693v360.615q0 10.769 7.692 15.769 7.693 5 16.923 1.154 21.923-7.384 50.654-11.846Q224-318.462 260-318.462Zm240 51.231q48.615-27.154 98.115-39.192 49.5-12.039 101.885-12.039 36 0 64.731 4.462 28.731 4.462 50.654 11.846 9.23 3.846 16.923-1.154 7.692-5 7.692-15.769v-360.615q0-6.923-3.846-12.308t-13.077-9.231q-33-11.692-60.038-16Q736-721.538 700-721.538q-52.385 0-104.538 15.461-52.154 15.462-95.462 46.385v392.461Zm-20 58.001q-48.769-33.385-104.769-51.308-56-17.923-115.231-17.923-31.231 0-61.346 5.231Q168.538-268 140-256.461q-21.769 8.692-40.885-5.231Q80-275.615 80-300.153v-386.616q0-14.847 7.807-27.539Q95.615-727 109.692-732q35.231-15.539 73.308-22.539 38.077-7 77-7 58.769 0 114.654 16.923Q430.538-727.693 480-695.385q49.462-32.308 105.346-49.231Q641.231-761.539 700-761.539q38.923 0 77 7T850.308-732q14.077 5 21.885 17.692Q880-701.616 880-686.769v386.616q0 24.538-20.654 37.692-20.653 13.154-43.961 4.461-27.769-10.769-56.731-15.615-28.962-4.846-58.654-4.846-59.231 0-115.231 17.923-56 17.923-104.769 51.308ZM290-499.385Z" />
+                </svg>
+                <h4 @click="() => goToCourseDetail(course)" class="text-sm mr-2 capitalize">{{ course.category || 'Development' }}</h4>
+                
+                <svg class="mr-1" xmlns="http://www.w3.org/2000/svg" height="22" viewBox="0 -960 960 960" width="24">
+                  <path
+                    d="m625.846-305.846 28.308-28.308L500-488.326V-680h-40v208.308l165.846 165.846ZM480.134-120q-74.673 0-140.41-28.339-65.737-28.34-114.365-76.922-48.627-48.582-76.993-114.257Q120-405.194 120-479.866q0-74.673 28.339-140.41 28.34-65.737 76.922-114.365 48.582-48.627 114.257-76.993Q405.194-840 479.866-840q74.673 0 140.41 28.339 65.737 28.34 114.365 76.922 48.627 48.582 76.993 114.257Q840-554.806 840-480.134q0 74.673-28.339 140.41-28.34 65.737-76.922 114.365-48.582 48.627-114.257 76.993Q554.806-120 480.134-120ZM480-480Zm0 320q133 0 226.5-93.5T800-480q0-133-93.5-226.5T480-800q-133 0-226.5 93.5T160-480q0 133 93.5 226.5T480-160Z" />
+                </svg>
+                <h4 @click="() => goToCourseDetail(course)" class="text-sm">{{ course.duration || 'Duración no disponible' }}</h4>
+              </div>
+
+              <!-- <p class="text-gray-600 text-sm mb-4">{{ courseInstitution(course) || 'En el ámbito actual, al guiar a individuos, equipos y organizaciones a través de procesos de desarrollo del talento humano, se...'}}</p> -->
             </div>
             <button @click="removeFromFavorites(course._id)" title="Eliminar curso"
               class="p-2">
@@ -164,9 +179,9 @@ const goToCourseDetail = (course) => {
 const courseImage = (course) => {
   return course.image_480x270 || course.imgUrl;
 };
-// const courseDescription = (course) => {
-//   return course.headline || course.summary;
-// };
+const courseInstitution = (course) => {
+  return course.headline || course.summary;
+};
 // Función para alternar la visibilidad de la contraseña
 const togglePasswordVisibility = () => {
   isPasswordShown.value = !isPasswordShown.value;

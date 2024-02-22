@@ -1,6 +1,9 @@
 <template>
   <div class="bg-white">
-    <Portada :title="pageTitle" :description="pageDescription" :totalCourses="totalCourses" :imageSrc="logoUdemy" />
+    <Portada :title="pageTitle" :description="pageDescription" :totalCourses="totalCourses" :imageSrc="logoUdemy"
+    :instagramLink="'https://www.instagram.com/udemy/'"
+    :twitterLink="'https://twitter.com/udemy'"
+    :facebookLink="'https://www.facebook.com/udemy'" />
     <div class="flex flex-col max-w-screen-full md:flex-row mx-auto pt-6 md:px-40 bg-gray-100 p-4">
       <!-- Sidebar a la izquierda -->
       <div class="mb-4 md:mb-0 w-full md:w-auto mt-4">
@@ -20,6 +23,7 @@
           <!-- Contenedor de Tarjetas de Cursos al lado del Sidebar -->
           <div class="w-full md:w-1/1">
             <div v-for="course in courses" :key="course.slug" class="mb-5">
+              
               <!-- Tarjeta individual para cada curso -->
               <div @click="navigateToCourse(course.slug)" 
               
@@ -64,6 +68,7 @@
                       </div>
                     </div>
                   </div>
+
                   <!-- Sección derecha con categoría, precio y cursada -->
                   <div class="md:w-1/4 md:flex md:flex-col md:items-end text-left px-4 border-l border-gray-100">
                     <ul>

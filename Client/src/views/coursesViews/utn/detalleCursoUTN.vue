@@ -8,29 +8,29 @@
         <!-- Columna 1 y 2 (Contenido principal) -->
         <div class="md:col-span-2">
           <!-- Sección de Título, Duración y Precio -->
-          <div class="bg-white p-4 md:p-6 rounded mb-4 justify-between items-center border border-gray-200">
+          <div class="bg-white p-4 md:p-6 rounded mb-4 justify-between items-center">
             <h1 class="text-2xl md:text-3xl font-bold text-gray-800">{{ course.title || 'Aprende con este Curso de UTN' }}</h1>
           </div>
           <!-- Sección de Resumen -->
-          <div class="bg-white p-6 rounded mb-4 border border-gray-200">
+          <div class="bg-white p-6 rounded mb-4">
             <h3 class="text-xl mb-2 font-bold">Resumen</h3>
             <p class="text-md">{{ course.summary || 'En el ámbito actual, al guiar a individuos, equipos y organizaciones a través de procesos de desarrollo del talento humano, se...' }}</p>
           </div>
           <!-- Sección de Modalidades -->
-          <!-- <div class="bg-white p-6 rounded mb-4 border border-gray-200">
+          <!-- <div class="bg-white p-6 rounded mb-4">
             <h3 class="text-lg mb-2 font-bold">Modalidades</h3>
             <ul class="list-disc pl-8">
               <li v-for="modality in course.modalities" :key="modality">{{ modality }}</li>
             </ul>
           </div> -->
           <!-- Sección de Profesores -->
-          <div class="bg-white p-6 rounded mb-4 border border-gray-200">
+          <div class="bg-white p-6 rounded mb-4">
             <h3 class="text-xl mb-2 font-bold">Profesores</h3>
             <p>{{ course.teachers || 'Profesores' }}</p>
           </div>
         </div>
         <!-- Columna 3 (Barra Lateral) -->
-        <div class="order-first md:order-last bg-white p-4 md:p-6 rounded border border-gray-200">
+        <div class="order-first md:order-last bg-white p-4 md:p-6 rounded">
           <img :src="course.imgUrl" alt="" class="rounded-sm mb-4 w-full">
           <a :href="course.link" target="_blank"
             class="flex bg-indigo-600 text-white text-center py-2 px-4 rounded hover:bg-indigo-800 transition-colors duration-300 ease-in-out w-full items-center text-md justify-center font-semibold">

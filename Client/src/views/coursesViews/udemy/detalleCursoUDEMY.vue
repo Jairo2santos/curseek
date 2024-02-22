@@ -7,22 +7,22 @@
       <!-- Columna 1 y 2 (Contenido principal) -->
       <div class="md:col-span-2">
         <!-- Sección de Título y Precio -->
-        <div class="bg-white p-4 md:p-6 rounded mb-4 justify-between items-center border border-gray-200">
+        <div class="bg-white p-4 md:p-6 rounded mb-4 justify-between items-center">
           <h1 class="md:text-3xl font-bold text-gray-800">{{ udemyCourse.title || 'Aprende con este Curso de Udemy'}}</h1>
           <!-- <h2 class="md:text-xl font-semibold text-green-500 py-1" v-if="!udemyCourse.is_paid">$ {{ udemyCourse.price }}</h2> -->
         </div>
         <!-- Sección de Descripción Larga -->
-        <div class="bg-white p-4 md:p-6 rounded mb-4 border border-gray-200">
+        <div class="bg-white p-4 md:p-6 rounded mb-4">
           <h3 class="text-xl mb-2 font-bold">Resumen</h3>
           <div v-html="udemyCourse.description" class="700 md:text-md bold-4"></div>
         </div>
         <!-- Sección de Contenido del Curso -->
-        <!-- <div class="bg-white p-4 md:p-6 rounded mb-4 border border-gray-200"> -->
+        <!-- <div class="bg-white p-4 md:p-6 rounded mb-4"> -->
         <!-- <h3 class="md:text-lg font-bold text-gray-800 mb-2">Contenido del Curso</h3> -->
         <!-- Itera y muestra el contenido aquí -->
         <!-- </div> -->
         <!-- Sección de Valoraciones -->
-        <!-- <div class="bg-white p-4 md:p-6 rounded mb-4 border border-gray-200">
+        <!-- <div class="bg-white p-4 md:p-6 rounded mb-4">
           <h3 class="md:text-lg font-bold text-gray-800 mb-2">Valoraciones</h3>
           <div v-for="review in udemyCourse.reviews" :key="review._id" class="border-b border-gray-300 mb-4 pb-4">
             <div class="flex items-center mb-1"> -->
@@ -35,12 +35,12 @@
           </div>
         </div> -->
         <!-- Sección de Categorías -->
-        <!-- <div class="bg-white p-4 md:p-6 rounded border border-gray-200">
+        <!-- <div class="bg-white p-4 md:p-6 rounded">
           <h3 class="md:text-lg font-bold text-gray-800 mb-2">Categorías</h3>
           <div class="text-sm md:text-base font-medium text-gray-900">{{ udemyCourse.primary_category }}</div>
         </div> -->
         <!-- Nueva Sección de Profesor -->
-        <div class="bg-white p-4 md:p-6 rounded border border-gray-200">
+        <div class="bg-white p-4 md:p-6 rounded">
           <h3 class="text-xl mb-2 font-bold">Profesores</h3>
           <div v-if="udemyCourse.instructorImage || (udemyCourse.instructors && udemyCourse.instructors.length > 0)">
             <div class="flex items-center">
@@ -53,7 +53,7 @@
         </div>
       </div>
       <!-- Columna 3 (Barra Lateral) -->
-      <div class="order-first md:order-last bg-white p-4 md:p-6 rounded border border-gray-200">
+      <div class="order-first md:order-last bg-white p-4 md:p-6 rounded">
         <img :src="udemyCourse.image" alt="" class="rounded-sm mb-4 w-full">
         <a :href="`https://www.udemy.com${udemyCourse.url}`" target="_blank"
           class="flex bg-indigo-600 text-white text-center py-2 px-4 rounded hover:bg-indigo-800 transition-colors duration-300 ease-in-out w-full items-center text-md justify-center font-semibold">

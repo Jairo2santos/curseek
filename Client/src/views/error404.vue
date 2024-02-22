@@ -57,35 +57,60 @@
 </template>
 
 <script setup>
-import { ref } from 'vue';
-import axios from 'axios';
-import { useRouter } from 'vue-router';
+import { ref } from "vue";
+import axios from "axios";
+import { useRouter } from "vue-router";
 const router = useRouter();
-const query = ref('');
+const query = ref("");
 const courses = ref([]);
 const isInputClicked = ref(false);
+const limitResults = ref(true);
+
+
 const search = async () => {
   try {
-    const response = await axios.get(`http://localhost:3333/cursos/search?q=${query.value}`);
+    const response = await axios.get(
+      `http://localhost:3333/cursos/search?q=${query.value
+      }&all=${!limitResults.value}`
+    );
     courses.value = response.data;
   } catch (error) {
     console.error("Error al buscar cursos:", error);
   }
 };
+
 const clearSearch = () => {
-  query.value = '';
+  query.value = "";
   courses.value = [];
 };
 const setInputClicked = (clicked) => {
   isInputClicked.value = clicked;
 };
 const redirectToCourse = (course) => {
-  if (course.source === 'UDEMY') {
-    // Asegúrate de que 'originalId' sea el ID original del curso de Udemy
-    router.push({ name: 'DetalleCursoUdemy', params: { id: course.originalId } });
-  } else if (course.source === 'UTN') {
-    // Asegúrate de que 'originalId' sea el ID original del curso de UTN
-    router.push({ name: 'DetalleCursoUTN', params: { id: course.originalId } });
+  if (course.source === "UDEMY") {
+    // Utiliza el slug en lugar del originalId
+    router.push({
+      name: "DetalleCursoUdemy",
+      params: { slug: course.slug },
+    });
+  } else if (course.source === "UTN") {
+    // Utiliza el slug en lugar del originalId
+    router.push({
+      name: "DetalleCursoUTN",
+      params: { slug: course.slug },
+    });
   }
+};
+
+
+const handleSearch = (value) => {
+  // Establece el contenido del campo de búsqueda al hacer clic en un botón de búsqueda frecuente
+  query.value = value;
+  search(); // Realiza la búsqueda automáticamente al establecer el contenido del campo
+};
+
+const toggleViewAll = () => {
+  limitResults.value = !limitResults.value;
+  search();
 };
 </script>
