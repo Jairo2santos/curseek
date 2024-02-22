@@ -589,7 +589,8 @@
                     <h3 class="text-xl font-bold mb-4 mt-8">Contactanos</h3>
                     <p>
                         Si tienes alguna pregunta sobre esta Política de privacidad, contáctanos por correo electrónico a
-                        <a href="mailto:privacidad@curseek.com" class="hover:text-blue-600 transition underline">privacidad@curseek.com</a>
+                        <a href="mailto:privacidad@curseek.com"
+                            class="hover:text-blue-600 transition underline">curseek@gmail.com</a>
                     </p>
                 </section>
 
@@ -598,32 +599,63 @@
             <div v-if="$route.hash === '#/terminos'">
                 <h3 class="text-3xl font-semibold mb-4">Términos y Condiciones</h3>
                 <p>
-                    Al utilizar nuestros servicios, aceptas nuestros términos y condiciones.
-                    Asegúrate de leerlos detenidamente para comprender las reglas y pautas que
-                    rigen el uso de Curseek.
+                    Bienvenido a Curseek. Al acceder y utilizar nuestro sitio web (el "Servicio"), aceptas cumplir y estar
+                    sujeto a los siguientes términos y condiciones de uso ("Términos"). Si no estás de acuerdo con alguno de
+                    estos términos, no podrás acceder al Servicio.
                 </p>
                 <section>
-                    <h3 class="text-xl font-semibold mb-4 mt-8">1. Uso del Sitio</h3>
+                    <h3 class="text-xl font-bold mb-4 mt-8">Uso del Servicio</h3>
                     <p>
-                        Estás autorizado a utilizar Curseek con el propósito de buscar y acceder a información
-                        sobre cursos en línea. No debes utilizar el sitio de una manera que pueda dañar,
-                        desactivar o sobrecargar nuestros servidores, o interferir con el uso y disfrute de
-                        Curseek por parte de otras personas.
+                        El acceso al Servicio se otorga de forma temporal, y nos reservamos el derecho de retirar o
+                        modificar el Servicio sin previo aviso. No seremos responsables si por cualquier motivo el Servicio
+                        no está disponible en un momento dado o por un período determinado.
                     </p>
                 </section>
+
                 <section class="mt-8">
-                    <h3 class="text-xl font-semibold mb-4">2. Contenido del Usuario</h3>
+                    <h3 class="text-xl font-bold mb-4">Propiedad Intelectual</h3>
                     <p>
-                        Como parte de nuestros servicios, puedes enviar contenido, como reseñas y calificaciones.
-                        Asegúrate de que tu contenido cumpla con nuestras pautas de comunidad y no viole los
-                        derechos de terceros.
+                        El Servicio y su contenido, características y funcionalidades originales son propiedad de Curseek y
+                        están protegidos por derechos de autor, marcas registradas y otras leyes de propiedad intelectual
+                        tanto en Argentina como en otros países.
                     </p>
                 </section>
+
                 <section class="mt-8">
-                    <h3 class="text-xl font-semibold mb-4">3. Privacidad</h3>
+                    <h3 class="text-xl font-bold mb-4">Enlaces a Terceros</h3>
                     <p>
-                        Respetamos tu privacidad. Consulta nuestra política de privacidad para comprender cómo
-                        recopilamos, utilizamos y protegemos tu información personal.
+                        Nuestro Servicio puede contener enlaces a sitios web de terceros que no son propiedad ni están
+                        controlados por Curseek. No tenemos control sobre, y no asumimos responsabilidad alguna por el
+                        contenido, las políticas de privacidad o las prácticas de sitios o servicios de terceros.
+                    </p>
+                </section>
+
+                <section class="mt-8">
+                    <h3 class="text-xl font-bold mb-4">Limitación de Responsabilidad</h3>
+                    <p>
+                        En ningún caso Curseek, sus directores, empleados, socios o afiliados serán responsables ante ningún
+                        tercero por daños indirectos, incidentales, especiales, consecuentes o punitivos, incluidos, entre
+                        otros, la pérdida de beneficios, datos, uso, buena voluntad u otras pérdidas intangibles, que surjan
+                        del uso o la imposibilidad de uso del Servicio.
+                    </p>
+                </section>
+
+                <section class="mt-8">
+                    <h3 class="text-xl font-bold mb-4">Cambios en los Términos</h3>
+                    <p>
+                        Nos reservamos el derecho, a nuestra sola discreción, de modificar o reemplazar estos Términos en
+                        cualquier momento. Si una revisión es material, intentaremos proporcionar un aviso de al menos 30
+                        días antes de que los nuevos términos entren en vigencia. Lo que constituye un cambio material se
+                        determinará a nuestra sola discreción.
+                    </p>
+                </section>
+
+                <section class="mt-8">
+                    <h3 class="text-xl font-bold mb-4">Contactanos</h3>
+                    <p>
+                        Si tienes alguna pregunta sobre estos Términos y Condiciones, contáctanos por correo electrónico a
+                        <a href="mailto:privacidad@curseek.com"
+                            class="hover:text-blue-600 transition underline">curseek@gmail.com</a>
                     </p>
                 </section>
             </div>
