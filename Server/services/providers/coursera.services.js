@@ -1,4 +1,4 @@
-const CourseraCourse = require('../models/courseraCourse.model');
+const CourseraCourse = require('../../models/providers/courseraCourse.model');
 
 exports.getAllCourseraCourses = async (page = 1, limit = 10) => {
   try {
@@ -53,5 +53,16 @@ exports.getSingleCourseraCourseBySlug = async (slug) => {
   } catch (error) {
     console.error("Error al obtener el curso de Coursera por slug:", error);
     throw error;
+  }
+};
+exports.getProfessorsByUniversity = async (req, res) => {
+  const { university } = req.params; // Extrae el parámetro de la universidad
+
+  try {
+    const professors = await getProfessorsByUniversity(university);
+    res.status(200).json(professors);
+  } catch (error) {
+    console.error(`Error al obtener profesores de la universidad ${university}:`, error);
+    res.status(500).send("Error interno del servidor");
   }
 };

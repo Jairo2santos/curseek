@@ -1,6 +1,6 @@
-const User = require('../models/user.models');
-const UdemyCourse = require('../models/udemy.models');
-const utnCourse = require('../models/utn.models');
+const User = require('../../models/generals/user.models');
+const UdemyCourse = require('../../models/providers/udemy.models');
+const utnCourse = require('../../models/providers/utn.models');
 const bcrypt = require('bcrypt');
 const mongoose = require('mongoose');
 

@@ -1,4 +1,4 @@
-const utnService = require('../services/utn.services.js');
+const utnService = require('../../services/providers/utn.services.js');
 
 exports.getUtnCourses = async (req, res) => {
     const { page = 1, limit = 10, categories } = req.query;

@@ -1,7 +1,7 @@
 //categories.controller.js
-const UTNCourse = require('../models/utn.models.js');
-const UdemyCourse = require('../models/udemy.models.js');
-const CourseraCourse = require('../models/courseraCourse.model.js');
+const UTNCourse = require('../../models/providers/utn.models.js');
+const UdemyCourse = require('../../models/providers/udemy.models.js');
+const CourseraCourse = require('../../models/providers/courseraCourse.model.js');
 
 exports.getUTNCategories = async (req, res) => {
     try {

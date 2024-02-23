@@ -1,4 +1,4 @@
-const utnCourse = require('../models/utn.models.js'); 
+const utnCourse = require('../../models/providers/utn.models.js'); 
 
 // Servicio para obtener un curso único de UTN por ID
 exports.getSingleUTNCourseBySlugService = async (slug) => {

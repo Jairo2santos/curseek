@@ -1,6 +1,6 @@
 //courses.services
-const UTNCourse = require('../models/utn.models.js'); // Modelo para los cursos UTN
-const UdemyCourse = require('../models/udemy.models'); // Modelo para los cursos Udemy
+const UTNCourse = require('../../models/providers/utn.models.js'); // Modelo para los cursos UTN
+const UdemyCourse = require('../../models/providers/udemy.models.js'); // Modelo para los cursos Udemy
 
 // Función auxiliar para buscar en ambos modelos y combinar los resultados
 async function searchAndCombineCourses(query, page, limit) {

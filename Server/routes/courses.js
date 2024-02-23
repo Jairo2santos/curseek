@@ -1,11 +1,11 @@
 // courses.js
 const express = require('express');
 const router = express.Router();
-const coursesController = require('../controllers/courses.controller.js');
-const utnController = require('../controllers/utn.controller.js');
-const udemyController = require('../controllers/udemy.controller.js'); 
-const buscadorController = require('../controllers/buscador.controller');
-const courseraController = require('../controllers/coursera.controller');
+const coursesController = require('../controllers/generals/courses.controller.js');
+const utnController = require('../controllers/providers/utn.controller.js');
+const udemyController = require('../controllers/providers/udemy.controller.js'); 
+const buscadorController = require('../controllers/generals/buscador.controller.js');
+const courseraController = require('../controllers/providers/coursera.controller.js');
 
 // Rutas específicas primero
 router.get('/utn', utnController.getUtnCourses);
@@ -18,7 +18,9 @@ router.get('/', coursesController.getAllCourses);
 router.get('/utn/:slug', utnController.getSingleCourse);
 router.get('/udemy/:slug', udemyController.getSingleUdemyCourse);
 router.get('/coursera/:slug', courseraController.getSingleCourseraCourse);
-router.get('/coursera/:university', courseraController.getCourseraCoursesByUni);
+router.get('/coursera/universidad/:university', courseraController.getCourseraCoursesByUni);
+router.get('/coursera/universidad/:university/profesores', courseraController.getCourseraProfessorsByUni);
+
 // Ruta para obtener todos los cursos de Coursera
 router.get('/coursera', courseraController.getCourseraCourses);
 

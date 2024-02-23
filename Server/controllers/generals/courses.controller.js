@@ -1,6 +1,6 @@
-const utnService = require('../services/utn.services.js');
-const udemyService = require('../services/udemy.services.js');
-const courseService = require('../services/udemy.services.js')
+const utnService = require('../../services/providers/utn.services.js');
+const udemyService = require('../../services/providers/udemy.services.js');
+const courseService = require('../../services/providers/udemy.services.js')
 
 exports.searchCourses = async (req, res) => {
     const query = req.query.q;

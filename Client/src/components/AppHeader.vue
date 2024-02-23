@@ -151,7 +151,7 @@
               </a>
             </li>
             <li class="my-0.5 flex items-center">
-              <a href="/cursos/utn" class="hover:bg-gray-200 transition px-4 flex items-center w-full justify-between">
+              <a href="/Coursera/universidades/uab" class="hover:bg-gray-200 transition px-4 flex items-center w-full justify-between">
                <img class="w-8" src="../assets/instituciones/uab.png" alt="Coursera" />
                 <span class="flex-1 text-gray-800 py-1.5 px-1">UAB</span>
               </a>

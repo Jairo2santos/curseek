@@ -1,4 +1,4 @@
-const UdemyCourse = require('../models/udemy.models'); // Modelo para los cursos Udemy
+const UdemyCourse = require('../../models/providers/udemy.models'); // Modelo para los cursos Udemy
 
 // Servicio para obtener un curso único de Udemy por ID
 exports.getSingleUdemyCourseBySlugService = async (slug) => {

@@ -1,5 +1,5 @@
 const mongoose = require('mongoose');
-const normalizeText = require('../middlewares/normalize.middleware'); 
+const normalizeText = require('../../middlewares/normalize.middleware'); 
 
 const LocaleSchema = new mongoose.Schema({
   _class: String,

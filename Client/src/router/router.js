@@ -11,6 +11,7 @@ import signUp from "../views/signUp.vue";
 import error404 from "../views/error404.vue";
 import cursosCoursera from "../views/coursesViews/coursera/cursosCoursera.vue";
 import DetalleCursoCoursera from "../views/coursesViews/coursera/detalleCursoCoursera.vue";
+import UAB from "../views/coursesViews/coursera/universidades/UAB.vue";
 
 const routes = [
   {
@@ -59,6 +60,12 @@ const routes = [
     path: "/coursera/cursos/:slug",
     name: "DetalleCursoCoursera",
     component: DetalleCursoCoursera,
+    props: true,
+  },
+  {
+    path: "/coursera/universidades/UAB",
+    name: "Universidad de Barcelona",
+    component: UAB,
     props: true,
   },
   {

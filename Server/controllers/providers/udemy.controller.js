@@ -1,5 +1,5 @@
 // controllers/udemy.controller.js
-const { getUdemyCoursesService, getSingleUdemyCourseBySlugService } = require('../services/udemy.services'); // Asegúrate de que la ruta sea correcta
+const { getUdemyCoursesService, getSingleUdemyCourseBySlugService } = require('../../services/providers/udemy.services'); // Asegúrate de que la ruta sea correcta
 
 exports.getUdemyCourses = async (req, res) => {
     const { page = 1, limit = 10, category, filter } = req.query;

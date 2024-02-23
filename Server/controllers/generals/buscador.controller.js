@@ -1,6 +1,6 @@
 // buscador.controller.js
 
-const { searchCourses } = require('../services/buscador.services');
+const { searchCourses } = require('../../services/generals/buscador.services');
 
 exports.searchCourses = async (req, res) => {
   const { q, all } = req.query;
