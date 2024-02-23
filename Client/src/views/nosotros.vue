@@ -4,22 +4,28 @@
         <div class="bg-white border-r border-gray-200 w-1/5 pl-16 py-6"> <!-- Añadí 'text-center' para centrar el texto -->
             <h2 class="text-sm font-semibold mb-4">Documentación</h2>
             <ul>
-                <li :class="{ 'pb-2': true, 'text-sm': true, 'text-gray-500': true, 'text-indigo-700 font-semibold': selectedOption === 'acerca' }" @click="selectedOption = 'acerca'">
+                <li :class="{ 'pb-2': true, 'text-sm': true, 'text-gray-500': true, 'text-indigo-700 font-semibold': selectedOption === 'acerca' }"
+                    @click="selectedOption = 'acerca'">
                     <a href="#/acerca" class="hover:text-black transition">Acerca de Nosotros</a>
                 </li>
-                <li :class="{ 'pb-2': true, 'text-sm': true, 'text-gray-500': true, 'text-indigo-700 font-semibold': selectedOption === 'preguntasFrecuentes' }" @click="selectedOption = 'preguntasFrecuentes'">
+                <li :class="{ 'pb-2': true, 'text-sm': true, 'text-gray-500': true, 'text-indigo-700 font-semibold': selectedOption === 'preguntasFrecuentes' }"
+                    @click="selectedOption = 'preguntasFrecuentes'">
                     <a href="#/preguntasFrecuentes" class="hover:text-black transition">Preguntas Frecuentes</a>
                 </li>
-                <li :class="{ 'pb-2': true, 'text-sm': true, 'text-gray-500': true, 'text-indigo-700 font-semibold': selectedOption === 'nuestroEquipo' }" @click="selectedOption = 'nuestroEquipo'">
+                <li :class="{ 'pb-2': true, 'text-sm': true, 'text-gray-500': true, 'text-indigo-700 font-semibold': selectedOption === 'nuestroEquipo' }"
+                    @click="selectedOption = 'nuestroEquipo'">
                     <a href="#/nuestroEquipo" class="hover:text-black transition">Nuestro Equipo</a>
                 </li>
-                <li :class="{ 'pb-2': true, 'text-sm': true, 'text-gray-500': true, 'text-indigo-700 font-semibold': selectedOption === 'privacidad' }" @click="selectedOption = 'privacidad'">
+                <li :class="{ 'pb-2': true, 'text-sm': true, 'text-gray-500': true, 'text-indigo-700 font-semibold': selectedOption === 'privacidad' }"
+                    @click="selectedOption = 'privacidad'">
                     <a href="#/privacidad" class="hover:text-black transition">Políticas de Privacidad</a>
                 </li>
-                <li :class="{ 'pb-2': true, 'text-sm': true, 'text-gray-500': true, 'text-indigo-700 font-semibold': selectedOption === 'terminos' }" @click="selectedOption = 'terminos'">
+                <li :class="{ 'pb-2': true, 'text-sm': true, 'text-gray-500': true, 'text-indigo-700 font-semibold': selectedOption === 'terminos' }"
+                    @click="selectedOption = 'terminos'">
                     <a href="#/terminos" class="hover:text-black transition">Términos y Condiciones</a>
                 </li>
-                <li :class="{ 'pb-2': true, 'text-sm': true, 'text-gray-500': true, 'text-indigo-700 font-semibold': selectedOption === 'soporte' }" @click="selectedOption = 'soporte'">
+                <li :class="{ 'pb-2': true, 'text-sm': true, 'text-gray-500': true, 'text-indigo-700 font-semibold': selectedOption === 'soporte' }"
+                    @click="selectedOption = 'soporte'">
                     <a href="#/soporte" class="hover:text-black transition">Soporte</a>
                 </li>
             </ul>
@@ -163,67 +169,495 @@
             <div v-if="$route.hash === '#/privacidad'">
                 <h3 class="text-3xl font-semibold mb-4">Políticas de Privacidad</h3>
                 <p>
-                    En Curseek, nos tomamos la privacidad en serio.
-                    Consulta nuestra política de privacidad para obtener detalles sobre cómo
-                    recopilamos, utilizamos y protegemos tu información personal.
+                    Operamos el sitio web https://www.curseek.com/ (el "Servicio").
+                    Esta página le informa sobre nuestras políticas con respecto a la recopilación, el uso y la divulgación
+                    de datos personales cuando utiliza nuestro Servicio y las opciones que tiene asociadas con esos datos.
+                    Utilizamos sus datos para proporcionar y mejorar el Servicio. Al utilizar el Servicio, usted acepta la
+                    recopilación y el uso de la información de acuerdo con esta política. A menos que se defina lo contrario
+                    en esta Política de privacidad, los términos utilizados en esta Política de privacidad tienen los mismos
+                    significados que en nuestros Términos y condiciones, accesibles desde https://www.curseek.com/.
                 </p>
+                <h3 class="text-xl font-bold mb-4 mt-8">Definiciones</h3>
                 <section>
-                    <h3 class="text-xl font-semibold mb-4 mt-8">1. Introducción</h3>
+                    <h3 class="text-xl font-semibold mb-4 mt-8">Servicio</h3>
                     <p>
-                        En Curseek, nos comprometemos a proteger la privacidad de nuestros usuarios.
-                        Nuestra política de privacidad explica cómo recopilamos, usamos y protegemos la
-                        información personal que compartes con nosotros.
+                        El Servicio es el sitio web https://www.curseek.com/ operado por Curseek, Inc.
+                    </p>
+                    <h3 class="text-xl font-semibold mb-4 mt-8">Datos personales</h3>
+                    <p>
+                        Datos personales significa datos sobre una persona física viva que puede ser identificada a partir
+                        de esos datos (o con esos datos y otra información en nuestra posesión o susceptible de entrar en
+                        nuestra posesión).
+                    </p>
+                    <h3 class="text-xl font-semibold mb-4 mt-8">Datos de uso</h3>
+                    <p>
+                        Los datos de uso son datos recopilados automáticamente, generados por el uso del Servicio o por la
+                        infraestructura del propio Servicio (por ejemplo, la duración de una visita a la página).
+                    </p>
+                    <h3 class="text-xl font-semibold mb-4 mt-8">Cookies</h3>
+                    <p>
+                        Las cookies son pequeños archivos de datos almacenados en su dispositivo (computadora o dispositivo
+                        móvil).
+                    </p>
+                    <h3 class="text-xl font-semibold mb-4 mt-8">Responsable del tratamiento de datos</h3>
+                    <p>
+                        Responsable del tratamiento de datos significa la persona física o jurídica que (por sí sola o en
+                        conjunto o en común con otras personas) determina los fines para los cuales y la manera en que se
+                        procesan o se procesarán los datos personales.
+                    </p>
+                    <p class="pt-4">
+                        A los efectos de esta Política de privacidad, somos un Responsable del tratamiento de datos de sus
+                        Datos personales.
+                    </p>
+                    <h3 class="text-xl font-semibold mb-4 mt-8">Procesadores de datos (o Proveedores de servicios)</h3>
+                    <p>
+                        Procesador de datos (o Proveedor de servicios) significa cualquier persona física o jurídica que
+                        procesa los datos en nombre del Responsable del tratamiento de datos.
+                    </p>
+                    <p class="pt-4">
+                        Podemos utilizar los servicios de varios Proveedores de servicios para procesar sus datos de manera
+                        más efectiva.
+                    </p>
+                    <h3 class="text-xl font-semibold mb-4 mt-8">Sujeto de datos (o Usuario)</h3>
+                    <p>
+                        Sujeto de datos es cualquier persona física que esté utilizando nuestro Servicio y sea objeto de
+                        Datos personales.
+                    </p>
+                    <h3 class="text-xl font-semibold mb-4 mt-8">Recopilación y uso de la información</h3>
+                    <p>
+                        Recopilamos varios tipos diferentes de información con diversos fines para proporcionar y mejorar
+                        nuestro Servicio.
                     </p>
                 </section>
+
+                <h3 class="text-xl font-bold mb-4 mt-8">Tipos de datos recopilados</h3>
+
                 <section class="mt-8">
-                    <h3 class="text-xl font-semibold mb-4">2. Información que Recopilamos</h3>
+                    <h3 class="text-xl font-semibold mb-4 mt-8">Datos personales</h3>
                     <p>
-                        Recopilamos información sobre los cursos que buscas y visualizas en nuestra plataforma.
-                        Esto puede incluir detalles como tus consultas de búsqueda, cursos vistos y preferencias.
+                        Mientras utiliza nuestro Servicio, es posible que le solicitemos que nos proporcione cierta
+                        información personalmente identificable que pueda usarse para contactarlo o identificarlo ("Datos
+                        personales"). La información personalmente identificable puede incluir, entre otras cosas:
+                    </p>
+
+                    <ul class="p-4 list-disc">
+                        <li>
+                            Dirección de correo electrónico
+                        </li>
+                        <li>
+                            Nombre y apellido
+                        </li>
+                        <li>
+                            Foto de perfil
+                        </li>
+                        <li>
+                            Cookies y datos de uso
+                        </li>
+                    </ul>
+
+                    <p class="pt-4">
+                        Podemos utilizar sus Datos personales para contactarlo con boletines informativos, material de
+                        marketing o promocional y otra información que pueda ser de su interés. Puede optar por no recibir
+                        ninguna o todas estas comunicaciones nuestra siguiendo el enlace para cancelar la suscripción o las
+                        instrucciones proporcionadas en cualquier correo electrónico que enviemos.
+                    </p>
+                    <p class="pt-4">
+                        Podemos recibir Información de Identificación Personal cuando usted proporcione información en
+                        respuesta a una encuesta realizada por nosotros. Esto puede incluir detalles sobre su raza, su
+                        historial educativo y su empleo.
+                    </p>
+                    <p class="pt-4">
+                        Podemos recibir Información de Identificación Personal cuando accede o inicia sesión en un sitio de
+                        terceros, por ejemplo, Facebook o Google, desde nuestro Servicio. Esto puede incluir el texto y/o
+                        las imágenes de su Información de Identificación Personal disponibles en el sitio de terceros.
+                    </p>
+
+                    <h3 class="text-xl font-semibold mb-4 mt-8">Contenido público</h3>
+                    <p>
+                        La información que usted contribuye a través del Servicio está destinada a ser de consumo público,
+                        incluidas sus reseñas, intereses, seguidores, transcripciones, listas y perfil de cuenta. Podemos
+                        mostrar esta información a través del Servicio, compartirla con empresas y distribuirla aún más a
+                        una audiencia más amplia a través de sitios y servicios de terceros.
+                    </p>
+
+                    <h3 class="text-xl font-semibold mb-4 mt-8">Datos de uso</h3>
+                    <p>
+                        También podemos recopilar información sobre cómo se accede y utiliza el Servicio ("Datos de uso").
+                        Estos Datos de uso pueden incluir información como la dirección de protocolo de Internet de su
+                        computadora (por ejemplo, dirección IP), tipo de navegador, versión del navegador, las páginas de
+                        nuestro Servicio que visita, la hora y la fecha de su visita, el tiempo que pasa en esas páginas,
+                        qué anuncios ha visto o ha hecho clic en ellos, identificadores únicos del dispositivo y otros datos
+                        de diagnóstico. Podemos ser capaces de determinar a partir de una dirección IP el proveedor de
+                        servicios de Internet de un usuario y la ubicación geográfica de su punto de conexión.
+                    </p>
+                    <p class="pt-4">
+                        Podemos utilizar herramientas de análisis internas y de terceros, incluidos Google Analytics y
+                        Clicky.
+                    </p>
+
+                    <h3 class="text-xl font-semibold mb-4 mt-8">Datos de cookies de seguimiento</h3>
+                    <p>
+                        Utilizamos cookies y tecnologías de seguimiento similares para rastrear la actividad en nuestro
+                        Servicio y mantener cierta información. Para obtener más información sobre nuestro uso de cookies y
+                        balizas web, consulte nuestra Política de cookies.
+                    </p>
+                    <p class="pt-4">
+                        Las cookies son archivos con una pequeña cantidad de datos que pueden incluir un identificador único
+                        anónimo.
                     </p>
                 </section>
+
                 <section class="mt-8">
-                    <h3 class="text-xl font-semibold mb-4">3. Uso de la Información</h3>
+                    <h3 class="text-xl font-bold mb-4 mt-8">Uso de datos</h3>
                     <p>
-                        Utilizamos la información recopilada para mejorar y personalizar tu experiencia en Curseek.
-                        Esto puede incluir recomendaciones de cursos basadas en tus intereses y patrones de búsqueda.
+                        No vendemos sus datos personales, como su nombre e información de contacto, a terceros para su uso
+                        en sus propios fines de marketing.
+                    </p>
+                    <p class="pt-4">
+                        Curseek, Inc utiliza los datos recopilados para diversos fines:
+                    </p>
+
+                    <ul class="p-4 list-disc">
+                        <li>Para proporcionar y mantener nuestro Servicio</li>
+                        <li>Para notificarle sobre cambios en nuestro Servicio</li>
+                        <li>Para permitirle participar en funciones interactivas de nuestro Servicio cuando decida hacerlo
+                        </li>
+                        <li>Para brindar soporte al cliente</li>
+                        <li>Para recopilar análisis o información valiosa para que podamos mejorar nuestro Servicio</li>
+                        <li>Para realizar análisis estadísticos del uso de nuestros Servicios</li>
+                        <li>Para monitorear el uso de nuestro Servicio</li>
+                        <li>Para detectar, prevenir y abordar problemas técnico</li>
+                        <li>Para enviarle actualizaciones (como fechas de inicio de cursos o notificaciones de nuevos
+                            cursos), recomendaciones, basadas en sus intereses y seguidores, así como información general, a
+                            menos que haya optado por no recibir dicha información
+                        </li>
+                        <li>Para personalizar el Servicio</li>
+                    </ul>
+
+                    <p class="pt-4">
+                        Utilizamos varios proveedores de servicios, vendedores y contratistas (colectivamente,
+                        "Contratistas") para ayudarnos a proporcionar nuestros productos y servicios a usted. Nuestros
+                        Contratistas pueden tener acceso limitado a su Información de Identificación Personal en el curso de
+                        la prestación de sus productos o servicios para nosotros, de modo que a su vez podamos proporcionar
+                        nuestros productos y servicios a usted. Estos Contratistas pueden incluir proveedores y proveedores
+                        que nos proporcionan tecnología, servicios y/o contenido relacionados con la operación y el
+                        mantenimiento del Sitio o el Curso en línea. El acceso a su Información de Identificación Personal
+                        por parte de estos contratistas se limita a la información razonablemente necesaria para que el
+                        contratista realice su función limitada para nosotros.
+                    </p>
+                    <p class="pt-4">
+                        Podemos compartir información agregada o desidentificada con terceros para fines de investigación,
+                        marketing, análisis y otros fines, siempre que dicha información no identifique a un individuo en
+                        particular.
                     </p>
                 </section>
-                <!-- Puedes seguir agregando más secciones según sea necesario -->
+
+                <section class="mt-8">
+                    <h3 class="text-xl font-bold mb-4 mt-8">
+                        Base legal para el tratamiento de datos personales según el Reglamento General de Protección de
+                        Datos (GDPR)
+                    </h3>
+                    <p>
+                        Si usted es de la Comunidad Económica Europea (EEA), la base legal de Curseek, Inc para recopilar y
+                        utilizar la información personal descrita en esta Política de privacidad depende de los Datos
+                        personales que recopilamos y del contexto específico en el que recopilamos dichos datos.
+                    </p>
+                    <p class="pt-4">
+                        Curseek, Inc puede procesar sus Datos personales porque:
+                    </p>
+                    <ul class="p-4 list-disc">
+                        <li>Necesitamos realizar un contrato con usted</li>
+                        <li>Usted nos ha dado permiso para hacerlo</li>
+                        <li>El procesamiento está en nuestros intereses legítimos y no se ve anulado por sus derechos</li>
+                        <li>Para cumplir con la ley</li>
+                    </ul>
+                </section>
+
+                <section class="mt-8">
+                    <h3 class="text-xl font-bold mb-4">Conservación de los datos</h3>
+                    <p>
+                        Curseek, Inc conservará sus Datos personales solo durante el tiempo que sea necesario para los fines
+                        establecidos en esta Política de privacidad. Conservaremos y utilizaremos sus Datos personales en la
+                        medida en que sea necesario para cumplir con nuestras obligaciones legales (por ejemplo, si estamos
+                        obligados a conservar sus datos para cumplir con las leyes aplicables), resolver disputas y hacer
+                        cumplir nuestros acuerdos legales y políticas.
+                    </p>
+                    <p class="pt-4">
+                        Curseek, Inc también conservará los Datos de uso con fines de análisis internos. Los Datos de uso
+                        generalmente se conservan por un período de tiempo más corto, excepto cuando estos datos se utilizan
+                        para fortalecer la seguridad o mejorar la funcionalidad de nuestro Servicio, o estamos legalmente
+                        obligados a conservar estos datos por períodos de tiempo más largos.
+                    </p>
+                </section>
+
+                <section class="mt-8">
+                    <h3 class="text-xl font-bold mb-4">Transferencia de datos</h3>
+                    <p>
+                        Su información, incluidos los Datos personales, puede transferirse a —y mantenerse en— computadoras
+                        ubicadas fuera de su estado, provincia, país u otra jurisdicción gubernamental donde las leyes de
+                        protección de datos pueden diferir de las de su jurisdicción.
+                    </p>
+                    <p class="pt-4">
+                        Si se encuentra fuera de los Estados Unidos y decide proporcionarnos información, tenga en cuenta
+                        que transferimos los datos, incluidos los Datos personales, a Estados Unidos y los procesamos allí.
+                    </p>
+                    <p class="pt-4">
+                        Su consentimiento a esta Política de privacidad seguido de su envío de dicha información representa
+                        su acuerdo con esa transferencia.
+                    </p>
+                    <p class="pt-4">
+                        Curseek, Inc tomará todas las medidas razonablemente necesarias para garantizar que sus datos sean
+                        tratados de forma segura y de acuerdo con esta Política de privacidad y que no se realizará ninguna
+                        transferencia de sus Datos personales a una organización o un país a menos que existan controles
+                        adecuados, incluida la seguridad de sus datos y otra información personal.
+                    </p>
+                </section>
+
+                <h3 class="text-xl font-bold mb-4 mt-8">Divulgación de datos</h3>
+
+                <section class="mt-8">
+                    <h3 class="text-xl font-bold mb-4">Transacción comercial</h3>
+                    <p>
+                        Si Curseek, Inc está involucrado en una fusión, adquisición o venta de activos, sus Datos personales
+                        pueden ser transferidos. Le notificaremos antes de que sus Datos personales sean transferidos y se
+                        conviertan en objeto de una Política de privacidad diferente.
+                    </p>
+                </section>
+
+                <section class="mt-8">
+                    <h3 class="text-xl font-bold mb-4">Divulgación para hacer cumplir la ley</h3>
+                    <p>
+                        En determinadas circunstancias, Curseek, Inc puede verse obligada a divulgar sus Datos personales si
+                        así lo exige la ley o en respuesta a solicitudes válidas de autoridades públicas (por ejemplo, un
+                        tribunal o un organismo gubernamental).
+                    </p>
+                </section>
+
+                <section class="mt-8">
+                    <h3 class="text-xl font-bold mb-4">Requisitos legales</h3>
+                    <p>
+                        Curseek, Inc puede divulgar sus Datos personales con la creencia de buena fe de que dicha acción es
+                        necesaria para:
+                    </p>
+
+                    <ul class="p-4 list-disc">
+                        <li>Cumplir con una obligación legal</li>
+                        <li>Proteger y defender los derechos o propiedades de Curseek, Inc</li>
+                        <li>Prevenir o investigar posibles infracciones en relación con el Servicio</li>
+                        <li>Proteger la seguridad personal de los usuarios del Servicio o del público</li>
+                        <li>Proteger contra la responsabilidad legal</li>
+                    </ul>
+                </section>
+
+                <section class="mt-8">
+                    <h3 class="text-xl font-bold mb-4">Seguridad de los datos</h3>
+                    <p>
+                        La seguridad de sus datos es importante para nosotros, pero recuerde que ningún método de
+                        transmisión a través de Internet o método de almacenamiento electrónico es 100% seguro. Si bien nos
+                        esforzamos por utilizar medios comercialmente aceptables para proteger sus Datos personales, no
+                        podemos garantizar su seguridad absoluta.
+                    </p>
+                </section>
+
+                <section class="mt-8">
+                    <h3 class="text-xl font-bold mb-4">Señales de "No hacer seguimiento"</h3>
+                    <p>
+                        No admitimos las señales de "No hacer seguimiento" ("DNT"). No hacer seguimiento es una preferencia
+                        que puede establecer en su navegador web para informar a los sitios web que no desea ser rastreado.
+                    </p>
+                    <p class="pt-4">
+                        Puede habilitar o deshabilitar No rastrear visitando la página de Preferencias o Configuración de su
+                        navegador web.
+                    </p>
+                </section>
+
+                <section class="mt-8">
+                    <h3 class="text-xl font-bold mb-4">Sus derechos de protección de datos en virtud del Reglamento General
+                        de Protección de Datos (GDPR)
+                    </h3>
+                    <p>
+                        Si es residente de la Comunidad Económica Europea (EEA), tiene ciertos derechos de protección de
+                        datos. Curseek, Inc tiene como objetivo tomar medidas razonables para permitirle corregir,
+                        modificar, eliminar o limitar el uso de sus Datos personales.
+                    </p>
+                    <p class="pt-4">
+                        Si desea saber qué Datos personales tenemos sobre usted y desea que se eliminen de nuestros
+                        sistemas, comuníquese con nosotros.
+                    </p>
+                    <p class="pt-4">
+                        En ciertas circunstancias, tiene los siguientes derechos de protección de datos:
+                    </p>
+
+                    <p class="pt-4">
+                        <b>El derecho de acceso, actualización o eliminación de la información que tenemos sobre usted.</b>
+                        <br>
+                        Siempre que sea posible, puede acceder, actualizar o solicitar la eliminación de sus Datos
+                        personales directamente dentro de la sección de configuración de su cuenta. Si no puede realizar
+                        estas acciones usted mismo, comuníquese con nosotros para que lo ayudemos.
+                    </p>
+                    <p class="pt-4">
+                        <b>El derecho de rectificación.</b> Tiene derecho a que su información se corrija si esa información
+                        es inexacta o está incompleta.
+                    </p>
+                    <p class="pt-4">
+                        <b>El derecho de oposición.</b> Tiene derecho a oponerse a nuestro procesamiento de sus Datos
+                        personales.
+                    </p>
+                    <p class="pt-4">
+                        <b>El derecho de restricción.</b> Tiene derecho a solicitar que restrinjamos el procesamiento de su
+                        información personal.
+                    </p>
+                    <p class="pt-4">
+                        <b>El derecho a la portabilidad de datos.</b> Tiene derecho a que se le entregue una copia de la
+                        información que tenemos sobre usted en un formato estructurado, legible por máquina y de uso común.
+                    </p>
+                    <p class="pt-4">
+                        <b>El derecho a retirar el consentimiento.</b> También tiene derecho a retirar su consentimiento en
+                        cualquier momento cuando Curseek, Inc haya confiado en su consentimiento para procesar su
+                        información personal.
+                    </p>
+                    <p class="pt-4">
+                        Tenga en cuenta que es posible que le solicitemos que verifique su identidad antes de responder a
+                        dichas solicitudes.
+                    </p>
+                    <p class="pt-4">
+                        Tiene derecho a presentar una queja ante una Autoridad de Protección de Datos sobre nuestra
+                        recopilación y uso de sus Datos personales. Para obtener más información, comuníquese con su
+                        autoridad local de protección de datos en la Comunidad Económica Europea (EEA).
+                    </p>
+                </section>
+
+                <section class="mt-8">
+                    <h3 class="text-xl font-bold mb-4 mt-8">Proveedores de servicios</h3>
+                    <p>
+                        Podemos contratar a empresas y personas terceras para facilitar nuestro Servicio ("Proveedores de
+                        servicios"), para proporcionar el Servicio en nuestro nombre, para realizar servicios relacionados
+                        con el Servicio o para ayudarnos en el análisis de cómo se utiliza nuestro Servicio.
+                    </p>
+                    <p class="mt-4">
+                        Estas terceras partes tienen acceso a sus Datos personales solo para realizar estas tareas en
+                        nuestro nombre y están obligadas a no divulgarlos ni utilizarlos para ningún otro propósito. Aquí
+                        hay una lista de Proveedores de servicios utilizados por Curseek.
+                    </p>
+                </section>
+
+                <section class="mt-8">
+                    <h3 class="text-xl font-bold mb-4 mt-8">Enlaces a otros sitios</h3>
+                    <p>
+                        Nuestro Servicio puede contener enlaces a otros sitios que no son operados por nosotros. Si hace
+                        clic en un enlace de un tercero, será dirigido al sitio de ese tercero. Le recomendamos
+                        encarecidamente que revise la Política de privacidad de cada sitio que visite.
+                    </p>
+                    <p class="mt-4">
+                        No tenemos control sobre y no asumimos responsabilidad alguna por el contenido, las políticas de
+                        privacidad o las prácticas de sitios o servicios de terceros.
+                    </p>
+                </section>
+
+                <section class="mt-8">
+                    <h3 class="text-xl font-bold mb-4 mt-8">Privacidad de los niños</h3>
+                    <p>
+                        Nuestro Servicio no está dirigido a personas menores de 13 años ("Niños").
+                    </p>
+                    <p class="mt-4">
+                        No recopilamos deliberadamente información de identificación personal de personas menores de 13
+                        años. Si usted es padre/madre/tutor y sabe que su hijo nos ha proporcionado información personal,
+                        comuníquese con nosotros. Si nos damos cuenta de que hemos recopilado información personal de
+                        menores sin verificación del consentimiento parental, tomamos medidas para eliminar esa información
+                        de nuestros servidores.
+                    </p>
+                </section>
+
+                <section class="mt-8">
+                    <h3 class="text-xl font-bold mb-4 mt-8">Cambios en esta Política de privacidad</h3>
+                    <p>
+                        Es posible que actualicemos nuestra Política de privacidad de vez en cuando. Le notificaremos
+                        cualquier cambio publicando la nueva Política de privacidad en esta página.
+                    </p>
+                    <p class="mt-4">
+                        Le informaremos por correo electrónico y/o mediante un aviso destacado sobre nuestro Servicio, antes
+                        de que el cambio entre en vigencia y actualizaremos la "fecha efectiva" en la parte superior de esta
+                        Política de privacidad.
+                    </p>
+                    <p class="mt-4">
+                        Le recomendamos que revise esta Política de privacidad periódicamente para ver si hay cambios. Los
+                        cambios en esta Política de privacidad son efectivos cuando se publican en esta página.
+                    </p>
+                </section>
+
+                <section class="mt-8">
+                    <h3 class="text-xl font-bold mb-4 mt-8">Contactanos</h3>
+                    <p>
+                        Si tienes alguna pregunta sobre esta Política de privacidad, contáctanos por correo electrónico a
+                        <a href="mailto:privacidad@curseek.com"
+                            class="hover:text-blue-600 transition underline">curseek@gmail.com</a>
+                    </p>
+                </section>
+
             </div>
             <!-- Información sobre "Términos y Condiciones" -->
             <div v-if="$route.hash === '#/terminos'">
                 <h3 class="text-3xl font-semibold mb-4">Términos y Condiciones</h3>
                 <p>
-                    Al utilizar nuestros servicios, aceptas nuestros términos y condiciones.
-                    Asegúrate de leerlos detenidamente para comprender las reglas y pautas que
-                    rigen el uso de Curseek.
+                    Bienvenido a Curseek. Al acceder y utilizar nuestro sitio web (el "Servicio"), aceptas cumplir y estar
+                    sujeto a los siguientes términos y condiciones de uso ("Términos"). Si no estás de acuerdo con alguno de
+                    estos términos, no podrás acceder al Servicio.
                 </p>
                 <section>
-                    <h3 class="text-xl font-semibold mb-4 mt-8">1. Uso del Sitio</h3>
+                    <h3 class="text-xl font-bold mb-4 mt-8">Uso del Servicio</h3>
                     <p>
-                        Estás autorizado a utilizar Curseek con el propósito de buscar y acceder a información
-                        sobre cursos en línea. No debes utilizar el sitio de una manera que pueda dañar,
-                        desactivar o sobrecargar nuestros servidores, o interferir con el uso y disfrute de
-                        Curseek por parte de otras personas.
+                        El acceso al Servicio se otorga de forma temporal, y nos reservamos el derecho de retirar o
+                        modificar el Servicio sin previo aviso. No seremos responsables si por cualquier motivo el Servicio
+                        no está disponible en un momento dado o por un período determinado.
                     </p>
                 </section>
+
                 <section class="mt-8">
-                    <h3 class="text-xl font-semibold mb-4">2. Contenido del Usuario</h3>
+                    <h3 class="text-xl font-bold mb-4">Propiedad Intelectual</h3>
                     <p>
-                        Como parte de nuestros servicios, puedes enviar contenido, como reseñas y calificaciones.
-                        Asegúrate de que tu contenido cumpla con nuestras pautas de comunidad y no viole los
-                        derechos de terceros.
+                        El Servicio y su contenido, características y funcionalidades originales son propiedad de Curseek y
+                        están protegidos por derechos de autor, marcas registradas y otras leyes de propiedad intelectual
+                        tanto en Argentina como en otros países.
                     </p>
                 </section>
+
                 <section class="mt-8">
-                    <h3 class="text-xl font-semibold mb-4">3. Privacidad</h3>
+                    <h3 class="text-xl font-bold mb-4">Enlaces a Terceros</h3>
                     <p>
-                        Respetamos tu privacidad. Consulta nuestra política de privacidad para comprender cómo
-                        recopilamos, utilizamos y protegemos tu información personal.
+                        Nuestro Servicio puede contener enlaces a sitios web de terceros que no son propiedad ni están
+                        controlados por Curseek. No tenemos control sobre, y no asumimos responsabilidad alguna por el
+                        contenido, las políticas de privacidad o las prácticas de sitios o servicios de terceros.
                     </p>
                 </section>
-                <!-- Puedes seguir agregando más secciones según sea necesario -->
+
+                <section class="mt-8">
+                    <h3 class="text-xl font-bold mb-4">Limitación de Responsabilidad</h3>
+                    <p>
+                        En ningún caso Curseek, sus directores, empleados, socios o afiliados serán responsables ante ningún
+                        tercero por daños indirectos, incidentales, especiales, consecuentes o punitivos, incluidos, entre
+                        otros, la pérdida de beneficios, datos, uso, buena voluntad u otras pérdidas intangibles, que surjan
+                        del uso o la imposibilidad de uso del Servicio.
+                    </p>
+                </section>
+
+                <section class="mt-8">
+                    <h3 class="text-xl font-bold mb-4">Cambios en los Términos</h3>
+                    <p>
+                        Nos reservamos el derecho, a nuestra sola discreción, de modificar o reemplazar estos Términos en
+                        cualquier momento. Si una revisión es material, intentaremos proporcionar un aviso de al menos 30
+                        días antes de que los nuevos términos entren en vigencia. Lo que constituye un cambio material se
+                        determinará a nuestra sola discreción.
+                    </p>
+                </section>
+
+                <section class="mt-8">
+                    <h3 class="text-xl font-bold mb-4">Contactanos</h3>
+                    <p>
+                        Si tienes alguna pregunta sobre estos Términos y Condiciones, contáctanos por correo electrónico a
+                        <a href="mailto:privacidad@curseek.com"
+                            class="hover:text-blue-600 transition underline">curseek@gmail.com</a>
+                    </p>
+                </section>
             </div>
             <!-- Información sobre "soporte" -->
             <div v-if="$route.hash === '#/soporte'">

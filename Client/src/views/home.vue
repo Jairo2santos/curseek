@@ -203,42 +203,14 @@
             <h3 class="text-2xl font-bold mb-2 pb-4">Universidades</h3>
             <ul class="list-none text-left">
               <li class="flex items-center justify-center">
-                <a href="https://www.unam.mx/" target="_blank">
-                  <button
-                    class="hover:scale-110 hover:bg-indigo-200 rounded-lg transform transition duration-100 ease-in-out w-full sm:w-60 flex items-center">
-                    <img class="w-12" src="../assets/instituciones/UNAM.png" alt="Universidad de México UNAM">
-                    <span class="ml-2 text-lg font-semibold text-black">UNAM</span>
-                  </button>
-                </a>
-              </li>
-              <li class="flex items-center justify-center">
-                <a href="https://uchile.cl/" target="_blank">
-                  <button
-                    class="hover:scale-110 hover:bg-indigo-200 rounded-lg transform transition duration-100 ease-in-out w-full sm:w-60 flex items-center">
-                    <img class="w-12" src="../assets/instituciones/Universidad_de_Chile.png" alt="Universidad de Chile">
-                    <span class="ml-2 text-lg font-semibold text-black">U. de Chile</span>
-                  </button>
-                </a>
-              </li>
-              <li class="flex items-center justify-center">
-                <a href="https://uchile.cl/" target="_blank">
+                <a href="/cursos/Coursera">
                   <button
                     class="hover:scale-110 hover:bg-indigo-200 rounded-lg transform transition duration-100 ease-in-out w-full sm:w-60 flex items-center">
                     <img class="w-12" src="../assets/instituciones/UAB.png" alt="Universidad Autónoma de Barcelona">
                     <span class="ml-2 text-lg font-semibold text-black">UAB</span>
                   </button>
                 </a>
-              </li>
-              <li class="flex items-center justify-center">
-                <a href="http://www.ucv.ve/" target="_blank">
-                  <button
-                    class="hover:scale-110 hover:bg-indigo-200 rounded-lg transform transition duration-100 ease-in-out w-full sm:w-60 flex items-center">
-                    <img class="w-12" src="../assets/instituciones/Universidad_Central_de_Venezuela.png"
-                      alt="Universidad_Central_de_Venezuela">
-                    <span class="ml-2 text-lg font-semibold text-black">U. C. Venezuela</span>
-                  </button>
-                </a>
-              </li>
+              </li>              
               <li class="flex items-center justify-center">
                 <a href="/cursos/utn">
                   <button
@@ -260,6 +232,34 @@
                     class="hover:scale-110 hover:bg-indigo-200 rounded-lg transform transition duration-100 ease-in-out w-full sm:w-60 flex items-center">
                     <img class="w-12" src="../assets/instituciones/edX.png" alt="edX">
                     <span class="ml-2 text-lg font-semibold text-black">edX</span>
+                  </button>
+                </a>
+              </li>
+              <li class="flex items-center justify-center">
+                <a href="http://www.ucv.ve/" target="_blank">
+                  <button
+                    class="hover:scale-110 hover:bg-indigo-200 rounded-lg transform transition duration-100 ease-in-out w-full sm:w-60 flex items-center">
+                    <img class="w-12" src="../assets/instituciones/Universidad_Central_de_Venezuela.png"
+                      alt="Universidad_Central_de_Venezuela">
+                    <span class="ml-2 text-lg font-semibold text-black">U. C. Venezuela</span>
+                  </button>
+                </a>
+              </li>
+              <li class="flex items-center justify-center">
+                <a href="https://www.unam.mx/" target="_blank">
+                  <button
+                    class="hover:scale-110 hover:bg-indigo-200 rounded-lg transform transition duration-100 ease-in-out w-full sm:w-60 flex items-center">
+                    <img class="w-12" src="../assets/instituciones/UNAM.png" alt="Universidad de México UNAM">
+                    <span class="ml-2 text-lg font-semibold text-black">UNAM</span>
+                  </button>
+                </a>
+              </li>
+              <li class="flex items-center justify-center">
+                <a href="https://uchile.cl/" target="_blank">
+                  <button
+                    class="hover:scale-110 hover:bg-indigo-200 rounded-lg transform transition duration-100 ease-in-out w-full sm:w-60 flex items-center">
+                    <img class="w-12" src="../assets/instituciones/Universidad_de_Chile.png" alt="Universidad de Chile">
+                    <span class="ml-2 text-lg font-semibold text-black">U. de Chile</span>
                   </button>
                 </a>
               </li>
