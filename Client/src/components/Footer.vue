@@ -24,7 +24,7 @@
             <h4 class="text-md font-semibold mb-2 border-b border-gray-300">Buscar por Universidades</h4>
             <ul>
               <li class="text-sm text-gray-800 hover:underline transition pb-1"><a href="/cursos/utn">UTN.BA</a></li>
-              <li class="text-sm text-gray-800 hover:underline transition pb-1"><a href="/cursos/Coursera">UAB</a></li>
+              <li class="text-sm text-gray-800 hover:underline transition pb-1"><a href="/Coursera/universidades/uab">UAB</a></li>
             </ul>
           </div>
           <!-- Sección de Ayuda -->

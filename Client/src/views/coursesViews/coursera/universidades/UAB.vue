@@ -1,49 +1,56 @@
 <template>
   <div class="bg-gray-100">
     <!-- Portada -->
-    <div class="bg-blue-500">
-      <!-- Imagen de Portada -->
-      <img :src="portadaImg" alt="Imagen de portada" class="w-full h-80 object-cover" />
+    <!-- Imagen de Portada -->
+    <img :src="portadaImg" alt="Imagen de portada" class="w-full h-80 object-cover" />
 
-      <!-- Contenido de la Portada -->
-      <div class="bg-white bg-opacity-75 text-center py-4">
-        <!-- Título y Descripción -->
-        <h1 class="lg:text-2xl  font-semibold text-gray-800">{{ pageTitle }}</h1>
-        <p class="text-gray-600">{{ pageDescription }}</p>
-        
-        <!-- Redes Sociales, ajustadas debajo del texto -->
-        <div class="flex justify-center space-x-4 mt-4">
-          <a :href="instagramLink" target="_blank" class="text-gray-600 hover:text-gray-800">
-            <i class="fab fa-instagram fa-lg"></i>
-          </a>
-          <a :href="twitterLink" target="_blank" class="text-gray-600 hover:text-gray-800">
-            <i class="fab fa-twitter fa-lg"></i>
-          </a>
-          <a :href="facebookLink" target="_blank" class="text-gray-600 hover:text-gray-800">
-            <i class="fab fa-facebook-f fa-lg"></i>
-          </a>
+    <!-- Contenido de la Portada -->
+    <div class="text-sm bg-opacity-75 px-60">
+      <!-- Título y Descripción -->
+      <div class="flex items-center border-b border-gray-300">
+        <!-- Imagen -->
+        <img src="../../../../assets/instituciones/UAB.png" alt="Universidad de Barcelona" class="w-64 h-auto">
+
+        <!-- Texto -->
+        <div>
+          <h1 class="lg:text-2xl font-semibold text-gray-800">{{ pageTitle }}</h1>
+          <p class="text-gray-600">{{ pageDescription }}</p>
         </div>
       </div>
-    </div>
- <!-- Cursos -->
- <h2 class="text-3xl lg:text-2xl font-bold text-gray-800 my-6 text-center">
-  Cursos ofrecidos por la Universidad de Barcelona
-</h2>
- <div class="container mx-auto px-4 py-6">
-  <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4">
-    <div v-for="(course, index) in displayedCourses" :key="course.slug" class="flex flex-col bg-white p-4 rounded-lg shadow-md h-full">
-      <img :src="course.imgUrl" alt="Imagen del curso" class="w-full h-48 object-cover rounded-lg mb-4">
-      <div class="flex-grow">
-        <h3 class="text-lg font-semibold truncate">{{ course.title }}</h3>
-        <p class="my-2">
-          {{ course.shortDescription !== "No short description found" ? course.shortDescription : course.longDescription.substring(0, 100) + "..." }}
-        </p>
-      </div>
-      <div class="mt-auto text-right">
-        <router-link :to="`/coursera/cursos/${course.slug}`" class="inline-block bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded shadow-lg">Ver detalles</router-link>
+
+      <!-- Redes Sociales, ajustadas debajo de la imagen y el texto -->
+      <div class="flex justify-center space-x-4 py-4">
+        <a :href="instagramLink" target="_blank" class="text-gray-600 hover:text-gray-800">
+          <i class="fab fa-instagram fa-lg"></i>
+        </a>
+        <a :href="twitterLink" target="_blank" class="text-gray-600 hover:text-gray-800">
+          <i class="fab fa-twitter fa-lg"></i>
+        </a>
+        <a :href="facebookLink" target="_blank" class="text-gray-600 hover:text-gray-800">
+          <i class="fab fa-facebook-f fa-lg"></i>
+        </a>
       </div>
     </div>
-  </div>
+
+    
+    <div class="container mx-auto px-60 py-6">
+      <!-- Cursos -->
+      <h2 class="text-md lg:text-xl font-semibold p-4 text-gray-800">
+        Cursos y programas especializados
+      </h2>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4 pb-4">
+        <div v-for="(course) in displayedCourses" :key="course.slug"
+          class="flex flex-col bg- p-2 m-1 rounded-lg h-full hover:shadow-md shadow-sm transition">
+          <router-link :to="`/coursera/cursos/${course.slug}`"
+            class="inline-block hover:underline text-blue-600">
+              <img :src="course.imgUrl" alt="Imagen del curso" class="w-full h-48 object-cover rounded-md mb-4">
+              <div class="flex-grow">
+                <h3 class="text-md font-semibold">{{ course.title || 'Título' }}</h3>
+              </div>
+          </router-link>
+        </div>
+      </div>
 
       <!-- Paginación -->
       <Paginacion :currentPage="currentPage" :totalPages="totalPages" @changePage="handlePageChange" />
@@ -52,7 +59,8 @@
       <div class="mt-8">
         <h2 class="text-xl font-semibold mb-4">Profesores</h2>
         <div v-if="professors.length" class="grid grid-cols-2 md:grid-cols-4 gap-4">
-          <div v-for="professor in (isProfessorsExpanded ? professors : professors.slice(0, 16))" :key="professor._id" class="bg-white p-4 rounded-lg shadow-md flex items-center">
+          <div v-for="professor in (isProfessorsExpanded ? professors : professors.slice(0, 16))" :key="professor._id"
+            class="bg-white p-4 rounded-lg shadow-md flex items-center">
             <img :src="professor.imageUrl" alt="Foto del profesor" class="w-16 h-16 object-cover rounded-full mr-4" />
             <div>
               <h3 class="font-semibold">{{ professor.name }}</h3>
@@ -60,23 +68,25 @@
           </div>
         </div>
         <div v-if="professors.length > 4" class="text-center mt-4">
-          <button @click="toggleProfessorsVisibility" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded transition ease-in-out duration-300 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50">
-            {{ isProfessorsExpanded ? 'Ver menos' : 'Ver más profesores' }}
+          <button @click="toggleProfessorsVisibility"
+            class="px-4 py-2 border border-indigo-600 text-indigo-600 font-semibold rounded-lg hover:bg-indigo-600 hover:text-white focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-opacity-75 transition ease-in duration-300">
+            {{ isProfessorsExpanded ? 'Ver Menos' : 'Ver Más' }}
           </button>
         </div>
       </div>
     </div>
   </div>
 </template>
+
 <script setup>
 import { ref, computed, onMounted } from 'vue';
 import axios from 'axios';
 import Paginacion from '../../../../components/Paginacion.vue';
 
-import portadaImg from "../../../../assets/instituciones/AUB.png";
+import portadaImg from "../../../../assets/instituciones/UAB_campus.png";
 
-const pageTitle = 'Universidad de Barcelona - Cursos Coursera';
-const pageDescription = 'La Universidad de Barcelona (UB), fundada en 1450, es una de las instituciones educativas más antiguas de España. Con una rica tradición académica y cultural, se ha consolidado como un centro de excelencia en la enseñanza y la investigación. Destacada por su amplia oferta de grados, másteres y programas de doctorado, la UB abarca una vasta gama de campos del conocimiento, desde las humanidades y ciencias sociales hasta las ciencias naturales y la salud. Situada en el corazón de Barcelona, esta universidad ha jugado un papel crucial en la vida intelectual y cultural de Cataluña y España, contribuyendo significativamente al avance del conocimiento y la innovación. Su campus histórico, junto con instalaciones modernas, ofrece un entorno estimulante para estudiantes y académicos de todo el mundo.';
+const pageTitle = 'Universidad de Barcelona - Coursera';
+const pageDescription = 'La Universidad de Barcelona (UB), fundada en 1450, es una de las instituciones educativas más antiguas de España y se ha destacado por su excelencia en la enseñanza e investigación. Ofrece una amplia gama de grados, másteres y programas de doctorado en diversos campos del conocimiento, desde las humanidades hasta las ciencias naturales y la salud. Ubicada en Barcelona, ha sido fundamental en la vida intelectual y cultural de Cataluña y España, contribuyendo al avance del conocimiento y la innovación. Su campus histórico y modernas instalaciones ofrecen un entorno estimulante para estudiantes y académicos de todo el mundo.';
 const courses = ref([]);
 const professors = ref([]);
 const currentPage = ref(1);

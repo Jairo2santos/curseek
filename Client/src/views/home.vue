@@ -66,7 +66,7 @@
             <div class="flex justify-center py-4">
               <button @click="toggleViewAll"
                 class="px-4 py-2 border border-indigo-600 text-indigo-600 font-semibold rounded-lg hover:bg-indigo-600 hover:text-white focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-opacity-75 transition ease-in duration-300">
-                {{ limitResults ? "Ver Todos" : "Ver Menos" }}
+                {{ limitResults ? "Ver Más" : "Ver Menos" }}
               </button>
             </div>
           </div>
@@ -203,15 +203,6 @@
             <h3 class="text-2xl font-bold mb-2 pb-4">Universidades</h3>
             <ul class="list-none text-left">
               <li class="flex items-center justify-center">
-                <a href="/cursos/Coursera">
-                  <button
-                    class="hover:scale-110 hover:bg-indigo-200 rounded-lg transform transition duration-100 ease-in-out w-full sm:w-60 flex items-center">
-                    <img class="w-12" src="../assets/instituciones/UAB.png" alt="Universidad Autónoma de Barcelona">
-                    <span class="ml-2 text-lg font-semibold text-black">UAB</span>
-                  </button>
-                </a>
-              </li>              
-              <li class="flex items-center justify-center">
                 <a href="/cursos/utn">
                   <button
                     class="hover:scale-110 hover:bg-indigo-200 rounded-lg transform transition duration-100 ease-in-out w-full sm:w-60 flex items-center">
@@ -220,6 +211,15 @@
                   </button>
                 </a>
               </li>
+              <li class="flex items-center justify-center">
+                <a href="/Coursera/universidades/uab">
+                  <button
+                    class="hover:scale-110 hover:bg-indigo-200 rounded-lg transform transition duration-100 ease-in-out w-full sm:w-60 flex items-center">
+                    <img class="w-12" src="../assets/instituciones/UAB.png" alt="Universidad Autónoma de Barcelona">
+                    <span class="ml-2 text-lg font-semibold text-black">UAB</span>
+                  </button>
+                </a>
+              </li>              
             </ul>
           </div>
           <!-- Contenido de Futuro -->

@@ -8,7 +8,7 @@
       <div class="md:col-span-2">
         <!-- Sección de Título y Precio -->
         <div class="bg-white p-4 md:p-6 rounded mb-4 justify-between items-center">
-          <h1 class="md:text-3xl font-bold text-gray-800">{{ udemyCourse.title || 'Aprende con este Curso de Udemy'}}</h1>
+          <h1 class="md:text-3xl font-bold text-gray-800">{{ udemyCourse.title || 'Aprende con este Curso de Udemy' }}</h1>
           <!-- <h2 class="md:text-xl font-semibold text-green-500 py-1" v-if="!udemyCourse.is_paid">$ {{ udemyCourse.price }}</h2> -->
         </div>
         <!-- Sección de Descripción Larga -->
@@ -153,7 +153,7 @@ const udemyCourse = ref({
 });
 const route = useRoute();
 const categories = ref([]);
-const router = useRouter(); 
+const router = useRouter();
 
 async function fetchUdemyCourse(courseSlug) {
   try {
