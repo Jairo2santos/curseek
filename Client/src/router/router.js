@@ -12,6 +12,10 @@ import error404 from "../views/error404.vue";
 import cursosCoursera from "../views/coursesViews/coursera/cursosCoursera.vue";
 import DetalleCursoCoursera from "../views/coursesViews/coursera/detalleCursoCoursera.vue";
 import UAB from "../views/coursesViews/coursera/universidades/UAB.vue";
+import UNAM from "../views/coursesViews/coursera/universidades/UNAM.vue";
+import UDLAC from "../views/coursesViews/coursera/universidades/UDLAC.vue";
+import UPCHILE from "../views/coursesViews/coursera/universidades/UPCHILE.vue";
+import UCHILE from "../views/coursesViews/coursera/universidades/UCHILE.vue";
 
 const routes = [
   {
@@ -66,6 +70,30 @@ const routes = [
     path: "/coursera/universidades/UAB",
     name: "Universidad de Barcelona",
     component: UAB,
+    props: true,
+  },
+  {
+    path: "/coursera/universidades/UNAM",
+    name: "Universidad Nacional de México",
+    component: UNAM,
+    props: true,
+  },
+  {
+    path: "/coursera/universidades/UCHILE",
+    name: "Universidad de Chile",
+    component: UCHILE,
+    props: true,
+  },
+  {
+    path: "/coursera/universidades/UDLAC",
+    name: "Universidad de los Andes Colombia",
+    component: UDLAC,
+    props: true,
+  },
+  {
+    path: "/coursera/universidades/UPCHILE",
+    name: "Universidad Nacional de México",
+    component: UPCHILE,
     props: true,
   },
   {

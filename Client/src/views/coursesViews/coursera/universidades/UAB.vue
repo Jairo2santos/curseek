@@ -5,9 +5,9 @@
     <img :src="portadaImg" alt="Imagen de portada" class="w-full h-80 object-cover" />
 
     <!-- Contenido de la Portada -->
-    <div class="text-sm bg-opacity-75 px-60">
+    <div class="text-sm bg-opacity-75 px-4 sm:px-20 lg:px-60">
       <!-- Título y Descripción -->
-      <div class="flex items-center border-b border-gray-300">
+      <div class="flex flex-col sm:flex-row items-center border-b border-gray-300">
         <!-- Imagen -->
         <img src="../../../../assets/instituciones/UAB.png" alt="Universidad de Barcelona" class="w-64 h-auto">
 
@@ -33,13 +33,13 @@
     </div>
 
     
-    <div class="container mx-auto px-60 py-6">
+    <div class="container mx-auto px-4 sm:px-20 lg:px-60 py-6">
       <!-- Cursos -->
       <h2 class="text-md lg:text-xl font-semibold p-4 text-gray-800">
         Cursos y programas especializados
       </h2>
 
-      <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4 pb-4">
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 pb-4">
         <div v-for="(course) in displayedCourses" :key="course.slug"
           class="flex flex-col bg- p-2 m-1 rounded-lg h-full hover:shadow-md shadow-sm transition">
           <router-link :to="`/coursera/cursos/${course.slug}`"
@@ -58,7 +58,7 @@
       <!-- Profesores -->
       <div class="mt-8">
         <h2 class="text-xl font-semibold mb-4">Profesores</h2>
-        <div v-if="professors.length" class="grid grid-cols-2 md:grid-cols-4 gap-4">
+        <div v-if="professors.length" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
           <div v-for="professor in (isProfessorsExpanded ? professors : professors.slice(0, 16))" :key="professor._id"
             class="bg-white p-4 rounded-lg shadow-md flex items-center">
             <img :src="professor.imageUrl" alt="Foto del profesor" class="w-16 h-16 object-cover rounded-full mr-4" />
