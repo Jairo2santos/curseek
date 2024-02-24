@@ -29,7 +29,7 @@ exports.getCourseraCoursesByUniversity = async (university) => {
 
 exports.getCourseraCoursesByCategory = async (category, page = 1, limit = 10) => {
   try {
-      const query = { mainCategory: category }; // Ajusta este query según cómo estén estructurados tus datos
+      const query = { mainCategory: category };
       const courses = await CourseraCourse.find(query)
                                            .skip((page - 1) * limit)
                                            .limit(limit);

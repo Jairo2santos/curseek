@@ -42,13 +42,13 @@
                     <!-- Descripción del curso -->
                     <p class="text-sm text-gray-700 mr-2">
                       {{ course.shortDescription !== "No short description found" ? course.shortDescription :
-                        course.longDescription.substring(0, 100) + "..." }}
+                        course.longDescription.substring(0, 150) + "..." }}
                     </p>
                   </div>
                   <!-- Sección 3: Botones (usando el componente Favoritos) -->
                   <div class="bg-gray-200 md:bg-white items-end m-2 rounded-lg md:m-0">
                     <button class="mx-3" title="Agregar a Favoritos">
-                      <Favoritos :courseId="course._id" :courseType="'UTN'" :isFavorited="course.isFavorited" />
+                      <Favoritos :courseId="course._id" :courseType="'COURSERA'" :isFavorited="course.isFavorited" />
                     </button>
                   </div>
                 </div>
@@ -130,9 +130,8 @@ import Portada from "../../../components/Portada.vue";
 import { useRouter } from "vue-router";
 //import logoUdemy from "../../../assets/logo-udemy.jpg";
 import Sidebar from "../../../components/Sidebar.vue";
-//import Favoritos from "../../../components/Favoritos.vue";
-import logoCoursera from "../../../assets/Coursera-Logo.png";
 import Favoritos from "../../../components/Favoritos.vue";
+import logoCoursera from "../../../assets/Coursera-Logo.png";
 
 // Estado y métodos actualizados para manejar los datos de Coursera
 const pageTitle = "Cursos de Coursera";
@@ -154,12 +153,11 @@ const loadCourses = async (
   isLoading.value = true;
   let queryParams = `page=${page}`;
   if (selectedCategories.length > 0) {
-    // Asume que solo se filtra por una categoría a la vez para simplificar
     queryParams += `&category=${encodeURIComponent(selectedCategories[0])}`;
   }
   try {
     const response = await axios.get(`cursos/coursera?${queryParams}`);
-    courses.value = response.data.courses; // Ajusta según la estructura de tu respuesta
+    courses.value = response.data.courses; 
     totalPages.value = response.data.totalPages || 1;
     totalCourses.value = response.data.totalCourses || 0;
   } catch (error) {

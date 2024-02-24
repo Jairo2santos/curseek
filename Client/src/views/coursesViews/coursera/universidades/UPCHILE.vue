@@ -2,14 +2,14 @@
     <div class="bg-gray-100">
       <!-- Portada -->
       <!-- Imagen de Portada -->
-      <img :src="portadaImg" alt="Imagen de portada" class="w-full h-96 object-cover" />
+      <img :src="portadaImg" alt="campus de la universidad catolica de chile" class="w-full h-96 object-cover" />
   
       <!-- Contenido de la Portada -->
       <div class="text-sm bg-opacity-75 px-4 sm:px-20 lg:px-60">
         <!-- Título y Descripción -->
         <div class="flex flex-col sm:flex-row items-center border-b border-gray-300">
           <!-- Imagen -->
-          <img src="../../../../assets/instituciones/UNAM.png" alt="Universidad Autonoma de Mexico logo" class="w-64 h-auto">
+          <img src="../../../../assets/instituciones/upchile.png" alt=" Pontificia Universidad Católica de Chile" class="w-64 h-auto">
   
           <!-- Texto -->
           <div>
@@ -83,10 +83,10 @@
   import axios from 'axios';
   import Paginacion from '../../../../components/Paginacion.vue';
   
-  import portadaImg from "../../../../assets/instituciones/unam_campus.jpg";
+  import portadaImg from "../../../../assets/instituciones/upchile_campus.jpg";
   
-  const pageTitle = ' Universidad Nacional Autónoma de México - Coursera';
-  const pageDescription = 'La Universidad Nacional Autónoma de México (UNAM) es una de las universidades más grandes y prestigiosas de América Latina. Fundada el 22 de septiembre de 1910, tiene su origen en la Real y Pontificia Universidad de México, establecida en 1551 por la Corona Española. Es una institución pública y autónoma que ofrece una amplia gama de programas académicos en todos los niveles de educación superior, incluyendo pregrado, posgrado y educación continua. La UNAM se destaca por su excelencia académica, su intensa actividad de investigación y su contribución significativa al desarrollo cultural, científico y tecnológico de México. Cuenta con múltiples facultades, escuelas, institutos y centros de investigación que abarcan áreas del conocimiento como las ciencias sociales, las humanidades, las ciencias exactas, las ingenierías, las artes, y más.';
+  const pageTitle = '  Pontificia Universidad Católica de Chile - Coursera';
+  const pageDescription = 'La Pontificia Universidad Católica de Chile (PUC), fundada en 1888, es una de las universidades más antiguas y prestigiosas de Chile y de América Latina. Como institución educativa privada y católica, se ha destacado por su compromiso con la excelencia académica, la investigación de alto nivel y la formación ética y humanista de sus estudiantes. Ofrece una amplia gama de programas de pregrado y posgrado en diversas áreas del conocimiento, incluyendo ingeniería, ciencias de la salud, ciencias sociales, humanidades, teología, derecho, y arquitectura, entre otros. La PUC es reconocida por su fuerte enfoque en la investigación, contribuyendo significativamente al desarrollo científico, tecnológico y cultural de Chile y de la región. Su campus principal se encuentra en Santiago, con instalaciones adicionales en otras regiones del país, proporcionando a sus estudiantes y académicos recursos de última generación para el aprendizaje y la investigación. La universidad también se destaca por su activa participación en la comunidad, mediante programas de extensión y vinculación con el medio, reafirmando su compromiso con el desarrollo social y la responsabilidad pública. La Pontificia Universidad Católica de Chile es considerada una de las instituciones líderes en educación superior en Latinoamérica, manteniendo altos estándares de calidad educativa y ocupando posiciones destacadas en rankings universitarios internacionales.';
   const courses = ref([]);
   const professors = ref([]);
   const currentPage = ref(1);
@@ -97,25 +97,26 @@
   const isProfessorsExpanded = ref(false);
   
   // Redes sociales links
-  const instagramLink = 'https://www.instagram.com/unam_mx/';
-  const twitterLink = 'https://twitter.com/UNAM_MX';
-  const facebookLink = 'https://www.facebook.com/UNAM.MX.Oficial/';
+  const instagramLink = 'https://www.instagram.com/ucatolicaoficial/';
+  const twitterLink = 'https://twitter.com/ucatolica';
+  const facebookLink = 'https://www.facebook.com/ucatolica/';
   
   // Cargar profesores
   const loadProfessors = async () => {
     try {
-      const response = await axios.get('/cursos/coursera/universidad/UNAM/profesores');
+      const response = await axios.get('/cursos/coursera/universidad/UpChile/profesores');
       professors.value = response.data;
     } catch (error) {
       console.error("Error al obtener los profesores:", error.message);
     }
   };
   
+  
   // Cargar cursos
   const loadCourses = async () => {
     isLoading.value = true;
     try {
-      const response = await axios.get(`/cursos/coursera/universidad/UNAM?page=${currentPage.value}`);
+      const response = await axios.get(`/cursos/coursera/universidad/UpChile?page=${currentPage.value}`);
       courses.value = response.data.courses;
       totalPages.value = response.data.totalPages;
       totalCourses.value = response.data.totalCourses;

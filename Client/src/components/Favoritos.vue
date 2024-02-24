@@ -43,7 +43,7 @@ const notificationClass = ref('');
 const notificationType = ref('');
 const triggerNotification = (message, type) => {
   notificationMessage.value = message;
-  notificationType.value = type;  // Agregamos el tipo de notificación
+  notificationType.value = type;  
   notificationClass.value = type === 'success' ? 'bg-green-700 bg-opacity-75'
     : 'bg-red-700 bg-opacity-75';
   showNotification.value = true;

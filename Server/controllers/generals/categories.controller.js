@@ -19,7 +19,7 @@ exports.getUdemyCategories = async (req, res) => {
             { $match: { "primary_category.title": { $exists: true } } },
             { $group: { _id: "$primary_category.title" } }
         ]);
-        const categoryTitles = categories.map(cat => cat._id); // Extraemos los títulos de las categorías
+        const categoryTitles = categories.map(cat => cat._id); 
 
         if (categoryTitles.length === 0) {
             res.status(404).json({ message: "No se encontraron categorías." });

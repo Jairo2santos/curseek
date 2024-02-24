@@ -400,14 +400,18 @@ const redirectToCourse = (course) => {
       name: "DetalleCursoUTN",
       params: { slug: course.slug },
     });
+  } else if (course.source === "COURSERA") {
+    // Utiliza el slug en lugar del originalId
+    router.push({
+      name: "DetalleCursoCoursera",
+      params: { slug: course.slug },
+    });
   }
 };
 
-
 const handleSearch = (value) => {
-  // Establece el contenido del campo de búsqueda al hacer clic en un botón de búsqueda frecuente
   query.value = value;
-  search(); // Realiza la búsqueda automáticamente al establecer el contenido del campo
+  search(); 
 };
 
 const toggleViewAll = () => {

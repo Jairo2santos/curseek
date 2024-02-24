@@ -79,21 +79,15 @@ exports.getCourseraProfessorsByUni = async (req, res) => {
   const { university } = req.params;
 
   try {
-    const courses = await CourseraCourse.find({ university }).populate('instructors');
-    let professors = [];
-
-    courses.forEach(course => {
-      if (course.instructors && course.instructors.length) {
-        // Agregar profesores a la lista, evitando duplicados
-        course.instructors.forEach(instructor => {
-          if (!professors.some(prof => prof._id.equals(instructor._id))) {
-            professors.push(instructor);
-          }
-        });
-      }
-    });
-
-    res.status(200).json(professors);
+    const professorAggregation = [
+      { $match: { university } },
+      { $unwind: "$instructors" },
+      { $group: { _id: "$instructors", instructors: { $first: "$instructors" } } },
+      { $replaceRoot: { newRoot: "$instructors" } }
+    ];
+    const uniqueProfessors = await CourseraCourse.aggregate(professorAggregation);
+    
+    res.status(200).json(uniqueProfessors);
   } catch (error) {
     console.error(`Error al obtener profesores de la universidad ${university}:`, error);
     res.status(500).send("Error interno del servidor");

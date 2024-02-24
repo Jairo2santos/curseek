@@ -27,9 +27,9 @@ const instructorSchema = new Schema({
     certification: { available: Boolean, verification_deadline: Date },
     grades: { passing_grade: String, grading_policy: String },
     content: [{ type: { type: String }, title: String, url: String }],
-    number: String, // Nuevo campo para el número del curso
-    org: String, // Nuevo campo para la organización del curso
-    mobile_available: Boolean, // Nuevo campo para disponibilidad móvil
+    number: String, 
+    org: String, 
+    mobile_available: Boolean,
   }, { timestamps: true, collection: 'cursos_EDX' });
   
   const Course = mongoose.model('Course', courseSchema, 'cursos_EDX');

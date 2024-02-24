@@ -166,12 +166,12 @@ const notificationMessage = ref('');
 const notificationType = ref('');
 //ajustes para diferencia de utn y udemy 
 const goToCourseDetail = (course) => {
-  console.log("Curso actual:", course);
-  console.log("Tipo de curso:", course.courseType);
   if (course.courseType === 'UDEMY') {
     router.push({ name: 'DetalleCursoUdemy', params: { id: course._id } });
   } else if (course.courseType === 'UTN') {
     router.push({ name: 'DetalleCursoUTN', params: { id: course._id } });
+  } else if (course.courseType === 'COURSERA') {
+    router.push({ name: 'DetalleCursoCoursera', params: { id: course._id } });
   } else {
     router.push({ name: 'Home' });
   }

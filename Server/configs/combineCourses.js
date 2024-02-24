@@ -1,7 +1,9 @@
 const mongoose = require('mongoose');
-const UdemyCourse = require('../models/udemy.models');
-const UtnCourse = require('../models/utn.models');
-const UnifiedCourse = require('../models/unifiedCourse.model');
+const UdemyCourse = require('../models/providers/udemy.models');
+const UtnCourse = require('../models/providers/utn.models');
+const UnifiedCourse = require('../models/generals/unifiedCourse.model');
+const CourseraCourse = require('../models/providers/courseraCourse.model');
+
 
 mongoose.connect('mongodb://localhost:27017/cursosApp');
 
@@ -52,6 +54,21 @@ const combineCourses = async () => {
     });
   }
 
+  const courseraCourses = await CourseraCourse.find({});
+for (const course of courseraCourses) {
+  // Extrayendo la información relevante de cada curso
+  const instructorsNames = course.instructors.map(instructor => instructor.name).join(", ");
+  await tryInsertOrUpdate({
+    title: course.title,
+    description: `${course.shortDescription}. Instructor(es): ${instructorsNames}.`,
+    price: 'Pago mensual', 
+    originalId: course._id.toString(),
+    image: course.imgUrl,
+    link: course.courseUrl,
+    source: 'COURSERA',
+    slug: course.slug,
+  });
+}
   console.log('Todos los cursos han sido combinados en la colección cursos_ALL');
 };
 

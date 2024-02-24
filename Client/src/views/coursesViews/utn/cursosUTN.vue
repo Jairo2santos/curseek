@@ -208,7 +208,7 @@ const loadCategories = async () => {
 //   loadCourses(currentPage.value, filterType.value, selectedCategories.value);
 // };
 const truncateText = (text, limit) => {
-  if (!text) return ''; // Retorna una cadena vacía si el texto no está definido
+  if (!text) return ''; 
   const words = text.split(' ', limit);
   return words.length >= limit ? `${words.join(' ')}...` : text;
 };

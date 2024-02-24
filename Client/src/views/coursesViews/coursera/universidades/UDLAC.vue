@@ -9,7 +9,7 @@
         <!-- Título y Descripción -->
         <div class="flex flex-col sm:flex-row items-center border-b border-gray-300">
           <!-- Imagen -->
-          <img src="../../../../assets/instituciones/UNAM.png" alt="Universidad Autonoma de Mexico logo" class="w-64 h-auto">
+          <img src="../../../../assets/instituciones/uniandes.png" alt="Universidad Autonoma de Mexico logo" class="w-64 h-auto">
   
           <!-- Texto -->
           <div>
@@ -97,9 +97,9 @@
   const isProfessorsExpanded = ref(false);
   
   // Redes sociales links
-  const instagramLink = 'https://www.instagram.com/unam_mx/';
-  const twitterLink = 'https://twitter.com/UNAM_MX';
-  const facebookLink = 'https://www.facebook.com/UNAM.MX.Oficial/';
+  const instagramLink = 'https://www.instagram.com/uniandes/';
+  const twitterLink = 'https://twitter.com/Uniandes';
+  const facebookLink = 'https://www.facebook.com/UniandesCol/';
   
   // Cargar profesores
   const loadProfessors = async () => {

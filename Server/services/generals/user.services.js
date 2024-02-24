@@ -1,5 +1,6 @@
 const User = require('../../models/generals/user.models');
 const UdemyCourse = require('../../models/providers/udemy.models');
+const CourseraCourse  = require('../../models/providers/courseraCourse.model');
 const utnCourse = require('../../models/providers/utn.models');
 const bcrypt = require('bcrypt');
 const mongoose = require('mongoose');
@@ -77,13 +78,19 @@ const getFavoriteCoursesForUser = async (userId) => {
     // Dividir favoritos por tipo
     const udemyFavorites = user.favorites.filter(f => f.courseType === 'UDEMY').map(f => f.courseId);
     const utnFavorites = user.favorites.filter(f => f.courseType === 'UTN').map(f => f.courseId);
+    const courseraFavorites = user.favorites.filter(f => f.courseType === 'COURSERA').map(f => f.courseId);
+
     // Recuperar cursos de las respectivas colecciones
     const udemyCourses = udemyFavorites.length ? await UdemyCourse.find({ '_id': { $in: udemyFavorites } }) : [];
     const utnCourses = utnFavorites.length ? await utnCourse.find({ '_id': { $in: utnFavorites } }) : [];
+    const courseraCourses = courseraFavorites.length ? await CourseraCourse.find({ '_id': { $in: courseraFavorites } }) : [];
+
     // Agrega el tipo de curso y retorna la lista combinada
     const udemyCoursesWithTypes = udemyCourses.map(course => ({ ...course.toObject(), courseType: 'UDEMY' }));
     const utnCoursesWithTypes = utnCourses.map(course => ({ ...course.toObject(), courseType: 'UTN' }));
-    return [...udemyCoursesWithTypes, ...utnCoursesWithTypes];
+    const courseraCoursesWithTypes = courseraCourses.map(course => ({ ...course.toObject(), courseType: 'COURSERA' }));
+    return [...udemyCoursesWithTypes, ...utnCoursesWithTypes, ...courseraCoursesWithTypes];
+
   } catch (error) {
     throw new Error('Error al obtener cursos favoritos.');
   }
@@ -147,7 +154,7 @@ const checkIfCourseIsFavorited = async (userId, courseId) => {
       throw new Error('ID de curso inválido');
     }
     const objectId = new mongoose.Types.ObjectId(courseId);
-    console.log('ObjectId convertido:', objectId); // Para ver el resultado de la conversión
+    console.log('ObjectId convertido:', objectId); 
     const user = await User.findById(userId);
     if (!user) {
       throw new Error('Usuario no encontrado');

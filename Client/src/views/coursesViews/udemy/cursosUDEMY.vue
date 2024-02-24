@@ -207,7 +207,7 @@ const handleCategoryFilter = async (selectedCategory) => {
   currentPage.value = 1; 
   await loadCourses(currentPage.value, selectedCategory);
 };
-//loader
+
 // Montaje
 onMounted(() => {
   loadCourses(currentPage.value);

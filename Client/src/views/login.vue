@@ -29,7 +29,7 @@
 import { ref } from 'vue';
 import axios from 'axios';
 import { useRouter } from 'vue-router';
-import Notificationes from '../components/Notificaciones.vue'; // Asegúrate de usar la ruta correcta
+import Notificationes from '../components/Notificaciones.vue'; 
 
 const router = useRouter();
 const username = ref(localStorage.getItem('loggedInUsername') || '');

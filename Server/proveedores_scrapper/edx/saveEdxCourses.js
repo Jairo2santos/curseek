@@ -1,9 +1,9 @@
-const Course = require('../../models/edx.models'); // Asegúrate de que la ruta sea correcta
+const Course = require('../../models/edx.models'); 
 
 const axios = require('axios');
 
 async function fetchEdxCourses() {
-    let nextPageUrl = 'https://courses.edx.org/api/courses/v1/courses/?page=1&page_size=2'; // Inicia con la primera página
+    let nextPageUrl = 'https://courses.edx.org/api/courses/v1/courses/?page=1&page_size=2';
   
     const headers = {
       'Accept': 'application/json',
@@ -40,10 +40,10 @@ async function fetchEdxCourses() {
         }
         
         console.log('Página de cursos de EDX cargada correctamente.');
-        nextPageUrl = response.data.pagination.next || null; // Actualiza la URL de la siguiente página
+        nextPageUrl = response.data.pagination.next || null; 
       } catch (error) {
         console.error('Error fetching EDX courses:', error);
-        nextPageUrl = null; // Detiene el bucle si hay un error
+        nextPageUrl = null;
       }
     }
   }

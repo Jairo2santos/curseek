@@ -1,8 +1,7 @@
 //loadProveedores.js
 const mongoose = require('mongoose');
 //const saveUdemyCourses = require('./udemy/saveUdemyCourses');
-const fetchEdxCourses = require('./edx/saveEdxCourses'); // Asegúrate de que la ruta sea correcta
-
+const fetchEdxCourses = require('./edx/saveEdxCourses'); 
 async function loadProveedores() {
   // Conexión a MongoDB
   await mongoose.connect('mongodb://localhost:27017/cursosApp', { useNewUrlParser: true, useUnifiedTopology: true });
