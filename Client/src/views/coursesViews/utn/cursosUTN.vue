@@ -143,7 +143,7 @@ import Favoritos from "../../../components/Favoritos.vue";
 axios.defaults.baseURL = "http://localhost:3333";
 
 // Estado
-const pageTitle = "Cursos de UTN";
+const pageTitle = "Cursos de Universidad Tecnológica Nacional";
 const pageDescription = "Esta es una universidad argentina que viene de la Universidad Obrera Nacional. Es la única en Argentina que se enfoca principalmente en ingenierías y que está en todo el país. Aunque su oficina principal está en Buenos Aires, tiene 30 sedes en diferentes lugares de Argentina. Es la universidad de ingeniería con más estudiantes en el país.";
 const courses = ref([]);
 const currentPage = ref(1);

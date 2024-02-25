@@ -1,12 +1,12 @@
 <template>
   <div class="p-0 min-h-screen bg-white">
     <!-- Buscador -->
-    <div class="flex flex-col md:flex-row container mx-auto md:pl-40 pl-0 bg-white pb-12">
+    <div class="flex flex-col md:flex-row container mx-auto md:px-40 md:pt-20 md:pb-40 pl-0 bg-white pb-12">
       <!-- Contenedor del buscador y resultados -->
       <div class="md:w-1/2 p-8 flex flex-col justify-center">
         <!-- Título -->
         <h1 :class="{ 'blurred-background': isInputClicked }"
-          class="text-left font-semibold text-3xl md:text-4xl text-gray-900 pb-3">
+          class="text-left font-semibold text-3xl md:text-4xl text-black pb-3">
           Encuentra hoy mismo tu próximo curso sin esfuerzo.
         </h1>
         <!-- Campo de búsqueda -->
@@ -75,7 +75,7 @@
         <!-- Saber más -->
         <div :class="{ 'blurred-background': isInputClicked }" class="border-b border-gray-200 mt-2 pb-8 ml-2">
           <a href="/nosotros/#/preguntasFrecuentes" :class="{ 'blurred-background': isInputClicked }">
-            <button class="flex text-sm font-semibold hover:underline hover:bg-indigo-100 transition text-black p-0">
+            <button class="flex text-sm font-semibold hover:underline transition text-black p-0">
               Ayuda
               <svg class="ml-1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="20" fill="#000000">
                 <path d="M0 0h24v24H0V0z" fill="none" />
@@ -87,82 +87,66 @@
         </div>
         <!-- Botones de búsquedas frecuentes -->
         <div class="mt-4 pr-0 md:pr-20">
-          <h2 class="text-lg font-bold p-2">Búsquedas frecuentes</h2>
+          <h2 class="text-lg text-black font-bold p-2">Búsquedas frecuentes</h2>
           <button @click="handleSearch('Java')" @focus="setInputClicked(true)" @blur="setInputClicked(false)"
-            class="text-sm bg-gray-100 text-gray-800 hover:bg-indigo-200 border border-gray-200 transition py-1 px-2 rounded-full mb-1 mr-1">
+            class="text-sm bg-indigo-100 text-gray-800 hover:bg-green-100 border border-gray-200 transition py-1 px-2 rounded-full mb-1 mr-1">
             Java
           </button>
-          <button @click="handleSearch('Desarrollo web')" @focus="setInputClicked(true)" @blur="setInputClicked(false)"
-            class="text-sm bg-gray-100 text-gray-800 hover:bg-indigo-200 border border-gray-200 transition py-1 px-2 rounded-full mb-1 mr-1">
-            Desarrollo web
-          </button>
           <button @click="handleSearch('Javascript')" @focus="setInputClicked(true)" @blur="setInputClicked(false)"
-            class="text-sm bg-gray-100 text-gray-800 hover:bg-indigo-200 border border-gray-200 transition py-1 px-2 rounded-full mb-1 mr-1">
+            class="text-sm bg-indigo-100 text-gray-800 hover:bg-green-100 border border-gray-200 transition py-1 px-2 rounded-full mb-1 mr-1">
             Javascript
           </button>
-          <button @click="handleSearch('Estilos CSS')" @focus="setInputClicked(true)" @blur="setInputClicked(false)"
-            class="text-sm bg-gray-100 text-gray-800 hover:bg-indigo-200 border border-gray-200 transition py-1 px-2 rounded-full mb-1 mr-1">
-            curso css
-          </button>
-          <button @click="handleSearch('Curso de php')" @focus="setInputClicked(true)" @blur="setInputClicked(false)"
-            class="text-sm bg-gray-100 text-gray-800 hover:bg-indigo-200 border border-gray-200 transition py-1 px-2 rounded-full mb-1 mr-1">
-            Curso de php
-          </button>
-          <button @click="handleSearch('Administración de empresas')" @focus="setInputClicked(true)"
-            @blur="setInputClicked(false)"
-            class="text-sm bg-gray-100 text-gray-800 hover:bg-indigo-200 border border-gray-200 transition py-1 px-2 rounded-full mb-1 mr-1">
-            Administración de empresas
-          </button>
           <button @click="handleSearch('React js')" @focus="setInputClicked(true)" @blur="setInputClicked(false)"
-            class="text-sm bg-gray-100 text-gray-800 hover:bg-indigo-200 border border-gray-200 transition py-1 px-2 rounded-full mb-1 mr-1">
+            class="text-sm bg-indigo-100 text-gray-800 hover:bg-green-100 border border-gray-200 transition py-1 px-2 rounded-full mb-1 mr-1">
             React js
           </button>
           <button @click="handleSearch('seguridad')" @focus="setInputClicked(true)" @blur="setInputClicked(false)"
-            class="text-sm bg-gray-100 text-gray-800 hover:bg-indigo-200 border border-gray-200 transition py-1 px-2 rounded-full mb-1 mr-1">
+            class="text-sm bg-indigo-100 text-gray-800 hover:bg-green-100 border border-gray-200 transition py-1 px-2 rounded-full mb-1 mr-1">
             seguridad
           </button>
-          <button @click="handleSearch('bases SQL')" @focus="setInputClicked(true)" @blur="setInputClicked(false)"
-            class="text-sm bg-gray-100 text-gray-800 hover:bg-indigo-200 border border-gray-200 transition py-1 px-2 rounded-full mb-1 mr-1">
-            bases SQL
-          </button>
           <button @click="handleSearch('html')" @focus="setInputClicked(true)" @blur="setInputClicked(false)"
-            class="text-sm bg-gray-100 text-gray-800 hover:bg-indigo-200 border border-gray-200 transition py-1 px-2 rounded-full mb-1 mr-1">
+            class="text-sm bg-indigo-100 text-gray-800 hover:bg-green-100 border border-gray-200 transition py-1 px-2 rounded-full mb-1 mr-1">
             html
           </button>
+          <button @click="handleSearch('Administración de empresas')" @focus="setInputClicked(true)"
+            @blur="setInputClicked(false)"
+            class="text-sm bg-indigo-100 text-gray-800 hover:bg-green-100 border border-gray-200 transition py-1 px-2 rounded-full mb-1 mr-1">
+            Administración de empresas
+          </button>
           <button @click="handleSearch('física')" @focus="setInputClicked(true)" @blur="setInputClicked(false)"
-            class="text-sm bg-gray-100 text-gray-800 hover:bg-indigo-200 border border-gray-200 transition py-1 px-2 rounded-full mb-1 mr-1">
+            class="text-sm bg-indigo-100 text-gray-800 hover:bg-green-100 border border-gray-200 transition py-1 px-2 rounded-full mb-1 mr-1">
             física
           </button>
           <button @click="handleSearch('Tejer')" @focus="setInputClicked(true)" @blur="setInputClicked(false)"
-            class="text-sm bg-gray-100 text-gray-800 hover:bg-indigo-200 border border-gray-200 transition py-1 px-2 rounded-full mb-1 mr-1">
+            class="text-sm bg-indigo-100 text-gray-800 hover:bg-green-100 border border-gray-200 transition py-1 px-2 rounded-full mb-1 mr-1">
             Tejer
           </button>
           <button @click="handleSearch('Matemática')" @focus="setInputClicked(true)" @blur="setInputClicked(false)"
-            class="text-sm bg-gray-100 text-gray-800 hover:bg-indigo-200 border border-gray-200 transition py-1 px-2 rounded-full mb-1 mr-1">
+            class="text-sm bg-indigo-100 text-gray-800 hover:bg-green-100 border border-gray-200 transition py-1 px-2 rounded-full mb-1 mr-1">
             Matemática
           </button>
           <button @click="handleSearch('YouTube')" @focus="setInputClicked(true)" @blur="setInputClicked(false)"
-            class="text-sm bg-gray-100 text-gray-800 hover:bg-indigo-200 border border-gray-200 transition py-1 px-2 rounded-full mb-1 mr-1">
+            class="text-sm bg-indigo-100 text-gray-800 hover:bg-green-100 border border-gray-200 transition py-1 px-2 rounded-full mb-1 mr-1">
             YouTube
           </button>
-          <button @click="handleSearch('meditación')" @focus="setInputClicked(true)" @blur="setInputClicked(false)"
-            class="text-sm bg-gray-100 text-gray-800 hover:bg-indigo-200 border border-gray-200 transition py-1 px-2 rounded-full mb-1 mr-1">
-            meditación
-          </button>
           <button @click="handleSearch('Vue 3')" @focus="setInputClicked(true)" @blur="setInputClicked(false)"
-            class="text-sm bg-gray-100 text-gray-800 hover:bg-indigo-200 border border-gray-200 transition py-1 px-2 rounded-full mb-1 mr-1">
+            class="text-sm bg-indigo-100 text-gray-800 hover:bg-green-100 border border-gray-200 transition py-1 px-2 rounded-full mb-1 mr-1">
             Vue 3
           </button>
           <button @click="handleSearch('Salud')" @focus="setInputClicked(true)" @blur="setInputClicked(false)"
-            class="text-sm bg-gray-100 text-gray-800 hover:bg-indigo-200 border border-gray-200 transition py-1 px-2 rounded-full mb-1 mr-1">
+            class="text-sm bg-indigo-100 text-gray-800 hover:bg-green-100 border border-gray-200 transition py-1 px-2 rounded-full mb-1 mr-1">
             Salud
           </button>
         </div>
       </div>
-      <!-- Imagen -->
-      <img :class="{ 'blurred-background': isInputClicked }" src="../assets/banner-1-izquierda.jpg" alt=""
-        class="md:w-1/2 object-cover md:h-full hidden md:block" />
+
+      <div :class="{ 'blurred-background': isInputClicked }" 
+        class="md:w-1/2 object-cover md:h-full hidden md:block">
+        <!-- Imagen -->
+        <img src="../assets/banner-1-izquierda.jpg" alt="" />
+      </div>
     </div>
+    
     <!-- El curso que quieras, cuando quieras -->
     <div :class="{ 'blurred-background': isInputClicked }"
       class="block flex-col md:flex-row max-w-screen-full bg-indigo-100">

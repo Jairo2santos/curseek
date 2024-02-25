@@ -2,12 +2,12 @@
   <div class="flex flex-col lg:flex-row justify-between items-center p-4 rounded-lg mb-6 w-full mx-auto max-w-screen-xl">
     <img :src="computedImageSrc" :alt="altText" class="w-full lg:w-80 mb-4 lg:mb-0" />
 
-    <div class="lg:ml-4">
+    <div class="lg:ml-4 py-2">
       <slot name="title">
-        <h1 class="text-4xl lg:text-5xl font-extrabold text-gray-800 mb-4">{{ title }}</h1>
+        <h1 class="text-4xl lg:text-5xl font-bold text-gray-800">{{ title }}</h1>
       </slot>
       <slot name="description">
-        <p class="text-gray-600 mb-6 mr-2">{{ description }}</p>
+        <p class="text-gray-600 mr-4 py-4">{{ description }}</p>
       </slot>
       <slot name="course-info">
         <div class="flex items-center">

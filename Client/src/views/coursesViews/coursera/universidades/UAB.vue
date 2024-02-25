@@ -7,7 +7,7 @@
     <!-- Contenido de la Portada -->
     <div class="text-sm bg-opacity-75 px-4 sm:px-20 lg:px-60">
       <!-- Título y Descripción -->
-      <div class="flex flex-col sm:flex-row items-center border-b border-gray-300">
+      <div class="flex flex-col sm:flex-row pb-4 md:pb-0 items-center border-b border-gray-300">
         <!-- Imagen -->
         <img src="../../../../assets/instituciones/UAB.png" alt="Universidad de Barcelona" class="w-64 h-auto">
 
