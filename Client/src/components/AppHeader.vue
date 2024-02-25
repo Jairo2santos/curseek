@@ -1,7 +1,7 @@
 <template>
   <div :class="{ 'bg-gray-200': dropdownActive }" class="shadow-gray-200 shadow-xl"
-   :style="{ 'backdrop-filter': dropdownActive ? 'blur(8px)' : 'none' }">
-   
+    :style="{ 'backdrop-filter': dropdownActive ? 'blur(8px)' : 'none' }">
+
     <div class="bg-white shadow-md">
       <div class="mx-auto px-0 md:px-4 py-2 border-b border-gray-300">
         <div class="flex items-center justify-center md:justify-between"> <!-- Cambio aquí para centrar -->
@@ -29,9 +29,11 @@
           </div>
           <nav class="hidden lg:flex space-x-4 text-md">
             <!-- Añadido: Mostrar "Login" o "Logout" según el estado de autenticación -->
-            <router-link v-if="!loggedInUsername" to="/signUp" class="text-white hover:bg-indigo-700 transition bg-indigo-500 rounded-full px-3 py-2 font-bold">Empezar</router-link>
+            <router-link v-if="!loggedInUsername" to="/signUp"
+              class="text-white hover:bg-indigo-700 transition bg-indigo-500 rounded-full px-3 py-2 font-bold">Empezar</router-link>
             <span class="border-r border-gray-300"></span>
-            <router-link v-if="!loggedInUsername" to="/login" class="hover:underline font-bold px-3 py-2">Acceso</router-link>
+            <router-link v-if="!loggedInUsername" to="/login"
+              class="hover:underline font-bold px-3 py-2">Acceso</router-link>
             <!-- <a v-else @click="logout" class="hover:text-red-700 cursor-pointer">Logout</a> -->
             <router-link v-if="loggedInUsername" to="/profile" class="hover:text-purple-200 text-black">
               <!-- <img :src="profilePicture" alt="" class="h-8 w-8 rounded-full mr-2">               -->
@@ -43,7 +45,8 @@
             </router-link>
           </nav>
         </div>
-        <div v-if="menu1Visible" class="lg:hidden border-r border-l border-b border-gray-300 mx-2 shadow-xl p-4 bg-white text-black">
+        <div v-if="menu1Visible"
+          class="lg:hidden border-r border-l border-b border-gray-300 mx-2 shadow-xl p-4 bg-white text-black">
           <!-- <router-link v-if="!loggedInUsername" to="/login" class="block mb-4">Login</router-link> -->
           <!-- <a v-else @click="logout" class="block mb-4 cursor-pointer">Logout</a> -->
           <ul>
@@ -82,8 +85,9 @@
             </li>
           </ul>
         </div>
-        
-        <div v-if="menu2Visible" class="lg:hidden border-r border-l border-b border-gray-300 mx-2 shadow-xl p-4 bg-white text-black">
+
+        <div v-if="menu2Visible"
+          class="lg:hidden border-r border-l border-b border-gray-300 mx-2 shadow-xl p-4 bg-white text-black">
           <router-link v-if="!loggedInUsername" to="/login" class="block mb-4">Login</router-link>
           <router-link v-if="!loggedInUsername" to="/signUp" class="block mb-4">Signup</router-link>
           <router-link v-if="loggedInUsername" to="/profile" class="block mb-2">Mi Perfil</router-link>
@@ -92,26 +96,20 @@
       <!-- Desplegable -->
       <div class="relative">
         <div name="fade">
-          <ul class="border-r border-l border-b max-h-96 overflow-y-auto border-gray-100 ml-40 absolute text-sm shadow-md bg-white w-60">
-            <li v-if="dropdownVisible"
-            @mouseenter="showModal = true"
-            @mouseleave="showModal = false"
-            class="font-semibold my-0.5 flex items-center px-4 w-full justify-between">
+          <ul
+            class="border-r border-l border-b max-h-96 overflow-y-auto border-gray-100 ml-48 absolute text-sm shadow-md bg-white w-60">
+            <li v-if="dropdownVisible" class="font-semibold my-0.5 flex items-center px-4 w-full justify-between">
               <span class="text-indigo-700 py-1.5 px-1">Buscar por</span>
             </li>
-            <li v-if="dropdownVisible"
-            @mouseenter="showModal = true"
-            @mouseleave="showModal = false"
-            class="my-0.5 flex items-center hover:bg-gray-200 transition px-4 cursor-pointer w-full justify-between">
+            <li v-if="dropdownVisible" @mouseenter="showModal = true" @mouseleave="showModal = false"
+              class="my-0.5 flex items-center hover:bg-gray-200 transition px-4 cursor-pointer w-full justify-between">
               <span class="text-gray-800 py-1.5 px-1">Proveedores</span>
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24">
                 <path d="M9.41 7.41L14.83 12l-5.42 5.41L10 18l6-6-6-6-1.59 1.41Z" />
               </svg>
             </li>
-            <li v-if="dropdownVisible"
-            @mouseenter="showModal2 = true"
-            @mouseleave="showModal2 = false"
-            class="mb-2 my-0.5 flex items-center hover:bg-gray-200 transition px-4 cursor-pointer w-full justify-between">
+            <li v-if="dropdownVisible" @mouseenter="showModal2 = true" @mouseleave="showModal2 = false"
+              class="mb-2 my-0.5 flex items-center hover:bg-gray-200 transition px-4 cursor-pointer w-full justify-between">
               <span class="text-gray-800 py-1.5 px-1">Universidades</span>
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24">
                 <path d="M9.41 7.41L14.83 12l-5.42 5.41L10 18l6-6-6-6-1.59 1.41Z" />
@@ -119,11 +117,9 @@
             </li>
           </ul>
         </div>
-        
-        <div v-if="showModal" 
-          @mouseenter="showModal = true" 
-          @mouseleave="showModal = false" 
-          class="border-l max-h-96 overflow-y-auto border-gray-100 absolute text-sm shadow-md bg-white py-4 w-60 left-80 mt-0 ml-20">
+
+        <div v-if="showModal" @mouseenter="showModal = true" @mouseleave="showModal = false"
+          class="border-l max-h-96 overflow-y-auto border-gray-100 absolute text-sm shadow-md bg-white py-4 w-60 left-80 mt-0 ml-28">
           <ul>
             <li class="my-0.5 flex items-center">
               <a href="/cursos/udemy" class="hover:bg-gray-200 transition px-4 flex items-center w-full justify-between">
@@ -132,7 +128,8 @@
               </a>
             </li>
             <li class="my-0.5 flex items-center">
-              <a href="/cursos/Coursera" class="hover:bg-gray-200 transition px-4 flex items-center w-full justify-between">
+              <a href="/cursos/Coursera"
+                class="hover:bg-gray-200 transition px-4 flex items-center w-full justify-between">
                 <img class="w-8" src="../assets/instituciones/coursera.png" alt="Coursera" />
                 <span class="flex-1 text-gray-800 py-1.5 px-1">Coursera</span>
               </a>
@@ -140,27 +137,26 @@
           </ul>
         </div>
 
-        <div v-if="showModal2" 
-          @mouseenter="showModal2 = true"
-          @mouseleave="showModal2 = false"
-          class="max-h-96 overflow-y-auto absolute text-sm shadow-md bg-white py-4 w-60 left-80 mt-0 ml-20">
+        <div v-if="showModal2" @mouseenter="showModal2 = true" @mouseleave="showModal2 = false"
+          class="max-h-96 overflow-y-auto absolute text-sm shadow-md bg-white py-4 w-60 left-80 mt-0 ml-28">
           <ul>
             <li class="my-0.5 flex items-center">
               <a href="/cursos/utn" class="hover:bg-gray-200 transition px-4 flex items-center w-full justify-between">
-              <img class="w-8" src="../assets/instituciones/utn.png" alt="Coursera" />
+                <img class="w-8" src="../assets/instituciones/utn.png" alt="Coursera" />
                 <span class="flex-1 text-gray-800 py-1.5 px-1">UTN</span>
               </a>
             </li>
             <li class="my-0.5 flex items-center">
-              <a href="/Coursera/universidades/uab" class="hover:bg-gray-200 transition px-4 flex items-center w-full justify-between">
-              <img class="w-8" src="../assets/instituciones/uab.png" alt="Coursera" />
+              <a href="/Coursera/universidades/uab"
+                class="hover:bg-gray-200 transition px-4 flex items-center w-full justify-between">
+                <img class="w-8" src="../assets/instituciones/uab.png" alt="Coursera" />
                 <span class="flex-1 text-gray-800 py-1.5 px-1">UAB</span>
               </a>
             </li>
           </ul>
         </div>
-        
       </div>
+      
     </div>
   </div>
 </template>
@@ -175,7 +171,6 @@ export default {
       menu2Visible: false,
       dropdownVisible: false,
       dropdownActive: false,
-      dropdownVisible: false,
       showModal: false,
       showModal2: false,
     };
@@ -208,7 +203,7 @@ export default {
       this.dropdownActive = false;
     },
     closeDropdownOnClickOutside(event) {
-      const dropdown = this.$el; 
+      const dropdown = this.$el;
       if (dropdown && !dropdown.contains(event.target)) {
         this.dropdownVisible = false;
         this.dropdownActive = false;
