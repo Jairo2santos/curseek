@@ -39,6 +39,8 @@ const password = ref('');
 const showNotification = ref(false);
 const notificationMessage = ref('');
 const notificationType = ref('');
+
+
 const login = async () => {
   try {
     const response = await axios.post('http://localhost:3333/users/login', {
@@ -46,24 +48,26 @@ const login = async () => {
       password: password.value,
     });
     if (response.status === 200 && response.data._id) {
-      showNotification.value = true;
-      notificationMessage.value = 'Inicio de sesión exitoso!';
-      notificationType.value = 'success';
-      localStorage.setItem('loggedInUsername', username.value);
-      localStorage.setItem('loggedInUserId', response.data._id);
-      router.push('/profile');
+      notify('Inicio de sesión exitoso!', 'success');
+      // Establece un retraso antes de la redirección
+      setTimeout(() => {
+        localStorage.setItem('loggedInUsername', username.value);
+        localStorage.setItem('loggedInUserId', response.data._id);
+        router.push('/profile');
+      }, 1000); // Espera 3 segundos antes de redirigir
     } else {
-      console.error('Error al iniciar sesión: Credenciales incorrectas');
-      showNotification.value = true;
-      notificationMessage.value = 'Credenciales incorrectas. Por favor, intenta nuevamente.';
-      notificationType.value = 'error';
+      notify('Credenciales incorrectas. Por favor, intenta nuevamente.', 'error');
     }
   } catch (error) {
-    // Error al iniciar sesión
-    showNotification.value = true;
-    notificationMessage.value = 'Ocurrió un error al intentar iniciar sesión. Por favor, revisa los datos ingresados';
-    notificationType.value = 'error';
+    notify('Ocurrió un error al intentar iniciar sesión. Por favor, revisa los datos ingresados', 'error');
     console.error('Error al iniciar sesión:', error);
   }
 };
+
+const notify = (message, type) => {
+  showNotification.value = true;
+  notificationMessage.value = message;
+  notificationType.value = type;
+};
+
 </script>

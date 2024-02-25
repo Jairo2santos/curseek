@@ -25,7 +25,8 @@
   ],
   "courseUrl": "https://www.coursera.org/specializations/big-data-introduccion",
   "imgUrl": "https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://d15cw65ipctsrr.cloudfront.net/f0/2514c0659311e894d3e7ac680ef0c6/BD-Especialitzacio.png?auto=format%2Ccompress&dpr=1&w=175&h=175&fit=fill&bg=FFF",
-  "university": "UAB"
+  "university": "UAB",
+  "slug": "programa-especializado-big-data-introduccion-al-uso-practico-de-datos-masivos"
 },
 {
   "_id": {
@@ -58,7 +59,8 @@
   ],
   "courseUrl": "https://www.coursera.org/specializations/diseno-videojuegos",
   "imgUrl": "https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://d396qusza40orc.cloudfront.net/phoenixassets/Spanish-Launch-10-7-images/Thumbnails%20of%20Banner%20%28Logos%29/SpecBanner-UAB.jpg?auto=format%2Ccompress&dpr=1&w=175&h=175&fit=fill&bg=FFF",
-  "university": "UAB"
+  "university": "UAB",
+  "slug": "programa-especializado-diseno-y-creacion-de-videojuegos"
 },
 {
   "_id": {
@@ -91,7 +93,8 @@
   ],
   "courseUrl": "https://www.coursera.org/specializations/organizaciones-recursos-humanos",
   "imgUrl": "https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://d15cw65ipctsrr.cloudfront.net/e6/8f08d99c4640c3af1e68c00c433685/Logo-PTO-General.png?auto=format%2Ccompress&dpr=1&w=175&h=175&fit=fill&bg=FFF",
-  "university": "UAB"
+  "university": "UAB",
+  "slug": "programa-especializado-organizaciones-y-recursos-humanos-en-el-siglo-xxi"
 },
 {
   "_id": {
@@ -120,7 +123,8 @@
   ],
   "courseUrl": "https://www.coursera.org/learn/feminismo-genero-politica",
   "imgUrl": "https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://coursera-course-photos.s3.amazonaws.com/1b/dc12c7ec294b728cd0ffaeee76d90e/Logo-feminisme.png?auto=format%2Ccompress&dpr=1&w=175&h=175&fit=fill&bg=FFF",
-  "university": "UAB"
+  "university": "UAB",
+  "slug": "feminismo-genero-y-politica"
 },
 {
   "_id": {
@@ -153,7 +157,8 @@
   ],
   "courseUrl": "https://www.coursera.org/learn/accessibility-scenic-arts",
   "imgUrl": "https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://coursera-course-photos.s3.amazonaws.com/da/261650576611e8a781c5cd2b50c59a/logo-accessibility.png?auto=format%2Ccompress&dpr=1&w=175&h=175&fit=fill&bg=FFF",
-  "university": "UAB"
+  "university": "UAB",
+  "slug": "accesibilidad-a-las-artes-escenicas"
 },
 {
   "_id": {
@@ -186,7 +191,8 @@
   ],
   "courseUrl": "https://www.coursera.org/learn/videojuegos-intro",
   "imgUrl": "https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://coursera-course-photos.s3.amazonaws.com/1d/ba84a0668311e582593f027531c298/Course-Logo-_Coursera__.png?auto=format%2Ccompress&dpr=1&w=175&h=175&fit=fill&bg=FFF",
-  "university": "UAB"
+  "university": "UAB",
+  "slug": "videojuegos-de-que-hablamos"
 },
 {
   "_id": {
@@ -215,7 +221,8 @@
   ],
   "courseUrl": "https://www.coursera.org/learn/como-persuadir",
   "imgUrl": "https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://coursera-course-photos.s3.amazonaws.com/73/f450a0c6cf11e6a3e881b7a1c70e75/LOGO-2.jpg?auto=format%2Ccompress&dpr=1&w=175&h=175&fit=fill&bg=FFF",
-  "university": "UAB"
+  "university": "UAB",
+  "slug": "como-persuadir-jugando-con-palabras-imagenes-y-numeros"
 },
 {
   "_id": {
@@ -248,7 +255,8 @@
   ],
   "courseUrl": "https://www.coursera.org/learn/digital-systems",
   "imgUrl": "https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://coursera-course-photos.s3.amazonaws.com/a0/84ba1dc886b1a592c8dc7e6b19e512/logo-sistemas-digitales.png?auto=format%2Ccompress&dpr=1&w=175&h=175&fit=fill&bg=FFF",
-  "university": "UAB"
+  "university": "UAB",
+  "slug": "digital-systems-from-logic-gates-to-processors"
 },
 {
   "_id": {
@@ -281,7 +289,8 @@
   ],
   "courseUrl": "https://www.coursera.org/learn/formacion-pensamiento-critico",
   "imgUrl": "https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://coursera-course-photos.s3.amazonaws.com/bc/991a56b638465fb4edec99bebac8cc/Pensamiento-critico-V1.png?auto=format%2Ccompress&dpr=1&w=175&h=175&fit=fill&bg=FFF",
-  "university": "UAB"
+  "university": "UAB",
+  "slug": "la-formacion-del-pensamiento-critico-en-la-era-digital"
 },
 {
   "_id": {
@@ -306,7 +315,8 @@
   ],
   "courseUrl": "https://www.coursera.org/learn/historia-asia-oriental-japon-corea-china-taiwan",
   "imgUrl": "https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://coursera-course-photos.s3.amazonaws.com/13/419f0aa0754134bd35e0c3c565260b/logo_HAO.png?auto=format%2Ccompress&dpr=1&w=175&h=175&fit=fill&bg=FFF",
-  "university": "UAB"
+  "university": "UAB",
+  "slug": "asia-oriental-en-el-s-xx-introduccion-desde-la-historia"
 },
 {
   "_id": {
@@ -331,7 +341,8 @@
   ],
   "courseUrl": "https://www.coursera.org/learn/hablar-bien-en-publico",
   "imgUrl": "https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://coursera-course-photos.s3.amazonaws.com/4f/aaecb001aa11e8bf25435873db19c4/Propuesta-logo-2-bis2.png?auto=format%2Ccompress&dpr=1&w=175&h=175&fit=fill&bg=FFF",
-  "university": "UAB"
+  "university": "UAB",
+  "slug": "como-hablar-bien-en-publico"
 },
 {
   "_id": {
@@ -360,7 +371,8 @@
   ],
   "courseUrl": "https://www.coursera.org/learn/competencias-clave-profesionales-recursos-humanos",
   "imgUrl": "https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://coursera-course-photos.s3.amazonaws.com/41/1711606f864cc18a590fa004d9741a/Logo-PTO6.png?auto=format%2Ccompress&dpr=1&w=175&h=175&fit=fill&bg=FFF",
-  "university": "UAB"
+  "university": "UAB",
+  "slug": "competencias-clave-para-profesionales-de-recursos-humanos"
 },
 {
   "_id": {
@@ -385,7 +397,8 @@
   ],
   "courseUrl": "https://www.coursera.org/learn/emotions",
   "imgUrl": "https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://coursera-course-photos.s3.amazonaws.com/f6/bd0480916011e79b2a593b5c9af538/Emotions.png?auto=format%2Ccompress&dpr=1&w=175&h=175&fit=fill&bg=FFF",
-  "university": "UAB"
+  "university": "UAB",
+  "slug": "emociones-una-introduccion-filosofica"
 },
 {
   "_id": {
@@ -414,7 +427,8 @@
   ],
   "courseUrl": "https://www.coursera.org/learn/accion-comunitaria",
   "imgUrl": "https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://coursera-course-photos.s3.amazonaws.com/80/7c869c6f6e4511a8c94ec7f42a22ea/Logo-accion-comunitaria.png?auto=format%2Ccompress&dpr=1&w=175&h=175&fit=fill&bg=FFF",
-  "university": "UAB"
+  "university": "UAB",
+  "slug": "accion-comunitaria-enfoques-para-la-transformacion-social"
 },
 {
   "_id": {
@@ -443,7 +457,8 @@
   ],
   "courseUrl": "https://www.coursera.org/learn/educacion-superior-emprendimiento",
   "imgUrl": "https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://coursera-course-photos.s3.amazonaws.com/6b/1757907b78448f97ea945aa80a204e/Logo-ESE.png?auto=format%2Ccompress&dpr=1&w=175&h=175&fit=fill&bg=FFF",
-  "university": "UAB"
+  "university": "UAB",
+  "slug": "educacion-superior-y-emprendimiento"
 },
 {
   "_id": {
@@ -468,7 +483,8 @@
   ],
   "courseUrl": "https://www.coursera.org/learn/competencias-digitales-ofimatica",
   "imgUrl": "https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://coursera-course-photos.s3.amazonaws.com/fe/b22d93c9fd4ac5a014c3fe0341e55b/2.-Ofimatica.png?auto=format%2Ccompress&dpr=1&w=175&h=175&fit=fill&bg=FFF",
-  "university": "UAB"
+  "university": "UAB",
+  "slug": "competencias-digitales-herramientas-de-ofimatica-microsoft-word-excel-power-point"
 },
 {
   "_id": {
@@ -493,7 +509,8 @@
   ],
   "courseUrl": "https://www.coursera.org/learn/competencias-digitales-access",
   "imgUrl": "https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://coursera-course-photos.s3.amazonaws.com/1b/ff00012da64c8183c1c72e6ba0b5e2/Logo-Access.png?auto=format%2Ccompress&dpr=1&w=175&h=175&fit=fill&bg=FFF",
-  "university": "UAB"
+  "university": "UAB",
+  "slug": "competencias-digitales-de-ofimatica-microsoft-access"
 },
 {
   "_id": {
@@ -518,7 +535,8 @@
   ],
   "courseUrl": "https://www.coursera.org/learn/humanidades-digitales",
   "imgUrl": "https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://coursera-course-photos.s3.amazonaws.com/d4/07a4f0cbb511e8bf61e50c932bcacb/logo-quadrat.png?auto=format%2Ccompress&dpr=1&w=175&h=175&fit=fill&bg=FFF",
-  "university": "UAB"
+  "university": "UAB",
+  "slug": "humanidades-digitales"
 },
 {
   "_id": {
@@ -547,7 +565,8 @@
   ],
   "courseUrl": "https://www.coursera.org/learn/gestion-comunicacion-interna-organizaciones",
   "imgUrl": "https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://coursera-course-photos.s3.amazonaws.com/66/2a305ebe8840bea3f17fd925c6c8cd/Logo-Gestion-de-comunicacion-interna.png?auto=format%2Ccompress&dpr=1&w=175&h=175&fit=fill&bg=FFF",
-  "university": "UAB"
+  "university": "UAB",
+  "slug": "gestion-de-la-comunicacion-interna-en-las-organizaciones"
 },
 {
   "_id": {
@@ -580,7 +599,8 @@
   ],
   "courseUrl": "https://www.coursera.org/learn/democracia",
   "imgUrl": "https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://coursera-course-photos.s3.amazonaws.com/ef/3dbb008f0811e7b707890ee266b477/Democracia.png?auto=format%2Ccompress&dpr=1&w=175&h=175&fit=fill&bg=FFF",
-  "university": "UAB"
+  "university": "UAB",
+  "slug": "democracia-y-decisiones-publicas-introduccion-al-analisis-de-politicas-publicas"
 },
 {
   "_id": {
@@ -605,7 +625,8 @@
   ],
   "courseUrl": "https://www.coursera.org/learn/videojuegos-animation",
   "imgUrl": "https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://coursera-course-photos.s3.amazonaws.com/d9/1e3540680c11e5a678b90bf62bc582/Course-logo--coursera-v1.png?auto=format%2Ccompress&dpr=1&w=175&h=175&fit=fill&bg=FFF",
-  "university": "UAB"
+  "university": "UAB",
+  "slug": "arte-3d-y-animacion-en-videojuegos"
 },
 {
   "_id": {
@@ -634,7 +655,8 @@
   ],
   "courseUrl": "https://www.coursera.org/learn/proteccion-datos",
   "imgUrl": "https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://coursera-course-photos.s3.amazonaws.com/d0/1d9d2756c7423eb69054b482ee7990/Logo-Proteccion-de-datos.png?auto=format%2Ccompress&dpr=1&w=175&h=175&fit=fill&bg=FFF",
-  "university": "UAB"
+  "university": "UAB",
+  "slug": "ley-de-proteccion-de-datos-conoce-tus-derechos"
 },
 {
   "_id": {
@@ -659,7 +681,8 @@
   ],
   "courseUrl": "https://www.coursera.org/learn/videojuegos-diseno",
   "imgUrl": "https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://coursera-course-photos.s3.amazonaws.com/e5/bd41b0680c11e599ee1115f89c2811/Course-logo--coursera-v2.png?auto=format%2Ccompress&dpr=1&w=175&h=175&fit=fill&bg=FFF",
-  "university": "UAB"
+  "university": "UAB",
+  "slug": "diseno-de-videojuegos"
 },
 {
   "_id": {
@@ -688,7 +711,8 @@
   ],
   "courseUrl": "https://www.coursera.org/learn/finanzas-basicas",
   "imgUrl": "https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://coursera-course-photos.s3.amazonaws.com/fb/579bb0fe6a11e6ac807fe980f4c563/logo-cuadrado-v2.png?auto=format%2Ccompress&dpr=1&w=175&h=175&fit=fill&bg=FFF",
-  "university": "UAB"
+  "university": "UAB",
+  "slug": "kit-basico-para-evitar-los-errores-mas-frecuentes-de-finanzas"
 },
 {
   "_id": {
@@ -721,7 +745,8 @@
   ],
   "courseUrl": "https://www.coursera.org/learn/videojuegos-capstone",
   "imgUrl": "https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://coursera-course-photos.s3.amazonaws.com/f3/d9b30063b111e5b9f079fa0fbe4fc3/SpecBanner-UAB.jpg?auto=format%2Ccompress&dpr=1&w=175&h=175&fit=fill&bg=FFF",
-  "university": "UAB"
+  "university": "UAB",
+  "slug": "diseno-y-creacion-de-videojuegos-proyecto-final"
 },
 {
   "_id": {
@@ -746,7 +771,8 @@
   ],
   "courseUrl": "https://www.coursera.org/learn/competencias-digitales-herramientas-basicas",
   "imgUrl": "https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://coursera-course-photos.s3.amazonaws.com/49/0821372680491ca7afe9ad6872efed/1.-PC.png?auto=format%2Ccompress&dpr=1&w=175&h=175&fit=fill&bg=FFF",
-  "university": "UAB"
+  "university": "UAB",
+  "slug": "competencias-digitales-conceptos-y-herramientas-basicas"
 },
 {
   "_id": {
@@ -775,7 +801,8 @@
   ],
   "courseUrl": "https://www.coursera.org/learn/actua-dolor-cronico",
   "imgUrl": "https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://coursera-course-photos.s3.amazonaws.com/f4/50e3505e7011e8a225e1a79e122b67/Logo-Actua-Dolor.png?auto=format%2Ccompress&dpr=1&w=175&h=175&fit=fill&bg=FFF",
-  "university": "UAB"
+  "university": "UAB",
+  "slug": "actua-ante-el-dolor-cronico"
 },
 {
   "_id": {
@@ -800,7 +827,8 @@
   ],
   "courseUrl": "https://www.coursera.org/learn/competencias-digitales-ofimatica-excel",
   "imgUrl": "https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://coursera-course-photos.s3.amazonaws.com/3b/7fcb5ad72c4a39a4c049b0dab3f764/Logo-Excel.png?auto=format%2Ccompress&dpr=1&w=175&h=175&fit=fill&bg=FFF",
-  "university": "UAB"
+  "university": "UAB",
+  "slug": "competencias-digitales-de-ofimatica-microsoft-excel"
 },
 {
   "_id": {
@@ -829,7 +857,8 @@
   ],
   "courseUrl": "https://www.coursera.org/learn/correccion-estilo-variaciones",
   "imgUrl": "https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://coursera-course-photos.s3.amazonaws.com/af/e2d8d0be8711e58fef1bd93fb2110a/CE-onDemandQuadrat.png?auto=format%2Ccompress&dpr=1&w=175&h=175&fit=fill&bg=FFF",
-  "university": "UAB"
+  "university": "UAB",
+  "slug": "correccion-estilo-y-variaciones-de-la-lengua-espanola"
 },
 {
   "_id": {
@@ -858,7 +887,8 @@
   ],
   "courseUrl": "https://www.coursera.org/learn/principales-procesos-grupales-en-las-organizaciones",
   "imgUrl": "https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://coursera-course-photos.s3.amazonaws.com/a2/899ac6b1784e8e8945769a89947726/Logo-PTO3.png?auto=format%2Ccompress&dpr=1&w=175&h=175&fit=fill&bg=FFF",
-  "university": "UAB"
+  "university": "UAB",
+  "slug": "principales-procesos-grupales-en-las-organizaciones"
 },
 {
   "_id": {
@@ -887,7 +917,8 @@
   ],
   "courseUrl": "https://www.coursera.org/learn/archaeology-heritage-africa",
   "imgUrl": "https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://coursera-course-photos.s3.amazonaws.com/74/227588a0584fb0bb7855da92d35ddc/Logo-AA.png?auto=format%2Ccompress&dpr=1&w=175&h=175&fit=fill&bg=FFF",
-  "university": "UAB"
+  "university": "UAB",
+  "slug": "archaeology-and-heritage-of-africa"
 },
 {
   "_id": {
@@ -920,7 +951,8 @@
   ],
   "courseUrl": "https://www.coursera.org/learn/clasificacion-imagenes",
   "imgUrl": "https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://coursera-course-photos.s3.amazonaws.com/52/c86440629211e5a8f2bf97b19e82bb/Clipboard01.jpg?auto=format%2Ccompress&dpr=1&w=175&h=175&fit=fill&bg=FFF",
-  "university": "UAB"
+  "university": "UAB",
+  "slug": "clasificacion-de-imagenes-como-reconocer-el-contenido-de-una-imagen"
 },
 {
   "_id": {
@@ -953,7 +985,8 @@
   ],
   "courseUrl": "https://www.coursera.org/learn/deteccion-objetos",
   "imgUrl": "https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://coursera-course-photos.s3.amazonaws.com/a6/175e00612d11e59cb2d3d5ce6e90d5/logoObjectDetection.jpg?auto=format%2Ccompress&dpr=1&w=175&h=175&fit=fill&bg=FFF",
-  "university": "UAB"
+  "university": "UAB",
+  "slug": "deteccion-de-objetos"
 },
 {
   "_id": {
@@ -978,7 +1011,8 @@
   ],
   "courseUrl": "https://www.coursera.org/learn/economia-cambio-climatico",
   "imgUrl": "https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://coursera-course-photos.s3.amazonaws.com/3d/42a582c9104d348ac52fa1ddc44079/Propuesta-logo-ECC.png?auto=format%2Ccompress&dpr=1&w=175&h=175&fit=fill&bg=FFF",
-  "university": "UAB"
+  "university": "UAB",
+  "slug": "economia-del-cambio-climatico"
 },
 {
   "_id": {
@@ -1007,7 +1041,8 @@
   ],
   "courseUrl": "https://www.coursera.org/learn/salud-vegetal-plagas-enfermedades-plantas",
   "imgUrl": "https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://coursera-course-photos.s3.amazonaws.com/fb/acca09203647bcb631aedd9fddbfaa/Logo-SV.png?auto=format%2Ccompress&dpr=1&w=175&h=175&fit=fill&bg=FFF",
-  "university": "UAB"
+  "university": "UAB",
+  "slug": "la-salud-vegetal-plagas-y-enfermedades-en-plantas"
 },
 {
   "_id": {
@@ -1036,7 +1071,8 @@
   ],
   "courseUrl": "https://www.coursera.org/learn/estrategias-para-desarrollar-el-talento-en-organizaciones",
   "imgUrl": "https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://coursera-course-photos.s3.amazonaws.com/a0/b787055e3f4ec9ac296916e925ca59/Logo-PTO5.png?auto=format%2Ccompress&dpr=1&w=175&h=175&fit=fill&bg=FFF",
-  "university": "UAB"
+  "university": "UAB",
+  "slug": "estrategias-para-desarrollar-el-talento-en-organizaciones"
 },
 {
   "_id": {
@@ -1065,7 +1101,8 @@
   ],
   "courseUrl": "https://www.coursera.org/learn/impacto-datos-masivos",
   "imgUrl": "https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://coursera-course-photos.s3.amazonaws.com/58/f529f0495511e8bca257791b0c04c9/BD1.png?auto=format%2Ccompress&dpr=1&w=175&h=175&fit=fill&bg=FFF",
-  "university": "UAB"
+  "university": "UAB",
+  "slug": "big-data-el-impacto-de-los-datos-masivos-en-la-sociedad-actual"
 },
 {
   "_id": {
@@ -1098,7 +1135,8 @@
   ],
   "courseUrl": "https://www.coursera.org/learn/educacion-social",
   "imgUrl": "https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://coursera-course-photos.s3.amazonaws.com/12/578c8f8d9e4437b1efea90ea88c837/Logo-ES.png?auto=format%2Ccompress&dpr=1&w=175&h=175&fit=fill&bg=FFF",
-  "university": "UAB"
+  "university": "UAB",
+  "slug": "educacion-social-ambitos-de-accion-y-reflexion"
 },
 {
   "_id": {
@@ -1127,7 +1165,8 @@
   ],
   "courseUrl": "https://www.coursera.org/learn/interaccion-social-cultura-organizacional",
   "imgUrl": "https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://coursera-course-photos.s3.amazonaws.com/c1/8875fd470745cfb931c6c5bd3ed9ec/Logo-PTO2.png?auto=format%2Ccompress&dpr=1&w=175&h=175&fit=fill&bg=FFF",
-  "university": "UAB"
+  "university": "UAB",
+  "slug": "interaccion-social-y-cultura-organizacional"
 },
 {
   "_id": {
@@ -1152,7 +1191,8 @@
   ],
   "courseUrl": "https://www.coursera.org/learn/competencias-digitales-ofimatica-word",
   "imgUrl": "https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://coursera-course-photos.s3.amazonaws.com/a9/0cd26228f14056bcd8ba355e97d2b3/Logo-Word.png?auto=format%2Ccompress&dpr=1&w=175&h=175&fit=fill&bg=FFF",
-  "university": "UAB"
+  "university": "UAB",
+  "slug": "competencias-digitales-de-ofimatica-microsoft-word"
 },
 {
   "_id": {
@@ -1177,7 +1217,8 @@
   ],
   "courseUrl": "https://www.coursera.org/learn/patrocinio-deportivo",
   "imgUrl": "https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://coursera-course-photos.s3.amazonaws.com/af/fac900c8cc11e5b91fdda7c1ae96a1/Portada_coursera_retocada.jpg?auto=format%2Ccompress&dpr=1&w=175&h=175&fit=fill&bg=FFF",
-  "university": "UAB"
+  "university": "UAB",
+  "slug": "patrocinio-deportivo"
 },
 {
   "_id": {
@@ -1206,7 +1247,8 @@
   ],
   "courseUrl": "https://www.coursera.org/learn/big-data-procesamiento-analisis",
   "imgUrl": "https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://coursera-course-photos.s3.amazonaws.com/9f/94b150495511e89fc523e545db710d/BD3.png?auto=format%2Ccompress&dpr=1&w=175&h=175&fit=fill&bg=FFF",
-  "university": "UAB"
+  "university": "UAB",
+  "slug": "big-data-procesamiento-y-analisis"
 },
 {
   "_id": {
@@ -1231,7 +1273,8 @@
   ],
   "courseUrl": "https://www.coursera.org/learn/olympic-games",
   "imgUrl": "https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://coursera-course-photos.s3.amazonaws.com/6a/81c2508ca811e3aed75966a6f27d66/MOOC_caratula.jpg?auto=format%2Ccompress&dpr=1&w=175&h=175&fit=fill&bg=FFF",
-  "university": "UAB"
+  "university": "UAB",
+  "slug": "los-juegos-olimpicos-y-los-medios-de-comunicacion"
 },
 {
   "_id": {
@@ -1260,7 +1303,8 @@
   ],
   "courseUrl": "https://www.coursera.org/learn/introduccion-al-calculo",
   "imgUrl": "https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://coursera-course-photos.s3.amazonaws.com/e5/3e7d49769674e52dc089d51f3b570f/precalculo.png?auto=format%2Ccompress&dpr=1&w=175&h=175&fit=fill&bg=FFF",
-  "university": "UAB"
+  "university": "UAB",
+  "slug": "pre-calculus"
 },
 {
   "_id": {
@@ -1293,7 +1337,8 @@
   ],
   "courseUrl": "https://www.coursera.org/learn/ue-historia-instituciones-politicas",
   "imgUrl": "https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://coursera-course-photos.s3.amazonaws.com/34/13bebe688a405880a6753a8499049e/logo-UE.png?auto=format%2Ccompress&dpr=1&w=175&h=175&fit=fill&bg=FFF",
-  "university": "UAB"
+  "university": "UAB",
+  "slug": "union-europea-historia-instituciones-y-politicas"
 },
 {
   "_id": {
@@ -1326,7 +1371,8 @@
   ],
   "courseUrl": "https://www.coursera.org/learn/sistemas-digitales",
   "imgUrl": "https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://coursera-course-photos.s3.amazonaws.com/a0/84ba1dc886b1a592c8dc7e6b19e512/logo-sistemas-digitales.png?auto=format%2Ccompress&dpr=1&w=175&h=175&fit=fill&bg=FFF",
-  "university": "UAB"
+  "university": "UAB",
+  "slug": "sistemas-digitales-de-las-puertas-logicas-al-procesador"
 },
 {
   "_id": {
@@ -1355,7 +1401,8 @@
   ],
   "courseUrl": "https://www.coursera.org/learn/corporate-governance-mitos-realidades",
   "imgUrl": "https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://coursera-course-photos.s3.amazonaws.com/35/6e685025d511e8be83ddce96f1fff4/CG.png?auto=format%2Ccompress&dpr=1&w=175&h=175&fit=fill&bg=FFF",
-  "university": "UAB"
+  "university": "UAB",
+  "slug": "corporate-governance-mitos-y-realidades"
 },
 {
   "_id": {
@@ -1388,7 +1435,8 @@
   ],
   "courseUrl": "https://www.coursera.org/learn/economia-circular",
   "imgUrl": "https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://coursera-course-photos.s3.amazonaws.com/48/b618a0450b47b7b2546e670db48fdf/Logo-Economia-Circular-DEF.png?auto=format%2Ccompress&dpr=1&w=175&h=175&fit=fill&bg=FFF",
-  "university": "UAB"
+  "university": "UAB",
+  "slug": "la-economia-circular-un-mito-o-una-posibilidad"
 },
 {
   "_id": {
@@ -1413,7 +1461,8 @@
   ],
   "courseUrl": "https://www.coursera.org/learn/oralpha-literacy-for-new-citizens-for-trainers",
   "imgUrl": "https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://coursera-course-photos.s3.amazonaws.com/13/16e7ebcebd4d338007727347137b4a/Logo-final-Oralpha.png?auto=format%2Ccompress&dpr=1&w=175&h=175&fit=fill&bg=FFF",
-  "university": "UAB"
+  "university": "UAB",
+  "slug": "oralpha-literacy-for-new-citizens-a-course-for-trainers"
 },
 {
   "_id": {
@@ -1442,7 +1491,8 @@
   ],
   "courseUrl": "https://www.coursera.org/learn/egypt",
   "imgUrl": "https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://coursera-course-photos.s3.amazonaws.com/c5/6cd7000abd11e6b0837511e81b5490/NOU-Logo-EGYPT-v2.png?auto=format%2Ccompress&dpr=1&w=175&h=175&fit=fill&bg=FFF",
-  "university": "UAB"
+  "university": "UAB",
+  "slug": "egiptologia-egyptology"
 },
 {
   "_id": {
@@ -1475,7 +1525,8 @@
   ],
   "courseUrl": "https://www.coursera.org/learn/climate-change-indigenous-communities",
   "imgUrl": "https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://coursera-course-photos.s3.amazonaws.com/89/8388f7d79744d29fc84198524d1a9c/Logo-CC.png?auto=format%2Ccompress&dpr=1&w=175&h=175&fit=fill&bg=FFF",
-  "university": "UAB"
+  "university": "UAB",
+  "slug": "el-cambio-climatico-y-los-pueblos-indigenas-y-las-comunidades-locales"
 },
 {
   "_id": {
@@ -1504,7 +1555,8 @@
   ],
   "courseUrl": "https://www.coursera.org/learn/captar-talento-en-la-era-de-la-digitalizacion",
   "imgUrl": "https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://coursera-course-photos.s3.amazonaws.com/98/85564a84f74a1f96dd6918bc6e5230/Logo-PTO4.png?auto=format%2Ccompress&dpr=1&w=175&h=175&fit=fill&bg=FFF",
-  "university": "UAB"
+  "university": "UAB",
+  "slug": "como-captar-talento-en-la-era-de-la-digitalizacion"
 },
 {
   "_id": {
@@ -1529,7 +1581,8 @@
   ],
   "courseUrl": "https://www.coursera.org/learn/teaching-english",
   "imgUrl": "https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://coursera-course-photos.s3.amazonaws.com/a7/95aa3038bf11e489a0dfadd0d3e8ba/English.jpg?auto=format%2Ccompress&dpr=1&w=175&h=175&fit=fill&bg=FFF",
-  "university": "UAB"
+  "university": "UAB",
+  "slug": "ingles-con-fines-pedagogicos"
 },
 {
   "_id": {
@@ -1554,7 +1607,8 @@
   ],
   "courseUrl": "https://www.coursera.org/learn/videojuegos-engine",
   "imgUrl": "https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://coursera-course-photos.s3.amazonaws.com/f8/befab0680c11e5b7e457acf9a254e6/Course-logo--coursera-v4.png?auto=format%2Ccompress&dpr=1&w=175&h=175&fit=fill&bg=FFF",
-  "university": "UAB"
+  "university": "UAB",
+  "slug": "motores-graficos-en-videojuegos-game-engine"
 },
 {
   "_id": {
@@ -1579,7 +1633,8 @@
   ],
   "courseUrl": "https://www.coursera.org/learn/competencias-digitales-ofimatica-powerpoint",
   "imgUrl": "https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://coursera-course-photos.s3.amazonaws.com/c7/6c8b4153ea47749136d3967db48218/Logo-PPT.png?auto=format%2Ccompress&dpr=1&w=175&h=175&fit=fill&bg=FFF",
-  "university": "UAB"
+  "university": "UAB",
+  "slug": "competencias-digitales-de-ofimatica-microsoft-powerpoint"
 },
 {
   "_id": {
@@ -1604,7 +1659,8 @@
   ],
   "courseUrl": "https://www.coursera.org/learn/pap-covid19",
   "imgUrl": "https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://coursera-course-photos.s3.amazonaws.com/58/9c6a5e4d0a4d1c90720fe8ec44687d/Logo-PAP-covid.png?auto=format%2Ccompress&dpr=1&w=175&h=175&fit=fill&bg=FFF",
-  "university": "UAB"
+  "university": "UAB",
+  "slug": "primeros-auxilios-psicologicos-pap-edicion-especial-covid-19"
 },
 {
   "_id": {
@@ -1637,7 +1693,8 @@
   ],
   "courseUrl": "https://www.coursera.org/learn/sustainability-social-ecological-systems",
   "imgUrl": "https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://coursera-course-photos.s3.amazonaws.com/5b/ee8b504d0311e7b82b4731a2b9703e/LOGO-SUST-BLAU---escollit.png?auto=format%2Ccompress&dpr=1&w=175&h=175&fit=fill&bg=FFF",
-  "university": "UAB"
+  "university": "UAB",
+  "slug": "sostenibilidad-de-los-sistemas-socioecologicos-el-nexo-entre-agua-energia-y-alimentos"
 },
 {
   "_id": {
@@ -1666,7 +1723,8 @@
   ],
   "courseUrl": "https://www.coursera.org/learn/big-data-visualizacion-datos",
   "imgUrl": "https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://coursera-course-photos.s3.amazonaws.com/b9/de1fb0495511e893894b86b164a303/BD4.png?auto=format%2Ccompress&dpr=1&w=175&h=175&fit=fill&bg=FFF",
-  "university": "UAB"
+  "university": "UAB",
+  "slug": "big-data-visualizacion-de-datos"
 },
 {
   "_id": {
@@ -1695,7 +1753,8 @@
   ],
   "courseUrl": "https://www.coursera.org/learn/anticonconcepcion-hormonal",
   "imgUrl": "https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://coursera-course-photos.s3.amazonaws.com/3c/b2a93067ea11e8b10f53c0f9752329/logo-Anticoncepcion-hormonal.png?auto=format%2Ccompress&dpr=1&w=175&h=175&fit=fill&bg=FFF",
-  "university": "UAB"
+  "university": "UAB",
+  "slug": "anticoncepcion-hormonal-al-alcance-de-todos"
 },
 {
   "_id": {
@@ -1728,7 +1787,8 @@
   ],
   "courseUrl": "https://www.coursera.org/learn/adquisicion-almacenamiento-de-datos",
   "imgUrl": "https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://coursera-course-photos.s3.amazonaws.com/86/101990495511e891a30b6ab97e7573/BD2.png?auto=format%2Ccompress&dpr=1&w=175&h=175&fit=fill&bg=FFF",
-  "university": "UAB"
+  "university": "UAB",
+  "slug": "big-data-adquisicion-y-almacenamiento-de-datos"
 },
 {
   "_id": {
@@ -1761,7 +1821,8 @@
   ],
   "courseUrl": "https://www.coursera.org/learn/mercado-digital",
   "imgUrl": "https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://coursera-course-photos.s3.amazonaws.com/74/517188001b48ea8e308a148934daab/Logo.png?auto=format%2Ccompress&dpr=1&w=175&h=175&fit=fill&bg=FFF",
-  "university": "UAB"
+  "university": "UAB",
+  "slug": "contratacion-y-mercado-digital-aspectos-legales-y-otras-cuestiones-de-interes"
 },
 {
   "_id": {
@@ -1794,7 +1855,8 @@
   ],
   "courseUrl": "https://www.coursera.org/learn/pap",
   "imgUrl": "https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://coursera-course-photos.s3.amazonaws.com/e9/4248f0683c11e5b259e33eb6e889a0/logo_PAP_ondem_2.jpg?auto=format%2Ccompress&dpr=1&w=175&h=175&fit=fill&bg=FFF",
-  "university": "UAB"
+  "university": "UAB",
+  "slug": "primeros-auxilios-psicologicos-pap"
 },
 {
   "_id": {
@@ -1827,7 +1889,8 @@
   ],
   "courseUrl": "https://www.coursera.org/learn/linguistic-diversity-what-for",
   "imgUrl": "https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://coursera-course-photos.s3.amazonaws.com/4c/fce5f76376421b94eb83c548c46958/Logo-linguistic-diversity.png?auto=format%2Ccompress&dpr=1&w=175&h=175&fit=fill&bg=FFF",
-  "university": "UAB"
+  "university": "UAB",
+  "slug": "diversidad-linguistica-para-que"
 },
 {
   "_id": {
@@ -1856,7 +1919,8 @@
   ],
   "courseUrl": "https://www.coursera.org/learn/coaching-en-las-ondas",
   "imgUrl": "https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://coursera-course-photos.s3.amazonaws.com/0f/5181a017da11e98ddeb1d10ac8683a/Logo-cuadrado.png?auto=format%2Ccompress&dpr=1&w=175&h=175&fit=fill&bg=FFF",
-  "university": "UAB"
+  "university": "UAB",
+  "slug": "tu-consultorio-de-coaching-en-las-ondas"
 },
 {
   "_id": {
@@ -1881,7 +1945,8 @@
   ],
   "courseUrl": "https://www.coursera.org/learn/iniciacion-jeroglificos-egipcios",
   "imgUrl": "https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://coursera-course-photos.s3.amazonaws.com/86/7113a0e28711e8bd09ef785fe9c9f9/Logo-Jeroglificos-v2.png?auto=format%2Ccompress&dpr=1&w=175&h=175&fit=fill&bg=FFF",
-  "university": "UAB"
+  "university": "UAB",
+  "slug": "iniciacion-a-los-jeroglificos-egipcios"
 },
 {
   "_id": {
@@ -1914,7 +1979,8 @@
   ],
   "courseUrl": "https://www.coursera.org/learn/sustainable-high-end-tourism",
   "imgUrl": "https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://coursera-course-photos.s3.amazonaws.com/e4/b9259879704086a0824edeb1eae78a/Logo-Tourism-completo_.png?auto=format%2Ccompress&dpr=1&w=175&h=175&fit=fill&bg=FFF",
-  "university": "UAB"
+  "university": "UAB",
+  "slug": "sustainable-high-end-tourism"
 },
 {
   "_id": {
@@ -1939,7 +2005,8 @@
   ],
   "courseUrl": "https://www.coursera.org/learn/las-organizaciones-en-el-siglo-xxi-y-su-relevancia-social",
   "imgUrl": "https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://coursera-course-photos.s3.amazonaws.com/74/826fba52af4f7b81a0b4a6f9dee2ae/Logo-PTO1.png?auto=format%2Ccompress&dpr=1&w=175&h=175&fit=fill&bg=FFF",
-  "university": "UAB"
+  "university": "UAB",
+  "slug": "las-organizaciones-en-el-siglo-xxi-y-su-relevancia-social"
 },
 {
   "_id": {
@@ -1968,7 +2035,8 @@
   ],
   "courseUrl": "https://www.coursera.org/learn/women-environmental-biology",
   "imgUrl": "https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://coursera-course-photos.s3.amazonaws.com/28/121d36f8304c679147d72dede1c5bc/logo-1-.png?auto=format%2Ccompress&dpr=1&w=175&h=175&fit=fill&bg=FFF",
-  "university": "UAB"
+  "university": "UAB",
+  "slug": "las-mujeres-en-la-biologia-medioambiental"
 },
 {
   "_id": {
@@ -2001,7 +2069,8 @@
   ],
   "courseUrl": "https://www.coursera.org/learn/representaciones-culturales",
   "imgUrl": "https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://coursera-course-photos.s3.amazonaws.com/e7/ec4460ce4e11e585b869f314c68af0/Desafios.jpg?auto=format%2Ccompress&dpr=1&w=175&h=175&fit=fill&bg=FFF",
-  "university": "UAB"
+  "university": "UAB",
+  "slug": "representaciones-culturales-de-las-sexualidades"
 },
 {
   "_id": {
@@ -2030,7 +2099,8 @@
   ],
   "courseUrl": "https://www.coursera.org/learn/valle-de-los-reyes",
   "imgUrl": "https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://coursera-course-photos.s3.amazonaws.com/86/6b8df05a3d11e78de989ea7721885c/logo-VR-v2.3-final.png?auto=format%2Ccompress&dpr=1&w=175&h=175&fit=fill&bg=FFF",
-  "university": "UAB"
+  "university": "UAB",
+  "slug": "el-valle-de-los-reyes"
 },
 {
   "_id": {
@@ -2063,7 +2133,8 @@
   ],
   "courseUrl": "https://www.coursera.org/learn/big-data-proyecto",
   "imgUrl": "https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://coursera-course-photos.s3.amazonaws.com/da/169140495511e89ab7e504e84172ff/BD5.png?auto=format%2Ccompress&dpr=1&w=175&h=175&fit=fill&bg=FFF",
-  "university": "UAB"
+  "university": "UAB",
+  "slug": "big-data-capstone-project"
 },
 {
   "_id": {
@@ -2092,7 +2163,8 @@
   ],
   "courseUrl": "https://www.coursera.org/learn/ciudades-politicas-urbanas",
   "imgUrl": "https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://coursera-course-photos.s3.amazonaws.com/56/a749f0fd0411e7a116cda4f867ef4e/Logo-Ciudades-en-Crisis.png?auto=format%2Ccompress&dpr=1&w=175&h=175&fit=fill&bg=FFF",
-  "university": "UAB"
+  "university": "UAB",
+  "slug": "ciudades-en-crisis-y-nuevas-politicas-urbanas"
 },
 {
   "_id": {
@@ -2117,7 +2189,8 @@
   ],
   "courseUrl": "https://www.coursera.org/learn/sport-sponsorship",
   "imgUrl": "https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://coursera-course-photos.s3.amazonaws.com/5c/a6c19033ad11e68ddebbdc23c40364/Portada_coursera.png?auto=format%2Ccompress&dpr=1&w=175&h=175&fit=fill&bg=FFF",
-  "university": "UAB"
+  "university": "UAB",
+  "slug": "patrocinio-deportivo-dejeles-jugar"
 },
 {
   "_id": {
@@ -2150,7 +2223,8 @@
   ],
   "courseUrl": "https://www.coursera.org/learn/social-pedagogy-europe",
   "imgUrl": "https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://coursera-course-photos.s3.amazonaws.com/b4/1e4500140711e9a4d06fd81804e71c/Social-Pedagogy-Across-Europe---LOGO.jpg?auto=format%2Ccompress&dpr=1&w=175&h=175&fit=fill&bg=FFF",
-  "university": "UAB"
+  "university": "UAB",
+  "slug": "pedagogia-social-en-europa"
 },
 {
   "_id": {
@@ -2175,7 +2249,8 @@
   ],
   "courseUrl": "https://www.coursera.org/learn/videojuegos-play",
   "imgUrl": "https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://coursera-course-photos.s3.amazonaws.com/ee/2b4ea0680c11e5aa291b6a4eec5370/Course-logo--coursera-v3.png?auto=format%2Ccompress&dpr=1&w=175&h=175&fit=fill&bg=FFF",
-  "university": "UAB"
+  "university": "UAB",
+  "slug": "gameplay-en-videojuegos"
 },
 {
   "_id": {
@@ -2200,7 +2275,8 @@
   ],
   "courseUrl": "https://www.coursera.org/learn/cuidados-del-recien-nacido",
   "imgUrl": "https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://coursera-course-photos.s3.amazonaws.com/e6/6a4170d61511e7b7ac797b1765c3af/2017-09-30-05-36-00.jpg?auto=format%2Ccompress&dpr=1&w=175&h=175&fit=fill&bg=FFF",
-  "university": "UChile"
+  "university": "UChile",
+  "slug": "cuidados-y-procedimientos-generales-en-la-atencion-del-recien-nacido"
 },
 {
   "_id": {
@@ -2225,7 +2301,8 @@
   ],
   "courseUrl": "https://www.coursera.org/learn/calidadeducacionsuperior",
   "imgUrl": "https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://coursera-course-photos.s3.amazonaws.com/f8/18d6b07b3511e7ac8279c987513482/pexels-photo-290043.jpg?auto=format%2Ccompress&dpr=1&w=175&h=175&fit=fill&bg=FFF",
-  "university": "UChile"
+  "university": "UChile",
+  "slug": "criterios-para-la-gestion-y-el-aseguramiento-de-la-calidad-en-la-educacion-superior"
 },
 {
   "_id": {
@@ -2258,7 +2335,8 @@
   ],
   "courseUrl": "https://www.coursera.org/learn/inclusion-social-personas-discapacidad",
   "imgUrl": "https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://coursera-course-photos.s3.amazonaws.com/55/a1bde0a4fb49ac82a6281729fc26c6/WhatsApp-Image-2019-07-26-at-15.25.51.jpg?auto=format%2Ccompress&dpr=1&w=175&h=175&fit=fill&bg=FFF",
-  "university": "UChile"
+  "university": "UChile",
+  "slug": "inclusion-social-de-personas-con-discapacidad-desde-un-enfoque-de-derechos"
 },
 {
   "_id": {
@@ -2283,7 +2361,8 @@
   ],
   "courseUrl": "https://www.coursera.org/learn/abordaje-del-riesgo-suicida-en-adolescentes-y-jvenes",
   "imgUrl": "https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://coursera-course-photos.s3.amazonaws.com/a8/5be36ac4cd4b61877a5850c6e14fca/YouTube_portada-curso-Abordaje-del-riesgo-suicida-en-adolescentes-y-jovenes-.jpg?auto=format%2Ccompress&dpr=1&w=175&h=175&fit=fill&bg=FFF",
-  "university": "UChile"
+  "university": "UChile",
+  "slug": "abordaje-del-riesgo-suicida-en-adolescentes-y-jovenes"
 },
 {
   "_id": {
@@ -2308,7 +2387,8 @@
   ],
   "courseUrl": "https://www.coursera.org/learn/trabajando-en-la-preparacin-para-el-cambio-educativo",
   "imgUrl": "https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://coursera-course-photos.s3.amazonaws.com/9e/d59b9ea11a4a9eae30495e735beee1/hand-holding-graduation-cap-with-learning-icons-success-concept-1-.jpg?auto=format%2Ccompress&dpr=1&w=175&h=175&fit=fill&bg=FFF",
-  "university": "UChile"
+  "university": "UChile",
+  "slug": "trabajando-en-la-preparacion-para-el-cambio-educativo"
 },
 {
   "_id": {
@@ -2333,7 +2413,8 @@
   ],
   "courseUrl": "https://www.coursera.org/learn/marketing-gerencial",
   "imgUrl": "https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://coursera-course-photos.s3.amazonaws.com/ff/a543f0711d11e6b04ef1a1056d1a3a/sales-and-marketing-careers.jpg?auto=format%2Ccompress&dpr=1&w=175&h=175&fit=fill&bg=FFF",
-  "university": "UChile"
+  "university": "UChile",
+  "slug": "marketing-gerencial"
 },
 {
   "_id": {
@@ -2358,7 +2439,8 @@
   ],
   "courseUrl": "https://www.coursera.org/learn/competencias-lab",
   "imgUrl": "https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://coursera-course-photos.s3.amazonaws.com/64/e117e0038011e793615d89d729766f/competencias-Coursera.jpg?auto=format%2Ccompress&dpr=1&w=175&h=175&fit=fill&bg=FFF",
-  "university": "UChile"
+  "university": "UChile",
+  "slug": "competencias-laborales-perfiles-evaluacion-y-capacitacion"
 },
 {
   "_id": {
@@ -2383,7 +2465,8 @@
   ],
   "courseUrl": "https://www.coursera.org/learn/docencia-capacitacion-laboral",
   "imgUrl": "https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://coursera-course-photos.s3.amazonaws.com/47/8a9710b43911e791cfb3e1bcf29c27/0000148825.jpg?auto=format%2Ccompress&dpr=1&w=175&h=175&fit=fill&bg=FFF",
-  "university": "UChile"
+  "university": "UChile",
+  "slug": "docencia-para-la-capacitacion-laboral-y-el-aprendizaje-a-lo-largo-de-la-vida"
 },
 {
   "_id": {
@@ -2408,7 +2491,8 @@
   ],
   "courseUrl": "https://www.coursera.org/learn/costosparanegocios",
   "imgUrl": "https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://coursera-course-photos.s3.amazonaws.com/9b/6f15e06e2611e690b7cdfbd31b7bcd/slide8.jpg?auto=format%2Ccompress&dpr=1&w=175&h=175&fit=fill&bg=FFF",
-  "university": "UChile"
+  "university": "UChile",
+  "slug": "costos-para-los-negocios"
 },
 {
   "_id": {
@@ -2433,7 +2517,8 @@
   ],
   "courseUrl": "https://www.coursera.org/learn/potenciando-aprendizaje",
   "imgUrl": "https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://coursera-course-photos.s3.amazonaws.com/d2/3b7d90038411e7b1468b50648d88ef/potenciandoAprendizaje.jpg?auto=format%2Ccompress&dpr=1&w=175&h=175&fit=fill&bg=FFF",
-  "university": "UChile"
+  "university": "UChile",
+  "slug": "potenciando-mi-aprendizaje-en-el-primer-ano-de-universidad"
 },
 {
   "_id": {
@@ -2458,7 +2543,8 @@
   ],
   "courseUrl": "https://www.coursera.org/learn/comonoscambialatecnologia",
   "imgUrl": "https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://coursera-course-photos.s3.amazonaws.com/ce/2a1f506f2c11e6931625b7eaea55d8/Como-nos-cambia-la-tecnologia-300x200.jpg?auto=format%2Ccompress&dpr=1&w=175&h=175&fit=fill&bg=FFF",
-  "university": "UChile"
+  "university": "UChile",
+  "slug": "como-nos-cambia-la-tecnologia"
 },
 {
   "_id": {
@@ -2483,7 +2569,8 @@
   ],
   "courseUrl": "https://www.coursera.org/learn/america-latina",
   "imgUrl": "https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://coursera-course-photos.s3.amazonaws.com/e0/bc5070d03511e59b43674c82b4e388/hand-1030552_960_720.jpg?auto=format%2Ccompress&dpr=1&w=175&h=175&fit=fill&bg=FFF",
-  "university": "UChile"
+  "university": "UChile",
+  "slug": "america-latina-en-los-cambios-internacionales-amenazas-y-oportunidades"
 },
 {
   "_id": {
@@ -2508,7 +2595,8 @@
   ],
   "courseUrl": "https://www.coursera.org/learn/educacion-superior",
   "imgUrl": "https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://coursera-course-photos.s3.amazonaws.com/61/bc22d0d03211e587528bf20f28094b/foto.jpg?auto=format%2Ccompress&dpr=1&w=175&h=175&fit=fill&bg=FFF",
-  "university": "UChile"
+  "university": "UChile",
+  "slug": "el-desafio-de-innovar-en-la-educacion-superior"
 },
 {
   "_id": {
@@ -2533,7 +2621,8 @@
   ],
   "courseUrl": "https://www.coursera.org/learn/seguimiento-de-casos-y-contactos-covid-19",
   "imgUrl": "https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://coursera-course-photos.s3.amazonaws.com/ed/85733df6c5465dababa4a2ac63de32/coronavirus-virus-mask-corona-pandemic-outbreak-disease-epidemic-sars-cov-2.jpg?auto=format%2Ccompress&dpr=1&w=175&h=175&fit=fill&bg=FFF",
-  "university": "UChile"
+  "university": "UChile",
+  "slug": "seguimiento-de-casos-y-contactos-covid-19"
 },
 {
   "_id": {
@@ -2558,7 +2647,8 @@
   ],
   "courseUrl": "https://www.coursera.org/learn/mi-primer-empleo",
   "imgUrl": "https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://coursera-course-photos.s3.amazonaws.com/86/71e070926d11e792214d59f2bad8fe/pexels-photo-288477.jpg?auto=format%2Ccompress&dpr=1&w=175&h=175&fit=fill&bg=FFF",
-  "university": "UChile"
+  "university": "UChile",
+  "slug": "mi-primer-empleo-mpe"
 },
 {
   "_id": {
@@ -2583,7 +2673,8 @@
   ],
   "courseUrl": "https://www.coursera.org/learn/sustentabilidad-economias-sociales",
   "imgUrl": "https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://coursera-course-photos.s3.amazonaws.com/9d/de2c90038011e7b1468b50648d88ef/sustentabilidadyMovsoc.jpg?auto=format%2Ccompress&dpr=1&w=175&h=175&fit=fill&bg=FFF",
-  "university": "UChile"
+  "university": "UChile",
+  "slug": "sustentabilidad-y-economias-sociales"
 },
 {
   "_id": {
@@ -2608,7 +2699,8 @@
   ],
   "courseUrl": "https://www.coursera.org/specializations/analitica-de-datos-en-finanzas",
   "imgUrl": "https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://d15cw65ipctsrr.cloudfront.net/bb/e868da3228481caaa17eca8a516839/Recurso-4logo-finanzas.png?auto=format%2Ccompress&dpr=1&w=175&h=175&fit=fill&bg=FFF",
-  "university": "UDeLosAndesCo"
+  "university": "UDeLosAndesCo",
+  "slug": "programa-especializado-analitica-de-datos-en-finanzas"
 },
 {
   "_id": {
@@ -2633,7 +2725,8 @@
   ],
   "courseUrl": "https://www.coursera.org/specializations/ciberseguridad",
   "imgUrl": "https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://d15cw65ipctsrr.cloudfront.net/6b/1d5b61ca4840e589011a231cf052cd/Recurso-1logo-ciberseguridad.png?auto=format%2Ccompress&dpr=1&w=175&h=175&fit=fill&bg=FFF",
-  "university": "UDeLosAndesCo"
+  "university": "UDeLosAndesCo",
+  "slug": "programa-especializado-ciberseguridad"
 },
 {
   "_id": {
@@ -2658,7 +2751,8 @@
   ],
   "courseUrl": "https://www.coursera.org/specializations/ciencia-de-datos",
   "imgUrl": "https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://d15cw65ipctsrr.cloudfront.net/fd/d48994e52c45039deb6ddbe232d5b1/Recurso-3logo-ciencia-de-datos.png?auto=format%2Ccompress&dpr=1&w=175&h=175&fit=fill&bg=FFF",
-  "university": "UDeLosAndesCo"
+  "university": "UDeLosAndesCo",
+  "slug": "programa-especializado-ciencia-de-datos"
 },
 {
   "_id": {
@@ -2687,7 +2781,8 @@
   ],
   "courseUrl": "https://www.coursera.org/specializations/desarrollo-videojuegos",
   "imgUrl": "https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://d396qusza40orc.cloudfront.net/phoenixassets/Spanish-Launch-10-7-images/Thumbnails%20of%20Banner%20%28Logos%29/iOS_UniAndes_banner.jpg?auto=format%2Ccompress&dpr=1&w=175&h=175&fit=fill&bg=FFF",
-  "university": "UDeLosAndesCo"
+  "university": "UDeLosAndesCo",
+  "slug": "programa-especializado-desarrollo-y-diseno-de-videojuegos"
 },
 {
   "_id": {
@@ -2712,7 +2807,8 @@
   ],
   "courseUrl": "https://www.coursera.org/specializations/diseno-instruccion-enfoque-grandes-ideas",
   "imgUrl": "https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://d15cw65ipctsrr.cloudfront.net/45/82caf8da32410cb5a2ab4b265d9ff2/Logo-general.png?auto=format%2Ccompress&dpr=1&w=175&h=175&fit=fill&bg=FFF",
-  "university": "UDeLosAndesCo"
+  "university": "UDeLosAndesCo",
+  "slug": "programa-especializado-diseno-de-instruccion-por-enfoque-de-grandes-ideas"
 },
 {
   "_id": {
@@ -2737,7 +2833,8 @@
   ],
   "courseUrl": "https://www.coursera.org/specializations/business-latin-america",
   "imgUrl": "https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://d15cw65ipctsrr.cloudfront.net/f9/664b5957b84b9d8b271129dffb0e04/logo.jpg?auto=format%2Ccompress&dpr=1&w=175&h=175&fit=fill&bg=FFF",
-  "university": "UDeLosAndesCo"
+  "university": "UDeLosAndesCo",
+  "slug": "programa-especializado-hacer-negocios-en-america-latina"
 },
 {
   "_id": {
@@ -2762,7 +2859,8 @@
   ],
   "courseUrl": "https://www.coursera.org/specializations/liderazgo-efectivo",
   "imgUrl": "https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://d15cw65ipctsrr.cloudfront.net/36/11e7d0580611e6a7ae011103ca9937/LiderazgoEfectivoIconoPrograma2.jpg?auto=format%2Ccompress&dpr=1&w=175&h=175&fit=fill&bg=FFF",
-  "university": "UDeLosAndesCo"
+  "university": "UDeLosAndesCo",
+  "slug": "programa-especializado-liderazgo-efectivo-para-el-siglo-xxi"
 },
 {
   "_id": {
@@ -2787,7 +2885,8 @@
   ],
   "courseUrl": "https://www.coursera.org/specializations/plataformas-para-procesar-datos-no-tradicionales",
   "imgUrl": "https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://d15cw65ipctsrr.cloudfront.net/3f/923589e77849fc9cb370e7a7d7d58e/Recurso-2logo-plataformas.png?auto=format%2Ccompress&dpr=1&w=175&h=175&fit=fill&bg=FFF",
-  "university": "UDeLosAndesCo"
+  "university": "UDeLosAndesCo",
+  "slug": "programa-especializado-plataformas-para-procesar-datos-no-tradicionales"
 },
 {
   "_id": {
@@ -2812,7 +2911,8 @@
   ],
   "courseUrl": "https://www.coursera.org/specializations/gerencia-proyectos-complejos",
   "imgUrl": "https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://d15cw65ipctsrr.cloudfront.net/ba/e87b62b266444caa7d09b7342bb598/Mooc-T-copia-2.jpg?auto=format%2Ccompress&dpr=1&w=175&h=175&fit=fill&bg=FFF",
-  "university": "UDeLosAndesCo"
+  "university": "UDeLosAndesCo",
+  "slug": "programa-especializado-programa-especializado-en-gerencia-de-proyectos-complejos"
 },
 {
   "_id": {
@@ -2837,7 +2937,8 @@
   ],
   "courseUrl": "https://www.coursera.org/specializations/desarrollo-nuevas-empresas",
   "imgUrl": "https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://d15cw65ipctsrr.cloudfront.net/34/243150b94411e59eaffdd1e3640396/Crece.jpg?auto=format%2Ccompress&dpr=1&w=175&h=175&fit=fill&bg=FFF",
-  "university": "UDeLosAndesCo"
+  "university": "UDeLosAndesCo",
+  "slug": "programa-especializado-programa-en-desarrollo-de-nuevas-empresas"
 },
 {
   "_id": {
@@ -2862,7 +2963,8 @@
   ],
   "courseUrl": "https://www.coursera.org/learn/diseno-de-cursos-para-la-comprension-de-grandes-ideas",
   "imgUrl": "https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://coursera-course-photos.s3.amazonaws.com/16/019c25a6c645c496e9b50ee7b75b3a/Logo-curso-2.png?auto=format%2Ccompress&dpr=1&w=175&h=175&fit=fill&bg=FFF",
-  "university": "UDeLosAndesCo"
+  "university": "UDeLosAndesCo",
+  "slug": "diseno-de-cursos-para-la-comprension-de-grandes-ideas"
 },
 {
   "_id": {
@@ -2891,7 +2993,8 @@
   ],
   "courseUrl": "https://www.coursera.org/learn/gabriel-garcia-marquez-poder-historia-amor",
   "imgUrl": "https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://coursera-course-photos.s3.amazonaws.com/b5/b7b300de4a11e6a28c637281979d2f/Gabriel_Garcia_Marquez.jpg?auto=format%2Ccompress&dpr=1&w=175&h=175&fit=fill&bg=FFF",
-  "university": "UDeLosAndesCo"
+  "university": "UDeLosAndesCo",
+  "slug": "gabriel-garcia-marquez-entre-el-poder-la-historia-y-el-amor"
 },
 {
   "_id": {
@@ -2916,7 +3019,8 @@
   ],
   "courseUrl": "https://www.coursera.org/learn/liderazgo",
   "imgUrl": "https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://coursera-course-photos.s3.amazonaws.com/27/67fcf0581611e6ad23719041809f5b/LiderazgoEfectivoCurso4Ver2Logo.jpg?auto=format%2Ccompress&dpr=1&w=175&h=175&fit=fill&bg=FFF",
-  "university": "UDeLosAndesCo"
+  "university": "UDeLosAndesCo",
+  "slug": "liderazgo-para-el-siglo-xxi-proyecto-final"
 },
 {
   "_id": {
@@ -2949,7 +3053,8 @@
   ],
   "courseUrl": "https://www.coursera.org/learn/salud-mental-y-atencion-psicosocial",
   "imgUrl": "https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://coursera-course-photos.s3.amazonaws.com/d1/8e5aeb7b6c48eaa8f43d25cad2d790/IDENTIFICADOR-ATENCION-PSICOSOCIAL.png?auto=format%2Ccompress&dpr=1&w=175&h=175&fit=fill&bg=FFF",
-  "university": "UDeLosAndesCo"
+  "university": "UDeLosAndesCo",
+  "slug": "salud-mental-y-atencion-psicosocial"
 },
 {
   "_id": {
@@ -2974,7 +3079,8 @@
   ],
   "courseUrl": "https://www.coursera.org/learn/analitica-financiera",
   "imgUrl": "https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://coursera-course-photos.s3.amazonaws.com/7a/2ee6f7bfa14f7685b4a7976ac9f10e/EX21MADFAFIN-800-X-800.png?auto=format%2Ccompress&dpr=1&w=175&h=175&fit=fill&bg=FFF",
-  "university": "UDeLosAndesCo"
+  "university": "UDeLosAndesCo",
+  "slug": "analitica-financiera"
 },
 {
   "_id": {
@@ -2999,7 +3105,8 @@
   ],
   "courseUrl": "https://www.coursera.org/learn/analisis-del-contexto-para-fundamentar-diseno-de-instruccion",
   "imgUrl": "https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://coursera-course-photos.s3.amazonaws.com/99/4dfc16461741329186cd2890ad988d/Logo-curso-1.png?auto=format%2Ccompress&dpr=1&w=175&h=175&fit=fill&bg=FFF",
-  "university": "UDeLosAndesCo"
+  "university": "UDeLosAndesCo",
+  "slug": "analisis-del-contexto-para-fundamentar-diseno-de-instruccion"
 },
 {
   "_id": {
@@ -3028,7 +3135,8 @@
   ],
   "courseUrl": "https://www.coursera.org/learn/sexualidad",
   "imgUrl": "https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://coursera-course-photos.s3.amazonaws.com/11/b20f9085ac11e689563722898dbcc1/Sexualidad_Mucho-mas-que-sexo-01.jpg?auto=format%2Ccompress&dpr=1&w=175&h=175&fit=fill&bg=FFF",
-  "university": "UDeLosAndesCo"
+  "university": "UDeLosAndesCo",
+  "slug": "sexualidad-mucho-mas-que-sexo"
 },
 {
   "_id": {
@@ -3053,7 +3161,8 @@
   ],
   "courseUrl": "https://www.coursera.org/learn/tomar-decisiones-financieras-que-agregan-valor",
   "imgUrl": "https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://coursera-course-photos.s3.amazonaws.com/de/b4e79ea61c4641b7be50bd2480e08c/identificador_V1.png?auto=format%2Ccompress&dpr=1&w=175&h=175&fit=fill&bg=FFF",
-  "university": "UDeLosAndesCo"
+  "university": "UDeLosAndesCo",
+  "slug": "como-tomar-decisiones-financieras-que-agreguen-valor"
 },
 {
   "_id": {
@@ -3086,7 +3195,8 @@
   ],
   "courseUrl": "https://www.coursera.org/learn/enfermedad-respiratoria-cronica-asma-epoc",
   "imgUrl": "https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://coursera-course-photos.s3.amazonaws.com/69/58656012af43f5a7d70c1d2d793e8d/LOGO-EX20MERC.jpg?auto=format%2Ccompress&dpr=1&w=175&h=175&fit=fill&bg=FFF",
-  "university": "UDeLosAndesCo"
+  "university": "UDeLosAndesCo",
+  "slug": "enfermedad-respiratoria-cronica-asma-epoc"
 },
 {
   "_id": {
@@ -3115,7 +3225,8 @@
   ],
   "courseUrl": "https://www.coursera.org/learn/profundizacion-y-actualizacion-en-enfermedad-cardiovascular",
   "imgUrl": "https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://coursera-course-photos.s3.amazonaws.com/a4/148323ce694102a0f7978964b97144/pyaecc_ids_800x800_Identificador.png?auto=format%2Ccompress&dpr=1&w=175&h=175&fit=fill&bg=FFF",
-  "university": "UDeLosAndesCo"
+  "university": "UDeLosAndesCo",
+  "slug": "profundizacion-y-actualizacion-en-enfermedad-cardiovascular"
 },
 {
   "_id": {
@@ -3140,7 +3251,8 @@
   ],
   "courseUrl": "https://www.coursera.org/learn/dolor-neuropatico-anestesiologia",
   "imgUrl": "https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://coursera-course-photos.s3.amazonaws.com/c5/4bd1a33f514a0f9e1fd83ae28b9b60/800x800.jpg?auto=format%2Ccompress&dpr=1&w=175&h=175&fit=fill&bg=FFF",
-  "university": "UDeLosAndesCo"
+  "university": "UDeLosAndesCo",
+  "slug": "diagnostico-y-tratamiento-del-dolor-neuropatico-en-atencion-primaria"
 },
 {
   "_id": {
@@ -3169,7 +3281,8 @@
   ],
   "courseUrl": "https://www.coursera.org/learn/liderazgo-en-empresas-familiares",
   "imgUrl": "https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://coursera-course-photos.s3.amazonaws.com/2e/ebb78f63c245a0aab2710169386b9a/ex20mlef_sq_final_01.png?auto=format%2Ccompress&dpr=1&w=175&h=175&fit=fill&bg=FFF",
-  "university": "UDeLosAndesCo"
+  "university": "UDeLosAndesCo",
+  "slug": "liderazgo-y-gestion-de-empresas-familiares"
 },
 {
   "_id": {
@@ -3198,7 +3311,8 @@
   ],
   "courseUrl": "https://www.coursera.org/learn/modelo-negocio",
   "imgUrl": "https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://coursera-course-photos.s3.amazonaws.com/bc/430670abce11e59098a34b698f19df/2Logo_Cons.jpg?auto=format%2Ccompress&dpr=1&w=175&h=175&fit=fill&bg=FFF",
-  "university": "UDeLosAndesCo"
+  "university": "UDeLosAndesCo",
+  "slug": "como-construir-mi-modelo-de-negocio"
 },
 {
   "_id": {
@@ -3223,7 +3337,8 @@
   ],
   "courseUrl": "https://www.coursera.org/learn/ods-y-sostenibilidad-una-mirada-desde-los-colegios",
   "imgUrl": "https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://coursera-course-photos.s3.amazonaws.com/b7/87e3eed735429a8a34157942b8fc96/Identificador-800x800-100.jpg?auto=format%2Ccompress&dpr=1&w=175&h=175&fit=fill&bg=FFF",
-  "university": "UDeLosAndesCo"
+  "university": "UDeLosAndesCo",
+  "slug": "ods-y-sostenibilidad-una-mirada-desde-los-colegios"
 },
 {
   "_id": {
@@ -3252,7 +3367,8 @@
   ],
   "courseUrl": "https://www.coursera.org/learn/ensenanza-matematicas-primaria",
   "imgUrl": "https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://coursera-course-photos.s3.amazonaws.com/96/65853b6e0b4d7aae5f8061c59adcfe/epmm_banner_curso_02_e_square.jpg?auto=format%2Ccompress&dpr=1&w=175&h=175&fit=fill&bg=FFF",
-  "university": "UDeLosAndesCo"
+  "university": "UDeLosAndesCo",
+  "slug": "ensenanza-de-las-matematicas-de-primaria"
 },
 {
   "_id": {
@@ -3281,7 +3397,8 @@
   ],
   "courseUrl": "https://www.coursera.org/learn/arquitecturas-de-big-data",
   "imgUrl": "https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://coursera-course-photos.s3.amazonaws.com/87/973c9f1f8d4b9f9ccc061ee69aa774/EX21MPPDABD-800-X-800.png?auto=format%2Ccompress&dpr=1&w=175&h=175&fit=fill&bg=FFF",
-  "university": "UDeLosAndesCo"
+  "university": "UDeLosAndesCo",
+  "slug": "arquitecturas-de-big-data"
 },
 {
   "_id": {
@@ -3310,7 +3427,8 @@
   ],
   "courseUrl": "https://www.coursera.org/learn/objetivos-desarrollo-sostenible",
   "imgUrl": "https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://coursera-course-photos.s3.amazonaws.com/99/e4daf800814285966a5542226b3dab/Mesa-de-trabajo-12.jpg?auto=format%2Ccompress&dpr=1&w=175&h=175&fit=fill&bg=FFF",
-  "university": "UDeLosAndesCo"
+  "university": "UDeLosAndesCo",
+  "slug": "objetivos-de-desarrollo-sostenible-para-america-latina-y-el-caribe"
 },
 {
   "_id": {
@@ -3339,7 +3457,8 @@
   ],
   "courseUrl": "https://www.coursera.org/learn/realidad-extendida-y-metaverso-para-todos",
   "imgUrl": "https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://coursera-course-photos.s3.amazonaws.com/a1/fbe536581a4da4a28170ac4fa8c90e/EX22MIXR-IDENTIFICADOR-CORRECCIONES_2.png?auto=format%2Ccompress&dpr=1&w=175&h=175&fit=fill&bg=FFF",
-  "university": "UDeLosAndesCo"
+  "university": "UDeLosAndesCo",
+  "slug": "realidad-extendida-y-metaverso-para-todos"
 },
 {
   "_id": {
@@ -3364,7 +3483,8 @@
   ],
   "courseUrl": "https://www.coursera.org/learn/estilos-liderazgo",
   "imgUrl": "https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://coursera-course-photos.s3.amazonaws.com/40/2a7d30581611e69499350b054dd782/LiderazgoEfectivoCurso1Ver2Logo.jpg?auto=format%2Ccompress&dpr=1&w=175&h=175&fit=fill&bg=FFF",
-  "university": "UDeLosAndesCo"
+  "university": "UDeLosAndesCo",
+  "slug": "estilos-de-liderazgo-opciones-para-avanzar-en-desafios-complejos"
 },
 {
   "_id": {
@@ -3389,7 +3509,8 @@
   ],
   "courseUrl": "https://www.coursera.org/learn/nueva-empresa",
   "imgUrl": "https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://coursera-course-photos.s3.amazonaws.com/ab/950c00abcf11e5ad9243c94e33ce1e/4Logo_Conso.jpg?auto=format%2Ccompress&dpr=1&w=175&h=175&fit=fill&bg=FFF",
-  "university": "UDeLosAndesCo"
+  "university": "UDeLosAndesCo",
+  "slug": "mi-nueva-empresa-los-siguientes-pasos"
 },
 {
   "_id": {
@@ -3414,7 +3535,8 @@
   ],
   "courseUrl": "https://www.coursera.org/learn/marketing-verde",
   "imgUrl": "https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://coursera-course-photos.s3.amazonaws.com/eb/23662050b011e598a14b735bb6bc1d/logo-marketing-verde-1200x1200.png?auto=format%2Ccompress&dpr=1&w=175&h=175&fit=fill&bg=FFF",
-  "university": "UDeLosAndesCo"
+  "university": "UDeLosAndesCo",
+  "slug": "marketing-verde"
 },
 {
   "_id": {
@@ -3443,7 +3565,8 @@
   ],
   "courseUrl": "https://www.coursera.org/learn/idea-empresa",
   "imgUrl": "https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://coursera-course-photos.s3.amazonaws.com/84/a44940abce11e584d801f8f6059502/1Logo_Desc.jpg?auto=format%2Ccompress&dpr=1&w=175&h=175&fit=fill&bg=FFF",
-  "university": "UDeLosAndesCo"
+  "university": "UDeLosAndesCo",
+  "slug": "como-convertir-mi-idea-en-empresa"
 },
 {
   "_id": {
@@ -3468,7 +3591,8 @@
   ],
   "courseUrl": "https://www.coursera.org/learn/formulacion-evaluacion-proyectos-ingenieria",
   "imgUrl": "https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://coursera-course-photos.s3.amazonaws.com/60/ecc8e952584390b9ec26dc82a1df80/FEP_n_800X800.jpg?auto=format%2Ccompress&dpr=1&w=175&h=175&fit=fill&bg=FFF",
-  "university": "UDeLosAndesCo"
+  "university": "UDeLosAndesCo",
+  "slug": "formulacion-y-evaluacion-de-proyectos-complejos"
 },
 {
   "_id": {
@@ -3493,7 +3617,8 @@
   ],
   "courseUrl": "https://www.coursera.org/learn/gestion-alcance-proyectos",
   "imgUrl": "https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://coursera-course-photos.s3.amazonaws.com/bf/e8136a4fd24345ba6a590bb9f0c2e9/GA_n_800x800.jpg?auto=format%2Ccompress&dpr=1&w=175&h=175&fit=fill&bg=FFF",
-  "university": "UDeLosAndesCo"
+  "university": "UDeLosAndesCo",
+  "slug": "gestion-del-alcance-el-que-de-la-triple-restriccion"
 },
 {
   "_id": {
@@ -3518,7 +3643,8 @@
   ],
   "courseUrl": "https://www.coursera.org/learn/vulnerabilidades-y-pruebas-de-penetracion",
   "imgUrl": "https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://coursera-course-photos.s3.amazonaws.com/1e/64f6de5d624cfa8fba2d571ab44b8d/EX21MCIBVUP-800-X-800.png?auto=format%2Ccompress&dpr=1&w=175&h=175&fit=fill&bg=FFF",
-  "university": "UDeLosAndesCo"
+  "university": "UDeLosAndesCo",
+  "slug": "vulnerabilidades-y-pruebas-de-penetracion"
 },
 {
   "_id": {
@@ -3543,7 +3669,8 @@
   ],
   "courseUrl": "https://www.coursera.org/learn/modelos-predictivos-con-aprendizaje-automatico",
   "imgUrl": "https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://coursera-course-photos.s3.amazonaws.com/ce/64eb2ec5f84b2e806ddfbb338a3ae8/EX21MCDMOPRE-800-X-800.png?auto=format%2Ccompress&dpr=1&w=175&h=175&fit=fill&bg=FFF",
-  "university": "UDeLosAndesCo"
+  "university": "UDeLosAndesCo",
+  "slug": "modelos-predictivos-con-aprendizaje-automatico"
 },
 {
   "_id": {
@@ -3568,7 +3695,8 @@
   ],
   "courseUrl": "https://www.coursera.org/learn/analisis-estatico-lineal-nolineal-estructuras",
   "imgUrl": "https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://coursera-course-photos.s3.amazonaws.com/83/c0060861d0433f96cf06ebaa1ddd87/01_Identificador-SISAE.jpg?auto=format%2Ccompress&dpr=1&w=175&h=175&fit=fill&bg=FFF",
-  "university": "UDeLosAndesCo"
+  "university": "UDeLosAndesCo",
+  "slug": "analisis-estatico-lineal-y-no-lineal-de-estructuras"
 },
 {
   "_id": {
@@ -3597,7 +3725,8 @@
   ],
   "courseUrl": "https://www.coursera.org/learn/derechos-humanos-democracia-america-latina",
   "imgUrl": "https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://coursera-course-photos.s3.amazonaws.com/aa/b2d1e9f264438d8b515bc2a2cfe275/Identificador-800x800.jpg?auto=format%2Ccompress&dpr=1&w=175&h=175&fit=fill&bg=FFF",
-  "university": "UDeLosAndesCo"
+  "university": "UDeLosAndesCo",
+  "slug": "ddhh-y-democracia-una-vision-desde-america-latina"
 },
 {
   "_id": {
@@ -3626,7 +3755,8 @@
   ],
   "courseUrl": "https://www.coursera.org/learn/videojuegos-emprendimiento",
   "imgUrl": "https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://coursera-course-photos.s3.amazonaws.com/89/3f54005b2311e58b0f93aa38870f07/Emprendimiento-y-metodos-agiles.png?auto=format%2Ccompress&dpr=1&w=175&h=175&fit=fill&bg=FFF",
-  "university": "UDeLosAndesCo"
+  "university": "UDeLosAndesCo",
+  "slug": "emprendimiento-y-metodos-agiles-de-desarrollo-en-videojuegos"
 },
 {
   "_id": {
@@ -3651,7 +3781,8 @@
   ],
   "courseUrl": "https://www.coursera.org/learn/analitica-procesos-optimizacion-desde-datos",
   "imgUrl": "https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://coursera-course-photos.s3.amazonaws.com/20/b3d4abab324ff499c6a400000d7885/EX21MANPRO-800-X-800.jpg?auto=format%2Ccompress&dpr=1&w=175&h=175&fit=fill&bg=FFF",
-  "university": "UDeLosAndesCo"
+  "university": "UDeLosAndesCo",
+  "slug": "analitica-de-procesos-optimizacion-desde-los-datos"
 },
 {
   "_id": {
@@ -3676,7 +3807,8 @@
   ],
   "courseUrl": "https://www.coursera.org/learn/bienestar-equidad-derechos-humanos",
   "imgUrl": "https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://coursera-course-photos.s3.amazonaws.com/58/71d48010a611e7a33e637b9035ec09/mooc-3---1200x1200_nombre.jpg?auto=format%2Ccompress&dpr=1&w=175&h=175&fit=fill&bg=FFF",
-  "university": "UDeLosAndesCo"
+  "university": "UDeLosAndesCo",
+  "slug": "bienestar-equidad-y-derechos-humanos"
 },
 {
   "_id": {
@@ -3701,7 +3833,8 @@
   ],
   "courseUrl": "https://www.coursera.org/learn/entendiendo-la-depresion-a-lo-largo-del-ciclo-vital",
   "imgUrl": "https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://coursera-course-photos.s3.amazonaws.com/b5/e910ec1d834ac0a4641504a61f206c/Identificador-800x800-120x-100.jpg?auto=format%2Ccompress&dpr=1&w=175&h=175&fit=fill&bg=FFF",
-  "university": "UDeLosAndesCo"
+  "university": "UDeLosAndesCo",
+  "slug": "entendiendo-la-depresion-a-lo-largo-del-ciclo-vital"
 },
 {
   "_id": {
@@ -3734,7 +3867,8 @@
   ],
   "courseUrl": "https://www.coursera.org/learn/macondo-gabriel-garcia-marquez",
   "imgUrl": "https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://coursera-course-photos.s3.amazonaws.com/92/a8efd04cfd11e5a18cbb719b1473bf/1200x1200px2.png?auto=format%2Ccompress&dpr=1&w=175&h=175&fit=fill&bg=FFF",
-  "university": "UDeLosAndesCo"
+  "university": "UDeLosAndesCo",
+  "slug": "leer-a-macondo-la-obra-de-gabriel-garcia-marquez"
 },
 {
   "_id": {
@@ -3767,7 +3901,8 @@
   ],
   "courseUrl": "https://www.coursera.org/learn/formadores-ciudadania",
   "imgUrl": "https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://coursera-course-photos.s3.amazonaws.com/b4/f99200b17a11e69b819dbce743a0e3/thumbnail-curso.jpg?auto=format%2Ccompress&dpr=1&w=175&h=175&fit=fill&bg=FFF",
-  "university": "UDeLosAndesCo"
+  "university": "UDeLosAndesCo",
+  "slug": "formadores-de-ciudadania"
 },
 {
   "_id": {
@@ -3792,7 +3927,8 @@
   ],
   "courseUrl": "https://www.coursera.org/learn/algoritmos-de-negociacion-basados-en-machine-learning",
   "imgUrl": "https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://coursera-course-photos.s3.amazonaws.com/f9/7df99d1737450686d7ca293782d16c/EX21MADFANML-800-X-800.png?auto=format%2Ccompress&dpr=1&w=175&h=175&fit=fill&bg=FFF",
-  "university": "UDeLosAndesCo"
+  "university": "UDeLosAndesCo",
+  "slug": "algoritmos-de-negociacion-basados-en-machine-learning"
 },
 {
   "_id": {
@@ -3817,7 +3953,8 @@
   ],
   "courseUrl": "https://www.coursera.org/learn/autoliderazgo-gestion-emociones",
   "imgUrl": "https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://coursera-course-photos.s3.amazonaws.com/f7/efe370581511e6bc52d396dda6863f/LiderazgoEfectivoCurso2Ver2Logo.jpg?auto=format%2Ccompress&dpr=1&w=175&h=175&fit=fill&bg=FFF",
-  "university": "UDeLosAndesCo"
+  "university": "UDeLosAndesCo",
+  "slug": "autoliderazgo-y-gestion-de-emociones-para-avanzar-en-desafios-complejos"
 },
 {
   "_id": {
@@ -3842,7 +3979,8 @@
   ],
   "courseUrl": "https://www.coursera.org/learn/business-latam",
   "imgUrl": "https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://coursera-course-photos.s3.amazonaws.com/72/c8fcaa9d234f8c858690bbd2ae26d4/Mesa-de-trabajo-2.png?auto=format%2Ccompress&dpr=1&w=175&h=175&fit=fill&bg=FFF",
-  "university": "UDeLosAndesCo"
+  "university": "UDeLosAndesCo",
+  "slug": "doing-business-in-latin-america"
 },
 {
   "_id": {
@@ -3867,7 +4005,8 @@
   ],
   "courseUrl": "https://www.coursera.org/learn/lectura-critica-proceso-niveles-y-herramientas",
   "imgUrl": "https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://coursera-course-photos.s3.amazonaws.com/24/89964cd24840309d515fa1f5a69aee/Identificador_1.jpg?auto=format%2Ccompress&dpr=1&w=175&h=175&fit=fill&bg=FFF",
-  "university": "UDeLosAndesCo"
+  "university": "UDeLosAndesCo",
+  "slug": "lectura-critica-proceso-niveles-y-herramientas"
 },
 {
   "_id": {
@@ -3896,7 +4035,8 @@
   ],
   "courseUrl": "https://www.coursera.org/learn/estadistica-aplicada-fundamentos",
   "imgUrl": "https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://coursera-course-photos.s3.amazonaws.com/15/bb3b8cc2a94d4a88dc14ca52285bdc/ex18madp_estadistica_sq.png?auto=format%2Ccompress&dpr=1&w=175&h=175&fit=fill&bg=FFF",
-  "university": "UDeLosAndesCo"
+  "university": "UDeLosAndesCo",
+  "slug": "fundamentos-de-estadistica-aplicada"
 },
 {
   "_id": {
@@ -3921,7 +4061,8 @@
   ],
   "courseUrl": "https://www.coursera.org/learn/proyectos-complejos-exitosos-fracasados",
   "imgUrl": "https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://coursera-course-photos.s3.amazonaws.com/6b/a6535c0e594f9797abb19d2b311d6f/PCEF-800X800-copia.jpg?auto=format%2Ccompress&dpr=1&w=175&h=175&fit=fill&bg=FFF",
-  "university": "UDeLosAndesCo"
+  "university": "UDeLosAndesCo",
+  "slug": "proyectos-complejos-exitos-o-fracasos"
 },
 {
   "_id": {
@@ -3946,7 +4087,8 @@
   ],
   "courseUrl": "https://www.coursera.org/learn/diseno-videojuegos-intro",
   "imgUrl": "https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://coursera-course-photos.s3.amazonaws.com/26/1811505bc311e5bc51ebd3a46e4e00/dise_o.jpg?auto=format%2Ccompress&dpr=1&w=175&h=175&fit=fill&bg=FFF",
-  "university": "UDeLosAndesCo"
+  "university": "UDeLosAndesCo",
+  "slug": "diseno-de-videojuegos-una-introduccion"
 },
 {
   "_id": {
@@ -3971,7 +4113,8 @@
   ],
   "courseUrl": "https://www.coursera.org/learn/comunicacion-experimentacion-aprendizaje",
   "imgUrl": "https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://coursera-course-photos.s3.amazonaws.com/0e/2f8960581611e6aa08093cd01485b0/LiderazgoEfectivoCurso3Ver2Logo.jpg?auto=format%2Ccompress&dpr=1&w=175&h=175&fit=fill&bg=FFF",
-  "university": "UDeLosAndesCo"
+  "university": "UDeLosAndesCo",
+  "slug": "comunicacion-experimentacion-y-aprendizaje-en-liderazgo"
 },
 {
   "_id": {
@@ -3996,7 +4139,8 @@
   ],
   "courseUrl": "https://www.coursera.org/learn/programacion-python",
   "imgUrl": "https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://coursera-course-photos.s3.amazonaws.com/cb/53fff4c80c4fb0b710518f4f6bbd78/Phyton_opcion1.jpg?auto=format%2Ccompress&dpr=1&w=175&h=175&fit=fill&bg=FFF",
-  "university": "UDeLosAndesCo"
+  "university": "UDeLosAndesCo",
+  "slug": "programacion-en-python"
 },
 {
   "_id": {
@@ -4021,7 +4165,8 @@
   ],
   "courseUrl": "https://www.coursera.org/learn/tesoros-de-la-fisica",
   "imgUrl": "https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://coursera-course-photos.s3.amazonaws.com/cb/e41a904a6e11e59eed0b611888491e/1.png?auto=format%2Ccompress&dpr=1&w=175&h=175&fit=fill&bg=FFF",
-  "university": "UDeLosAndesCo"
+  "university": "UDeLosAndesCo",
+  "slug": "tesoros-de-la-fisica-y-sus-descubridores-i"
 },
 {
   "_id": {
@@ -4050,7 +4195,8 @@
   ],
   "courseUrl": "https://www.coursera.org/learn/fundamentos-ts",
   "imgUrl": "https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://coursera-course-photos.s3.amazonaws.com/af/ff77e121cc4ced832d4da604cfbfe6/identificador-.jpg?auto=format%2Ccompress&dpr=1&w=175&h=175&fit=fill&bg=FFF",
-  "university": "UDeLosAndesCo"
+  "university": "UDeLosAndesCo",
+  "slug": "fundamentos-de-typescript"
 },
 {
   "_id": {
@@ -4075,7 +4221,8 @@
   ],
   "courseUrl": "https://www.coursera.org/learn/portafolios-inversiones-en-mercado-de-capitales",
   "imgUrl": "https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://coursera-course-photos.s3.amazonaws.com/4c/968f6f99d64e919333ede1078cce22/LogoPortafolios.jpg?auto=format%2Ccompress&dpr=1&w=175&h=175&fit=fill&bg=FFF",
-  "university": "UDeLosAndesCo"
+  "university": "UDeLosAndesCo",
+  "slug": "los-portafolios-y-las-inversiones-en-el-mercado-de-capitales"
 },
 {
   "_id": {
@@ -4104,7 +4251,8 @@
   ],
   "courseUrl": "https://www.coursera.org/learn/uml",
   "imgUrl": "https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://coursera-course-photos.s3.amazonaws.com/db/00f7d7d51348529ad0323db833cd55/Cuadrado.png?auto=format%2Ccompress&dpr=1&w=175&h=175&fit=fill&bg=FFF",
-  "university": "UDeLosAndesCo"
+  "university": "UDeLosAndesCo",
+  "slug": "introduccion-a-uml"
 },
 {
   "_id": {
@@ -4133,7 +4281,8 @@
   ],
   "courseUrl": "https://www.coursera.org/learn/introduccion-programacion-java",
   "imgUrl": "https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://coursera-course-photos.s3.amazonaws.com/ac/2ecb508e8211e79bac57528104d87f/formatos-1200x1200.jpg?auto=format%2Ccompress&dpr=1&w=175&h=175&fit=fill&bg=FFF",
-  "university": "UDeLosAndesCo"
+  "university": "UDeLosAndesCo",
+  "slug": "introduccion-a-la-programacion-orientada-a-objetos-en-java"
 },
 {
   "_id": {
@@ -4158,7 +4307,8 @@
   ],
   "courseUrl": "https://www.coursera.org/learn/git-espanol",
   "imgUrl": "https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://coursera-course-photos.s3.amazonaws.com/8d/ae3585205648c88449c3d84cec1c32/cuadrado-800_BL.jpg?auto=format%2Ccompress&dpr=1&w=175&h=175&fit=fill&bg=FFF",
-  "university": "UDeLosAndesCo"
+  "university": "UDeLosAndesCo",
+  "slug": "introduccion-al-control-de-versiones-con-git-y-github"
 },
 {
   "_id": {
@@ -4183,7 +4333,8 @@
   ],
   "courseUrl": "https://www.coursera.org/learn/datos-no-tradicionales-en-repositorios-nosql",
   "imgUrl": "https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://coursera-course-photos.s3.amazonaws.com/7a/efcb811e90416f8d715bd10084229c/EX21MPPDMOP-800-X-800.png?auto=format%2Ccompress&dpr=1&w=175&h=175&fit=fill&bg=FFF",
-  "university": "UDeLosAndesCo"
+  "university": "UDeLosAndesCo",
+  "slug": "datos-no-tradicionales-en-repositorios-nosql"
 },
 {
   "_id": {
@@ -4212,7 +4363,8 @@
   ],
   "courseUrl": "https://www.coursera.org/learn/herramientas-de-la-economa-circular",
   "imgUrl": "https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://coursera-course-photos.s3.amazonaws.com/0a/3405e8127c467e9856a07b54794115/800x800-110x.png?auto=format%2Ccompress&dpr=1&w=175&h=175&fit=fill&bg=FFF",
-  "university": "UDeLosAndesCo"
+  "university": "UDeLosAndesCo",
+  "slug": "herramientas-de-la-economia-circular"
 },
 {
   "_id": {
@@ -4245,7 +4397,8 @@
   ],
   "courseUrl": "https://www.coursera.org/learn/sexualidad-y-educacion",
   "imgUrl": "https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://coursera-course-photos.s3.amazonaws.com/75/3e638079c511e6b2674dee8fc87e4b/logo-_sexualidad_1200x1200px-01.jpg?auto=format%2Ccompress&dpr=1&w=175&h=175&fit=fill&bg=FFF",
-  "university": "UDeLosAndesCo"
+  "university": "UDeLosAndesCo",
+  "slug": "sexualidad-y-educacion"
 },
 {
   "_id": {
@@ -4270,7 +4423,8 @@
   ],
   "courseUrl": "https://www.coursera.org/learn/recuperacion-de-proyectos-en-crisis",
   "imgUrl": "https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://coursera-course-photos.s3.amazonaws.com/68/d168f92c224b1d87feb5de7ecb6618/800X800.png?auto=format%2Ccompress&dpr=1&w=175&h=175&fit=fill&bg=FFF",
-  "university": "UDeLosAndesCo"
+  "university": "UDeLosAndesCo",
+  "slug": "recuperacion-de-proyectos-en-crisis"
 },
 {
   "_id": {
@@ -4299,7 +4453,8 @@
   ],
   "courseUrl": "https://www.coursera.org/learn/interculturalidade",
   "imgUrl": "https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://coursera-course-photos.s3.amazonaws.com/e6/60cc8229c2417c9e818efda9e51bd6/Interculturalidad_logo_03_Mesa-de-trabajo-1.jpg?auto=format%2Ccompress&dpr=1&w=175&h=175&fit=fill&bg=FFF",
-  "university": "UDeLosAndesCo"
+  "university": "UDeLosAndesCo",
+  "slug": "compreender-as-dimensoes-interculturais-na-vida-cotidiana"
 },
 {
   "_id": {
@@ -4324,7 +4479,8 @@
   ],
   "courseUrl": "https://www.coursera.org/learn/analisis-sistemas-electricos-y-transicion-energetica",
   "imgUrl": "https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://coursera-course-photos.s3.amazonaws.com/fd/68958166814e1087aca7c1567d8656/masep_identificador_01.jpg?auto=format%2Ccompress&dpr=1&w=175&h=175&fit=fill&bg=FFF",
-  "university": "UDeLosAndesCo"
+  "university": "UDeLosAndesCo",
+  "slug": "analisis-de-sistemas-electricos-y-transicion-energetica"
 },
 {
   "_id": {
@@ -4349,7 +4505,8 @@
   ],
   "courseUrl": "https://www.coursera.org/learn/principios-y-regulaciones-de-seguridad-de-la-informacion",
   "imgUrl": "https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://coursera-course-photos.s3.amazonaws.com/55/77eb44e76a477cb3970dc4d1ab15b7/EX21MCIBPRESI-800-X-800.png?auto=format%2Ccompress&dpr=1&w=175&h=175&fit=fill&bg=FFF",
-  "university": "UDeLosAndesCo"
+  "university": "UDeLosAndesCo",
+  "slug": "principios-y-regulaciones-de-seguridad-de-la-informacion"
 },
 {
   "_id": {
@@ -4378,7 +4535,8 @@
   ],
   "courseUrl": "https://www.coursera.org/learn/pensamiento-sistemico-en-el-siglo-xxi",
   "imgUrl": "https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://coursera-course-photos.s3.amazonaws.com/18/15e03f225e4341ab53bfdd4f85c3dd/ps_id_800x800.png?auto=format%2Ccompress&dpr=1&w=175&h=175&fit=fill&bg=FFF",
-  "university": "UDeLosAndesCo"
+  "university": "UDeLosAndesCo",
+  "slug": "pensamiento-sistemico-en-el-siglo-xxi"
 },
 {
   "_id": {
@@ -4403,7 +4561,8 @@
   ],
   "courseUrl": "https://www.coursera.org/learn/seguridad-en-la-red",
   "imgUrl": "https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://coursera-course-photos.s3.amazonaws.com/b6/f04fadc0984284b2357e9c8bae24b2/EX21MCIBSERED-800-X-800.png?auto=format%2Ccompress&dpr=1&w=175&h=175&fit=fill&bg=FFF",
-  "university": "UDeLosAndesCo"
+  "university": "UDeLosAndesCo",
+  "slug": "seguridad-en-la-red"
 },
 {
   "_id": {
@@ -4436,7 +4595,8 @@
   ],
   "courseUrl": "https://www.coursera.org/learn/salud-mental-y-atencion-comunitaria",
   "imgUrl": "https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://coursera-course-photos.s3.amazonaws.com/d7/eb13273e33455d9111b6a56f1c9663/IDENTIFICADOR-ATENCION-COMUNITARIA.png?auto=format%2Ccompress&dpr=1&w=175&h=175&fit=fill&bg=FFF",
-  "university": "UDeLosAndesCo"
+  "university": "UDeLosAndesCo",
+  "slug": "salud-mental-y-atencion-comunitaria"
 },
 {
   "_id": {
@@ -4465,7 +4625,8 @@
   ],
   "courseUrl": "https://www.coursera.org/learn/analytics-analisis-datos",
   "imgUrl": "https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://coursera-course-photos.s3.amazonaws.com/73/92d78e72124bc5bd8d8b1dd52a1a27/ex18madp_analyticsparatodos_sq_Mesa-de-trabajo-1.png?auto=format%2Ccompress&dpr=1&w=175&h=175&fit=fill&bg=FFF",
-  "university": "UDeLosAndesCo"
+  "university": "UDeLosAndesCo",
+  "slug": "analytics-en-las-organizaciones"
 },
 {
   "_id": {
@@ -4490,7 +4651,8 @@
   ],
   "courseUrl": "https://www.coursera.org/learn/contenido-matematica-escolar",
   "imgUrl": "https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://coursera-course-photos.s3.amazonaws.com/56/d28ef0d39f11e784e29f5e297f200c/MOOC1-contenido_logo_cuadrado_1200.jpg?auto=format%2Ccompress&dpr=1&w=175&h=175&fit=fill&bg=FFF",
-  "university": "UDeLosAndesCo"
+  "university": "UDeLosAndesCo",
+  "slug": "contenido-de-las-matematicas-de-primaria"
 },
 {
   "_id": {
@@ -4523,7 +4685,8 @@
   ],
   "courseUrl": "https://www.coursera.org/learn/diseno-proyectos-promocion-bienestar",
   "imgUrl": "https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://coursera-course-photos.s3.amazonaws.com/9f/5fabd0c3ab11e69647b3a8114e1cb4/mooc-4-02.png?auto=format%2Ccompress&dpr=1&w=175&h=175&fit=fill&bg=FFF",
-  "university": "UDeLosAndesCo"
+  "university": "UDeLosAndesCo",
+  "slug": "diseno-de-proyectos-para-promover-el-bienestar"
 },
 {
   "_id": {
@@ -4548,7 +4711,8 @@
   ],
   "courseUrl": "https://www.coursera.org/learn/desarrollo-videojuegos-unity",
   "imgUrl": "https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://coursera-course-photos.s3.amazonaws.com/bd/39f0b05bd911e5a2b1a19a6af9aeb9/unity7-2D.png?auto=format%2Ccompress&dpr=1&w=175&h=175&fit=fill&bg=FFF",
-  "university": "UDeLosAndesCo"
+  "university": "UDeLosAndesCo",
+  "slug": "desarrollo-de-videojuegos-en-unity-una-introduccion"
 },
 {
   "_id": {
@@ -4581,7 +4745,8 @@
   ],
   "courseUrl": "https://www.coursera.org/learn/introduccion-a-la-inteligencia-artificial-contemporanea",
   "imgUrl": "https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://coursera-course-photos.s3.amazonaws.com/1c/b7a3ea1ff444dfbd3ccb0b2eb4a437/IA_B4.jpg?auto=format%2Ccompress&dpr=1&w=175&h=175&fit=fill&bg=FFF",
-  "university": "UDeLosAndesCo"
+  "university": "UDeLosAndesCo",
+  "slug": "introduccion-a-la-inteligencia-artificial-contemporanea"
 },
 {
   "_id": {
@@ -4606,7 +4771,8 @@
   ],
   "courseUrl": "https://www.coursera.org/learn/juegos-3d",
   "imgUrl": "https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://coursera-course-photos.s3.amazonaws.com/72/909540e07d11e595b889990c571d41/3DGameCourseraIcon.png?auto=format%2Ccompress&dpr=1&w=175&h=175&fit=fill&bg=FFF",
-  "university": "UDeLosAndesCo"
+  "university": "UDeLosAndesCo",
+  "slug": "desarrollo-de-videojuegos-3d-en-unity-una-introduccion"
 },
 {
   "_id": {
@@ -4631,7 +4797,8 @@
   ],
   "courseUrl": "https://www.coursera.org/learn/negocios-multinacionales-america-latina",
   "imgUrl": "https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://coursera-course-photos.s3.amazonaws.com/ba/a1d05500954a16a2531c1bfe5dcfc2/Img-2.jpg?auto=format%2Ccompress&dpr=1&w=175&h=175&fit=fill&bg=FFF",
-  "university": "UDeLosAndesCo"
+  "university": "UDeLosAndesCo",
+  "slug": "hacer-negocios-con-multinacionales-y-empresas-en-america-latina"
 },
 {
   "_id": {
@@ -4656,7 +4823,8 @@
   ],
   "courseUrl": "https://www.coursera.org/learn/educacion-matematica-para-profesores-de-infantil-curso-1",
   "imgUrl": "https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://coursera-course-photos.s3.amazonaws.com/22/4eadd66a82451f8d47c977be822f83/NinoCuadrado_Diestro.jpg?auto=format%2Ccompress&dpr=1&w=175&h=175&fit=fill&bg=FFF",
-  "university": "UDeLosAndesCo"
+  "university": "UDeLosAndesCo",
+  "slug": "educacion-matematica-para-profesores-de-infantil-curso-1"
 },
 {
   "_id": {
@@ -4681,7 +4849,8 @@
   ],
   "courseUrl": "https://www.coursera.org/learn/probabilidad",
   "imgUrl": "https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://coursera-course-photos.s3.amazonaws.com/a0/008d3c6d9b485cb99d224956df828e/ex18madp_estadistica_sq_Mesa-de-trabajo-1.png?auto=format%2Ccompress&dpr=1&w=175&h=175&fit=fill&bg=FFF",
-  "university": "UDeLosAndesCo"
+  "university": "UDeLosAndesCo",
+  "slug": "fundamentos-de-probabilidad-y-aplicaciones"
 },
 {
   "_id": {
@@ -4706,7 +4875,8 @@
   ],
   "courseUrl": "https://www.coursera.org/learn/uml-genmymodel",
   "imgUrl": "https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://coursera-course-photos.s3.amazonaws.com/99/9bbda12fea4216b7c2571f508272a8/UML-logo.jpg?auto=format%2Ccompress&dpr=1&w=175&h=175&fit=fill&bg=FFF",
-  "university": "UDeLosAndesCo"
+  "university": "UDeLosAndesCo",
+  "slug": "creacion-de-diagramas-de-clases-uml-en-genmymodel"
 },
 {
   "_id": {
@@ -4735,7 +4905,8 @@
   ],
   "courseUrl": "https://www.coursera.org/learn/objetivos-desarrollo-sostenible-empresas",
   "imgUrl": "https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://coursera-course-photos.s3.amazonaws.com/a3/8587cfc348421f987a5074c8bbaa95/ODS2-800x800-Cuadrado_00000.jpg?auto=format%2Ccompress&dpr=1&w=175&h=175&fit=fill&bg=FFF",
-  "university": "UDeLosAndesCo"
+  "university": "UDeLosAndesCo",
+  "slug": "los-objetivos-de-desarrollo-sostenible-para-las-empresas"
 },
 {
   "_id": {
@@ -4760,7 +4931,8 @@
   ],
   "courseUrl": "https://www.coursera.org/learn/introduccion-al-mantenimiento-de-activos-fisicos",
   "imgUrl": "https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://coursera-course-photos.s3.amazonaws.com/6b/69b5f72aae43c0b1acff6b7c007f1f/IDENTIFICADOR-2-.png?auto=format%2Ccompress&dpr=1&w=175&h=175&fit=fill&bg=FFF",
-  "university": "UDeLosAndesCo"
+  "university": "UDeLosAndesCo",
+  "slug": "introduccion-al-mantenimiento-de-activos-fisicos"
 },
 {
   "_id": {
@@ -4785,7 +4957,8 @@
   ],
   "courseUrl": "https://www.coursera.org/learn/escoger-carrera-y-universidad",
   "imgUrl": "https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://coursera-course-photos.s3.amazonaws.com/d5/7aedc0fc6111e7af6abdee616b4c51/1200x1200.png?auto=format%2Ccompress&dpr=1&w=175&h=175&fit=fill&bg=FFF",
-  "university": "UDeLosAndesCo"
+  "university": "UDeLosAndesCo",
+  "slug": "planu-escoge-la-mejor-carrera-y-universidad-para-ti"
 },
 {
   "_id": {
@@ -4810,7 +4983,8 @@
   ],
   "courseUrl": "https://www.coursera.org/learn/estimacion-tiempos-costos",
   "imgUrl": "https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://coursera-course-photos.s3.amazonaws.com/b2/7e7da623c04bb88901e1fb9ac892bc/identificador_.jpg?auto=format%2Ccompress&dpr=1&w=175&h=175&fit=fill&bg=FFF",
-  "university": "UDeLosAndesCo"
+  "university": "UDeLosAndesCo",
+  "slug": "estimacion-de-la-linea-base-de-tiempos-y-costos"
 },
 {
   "_id": {
@@ -4835,7 +5009,8 @@
   ],
   "courseUrl": "https://www.coursera.org/learn/proyecto-desarrollo-videojuegos",
   "imgUrl": "https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://coursera-course-photos.s3.amazonaws.com/6f/fc0b005b2311e58b0f93aa38870f07/Desarrollo-y-dise_o-de-videjuegos-Proyecto-final.png?auto=format%2Ccompress&dpr=1&w=175&h=175&fit=fill&bg=FFF",
-  "university": "UDeLosAndesCo"
+  "university": "UDeLosAndesCo",
+  "slug": "desarrollo-y-diseno-de-videojuegos-proyecto-final"
 },
 {
   "_id": {
@@ -4864,7 +5039,8 @@
   ],
   "courseUrl": "https://www.coursera.org/learn/tratando-los-sintomas-urinarios-por-crecimiento-prostatico-hpb",
   "imgUrl": "https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://coursera-course-photos.s3.amazonaws.com/76/1165e4d8944dea92573dc29fc63d0d/IDENTIFICADOR-UROLOGIA-800-X-800_3.jpg?auto=format%2Ccompress&dpr=1&w=175&h=175&fit=fill&bg=FFF",
-  "university": "UDeLosAndesCo"
+  "university": "UDeLosAndesCo",
+  "slug": "tratando-los-sintomas-urinarios-por-hpb"
 },
 {
   "_id": {
@@ -4889,7 +5065,8 @@
   ],
   "courseUrl": "https://www.coursera.org/learn/introduccion-al-deep-learning-contemporaneo",
   "imgUrl": "https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://coursera-course-photos.s3.amazonaws.com/0d/2d14981c9143edbcd260355a4c8ee1/IDL-FINALES.png?auto=format%2Ccompress&dpr=1&w=175&h=175&fit=fill&bg=FFF",
-  "university": "UDeLosAndesCo"
+  "university": "UDeLosAndesCo",
+  "slug": "introduccion-al-deep-learning-contemporaneo"
 },
 {
   "_id": {
@@ -4914,7 +5091,8 @@
   ],
   "courseUrl": "https://www.coursera.org/learn/introduccion-ciencia-de-datos-aplicada",
   "imgUrl": "https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://coursera-course-photos.s3.amazonaws.com/64/60e561523742f481dede9bd4683711/EX21MCDINCIDA-800-X-800.png?auto=format%2Ccompress&dpr=1&w=175&h=175&fit=fill&bg=FFF",
-  "university": "UDeLosAndesCo"
+  "university": "UDeLosAndesCo",
+  "slug": "introduccion-a-la-ciencia-de-datos-aplicada"
 },
 {
   "_id": {
@@ -4939,7 +5117,8 @@
   ],
   "courseUrl": "https://www.coursera.org/learn/integracion-y-preparacion-de-datos",
   "imgUrl": "https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://coursera-course-photos.s3.amazonaws.com/fd/217296a1c343859fce7617c819036c/EX21MCDINPRED-800-X-800.png?auto=format%2Ccompress&dpr=1&w=175&h=175&fit=fill&bg=FFF",
-  "university": "UDeLosAndesCo"
+  "university": "UDeLosAndesCo",
+  "slug": "integracion-y-preparacion-de-datos"
 },
 {
   "_id": {
@@ -4964,7 +5143,8 @@
   ],
   "courseUrl": "https://www.coursera.org/learn/modelaje-anlisis-informacin-georreferenciada",
   "imgUrl": "https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://coursera-course-photos.s3.amazonaws.com/e1/96b891273b43528ef34c996dc6cfcc/EX21MPPDMPAG-800-X-800.png?auto=format%2Ccompress&dpr=1&w=175&h=175&fit=fill&bg=FFF",
-  "university": "UDeLosAndesCo"
+  "university": "UDeLosAndesCo",
+  "slug": "modelaje-y-analisis-con-informacion-georreferenciada"
 },
 {
   "_id": {
@@ -4997,7 +5177,8 @@
   ],
   "courseUrl": "https://www.coursera.org/learn/aprendizaje-matematicas-primaria",
   "imgUrl": "https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://coursera-course-photos.s3.amazonaws.com/41/d3a1d0a7c311e8ab2039fbccd03531/MOOC2-aprendizaje_logo_cuadrado_1200.jpg?auto=format%2Ccompress&dpr=1&w=175&h=175&fit=fill&bg=FFF",
-  "university": "UDeLosAndesCo"
+  "university": "UDeLosAndesCo",
+  "slug": "aprendizaje-de-las-matematicas-de-primaria"
 },
 {
   "_id": {
@@ -5026,7 +5207,8 @@
   ],
   "courseUrl": "https://www.coursera.org/learn/constructores-de-paz",
   "imgUrl": "https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://coursera-course-photos.s3.amazonaws.com/b0/ed1a40c96811e7bbb80baea5ee3ff3/mooc_paz_simbolo-01.png?auto=format%2Ccompress&dpr=1&w=175&h=175&fit=fill&bg=FFF",
-  "university": "UDeLosAndesCo"
+  "university": "UDeLosAndesCo",
+  "slug": "constructores-de-paz"
 },
 {
   "_id": {
@@ -5051,7 +5233,8 @@
   ],
   "courseUrl": "https://www.coursera.org/learn/introduccion-al-analisis-de-sistemas-de-control-con-matlab",
   "imgUrl": "https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://coursera-course-photos.s3.amazonaws.com/91/9d1532a78c4dd3b8e13272adcc106f/identificador.png?auto=format%2Ccompress&dpr=1&w=175&h=175&fit=fill&bg=FFF",
-  "university": "UDeLosAndesCo"
+  "university": "UDeLosAndesCo",
+  "slug": "introduccion-al-analisis-de-sistemas-de-control-con-matlab"
 },
 {
   "_id": {
@@ -5076,7 +5259,8 @@
   ],
   "courseUrl": "https://www.coursera.org/learn/introduccion-desarrollo-web",
   "imgUrl": "https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://coursera-course-photos.s3.amazonaws.com/6c/a0ed7d702d43c999367cbbd822f793/800x800_2.jpg?auto=format%2Ccompress&dpr=1&w=175&h=175&fit=fill&bg=FFF",
-  "university": "UDeLosAndesCo"
+  "university": "UDeLosAndesCo",
+  "slug": "introduccion-al-desarrollo-web"
 },
 {
   "_id": {
@@ -5101,7 +5285,8 @@
   ],
   "courseUrl": "https://www.coursera.org/learn/docencia-con-pedagogia-activa-mediada-con-tecnologia-digital",
   "imgUrl": "https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://coursera-course-photos.s3.amazonaws.com/b3/00f1ccf4674e59a7d21477f3c042ef/Logo-curso-3.png?auto=format%2Ccompress&dpr=1&w=175&h=175&fit=fill&bg=FFF",
-  "university": "UDeLosAndesCo"
+  "university": "UDeLosAndesCo",
+  "slug": "docencia-con-pedagogia-activa-mediada-con-tecnologia-digital"
 },
 {
   "_id": {
@@ -5130,7 +5315,8 @@
   ],
   "courseUrl": "https://www.coursera.org/learn/interculturalidad",
   "imgUrl": "https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://coursera-course-photos.s3.amazonaws.com/c4/2fec802a0c11e995d7b9bd8e6736eb/Interculturalidad_logo_Mesa-de-trabajo-1.jpg?auto=format%2Ccompress&dpr=1&w=175&h=175&fit=fill&bg=FFF",
-  "university": "UDeLosAndesCo"
+  "university": "UDeLosAndesCo",
+  "slug": "comprender-las-dimensiones-interculturales-en-la-cotidianidad"
 },
 {
   "_id": {
@@ -5155,7 +5341,8 @@
   ],
   "courseUrl": "https://www.coursera.org/learn/financiar-mi-empresa",
   "imgUrl": "https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://coursera-course-photos.s3.amazonaws.com/fb/d89f10b95311e5bbbc1dba08c23c1c/3Logo_Proy.jpg?auto=format%2Ccompress&dpr=1&w=175&h=175&fit=fill&bg=FFF",
-  "university": "UDeLosAndesCo"
+  "university": "UDeLosAndesCo",
+  "slug": "como-financiar-mi-empresa"
 },
 {
   "_id": {
@@ -5180,7 +5367,8 @@
   ],
   "courseUrl": "https://www.coursera.org/learn/anticoagulacion",
   "imgUrl": "https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://coursera-course-photos.s3.amazonaws.com/d0/905c5d1f274c428563563acf991651/Identificador-Anticoagulantes-v1.jpg?auto=format%2Ccompress&dpr=1&w=175&h=175&fit=fill&bg=FFF",
-  "university": "UDeLosAndesCo"
+  "university": "UDeLosAndesCo",
+  "slug": "anticoagulacion"
 },
 {
   "_id": {
@@ -5205,7 +5393,8 @@
   ],
   "courseUrl": "https://www.coursera.org/learn/educacion-matematica-para-profesores-de-infantil-curso-2",
   "imgUrl": "https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://coursera-course-photos.s3.amazonaws.com/17/e16f6e2958447a83fab1e7a917dc18/NinaCuadrado.jpg?auto=format%2Ccompress&dpr=1&w=175&h=175&fit=fill&bg=FFF",
-  "university": "UDeLosAndesCo"
+  "university": "UDeLosAndesCo",
+  "slug": "educacion-matematica-para-profesores-de-infantil-curso-2"
 },
 {
   "_id": {
@@ -5230,7 +5419,8 @@
   ],
   "courseUrl": "https://www.coursera.org/learn/finanzas-empresariales",
   "imgUrl": "https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://coursera-course-photos.s3.amazonaws.com/d9/a9abf04b3a11e58b48ad6604451c37/1.png?auto=format%2Ccompress&dpr=1&w=175&h=175&fit=fill&bg=FFF",
-  "university": "UDeLosAndesCo"
+  "university": "UDeLosAndesCo",
+  "slug": "fundamentos-de-finanzas-empresariales"
 },
 {
   "_id": {
@@ -5255,7 +5445,8 @@
   ],
   "courseUrl": "https://www.coursera.org/specializations/claves-genero",
   "imgUrl": "https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://d15cw65ipctsrr.cloudfront.net/37/90f733a31f45c383941e4f8f35b375/Genero_curso-general.jpg?auto=format%2Ccompress&dpr=1&w=175&h=175&fit=fill&bg=FFF",
-  "university": "UNAM"
+  "university": "UNAM",
+  "slug": "programa-especializado-claves-para-la-igualdad-de-genero"
 },
 {
   "_id": {
@@ -5280,7 +5471,8 @@
   ],
   "courseUrl": "https://www.coursera.org/specializations/creatividad-diseno-innovacion",
   "imgUrl": "https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://d396qusza40orc.cloudfront.net/phoenixassets/Spanish-Launch-10-7-images/Thumbnails%20of%20Banner%20%28Logos%29/innovationbanner_720.jpg?auto=format%2Ccompress&dpr=1&w=175&h=175&fit=fill&bg=FFF",
-  "university": "UNAM"
+  "university": "UNAM",
+  "slug": "programa-especializado-creatividad-diseno-e-innovacion-tecnicas-y-herramientas"
 },
 {
   "_id": {
@@ -5305,7 +5497,8 @@
   ],
   "courseUrl": "https://www.coursera.org/specializations/database-systems",
   "imgUrl": "https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://d15cw65ipctsrr.cloudfront.net/83/3c9f06b7fa439b9b95a4249fde0e18/Database-System_0.jpg?auto=format%2Ccompress&dpr=1&w=175&h=175&fit=fill&bg=FFF",
-  "university": "UNAM"
+  "university": "UNAM",
+  "slug": "programa-especializado-sistemas-de-bases-de-datos"
 },
 {
   "_id": {
@@ -5330,7 +5523,8 @@
   ],
   "courseUrl": "https://www.coursera.org/specializations/programacion-android",
   "imgUrl": "https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://d15cw65ipctsrr.cloudfront.net/71/619d2aa27e4170bdf85fbf90678f19/Android_0.jpg?auto=format%2Ccompress&dpr=1&w=175&h=175&fit=fill&bg=FFF",
-  "university": "UNAM"
+  "university": "UNAM",
+  "slug": "programa-especializado-desarrollo-de-aplicaciones-moviles-con-android"
 },
 {
   "_id": {
@@ -5355,7 +5549,8 @@
   ],
   "courseUrl": "https://www.coursera.org/specializations/negociacion",
   "imgUrl": "https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://d15cw65ipctsrr.cloudfront.net/ae/6fdff9aaa94f4ba85198a04e15578e/EstrategiasNegociacion_0.jpg?auto=format%2Ccompress&dpr=1&w=175&h=175&fit=fill&bg=FFF",
-  "university": "UNAM"
+  "university": "UNAM",
+  "slug": "programa-especializado-estrategias-de-negociacion"
 },
 {
   "_id": {
@@ -5380,7 +5575,8 @@
   ],
   "courseUrl": "https://www.coursera.org/specializations/evaluacion-educativa",
   "imgUrl": "https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://d15cw65ipctsrr.cloudfront.net/43/7e20badddc4f83a311f20b51f61cac/EvaluacionEdu_0.jpg?auto=format%2Ccompress&dpr=1&w=175&h=175&fit=fill&bg=FFF",
-  "university": "UNAM"
+  "university": "UNAM",
+  "slug": "programa-especializado-evaluacion-educativa"
 },
 {
   "_id": {
@@ -5413,7 +5609,8 @@
   ],
   "courseUrl": "https://www.coursera.org/specializations/finanzascorporativas",
   "imgUrl": "https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://d15cw65ipctsrr.cloudfront.net/0e/0347d03ba841cd8592c5b95eaaca7a/Finanzas_0.jpg?auto=format%2Ccompress&dpr=1&w=175&h=175&fit=fill&bg=FFF",
-  "university": "UNAM"
+  "university": "UNAM",
+  "slug": "programa-especializado-finanzas-corporativas"
 },
 {
   "_id": {
@@ -5442,7 +5639,8 @@
   ],
   "courseUrl": "https://www.coursera.org/specializations/fundamentos-empresariales",
   "imgUrl": "https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://d15cw65ipctsrr.cloudfront.net/f2/eae2e60fed4a7d938d79eb34e47289/1.jpg?auto=format%2Ccompress&dpr=1&w=175&h=175&fit=fill&bg=FFF",
-  "university": "UNAM"
+  "university": "UNAM",
+  "slug": "programa-especializado-fundamentos-estrategicos-empresariales"
 },
 {
   "_id": {
@@ -5467,7 +5665,8 @@
   ],
   "courseUrl": "https://www.coursera.org/specializations/gobiernocorp",
   "imgUrl": "https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://d15cw65ipctsrr.cloudfront.net/01/15bd6be0134da5839cc7614818463d/PE-GobiernoCorporativo.png?auto=format%2Ccompress&dpr=1&w=175&h=175&fit=fill&bg=FFF",
-  "university": "UNAM"
+  "university": "UNAM",
+  "slug": "programa-especializado-gobierno-corporativo"
 },
 {
   "_id": {
@@ -5496,7 +5695,8 @@
   ],
   "courseUrl": "https://www.coursera.org/specializations/habilidades",
   "imgUrl": "https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://d15cw65ipctsrr.cloudfront.net/d9/c68e201c814a3689eb2efe239d1700/Habilidades-gerenciales_0.jpg?auto=format%2Ccompress&dpr=1&w=175&h=175&fit=fill&bg=FFF",
-  "university": "UNAM"
+  "university": "UNAM",
+  "slug": "programa-especializado-habilidades-gerenciales"
 },
 {
   "_id": {
@@ -5521,7 +5721,8 @@
   ],
   "courseUrl": "https://www.coursera.org/specializations/innovacion-digital",
   "imgUrl": "https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://d15cw65ipctsrr.cloudfront.net/3b/07f41662fd4acf9c1b066dea25b0fb/PE-Innovacion-digital.jpg?auto=format%2Ccompress&dpr=1&w=175&h=175&fit=fill&bg=FFF",
-  "university": "UNAM"
+  "university": "UNAM",
+  "slug": "programa-especializado-innovacion-digital"
 },
 {
   "_id": {
@@ -5554,7 +5755,8 @@
   ],
   "courseUrl": "https://www.coursera.org/specializations/inteligencia-artificial",
   "imgUrl": "https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://d15cw65ipctsrr.cloudfront.net/f1/228cd0c4f9414abdec44975e4ec99c/IA_0.jpg?auto=format%2Ccompress&dpr=1&w=175&h=175&fit=fill&bg=FFF",
-  "university": "UNAM"
+  "university": "UNAM",
+  "slug": "programa-especializado-introduccion-a-la-inteligencia-artificial"
 },
 {
   "_id": {
@@ -5579,7 +5781,8 @@
   ],
   "courseUrl": "https://www.coursera.org/specializations/nuclear-fuel",
   "imgUrl": "https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://d15cw65ipctsrr.cloudfront.net/61/7d552f065e4869a53a5c80de633364/program.png?auto=format%2Ccompress&dpr=1&w=175&h=175&fit=fill&bg=FFF",
-  "university": "UNAM"
+  "university": "UNAM",
+  "slug": "programa-especializado-nuclear-fuel-management-a-practical-approach"
 },
 {
   "_id": {
@@ -5604,7 +5807,8 @@
   ],
   "courseUrl": "https://www.coursera.org/specializations/prodmusical",
   "imgUrl": "https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://d15cw65ipctsrr.cloudfront.net/66/4126df96a84bcd99abd712b5e1da7d/PE_TecMusical_Produccion.png?auto=format%2Ccompress&dpr=1&w=175&h=175&fit=fill&bg=FFF",
-  "university": "UNAM"
+  "university": "UNAM",
+  "slug": "programa-especializado-produccion-musical-con-software-libre"
 },
 {
   "_id": {
@@ -5629,7 +5833,8 @@
   ],
   "courseUrl": "https://www.coursera.org/specializations/progmusical",
   "imgUrl": "https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://d15cw65ipctsrr.cloudfront.net/df/a99ad8e7a7444bab0fadd34765caa2/PE_TecMusical_Program.png?auto=format%2Ccompress&dpr=1&w=175&h=175&fit=fill&bg=FFF",
-  "university": "UNAM"
+  "university": "UNAM",
+  "slug": "programa-especializado-programacion-musical-con-software-libre"
 },
 {
   "_id": {
@@ -5662,7 +5867,8 @@
   ],
   "courseUrl": "https://www.coursera.org/specializations/tecnologia-musical",
   "imgUrl": "https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://d15cw65ipctsrr.cloudfront.net/c3/727c2670b64382be3811503ac97d40/TecMusical_0.jpg?auto=format%2Ccompress&dpr=1&w=175&h=175&fit=fill&bg=FFF",
-  "university": "UNAM"
+  "university": "UNAM",
+  "slug": "programa-especializado-tecnologia-musical-con-software-libre"
 },
 {
   "_id": {
@@ -5687,7 +5893,8 @@
   ],
   "courseUrl": "https://www.coursera.org/learn/como-autoconstruir-tu-vivienda-segunda-etapa",
   "imgUrl": "https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://coursera-course-photos.s3.amazonaws.com/14/d1ddfe6f014e83b4df44496132c019/AutoConstruirViv2_FINAL.jpg?auto=format%2Ccompress&dpr=1&w=175&h=175&fit=fill&bg=FFF",
-  "university": "UNAM"
+  "university": "UNAM",
+  "slug": "como-autoconstruir-tu-vivienda-segunda-etapa"
 },
 {
   "_id": {
@@ -5712,7 +5919,8 @@
   ],
   "courseUrl": "https://www.coursera.org/learn/credito",
   "imgUrl": "https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://coursera-course-photos.s3.amazonaws.com/5c/731a7464f64dcbaa4266817984cd08/CreditoyCobranza_FINAL.jpg?auto=format%2Ccompress&dpr=1&w=175&h=175&fit=fill&bg=FFF",
-  "university": "UNAM"
+  "university": "UNAM",
+  "slug": "credito-y-cobranza"
 },
 {
   "_id": {
@@ -5737,7 +5945,8 @@
   ],
   "courseUrl": "https://www.coursera.org/learn/inferencia-estadistica",
   "imgUrl": "https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://coursera-course-photos.s3.amazonaws.com/0c/3e2b6b5a2c49e8b7781e4dd1c5042a/estadisticaII-Logo.png?auto=format%2Ccompress&dpr=1&w=175&h=175&fit=fill&bg=FFF",
-  "university": "UNAM"
+  "university": "UNAM",
+  "slug": "estadistica-y-probabilidad-principios-de-inferencia"
 },
 {
   "_id": {
@@ -5770,7 +5979,8 @@
   ],
   "courseUrl": "https://www.coursera.org/learn/intro-produccion-audiovisual",
   "imgUrl": "https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://coursera-course-photos.s3.amazonaws.com/84/2f1bd6623b44fc9341fd155817b2a8/ProdAudiovisual_FINAL.jpg?auto=format%2Ccompress&dpr=1&w=175&h=175&fit=fill&bg=FFF",
-  "university": "UNAM"
+  "university": "UNAM",
+  "slug": "introduccion-a-la-produccion-audiovisual"
 },
 {
   "_id": {
@@ -5795,7 +6005,8 @@
   ],
   "courseUrl": "https://www.coursera.org/learn/gobiernocorp-anteced",
   "imgUrl": "https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://coursera-course-photos.s3.amazonaws.com/0c/13576f71304644a666d840b6e247d7/PE-GC-Curso1.png?auto=format%2Ccompress&dpr=1&w=175&h=175&fit=fill&bg=FFF",
-  "university": "UNAM"
+  "university": "UNAM",
+  "slug": "gobierno-corporativo-antecedentes"
 },
 {
   "_id": {
@@ -5820,7 +6031,8 @@
   ],
   "courseUrl": "https://www.coursera.org/learn/resultados",
   "imgUrl": "https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://coursera-course-photos.s3.amazonaws.com/24/a35193920746a6b861a9cf51b73563/Habilidades-gerenciales_5.jpg?auto=format%2Ccompress&dpr=1&w=175&h=175&fit=fill&bg=FFF",
-  "university": "UNAM"
+  "university": "UNAM",
+  "slug": "administracion-para-obtener-resultados"
 },
 {
   "_id": {
@@ -5845,7 +6057,8 @@
   ],
   "courseUrl": "https://www.coursera.org/learn/estrategia-financiera",
   "imgUrl": "https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://coursera-course-photos.s3.amazonaws.com/21/6aa19a7cb14482b23b367c58c48cd0/28.jpg?auto=format%2Ccompress&dpr=1&w=175&h=175&fit=fill&bg=FFF",
-  "university": "UNAM"
+  "university": "UNAM",
+  "slug": "introduccion-a-las-finanzas"
 },
 {
   "_id": {
@@ -5870,7 +6083,8 @@
   ],
   "courseUrl": "https://www.coursera.org/learn/fundamentos",
   "imgUrl": "https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://coursera-course-photos.s3.amazonaws.com/91/57b4d982c644d384ad844eb1e3f440/Android_2.jpg?auto=format%2Ccompress&dpr=1&w=175&h=175&fit=fill&bg=FFF",
-  "university": "UNAM"
+  "university": "UNAM",
+  "slug": "fundamentos-de-android"
 },
 {
   "_id": {
@@ -5895,7 +6109,8 @@
   ],
   "courseUrl": "https://www.coursera.org/learn/valuacionempresas",
   "imgUrl": "https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://coursera-course-photos.s3.amazonaws.com/03/52e4ca65f4423dbc8d55de79456392/Finanzas-5.jpg?auto=format%2Ccompress&dpr=1&w=175&h=175&fit=fill&bg=FFF",
-  "university": "UNAM"
+  "university": "UNAM",
+  "slug": "valuacion-de-empresas"
 },
 {
   "_id": {
@@ -5920,7 +6135,8 @@
   ],
   "courseUrl": "https://www.coursera.org/learn/nfm-backend",
   "imgUrl": "https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://coursera-course-photos.s3.amazonaws.com/40/a246a032ed4a2e91787dd658832200/LOGO_nuclear-fuel_back-end_propuesta-2.jpg?auto=format%2Ccompress&dpr=1&w=175&h=175&fit=fill&bg=FFF",
-  "university": "UNAM"
+  "university": "UNAM",
+  "slug": "out-of-core-nuclear-fuel-management-back-end"
 },
 {
   "_id": {
@@ -5945,7 +6161,8 @@
   ],
   "courseUrl": "https://www.coursera.org/learn/nosql-databases",
   "imgUrl": "https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://coursera-course-photos.s3.amazonaws.com/5e/054c7165dc474e9a074d3c7b99072f/Database-System_3.jpg?auto=format%2Ccompress&dpr=1&w=175&h=175&fit=fill&bg=FFF",
-  "university": "UNAM"
+  "university": "UNAM",
+  "slug": "sistemas-nosql"
 },
 {
   "_id": {
@@ -5970,7 +6187,8 @@
   ],
   "courseUrl": "https://www.coursera.org/learn/grabacion-musical",
   "imgUrl": "https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://coursera-course-photos.s3.amazonaws.com/0d/3dcc31a81e4395866d94a53ca81367/TecMusical_2.jpg?auto=format%2Ccompress&dpr=1&w=175&h=175&fit=fill&bg=FFF",
-  "university": "UNAM"
+  "university": "UNAM",
+  "slug": "grabacion-y-postproduccion-musical-dentro-y-fuera-del-estudio"
 },
 {
   "_id": {
@@ -5995,7 +6213,8 @@
   ],
   "courseUrl": "https://www.coursera.org/learn/estrategias-digitales-innovacion-ciudades-hidrointeligentes",
   "imgUrl": "https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://coursera-course-photos.s3.amazonaws.com/a3/9c1543de5f4935bf9c1f83f892a7ef/Hidrointeligentes_logo.png?auto=format%2Ccompress&dpr=1&w=175&h=175&fit=fill&bg=FFF",
-  "university": "UNAM"
+  "university": "UNAM",
+  "slug": "estrategias-para-la-innovacion-ciudades-hidro-inteligentes"
 },
 {
   "_id": {
@@ -6020,7 +6239,8 @@
   ],
   "courseUrl": "https://www.coursera.org/learn/estrategias-negociacion",
   "imgUrl": "https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://coursera-course-photos.s3.amazonaws.com/d8/dc088bf3814a6981d8de47e0b230ed/EstrategiasNegociacion_4.jpg?auto=format%2Ccompress&dpr=1&w=175&h=175&fit=fill&bg=FFF",
-  "university": "UNAM"
+  "university": "UNAM",
+  "slug": "las-estrategias-y-habilidades-para-las-negociaciones"
 },
 {
   "_id": {
@@ -6045,7 +6265,8 @@
   ],
   "courseUrl": "https://www.coursera.org/learn/aplicaciones-android",
   "imgUrl": "https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://coursera-course-photos.s3.amazonaws.com/79/598dd9440540d9b01699c240ca5392/Android_4.jpg?auto=format%2Ccompress&dpr=1&w=175&h=175&fit=fill&bg=FFF",
-  "university": "UNAM"
+  "university": "UNAM",
+  "slug": "desarrollo-de-aplicaciones-avanzadas-con-android"
 },
 {
   "_id": {
@@ -6070,7 +6291,8 @@
   ],
   "courseUrl": "https://www.coursera.org/learn/aguila-serpiente",
   "imgUrl": "https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://coursera-course-photos.s3.amazonaws.com/44/12f323ba674f5ea73f31c77f0af3dd/CEPE_LOGO_1.jpg?auto=format%2Ccompress&dpr=1&w=175&h=175&fit=fill&bg=FFF",
-  "university": "UNAM"
+  "university": "UNAM",
+  "slug": "el-aguila-el-nopal-y-la-serpiente"
 },
 {
   "_id": {
@@ -6095,7 +6317,8 @@
   ],
   "courseUrl": "https://www.coursera.org/learn/estadistica-probabilidad",
   "imgUrl": "https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://coursera-course-photos.s3.amazonaws.com/4e/7dd1967ea84e5981f93458b32e5ec3/EstadisticayProb_FINAL.jpg?auto=format%2Ccompress&dpr=1&w=175&h=175&fit=fill&bg=FFF",
-  "university": "UNAM"
+  "university": "UNAM",
+  "slug": "estadistica-y-probabilidad"
 },
 {
   "_id": {
@@ -6124,7 +6347,8 @@
   ],
   "courseUrl": "https://www.coursera.org/learn/genero-igualdad",
   "imgUrl": "https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://coursera-course-photos.s3.amazonaws.com/ba/703eba4531496584cc7d4dced41381/LOGO-Genero-final.jpg?auto=format%2Ccompress&dpr=1&w=175&h=175&fit=fill&bg=FFF",
-  "university": "UNAM"
+  "university": "UNAM",
+  "slug": "conceptos-basicos-para-la-igualdad-de-genero"
 },
 {
   "_id": {
@@ -6153,7 +6377,8 @@
   ],
   "courseUrl": "https://www.coursera.org/learn/razonamiento-artificial",
   "imgUrl": "https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://coursera-course-photos.s3.amazonaws.com/92/b2f9902e9848b4b676c3af9a218ace/C2_IArtificial.jpg?auto=format%2Ccompress&dpr=1&w=175&h=175&fit=fill&bg=FFF",
-  "university": "UNAM"
+  "university": "UNAM",
+  "slug": "razonamiento-artificial"
 },
 {
   "_id": {
@@ -6178,7 +6403,8 @@
   ],
   "courseUrl": "https://www.coursera.org/learn/quimica-etica",
   "imgUrl": "https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://coursera-course-photos.s3.amazonaws.com/f6/f35c6bf2a44496a3a2ad7c65d44a35/QuimicaGuerraE2_FINAL.jpg?auto=format%2Ccompress&dpr=1&w=175&h=175&fit=fill&bg=FFF",
-  "university": "UNAM"
+  "university": "UNAM",
+  "slug": "quimica-guerra-y-etica"
 },
 {
   "_id": {
@@ -6203,7 +6429,8 @@
   ],
   "courseUrl": "https://www.coursera.org/learn/iagenerativa",
   "imgUrl": "https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://coursera-course-photos.s3.amazonaws.com/62/7f8b29f17f497baf7d3b2c52e8f8b9/Logotipo_IAgen_enelaula.jpeg?auto=format%2Ccompress&dpr=1&w=175&h=175&fit=fill&bg=FFF",
-  "university": "UNAM"
+  "university": "UNAM",
+  "slug": "ia-generativa-en-el-aula"
 },
 {
   "_id": {
@@ -6228,7 +6455,8 @@
   ],
   "courseUrl": "https://www.coursera.org/learn/darwin-origen-evolucionismo-moderno",
   "imgUrl": "https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://coursera-course-photos.s3.amazonaws.com/cb/7ad6c4639049c8815b8fc86c291367/Darwin_FINAL.jpg?auto=format%2Ccompress&dpr=1&w=175&h=175&fit=fill&bg=FFF",
-  "university": "UNAM"
+  "university": "UNAM",
+  "slug": "charles-darwin-el-origen-del-evolucionismo-moderno"
 },
 {
   "_id": {
@@ -6257,7 +6485,8 @@
   ],
   "courseUrl": "https://www.coursera.org/learn/soluciondeproblemas",
   "imgUrl": "https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://coursera-course-photos.s3.amazonaws.com/2b/b9c3201db44003a953e36a898bdbf1/Habilidades-gerenciales_4.jpg?auto=format%2Ccompress&dpr=1&w=175&h=175&fit=fill&bg=FFF",
-  "university": "UNAM"
+  "university": "UNAM",
+  "slug": "solucion-de-problemas-y-toma-de-decisiones"
 },
 {
   "_id": {
@@ -6282,7 +6511,8 @@
   ],
   "courseUrl": "https://www.coursera.org/learn/construyendo-android-proyecto",
   "imgUrl": "https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://coursera-course-photos.s3.amazonaws.com/13/ea7fd986e14924903e5e754cdc37c7/Android_5.jpg?auto=format%2Ccompress&dpr=1&w=175&h=175&fit=fill&bg=FFF",
-  "university": "UNAM"
+  "university": "UNAM",
+  "slug": "proyecto-final-construyendo-una-aplicacion-profesional-con-android"
 },
 {
   "_id": {
@@ -6307,7 +6537,8 @@
   ],
   "courseUrl": "https://www.coursera.org/learn/autentica",
   "imgUrl": "https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://coursera-course-photos.s3.amazonaws.com/ae/1b58a78d754da08d456bdfde3715f1/WhatsApp-Image-2022-04-01-at-5.52.33-PM.jpeg?auto=format%2Ccompress&dpr=1&w=175&h=175&fit=fill&bg=FFF",
-  "university": "UNAM"
+  "university": "UNAM",
+  "slug": "evaluacion-autentica"
 },
 {
   "_id": {
@@ -6332,7 +6563,8 @@
   ],
   "courseUrl": "https://www.coursera.org/learn/aplicaciones-musicales-arduino",
   "imgUrl": "https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://coursera-course-photos.s3.amazonaws.com/37/f029cdcd464936b60571da766bba4d/TecMusical_5.jpg?auto=format%2Ccompress&dpr=1&w=175&h=175&fit=fill&bg=FFF",
-  "university": "UNAM"
+  "university": "UNAM",
+  "slug": "aplicaciones-musicales-con-arduino"
 },
 {
   "_id": {
@@ -6357,7 +6589,8 @@
   ],
   "courseUrl": "https://www.coursera.org/learn/inteligencia-artificial",
   "imgUrl": "https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://coursera-course-photos.s3.amazonaws.com/8a/f9ee8efa714e1ab41f0437bb874410/IA_9.jpg?auto=format%2Ccompress&dpr=1&w=175&h=175&fit=fill&bg=FFF",
-  "university": "UNAM"
+  "university": "UNAM",
+  "slug": "inteligencia-artificial-proyecto-final"
 },
 {
   "_id": {
@@ -6382,7 +6615,8 @@
   ],
   "courseUrl": "https://www.coursera.org/learn/ciencia",
   "imgUrl": "https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://coursera-course-photos.s3.amazonaws.com/99/5b30451d4d4624addee6e55f53a6c4/PensamientoCientifico_FINAL.jpg?auto=format%2Ccompress&dpr=1&w=175&h=175&fit=fill&bg=FFF",
-  "university": "UNAM"
+  "university": "UNAM",
+  "slug": "pensamiento-cientifico"
 },
 {
   "_id": {
@@ -6407,7 +6641,8 @@
   ],
   "courseUrl": "https://www.coursera.org/learn/estrategias-de-negociacion",
   "imgUrl": "https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://coursera-course-photos.s3.amazonaws.com/21/e470078e6742b9a5770d8925484a8d/EstrategiasNegociacion_1.jpg?auto=format%2Ccompress&dpr=1&w=175&h=175&fit=fill&bg=FFF",
-  "university": "UNAM"
+  "university": "UNAM",
+  "slug": "introduccion-al-mundo-de-las-negociaciones"
 },
 {
   "_id": {
@@ -6432,7 +6667,8 @@
   ],
   "courseUrl": "https://www.coursera.org/learn/estudio-bienes-comunes",
   "imgUrl": "https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://coursera-course-photos.s3.amazonaws.com/6f/2fd76274e24aa196cebce623684312/BienesComunes_FINAL.jpg?auto=format%2Ccompress&dpr=1&w=175&h=175&fit=fill&bg=FFF",
-  "university": "UNAM"
+  "university": "UNAM",
+  "slug": "introduccion-al-estudio-de-los-bienes-comunes"
 },
 {
   "_id": {
@@ -6457,7 +6693,8 @@
   ],
   "courseUrl": "https://www.coursera.org/learn/violencia-genero",
   "imgUrl": "https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://coursera-course-photos.s3.amazonaws.com/98/89c126e2a1457e8883af0db88da09e/logo_curso2.png?auto=format%2Ccompress&dpr=1&w=175&h=175&fit=fill&bg=FFF",
-  "university": "UNAM"
+  "university": "UNAM",
+  "slug": "violencias-por-razones-de-genero"
 },
 {
   "_id": {
@@ -6482,7 +6719,8 @@
   ],
   "courseUrl": "https://www.coursera.org/learn/dialisis-peritoneal",
   "imgUrl": "https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://coursera-course-photos.s3.amazonaws.com/83/333ba931ba4e9483b17febe5996208/Dialisis2_FINAL.jpg?auto=format%2Ccompress&dpr=1&w=175&h=175&fit=fill&bg=FFF",
-  "university": "UNAM"
+  "university": "UNAM",
+  "slug": "dialisis-peritoneal"
 },
 {
   "_id": {
@@ -6507,7 +6745,8 @@
   ],
   "courseUrl": "https://www.coursera.org/learn/farmaco-odontologos",
   "imgUrl": "https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://coursera-course-photos.s3.amazonaws.com/56/2186047a2f4ad79453c4c12cf01d9c/FarmacoOdonto_FINAL.jpg?auto=format%2Ccompress&dpr=1&w=175&h=175&fit=fill&bg=FFF",
-  "university": "UNAM"
+  "university": "UNAM",
+  "slug": "farmacologia-para-odontologos"
 },
 {
   "_id": {
@@ -6532,7 +6771,8 @@
   ],
   "courseUrl": "https://www.coursera.org/learn/intro-produccion-musical",
   "imgUrl": "https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://coursera-course-photos.s3.amazonaws.com/a4/14e93a2abe4dc18f91dcca7f759767/TecMusical_1.jpg?auto=format%2Ccompress&dpr=1&w=175&h=175&fit=fill&bg=FFF",
-  "university": "UNAM"
+  "university": "UNAM",
+  "slug": "introduccion-a-la-produccion-musical"
 },
 {
   "_id": {
@@ -6561,7 +6801,8 @@
   ],
   "courseUrl": "https://www.coursera.org/learn/sustentabilidad-intro",
   "imgUrl": "https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://coursera-course-photos.s3.amazonaws.com/b6/9ba6337d8240fab96d645f56d9bd27/PROMO-MOOC-FEB3.png?auto=format%2Ccompress&dpr=1&w=175&h=175&fit=fill&bg=FFF",
-  "university": "UNAM"
+  "university": "UNAM",
+  "slug": "introduccion-a-la-sustentabilidad-hacia-un-futuro-posible"
 },
 {
   "_id": {
@@ -6590,7 +6831,8 @@
   ],
   "courseUrl": "https://www.coursera.org/learn/qimica-carbono",
   "imgUrl": "https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://coursera-course-photos.s3.amazonaws.com/ac/97d4d9f94b4548b6cc84505ffb00da/QuimicaCarbono_FINAL.jpg?auto=format%2Ccompress&dpr=1&w=175&h=175&fit=fill&bg=FFF",
-  "university": "UNAM"
+  "university": "UNAM",
+  "slug": "una-aproximacion-a-la-quimica-del-carbono"
 },
 {
   "_id": {
@@ -6615,7 +6857,8 @@
   ],
   "courseUrl": "https://www.coursera.org/learn/intro-data-science-programacion-estadistica-r",
   "imgUrl": "https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://coursera-course-photos.s3.amazonaws.com/94/f9e087fa7f4ccfb35c6c1363761522/ProgramacionConR_FINAL.jpg?auto=format%2Ccompress&dpr=1&w=175&h=175&fit=fill&bg=FFF",
-  "university": "UNAM"
+  "university": "UNAM",
+  "slug": "introduccion-a-data-science-programacion-estadistica-con-r"
 },
 {
   "_id": {
@@ -6644,7 +6887,8 @@
   ],
   "courseUrl": "https://www.coursera.org/learn/simulacion-salud",
   "imgUrl": "https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://coursera-course-photos.s3.amazonaws.com/d9/516ff6d46c47ecaed0a007690065ec/Logotipo_SimCienciasdelaSAlud.jpg?auto=format%2Ccompress&dpr=1&w=175&h=175&fit=fill&bg=FFF",
-  "university": "UNAM"
+  "university": "UNAM",
+  "slug": "simulacion-en-ciencias-de-la-salud"
 },
 {
   "_id": {
@@ -6669,7 +6913,8 @@
   ],
   "courseUrl": "https://www.coursera.org/learn/gestion-del-talento",
   "imgUrl": "https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://coursera-course-photos.s3.amazonaws.com/53/9532c4bb2746c39f6ac50160c2c65f/Habilidades-gerenciales_2.jpg?auto=format%2Ccompress&dpr=1&w=175&h=175&fit=fill&bg=FFF",
-  "university": "UNAM"
+  "university": "UNAM",
+  "slug": "gestion-del-talento-humano"
 },
 {
   "_id": {
@@ -6694,7 +6939,8 @@
   ],
   "courseUrl": "https://www.coursera.org/learn/introduccion-java",
   "imgUrl": "https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://coursera-course-photos.s3.amazonaws.com/55/7b3941150f4632b9818e71d2ff7c27/fba781ae2.jpg?auto=format%2Ccompress&dpr=1&w=175&h=175&fit=fill&bg=FFF",
-  "university": "UNAM"
+  "university": "UNAM",
+  "slug": "introduccion-a-java"
 },
 {
   "_id": {
@@ -6719,7 +6965,8 @@
   ],
   "courseUrl": "https://www.coursera.org/learn/anticorrupcion-introduccion",
   "imgUrl": "https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://coursera-course-photos.s3.amazonaws.com/6e/31072e12934d09a96dbf7317182f40/Anticorrupcion_FINAL.jpg?auto=format%2Ccompress&dpr=1&w=175&h=175&fit=fill&bg=FFF",
-  "university": "UNAM"
+  "university": "UNAM",
+  "slug": "anticorrupcion-introduccion-a-conceptos-y-perspectiva-practica"
 },
 {
   "_id": {
@@ -6744,7 +6991,8 @@
   ],
   "courseUrl": "https://www.coursera.org/learn/gestion-de-productividad",
   "imgUrl": "https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://coursera-course-photos.s3.amazonaws.com/64/b01fa0c66b40d4b815a151541c4653/30.jpg?auto=format%2Ccompress&dpr=1&w=175&h=175&fit=fill&bg=FFF",
-  "university": "UNAM"
+  "university": "UNAM",
+  "slug": "introduccion-a-la-calidad"
 },
 {
   "_id": {
@@ -6769,7 +7017,8 @@
   ],
   "courseUrl": "https://www.coursera.org/learn/riesgos-fenomenos-naturales",
   "imgUrl": "https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://coursera-course-photos.s3.amazonaws.com/06/42c763011c404d967a7e44ce6fd0d9/EvalPeligroR2_FINAL.jpg?auto=format%2Ccompress&dpr=1&w=175&h=175&fit=fill&bg=FFF",
-  "university": "UNAM"
+  "university": "UNAM",
+  "slug": "evaluacion-de-peligros-y-riesgos-por-fenomenos-naturales"
 },
 {
   "_id": {
@@ -6798,7 +7047,8 @@
   ],
   "courseUrl": "https://www.coursera.org/learn/creatividad-proyecto-final",
   "imgUrl": "https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://coursera-course-photos.s3.amazonaws.com/5d/689a2063a811e5970465692c5b4361/InnovationBanner-_1_-_2_.jpg?auto=format%2Ccompress&dpr=1&w=175&h=175&fit=fill&bg=FFF",
-  "university": "UNAM"
+  "university": "UNAM",
+  "slug": "creatividad-diseno-e-innovacion-tecnicas-y-herramientas-proyecto-final"
 },
 {
   "_id": {
@@ -6823,7 +7073,8 @@
   ],
   "courseUrl": "https://www.coursera.org/learn/evaluacion-aprendizaje-enfoque-cuantitativo",
   "imgUrl": "https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://coursera-course-photos.s3.amazonaws.com/90/95199cd827425e9a6a9668f06b6679/EvaluacionEdu_2.jpg?auto=format%2Ccompress&dpr=1&w=175&h=175&fit=fill&bg=FFF",
-  "university": "UNAM"
+  "university": "UNAM",
+  "slug": "evaluacion-del-y-para-el-aprendizaje-enfoque-cuantitativo"
 },
 {
   "_id": {
@@ -6848,7 +7099,8 @@
   ],
   "courseUrl": "https://www.coursera.org/learn/genero-derechos",
   "imgUrl": "https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://coursera-course-photos.s3.amazonaws.com/bc/24f08f4d9943009136fce8db989b01/logo-genero-III.jpg?auto=format%2Ccompress&dpr=1&w=175&h=175&fit=fill&bg=FFF",
-  "university": "UNAM"
+  "university": "UNAM",
+  "slug": "igualdad-de-genero-y-derechos-humanos"
 },
 {
   "_id": {
@@ -6873,7 +7125,8 @@
   ],
   "courseUrl": "https://www.coursera.org/learn/mercado-investigacion",
   "imgUrl": "https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://coursera-course-photos.s3.amazonaws.com/44/7b69b8e6134292857f643f1490b1c5/29.jpg?auto=format%2Ccompress&dpr=1&w=175&h=175&fit=fill&bg=FFF",
-  "university": "UNAM"
+  "university": "UNAM",
+  "slug": "introduccion-al-mercado"
 },
 {
   "_id": {
@@ -6898,7 +7151,8 @@
   ],
   "courseUrl": "https://www.coursera.org/learn/enlinea",
   "imgUrl": "https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://coursera-course-photos.s3.amazonaws.com/4c/739f568d374f2ea456183eade2348e/Modelo-para-armar_FINAL.jpeg?auto=format%2Ccompress&dpr=1&w=175&h=175&fit=fill&bg=FFF",
-  "university": "UNAM"
+  "university": "UNAM",
+  "slug": "cursos-en-linea-modelo-para-armar"
 },
 {
   "_id": {
@@ -6923,7 +7177,8 @@
   ],
   "courseUrl": "https://www.coursera.org/learn/como-hacer-una-tesis",
   "imgUrl": "https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://coursera-course-photos.s3.amazonaws.com/49/d67ecb9f074c49abab761b21eb5dc1/como_hacer_una_tesis_FINAL.jpg?auto=format%2Ccompress&dpr=1&w=175&h=175&fit=fill&bg=FFF",
-  "university": "UNAM"
+  "university": "UNAM",
+  "slug": "como-hacer-una-tesis"
 },
 {
   "_id": {
@@ -6948,7 +7203,8 @@
   ],
   "courseUrl": "https://www.coursera.org/learn/comportamiento-adapta",
   "imgUrl": "https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://coursera-course-photos.s3.amazonaws.com/ee/0ed548358b4b3785f178c367d9400e/IA_6.jpg?auto=format%2Ccompress&dpr=1&w=175&h=175&fit=fill&bg=FFF",
-  "university": "UNAM"
+  "university": "UNAM",
+  "slug": "comportamiento-adaptativo"
 },
 {
   "_id": {
@@ -6973,7 +7229,8 @@
   ],
   "courseUrl": "https://www.coursera.org/learn/admonfinanciera",
   "imgUrl": "https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://coursera-course-photos.s3.amazonaws.com/c3/1f53e13be647928858edae554104c8/Finanzas-1.jpg?auto=format%2Ccompress&dpr=1&w=175&h=175&fit=fill&bg=FFF",
-  "university": "UNAM"
+  "university": "UNAM",
+  "slug": "administracion-financiera-y-su-funcion-en-la-empresa"
 },
 {
   "_id": {
@@ -6998,7 +7255,8 @@
   ],
   "courseUrl": "https://www.coursera.org/learn/tratamiento-caries",
   "imgUrl": "https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://coursera-course-photos.s3.amazonaws.com/50/7dc6f1122c4a929bf050e37e008c59/Manejo-moderno-de-la-caries-dental_FINAL.jpg?auto=format%2Ccompress&dpr=1&w=175&h=175&fit=fill&bg=FFF",
-  "university": "UNAM"
+  "university": "UNAM",
+  "slug": "manejo-moderno-de-la-caries-dental"
 },
 {
   "_id": {
@@ -7023,7 +7281,8 @@
   ],
   "courseUrl": "https://www.coursera.org/learn/estrategicos-empresariales-proyecto",
   "imgUrl": "https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://coursera-course-photos.s3.amazonaws.com/25/fa4cf2ce6c4066a944fa710e28b767/31.jpg?auto=format%2Ccompress&dpr=1&w=175&h=175&fit=fill&bg=FFF",
-  "university": "UNAM"
+  "university": "UNAM",
+  "slug": "estrategicos-empresariales-proyecto-final"
 },
 {
   "_id": {
@@ -7048,7 +7307,8 @@
   ],
   "courseUrl": "https://www.coursera.org/learn/arduino-aplicaciones",
   "imgUrl": "https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://coursera-course-photos.s3.amazonaws.com/d2/a9d33984a5413888ba45c25e57cbcd/Arduino_FINAL.jpg?auto=format%2Ccompress&dpr=1&w=175&h=175&fit=fill&bg=FFF",
-  "university": "UNAM"
+  "university": "UNAM",
+  "slug": "arduino-y-algunas-aplicaciones"
 },
 {
   "_id": {
@@ -7073,7 +7333,8 @@
   ],
   "courseUrl": "https://www.coursera.org/learn/hd",
   "imgUrl": "https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://coursera-course-photos.s3.amazonaws.com/9f/4f8248efc6413dbf7fc21235377459/logo2_HD.png?auto=format%2Ccompress&dpr=1&w=175&h=175&fit=fill&bg=FFF",
-  "university": "UNAM"
+  "university": "UNAM",
+  "slug": "introduccion-a-las-humanidades-digitales"
 },
 {
   "_id": {
@@ -7098,7 +7359,8 @@
   ],
   "courseUrl": "https://www.coursera.org/learn/estaciones-clima",
   "imgUrl": "https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://coursera-course-photos.s3.amazonaws.com/1f/4f132eaa054faa8c5b945d9cceff08/LasEstaciones2_FINAL.jpg?auto=format%2Ccompress&dpr=1&w=175&h=175&fit=fill&bg=FFF",
-  "university": "UNAM"
+  "university": "UNAM",
+  "slug": "las-estaciones-del-ano-y-el-clima"
 },
 {
   "_id": {
@@ -7123,7 +7385,8 @@
   ],
   "courseUrl": "https://www.coursera.org/learn/business-intelligence-data-warehousing",
   "imgUrl": "https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://coursera-course-photos.s3.amazonaws.com/40/f81d05092d49b6910cd89618a13f49/Database-System_2.jpg?auto=format%2Ccompress&dpr=1&w=175&h=175&fit=fill&bg=FFF",
-  "university": "UNAM"
+  "university": "UNAM",
+  "slug": "inteligencia-empresarial-y-almacenamiento-de-datos"
 },
 {
   "_id": {
@@ -7152,7 +7415,8 @@
   ],
   "courseUrl": "https://www.coursera.org/learn/proyectofinanzascorporativas",
   "imgUrl": "https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://coursera-course-photos.s3.amazonaws.com/ef/d82ead5b6945a8be423c0f94af7fad/Finanzas-6.jpg?auto=format%2Ccompress&dpr=1&w=175&h=175&fit=fill&bg=FFF",
-  "university": "UNAM"
+  "university": "UNAM",
+  "slug": "toma-de-decisiones-financieras"
 },
 {
   "_id": {
@@ -7177,7 +7441,8 @@
   ],
   "courseUrl": "https://www.coursera.org/learn/como-autoconstruir-tu-vivienda",
   "imgUrl": "https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://coursera-course-photos.s3.amazonaws.com/ab/8723b0c7fd462ba8e309016ba93bd6/AutoConstruirViv1_FINAL.jpg?auto=format%2Ccompress&dpr=1&w=175&h=175&fit=fill&bg=FFF",
-  "university": "UNAM"
+  "university": "UNAM",
+  "slug": "como-autoconstruir-tu-vivienda"
 },
 {
   "_id": {
@@ -7202,7 +7467,8 @@
   ],
   "courseUrl": "https://www.coursera.org/learn/aprendo",
   "imgUrl": "https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://coursera-course-photos.s3.amazonaws.com/15/74f2b13e474372af0d63270a477370/Aprender_FINAL.jpg?auto=format%2Ccompress&dpr=1&w=175&h=175&fit=fill&bg=FFF",
-  "university": "UNAM"
+  "university": "UNAM",
+  "slug": "aprender"
 },
 {
   "_id": {
@@ -7231,7 +7497,8 @@
   ],
   "courseUrl": "https://www.coursera.org/learn/trigonometria",
   "imgUrl": "https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://coursera-course-photos.s3.amazonaws.com/64/7049933b784f00b456f09bf03c8a3a/Trigonometria_ver2.jpg?auto=format%2Ccompress&dpr=1&w=175&h=175&fit=fill&bg=FFF",
-  "university": "UNAM"
+  "university": "UNAM",
+  "slug": "trigonometria-y-geometria-analitica"
 },
 {
   "_id": {
@@ -7256,7 +7523,8 @@
   ],
   "courseUrl": "https://www.coursera.org/learn/audio-digital-pure-data",
   "imgUrl": "https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://coursera-course-photos.s3.amazonaws.com/cc/2b21d073724cd280c9cce447fa372e/TecMusical_3.jpg?auto=format%2Ccompress&dpr=1&w=175&h=175&fit=fill&bg=FFF",
-  "university": "UNAM"
+  "university": "UNAM",
+  "slug": "audio-digital-con-pure-data"
 },
 {
   "_id": {
@@ -7281,7 +7549,8 @@
   ],
   "courseUrl": "https://www.coursera.org/learn/hgproyectofinal",
   "imgUrl": "https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://coursera-course-photos.s3.amazonaws.com/00/8f6f5821164297855b8db06027e55d/Habilidades-gerenciales_6.jpg?auto=format%2Ccompress&dpr=1&w=175&h=175&fit=fill&bg=FFF",
-  "university": "UNAM"
+  "university": "UNAM",
+  "slug": "habilidades-gerenciales-proyecto-final"
 },
 {
   "_id": {
@@ -7306,7 +7575,8 @@
   ],
   "courseUrl": "https://www.coursera.org/learn/gobiernocorp-estruc",
   "imgUrl": "https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://coursera-course-photos.s3.amazonaws.com/31/c6959003a443339a3e6579207e899f/PE-GC-Curso2.png?auto=format%2Ccompress&dpr=1&w=175&h=175&fit=fill&bg=FFF",
-  "university": "UNAM"
+  "university": "UNAM",
+  "slug": "gobierno-corporativo-estructuras"
 },
 {
   "_id": {
@@ -7331,7 +7601,8 @@
   ],
   "courseUrl": "https://www.coursera.org/learn/quimica-alimentos",
   "imgUrl": "https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://coursera-course-photos.s3.amazonaws.com/c6/c2fd6b0abb40b2bfa06aee777cddd8/logo_quimica.jpeg?auto=format%2Ccompress&dpr=1&w=175&h=175&fit=fill&bg=FFF",
-  "university": "UNAM"
+  "university": "UNAM",
+  "slug": "la-quimica-en-la-produccion-de-alimentos-y-medicamentos"
 },
 {
   "_id": {
@@ -7356,7 +7627,8 @@
   ],
   "courseUrl": "https://www.coursera.org/learn/robotica-inicial",
   "imgUrl": "https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://coursera-course-photos.s3.amazonaws.com/2f/ed65d2cb3c45f896c1917b12f2a071/Robotica_FINAL.jpg?auto=format%2Ccompress&dpr=1&w=175&h=175&fit=fill&bg=FFF",
-  "university": "UNAM"
+  "university": "UNAM",
+  "slug": "robotica"
 },
 {
   "_id": {
@@ -7381,7 +7653,8 @@
   ],
   "courseUrl": "https://www.coursera.org/learn/designthinking-docencia",
   "imgUrl": "https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://coursera-course-photos.s3.amazonaws.com/d3/8235510b7a4003925af7ac63053703/AtreveteaInnovar_PensDiseno_FINAL.png?auto=format%2Ccompress&dpr=1&w=175&h=175&fit=fill&bg=FFF",
-  "university": "UNAM"
+  "university": "UNAM",
+  "slug": "innovar-tu-ensenanza-con-design-thinking"
 },
 {
   "_id": {
@@ -7406,7 +7679,8 @@
   ],
   "courseUrl": "https://www.coursera.org/learn/evolucion-teoria-sintetica",
   "imgUrl": "https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://coursera-course-photos.s3.amazonaws.com/33/ec336ab2094f1f973fa057a8a6741a/logo-3.png?auto=format%2Ccompress&dpr=1&w=175&h=175&fit=fill&bg=FFF",
-  "university": "UNAM"
+  "university": "UNAM",
+  "slug": "evolucion-teoria-sintetica"
 },
 {
   "_id": {
@@ -7431,7 +7705,8 @@
   ],
   "courseUrl": "https://www.coursera.org/learn/periodismo-digital",
   "imgUrl": "https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://coursera-course-photos.s3.amazonaws.com/bb/2de341ebde4098b9e816ee9102d648/PeriodismoDigitalFakeN_FINAL.jpg?auto=format%2Ccompress&dpr=1&w=175&h=175&fit=fill&bg=FFF",
-  "university": "UNAM"
+  "university": "UNAM",
+  "slug": "periodismo-digital-y-combate-a-las-fake-news"
 },
 {
   "_id": {
@@ -7456,7 +7731,8 @@
   ],
   "courseUrl": "https://www.coursera.org/learn/control-automatico",
   "imgUrl": "https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://coursera-course-photos.s3.amazonaws.com/96/60a3ab1132424984aa775dfdf5973a/ControlAutomatico2_FINAL.jpg?auto=format%2Ccompress&dpr=1&w=175&h=175&fit=fill&bg=FFF",
-  "university": "UNAM"
+  "university": "UNAM",
+  "slug": "control-automatico-la-tecnologia-invisible"
 },
 {
   "_id": {
@@ -7481,7 +7757,8 @@
   ],
   "courseUrl": "https://www.coursera.org/learn/negociacion-proceso",
   "imgUrl": "https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://coursera-course-photos.s3.amazonaws.com/e6/20b425a48f46a4bba90557d8864d1d/EstrategiasNegociacion_3.jpg?auto=format%2Ccompress&dpr=1&w=175&h=175&fit=fill&bg=FFF",
-  "university": "UNAM"
+  "university": "UNAM",
+  "slug": "los-obstaculos-y-la-conduccion-en-las-negociaciones"
 },
 {
   "_id": {
@@ -7506,7 +7783,8 @@
   ],
   "courseUrl": "https://www.coursera.org/learn/quimica-en-mi-casa",
   "imgUrl": "https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://coursera-course-photos.s3.amazonaws.com/bf/7d68f6a8fb49b9927c92682f22bac4/QuimicaenMiCasa_FINAL.jpg?auto=format%2Ccompress&dpr=1&w=175&h=175&fit=fill&bg=FFF",
-  "university": "UNAM"
+  "university": "UNAM",
+  "slug": "como-quimica-en-mi-casa"
 },
 {
   "_id": {
@@ -7531,7 +7809,8 @@
   ],
   "courseUrl": "https://www.coursera.org/learn/evaluaciondeinversiones",
   "imgUrl": "https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://coursera-course-photos.s3.amazonaws.com/94/0cf46185cb4c85813d1cf31dd843bb/Finanzas-3.jpg?auto=format%2Ccompress&dpr=1&w=175&h=175&fit=fill&bg=FFF",
-  "university": "UNAM"
+  "university": "UNAM",
+  "slug": "evaluacion-de-inversiones-en-bienes-de-capital"
 },
 {
   "_id": {
@@ -7556,7 +7835,8 @@
   ],
   "courseUrl": "https://www.coursera.org/learn/proyecto-negociacion",
   "imgUrl": "https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://coursera-course-photos.s3.amazonaws.com/4a/ea7a4345394f5e8b05e2811153dae1/EstrategiasNegociacion_5.jpg?auto=format%2Ccompress&dpr=1&w=175&h=175&fit=fill&bg=FFF",
-  "university": "UNAM"
+  "university": "UNAM",
+  "slug": "proyecto-final-sobre-negociacion-para-un-mejor-clima-laboral"
 },
 {
   "_id": {
@@ -7585,7 +7865,8 @@
   ],
   "courseUrl": "https://www.coursera.org/learn/autoridad",
   "imgUrl": "https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://coursera-course-photos.s3.amazonaws.com/82/64af81875545a1b3f5f82554da4813/HabilidadesGerencialesC1.jpg?auto=format%2Ccompress&dpr=1&w=175&h=175&fit=fill&bg=FFF",
-  "university": "UNAM"
+  "university": "UNAM",
+  "slug": "autoridad-direccion-y-liderazgo"
 },
 {
   "_id": {
@@ -7610,7 +7891,8 @@
   ],
   "courseUrl": "https://www.coursera.org/learn/gobiernocorp-norma",
   "imgUrl": "https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://coursera-course-photos.s3.amazonaws.com/26/bf254a6a0144628f83fa285a3888fb/PE-GC-Curso3.png?auto=format%2Ccompress&dpr=1&w=175&h=175&fit=fill&bg=FFF",
-  "university": "UNAM"
+  "university": "UNAM",
+  "slug": "gobierno-corporativo-normatividad-aplicable"
 },
 {
   "_id": {
@@ -7635,7 +7917,8 @@
   ],
   "courseUrl": "https://www.coursera.org/learn/creatividad-computacional",
   "imgUrl": "https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://coursera-course-photos.s3.amazonaws.com/6f/b755d4bfc74d33adbef29dfa0a7b00/IA_7.jpg?auto=format%2Ccompress&dpr=1&w=175&h=175&fit=fill&bg=FFF",
-  "university": "UNAM"
+  "university": "UNAM",
+  "slug": "creatividad-computacional"
 },
 {
   "_id": {
@@ -7660,7 +7943,8 @@
   ],
   "courseUrl": "https://www.coursera.org/learn/gestion-riesgo",
   "imgUrl": "https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://coursera-course-photos.s3.amazonaws.com/d5/c102bf7ed7480f90cb761bcf12cb86/GestionRiesgos_FINAL.jpg?auto=format%2Ccompress&dpr=1&w=175&h=175&fit=fill&bg=FFF",
-  "university": "UNAM"
+  "university": "UNAM",
+  "slug": "gestion-integral-del-riesgo-de-desastres"
 },
 {
   "_id": {
@@ -7689,7 +7973,8 @@
   ],
   "courseUrl": "https://www.coursera.org/learn/algebra-basica",
   "imgUrl": "https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://coursera-course-photos.s3.amazonaws.com/6d/b71e9bfe5742699a72cc61c3308491/Algebrabasica2_FINAL.jpg?auto=format%2Ccompress&dpr=1&w=175&h=175&fit=fill&bg=FFF",
-  "university": "UNAM"
+  "university": "UNAM",
+  "slug": "algebra-basica"
 },
 {
   "_id": {
@@ -7714,7 +7999,8 @@
   ],
   "courseUrl": "https://www.coursera.org/learn/finanzas-personales",
   "imgUrl": "https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://coursera-course-photos.s3.amazonaws.com/d3/bc870cf2164d5facb8114be96f9fb6/FinanzasPersonales_FINAL.jpg?auto=format%2Ccompress&dpr=1&w=175&h=175&fit=fill&bg=FFF",
-  "university": "UNAM"
+  "university": "UNAM",
+  "slug": "finanzas-personales"
 },
 {
   "_id": {
@@ -7739,7 +8025,8 @@
   ],
   "courseUrl": "https://www.coursera.org/learn/empresas-familiares",
   "imgUrl": "https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://coursera-course-photos.s3.amazonaws.com/b0/77245a07ed472da5f96552a08d8b10/Empresas-familiares.png?auto=format%2Ccompress&dpr=1&w=175&h=175&fit=fill&bg=FFF",
-  "university": "UNAM"
+  "university": "UNAM",
+  "slug": "empresas-familiares"
 },
 {
   "_id": {
@@ -7764,7 +8051,8 @@
   ],
   "courseUrl": "https://www.coursera.org/learn/residente",
   "imgUrl": "https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://coursera-course-photos.s3.amazonaws.com/97/9c0a8da364444aab73ae83c698e7c9/MedicoResidente_final.jpg?auto=format%2Ccompress&dpr=1&w=175&h=175&fit=fill&bg=FFF",
-  "university": "UNAM"
+  "university": "UNAM",
+  "slug": "el-rol-docente-del-medico-residente"
 },
 {
   "_id": {
@@ -7789,7 +8077,8 @@
   ],
   "courseUrl": "https://www.coursera.org/learn/nfm-frontend",
   "imgUrl": "https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://coursera-course-photos.s3.amazonaws.com/84/8ef91b99ab4d8d9339b7e54c571e29/LOGO_nuclear-fuel_front-end_propuesta-2.jpg?auto=format%2Ccompress&dpr=1&w=175&h=175&fit=fill&bg=FFF",
-  "university": "UNAM"
+  "university": "UNAM",
+  "slug": "out-of-core-nuclear-fuel-management-front-end"
 },
 {
   "_id": {
@@ -7814,7 +8103,8 @@
   ],
   "courseUrl": "https://www.coursera.org/learn/evaluacion-educativa-proyecto-final",
   "imgUrl": "https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://coursera-course-photos.s3.amazonaws.com/f6/dd9832e11b45259b157892ad210c36/EvaluacionEdu_4.jpg?auto=format%2Ccompress&dpr=1&w=175&h=175&fit=fill&bg=FFF",
-  "university": "UNAM"
+  "university": "UNAM",
+  "slug": "proyecto-final-evaluacion-del-y-para-el-aprendizaje"
 },
 {
   "_id": {
@@ -7839,7 +8129,8 @@
   ],
   "courseUrl": "https://www.coursera.org/learn/usos-didacticos-del-cine",
   "imgUrl": "https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://coursera-course-photos.s3.amazonaws.com/f4/053b5385c842a5995245b6225da828/UsosDidacticosCine_FINAL.jpg?auto=format%2Ccompress&dpr=1&w=175&h=175&fit=fill&bg=FFF",
-  "university": "UNAM"
+  "university": "UNAM",
+  "slug": "usos-didacticos-del-cine-introduccion-al-analisis"
 },
 {
   "_id": {
@@ -7864,7 +8155,8 @@
   ],
   "courseUrl": "https://www.coursera.org/learn/antibioticos",
   "imgUrl": "https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://coursera-course-photos.s3.amazonaws.com/fd/577394706e469f92c2e4aeef0a306f/LOGO-Antibioticos_FINAL.jpg?auto=format%2Ccompress&dpr=1&w=175&h=175&fit=fill&bg=FFF",
-  "university": "UNAM"
+  "university": "UNAM",
+  "slug": "antibioticos-cuando-como-y-para-que"
 },
 {
   "_id": {
@@ -7889,7 +8181,8 @@
   ],
   "courseUrl": "https://www.coursera.org/learn/nfm-incore",
   "imgUrl": "https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://coursera-course-photos.s3.amazonaws.com/83/189c4aa4044483a9f1ad24d8a92f1e/LOGO_nuclear-fuel_in_core.jpg?auto=format%2Ccompress&dpr=1&w=175&h=175&fit=fill&bg=FFF",
-  "university": "UNAM"
+  "university": "UNAM",
+  "slug": "in-core-nuclear-fuel-management"
 },
 {
   "_id": {
@@ -7914,7 +8207,8 @@
   ],
   "courseUrl": "https://www.coursera.org/learn/computo-evolutivo",
   "imgUrl": "https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://coursera-course-photos.s3.amazonaws.com/21/48c4d848d24fb2875c4789a2664f44/IA_5.jpg?auto=format%2Ccompress&dpr=1&w=175&h=175&fit=fill&bg=FFF",
-  "university": "UNAM"
+  "university": "UNAM",
+  "slug": "computo-evolutivo"
 },
 {
   "_id": {
@@ -7943,7 +8237,8 @@
   ],
   "courseUrl": "https://www.coursera.org/learn/funciones-algebraicas",
   "imgUrl": "https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://coursera-course-photos.s3.amazonaws.com/05/b2039234f1461e81a17266d6ba8955/FuncionesAlgebraicas_FINAL.jpg?auto=format%2Ccompress&dpr=1&w=175&h=175&fit=fill&bg=FFF",
-  "university": "UNAM"
+  "university": "UNAM",
+  "slug": "funciones-algebraicas-y-trascendentes"
 },
 {
   "_id": {
@@ -7968,7 +8263,8 @@
   ],
   "courseUrl": "https://www.coursera.org/learn/farmacovigilancia-ocular",
   "imgUrl": "https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://coursera-course-photos.s3.amazonaws.com/52/b3a220506241d7a38fa8624222af08/FarmacovigilancaOcular_FINAL.jpg?auto=format%2Ccompress&dpr=1&w=175&h=175&fit=fill&bg=FFF",
-  "university": "UNAM"
+  "university": "UNAM",
+  "slug": "farmacovigilancia-ocular"
 },
 {
   "_id": {
@@ -7993,7 +8289,8 @@
   ],
   "courseUrl": "https://www.coursera.org/learn/data-intensive-applications",
   "imgUrl": "https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://coursera-course-photos.s3.amazonaws.com/43/f11c66b861477bb3c1ee36bf1e80d0/Database-System_4.jpg?auto=format%2Ccompress&dpr=1&w=175&h=175&fit=fill&bg=FFF",
-  "university": "UNAM"
+  "university": "UNAM",
+  "slug": "diseno-de-aplicaciones-intensivas-en-datos"
 },
 {
   "_id": {
@@ -8018,7 +8315,8 @@
   ],
   "courseUrl": "https://www.coursera.org/learn/desarrollo-de-aplicaciones",
   "imgUrl": "https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://coursera-course-photos.s3.amazonaws.com/dd/40c00e71874bbb8e1ad7e7b20b6a34/Android_3.jpg?auto=format%2Ccompress&dpr=1&w=175&h=175&fit=fill&bg=FFF",
-  "university": "UNAM"
+  "university": "UNAM",
+  "slug": "desarrollo-de-aplicaciones-con-android"
 },
 {
   "_id": {
@@ -8043,7 +8341,8 @@
   ],
   "courseUrl": "https://www.coursera.org/learn/sesenta-anos-inteligencia-artificial",
   "imgUrl": "https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://coursera-course-photos.s3.amazonaws.com/63/acf355d0fa4f6ab394ced11625d14c/IA_1.jpg?auto=format%2Ccompress&dpr=1&w=175&h=175&fit=fill&bg=FFF",
-  "university": "UNAM"
+  "university": "UNAM",
+  "slug": "sesenta-anos-de-inteligencia-artificial"
 },
 {
   "_id": {
@@ -8068,7 +8367,8 @@
   ],
   "courseUrl": "https://www.coursera.org/learn/cognicion",
   "imgUrl": "https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://coursera-course-photos.s3.amazonaws.com/40/122a1265594627a60ff8540ca6e28c/IA_8.jpg?auto=format%2Ccompress&dpr=1&w=175&h=175&fit=fill&bg=FFF",
-  "university": "UNAM"
+  "university": "UNAM",
+  "slug": "cognicion-encarnada"
 },
 {
   "_id": {
@@ -8093,7 +8393,8 @@
   ],
   "courseUrl": "https://www.coursera.org/learn/liderazgo-innovacion",
   "imgUrl": "https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://coursera-course-photos.s3.amazonaws.com/45/413a183e23450e90224786e2ef4f0b/LOGO-Liderazgo-e-Innovacion.jpg?auto=format%2Ccompress&dpr=1&w=175&h=175&fit=fill&bg=FFF",
-  "university": "UNAM"
+  "university": "UNAM",
+  "slug": "liderazgo-e-innovacion"
 },
 {
   "_id": {
@@ -8118,7 +8419,8 @@
   ],
   "courseUrl": "https://www.coursera.org/learn/etica",
   "imgUrl": "https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://coursera-course-photos.s3.amazonaws.com/15/23b33c36064572bb3579c53f743911/LaSolucionCEtico_FINAL.jpg?auto=format%2Ccompress&dpr=1&w=175&h=175&fit=fill&bg=FFF",
-  "university": "UNAM"
+  "university": "UNAM",
+  "slug": "la-solucion-del-conflicto-etico"
 },
 {
   "_id": {
@@ -8143,7 +8445,8 @@
   ],
   "courseUrl": "https://www.coursera.org/learn/matematicas",
   "imgUrl": "https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://coursera-course-photos.s3.amazonaws.com/6c/a212dc3549455fa03ac5d3473fa59e/Finanzas-2.jpg?auto=format%2Ccompress&dpr=1&w=175&h=175&fit=fill&bg=FFF",
-  "university": "UNAM"
+  "university": "UNAM",
+  "slug": "matematicas-financieras"
 },
 {
   "_id": {
@@ -8168,7 +8471,8 @@
   ],
   "courseUrl": "https://www.coursera.org/learn/prospectiva",
   "imgUrl": "https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://coursera-course-photos.s3.amazonaws.com/53/564bf2d98d4d81acdb759406cb47bf/Propectiva_juridica.jpeg?auto=format%2Ccompress&dpr=1&w=175&h=175&fit=fill&bg=FFF",
-  "university": "UNAM"
+  "university": "UNAM",
+  "slug": "prospectiva-juridica"
 },
 {
   "_id": {
@@ -8193,7 +8497,8 @@
   ],
   "courseUrl": "https://www.coursera.org/learn/cuidado-heridas",
   "imgUrl": "https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://coursera-course-photos.s3.amazonaws.com/dc/2b03f5775049faaee16d064ad32381/CuidadoHeridas_FINAL.jpg?auto=format%2Ccompress&dpr=1&w=175&h=175&fit=fill&bg=FFF",
-  "university": "UNAM"
+  "university": "UNAM",
+  "slug": "cuidado-de-heridas-en-el-ambito-hospitalario"
 },
 {
   "_id": {
@@ -8222,7 +8527,8 @@
   ],
   "courseUrl": "https://www.coursera.org/learn/python-usuario",
   "imgUrl": "https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://coursera-course-photos.s3.amazonaws.com/0c/07d90fa6804aef87b769eff934009f/logo-python.png?auto=format%2Ccompress&dpr=1&w=175&h=175&fit=fill&bg=FFF",
-  "university": "UNAM"
+  "university": "UNAM",
+  "slug": "python-de-cero-a-usuario"
 },
 {
   "_id": {
@@ -8247,7 +8553,8 @@
   ],
   "courseUrl": "https://www.coursera.org/learn/colabora",
   "imgUrl": "https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://coursera-course-photos.s3.amazonaws.com/92/717403d5eb4427bbd1cdb614600b47/mooc_colaboracion.jpg?auto=format%2Ccompress&dpr=1&w=175&h=175&fit=fill&bg=FFF",
-  "university": "UNAM"
+  "university": "UNAM",
+  "slug": "colaboracion-dinamica"
 },
 {
   "_id": {
@@ -8272,7 +8579,8 @@
   ],
   "courseUrl": "https://www.coursera.org/learn/creatividad",
   "imgUrl": "https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://coursera-course-photos.s3.amazonaws.com/7e/6657c65aa84e46a5d0d72f4e9f080a/SerMC_FINAL.jpg?auto=format%2Ccompress&dpr=1&w=175&h=175&fit=fill&bg=FFF",
-  "university": "UNAM"
+  "university": "UNAM",
+  "slug": "ser-mas-creativos"
 },
 {
   "_id": {
@@ -8297,7 +8605,8 @@
   ],
   "courseUrl": "https://www.coursera.org/learn/evaluacion-educativa",
   "imgUrl": "https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://coursera-course-photos.s3.amazonaws.com/bc/d5b812bb8840a5b090b7ccdde48f82/EvaluacionEdu_1.jpg?auto=format%2Ccompress&dpr=1&w=175&h=175&fit=fill&bg=FFF",
-  "university": "UNAM"
+  "university": "UNAM",
+  "slug": "evaluacion-del-y-para-el-aprendizaje-en-educacion-universitaria"
 },
 {
   "_id": {
@@ -8326,7 +8635,8 @@
   ],
   "courseUrl": "https://www.coursera.org/learn/orden",
   "imgUrl": "https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://coursera-course-photos.s3.amazonaws.com/e5/0e9a36753b455a8ddc6fe1ec354596/Habilidades-gerenciales_3.jpg?auto=format%2Ccompress&dpr=1&w=175&h=175&fit=fill&bg=FFF",
-  "university": "UNAM"
+  "university": "UNAM",
+  "slug": "orden-y-manejo-del-tiempo"
 },
 {
   "_id": {
@@ -8351,7 +8661,8 @@
   ],
   "courseUrl": "https://www.coursera.org/learn/tecnologia-musical-proyecto",
   "imgUrl": "https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://coursera-course-photos.s3.amazonaws.com/79/9c32198ac04dbc94fea648efa104f2/TecMusical_7.jpg?auto=format%2Ccompress&dpr=1&w=175&h=175&fit=fill&bg=FFF",
-  "university": "UNAM"
+  "university": "UNAM",
+  "slug": "tecnologia-musical-con-software-libre-proyecto-final"
 },
 {
   "_id": {
@@ -8376,7 +8687,8 @@
   ],
   "courseUrl": "https://www.coursera.org/learn/relational-database",
   "imgUrl": "https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://coursera-course-photos.s3.amazonaws.com/16/c039764136428c9211ea64bfd18372/Database-System_1.jpg?auto=format%2Ccompress&dpr=1&w=175&h=175&fit=fill&bg=FFF",
-  "university": "UNAM"
+  "university": "UNAM",
+  "slug": "sistemas-de-bases-de-datos-relacionales"
 },
 {
   "_id": {
@@ -8401,7 +8713,8 @@
   ],
   "courseUrl": "https://www.coursera.org/learn/cancer-prostata",
   "imgUrl": "https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://coursera-course-photos.s3.amazonaws.com/3c/a5edb78118431896d44d612b82713e/CancerProstata_FINAL.jpg?auto=format%2Ccompress&dpr=1&w=175&h=175&fit=fill&bg=FFF",
-  "university": "UNAM"
+  "university": "UNAM",
+  "slug": "cancer-de-prostata"
 },
 {
   "_id": {
@@ -8426,7 +8739,8 @@
   ],
   "courseUrl": "https://www.coursera.org/learn/actualizacion-manejo-diabetes-tipo-2",
   "imgUrl": "https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://coursera-course-photos.s3.amazonaws.com/20/b613075a114574be014b318707f049/Diabetes._FINALpsd.jpg?auto=format%2Ccompress&dpr=1&w=175&h=175&fit=fill&bg=FFF",
-  "university": "UNAM"
+  "university": "UNAM",
+  "slug": "actualizacion-en-el-manejo-del-paciente-con-diabetes-mellitus-tipo-2"
 },
 {
   "_id": {
@@ -8455,7 +8769,8 @@
   ],
   "courseUrl": "https://www.coursera.org/learn/seguridad-hidrica",
   "imgUrl": "https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://coursera-course-photos.s3.amazonaws.com/a0/782d608d8e4f9eb4ecad5ba3615c26/SeguridadHidrica_FINAL.jpg?auto=format%2Ccompress&dpr=1&w=175&h=175&fit=fill&bg=FFF",
-  "university": "UNAM"
+  "university": "UNAM",
+  "slug": "seguridad-hidrica"
 },
 {
   "_id": {
@@ -8480,7 +8795,8 @@
   ],
   "courseUrl": "https://www.coursera.org/learn/resolucion-busqueda",
   "imgUrl": "https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://coursera-course-photos.s3.amazonaws.com/39/37ed7e8aa24a82be2f7d362a7f7fda/C3_IArtificial.jpg?auto=format%2Ccompress&dpr=1&w=175&h=175&fit=fill&bg=FFF",
-  "university": "UNAM"
+  "university": "UNAM",
+  "slug": "resolucion-de-problemas-por-busqueda"
 },
 {
   "_id": {
@@ -8505,7 +8821,8 @@
   ],
   "courseUrl": "https://www.coursera.org/learn/gobiernos-locales",
   "imgUrl": "https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://coursera-course-photos.s3.amazonaws.com/41/c3e43dce7b4a79bf829b65ba44c64d/GobiernosLocales_FINAL.jpg?auto=format%2Ccompress&dpr=1&w=175&h=175&fit=fill&bg=FFF",
-  "university": "UNAM"
+  "university": "UNAM",
+  "slug": "los-gobiernos-locales-como-actores-internacionales"
 },
 {
   "_id": {
@@ -8530,7 +8847,8 @@
   ],
   "courseUrl": "https://www.coursera.org/learn/gafas-violeta",
   "imgUrl": "https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://coursera-course-photos.s3.amazonaws.com/db/5247d393c74543860325d883a21a18/logo-genero-cch.jpg?auto=format%2Ccompress&dpr=1&w=175&h=175&fit=fill&bg=FFF",
-  "university": "UNAM"
+  "university": "UNAM",
+  "slug": "con-gafas-violeta-igualdad-de-genero-en-la-escuela"
 },
 {
   "_id": {
@@ -8555,7 +8873,8 @@
   ],
   "courseUrl": "https://www.coursera.org/learn/biobucal",
   "imgUrl": "https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://coursera-course-photos.s3.amazonaws.com/0a/d788bf7ba94027a946a5f541c156fa/miniatura.png?auto=format%2Ccompress&dpr=1&w=175&h=175&fit=fill&bg=FFF",
-  "university": "UNAM"
+  "university": "UNAM",
+  "slug": "biologia-bucal"
 },
 {
   "_id": {
@@ -8580,7 +8899,8 @@
   ],
   "courseUrl": "https://www.coursera.org/learn/pensamiento-sistemico",
   "imgUrl": "https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://coursera-course-photos.s3.amazonaws.com/3e/c7d58d476444039418cbd2cf310487/PensamientoSistemico_FINAL.jpg?auto=format%2Ccompress&dpr=1&w=175&h=175&fit=fill&bg=FFF",
-  "university": "UNAM"
+  "university": "UNAM",
+  "slug": "pensamiento-sistemico"
 },
 {
   "_id": {
@@ -8605,7 +8925,8 @@
   ],
   "courseUrl": "https://www.coursera.org/learn/innovacion-medios-digitales",
   "imgUrl": "https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://coursera-course-photos.s3.amazonaws.com/ee/98b31edf704562b10ef0a2bc8bf78e/logo-01.png?auto=format%2Ccompress&dpr=1&w=175&h=175&fit=fill&bg=FFF",
-  "university": "UNAM"
+  "university": "UNAM",
+  "slug": "innovacion-y-medios-digitales-en-proyectos-sociales"
 },
 {
   "_id": {
@@ -8630,7 +8951,8 @@
   ],
   "courseUrl": "https://www.coursera.org/learn/evaluacion-cualitativa",
   "imgUrl": "https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://coursera-course-photos.s3.amazonaws.com/56/3c320f762b4864a4c8d9048d1de8e0/EvaluacionEdu_3.jpg?auto=format%2Ccompress&dpr=1&w=175&h=175&fit=fill&bg=FFF",
-  "university": "UNAM"
+  "university": "UNAM",
+  "slug": "evaluacion-del-y-para-el-aprendizaje-enfoque-cualitativo"
 },
 {
   "_id": {
@@ -8655,7 +8977,8 @@
   ],
   "courseUrl": "https://www.coursera.org/learn/composicion-algoritmica-supercollider",
   "imgUrl": "https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://coursera-course-photos.s3.amazonaws.com/8f/5e558c737e498e9a3c0c7eced99c4d/TechMusical_04_FINAL.jpg?auto=format%2Ccompress&dpr=1&w=175&h=175&fit=fill&bg=FFF",
-  "university": "UNAM"
+  "university": "UNAM",
+  "slug": "composicion-algoritmica-en-supercollider"
 },
 {
   "_id": {
@@ -8680,7 +9003,8 @@
   ],
   "courseUrl": "https://www.coursera.org/learn/nutricion-obesidad-sobrepeso",
   "imgUrl": "https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://coursera-course-photos.s3.amazonaws.com/74/b34c91ff7e42c88ae807d84848f51c/NutricionObesidad_FINAL.jpg?auto=format%2Ccompress&dpr=1&w=175&h=175&fit=fill&bg=FFF",
-  "university": "UNAM"
+  "university": "UNAM",
+  "slug": "nutricion-y-obesidad-control-de-sobrepeso"
 },
 {
   "_id": {
@@ -8705,7 +9029,8 @@
   ],
   "courseUrl": "https://www.coursera.org/learn/habilidades-negociacion",
   "imgUrl": "https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://coursera-course-photos.s3.amazonaws.com/d5/b7487526714c6f8752800d83041f21/EstrategiasNegociacion_2.jpg?auto=format%2Ccompress&dpr=1&w=175&h=175&fit=fill&bg=FFF",
-  "university": "UNAM"
+  "university": "UNAM",
+  "slug": "habilidades-humanas-y-de-negocios-para-negociar"
 },
 {
   "_id": {
@@ -8730,7 +9055,8 @@
   ],
   "courseUrl": "https://www.coursera.org/learn/contabilidad",
   "imgUrl": "https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://coursera-course-photos.s3.amazonaws.com/9c/1028d1609e4cb0964f954380ff04cd/ContabilidadparaNoContador_FINAL.jpg?auto=format%2Ccompress&dpr=1&w=175&h=175&fit=fill&bg=FFF",
-  "university": "UNAM"
+  "university": "UNAM",
+  "slug": "contabilidad-para-no-contadores"
 },
 {
   "_id": {
@@ -8755,7 +9081,8 @@
   ],
   "courseUrl": "https://www.coursera.org/learn/estructura",
   "imgUrl": "https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://coursera-course-photos.s3.amazonaws.com/c9/9db6dc7e6c4c1e815e34feec4443c1/Finanzas-4.jpg?auto=format%2Ccompress&dpr=1&w=175&h=175&fit=fill&bg=FFF",
-  "university": "UNAM"
+  "university": "UNAM",
+  "slug": "estructura-de-capital-y-politica-de-dividendos"
 },
 {
   "_id": {
@@ -8780,7 +9107,8 @@
   ],
   "courseUrl": "https://www.coursera.org/learn/programandoconjava",
   "imgUrl": "https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://coursera-course-photos.s3.amazonaws.com/bc/24ab25cdc644f88cfcb5f11f75ec29/Android_1.jpg?auto=format%2Ccompress&dpr=1&w=175&h=175&fit=fill&bg=FFF",
-  "university": "UNAM"
+  "university": "UNAM",
+  "slug": "programando-con-java-para-aplicaciones-android"
 },
 {
   "_id": {
@@ -8805,7 +9133,8 @@
   ],
   "courseUrl": "https://www.coursera.org/learn/perspectivas-musica-colaborativa",
   "imgUrl": "https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://coursera-course-photos.s3.amazonaws.com/ec/97d5e67c0642328b3e0b354d6eccb2/TecMusical_6.jpg?auto=format%2Ccompress&dpr=1&w=175&h=175&fit=fill&bg=FFF",
-  "university": "UNAM"
+  "university": "UNAM",
+  "slug": "perspectivas-de-musica-colaborativa"
 },
 {
   "_id": {
@@ -8830,7 +9159,8 @@
   ],
   "courseUrl": "https://www.coursera.org/learn/introduccionalaestrategia",
   "imgUrl": "https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://coursera-course-photos.s3.amazonaws.com/5f/eb406381ae49b793418ebeeb9bda82/27.jpg?auto=format%2Ccompress&dpr=1&w=175&h=175&fit=fill&bg=FFF",
-  "university": "UNAM"
+  "university": "UNAM",
+  "slug": "introduccion-a-la-estrategia"
 },
 {
   "_id": {
@@ -8855,7 +9185,8 @@
   ],
   "courseUrl": "https://www.coursera.org/specializations/electronica-analogica-ingeniero-electrones",
   "imgUrl": "https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://d15cw65ipctsrr.cloudfront.net/d7/74de379fb641a18f6900d069f36d3f/Principal_diplomado.jpg?auto=format%2Ccompress&dpr=1&w=175&h=175&fit=fill&bg=FFF",
-  "university": "UpChile"
+  "university": "UpChile",
+  "slug": "programa-especializado-electronica-en-capsulas"
 },
 {
   "_id": {
@@ -8880,7 +9211,8 @@
   ],
   "courseUrl": "https://www.coursera.org/specializations/business-latin-america",
   "imgUrl": "https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://d15cw65ipctsrr.cloudfront.net/f9/664b5957b84b9d8b271129dffb0e04/logo.jpg?auto=format%2Ccompress&dpr=1&w=175&h=175&fit=fill&bg=FFF",
-  "university": "UpChile"
+  "university": "UpChile",
+  "slug": "programa-especializado-hacer-negocios-en-america-latina"
 },
 {
   "_id": {
@@ -8905,7 +9237,8 @@
   ],
   "courseUrl": "https://www.coursera.org/specializations/programa-especializado-en-circuitos-electricos-con-spice",
   "imgUrl": "https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://d15cw65ipctsrr.cloudfront.net/a8/13a4b8c9804015bb49353740561acb/logo-Mooc-Especializacion-circuitos-con-Spice.png?auto=format%2Ccompress&dpr=1&w=175&h=175&fit=fill&bg=FFF",
-  "university": "UpChile"
+  "university": "UpChile",
+  "slug": "programa-especializado-programa-especializado-en-circuitos-electricos-con-spice"
 },
 {
   "_id": {
@@ -8934,7 +9267,8 @@
   ],
   "courseUrl": "https://www.coursera.org/learn/planificacion-gestion-pymes",
   "imgUrl": "https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://coursera-course-photos.s3.amazonaws.com/48/f4d2254f8a4cd5860fbb6cc3aebb73/coursera-logotipo.jpg?auto=format%2Ccompress&dpr=1&w=175&h=175&fit=fill&bg=FFF",
-  "university": "UpChile"
+  "university": "UpChile",
+  "slug": "planificacion-y-gestion-estrategica-para-pymes"
 },
 {
   "_id": {
@@ -8963,7 +9297,8 @@
   ],
   "courseUrl": "https://www.coursera.org/learn/sustentabilida-desafios-latinoamerica",
   "imgUrl": "https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://coursera-course-photos.s3.amazonaws.com/57/884fd14deb4a5eb466554de022b759/uc-online_Mesa-de-trabajo-1.jpg?auto=format%2Ccompress&dpr=1&w=175&h=175&fit=fill&bg=FFF",
-  "university": "UpChile"
+  "university": "UpChile",
+  "slug": "sustentabilidad-los-desafios-desde-latinoamerica"
 },
 {
   "_id": {
@@ -8992,7 +9327,8 @@
   ],
   "courseUrl": "https://www.coursera.org/learn/english-common-interactions-workplace-basic-level",
   "imgUrl": "https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://coursera-course-photos.s3.amazonaws.com/e7/b34332a4c9434aacd529defcf050da/00-coursera-logotipo.jpg?auto=format%2Ccompress&dpr=1&w=175&h=175&fit=fill&bg=FFF",
-  "university": "UpChile"
+  "university": "UpChile",
+  "slug": "ingles-para-interacciones-comunes-en-el-lugar-de-trabajo-nivel-basico"
 },
 {
   "_id": {
@@ -9025,7 +9361,8 @@
   ],
   "courseUrl": "https://www.coursera.org/learn/programacion-en-python-ii-aprendiendo-a-estructurar-datos",
   "imgUrl": "https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://coursera-course-photos.s3.amazonaws.com/b1/47a9972a08471f82308d03f5c4ae6a/Python-II---1.jpeg?auto=format%2Ccompress&dpr=1&w=175&h=175&fit=fill&bg=FFF",
-  "university": "UpChile"
+  "university": "UpChile",
+  "slug": "programacion-en-python-ii-aprendiendo-a-estructurar-datos"
 },
 {
   "_id": {
@@ -9050,7 +9387,8 @@
   ],
   "courseUrl": "https://www.coursera.org/learn/procesamiento-de-imagenes",
   "imgUrl": "https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://coursera-course-photos.s3.amazonaws.com/56/886ba6ddc74125aa7917713b97caa5/Foto-Logo-MOOC-PCI.jpg?auto=format%2Ccompress&dpr=1&w=175&h=175&fit=fill&bg=FFF",
-  "university": "UpChile"
+  "university": "UpChile",
+  "slug": "procesamiento-de-imagenes"
 },
 {
   "_id": {
@@ -9075,7 +9413,8 @@
   ],
   "courseUrl": "https://www.coursera.org/learn/electronica-digital-bit-a-bit-disenando-circuitos-complejos",
   "imgUrl": "https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://coursera-course-photos.s3.amazonaws.com/52/6e8ff2525644308d776b24025f4a20/Electronica-Digital-Bit-a-Bit---Disenando-en-Verilog-para-FPGA.jpg?auto=format%2Ccompress&dpr=1&w=175&h=175&fit=fill&bg=FFF",
-  "university": "UpChile"
+  "university": "UpChile",
+  "slug": "electronica-digital-bit-a-bit-disenando-en-verilog-para-fpga"
 },
 {
   "_id": {
@@ -9100,7 +9439,8 @@
   ],
   "courseUrl": "https://www.coursera.org/learn/contexto-negocios-latam",
   "imgUrl": "https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://coursera-course-photos.s3.amazonaws.com/51/740c55745d4c27af746aded3440f5d/Mooc-latam.png?auto=format%2Ccompress&dpr=1&w=175&h=175&fit=fill&bg=FFF",
-  "university": "UpChile"
+  "university": "UpChile",
+  "slug": "contexto-de-negocios-en-latam-factores-politicos-sociales-y-economicos"
 },
 {
   "_id": {
@@ -9125,7 +9465,8 @@
   ],
   "courseUrl": "https://www.coursera.org/learn/emprendimiento-social-negocios-sustentable-canvas-sociales",
   "imgUrl": "https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://coursera-course-photos.s3.amazonaws.com/cd/ad97e0b623402b9d8df14759430476/Diseno-y-Creacion-de-un-Emprendimiento-Social.jpg?auto=format%2Ccompress&dpr=1&w=175&h=175&fit=fill&bg=FFF",
-  "university": "UpChile"
+  "university": "UpChile",
+  "slug": "diseno-y-creacion-de-un-emprendimiento-social"
 },
 {
   "_id": {
@@ -9150,7 +9491,8 @@
   ],
   "courseUrl": "https://www.coursera.org/learn/circuitos-spicey-2",
   "imgUrl": "https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://coursera-course-photos.s3.amazonaws.com/0a/e935dd1b2e4223a42a1d9ec5c6c134/Foto-Logo-MOOC-ATF.jpg?auto=format%2Ccompress&dpr=1&w=175&h=175&fit=fill&bg=FFF",
-  "university": "UpChile"
+  "university": "UpChile",
+  "slug": "circuitos-con-spice-analisis-en-el-tiempo-y-la-frecuencia"
 },
 {
   "_id": {
@@ -9175,7 +9517,8 @@
   ],
   "courseUrl": "https://www.coursera.org/learn/electrones-en-accion",
   "imgUrl": "https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://coursera-course-photos.s3.amazonaws.com/d1/28aeb5f7564046b01f77608461e71b/Electrones-en-Accion---Electronica-y-Arduinos-para-tus-propios-Inventos.jpg?auto=format%2Ccompress&dpr=1&w=175&h=175&fit=fill&bg=FFF",
-  "university": "UpChile"
+  "university": "UpChile",
+  "slug": "electrones-en-accion-electronica-y-arduinos-para-tus-propios-inventos"
 },
 {
   "_id": {
@@ -9200,7 +9543,8 @@
   ],
   "courseUrl": "https://www.coursera.org/learn/entrenar-electrones-aplicaciones-electronica",
   "imgUrl": "https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://coursera-course-photos.s3.amazonaws.com/67/883c997e7e4097b9f045c566d5c7bd/Como-entrenar-a-tus-electrones-3---Aplicaciones-interesantes.jpg?auto=format%2Ccompress&dpr=1&w=175&h=175&fit=fill&bg=FFF",
-  "university": "UpChile"
+  "university": "UpChile",
+  "slug": "como-entrenar-a-tus-electrones-3-aplicaciones-interesantes"
 },
 {
   "_id": {
@@ -9225,7 +9569,8 @@
   ],
   "courseUrl": "https://www.coursera.org/learn/libre-competencia",
   "imgUrl": "https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://coursera-course-photos.s3.amazonaws.com/bf/91d490ec0011e78ffafbbf3fb727a0/img-logotipo.jpg?auto=format%2Ccompress&dpr=1&w=175&h=175&fit=fill&bg=FFF",
-  "university": "UpChile"
+  "university": "UpChile",
+  "slug": "buenas-practicas-en-libre-competencia"
 },
 {
   "_id": {
@@ -9254,7 +9599,8 @@
   ],
   "courseUrl": "https://www.coursera.org/learn/inversiones-en-los-mercados-de-capitales",
   "imgUrl": "https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://coursera-course-photos.s3.amazonaws.com/d4/86b3af443948869dfd47444ae8afcc/Inversiones-en-mercados-capitales-1.jpeg?auto=format%2Ccompress&dpr=1&w=175&h=175&fit=fill&bg=FFF",
-  "university": "UpChile"
+  "university": "UpChile",
+  "slug": "inversiones-en-los-mercados-de-capitales"
 },
 {
   "_id": {
@@ -9279,7 +9625,8 @@
   ],
   "courseUrl": "https://www.coursera.org/learn/liderazgo-educativo",
   "imgUrl": "https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://coursera-course-photos.s3.amazonaws.com/b2/1d0fe0fef111e4bf2499194607d43d/banner_v_2.jpg?auto=format%2Ccompress&dpr=1&w=175&h=175&fit=fill&bg=FFF",
-  "university": "UpChile"
+  "university": "UpChile",
+  "slug": "liderazgo-instruccional-perspectiva-global-y-practicas-locales"
 },
 {
   "_id": {
@@ -9304,7 +9651,8 @@
   ],
   "courseUrl": "https://www.coursera.org/learn/analisis-de-negocios-con-estados-financieros",
   "imgUrl": "https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://coursera-course-photos.s3.amazonaws.com/b5/98a2ee75df4b8fbed3782676d0457b/Logo.png?auto=format%2Ccompress&dpr=1&w=175&h=175&fit=fill&bg=FFF",
-  "university": "UpChile"
+  "university": "UpChile",
+  "slug": "analisis-de-negocios-con-estados-financieros"
 },
 {
   "_id": {
@@ -9329,7 +9677,8 @@
   ],
   "courseUrl": "https://www.coursera.org/learn/circuitos-spicey-1",
   "imgUrl": "https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://coursera-course-photos.s3.amazonaws.com/ac/df442974f146d285c68274fb7c6ee9/Foto-logo-MOOC-FCE.jpg?auto=format%2Ccompress&dpr=1&w=175&h=175&fit=fill&bg=FFF",
-  "university": "UpChile"
+  "university": "UpChile",
+  "slug": "circuitos-con-spice-fundamentos-de-los-circuitos-electricos"
 },
 {
   "_id": {
@@ -9358,7 +9707,8 @@
   ],
   "courseUrl": "https://www.coursera.org/learn/enfermedades-no-transmisibles",
   "imgUrl": "https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://coursera-course-photos.s3.amazonaws.com/a4/cb8fa0003911e89a9ed7445c4af8a2/mooc-enfermeria-uc-2018.jpg?auto=format%2Ccompress&dpr=1&w=175&h=175&fit=fill&bg=FFF",
-  "university": "UpChile"
+  "university": "UpChile",
+  "slug": "atencion-primaria-en-salud-el-desafio-de-las-enfermedades-no-transmisibles"
 },
 {
   "_id": {
@@ -9383,7 +9733,8 @@
   ],
   "courseUrl": "https://www.coursera.org/learn/perspectivas-en-salud-publica-ampliando-la-vision-en-salud",
   "imgUrl": "https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://coursera-course-photos.s3.amazonaws.com/33/17d179831d4ab082605acfb6128bac/medicina.png?auto=format%2Ccompress&dpr=1&w=175&h=175&fit=fill&bg=FFF",
-  "university": "UpChile"
+  "university": "UpChile",
+  "slug": "perspectivas-en-salud-publica-ampliando-la-vision-en-salud"
 },
 {
   "_id": {
@@ -9408,7 +9759,8 @@
   ],
   "courseUrl": "https://www.coursera.org/learn/explorando-energia-sustentable",
   "imgUrl": "https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://coursera-course-photos.s3.amazonaws.com/ba/49c64a22284e20aec86a2c8b7a2dac/Explorando-la-Energia-Sustentable.jpg?auto=format%2Ccompress&dpr=1&w=175&h=175&fit=fill&bg=FFF",
-  "university": "UpChile"
+  "university": "UpChile",
+  "slug": "explorando-la-energia-sustentable"
 },
 {
   "_id": {
@@ -9433,7 +9785,8 @@
   ],
   "courseUrl": "https://www.coursera.org/learn/manejopromocion",
   "imgUrl": "https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://coursera-course-photos.s3.amazonaws.com/1b/779e7dfeeb4c95ad153af9d54945c1/1200x1200.jpg?auto=format%2Ccompress&dpr=1&w=175&h=175&fit=fill&bg=FFF",
-  "university": "UpChile"
+  "university": "UpChile",
+  "slug": "manejo-de-crisis-epilepticas-y-promocion-de-la-inclusion-social"
 },
 {
   "_id": {
@@ -9466,7 +9819,8 @@
   ],
   "courseUrl": "https://www.coursera.org/learn/analisis-sistemas-de-transporte",
   "imgUrl": "https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://coursera-course-photos.s3.amazonaws.com/d8/445cc648bf4a12a04b633a6fd31ba9/Analisis-de-Sistemas-de-Transporte.jpg?auto=format%2Ccompress&dpr=1&w=175&h=175&fit=fill&bg=FFF",
-  "university": "UpChile"
+  "university": "UpChile",
+  "slug": "analisis-de-sistemas-de-transporte"
 },
 {
   "_id": {
@@ -9491,7 +9845,8 @@
   ],
   "courseUrl": "https://www.coursera.org/learn/aulaconstructivista",
   "imgUrl": "https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://coursera-course-photos.s3.amazonaws.com/9f/ef871a8935420c858539871b22a409/Hacia-una-practica-constructivista-en-el-aula.jpg?auto=format%2Ccompress&dpr=1&w=175&h=175&fit=fill&bg=FFF",
-  "university": "UpChile"
+  "university": "UpChile",
+  "slug": "hacia-una-practica-constructivista-en-el-aula"
 },
 {
   "_id": {
@@ -9520,7 +9875,8 @@
   ],
   "courseUrl": "https://www.coursera.org/learn/sonidos-digitales",
   "imgUrl": "https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://coursera-course-photos.s3.amazonaws.com/b9/a0e32964d44ecfa1319f42d3a82019/Logo-MOOC-SDSP.jpg?auto=format%2Ccompress&dpr=1&w=175&h=175&fit=fill&bg=FFF",
-  "university": "UpChile"
+  "university": "UpChile",
+  "slug": "sonidos-digitales-sintesis-y-procesamiento-en-el-computador"
 },
 {
   "_id": {
@@ -9545,7 +9901,8 @@
   ],
   "courseUrl": "https://www.coursera.org/learn/electronica-digital-bit-a-bit-fundamentos",
   "imgUrl": "https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://coursera-course-photos.s3.amazonaws.com/d4/4b93b4124140c293745d55c53c5181/Electronica-Digital-Bit-a-Bit---Fundamentos-Verilog-y-FPGA.jpg?auto=format%2Ccompress&dpr=1&w=175&h=175&fit=fill&bg=FFF",
-  "university": "UpChile"
+  "university": "UpChile",
+  "slug": "electronica-digital-bit-a-bit-fundamentos-verilog-y-fpga"
 },
 {
   "_id": {
@@ -9574,7 +9931,8 @@
   ],
   "courseUrl": "https://www.coursera.org/learn/english-for-interactions-in-the-workplace-intermediate-level",
   "imgUrl": "https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://coursera-course-photos.s3.amazonaws.com/49/2df92782d84e72b7117a2d78883254/img-coursera.jpg?auto=format%2Ccompress&dpr=1&w=175&h=175&fit=fill&bg=FFF",
-  "university": "UpChile"
+  "university": "UpChile",
+  "slug": "english-for-interactions-in-the-workplace-intermediate-level"
 },
 {
   "_id": {
@@ -9603,7 +9961,8 @@
   ],
   "courseUrl": "https://www.coursera.org/learn/aprendizaje-universitario-introduccion",
   "imgUrl": "https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://coursera-course-photos.s3.amazonaws.com/f7/c7186973a440cdae64b8ace8ab5f54/Introduccion-al-Aprendizaje-Universitario.jpg?auto=format%2Ccompress&dpr=1&w=175&h=175&fit=fill&bg=FFF",
-  "university": "UpChile"
+  "university": "UpChile",
+  "slug": "introduccion-al-aprendizaje-universitario"
 },
 {
   "_id": {
@@ -9628,7 +9987,8 @@
   ],
   "courseUrl": "https://www.coursera.org/learn/evaluacion-de-proyectos-de-inversion",
   "imgUrl": "https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://coursera-course-photos.s3.amazonaws.com/d6/bffe85d68444b88577e30941b033db/Evaluacion-de-Proyectos-de-Inversion.jpg?auto=format%2Ccompress&dpr=1&w=175&h=175&fit=fill&bg=FFF",
-  "university": "UpChile"
+  "university": "UpChile",
+  "slug": "evaluacion-de-proyectos-de-inversion"
 },
 {
   "_id": {
@@ -9653,7 +10013,8 @@
   ],
   "courseUrl": "https://www.coursera.org/learn/entrenar-electrones-diodos-transistores",
   "imgUrl": "https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://coursera-course-photos.s3.amazonaws.com/20/a13dd3860d4c4fabe94484645a76aa/Como-entrenar-a-tus-electrones-2---Diodos-y-Transistores.jpg?auto=format%2Ccompress&dpr=1&w=175&h=175&fit=fill&bg=FFF",
-  "university": "UpChile"
+  "university": "UpChile",
+  "slug": "como-entrenar-a-tus-electrones-2-diodos-y-transistores"
 },
 {
   "_id": {
@@ -9678,7 +10039,8 @@
   ],
   "courseUrl": "https://www.coursera.org/learn/fundamentos-de-sistemas-recomendadores",
   "imgUrl": "https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://coursera-course-photos.s3.amazonaws.com/07/6f9859854c452a8f9c09bed61ff8f2/Logo-MOOC_1.png?auto=format%2Ccompress&dpr=1&w=175&h=175&fit=fill&bg=FFF",
-  "university": "UpChile"
+  "university": "UpChile",
+  "slug": "fundamentos-de-sistemas-recomendadores"
 },
 {
   "_id": {
@@ -9707,7 +10069,8 @@
   ],
   "courseUrl": "https://www.coursera.org/learn/camino-excelencia-gestion-proyectos",
   "imgUrl": "https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://coursera-course-photos.s3.amazonaws.com/d1/471c76df6c48f4ac898e8e81570a75/Camino-a-la-Excelencia-en-Gestion-de-Proyectos.jpg?auto=format%2Ccompress&dpr=1&w=175&h=175&fit=fill&bg=FFF",
-  "university": "UpChile"
+  "university": "UpChile",
+  "slug": "camino-a-la-excelencia-en-gestion-de-proyectos"
 },
 {
   "_id": {
@@ -9732,7 +10095,8 @@
   ],
   "courseUrl": "https://www.coursera.org/learn/introduccion-a-la-visualizacion-de-datos",
   "imgUrl": "https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://coursera-course-photos.s3.amazonaws.com/8d/d0141cd0814e34b86884e9f01383a8/Logo-MOOC-Introduccion-a-la-visualizacion-de-datos.jpeg?auto=format%2Ccompress&dpr=1&w=175&h=175&fit=fill&bg=FFF",
-  "university": "UpChile"
+  "university": "UpChile",
+  "slug": "introduccion-a-la-visualizacion-de-datos"
 },
 {
   "_id": {
@@ -9761,7 +10125,8 @@
   ],
   "courseUrl": "https://www.coursera.org/learn/gestionempresarialpyme",
   "imgUrl": "https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://coursera-course-photos.s3.amazonaws.com/a6/556fe0e22211e48475fd723ac1d58f/Imagen-Pyme-Coursera-14.jpg?auto=format%2Ccompress&dpr=1&w=175&h=175&fit=fill&bg=FFF",
-  "university": "UpChile"
+  "university": "UpChile",
+  "slug": "gestion-empresarial-exitosa-para-pymes"
 },
 {
   "_id": {
@@ -9790,7 +10155,8 @@
   ],
   "courseUrl": "https://www.coursera.org/learn/escalamiento-exitoso-e-innovacion-en-los-negocios",
   "imgUrl": "https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://coursera-course-photos.s3.amazonaws.com/b1/e697c7d2a14b8ba09e815d2ebeccf9/Escalamiento-exitoso-e-innovacion-en-los-negocios_Banner-750x1334-2-.jpg?auto=format%2Ccompress&dpr=1&w=175&h=175&fit=fill&bg=FFF",
-  "university": "UpChile"
+  "university": "UpChile",
+  "slug": "escalamiento-exitoso-e-innovacion-en-los-negocios"
 },
 {
   "_id": {
@@ -9815,7 +10181,8 @@
   ],
   "courseUrl": "https://www.coursera.org/learn/sistemas-y-modelos-de-organizacion-de-la-atencion-en-salud",
   "imgUrl": "https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://coursera-course-photos.s3.amazonaws.com/78/3e54528c7f47f891e4dd45bb86bfd3/coursera-logotipo.jpg?auto=format%2Ccompress&dpr=1&w=175&h=175&fit=fill&bg=FFF",
-  "university": "UpChile"
+  "university": "UpChile",
+  "slug": "sistemas-y-modelos-de-organizacion-de-la-atencion-en-salud"
 },
 {
   "_id": {
@@ -9840,7 +10207,8 @@
   ],
   "courseUrl": "https://www.coursera.org/learn/gestion-organizaciones-efectivas",
   "imgUrl": "https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://coursera-course-photos.s3.amazonaws.com/94/74e118f605442faebbf2833c374c64/Gestion-de-organizaciones-efectivas.jpg?auto=format%2Ccompress&dpr=1&w=175&h=175&fit=fill&bg=FFF",
-  "university": "UpChile"
+  "university": "UpChile",
+  "slug": "gestion-de-organizaciones-efectivas"
 },
 {
   "_id": {
@@ -9869,7 +10237,8 @@
   ],
   "courseUrl": "https://www.coursera.org/learn/ingles-en-el-contexto-laboral-habilidades-blandas",
   "imgUrl": "https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://coursera-course-photos.s3.amazonaws.com/89/915e44b3ba4735a07687ad515a66e2/imagen-marketing.jpg?auto=format%2Ccompress&dpr=1&w=175&h=175&fit=fill&bg=FFF",
-  "university": "UpChile"
+  "university": "UpChile",
+  "slug": "english-in-the-workplace-soft-skills"
 },
 {
   "_id": {
@@ -9894,7 +10263,8 @@
   ],
   "courseUrl": "https://www.coursera.org/learn/ninosaudiovisualdigital",
   "imgUrl": "https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://coursera-course-photos.s3.amazonaws.com/76/2718d0779a44e3be2cec6e0420cd3f/portada-animada.jpg?auto=format%2Ccompress&dpr=1&w=175&h=175&fit=fill&bg=FFF",
-  "university": "UpChile"
+  "university": "UpChile",
+  "slug": "ninos-y-adolescentes-en-la-cultura-audiovisual-y-digital"
 },
 {
   "_id": {
@@ -9923,7 +10293,8 @@
   ],
   "courseUrl": "https://www.coursera.org/learn/equilibrio-redes-transporte",
   "imgUrl": "https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://coursera-course-photos.s3.amazonaws.com/22/d15946d784444c8de9cc0054dec5b2/Como-viajamos-por-la-ciudad---Asignacion-y-equilibrio-en-redes-de-transporte..jpg?auto=format%2Ccompress&dpr=1&w=175&h=175&fit=fill&bg=FFF",
-  "university": "UpChile"
+  "university": "UpChile",
+  "slug": "como-viajamos-por-la-ciudad-asignacion-y-equilibrio-en-redes-de-transporte"
 },
 {
   "_id": {
@@ -9948,7 +10319,8 @@
   ],
   "courseUrl": "https://www.coursera.org/learn/python-para-ciencia-de-datos",
   "imgUrl": "https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://coursera-course-photos.s3.amazonaws.com/22/c4277a6ca24723a3a3abdaab4c1a43/coursera-logotipo.jpg?auto=format%2Ccompress&dpr=1&w=175&h=175&fit=fill&bg=FFF",
-  "university": "UpChile"
+  "university": "UpChile",
+  "slug": "python-para-ciencia-de-datos"
 },
 {
   "_id": {
@@ -9981,7 +10353,8 @@
   ],
   "courseUrl": "https://www.coursera.org/learn/formacion-docente-habilidades-siglo-veintiuno",
   "imgUrl": "https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://coursera-course-photos.s3.amazonaws.com/da/9225c1dba340ccae0e31a5f40b7114/Formacion-docente-basada-en-la-practica-para-desarrollar-habilidades-del-siglo-XXI.jpg?auto=format%2Ccompress&dpr=1&w=175&h=175&fit=fill&bg=FFF",
-  "university": "UpChile"
+  "university": "UpChile",
+  "slug": "formacion-docente-basada-en-la-practica-para-desarrollar-habilidades-del-siglo-xxi"
 },
 {
   "_id": {
@@ -10006,7 +10379,8 @@
   ],
   "courseUrl": "https://www.coursera.org/learn/circuitos-spicey-3",
   "imgUrl": "https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://coursera-course-photos.s3.amazonaws.com/e1/b2fb8a470c4e288d94ff1db2c3ad09/Foto-Logo-MOOC-STA.jpg?auto=format%2Ccompress&dpr=1&w=175&h=175&fit=fill&bg=FFF",
-  "university": "UpChile"
+  "university": "UpChile",
+  "slug": "circuitos-con-spice-sistemas-trifasicos-y-analisis-avanzado"
 },
 {
   "_id": {
@@ -10031,7 +10405,8 @@
   ],
   "courseUrl": "https://www.coursera.org/learn/marketing-digital-en-accion",
   "imgUrl": "https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://coursera-course-photos.s3.amazonaws.com/77/1290180fda4009973c47f23b8d25e8/coursera-logotipo.jpg?auto=format%2Ccompress&dpr=1&w=175&h=175&fit=fill&bg=FFF",
-  "university": "UpChile"
+  "university": "UpChile",
+  "slug": "marketing-digital-en-accion"
 },
 {
   "_id": {
@@ -10056,7 +10431,8 @@
   ],
   "courseUrl": "https://www.coursera.org/learn/introduccion-a-la-valoracion-financiera",
   "imgUrl": "https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://coursera-course-photos.s3.amazonaws.com/c4/5a9ead182a439f8b07eae45a3beb9d/coursera-logotipo-VF.jpg?auto=format%2Ccompress&dpr=1&w=175&h=175&fit=fill&bg=FFF",
-  "university": "UpChile"
+  "university": "UpChile",
+  "slug": "introduccion-a-la-valoracion-financiera"
 },
 {
   "_id": {
@@ -10081,7 +10457,8 @@
   ],
   "courseUrl": "https://www.coursera.org/learn/transferencia-de-momentum-calor-y-masa-computacional",
   "imgUrl": "https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://coursera-course-photos.s3.amazonaws.com/20/bba42179db4a3ea17187988dbfafe2/LOGO-MOOC-1.png?auto=format%2Ccompress&dpr=1&w=175&h=175&fit=fill&bg=FFF",
-  "university": "UpChile"
+  "university": "UpChile",
+  "slug": "transferencia-de-momentum-calor-y-masa-computacional"
 },
 {
   "_id": {
@@ -10114,7 +10491,8 @@
   ],
   "courseUrl": "https://www.coursera.org/learn/aprendiendo-programar-python",
   "imgUrl": "https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://coursera-course-photos.s3.amazonaws.com/7c/a97a6e3fc74812a808cd95da906b19/Introduccion-a-la-programacion-en-Python-I-Aprendiendo-a-programar-con-Python.jpg?auto=format%2Ccompress&dpr=1&w=175&h=175&fit=fill&bg=FFF",
-  "university": "UpChile"
+  "university": "UpChile",
+  "slug": "introduccion-a-la-programacion-en-python-i-aprendiendo-a-programar-con-python"
 },
 {
   "_id": {
@@ -10139,7 +10517,8 @@
   ],
   "courseUrl": "https://www.coursera.org/learn/transferencia-tecnologica-investigacion",
   "imgUrl": "https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://coursera-course-photos.s3.amazonaws.com/b2/15aec0c03311e79a998b5c9c61e557/Icono-800x8001-copia.jpg?auto=format%2Ccompress&dpr=1&w=175&h=175&fit=fill&bg=FFF",
-  "university": "UpChile"
+  "university": "UpChile",
+  "slug": "transferencia-tecnologica-de-la-investigacion-al-mercado"
 },
 {
   "_id": {
@@ -10164,7 +10543,8 @@
   ],
   "courseUrl": "https://www.coursera.org/learn/fundamentos-de-la-electronica-analogica",
   "imgUrl": "https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://coursera-course-photos.s3.amazonaws.com/f6/d535dd4c794704b3f77dc99f044b38/Como-entrenar-a-tus-electrones-1---Fundamentos-de-la-electronica-analogica.jpg?auto=format%2Ccompress&dpr=1&w=175&h=175&fit=fill&bg=FFF",
-  "university": "UpChile"
+  "university": "UpChile",
+  "slug": "como-entrenar-a-tus-electrones-1-fundamentos-de-la-electronica-analogica"
 },
 {
   "_id": {
@@ -10189,7 +10569,8 @@
   ],
   "courseUrl": "https://www.coursera.org/learn/equilibrio",
   "imgUrl": "https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://coursera-course-photos.s3.amazonaws.com/e4/4beed9de6c4a68a9e6191dfdf122a6/Equilibrio-por-que-se-caen-las-cosas.jpg?auto=format%2Ccompress&dpr=1&w=175&h=175&fit=fill&bg=FFF",
-  "university": "UpChile"
+  "university": "UpChile",
+  "slug": "equilibrio-por-que-se-caen-las-cosas"
 },
 {
   "_id": {
@@ -10214,7 +10595,8 @@
   ],
   "courseUrl": "https://www.coursera.org/learn/ingenieria-gastronomica-ciencia-cocina",
   "imgUrl": "https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://coursera-course-photos.s3.amazonaws.com/c1/6a25d857594fa6819758e6f11c0d8f/Introduccion-a-la-Ingenieria-Gastronomica---Ciencia-en-la-Cocina-.jpg?auto=format%2Ccompress&dpr=1&w=175&h=175&fit=fill&bg=FFF",
-  "university": "UpChile"
+  "university": "UpChile",
+  "slug": "introduccion-a-la-ingenieria-gastronomica-ciencia-en-la-cocina"
 },
 {
   "_id": {
@@ -10239,7 +10621,8 @@
   ],
   "courseUrl": "https://www.coursera.org/learn/recuperacionoptimizadacirugiacolorrectal",
   "imgUrl": "https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://coursera-course-photos.s3.amazonaws.com/82/e85ff710674e20ac5f13612041de9e/1200x1200.jpg?auto=format%2Ccompress&dpr=1&w=175&h=175&fit=fill&bg=FFF",
-  "university": "UpChile"
+  "university": "UpChile",
+  "slug": "recuperacion-optimizada-en-cirugia-colorrectal"
 },
 {
   "_id": {
@@ -10264,7 +10647,8 @@
   ],
   "courseUrl": "https://www.coursera.org/learn/mejores-decisiones-con-business-analytics",
   "imgUrl": "https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://coursera-course-photos.s3.amazonaws.com/99/64121b8774478e8593cb2444e65a4e/Logo-MOOC-mejores-decisiones-con-business-analytics.jpeg?auto=format%2Ccompress&dpr=1&w=175&h=175&fit=fill&bg=FFF",
-  "university": "UpChile"
+  "university": "UpChile",
+  "slug": "mejores-decisiones-con-business-analytics"
 },
 {
   "_id": {
@@ -10289,7 +10673,8 @@
   ],
   "courseUrl": "https://www.coursera.org/learn/bienvenidos-al-espanol-a1-1",
   "imgUrl": "https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://coursera-course-photos.s3.amazonaws.com/6c/ca564a706c412f96a54e458fa0ce4b/coursera-logotipo.jpg?auto=format%2Ccompress&dpr=1&w=175&h=175&fit=fill&bg=FFF",
-  "university": "UpChile"
+  "university": "UpChile",
+  "slug": "bienvenidos-al-espanol-a1-1"
 },
 {
   "_id": {
@@ -10318,7 +10703,8 @@
   ],
   "courseUrl": "https://www.coursera.org/learn/demanda-de-transporte",
   "imgUrl": "https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://coursera-course-photos.s3.amazonaws.com/00/1417c451d0405a87f57e85d6d099f3/Introduccion-a-los-modelos-de-demanda-de-transporte.jpg?auto=format%2Ccompress&dpr=1&w=175&h=175&fit=fill&bg=FFF",
-  "university": "UpChile"
+  "university": "UpChile",
+  "slug": "introduccion-a-los-modelos-de-demanda-de-transporte"
 },
 {
   "_id": {
@@ -10343,7 +10729,8 @@
   ],
   "courseUrl": "https://www.coursera.org/learn/mineria-de-datos-introduccion",
   "imgUrl": "https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://coursera-course-photos.s3.amazonaws.com/f7/2872616e5e4468811a9ecc2da69b86/Introduccion-a-la-Mineria-de-Datos.jpg?auto=format%2Ccompress&dpr=1&w=175&h=175&fit=fill&bg=FFF",
-  "university": "UpChile"
+  "university": "UpChile",
+  "slug": "introduccion-a-la-mineria-de-datos"
 },
 {
   "_id": {
@@ -10368,5 +10755,6 @@
   ],
   "courseUrl": "https://www.coursera.org/learn/ingenieria-trafico",
   "imgUrl": "https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://coursera-course-photos.s3.amazonaws.com/59/27a199d4c940deb1b385d7802fbc4e/Ingenieria-de-Trafico.jpg?auto=format%2Ccompress&dpr=1&w=175&h=175&fit=fill&bg=FFF",
-  "university": "UpChile"
+  "university": "UpChile",
+  "slug": "ingenieria-de-trafico"
 }]
