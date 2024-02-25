@@ -26,16 +26,17 @@
             {{ expandDescription ? "Ver menos" : "Ver más" }}
           </button>
         </section>
-        <!-- Detalles del Curso -->
-        <section class="mb-6 p-4 rounded-lg bg-gray-50">
+  <!-- Detalles del Curso Mejorados -->
+  <section class="mb-6 p-4 rounded-lg bg-gray-50">
           <h3 class="text-lg font-bold mb-2">Detalles del Curso</h3>
-          <div :class="{ 'max-h-72 overflow-hidden': !expandCourseDetails }" class="relative">
-            <pre>{{ course.courseDetailsText }}</pre>
-            <div v-if="!expandCourseDetails"
-              class="absolute bottom-0 left-0 right-0 h-16 bg-gradient-to-b from-transparent to-white"></div>
+          <div :class="{ 'max-h-72 overflow-y-auto': expandCourseDetails }">
+            <div v-for="(module, index) in courseModules" :key="index" class="p-4 mb-4 rounded-lg shadow">
+              <h4 class="text-md font-semibold">{{ module.title }}</h4>
+              <p class="text-sm">{{ module.details }}</p>
+            </div>
           </div>
           <button @click="expandCourseDetails = !expandCourseDetails" class="mt-4 text-blue-600">
-            {{ expandCourseDetails ? "Ver menos" : "Ver más" }}
+            {{ expandCourseDetails ? 'Ver menos' : 'Ver más' }}
           </button>
         </section>
         <!-- Profesores -->
@@ -56,7 +57,9 @@
         </a>
         <div class="space-y-2">
           <div class="flex items-center">
-            <h4 class="text-lg font-bold mb-2">Estrellas de este curso: {{ course.rating }}</h4>
+            <h4 class="text-lg font-bold mb-2">Estrellas de este curso: {{ course.rating == "No rating found" ?
+                        "Sin calificación" : "..." }}</h4>
+            
           </div>
           <div class="text-gray-600">Nivel: {{ course.level }}</div>
           <div class="text-gray-600">
@@ -80,6 +83,7 @@ const route = useRoute();
 const course = ref({});
 const expandDescription = ref(false);
 const expandCourseDetails = ref(false);
+const courseModules = ref([]);
 
 onMounted(async () => {
   const courseSlug = route.params.slug;
@@ -88,8 +92,26 @@ onMounted(async () => {
       `http://localhost:3333/cursos/coursera/${courseSlug}`
     );
     course.value = response.data;
+    processCourseDetailsText(); 
   } catch (error) {
     console.error("Error obteniendo el detalle del curso de Coursera:", error);
   }
 });
+const processCourseDetailsText = () => {
+  const sections = course.value.courseDetailsText.split('\n').filter(line => line.trim() !== '');
+  let currentModule = { title: '', details: '' };
+  sections.forEach((section) => {
+    if (section.match(/^Módulo \d+/)) { // Nuevo módulo detectado
+      if (currentModule.title) {
+        courseModules.value.push(currentModule); // Guardar el módulo anterior
+      }
+      currentModule = { title: section, details: '' }; // Empezar nuevo módulo
+    } else {
+      currentModule.details += section + ' '; // Añadir detalles al módulo actual
+    }
+  });
+  if (currentModule.title) {
+    courseModules.value.push(currentModule); // Asegurar que el último módulo se añada
+  }
+};
 </script>
