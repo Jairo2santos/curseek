@@ -83,6 +83,38 @@
                 </svg>
               </a>
             </li>
+            <li>
+              <a href="/coursera/universidades/uchile" class="flex justify-between items-center py-1">
+                <span>U. de Chile</span>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24">
+                  <path d="M9.41 7.41L14.83 12l-5.42 5.41L10 18l6-6-6-6-1.59 1.41Z" />
+                </svg>
+              </a>
+            </li>
+            <li>
+              <a href="/coursera/universidades/udlac" class="flex justify-between items-center py-1">
+                <span>U. Andes Colombia</span>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24">
+                  <path d="M9.41 7.41L14.83 12l-5.42 5.41L10 18l6-6-6-6-1.59 1.41Z" />
+                </svg>
+              </a>
+            </li>
+            <li>
+              <a href="/coursera/universidades/unam" class="flex justify-between items-center py-1">
+                <span>UNAM</span>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24">
+                  <path d="M9.41 7.41L14.83 12l-5.42 5.41L10 18l6-6-6-6-1.59 1.41Z" />
+                </svg>
+              </a>
+            </li>
+            <li>
+              <a href="/coursera/universidades/upchile" class="flex justify-between items-center py-1">
+                <span>U. Católica de Chile</span>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24">
+                  <path d="M9.41 7.41L14.83 12l-5.42 5.41L10 18l6-6-6-6-1.59 1.41Z" />
+                </svg>
+              </a>
+            </li>
           </ul>
         </div>
 
