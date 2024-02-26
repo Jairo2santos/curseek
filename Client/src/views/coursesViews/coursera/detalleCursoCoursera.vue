@@ -1,21 +1,22 @@
 <template >
-  <div class="bg-gray-100">
+  <div class="bg-gray-100 p-4 md:p-6 max-w-screen-full">
+    <p class="hidden md:block text-center pb-6 text-sm text-gray-500">CurSeek cuenta con el apoyo del alumno. Cuando
+      compra a través de enlaces en nuestro sitio, podemos ganar una comisión de afiliado.</p>
 
-    <div class=" bg-gray-100  container mx-auto p-6 flex flex-col md:flex-row">
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-6 max-w-screen-xl mx-auto">
       <!-- Contenido principal -->
-      <main class="flex-1 bg-white p-4 rounded-lg shadow-md mr-4">
+      <main class="md:col-span-2">
         <!-- Título y Universidad -->
-        <section class="mb-6 p-4 rounded-lg">
-          <h1 class="text-3xl font-bold mb-2">{{ course.title }}</h1>
+        <section class="bg-white p-4 md:p-6 rounded mb-4 justify-between items-center">
+          <h1 class="md:text-3xl font-bold text-gray-800">{{ course.title }}</h1>
         </section>
 
-        <section class="mb-6 p-4 rounded-lg my-3">
+        <section class="bg-white p-4 md:p-6 rounded mb-4">
           <h2 class="text-xl font-semibold text-gray-700">
             {{ course.university }}
           </h2>
-        </section>
-        <!-- Resumen del curso con botón de expandir -->
-        <section class="mb-6 p-4 rounded-lg">
+
+          <!-- Resumen del curso con botón de expandir -->
           <h3 class="text-lg font-bold mb-2">Resumen</h3>
           <div :class="{ 'max-h-48 overflow-hidden': !expandDescription }" class="relative">
             <p>{{ course.longDescription }}</p>
@@ -26,8 +27,8 @@
             {{ expandDescription ? "Ver menos" : "Ver más" }}
           </button>
         </section>
-  <!-- Detalles del Curso Mejorados -->
-  <section class="mb-6 p-4 rounded-lg bg-gray-50">
+        <!-- Detalles del Curso Mejorados -->
+        <section class="mb-6 p-4 rounded-lg bg-gray-50">
           <h3 class="text-lg font-bold mb-2">Detalles del Curso</h3>
           <div :class="{ 'max-h-72 overflow-y-auto': expandCourseDetails }">
             <div v-for="(module, index) in courseModules" :key="index" class="p-4 mb-4 rounded-lg shadow">
@@ -36,38 +37,89 @@
             </div>
           </div>
           <button @click="expandCourseDetails = !expandCourseDetails" class="mt-4 text-blue-600">
-            {{ expandCourseDetails ? 'Ver menos' : 'Ver más' }}
+            {{ expandCourseDetails ? 'Ver más' : 'Ver menos' }}
           </button>
         </section>
         <!-- Profesores -->
-        <section class="p-4 rounded-lg">
-          <h3 class="text-lg font-bold mb-2">Profesores</h3>
+        <section class="bg-white p-4 md:p-6 rounded">
+          <h3 class="text-xl mb-2 font-bold">Profesores</h3>
           <div v-for="instructor in course.instructors" :key="instructor._id" class="flex items-center mb-4">
-            <img :src="instructor.imageUrl" alt="Foto del profesor" class="rounded-full w-12 h-12 mr-4" />
-            <div class="font-medium">{{ instructor.name }}</div>
+            <img :src="instructor.imageUrl" alt="" class="rounded-full w-12 mr-4" />
+            <span class="font-medium">{{ instructor.name }}</span>
           </div>
         </section>
       </main>
+
       <!-- Barra lateral con detalles del curso -->
-      <aside class="w-full md:w-1/4 bg-white p-4 rounded-lg shadow-md">
-        <img :src="course.imgUrl" alt="Imagen del curso" class="rounded-lg mb-4" />
+      <aside class="order-first md:order-last bg-white p-4 md:p-6 rounded">
+        <img :src="course.imgUrl" alt="" class="rounded-sm mb-4 w-48" />
         <a :href="course.courseUrl" target="_blank"
-          class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded block text-center mb-4">
+          class="flex bg-indigo-600 text-white text-center py-2 px-4 rounded hover:bg-indigo-800 transition-colors duration-300 ease-in-out w-full items-center text-md justify-center font-semibold">
           Ir al curso
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960" width="24" class="ml-2">
+            <path
+              d="M200-120q-33 0-56.5-23.5T120-200v-560q0-33 23.5-56.5T200-840h280v80H200v560h560v-280h80v280q0 33-23.5 56.5T760-120H200Zm188-212-56-56 372-372H560v-80h280v280h-80v-144L388-332Z"
+              fill="#fff" />
+          </svg>
         </a>
-        <div class="space-y-2">
+        <!-- Contenido de bajo -->
+        <div class="px-2 py-6 text-md">
           <div class="flex items-center">
-            <h4 class="text-lg font-bold mb-2">Estrellas de este curso: {{ course.rating == "No rating found" ?
-                        "Sin calificación" : "..." }}</h4>
-            
+            <h4 class="text-lg font-semibold mb-2">Estrellas de este curso: {{ course.rating == "No rating found" ?
+              "Sin calificación" : "..." }}</h4>
           </div>
-          <div class="text-gray-600">Nivel: {{ course.level }}</div>
-          <div class="text-gray-600">
-            Categoría Principal: {{ course.mainCategory }}
-          </div>
-          <div class="text-gray-600">
-            Subcategoría: {{ course.secondaryCategory }}
-          </div>
+
+          <ul>
+            <!-- Institución -->
+            <li class="flex text-sm text-gray-800 p-2 border-b border-gray-100">
+              <div class="flex items-center">
+                <svg class="mr-2" xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 -960 960 960" width="24">
+                  <path
+                    d="M400-420h139.231v-40H400v40Zm0-120h278.462v-40H400v40Zm0-120h278.462v-40H400v40Zm-75.385 380Q297-280 278.5-298.5 260-317 260-344.615v-430.77Q260-803 278.5-821.5 297-840 324.615-840h430.77Q783-840 801.5-821.5 820-803 820-775.385v430.77Q820-317 801.5-298.5 783-280 755.385-280h-430.77Zm0-40h430.77q9.231 0 16.923-7.692Q780-335.385 780-344.615v-430.77q0-9.23-7.692-16.923Q764.616-800 755.385-800h-430.77q-9.23 0-16.923 7.692Q300-784.615 300-775.385v430.77q0 9.23 7.692 16.923Q315.385-320 324.615-320Zm-120 160Q177-160 158.5-178.5 140-197 140-224.615v-470.77h40v470.77q0 9.231 7.692 16.923Q195.384-200 204.615-200h470.77v40h-470.77ZM300-800v480-480Z" />
+                </svg>
+                <a href="/cursos/Coursera">
+                  <button class="flex hover:underline transition" title="Ir a cursos de Coursera">
+                    <span>Coursera</span>
+                    <svg class="ml-1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="20" fill="#000000">
+                      <path d="M0 0h24v24H0V0z" fill="none" />
+                      <path
+                        d="M11.5 2C6.81 2 3 5.81 3 10.5S6.81 19 11.5 19h.5v3c4.86-2.34 8-7 8-11.5C20 5.81 16.19 2 11.5 2zm1 14.5h-2v-2h2v2zm0-3.5h-2c0-3.25 3-3 3-5 0-1.1-.9-2-2-2s-2 .9-2 2h-2c0-2.21 1.79-4 4-4s4 1.79 4 4c0 2.5-3 2.75-3 5z" />
+                    </svg>
+                  </button>
+                </a>
+              </div>
+            </li>
+            <!-- Categoría -->
+            <li class="flex text-sm text-black p-2 border-b border-gray-100">
+              <div class="flex items-center">
+                <svg class="mr-2" fill="#6366f1" xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 -960 960 960"
+                  width="24">
+                  <path
+                    d="M260-318.462q52.385 0 101.885 12.039 49.5 12.038 98.115 39.192v-392.461q-43.308-30.923-95.462-46.385Q312.385-721.538 260-721.538q-36 0-63.039 4.307-27.038 4.308-60.038 16-9.231 3.077-13.077 8.846-3.846 5.77-3.846 12.693v360.615q0 10.769 7.692 15.769 7.693 5 16.923 1.154 21.923-7.384 50.654-11.846Q224-318.462 260-318.462Zm240 51.231q48.615-27.154 98.115-39.192 49.5-12.039 101.885-12.039 36 0 64.731 4.462 28.731 4.462 50.654 11.846 9.23 3.846 16.923-1.154 7.692-5 7.692-15.769v-360.615q0-6.923-3.846-12.308t-13.077-9.231q-33-11.692-60.038-16Q736-721.538 700-721.538q-52.385 0-104.538 15.461-52.154 15.462-95.462 46.385v392.461Zm-20 58.001q-48.769-33.385-104.769-51.308-56-17.923-115.231-17.923-31.231 0-61.346 5.231Q168.538-268 140-256.461q-21.769 8.692-40.885-5.231Q80-275.615 80-300.153v-386.616q0-14.847 7.807-27.539Q95.615-727 109.692-732q35.231-15.539 73.308-22.539 38.077-7 77-7 58.769 0 114.654 16.923Q430.538-727.693 480-695.385q49.462-32.308 105.346-49.231Q641.231-761.539 700-761.539q38.923 0 77 7T850.308-732q14.077 5 21.885 17.692Q880-701.616 880-686.769v386.616q0 24.538-20.654 37.692-20.653 13.154-43.961 4.461-27.769-10.769-56.731-15.615-28.962-4.846-58.654-4.846-59.231 0-115.231 17.923-56 17.923-104.769 51.308ZM290-499.385Z" />
+                </svg>
+                <span>{{ course.mainCategory }} - {{ course.secondaryCategory }}</span>
+              </div>
+            </li>
+            <!-- Nivel -->
+            <li class="flex text-sm text-black p-2 border-b border-gray-100">
+              <div class="flex items-center">
+                <svg class="mr-2" xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 -960 960 960" width="24">
+                  <path
+                    d="M335.384-160v-40H460v-150.154q-52.846-9.461-92.5-44.192t-54.577-86.115q-63.462-7.462-108.192-52.039Q160-577.077 160-640v-40q0-16.077 11.961-28.039Q183.923-720 200-720h106.154v-80h347.692v80H760q16.077 0 28.039 11.961Q800-696.077 800-680v40q0 62.923-44.731 107.5-44.73 44.577-108.192 52.039-14.923 51.384-54.577 86.115-39.654 34.731-92.5 44.192V-200h124.616v40H335.384Zm-29.23-363.385V-680H200v40q0 45.692 30.461 78.5 30.462 32.808 75.693 38.115ZM480-389.231q55.385 0 93.846-38.461 38.462-38.462 38.462-93.846V-760H347.692v238.462q0 55.384 38.462 93.846 38.461 38.461 93.846 38.461Zm173.846-134.154q45.231-5.307 75.693-38.115Q760-594.308 760-640v-40H653.846v156.615ZM480-574.615Z" />
+                </svg>
+                <span>{{ course.level }}</span>
+              </div>
+            </li>
+            <!-- Precio -->
+            <li class="flex text-sm text-black p-3">
+              <svg class="mr-2" fill="#057500" xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 -960 960 960"
+                width="24">
+                <path
+                  d="M542.308-131.692q-11.529 11.461-28.573 11.461-17.043 0-28.504-11.461l-352-352q-6.385-6.385-9.808-14.02T120-514v-286q0-16.077 11.961-28.039Q143.923-840 160-840h286q7.769 0 15.452 3.166 7.683 3.167 13.317 8.526l352 352.231Q839-463.846 839.385-446.5q.384 17.346-11.077 28.808l-286 286ZM259.91-660q16.629 0 28.359-11.64Q300-683.281 300-699.909q0-16.63-11.64-28.36Q276.72-740 260.09-740q-16.629 0-28.359 11.64Q220-716.719 220-700.091q0 16.63 11.64 28.36Q243.28-660 259.91-660Z" />
+              </svg>
+              <span class="text-sm">{{ course.price || 'Inscripción Gratuita' }}</span>
+            </li>
+          </ul>
         </div>
       </aside>
     </div>
@@ -92,7 +144,7 @@ onMounted(async () => {
       `http://localhost:3333/cursos/coursera/${courseSlug}`
     );
     course.value = response.data;
-    processCourseDetailsText(); 
+    processCourseDetailsText();
   } catch (error) {
     console.error("Error obteniendo el detalle del curso de Coursera:", error);
   }

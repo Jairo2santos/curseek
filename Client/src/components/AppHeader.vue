@@ -58,7 +58,7 @@
                   <path d="M9.41 7.41L14.83 12l-5.42 5.41L10 18l6-6-6-6-1.59 1.41Z" />
                 </svg>
               </a>
-              <a href="/cursos/Coursera" class="flex justify-between items-center py-1">
+              <a href="/cursos/coursera" class="flex justify-between items-center py-1">
                 <span>Coursera</span>
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24">
                   <path d="M9.41 7.41L14.83 12l-5.42 5.41L10 18l6-6-6-6-1.59 1.41Z" />
@@ -160,7 +160,7 @@
               </a>
             </li>
             <li class="my-0.5 flex items-center">
-              <a href="/cursos/Coursera"
+              <a href="/cursos/coursera"
                 class="hover:bg-gray-200 transition px-4 flex items-center w-full justify-between">
                 <img class="w-8" src="../assets/instituciones/coursera.png" alt="Coursera" />
                 <span class="flex-1 text-gray-800 py-1.5 px-1">Coursera</span>
