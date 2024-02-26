@@ -11,18 +11,24 @@
           <div class="bg-white p-4 md:p-6 rounded mb-4 justify-between items-center">
             <h1 class="text-2xl md:text-3xl font-bold text-gray-800">{{ course.title || 'Aprende con este Curso de UTN' }}</h1>
           </div>
-          <!-- Sección de Resumen -->
-          <div class="bg-white p-6 rounded mb-4">
+          <div class="bg-white p-4 md:p-6 rounded mb-4">
             <h3 class="text-xl mb-2 font-bold">Resumen</h3>
-            <p class="text-md">{{ course.summary || 'En el ámbito actual, al guiar a individuos, equipos y organizaciones a través de procesos de desarrollo del talento humano, se...' }}</p>
+            <div class="text-md mb-2" v-if="!isExpanded && course.summary">
+              {{ course.summary.substring(0, 300) }}{{ course.summary.length > 100 ? '...' : '' }}
+            </div>
+            <div v-if="isExpanded || !course.summary">{{ course.summary || 'En el ámbito actual, al guiar a individuos, equipos y organizaciones a través de procesos de desarrollo del talento humano, se...' }}</div>
+            <button @click="isExpanded = !isExpanded" class="mt-4 text-blue-600 hover:underline transition focus:outline-none">
+              {{ isExpanded ? 'Ver menos' : 'Ver más' }}
+            </button>
           </div>
+
           <!-- Sección de Modalidades -->
-          <!-- <div class="bg-white p-6 rounded mb-4">
+          <div class="bg-white p-6 rounded mb-4">
             <h3 class="text-lg mb-2 font-bold">Modalidades</h3>
             <ul class="list-disc pl-8">
               <li v-for="modality in course.modalities" :key="modality">{{ modality }}</li>
             </ul>
-          </div> -->
+          </div>
           <!-- Sección de Profesores -->
           <div class="bg-white p-6 rounded mb-4">
             <h3 class="text-xl mb-2 font-bold">Profesores</h3>
@@ -110,7 +116,8 @@ import axios from 'axios';
 export default {
   data() {
     return {
-      course: {}
+      course: {},
+      isExpanded: false,
     };
   },
   async created() {

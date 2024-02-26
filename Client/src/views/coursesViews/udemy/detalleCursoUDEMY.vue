@@ -8,37 +8,22 @@
       <div class="md:col-span-2">
         <!-- Sección de Título y Precio -->
         <div class="bg-white p-4 md:p-6 rounded mb-4 justify-between items-center">
-          <h1 class="md:text-3xl font-bold text-gray-800">{{ udemyCourse.title || 'Aprende con este Curso de Udemy' }}</h1>
-          <!-- <h2 class="md:text-xl font-semibold text-green-500 py-1" v-if="!udemyCourse.is_paid">$ {{ udemyCourse.price }}</h2> -->
+          <h1 class="md:text-3xl font-bold text-gray-800">{{ udemyCourse.title || 'Aprende con este Curso de Udemy' }}
+          </h1>
         </div>
         <!-- Sección de Descripción Larga -->
         <div class="bg-white p-4 md:p-6 rounded mb-4">
           <h3 class="text-xl mb-2 font-bold">Resumen</h3>
-          <div v-html="udemyCourse.description" class="700 md:text-md bold-4"></div>
-        </div>
-        <!-- Sección de Contenido del Curso -->
-        <!-- <div class="bg-white p-4 md:p-6 rounded mb-4"> -->
-        <!-- <h3 class="md:text-lg font-bold text-gray-800 mb-2">Contenido del Curso</h3> -->
-        <!-- Itera y muestra el contenido aquí -->
-        <!-- </div> -->
-        <!-- Sección de Valoraciones -->
-        <!-- <div class="bg-white p-4 md:p-6 rounded mb-4">
-          <h3 class="md:text-lg font-bold text-gray-800 mb-2">Valoraciones</h3>
-          <div v-for="review in udemyCourse.reviews" :key="review._id" class="border-b border-gray-300 mb-4 pb-4">
-            <div class="flex items-center mb-1"> -->
-        <!-- Componente de estrellas aquí -->
-        <!-- <rating-component :rating="review.rating"></rating-component>
-              <span class="text-gray-600 text-sm ml-2">({{ review.rating }})</span>
-            </div>
-            <p class="text-gray-800 font-semibold">{{ review.title }}</p>
-            <p class="text-gray-600">{{ review.content }}</p>
+          <div :class="{ 'max-h-48 overflow-hidden': !expandDescription }" class="700 md:text-md bold-4 relative">
+            <div v-html="udemyCourse.description"></div>
+            <div v-if="!expandDescription"
+              class="absolute bottom-0 left-0 right-0 h-16 bg-gradient-to-b from-transparent to-white"></div>
           </div>
-        </div> -->
-        <!-- Sección de Categorías -->
-        <!-- <div class="bg-white p-4 md:p-6 rounded">
-          <h3 class="md:text-lg font-bold text-gray-800 mb-2">Categorías</h3>
-          <div class="text-sm md:text-base font-medium text-gray-900">{{ udemyCourse.primary_category }}</div>
-        </div> -->
+          <button @click="toggleDescription" class="mt-4 text-blue-600 hover:underline transition focus:outline-none">
+            {{ expandDescription ? "Ver menos" : "Ver más" }}
+          </button>
+        </div>
+
         <!-- Nueva Sección de Profesor -->
         <div class="bg-white p-4 md:p-6 rounded">
           <h3 class="text-xl mb-2 font-bold">Profesores</h3>
@@ -106,15 +91,6 @@
                 <span class="text-sm">{{ udemyCourse.duration || '4 semanas' }}</span>
               </div>
             </li>
-            <!-- Profesor -->
-            <!-- <li class="flex text-sm text-black p-2 border-b border-gray-100">
-                <div v-if="udemyCourse.instructorImage || (udemyCourse.instructors && udemyCourse.instructors.length > 0)">
-                  <div class="flex items-center">
-                    <img :src="udemyCourse.instructorImage || udemyCourse.instructors[0]?.image_100x100 || 'ruta_por_defecto_del_profesor.jpg'" alt="Imagen del Profesor" class="rounded-full w-6 mr-2">
-                    <span>{{ udemyCourse.instructors[0]?.name || 'Nombre del Profesor' }}</span>
-                  </div>
-                </div>
-              </li> -->
             <!-- Precio -->
             <li class="flex text-sm text-black p-3">
               <svg class="mr-2" fill="#057500" xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 -960 960 960"
@@ -192,4 +168,10 @@ onMounted(() => {
   fetchUdemyCourse(route.params.slug);
   loadCategories();
 });
+const expandDescription = ref(false);
+
+const toggleDescription = () => {
+  expandDescription.value = !expandDescription.value;
+};
+
 </script>

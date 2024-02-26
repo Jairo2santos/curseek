@@ -12,10 +12,6 @@
         </section>
 
         <section class="bg-white p-4 md:p-6 rounded mb-4">
-          <h2 class="text-xl font-semibold text-gray-700">
-            {{ course.university }}
-          </h2>
-
           <!-- Resumen del curso con botón de expandir -->
           <h3 class="text-lg font-bold mb-2">Resumen</h3>
           <div :class="{ 'max-h-48 overflow-hidden': !expandDescription }" class="relative">
@@ -23,7 +19,7 @@
             <div v-if="!expandDescription"
               class="absolute bottom-0 left-0 right-0 h-16 bg-gradient-to-b from-transparent to-white"></div>
           </div>
-          <button @click="expandDescription = !expandDescription" class="mt-4 text-blue-600">
+          <button @click="expandDescription = !expandDescription" class="mt-4 text-blue-600 hover:underline transition focus:outline-none">
             {{ expandDescription ? "Ver menos" : "Ver más" }}
           </button>
         </section>
@@ -36,7 +32,7 @@
               <p class="text-sm">{{ module.details }}</p>
             </div>
           </div>
-          <button @click="expandCourseDetails = !expandCourseDetails" class="mt-4 text-blue-600">
+          <button @click="expandCourseDetails = !expandCourseDetails" class="mt-4 text-blue-600 hover:underline transition focus:outline-none">
             {{ expandCourseDetails ? 'Ver más' : 'Ver menos' }}
           </button>
         </section>
@@ -52,7 +48,7 @@
 
       <!-- Barra lateral con detalles del curso -->
       <aside class="order-first md:order-last bg-white p-4 md:p-6 rounded">
-        <img :src="course.imgUrl" alt="" class="rounded-sm mb-4 w-48" />
+        <img :src="course.imgUrl" alt="" class="rounded-sm mb-4 w-full" />
         <a :href="course.courseUrl" target="_blank"
           class="flex bg-indigo-600 text-white text-center py-2 px-4 rounded hover:bg-indigo-800 transition-colors duration-300 ease-in-out w-full items-center text-md justify-center font-semibold">
           Ir al curso
@@ -79,7 +75,7 @@
                 </svg>
                 <a href="/cursos/Coursera">
                   <button class="flex hover:underline transition" title="Ir a cursos de Coursera">
-                    <span>Coursera</span>
+                    <span>Coursera - {{ course.university }}</span>
                     <svg class="ml-1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="20" fill="#000000">
                       <path d="M0 0h24v24H0V0z" fill="none" />
                       <path
@@ -97,7 +93,7 @@
                   <path
                     d="M260-318.462q52.385 0 101.885 12.039 49.5 12.038 98.115 39.192v-392.461q-43.308-30.923-95.462-46.385Q312.385-721.538 260-721.538q-36 0-63.039 4.307-27.038 4.308-60.038 16-9.231 3.077-13.077 8.846-3.846 5.77-3.846 12.693v360.615q0 10.769 7.692 15.769 7.693 5 16.923 1.154 21.923-7.384 50.654-11.846Q224-318.462 260-318.462Zm240 51.231q48.615-27.154 98.115-39.192 49.5-12.039 101.885-12.039 36 0 64.731 4.462 28.731 4.462 50.654 11.846 9.23 3.846 16.923-1.154 7.692-5 7.692-15.769v-360.615q0-6.923-3.846-12.308t-13.077-9.231q-33-11.692-60.038-16Q736-721.538 700-721.538q-52.385 0-104.538 15.461-52.154 15.462-95.462 46.385v392.461Zm-20 58.001q-48.769-33.385-104.769-51.308-56-17.923-115.231-17.923-31.231 0-61.346 5.231Q168.538-268 140-256.461q-21.769 8.692-40.885-5.231Q80-275.615 80-300.153v-386.616q0-14.847 7.807-27.539Q95.615-727 109.692-732q35.231-15.539 73.308-22.539 38.077-7 77-7 58.769 0 114.654 16.923Q430.538-727.693 480-695.385q49.462-32.308 105.346-49.231Q641.231-761.539 700-761.539q38.923 0 77 7T850.308-732q14.077 5 21.885 17.692Q880-701.616 880-686.769v386.616q0 24.538-20.654 37.692-20.653 13.154-43.961 4.461-27.769-10.769-56.731-15.615-28.962-4.846-58.654-4.846-59.231 0-115.231 17.923-56 17.923-104.769 51.308ZM290-499.385Z" />
                 </svg>
-                <span>{{ course.mainCategory }} - {{ course.secondaryCategory }}</span>
+                <span>{{ course.mainCategory  || 'Development'}} - {{ course.secondaryCategory || 'Development'}}</span>
               </div>
             </li>
             <!-- Nivel -->
@@ -107,7 +103,7 @@
                   <path
                     d="M335.384-160v-40H460v-150.154q-52.846-9.461-92.5-44.192t-54.577-86.115q-63.462-7.462-108.192-52.039Q160-577.077 160-640v-40q0-16.077 11.961-28.039Q183.923-720 200-720h106.154v-80h347.692v80H760q16.077 0 28.039 11.961Q800-696.077 800-680v40q0 62.923-44.731 107.5-44.73 44.577-108.192 52.039-14.923 51.384-54.577 86.115-39.654 34.731-92.5 44.192V-200h124.616v40H335.384Zm-29.23-363.385V-680H200v40q0 45.692 30.461 78.5 30.462 32.808 75.693 38.115ZM480-389.231q55.385 0 93.846-38.461 38.462-38.462 38.462-93.846V-760H347.692v238.462q0 55.384 38.462 93.846 38.461 38.461 93.846 38.461Zm173.846-134.154q45.231-5.307 75.693-38.115Q760-594.308 760-640v-40H653.846v156.615ZM480-574.615Z" />
                 </svg>
-                <span>{{ course.level }}</span>
+                <span>{{ course.level || 'Sin Nivel' }}</span>
               </div>
             </li>
             <!-- Precio -->
@@ -148,6 +144,8 @@ onMounted(async () => {
   } catch (error) {
     console.error("Error obteniendo el detalle del curso de Coursera:", error);
   }
+    expandCourseDetails.value = true;
+
 });
 const processCourseDetailsText = () => {
   const sections = course.value.courseDetailsText.split('\n').filter(line => line.trim() !== '');
