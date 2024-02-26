@@ -1,40 +1,51 @@
 <template>
-    <div class="flex min-h-screen bg-white">
-        <!-- Menú lateral -->
-        <div class="bg-white border-r border-gray-200 w-1/5 pl-16 py-6"> <!-- Añadí 'text-center' para centrar el texto -->
-            <h2 class="text-sm font-semibold mb-4">Documentación</h2>
-            <ul>
-                <li :class="{ 'pb-2': true, 'text-sm': true, 'text-gray-500': true, 'text-indigo-700 font-semibold': selectedOption === 'acerca' }"
-                    @click="selectedOption = 'acerca'">
-                    <a href="#/acerca" class="hover:text-black transition">Acerca de Nosotros</a>
-                </li>
-                <li :class="{ 'pb-2': true, 'text-sm': true, 'text-gray-500': true, 'text-indigo-700 font-semibold': selectedOption === 'preguntasFrecuentes' }"
-                    @click="selectedOption = 'preguntasFrecuentes'">
-                    <a href="#/preguntasFrecuentes" class="hover:text-black transition">Preguntas Frecuentes</a>
-                </li>
-                <li :class="{ 'pb-2': true, 'text-sm': true, 'text-gray-500': true, 'text-indigo-700 font-semibold': selectedOption === 'nuestroEquipo' }"
-                    @click="selectedOption = 'nuestroEquipo'">
-                    <a href="#/nuestroEquipo" class="hover:text-black transition">Nuestro Equipo</a>
-                </li>
-                <li :class="{ 'pb-2': true, 'text-sm': true, 'text-gray-500': true, 'text-indigo-700 font-semibold': selectedOption === 'privacidad' }"
-                    @click="selectedOption = 'privacidad'">
-                    <a href="#/privacidad" class="hover:text-black transition">Políticas de Privacidad</a>
-                </li>
-                <li :class="{ 'pb-2': true, 'text-sm': true, 'text-gray-500': true, 'text-indigo-700 font-semibold': selectedOption === 'terminos' }"
-                    @click="selectedOption = 'terminos'">
-                    <a href="#/terminos" class="hover:text-black transition">Términos y Condiciones</a>
-                </li>
-                <li :class="{ 'pb-2': true, 'text-sm': true, 'text-gray-500': true, 'text-indigo-700 font-semibold': selectedOption === 'soporte' }"
-                    @click="selectedOption = 'soporte'">
-                    <a href="#/soporte" class="hover:text-black transition">Soporte</a>
-                </li>
-            </ul>
+    <div class="md:flex min-h-screen bg-white">
+        <div class="bg-white md:border-r md:border-gray-300">
+            <!-- Botón de menú para dispositivos móviles -->
+            <div class="border-b border-gray-300">
+                <button @click="toggleMenu" class="p-4 lg:hidden flex">
+                    <svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 -960 960 960" width="24">
+                        <path d="M120-240v-80h720v80H120Zm0-200v-80h720v80H120Zm0-200v-80h720v80H120Z" />
+                    </svg>
+                    <p class="p-1 text-xs">Menu</p>
+                </button>
+            </div>
+            <!-- Menú lateral -->
+            <div :class="{ 'block': isMenuOpen, 'hidden': !isMenuOpen }"
+                class="w-1/1 lg:block md:pt-6 md:px-12 pl-12 pb-4 pr-24 absolute md:static bg-white md:shadow-none shadow-xl">
+                <!-- Añadí 'text-center' para centrar el texto -->
+                <h2 class="text-sm font-semibold py-4">Documentación</h2>
+                <ul>
+                    <li :class="{ 'pb-2.5': true, 'text-sm': true, 'text-gray-500': true, 'text-indigo-700 font-semibold': selectedOption === 'acerca' }"
+                        @click="selectedOption = 'acerca'">
+                        <a href="#/acerca" class="hover:text-black transition">Acerca de Nosotros</a>
+                    </li>
+                    <li :class="{ 'pb-2.5': true, 'text-sm': true, 'text-gray-500': true, 'text-indigo-700 font-semibold': selectedOption === 'preguntasFrecuentes' }"
+                        @click="selectedOption = 'preguntasFrecuentes'">
+                        <a href="#/preguntasFrecuentes" class="hover:text-black transition">Preguntas Frecuentes</a>
+                    </li>
+                    <li :class="{ 'pb-2.5': true, 'text-sm': true, 'text-gray-500': true, 'text-indigo-700 font-semibold': selectedOption === 'nuestroEquipo' }"
+                        @click="selectedOption = 'nuestroEquipo'">
+                        <a href="#/nuestroEquipo" class="hover:text-black transition">Nuestro Equipo</a>
+                    </li>
+                    <li :class="{ 'pb-2.5': true, 'text-sm': true, 'text-gray-500': true, 'text-indigo-700 font-semibold': selectedOption === 'privacidad' }"
+                        @click="selectedOption = 'privacidad'">
+                        <a href="#/privacidad" class="hover:text-black transition">Políticas de Privacidad</a>
+                    </li>
+                    <li :class="{ 'pb-2.5': true, 'text-sm': true, 'text-gray-500': true, 'text-indigo-700 font-semibold': selectedOption === 'terminos' }"
+                        @click="selectedOption = 'terminos'">
+                        <a href="#/terminos" class="hover:text-black transition">Términos y Condiciones</a>
+                    </li>
+                    <li :class="{ 'pb-2.5': true, 'text-sm': true, 'text-gray-500': true, 'text-indigo-700 font-semibold': selectedOption === 'soporte' }"
+                        @click="selectedOption = 'soporte'">
+                        <a href="#/soporte" class="hover:text-black transition">Soporte</a>
+                    </li>
+                </ul>
+            </div>
         </div>
 
         <!-- Contenido principal -->
         <div class="flex-1 p-8">
-            <!-- Contenido basado en la ruta actual -->
-            <router-view></router-view>
             <!-- Preguntas Frecuentes -->
             <div v-if="$route.hash === '#/preguntasFrecuentes'">
                 <h3 class="text-3xl font-semibold mb-4">Preguntas Frecuentes</h3>
@@ -97,74 +108,65 @@
                     </div>
                 </div>
             </div>
-            <div v-if="$route.hash === '#/acerca'">
+            <!-- Preguntas Frecuentes -->
+            <div v-if="$route.hash === '#/acerca'" class="px-2 md:px-10 lg:px-20">
                 <h3 class="text-3xl font-semibold mb-4">Acerca de Nosotros</h3>
-                <div class="flex px-4 md:px-40 items-center justify-center">
+                <div class="flex flex-col md:flex-row items-center justify-center mb-4">
                     <div class="w-1/1">
-                        <img class="max-w-xs" src="../assets/team.jpg" alt="Imágen equipo team work">
+                        <img class="md:max-w-xs" src="../assets/team.jpg" alt="Imágen equipo team work">
                     </div>
-                    <!-- <p class="text-black text-md">
-                        CurSeek es una plataforma web y aplicación móvil que funciona como un buscador de cursos,
-                        siguiendo un enfoque similar al de los populares motores de búsqueda de vuelos y hoteles.
-                        Sin embargo, su principal propósito es recopilar y presentar los cursos de mayor calidad
-                        y mejor valorados disponibles en línea.
-                        La plataforma se dedica a reunir información de una amplia gama de cursos educativos de
-                        diversas temáticas y niveles de dificultad, provenientes de fuentes diversas en Internet.
-                    </p> -->
                 </div>
-                <div class="block px-20">
-                    <h3 class="text-xl font-semibold mb-2">Nuestro objetivo es hacer que la educación en línea funcione para
-                        todos.</h3>
+                <div>
+                    <h3 class="text-xl font-semibold mb-2">Nuestro objetivo es hacer que la educación en línea funcione para todos.</h3>
                     <p class="text-black text-md mb-4">
                         CurSeek es un directorio de cursos en línea. Recopilamos cursos de muchos proveedores para facilitar
-                        la
-                        búsqueda de los mejores cursos sobre casi cualquier tema, dondequiera que existan. Sea cual sea tu
+                        la búsqueda de los mejores cursos sobre casi cualquier tema, dondequiera que existan. Sea cual sea tu
                         interés de aprendizaje, es muy probable que nuestro catálogo incluya un curso que satisfaga tus
                         necesidades.
                         A través de CurSeek, puedes encontrar cursos; revisar los cursos que has tomado (y leer las reseñas
-                        de
-                        otras personas); seguir universidades, temas y cursos para recibir actualizaciones personalizadas; y
+                        de otras personas); seguir universidades, temas y cursos para recibir actualizaciones personalizadas; y
                         también planificar y realizar un seguimiento de tu aprendizaje.
                     </p>
                     <h3 class="text-xl font-semibold mb-2">Impulsado por la comunidad</h3>
-                    <p class="text-black text-md mb-4">
-                        CurSeek es una empresa remota sin oficinas físicas. Nuestro equipo está formado por aprendices cuyas
-                        vidas han sido impactadas por la educación en línea. Entre todos nosotros, hemos realizado más de
-                        400
-                        cursos en línea y 3 grados en línea. Si nuestros nombres te resultan familiares, puede ser porque
-                        hayas
-                        leído artículos que hemos escrito o incluso porque uno de nosotros ha sido mentor en un curso que
-                        tomaste.
-                        Nuestro objetivo es hacer que la educación en línea funcione para todos, así que estamos trabajando
-                        constantemente en nuevas características. Si tienes una idea para hacer que CurSeek sea más útil,
-                        por
-                        favor háznoslo saber.
-                    </p>
-                    <h3 class="text-xl font-semibold mb-2">El Informe</h3>
-                    <p class="text-black text-md mb-4">
-                        Estamos en el negocio de educar a las personas sobre la educación. Además de nuestro catálogo, El
-                        Informe de CurSeek mantiene un seguimiento del estado general del panorama de la educación en línea.
-                        Nos
-                        gusta especialmente descubrir historias pasadas por alto y determinar tendencias que otros aún no
-                        han
-                        informado.
-                    </p>
-                    <h3 class="text-xl font-semibold mb-2">¿Cómo ganamos dinero?</h3>
-                    <p class="text-black text-md mb-4">
-                        CurSeek genera ingresos a través de la publicidad y los enlaces de afiliados. Hemos tratado de
-                        indicar
-                        claramente los anuncios y los resultados de búsqueda patrocinados. Ganamos una comisión cuando
-                        alguien
-                        hace clic en un proveedor de cursos y se actualiza a una oferta de pago. Para una parte sustancial
-                        de
-                        nuestro catálogo, no tenemos asociaciones de afiliados. Nuestras relaciones de afiliación y
-                        publicidad
-                        no influyen en la lista de cursos, ni afectan las reseñas de los usuarios. Lo más importante para
-                        nosotros es mantener una relación de confianza con nuestros usuarios, por lo que queremos ser
-                        transparentes sobre cómo se pagan las facturas.
-                    </p>
+                                <p class="text-black text-md mb-4">
+                                    CurSeek es una empresa remota sin oficinas físicas. Nuestro equipo está formado por aprendices cuyas
+                                    vidas han sido impactadas por la educación en línea. Entre todos nosotros, hemos realizado más de
+                                    400
+                                    cursos en línea y 3 grados en línea. Si nuestros nombres te resultan familiares, puede ser porque
+                                    hayas
+                                    leído artículos que hemos escrito o incluso porque uno de nosotros ha sido mentor en un curso que
+                                    tomaste.
+                                    Nuestro objetivo es hacer que la educación en línea funcione para todos, así que estamos trabajando
+                                    constantemente en nuevas características. Si tienes una idea para hacer que CurSeek sea más útil,
+                                    por
+                                    favor háznoslo saber.
+                                </p>
+                                <h3 class="text-xl font-semibold mb-2">El Informe</h3>
+                                <p class="text-black text-md mb-4">
+                                    Estamos en el negocio de educar a las personas sobre la educación. Además de nuestro catálogo, El
+                                    Informe de CurSeek mantiene un seguimiento del estado general del panorama de la educación en línea.
+                                    Nos
+                                    gusta especialmente descubrir historias pasadas por alto y determinar tendencias que otros aún no
+                                    han
+                                    informado.
+                                </p>
+                                <h3 class="text-xl font-semibold mb-2">¿Cómo ganamos dinero?</h3>
+                                <p class="text-black text-md mb-4">
+                                    CurSeek genera ingresos a través de la publicidad y los enlaces de afiliados. Hemos tratado de
+                                    indicar
+                                    claramente los anuncios y los resultados de búsqueda patrocinados. Ganamos una comisión cuando
+                                    alguien
+                                    hace clic en un proveedor de cursos y se actualiza a una oferta de pago. Para una parte sustancial
+                                    de
+                                    nuestro catálogo, no tenemos asociaciones de afiliados. Nuestras relaciones de afiliación y
+                                    publicidad
+                                    no influyen en la lista de cursos, ni afectan las reseñas de los usuarios. Lo más importante para
+                                    nosotros es mantener una relación de confianza con nuestros usuarios, por lo que queremos ser
+                                    transparentes sobre cómo se pagan las facturas.
+                                </p>
                 </div>
             </div>
+
             <!-- Información sobre "Políticas de Privacidad" -->
             <div v-if="$route.hash === '#/privacidad'">
                 <h3 class="text-3xl font-semibold mb-4">Políticas de Privacidad</h3>
@@ -695,6 +697,8 @@ export default {
     name: 'Documentacion',
     data() {
         return {
+            isMenuOpen: false,
+            selectedOption: '',
             preguntas: [
                 {
                     pregunta: "¿Qué hace diferente a CurSeek de otros buscadores de cursos?",
@@ -760,6 +764,12 @@ export default {
         };
     },
     methods: {
+        togglePregunta(index) {
+            this.preguntas[index].abierta = !this.preguntas[index].abierta;
+        },
+        toggleMenu() {
+            this.isMenuOpen = !this.isMenuOpen;
+        },
         togglePregunta(index) {
             this.preguntas[index].abierta = !this.preguntas[index].abierta;
         },

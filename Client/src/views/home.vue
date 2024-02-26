@@ -1,7 +1,7 @@
 <template>
   <div class="p-0 min-h-screen bg-white">
     <!-- Buscador -->
-    <div class="flex flex-col md:flex-row container mx-auto md:px-40 md:pt-20 md:pb-40 pl-0 bg-white pb-12">
+    <div class="flex flex-col md:flex-row container mx-auto md:px-40 md:pt-20 md:pb-40 pl-0 bg-white pb-2">
       <!-- Contenedor del buscador y resultados -->
       <div class="md:w-1/2 p-8 flex flex-col justify-center">
         <!-- Título -->
@@ -104,10 +104,6 @@
             class="text-sm bg-indigo-100 text-gray-800 hover:bg-green-100 border border-gray-200 transition py-1 px-2 rounded-full mb-1 mr-1">
             seguridad
           </button>
-          <button @click="handleSearch('html')" @focus="setInputClicked(true)" @blur="setInputClicked(false)"
-            class="text-sm bg-indigo-100 text-gray-800 hover:bg-green-100 border border-gray-200 transition py-1 px-2 rounded-full mb-1 mr-1">
-            html
-          </button>
           <button @click="handleSearch('Administración de empresas')" @focus="setInputClicked(true)"
             @blur="setInputClicked(false)"
             class="text-sm bg-indigo-100 text-gray-800 hover:bg-green-100 border border-gray-200 transition py-1 px-2 rounded-full mb-1 mr-1">
@@ -116,10 +112,6 @@
           <button @click="handleSearch('física')" @focus="setInputClicked(true)" @blur="setInputClicked(false)"
             class="text-sm bg-indigo-100 text-gray-800 hover:bg-green-100 border border-gray-200 transition py-1 px-2 rounded-full mb-1 mr-1">
             física
-          </button>
-          <button @click="handleSearch('Tejer')" @focus="setInputClicked(true)" @blur="setInputClicked(false)"
-            class="text-sm bg-indigo-100 text-gray-800 hover:bg-green-100 border border-gray-200 transition py-1 px-2 rounded-full mb-1 mr-1">
-            Tejer
           </button>
           <button @click="handleSearch('Matemática')" @focus="setInputClicked(true)" @blur="setInputClicked(false)"
             class="text-sm bg-indigo-100 text-gray-800 hover:bg-green-100 border border-gray-200 transition py-1 px-2 rounded-full mb-1 mr-1">
@@ -136,6 +128,18 @@
           <button @click="handleSearch('Salud')" @focus="setInputClicked(true)" @blur="setInputClicked(false)"
             class="text-sm bg-indigo-100 text-gray-800 hover:bg-green-100 border border-gray-200 transition py-1 px-2 rounded-full mb-1 mr-1">
             Salud
+          </button>
+          <button @click="handleSearch('Programación')" @focus="setInputClicked(true)" @blur="setInputClicked(false)"
+            class="text-sm bg-indigo-100 text-gray-800 hover:bg-green-100 border border-gray-200 transition py-1 px-2 rounded-full mb-1 mr-1">
+            Programación
+          </button>
+          <button @click="handleSearch('Lengua')" @focus="setInputClicked(true)" @blur="setInputClicked(false)"
+            class="text-sm bg-indigo-100 text-gray-800 hover:bg-green-100 border border-gray-200 transition py-1 px-2 rounded-full mb-1 mr-1">
+            Lenguas
+          </button>
+          <button @click="handleSearch('Cocina')" @focus="setInputClicked(true)" @blur="setInputClicked(false)"
+            class="text-sm bg-indigo-100 text-gray-800 hover:bg-green-100 border border-gray-200 transition py-1 px-2 rounded-full mb-1 mr-1">
+            Cocina
           </button>
         </div>
       </div>
@@ -159,13 +163,13 @@
       <div class="container mx-auto px-20 py-12">
         <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 justify-center">
           <!-- Contenido de Proveedores -->
-          <div class="text-center sm:border-r border-gray-400 hidden md:block">
+          <div class="text-center sm:border-r border-gray-400">
             <h3 class="text-2xl font-bold mb-2 pb-4">Proveedores</h3>
             <ul class="list-none text-left">
               <li class="flex items-center justify-center">
                 <a href="/cursos/udemy">
                   <button
-                    class="hover:scale-110 hover:bg-indigo-200 rounded-lg transform transition duration-100 ease-in-out w-full sm:w-60 flex items-center">
+                    class="hover:scale-110 hover:bg-indigo-200 rounded-lg transform transition duration-100 ease-in-out w-60 sm:w-60 flex items-center">
                     <img class="w-12" src="../assets/instituciones/Udemy.png" alt="Udemy" />
                     <span class="ml-2 text-lg font-semibold text-black">Udemy</span>
                   </button>
@@ -174,7 +178,7 @@
               <li class="flex items-center justify-center">
                 <a href="/cursos/coursera">
                   <button
-                    class="hover:scale-110 hover:bg-indigo-200 rounded-lg transform transition duration-100 ease-in-out w-full sm:w-60 flex items-center">
+                    class="hover:scale-110 hover:bg-indigo-200 rounded-lg transform transition duration-100 ease-in-out w-60 sm:w-60 flex items-center">
                     <img class="w-12" src="../assets/instituciones/coursera.png" alt="Coursera" />
                     <span class="ml-2 text-lg font-semibold text-black">Coursera</span>
                   </button>
@@ -189,61 +193,89 @@
               <li class="flex items-center justify-center">
                 <a href="/cursos/utn">
                   <button
-                    class="hover:scale-110 hover:bg-indigo-200 rounded-lg transform transition duration-100 ease-in-out w-full sm:w-60 flex items-center">
+                    class="hover:scale-110 hover:bg-indigo-200 rounded-lg transform transition duration-100 ease-in-out w-60 sm:w-60 flex items-center">
                     <img class="w-12" src="../assets/instituciones/utn.png" alt="Universidad Tecnológica Nacional" />
                     <span class="ml-2 text-lg font-semibold text-black">UTN</span>
                   </button>
                 </a>
               </li>
               <li class="flex items-center justify-center">
-                <a href="/Coursera/universidades/uab">
+                <a href="/coursera/universidades/uab">
                   <button
-                    class="hover:scale-110 hover:bg-indigo-200 rounded-lg transform transition duration-100 ease-in-out w-full sm:w-60 flex items-center">
+                    class="hover:scale-110 hover:bg-indigo-200 rounded-lg transform transition duration-100 ease-in-out w-60 sm:w-60 flex items-center">
                     <img class="w-12" src="../assets/instituciones/UAB.png" alt="Universidad Autónoma de Barcelona">
                     <span class="ml-2 text-lg font-semibold text-black">UAB</span>
+                  </button>
+                </a>
+              </li>              
+              <li class="flex items-center justify-center">
+                <a href="/coursera/universidades/uchile">
+                  <button
+                    class="hover:scale-110 hover:bg-indigo-200 rounded-lg transform transition duration-100 ease-in-out w-60 sm:w-60 flex items-center">
+                    <img class="w-12" src="../assets/instituciones/Universidad_de_Chile.png" alt="Universidad Autónoma de Barcelona">
+                    <span class="ml-2 text-lg font-semibold text-black">U. de Chile</span>
+                  </button>
+                </a>
+              </li>              
+              <li class="flex items-center justify-center">
+                <a href="/coursera/universidades/udlac">
+                  <button
+                    class="hover:scale-110 hover:bg-indigo-200 rounded-lg transform transition duration-100 ease-in-out w-60 sm:w-60 flex items-center">
+                    <img class="w-12" src="../assets/instituciones/uniandes.png" alt="Universidad Autónoma de Barcelona">
+                    <span class="ml-2 text-lg font-semibold text-black">U. Andes Colombia</span>
+                  </button>
+                </a>
+              </li>              
+              <li class="flex items-center justify-center">
+                <a href="/coursera/universidades/unam">
+                  <button
+                    class="hover:scale-110 hover:bg-indigo-200 rounded-lg transform transition duration-100 ease-in-out w-60 sm:w-60 flex items-center">
+                    <img class="w-12" src="../assets/instituciones/unam.png" alt="Universidad Autónoma de Barcelona">
+                    <span class="ml-2 text-lg font-semibold text-black">UNAM</span>
+                  </button>
+                </a>
+              </li>              
+              <li class="flex items-center justify-center">
+                <a href="/coursera/universidades/upchile">
+                  <button
+                    class="hover:scale-110 hover:bg-indigo-200 rounded-lg transform transition duration-100 ease-in-out w-60 sm:w-60 flex items-center">
+                    <img class="w-12" src="../assets/instituciones/upchile.png" alt="Universidad Autónoma de Barcelona">
+                    <span class="ml-2 text-lg font-semibold text-black">U. Católica de Chile</span>
                   </button>
                 </a>
               </li>              
             </ul>
           </div>
           <!-- Contenido de Futuro -->
-          <div class="text-center hidden md:block">
+          <div class="text-center">
             <h3 class="text-2xl font-bold mb-2 pb-4">Próximamente</h3>
             <ul class="list-none text-left">
               <li class="flex items-center justify-center">
                 <a href="https://www.edx.org/es" target="_blank">
                   <button
-                    class="hover:scale-110 hover:bg-indigo-200 rounded-lg transform transition duration-100 ease-in-out w-full sm:w-60 flex items-center">
+                    class="hover:scale-110 hover:bg-indigo-200 rounded-lg transform transition duration-100 ease-in-out w-60 sm:w-60 flex items-center">
                     <img class="w-12" src="../assets/instituciones/edX.png" alt="edX">
                     <span class="ml-2 text-lg font-semibold text-black">edX</span>
                   </button>
                 </a>
               </li>
               <li class="flex items-center justify-center">
+                <a href="https://www.uade.edu.ar/" target="_blank">
+                  <button
+                    class="hover:scale-110 hover:bg-indigo-200 rounded-lg transform transition duration-100 ease-in-out w-60 sm:w-60 flex items-center">
+                    <img class="w-12" src="../assets/instituciones/UADE.png"
+                      alt="Universidad_Central_de_Venezuela">
+                    <span class="ml-2 text-lg font-semibold text-black">UADE</span>
+                  </button>
+                </a>
+              </li>
+              <li class="flex items-center justify-center">
                 <a href="http://www.ucv.ve/" target="_blank">
                   <button
-                    class="hover:scale-110 hover:bg-indigo-200 rounded-lg transform transition duration-100 ease-in-out w-full sm:w-60 flex items-center">
+                    class="hover:scale-110 hover:bg-indigo-200 rounded-lg transform transition duration-100 ease-in-out w-60 sm:w-60 flex items-center">
                     <img class="w-12" src="../assets/instituciones/Universidad_Central_de_Venezuela.png"
                       alt="Universidad_Central_de_Venezuela">
                     <span class="ml-2 text-lg font-semibold text-black">U. C. Venezuela</span>
-                  </button>
-                </a>
-              </li>
-              <li class="flex items-center justify-center">
-                <a href="https://www.unam.mx/" target="_blank">
-                  <button
-                    class="hover:scale-110 hover:bg-indigo-200 rounded-lg transform transition duration-100 ease-in-out w-full sm:w-60 flex items-center">
-                    <img class="w-12" src="../assets/instituciones/UNAM.png" alt="Universidad de México UNAM">
-                    <span class="ml-2 text-lg font-semibold text-black">UNAM</span>
-                  </button>
-                </a>
-              </li>
-              <li class="flex items-center justify-center">
-                <a href="https://uchile.cl/" target="_blank">
-                  <button
-                    class="hover:scale-110 hover:bg-indigo-200 rounded-lg transform transition duration-100 ease-in-out w-full sm:w-60 flex items-center">
-                    <img class="w-12" src="../assets/instituciones/Universidad_de_Chile.png" alt="Universidad de Chile">
-                    <span class="ml-2 text-lg font-semibold text-black">U. de Chile</span>
                   </button>
                 </a>
               </li>

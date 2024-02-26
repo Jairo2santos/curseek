@@ -2,7 +2,7 @@
     <div class="bg-gray-100">
       <!-- Portada -->
       <!-- Imagen de Portada -->
-      <img :src="portadaImg" alt="Imagen de portada" class="w-full h-96 object-cover" />
+      <img :src="portadaImg" alt="" class="w-full h-80 object-cover" />
   
       <!-- Contenido de la Portada -->
       <div class="text-sm bg-opacity-75 px-4 sm:px-20 lg:px-60">
@@ -13,7 +13,7 @@
   
           <!-- Texto -->
           <div>
-            <h1 class="lg:text-2xl font-semibold text-gray-800 mt-5">{{ pageTitle }}</h1>
+            <h1 class="lg:text-2xl font-semibold text-gray-800">{{ pageTitle }}</h1>
             <p class="text-gray-600">{{ pageDescription }}</p>
           </div>
         </div>
@@ -86,7 +86,7 @@
   import portadaImg from "../../../../assets/instituciones/universidad_de_los_andes_campus.jpg";
   
   const pageTitle = ' Universidad de los Andes Colombia- Coursera';
-  const pageDescription = 'La Universidad de los Andes, ubicada en el corazón de Bogotá, Colombia, es una de las instituciones de educación superior privadas más reconocidas y prestigiosas de América Latina. Fundada en 1948 con el objetivo de promover la excelencia académica, la investigación, la innovación y el desarrollo social, Uniandes, como se la conoce comúnmente, ha jugado un papel crucial en la formación de líderes y profesionales altamente calificados en diversas áreas del conocimiento. La universidad ofrece una amplia variedad de programas de pregrado, posgrado y educación continua, destacándose en campos como ingeniería, ciencias, salud, ciencias sociales, humanidades y administración. Con un enfoque en la calidad académica, la investigación de punta y el compromiso con la sociedad, Uniandes ha establecido numerosos centros e institutos de investigación que abordan desafíos nacionales y globales, contribuyendo significativamente al avance científico y tecnológico del país. Su campus, caracterizado por una arquitectura moderna y espacios que fomentan la innovación y el aprendizaje colaborativo, proporciona un ambiente propicio para el desarrollo académico y personal de sus estudiantes. La Universidad de los Andes se mantiene a la vanguardia de la educación superior en Latinoamérica, reflejado en su constante presencia en los rankings universitarios internacionales.';
+  const pageDescription = 'La Universidad de los Andes en Bogotá, Colombia, es una institución privada líder en educación superior en América Latina. Fundada en 1948, se enfoca en la excelencia académica, la investigación y el desarrollo social. Ofrece programas en diversas áreas y destaca en ingeniería, ciencias, salud, ciencias sociales, humanidades y administración. Uniandes es reconocida por su calidad académica, investigación avanzada y compromiso con la sociedad, con centros e institutos de investigación que abordan desafíos locales y globales. Su campus moderno fomenta la innovación y el aprendizaje colaborativo. Uniandes se destaca en rankings internacionales como una de las mejores universidades de la región.';
   const courses = ref([]);
   const professors = ref([]);
   const currentPage = ref(1);

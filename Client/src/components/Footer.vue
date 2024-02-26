@@ -6,7 +6,6 @@
       </a>
     </div>
     <div class="container mx-auto flex flex-col md:flex-row justify-between py-8">
-      <!-- Logo -->
       <!-- Logo y Enlaces -->
       <div class="flex flex-col md:flex-row items-center justify-center md:justify-start md:items-start md:mr-8">
         <!-- Enlaces de navegación -->
@@ -23,8 +22,12 @@
           <div class="mb-4 md:mb-0 md:mr-8">
             <h4 class="text-md font-semibold mb-2 border-b border-gray-300">Buscar por Universidades</h4>
             <ul>
-              <li class="text-sm text-gray-800 hover:underline transition pb-1"><a href="/cursos/utn">UTN.BA</a></li>
-              <li class="text-sm text-gray-800 hover:underline transition pb-1"><a href="/Coursera/universidades/uab">UAB</a></li>
+              <li class="text-sm text-gray-800 hover:underline transition pb-1"><a href="/cursos/utn">UTN</a></li>
+              <li class="text-sm text-gray-800 hover:underline transition pb-1"><a href="/coursera/universidades/uab">UAB</a></li>
+              <li class="text-sm text-gray-800 hover:underline transition pb-1"><a href="/coursera/universidades/uchile">U. de Chile</a></li>
+              <li class="text-sm text-gray-800 hover:underline transition pb-1"><a href="/coursera/universidades/udlac">U. Andes Colombia</a></li>
+              <li class="text-sm text-gray-800 hover:underline transition pb-1"><a href="/coursera/universidades/UNAM">UNAM</a></li>
+              <li class="text-sm text-gray-800 hover:underline transition pb-1"><a href="/coursera/universidades/upchile">U. Católica de Chile</a></li>
             </ul>
           </div>
           <!-- Sección de Ayuda -->

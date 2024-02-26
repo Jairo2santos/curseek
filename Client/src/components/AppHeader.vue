@@ -76,7 +76,7 @@
               </a>
             </li>
             <li>
-              <a href="/Coursera/universidades/uab" class="flex justify-between items-center py-1">
+              <a href="/coursera/universidades/uab" class="flex justify-between items-center py-1">
                 <span>UAB</span>
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24">
                   <path d="M9.41 7.41L14.83 12l-5.42 5.41L10 18l6-6-6-6-1.59 1.41Z" />
@@ -87,10 +87,10 @@
         </div>
 
         <div v-if="menu2Visible"
-          class="lg:hidden border-r border-l border-b border-gray-300 mx-2 shadow-xl p-4 bg-white text-black">
-          <router-link v-if="!loggedInUsername" to="/login" class="block mb-4">Login</router-link>
-          <router-link v-if="!loggedInUsername" to="/signUp" class="block mb-4">Signup</router-link>
-          <router-link v-if="loggedInUsername" to="/profile" class="block mb-2">Mi Perfil</router-link>
+          class="lg:hidden border-r border-l border-b border-gray-300 mx-2 shadow-xl bg-white text-black">
+          <router-link v-if="!loggedInUsername" to="/signUp" class="block text-white hover:bg-indigo-700 transition bg-indigo-500 rounded-full px-3 py-2 mx-6 mt-6 font-bold text-center">Empezar</router-link>
+          <router-link v-if="!loggedInUsername" to="/login" class="block text-black hover:underline px-3 py-2 font-bold text-center my-4">Acceso</router-link>
+          <router-link v-if="loggedInUsername" to="/profile" class="block m-4">Mi Perfil</router-link>
         </div>
       </div>
       <!-- Desplegable -->
@@ -147,16 +147,44 @@
               </a>
             </li>
             <li class="my-0.5 flex items-center">
-              <a href="/Coursera/universidades/uab"
+              <a href="/coursera/universidades/uab"
                 class="hover:bg-gray-200 transition px-4 flex items-center w-full justify-between">
                 <img class="w-8" src="../assets/instituciones/uab.png" alt="Coursera" />
                 <span class="flex-1 text-gray-800 py-1.5 px-1">UAB</span>
               </a>
             </li>
+            <li class="my-0.5 flex items-center">
+              <a href="/coursera/universidades/uchile"
+                class="hover:bg-gray-200 transition px-4 flex items-center w-full justify-between">
+                <img class="w-8" src="../assets/instituciones/Universidad_de_Chile.png" alt="Coursera" />
+                <span class="flex-1 text-gray-800 py-1.5 px-1">U. de Chile</span>
+              </a>
+            </li>
+            <li class="my-0.5 flex items-center">
+              <a href="/coursera/universidades/udlac"
+                class="hover:bg-gray-200 transition px-4 flex items-center w-full justify-between">
+                <img class="w-8" src="../assets/instituciones/uniandes.png" alt="Coursera" />
+                <span class="flex-1 text-gray-800 py-1.5 px-1">U. Andes Colombia</span>
+              </a>
+            </li>
+            <li class="my-0.5 flex items-center">
+              <a href="/coursera/universidades/unam"
+                class="hover:bg-gray-200 transition px-4 flex items-center w-full justify-between">
+                <img class="w-8" src="../assets/instituciones/unam.png" alt="Coursera" />
+                <span class="flex-1 text-gray-800 py-1.5 px-1">UNAM</span>
+              </a>
+            </li>
+            <li class="my-0.5 flex items-center">
+              <a href="/coursera/universidades/upchile"
+                class="hover:bg-gray-200 transition px-4 flex items-center w-full justify-between">
+                <img class="w-8" src="../assets/instituciones/upchile.png" alt="Coursera" />
+                <span class="flex-1 text-gray-800 py-1.5 px-1">U. Cátolica de Chile</span>
+              </a>
+            </li>
           </ul>
         </div>
       </div>
-      
+
     </div>
   </div>
 </template>

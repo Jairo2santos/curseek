@@ -2,14 +2,14 @@
     <div class="bg-gray-100">
       <!-- Portada -->
       <!-- Imagen de Portada -->
-      <img :src="portadaImg" alt="Imagen de portada" class="w-full h-96 object-cover" />
+      <img :src="portadaImg" alt="" class="w-full h-80 object-cover" />
   
       <!-- Contenido de la Portada -->
       <div class="text-sm bg-opacity-75 px-4 sm:px-20 lg:px-60">
         <!-- Título y Descripción -->
-        <div class="flex flex-col sm:flex-row items-center border-b border-gray-300">
+        <div class="flex flex-col sm:flex-row pb-4 md:pb-0 items-center border-b border-gray-300">
           <!-- Imagen -->
-          <img src="../../../../assets/instituciones/UNAM.png" alt="Universidad Autonoma de Mexico logo" class="w-64 h-auto">
+          <img src="../../../../assets/instituciones/Universidad_de_Chile.png" alt="Universidad Autonoma de Mexico logo" class="w-64 h-auto">
   
           <!-- Texto -->
           <div>

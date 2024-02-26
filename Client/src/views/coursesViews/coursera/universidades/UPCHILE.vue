@@ -2,7 +2,7 @@
     <div class="bg-gray-100">
       <!-- Portada -->
       <!-- Imagen de Portada -->
-      <img :src="portadaImg" alt="campus de la universidad catolica de chile" class="w-full h-96 object-cover" />
+      <img :src="portadaImg" alt="campus de la universidad catolica de chile" class="w-full h-80 object-cover" />
   
       <!-- Contenido de la Portada -->
       <div class="text-sm bg-opacity-75 px-4 sm:px-20 lg:px-60">
@@ -86,7 +86,7 @@
   import portadaImg from "../../../../assets/instituciones/upchile_campus.jpg";
   
   const pageTitle = '  Pontificia Universidad Católica de Chile - Coursera';
-  const pageDescription = 'La Pontificia Universidad Católica de Chile (PUC), fundada en 1888, es una de las universidades más antiguas y prestigiosas de Chile y de América Latina. Como institución educativa privada y católica, se ha destacado por su compromiso con la excelencia académica, la investigación de alto nivel y la formación ética y humanista de sus estudiantes. Ofrece una amplia gama de programas de pregrado y posgrado en diversas áreas del conocimiento, incluyendo ingeniería, ciencias de la salud, ciencias sociales, humanidades, teología, derecho, y arquitectura, entre otros. La PUC es reconocida por su fuerte enfoque en la investigación, contribuyendo significativamente al desarrollo científico, tecnológico y cultural de Chile y de la región. Su campus principal se encuentra en Santiago, con instalaciones adicionales en otras regiones del país, proporcionando a sus estudiantes y académicos recursos de última generación para el aprendizaje y la investigación. La universidad también se destaca por su activa participación en la comunidad, mediante programas de extensión y vinculación con el medio, reafirmando su compromiso con el desarrollo social y la responsabilidad pública. La Pontificia Universidad Católica de Chile es considerada una de las instituciones líderes en educación superior en Latinoamérica, manteniendo altos estándares de calidad educativa y ocupando posiciones destacadas en rankings universitarios internacionales.';
+  const pageDescription = 'La Pontificia Universidad Católica de Chile (PUC), fundada en 1888, es una institución privada y católica reconocida en Chile y América Latina por su excelencia académica y compromiso con la investigación. Ofrece programas en áreas como ingeniería, ciencias de la salud, ciencias sociales, humanidades, teología, derecho y arquitectura. Su enfoque en la investigación impulsa el desarrollo científico, tecnológico y cultural. Con campus en Santiago y otras regiones, la PUC fomenta la extensión y vinculación con la comunidad, siendo líder en la región y destacando en rankings internacionales.';
   const courses = ref([]);
   const professors = ref([]);
   const currentPage = ref(1);
