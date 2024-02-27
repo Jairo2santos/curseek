@@ -25,7 +25,11 @@
               <button @click="toggleDropdown" class="text-indigo-600 font-semibold focus:outline-none w-full">
                 <span :class="{ 'border-b-2 border-indigo-600 pb-5': dropdownActive }">Cursos</span>
               </button>
+             
             </div>
+            <a href="/blogs" class="ml-2 justify-between items-center py-1">
+                <span>Blogs</span>
+              </a>
           </div>
 
           <nav class="hidden lg:flex space-x-4 text-md">

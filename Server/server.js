@@ -2,6 +2,8 @@ const express = require('express');
 const mongoose = require('mongoose');
 const cors = require('cors');
 const app = express();
+require('dotenv').config();
+
 
 // Middlewares
 app.use(cors());
@@ -12,11 +14,13 @@ app.use(express.urlencoded({ extended: true }));
 const coursesRoutes = require('./routes/courses.js');
 const categoriesRoutes = require('./routes/categories.js');
 const usersRoutes = require('./routes/users.js');
+const blogsRoutes = require('./routes/blogs.js');
 
 // Montar las rutas
 app.use('/cursos', coursesRoutes);
 app.use('/categorias', categoriesRoutes);
 app.use('/users', usersRoutes);
+app.use('/blogs', blogsRoutes);
 
 // Conectar con MongoDB
 const db = mongoose.connection;

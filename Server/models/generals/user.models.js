@@ -9,7 +9,12 @@ const userSchema = new mongoose.Schema({
   favorites: [{
     courseId: { type: mongoose.Schema.Types.ObjectId, ref: 'Course' },
     courseType: { type: String, enum: ['UDEMY', 'UTN', 'COURSERA'] }
-  }]
+  }],
+  role: { 
+    type: String, 
+    enum: ['user', 'admin'], 
+    default: 'user' 
+  },
 });
 
 module.exports = mongoose.model('User', userSchema);

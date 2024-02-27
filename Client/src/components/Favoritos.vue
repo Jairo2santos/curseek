@@ -56,6 +56,7 @@ const isFavorited = ref(false);
 const toggleFavorite = async () => {
   try {
     const userId = localStorage.getItem('loggedInUserId');
+    const token = localStorage.getItem('token'); // Obtener el token JWT
     if (!userId) {
       triggerNotification('Debes iniciar sesión para agregar a favoritos', 'error');
       return;
@@ -65,6 +66,10 @@ const toggleFavorite = async () => {
       userId,
       courseId: props.courseId,
       courseType: props.courseType
+    }, {
+      headers: {
+        Authorization: `Bearer ${token}` // Asegúrate de incluir el token aquí
+      }
     });
     isFavorited.value = !isFavorited.value;
     triggerNotification(`Curso ${action === 'add' ? 'agregado a' : 'eliminado de'} favoritos`, action === 'add' ? 'success' : 'error');
@@ -73,4 +78,5 @@ const toggleFavorite = async () => {
     triggerNotification('No se pudo actualizar la lista de favoritos', 'error');
   }
 };
+
 </script>

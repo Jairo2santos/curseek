@@ -4,23 +4,37 @@ const CourseraCourse  = require('../../models/providers/courseraCourse.model');
 const utnCourse = require('../../models/providers/utn.models');
 const bcrypt = require('bcrypt');
 const mongoose = require('mongoose');
+const jwt = require('jsonwebtoken');
 
-const login = async (username, password) => {
-  try {
-    const user = await User.findOne({ username });
-    if (!user) {
-      throw new Error('Usuario no encontrado');
-    }
-    // Comparar la contraseña ingresada con el hash almacenado
-    const isMatch = await bcrypt.compare(password, user.password);
-    if (!isMatch) {
-      throw new Error('Credenciales incorrectas');
-    }
-    return user;
-  } catch (error) {
-    throw new Error('Error al iniciar sesión.');
+
+
+const authenticateUser = async (username, password) => {
+  console.log(`Authenticating user: ${username}`);
+  const user = await User.findOne({ username });
+  if (!user) {
+    console.log('Usuario no encontrado');
+    throw new Error('Usuario no encontrado');
   }
+
+  const isMatch = await bcrypt.compare(password, user.password);
+  if (!isMatch) {
+    console.log('Contraseña incorrecta');
+    throw new Error('Contraseña incorrecta');
+  }
+
+  // Generar JWT
+  console.log('Using JWT_SECRET:', process.env.JWT_SECRET);
+
+  const token = jwt.sign(
+    { userId: user._id, role: user.role },
+    process.env.JWT_SECRET,
+    { expiresIn: '1h' }
+  );
+
+  console.log(`Token generated for user ${username}: ${token}`);
+  return { user, token };
 };
+
 const getUserById = async (userId) => {
   try {
     const user = await User.findById(userId);
@@ -108,10 +122,9 @@ const getUserProfile = async (username) => {
 };
 const register = async ({ username, email, password, address, profilePicture }) => {
   try {
-    // Crear hash de la contraseña
     const salt = await bcrypt.genSalt(10);
     const hashedPassword = await bcrypt.hash(password, salt);
-    // Crear nuevo usuario
+
     const newUser = new User({
       username,
       email,
@@ -119,11 +132,12 @@ const register = async ({ username, email, password, address, profilePicture }) 
       address,
       profilePicture
     });
-    // Guardar el usuario en la base de datos
+
     await newUser.save();
     return newUser;
   } catch (error) {
-    throw new Error('Error al registrar el usuario.');
+    console.error('Error al registrar el usuario:', error);
+    throw error; // Lanza el error para manejarlo en el controlador
   }
 };
 const updateUserProfile = async (userId, updatedData) => {
@@ -173,7 +187,7 @@ module.exports = {
   removeFavoriteFromUser,
   getFavoriteCoursesForUser,
   getAllUsers,
-  login,
+  authenticateUser ,
   getUserProfile,
   getUserByUsername,
   register,

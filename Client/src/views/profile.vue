@@ -154,9 +154,9 @@ import axios from 'axios';
 import { useRouter } from 'vue-router';
 
 const router = useRouter();
-const userId = ref(localStorage.getItem("loggedInUserId"));
 const userData = ref({});
 const editableUserData = reactive({}); // Datos editables del usuario
+const userId = ref(localStorage.getItem("loggedInUserId"));
 const newPassword = ref(''); // Nueva contraseña
 const isPasswordShown = ref(false);
 const editing = ref(false);
@@ -198,16 +198,22 @@ const fetchUserProfile = async () => {
     return;
   }
   try {
-    const response = await axios.get(`http://localhost:3333/users/profile/id/${userId.value}`);
+    const response = await axios.get(`http://localhost:3333/users/profile/id/${userId.value}`, {
+      headers: {
+        Authorization: `Bearer ${localStorage.getItem('token')}`
+      }
+    });
     userData.value = response.data;
     Object.assign(editableUserData, response.data); // Copiar datos del usuario a editableUserData
   } catch (error) {
     console.error("Error al obtener el perfil del usuario:", error);
   }
 };
+
 const removeFromFavorites = async (courseId) => {
   try {
     await axios.post('http://localhost:3333/users/favorites/remove', { userId: userId.value, courseId });
+    
     favoriteCourses.value = favoriteCourses.value.filter(course => course._id !== courseId);
   } catch (error) {
     console.error('Error al eliminar curso de favoritos:', error);
@@ -219,7 +225,11 @@ const loadFavoriteCourses = async () => {
     return;
   }
   try {
-    const response = await axios.get(`http://localhost:3333/users/favorites/${userId.value}`);
+    const response = await axios.get(`http://localhost:3333/users/favorites/${userId.value}`, {
+      headers: {
+        Authorization: `Bearer ${localStorage.getItem('token')}`
+      }
+    });
     console.log("Cursos favoritos recibidos:", response.data);
     favoriteCourses.value = response.data;
   } catch (error) {

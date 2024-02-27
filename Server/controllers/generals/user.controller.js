@@ -15,14 +15,18 @@ exports.getAllUsers = async (req, res) => {
 exports.login = async (req, res) => {
   const { username, password } = req.body;
   try {
-    const user = await userService.login(username, password);
-    res.status(200).json(user);
+    const { user, token } = await userService.authenticateUser(username, password);
+    console.log(`Login successful for user ${username}: ${token}`);
+    res.json({
+      message: 'Inicio de sesión exitoso',
+      token,
+      username: user.username,
+      role: user.role,
+      userId: user._id, 
+    });
   } catch (error) {
-    if (error.message === 'Usuario no encontrado' || error.message === 'Credenciales incorrectas') {
-      res.status(401).send(error.message);
-    } else {
-      res.status(500).send('Error interno del servidor.');
-    }
+    console.log(`Login error for user ${username}: ${error.message}`);
+    res.status(401).json({ message: error.message });
   }
 };
 
@@ -60,10 +64,11 @@ exports.updateUserProfile = async (req, res) => {
 exports.register = async (req, res) => {
   try {
     const newUser = req.body;
-    await userService.register(newUser);
-    res.status(201).send('Usuario creado exitosamente');
+    const user = await userService.register(newUser);
+    res.status(201).json({ message: 'Usuario creado exitosamente', user });
   } catch (error) {
-    res.status(500).send(error.message);
+    console.error('Error en el registro:', error);
+    res.status(500).json({ message: 'Error al registrar el usuario', error: error.message });
   }
 };
 

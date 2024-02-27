@@ -24,7 +24,6 @@
     </form>
   </div>
 </template>
-
 <script setup>
 import { ref } from 'vue';
 import axios from 'axios';
@@ -32,29 +31,31 @@ import { useRouter } from 'vue-router';
 import Notificationes from '../components/Notificaciones.vue'; 
 
 const router = useRouter();
-const username = ref(localStorage.getItem('loggedInUsername') || '');
+const username = ref('');
 const password = ref('');
-// const userData = ref({});
-// const isPasswordShown = ref(false);
 const showNotification = ref(false);
 const notificationMessage = ref('');
 const notificationType = ref('');
 
-
 const login = async () => {
+  console.log(`Attempting to login with username: ${username.value} and password: ${password.value}`);
+
   try {
     const response = await axios.post('http://localhost:3333/users/login', {
       username: username.value,
       password: password.value,
     });
-    if (response.status === 200 && response.data._id) {
+    if (response.status === 200) {
+      console.log('Login response:', response.data);
       notify('Inicio de sesión exitoso!', 'success');
-      // Establece un retraso antes de la redirección
+      localStorage.setItem('token', response.data.token);
+      localStorage.setItem('userRole', response.data.role);
+      localStorage.setItem('loggedInUsername', response.data.username);
+      localStorage.setItem('loggedInUserId', response.data.userId);
+      
       setTimeout(() => {
-        localStorage.setItem('loggedInUsername', username.value);
-        localStorage.setItem('loggedInUserId', response.data._id);
-        router.push('/profile');
-      }, 1000); // Espera 3 segundos antes de redirigir
+        router.push('/profile'); 
+      }, 1000); 
     } else {
       notify('Credenciales incorrectas. Por favor, intenta nuevamente.', 'error');
     }
@@ -69,5 +70,4 @@ const notify = (message, type) => {
   notificationMessage.value = message;
   notificationType.value = type;
 };
-
 </script>
