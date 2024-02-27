@@ -18,7 +18,7 @@
             <p>{{ course.longDescription }}</p>
             <div v-if="!expandDescription"
               class="absolute bottom-0 left-0 right-0 h-16 bg-gradient-to-b from-transparent to-white"></div>
-          </div>
+          </div> 
           <button @click="expandDescription = !expandDescription" class="mt-4 text-blue-600 hover:underline transition focus:outline-none">
             {{ expandDescription ? "Ver menos" : "Ver más" }}
           </button>
