@@ -1,23 +1,21 @@
 const express = require('express');
 const router = express.Router();
 const blogsController = require('../controllers/generals/blogs.controller');
-const { verifyToken, isAdmin } = require('../middlewares/auth.middleware'); // Asegúrate de ajustar la ruta según tu estructura
+const { verifyToken, isAdmin } = require('../middlewares/auth.middleware');
 
 // Ruta para crear un nuevo blog (protegida, solo admin)
 router.post('/', verifyToken, isAdmin, blogsController.createBlog);
 
-// En tu archivo de rutas
-router.put('/:blogId', verifyToken, isAdmin, blogsController.updateBlogById);
+// Actualización de la ruta para actualizar un blog por slug
+router.put('/slug/:slug', verifyToken, isAdmin, blogsController.updateBlogBySlug);
 
+// Actualización de la ruta para eliminar un blog por slug
+router.delete('/slug/:slug', verifyToken, isAdmin, blogsController.deleteBlogBySlug);
 
-// Ruta para eliminar un blog (protegida, solo admin)
-router.delete('/:blogId', verifyToken, isAdmin, blogsController.deleteBlogById);
-
-// Rutas que no requieren autenticación, como obtener blogs, pueden no usar verifyToken ni isAdmin
+// Rutas que no requieren autenticación
 router.get('/', blogsController.getAllBlogs);
-router.get('/:blogId', blogsController.getBlogById);
 
-
-
+// Actualización de la ruta para obtener un blog por slug
+router.get('/slug/:slug', blogsController.getBlogBySlug);
 
 module.exports = router;

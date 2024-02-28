@@ -8,8 +8,6 @@ import Login from '../views/login.vue';
 import Profile from '../views/profile.vue';
 import SignUp from '../views/signUp.vue';
 import Error404 from '../views/error404.vue';
-import blogList from '../views/blogs/blogList.vue'
-import BlogForm from '../views/blogs/blogForm.vue';
 
 // Importaciones de cursos (Lazy loading)
 const CursosUTN = () => import('../views/coursesViews/utn/cursosUTN.vue');
@@ -28,8 +26,10 @@ const UPCHILE = () => import('../views/coursesViews/coursera/universidades/UPCHI
 const UCHILE = () => import('../views/coursesViews/coursera/universidades/UCHILE.vue');
 const UNAM = () => import('../views/coursesViews/coursera/universidades/UNAM.vue');
 
-// blogs
+// Blogs (Aplicando Lazy Loading)
+const BlogList = () => import('../views/blogs/blogList.vue');
 const BlogDetail = () => import('../views/blogs/blogDetails.vue');
+const BlogForm = () => import('../views/blogs/blogForm.vue');
 
 const routes = [
   { path: '/', name: 'Home', component: Home },
@@ -37,10 +37,10 @@ const routes = [
   { path: '/login', name: 'Login', component: Login },
   { path: '/profile', name: 'Profile', component: Profile },
   { path: '/signUp', name: 'SignUp', component: SignUp },
-  { path: '/blogs', name: 'blogList', component: blogList },
-  { path: '/blogs/:blogId', name: 'BlogDetail', component: BlogDetail, props: true },
-  { path: '/blog/new', name: 'NewBlog', component: BlogForm, props: true },
-  { path: '/blog/edit/:blogId', name: 'EditBlog', component: BlogForm, props: true },
+  { path: '/blogs', name: 'BlogList', component: BlogList },
+  { path: '/blogs/:slug', name: 'BlogDetail', component: BlogDetail, props: true },
+  { path: '/blog/new', name: 'NewBlog', component: BlogForm }, 
+  { path: '/blog/edit/:slug', name: 'EditBlog', component: BlogForm, props: true },
   { path: '/cursos/utn', name: 'CursosUTN', component: CursosUTN },
   { path: '/cursos/udemy', name: 'CursosUDEMY', component: CursosUDEMY },
   { path: '/cursos/coursera', name: 'CursosCoursera', component: CursosCoursera },
