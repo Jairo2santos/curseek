@@ -211,9 +211,24 @@ const fetchUserProfile = async () => {
 };
 
 const removeFromFavorites = async (courseId) => {
+  // Recuperar el token de autenticación almacenado
+  const token = localStorage.getItem('token');
+
+  if (!token) {
+    console.error("Token de autorización no encontrado.");
+    return; // Detener la ejecución si no hay token
+  }
+
   try {
-    await axios.post('http://localhost:3333/users/favorites/remove', { userId: userId.value, courseId });
-    
+    await axios.post('http://localhost:3333/users/favorites/remove', {
+      userId: userId.value, courseId
+    }, {
+      headers: {
+        Authorization: `Bearer ${token}`
+      }
+    });
+
+    // Filtrar el curso eliminado de la lista de favoritos
     favoriteCourses.value = favoriteCourses.value.filter(course => course._id !== courseId);
   } catch (error) {
     console.error('Error al eliminar curso de favoritos:', error);
