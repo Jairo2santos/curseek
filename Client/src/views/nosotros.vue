@@ -78,7 +78,7 @@
                 <div class="grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-6">
                     <!-- Card 1 -->
                     <div class="bg-white p-6 rounded-lg shadow-md md:mx-40 mb-4">
-                        <img src="https://lh3.googleusercontent.com/a-/ALV-UjUOdWbneS_2U1P8VDsQFxjmSkp8Xv0xitK1IIF5rOuBWA=s48-p"
+                        <img src="../assets/nosotros/Ramirez_Jairo.jpg"
                             alt="Imágen del Programador 1" class="w-24 object-cover mb-4 rounded-full">
                         <h4 class="text-xl font-semibold">Jairo Ramirez Dos Santos</h4>
                         <h5 class="text-sm text-gray-600 italic mb-2">Founder</h5>
@@ -98,7 +98,7 @@
                     </div>
                     <!-- Card 2 -->
                     <div class="bg-white p-6 rounded-lg shadow-md md:mx-40 mb-4">
-                        <img src="https://lh3.googleusercontent.com/a/ACg8ocKl8CKX-qlmOjBcBxtZCsS5KPVD3yELG44p0-2iMxf9nIo=s48-p"
+                        <img src="../assets/nosotros/Varas_Matias.jpg"
                             alt="Imágen del Programador 1" class="w-24 object-cover mb-4 rounded-full">
                         <h4 class="text-xl font-semibold">Matias Alejo Varas</h4>
                         <h5 class="text-sm text-gray-600 italic mb-2">Co-Founder</h5>

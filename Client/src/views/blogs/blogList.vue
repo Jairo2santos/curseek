@@ -1,15 +1,23 @@
 <template>
-  <div class="bg-pastel-fucsia min-h-screen p-5">
-    <Notificacion v-if="showNotification" :message="notificationMessage" :type="notificationType" @close="showNotification = false" />
+  <div class="flex-col max-w-screen-full md:flex-row mx-auto md:px-60 bg-gray-100 pb-12">
+    <Notificacion v-if="showNotification" :message="notificationMessage" :type="notificationType"
+      @close="showNotification = false" />
     <!-- Texto introductorio -->
     <div class="intro-text mb-4">
-      <h1 class="text-3xl font-bold text-center">Bienvenido a Nuestro Blog</h1>
-      <p class="text-xl text-center">Descubre las últimas tendencias, consejos y estrategias para potenciar tu carrera profesional.</p>
-      <p>En CURSEEK, estamos comprometidos con tu desarrollo y éxito profesional. A través de este espacio, queremos compartir contigo valiosas insights, consejos prácticos y las últimas tendencias en el mundo laboral que te ayudarán a destacar en tu búsqueda de empleo y desarrollo de carrera. </p>
+      <h1 class="text-4xl text-center py-12 lg:text-5xl font-bold text-gray-800">
+        <span class="font-serif text-indigo-900">Info | </span>Bienvenido a nuestro blog
+      </h1>
+      <p class="text-xl text-center">Descubre las últimas tendencias, consejos y estrategias para potenciar tu carrera
+        profesional.</p>
+      <p>En CURSEEK, estamos comprometidos con tu desarrollo y éxito profesional. A través de este espacio, queremos
+        compartir contigo valiosas insights, consejos prácticos y las últimas tendencias en el mundo laboral que te
+        ayudarán a destacar en tu búsqueda de empleo y desarrollo de carrera. </p>
     </div>
     <!-- Botón para agregar un nuevo blog solo si es admin -->
     <div v-if="isAdmin" class="text-right mb-4">
-      <router-link to="/blog/new" class="inline-block bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded-lg transition-colors duration-200">Agregar nuevo blog</router-link>
+      <router-link to="/blog/new"
+        class="inline-block bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded-lg transition-colors duration-200">Agregar
+        nuevo blog</router-link>
     </div>
     <!-- Listado de blogs -->
     <div v-if="blogs.length" class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
@@ -27,8 +35,10 @@
           </div>
           <div v-if="isAdmin" class="admin-buttons flex space-x-2 mt-4">
             <!-- Asegúrate de actualizar esta ruta si decides implementar la edición usando slugs -->
-            <router-link :to="{ name: 'EditBlog', params: { slug: blog.slug } }" class="inline-block bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded-lg transition-colors duration-200">Editar</router-link>
-            <button @click="deleteBlog(blog.slug)" class="bg-red-500 hover:bg-red-600 text-white font-bold py-2 px-4 rounded-lg transition-colors duration-200">Eliminar</button>
+            <router-link :to="{ name: 'EditBlog', params: { slug: blog.slug } }"
+              class="inline-block bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded-lg transition-colors duration-200">Editar</router-link>
+            <button @click="deleteBlog(blog.slug)"
+              class="bg-red-500 hover:bg-red-600 text-white font-bold py-2 px-4 rounded-lg transition-colors duration-200">Eliminar</button>
           </div>
         </div>
       </div>
