@@ -100,7 +100,7 @@
         </div>
         <div class="text-right">
           <button @click="startEdit" class="btn text-sm font-bold text-black rounded-md border border-gray-300 p-2 mr-4">Editar perfil</button>
-          <button @click="logout" class="btn text-red-600 font-semibold text-lg mt-2">Logout</button>
+          <button @click="logout" class="btn text-red-600 font-semibold text-lg mt-2">Cerrar Sesión</button>
         </div>
       </div>
     </div>
