@@ -5,7 +5,7 @@
     <!-- Texto introductorio -->
     <div class="intro-text mb-4">
       <h1 class="text-4xl text-center py-12 lg:text-5xl font-bold text-gray-800">
-        <span class="font-serif text-indigo-900">Info | </span>Bienvenido a nuestro blog
+        <span class="font-serif text-indigo-900">Blog | </span>Bienvenido
       </h1>
       <p class="text-xl text-center">Descubre las últimas tendencias, consejos y estrategias para potenciar tu carrera
         profesional.</p>

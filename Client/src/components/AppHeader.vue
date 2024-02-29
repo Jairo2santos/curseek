@@ -29,7 +29,7 @@
             <div class="relative ml-6 hidden md:block">
               <button class="text-indigo-900 hover:text-indigo-600 transition font-serif font-semibold focus:outline-none w-full">
                 <a href="/blogs" class="ml-2 justify-between items-center py-1">
-                  <span>Info</span>
+                  <span>Blog</span>
                 </a>
               </button>
             </div>
