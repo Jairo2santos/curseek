@@ -383,11 +383,16 @@ const courses = ref([]);
 const isInputClicked = ref(false);
 const limitResults = ref(true);
 
+const baseURL = import.meta.env.VITE_API_URL;
+console.log("URL de la API:", baseURL);
+console.log(import.meta.env);
+
+
 
 const search = async () => {
   try {
     const response = await axios.get(
-      `http://localhost:3333/cursos/search?q=${query.value
+      `${baseURL}/cursos/search?q=${query.value
       }&all=${!limitResults.value}`
     );
     courses.value = response.data;

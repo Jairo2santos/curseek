@@ -1,0 +1,39 @@
+# Dependencias
+/node_modules
+/package-lock.json
+/yarn.lock
+/pnpm-lock.yaml
+
+# Archivos de entorno
+.env
+.env.local
+.env.*.local
+
+# Directorios de compilación / distribución
+/client/dist
+/server/dist
+/build
+/.cache
+/public/build
+
+# Sistema de archivos del OS
+.DS_Store
+Thumbs.db
+
+# Archivos de editor
+/.idea
+/*.sublime-workspace
+/*.sublime-project
+.vscode/
+*.code-workspace
+
+# Archivos de logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Otros archivos y carpetas
+/*.pnp
+.pnp.js
+/coverage
