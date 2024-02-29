@@ -1,12 +1,10 @@
-//loadProveedores.js
+require('dotenv').config(); // Asegúrate de requerir dotenv al principio
 const mongoose = require('mongoose');
-//const saveUdemyCourses = require('./udemy/saveUdemyCourses');
-const fetchEdxCourses = require('./edx/saveEdxCourses'); 
+const fetchEdxCourses = require('./edx/saveEdxCourses');
+
 async function loadProveedores() {
-  // Conexión a MongoDB
-  await mongoose.connect('mongodb://localhost:27017/cursosApp', { useNewUrlParser: true, useUnifiedTopology: true });
-  // Carga de cursos Udemy
-  //await saveUdemyCourses();
+  // Usa la variable de entorno para la conexión a MongoDB
+  await mongoose.connect(process.env.MONGODB_URI, { useNewUrlParser: true, useUnifiedTopology: true });
   // Carga de cursos EDX
   await fetchEdxCourses();
   // Cierra la conexión a la base de datos

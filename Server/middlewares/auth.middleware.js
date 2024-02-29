@@ -1,6 +1,5 @@
 //auth.middleware.js
 const jwt = require('jsonwebtoken');
-const User = require('../models/generals/user.models');
 
 // Verifica el token JWT
 exports.verifyToken = (req, res, next) => {

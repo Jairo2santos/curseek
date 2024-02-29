@@ -16,7 +16,6 @@ exports.login = async (req, res) => {
   const { username, password } = req.body;
   try {
     const { user, token } = await userService.authenticateUser(username, password);
-    console.log(`Login successful for user ${username}: ${token}`);
     res.json({
       message: 'Inicio de sesión exitoso',
       token,
@@ -25,7 +24,6 @@ exports.login = async (req, res) => {
       userId: user._id, 
     });
   } catch (error) {
-    console.log(`Login error for user ${username}: ${error.message}`);
     res.status(401).json({ message: error.message });
   }
 };
@@ -67,7 +65,6 @@ exports.register = async (req, res) => {
     const user = await userService.register(newUser);
     res.status(201).json({ message: 'Usuario creado exitosamente', user });
   } catch (error) {
-    console.error('Error en el registro:', error);
     res.status(500).json({ message: 'Error al registrar el usuario', error: error.message });
   }
 };

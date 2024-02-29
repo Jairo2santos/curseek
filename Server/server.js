@@ -4,7 +4,6 @@ const cors = require('cors');
 const app = express();
 require('dotenv').config();
 
-
 // Middlewares
 app.use(cors());
 app.use(express.json());
@@ -25,7 +24,7 @@ app.use('/blogs', blogsRoutes);
 // Conectar con MongoDB
 const db = mongoose.connection;
 
-mongoose.connect('mongodb://localhost:27017/cursosApp', { useNewUrlParser: true, useUnifiedTopology: true });
+mongoose.connect(process.env.MONGODB_URI, { useNewUrlParser: true, useUnifiedTopology: true });
 
 db.on('error', (err) => {
   console.error("Error conectando a MongoDB:", err);
@@ -41,7 +40,8 @@ app.use((error, req, res, next) => {
   res.status(500).send("Error interno del servidor");
 });
 
-// Iniciar el servidor en el puerto 3333
-app.listen(3333, () => {
-  console.log('Servidor escuchando en el puerto 3333');
+// Iniciar el servidor en el puerto definido en .env o en el 3333 por defecto
+const PORT = process.env.PORT || 3333;
+app.listen(PORT, () => {
+  console.log(`Servidor escuchando en el puerto ${PORT}`);
 });

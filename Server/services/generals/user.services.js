@@ -12,18 +12,15 @@ const authenticateUser = async (username, password) => {
   console.log(`Authenticating user: ${username}`);
   const user = await User.findOne({ username });
   if (!user) {
-    console.log('Usuario no encontrado');
     throw new Error('Usuario no encontrado');
   }
 
   const isMatch = await bcrypt.compare(password, user.password);
   if (!isMatch) {
-    console.log('Contraseña incorrecta');
     throw new Error('Contraseña incorrecta');
   }
 
   // Generar JWT
-  console.log('Using JWT_SECRET:', process.env.JWT_SECRET);
 
   const token = jwt.sign(
     { userId: user._id, role: user.role },
@@ -31,7 +28,6 @@ const authenticateUser = async (username, password) => {
     { expiresIn: '1h' }
   );
 
-  console.log(`Token generated for user ${username}: ${token}`);
   return { user, token };
 };
 
@@ -64,7 +60,6 @@ const getAllUsers = async () => {
 };
 const addFavoriteToUser = async (userId, courseId, courseType) => {
   try {
-    console.log('userId:', userId, 'courseId:', courseId, 'courseType:', courseType);
     const user = await getUserById(userId);
     if (!user) {
       throw new Error('Usuario no encontrado');
@@ -168,7 +163,6 @@ const checkIfCourseIsFavorited = async (userId, courseId) => {
       throw new Error('ID de curso inválido');
     }
     const objectId = new mongoose.Types.ObjectId(courseId);
-    console.log('ObjectId convertido:', objectId); 
     const user = await User.findById(userId);
     if (!user) {
       throw new Error('Usuario no encontrado');
