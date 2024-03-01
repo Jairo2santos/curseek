@@ -48,6 +48,8 @@ app.use((error, req, res, next) => {
 
 // Iniciar el servidor en el puerto definido en .env o en el 3333 por defecto
 const PORT = process.env.PORT || 3333;
-app.listen(PORT, () => {
-  console.log(`Servidor escuchando en el puerto ${PORT}`);
+const IP = process.env.IP || '0.0.0.0';
+
+app.listen(PORT, IP, () => {
+  console.log(`Servidor escuchando en ${IP}:${PORT}`);
 });
