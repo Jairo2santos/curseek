@@ -147,7 +147,7 @@
       <div :class="{ 'blurred-background': isInputClicked }" 
         class="md:w-1/2 object-cover md:h-full hidden md:block">
         <!-- Imagen -->
-        <img src="../assets/banner-1-izquierda.jpg" alt="" />
+        <img src="../assets/mirando_al_costado.jpg" alt="" />
       </div>
     </div>
     
