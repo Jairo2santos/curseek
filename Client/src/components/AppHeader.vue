@@ -12,7 +12,8 @@
                 <path d="M120-240v-80h720v80H120Zm0-200v-80h720v80H120Zm0-200v-80h720v80H120Z" />
               </svg>
               <svg v-else xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 -960 960 960" width="24">
-                <path d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z" />
+                <path
+                  d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z" />
               </svg>
             </button>
             <a href="/" class="mx-12 md:mx-0"> <!-- Añadido el margen para separar el logo de los botones -->
@@ -261,7 +262,8 @@
               </a>
             </li>
             <li class="pt-2">
-              <a href="/blogs" class="flex justify-between items-center py-2 border-t border-gray-300 font-bold font-serif text-indigo-900">
+              <a href="/blogs"
+                class="flex justify-between items-center py-2 border-t border-gray-300 font-bold font-serif text-indigo-900">
                 <span>Blog</span>
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24">
                   <path d="M9.41 7.41L14.83 12l-5.42 5.41L10 18l6-6-6-6-1.59 1.41Z" />
@@ -273,11 +275,12 @@
 
         <div v-if="menu2Visible"
           class="lg:hidden border-r border-l border-b border-gray-300 mx-2 shadow-xl bg-white text-black">
-          <router-link v-if="!loggedInUsername" to="/signUp"
+          <router-link v-if="!loggedInUsername" to="/signUp" @click="menu2Visible = false"
             class="block text-white hover:bg-indigo-700 transition bg-indigo-500 rounded-full px-3 py-2 mx-6 mt-6 font-bold text-center">Empezar</router-link>
-          <router-link v-if="!loggedInUsername" to="/login"
+          <router-link v-if="!loggedInUsername" to="/login" @click="menu2Visible = false"
             class="block text-black hover:underline px-3 py-2 font-bold text-center my-4">Acceso</router-link>
-          <router-link v-if="loggedInUsername" to="/profile" class="block m-4">Mi Perfil</router-link>
+          <router-link v-if="loggedInUsername" to="/profile" @click="menu2Visible = false" class="block m-4">Mi
+            Perfil</router-link>
         </div>
       </div>
       <!-- Desplegable -->

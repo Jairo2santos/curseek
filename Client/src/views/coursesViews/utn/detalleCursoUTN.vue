@@ -8,10 +8,10 @@
         <!-- Columna 1 y 2 (Contenido principal) -->
         <div class="md:col-span-2">
           <!-- Sección de Título, Duración y Precio -->
-          <div class="bg-white p-4 md:p-6 rounded mb-4 justify-between items-center">
+          <div class="md:hidden block bg-white p-4 md:p-6 rounded mb-4 justify-between items-center">
             <h1 class="text-2xl md:text-3xl font-bold text-gray-800">{{ course.title || 'Aprende con este Curso de UTN' }}</h1>
           </div>
-          <div class="bg-white p-4 md:p-6 rounded mb-4">
+          <div class="md:hidden block bg-white p-4 md:p-6 rounded mb-4">
             <h3 class="text-xl mb-2 font-bold">Resumen</h3>
             <div class="text-md mb-2" v-if="!isExpanded && course.summary">
               {{ course.summary.substring(0, 300) }}{{ course.summary.length > 100 ? '...' : '' }}
@@ -38,6 +38,19 @@
         <!-- Columna 3 (Barra Lateral) -->
         <div class="order-first md:order-last bg-white p-4 md:p-6 rounded">
           <img :src="course.imgUrl" alt="" class="rounded-sm mb-4 w-full">
+          <!-- Sección de Título, Duración y Precio -->
+          <div class="hidden md:block bg-white p-4 md:p-6 rounded mb-4 justify-between items-center">
+            <h1 class="text-2xl md:text-3xl font-bold text-gray-800">{{ course.title || 'Aprende con este Curso de UTN' }}</h1>
+          </div>
+          <div class="hidden md:block bg-white md:p-6 rounded mb-4">
+            <div class="text-md mb-2" v-if="!isExpanded && course.summary">
+              {{ course.summary.substring(0, 300) }}{{ course.summary.length > 100 ? '...' : '' }}
+            </div>
+            <div v-if="isExpanded || !course.summary">{{ course.summary || 'En el ámbito actual, al guiar a individuos, equipos y organizaciones a través de procesos de desarrollo del talento humano, se...' }}</div>
+            <button @click="isExpanded = !isExpanded" class="text-blue-600 hover:underline transition focus:outline-none">
+              {{ isExpanded ? 'Ver menos' : 'Ver más' }}
+            </button>
+          </div>
           <a :href="course.link" target="_blank"
             class="flex bg-indigo-600 text-white text-center py-2 px-4 rounded hover:bg-indigo-800 transition-colors duration-300 ease-in-out w-full items-center text-md justify-center font-semibold">
             Ir al curso

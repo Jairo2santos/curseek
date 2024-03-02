@@ -7,12 +7,12 @@
       <!-- Columna 1 y 2 (Contenido principal) -->
       <div class="md:col-span-2">
         <!-- Sección de Título y Precio -->
-        <div class="bg-white p-4 md:p-6 rounded mb-4 justify-between items-center">
+        <div class="md:hidden block bg-white p-4 md:p-6 rounded mb-4 justify-between items-center">
           <h1 class="md:text-3xl font-bold text-gray-800">{{ udemyCourse.title || 'Aprende con este Curso de Udemy' }}
           </h1>
         </div>
         <!-- Sección de Descripción Larga -->
-        <div class="bg-white p-4 md:p-6 rounded mb-4">
+        <div class="md:hidden block bg-white p-4 md:p-6 rounded mb-4">
           <h3 class="text-xl mb-2 font-bold">Resumen</h3>
           <div :class="{ 'max-h-48 overflow-hidden': !expandDescription }" class="700 md:text-md bold-4 relative">
             <div v-html="udemyCourse.description"></div>
@@ -40,6 +40,22 @@
       <!-- Columna 3 (Barra Lateral) -->
       <div class="order-first md:order-last bg-white p-4 md:p-6 rounded">
         <img :src="udemyCourse.image" alt="" class="rounded-sm mb-4 w-full">
+        <!-- Sección de Título y Precio -->
+        <div class="hidden md:block bg-white p-4 md:p-6 rounded mb-4 justify-between items-center">
+          <h1 class="md:text-3xl font-bold text-gray-800">{{ udemyCourse.title || 'Aprende con este Curso de Udemy' }}
+          </h1>
+        </div>
+        <!-- Sección de Descripción Larga -->
+        <div class="hidden md:block bg-white md:p-6 rounded mb-4">
+          <div :class="{ 'max-h-48 overflow-hidden': !expandDescription }" class="700 md:text-md bold-4 relative">
+            <div v-html="udemyCourse.description"></div>
+            <div v-if="!expandDescription"
+              class="absolute bottom-0 left-0 right-0 h-16 bg-gradient-to-b from-transparent to-white"></div>
+          </div>
+          <button @click="toggleDescription" class="text-blue-600 hover:underline transition focus:outline-none">
+            {{ expandDescription ? "Ver menos" : "Ver más" }}
+          </button>
+        </div>
         <a :href="`https://www.udemy.com${udemyCourse.url}`" target="_blank"
           class="flex bg-indigo-600 text-white text-center py-2 px-4 rounded hover:bg-indigo-800 transition-colors duration-300 ease-in-out w-full items-center text-md justify-center font-semibold">
           Ir al curso

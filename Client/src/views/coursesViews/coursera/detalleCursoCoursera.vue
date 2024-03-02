@@ -7,11 +7,11 @@
       <!-- Contenido principal -->
       <main class="md:col-span-2">
         <!-- Título y Universidad -->
-        <section class="bg-white p-4 md:p-6 rounded mb-4 justify-between items-center">
+        <section class="md:hidden block bg-white p-4 md:p-6 rounded mb-4 justify-between items-center">
           <h1 class="md:text-3xl font-bold text-gray-800">{{ course.title }}</h1>
         </section>
 
-        <section class="bg-white p-4 md:p-6 rounded mb-4">
+        <section class="md:hidden block bg-white p-4 md:p-6 rounded mb-4">
           <!-- Resumen del curso con botón de expandir -->
           <h3 class="text-lg font-bold mb-2">Resumen</h3>
           <div :class="{ 'max-h-48 overflow-hidden': !expandDescription }" class="relative">
@@ -48,7 +48,22 @@
 
       <!-- Barra lateral con detalles del curso -->
       <aside class="order-first md:order-last bg-white p-4 md:p-6 rounded">
-        <img :src="course.imgUrl" alt="" class="rounded-sm mb-4 w-full" />
+        <img :src="course.imgUrl" alt="" class="block mx-auto rounded-sm mb-4 w-48" />
+        <!-- Título y Universidad -->
+        <section class="hidden md:block bg-white p-4 md:p-6 rounded mb-4 justify-between items-center">
+          <h1 class="md:text-3xl font-bold text-gray-800">{{ course.title }}</h1>
+        </section>
+        <section class="hidden md:block bg-white md:p-6 rounded mb-4">
+          <!-- Resumen del curso con botón de expandir -->
+          <div :class="{ 'max-h-48 overflow-hidden': !expandDescription }" class="relative">
+            <p>{{ course.longDescription }}</p>
+            <div v-if="!expandDescription"
+              class="absolute bottom-0 left-0 right-0 h-16 bg-gradient-to-b from-transparent to-white"></div>
+          </div> 
+          <button @click="expandDescription = !expandDescription" class="text-blue-600 hover:underline transition focus:outline-none">
+            {{ expandDescription ? "Ver menos" : "Ver más" }}
+          </button>
+        </section>
         <a :href="course.courseUrl" target="_blank"
           class="flex bg-indigo-600 text-white text-center py-2 px-4 rounded hover:bg-indigo-800 transition-colors duration-300 ease-in-out w-full items-center text-md justify-center font-semibold">
           Ir al curso
