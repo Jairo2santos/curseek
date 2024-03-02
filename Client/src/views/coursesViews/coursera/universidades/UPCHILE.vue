@@ -104,7 +104,7 @@
   // Cargar profesores
   const loadProfessors = async () => {
     try {
-      const response = await axios.get('/cursos/coursera/universidad/UpChile/profesores');
+      const response = await axios.get('/api/cursos/coursera/universidad/UpChile/profesores');
       professors.value = response.data;
     } catch (error) {
       console.error("Error al obtener los profesores:", error.message);
@@ -116,7 +116,7 @@
   const loadCourses = async () => {
     isLoading.value = true;
     try {
-      const response = await axios.get(`/cursos/coursera/universidad/UpChile?page=${currentPage.value}`);
+      const response = await axios.get(`/api/cursos/coursera/universidad/UpChile?page=${currentPage.value}`);
       courses.value = response.data.courses;
       totalPages.value = response.data.totalPages;
       totalCourses.value = response.data.totalCourses;

@@ -392,7 +392,7 @@ console.log(import.meta.env);
 const search = async () => {
   try {
     const response = await axios.get(
-      `${baseURL}/cursos/search?q=${query.value
+      `${baseURL}/api/cursos/search?q=${query.value
       }&all=${!limitResults.value}`
     );
     courses.value = response.data;

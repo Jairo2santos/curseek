@@ -5,6 +5,7 @@ const app = express();
 require('dotenv').config();
 const helmet = require('helmet');
 const compression = require('compression');
+const apiRouter = require('./routes/api');
 
 // Middlewares
 app.use(cors());
@@ -13,19 +14,9 @@ app.use(express.urlencoded({ extended: true }));
 app.use(helmet());
 app.use(compression());
 
+// Montar las rutas /api
 
-
-// Rutas
-const coursesRoutes = require('./routes/courses.js');
-const categoriesRoutes = require('./routes/categories.js');
-const usersRoutes = require('./routes/users.js');
-const blogsRoutes = require('./routes/blogs.js');
-
-// Montar las rutas
-app.use('/cursos', coursesRoutes);
-app.use('/categorias', categoriesRoutes);
-app.use('/users', usersRoutes);
-app.use('/blogs', blogsRoutes);
+app.use('/api', apiRouter);
 
 // Conectar con MongoDB
 const db = mongoose.connection;

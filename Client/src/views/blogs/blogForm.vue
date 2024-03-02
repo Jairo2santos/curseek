@@ -48,7 +48,7 @@ onMounted(async () => {
   const { slug } = route.params;
   try {
     // Realiza una solicitud para obtener los datos del blog
-    const response = await axios.get(`http://localhost:3333/blogs/slug/${slug}`);
+    const response = await axios.get(`http://localhost:3333/api/blogs/slug/${slug}`);
     blog.value = response.data;
   } catch (error) {
     console.error('Error al cargar el blog para editar:', error);
@@ -57,7 +57,7 @@ onMounted(async () => {
 });
 const submitForm = async () => {
   try {
-    const url = isEditMode.value ? `http://localhost:3333/blogs/slug/${route.params.slug}` : 'http://localhost:3333/blogs';
+    const url = isEditMode.value ? `http://localhost:3333/api/blogs/slug/${route.params.slug}` : 'http://localhost:3333/blogs';
     const method = isEditMode.value ? 'put' : 'post';
 
     const response = await axios({

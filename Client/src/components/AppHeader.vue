@@ -127,7 +127,7 @@
         </div>
 
         <div v-if="menu1Visible"
-          class="lg:hidden border-r border-l border-b border-gray-300 mx-2 shadow-xl p-4 bg-white text-black">
+          class="lg:hidden border-r  border-b border-gray-300 mx-2 shadow-xl p-4 bg-white text-black">
           <!-- <router-link v-if="!loggedInUsername" to="/login" class="block mb-4">Login</router-link> -->
           <!-- <a v-else @click="logout" class="block mb-4 cursor-pointer">Logout</a> -->
           <!-- Campo de búsqueda -->
@@ -380,71 +380,13 @@
   </div>
 </template>
 
-<script setup>
-import { ref } from "vue";
-import axios from "axios";
-import { useRouter } from "vue-router";
-const router = useRouter();
-const query = ref("");
-const courses = ref([]);
-const isInputClicked = ref(false);
-const limitResults = ref(true);
-
-
-const search = async () => {
-  try {
-    const response = await axios.get(
-      `http://localhost:3333/cursos/search?q=${query.value
-      }&all=${!limitResults.value}`
-    );
-    courses.value = response.data;
-  } catch (error) {
-    console.error("Error al buscar cursos:", error);
-  }
-};
-
-const clearSearch = () => {
-  query.value = "";
-  courses.value = [];
-};
-const setInputClicked = (clicked) => {
-  isInputClicked.value = clicked;
-};
-const redirectToCourse = (course) => {
-  if (course.source === "UDEMY") {
-    // Utiliza el slug en lugar del originalId
-    router.push({
-      name: "DetalleCursoUdemy",
-      params: { slug: course.slug },
-    });
-  } else if (course.source === "UTN") {
-    // Utiliza el slug en lugar del originalId
-    router.push({
-      name: "DetalleCursoUTN",
-      params: { slug: course.slug },
-    });
-  } else if (course.source === "COURSERA") {
-    // Utiliza el slug en lugar del originalId
-    router.push({
-      name: "DetalleCursoCoursera",
-      params: { slug: course.slug },
-    });
-  }
-};
-
-const handleSearch = (value) => {
-  query.value = value;
-  search();
-};
-
-const toggleViewAll = () => {
-  limitResults.value = !limitResults.value;
-  search();
-};
-</script>
-
 <script>
+import { ref, watch, onMounted } from 'vue';
+import axios from 'axios';
+import { useRoute, useRouter } from 'vue-router';
+
 export default {
+<<<<<<< Updated upstream
   name: "AppHeader",
   data() {
     return {
@@ -456,12 +398,88 @@ export default {
       showModal: false,
       showModal2: false,
       isMenuOpen: false,
+=======
+  name: 'AppHeader',
+  setup() {
+    const router = useRouter();
+    const route = useRoute();
+    const query = ref('');
+    const courses = ref([]);
+    const isInputClicked = ref(false);
+    const limitResults = ref(true);
+    const loggedInUsername = ref(localStorage.getItem('loggedInUsername'));
+    const menu1Visible = ref(false);
+    const menu2Visible = ref(false);
+    const dropdownVisible = ref(false);
+    const dropdownActive = ref(false);
+    const showModal = ref(false);
+    const showModal2 = ref(false);
+
+    const search = async () => {
+      try {
+        const response = await axios.get(
+          `http://localhost:3333/api/cursos/search?q=${query.value}&all=${!limitResults.value}`
+        );
+        courses.value = response.data;
+      } catch (error) {
+        console.error('Error al buscar cursos:', error);
+      }
     };
-  },
-  watch: {
-    '$route': function () {
-      this.loggedInUsername = localStorage.getItem('loggedInUsername');
-    }
+
+    const clearSearch = () => {
+      query.value = '';
+      courses.value = [];
+    };
+
+    const setInputClicked = (clicked) => {
+      isInputClicked.value = clicked;
+    };
+
+    const redirectToCourse = (course) => {
+      if (course.source === 'UDEMY') {
+        router.push({ name: 'DetalleCursoUdemy', params: { slug: course.slug } });
+      } else if (course.source === 'UTN') {
+        router.push({ name: 'DetalleCursoUTN', params: { slug: course.slug } });
+      } else if (course.source === 'COURSERA') {
+        router.push({ name: 'DetalleCursoCoursera', params: { slug: course.slug } });
+      }
+    };
+
+    // Asumiendo que este es el evento o método que disparas desde tu UI para realizar la búsqueda
+    const handleSearch = (value) => {
+      query.value = value;
+      search();
+    };
+
+    const toggleViewAll = () => {
+      limitResults.value = !limitResults.value;
+      search();
+    };
+
+    watch(() => route.path, () => {
+      loggedInUsername.value = localStorage.getItem('loggedInUsername');
+    });
+
+    return {
+      query,
+      courses,
+      isInputClicked,
+      limitResults,
+      loggedInUsername,
+      menu1Visible,
+      menu2Visible,
+      dropdownVisible,
+      dropdownActive,
+      showModal,
+      showModal2,
+      search,
+      clearSearch,
+      setInputClicked,
+      redirectToCourse,
+      handleSearch,
+      toggleViewAll,
+>>>>>>> Stashed changes
+    };
   },
   methods: {
     toggleMenu1() {
@@ -503,6 +521,6 @@ export default {
         document.removeEventListener('click', this.closeDropdownOnClickOutside);
       }
     },
-  }
+  },
 };
 </script>

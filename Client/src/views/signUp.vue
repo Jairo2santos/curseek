@@ -118,7 +118,7 @@ const registerUser = async () => {
   }
   passwordsDoNotMatch.value = false;
   try {
-    await axios.post("http://localhost:3333/users/register", {
+    await axios.post("http://localhost:3333/api/users/register", {
       username: username.value,
       email: email.value,
       password: password.value,

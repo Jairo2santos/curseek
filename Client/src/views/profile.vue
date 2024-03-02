@@ -220,7 +220,7 @@ const removeFromFavorites = async (courseId) => {
   }
 
   try {
-    await axios.post('http://localhost:3333/users/favorites/remove', {
+    await axios.post('http://localhost:3333/api/users/favorites/remove', {
       userId: userId.value, courseId
     }, {
       headers: {

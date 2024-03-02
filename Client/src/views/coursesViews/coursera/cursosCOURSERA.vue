@@ -156,7 +156,7 @@ const loadCourses = async (
     queryParams += `&category=${encodeURIComponent(selectedCategories[0])}`;
   }
   try {
-    const response = await axios.get(`cursos/coursera?${queryParams}`);
+    const response = await axios.get(`api/cursos/coursera?${queryParams}`);
     courses.value = response.data.courses; 
     totalPages.value = response.data.totalPages || 1;
     totalCourses.value = response.data.totalCourses || 0;
@@ -169,7 +169,7 @@ const loadCourses = async (
 
 const loadCategories = async () => {
   try {
-    const { data } = await axios.get("categorias/coursera");
+    const { data } = await axios.get("api/categorias/coursera");
     categories.value = data;
   } catch (error) {
     console.error("Error al obtener las categorías de coursera:", error);

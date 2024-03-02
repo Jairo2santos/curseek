@@ -124,7 +124,7 @@
 </template>
 
 <script setup>
-import { ref, onMounted } from 'vue';
+import { ref, onMounted, watch } from 'vue';
 import { useRoute, useRouter } from 'vue-router';
 import axios from 'axios';
 
@@ -144,50 +144,48 @@ const udemyCourse = ref({
   category: '',
 });
 const route = useRoute();
-const categories = ref([]);
 const router = useRouter();
+const categories = ref([]);
 
-async function fetchUdemyCourse(courseSlug) {
+const fetchUdemyCourse = async (courseSlug) => {
   try {
-    const response = await axios.get(`http://localhost:3333/cursos/udemy/${courseSlug}`);
+    const response = await axios.get(`http://localhost:3333/api/cursos/udemy/${courseSlug}`);
     if (response.data) {
-      udemyCourse.value = { ...udemyCourse.value, ...response.data };
-      udemyCourse.value.image = udemyCourse.value.image_480x270;
+      udemyCourse.value = { ...response.data, image: response.data.image_480x270 };
     } else {
       throw new Error('Curso no encontrado');
     }
   } catch (error) {
+    console.error("Error obteniendo el detalle del curso de Udemy:", error);
     if (error.response && error.response.status === 404) {
       router.push({ name: 'error404' });
-    } else {
-      console.error("Error obteniendo el detalle del curso de Udemy:", error);
     }
   }
-}
-onMounted(() => {
-  fetchUdemyCourse(route.params.slug);
-  loadCategories();
-});
+};
 
 const loadCategories = async () => {
   try {
-    const { data } = await axios.get("categorias/udemy");
+    const { data } = await axios.get("http://localhost:3333/api/categorias/udemy");
     categories.value = data;
   } catch (error) {
     console.error("Error al obtener las categorías de Udemy:", error);
   }
 };
 
+// Observar cambios en el slug de la ruta y reaccionar a estos
+watch(() => route.params.slug, (newSlug, oldSlug) => {
+  if(newSlug !== oldSlug) {
+    fetchUdemyCourse(newSlug);
+  }
+}, { immediate: true });
+
 onMounted(() => {
-  udemyCourse.value.instructorImage = route.params.instructorImage || '';
-  udemyCourse.value.category = route.params.category || '';
-  fetchUdemyCourse(route.params.slug);
   loadCategories();
 });
+
 const expandDescription = ref(false);
 
 const toggleDescription = () => {
   expandDescription.value = !expandDescription.value;
 };
-
 </script>

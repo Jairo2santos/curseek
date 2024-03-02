@@ -41,7 +41,7 @@ const login = async () => {
   console.log(`Attempting to login with username: ${username.value} and password: ${password.value}`);
 
   try {
-    const response = await axios.post('http://localhost:3333/users/login', {
+    const response = await axios.post('http://localhost:3333/api/users/login', {
       username: username.value,
       password: password.value,
     });

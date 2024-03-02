@@ -164,7 +164,7 @@ const loadCourses = async (page, filterType = null, selectedCategories = []) => 
     queryParams += `&categories=${selectedCategories.join(",")}`;
   }
   try {
-    const { data } = await axios.get(`cursos/utn?${queryParams}`);
+    const { data } = await axios.get(`api/cursos/utn?${queryParams}`);
     courses.value = data.courses;
     totalPages.value =
       typeof data.totalPages === "number" ? data.totalPages : 1;
@@ -195,7 +195,7 @@ const handleCategoryFilter = async (categories) => {
 };
 const loadCategories = async () => {
   try {
-    const { data } = await axios.get("categorias/utn");
+    const { data } = await axios.get("api/categorias/utn");
     categories.value = data;
   } catch (error) {
     console.error("Error al obtener las categorías:", error);
