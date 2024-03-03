@@ -7,7 +7,7 @@
       <h1 class="text-4xl text-center py-12 lg:text-5xl font-bold text-gray-800">
         <span class="font-serif text-indigo-900">Blog | </span>Bienvenido
       </h1>
-      <p class="text-md md:text-center text-left md:px-0 px-6">
+      <p class="text-md md:text-center text-left md:px-0 px-6 pb-4">
         Descubre las últimas tendencias, consejos y estrategias para potenciar tu carrera
         profesional.
         En CURSEEK, estamos comprometidos con tu desarrollo y éxito profesional. A través de este espacio, queremos
@@ -22,24 +22,23 @@
         nuevo blog</router-link>
     </div>
     <!-- Listado de blogs -->
-    <div v-if="blogs.length" class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-      <div v-for="blog in blogs" :key="blog.slug">
+    <div v-if="blogs.length" class="max-w-6xl mx-auto flex flex-wrap px-4">
+      <div v-for="blog in blogs" :key="blog.slug" class="w-full md:w-1/2 lg:w-1/3 p-2">
         <router-link :to="{ name: 'BlogDetail', params: { slug: blog.slug } }"
-          class="bg-white rounded-lg shadow-lg overflow-hidden block">
+          class="flex flex-col h-full bg-white rounded-lg shadow-sm hover:shadow-xl transition overflow-hidden">
           <img :src="blog.image" alt="Imagen del Blog" class="w-full h-48 object-cover">
-          <div class="p-4">
-            <h2 class="text-2xl font-bold text-pastel-verde mb-2">{{ blog.title }}</h2>
-            <p class="text-gray-700 text-base mb-4">{{ blog.content.substring(0, 150) + "..." }}</p>
-            <div class="text-pastel-fucsia text-sm">
-              Publicado el {{ new Date(blog.date).toLocaleDateString() }}
-            </div>
+          <div class="p-4 flex-grow">
+            <h2 class="text-lg font-bold text-pastel-verde mb-2">{{ blog.title }}</h2>
+            <p class="text-gray-700 text-md mb-4">{{ blog.content.substring(0, 150) + "..." }}</p>
             <div v-if="isAdmin" class="admin-buttons flex space-x-2 mt-4">
-              <!-- Asegúrate de actualizar esta ruta si decides implementar la edición usando slugs -->
               <router-link :to="{ name: 'EditBlog', params: { slug: blog.slug } }"
                 class="inline-block bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded-lg transition-colors duration-200">Editar</router-link>
               <button @click="deleteBlog(blog.slug)"
                 class="bg-red-500 hover:bg-red-600 text-white font-bold py-2 px-4 rounded-lg transition-colors duration-200">Eliminar</button>
             </div>
+          </div>
+          <div class="text-right p-2 text-sm">
+            {{ new Date(blog.date).toLocaleDateString() }}
           </div>
         </router-link>
       </div>

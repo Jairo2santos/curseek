@@ -7,8 +7,13 @@
         <div class="flex items-center justify-center md:justify-between"> <!-- Cambio aquí para centrar -->
           <div class="flex items-center text-xl font-semibold">
             <button @click="toggleMenu1" class="lg:hidden">
-              <svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 -960 960 960" width="24">
+              <svg v-if="!isMenuOpen" xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 -960 960 960"
+                width="24">
                 <path d="M120-240v-80h720v80H120Zm0-200v-80h720v80H120Zm0-200v-80h720v80H120Z" />
+              </svg>
+              <svg v-else xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 -960 960 960" width="24">
+                <path
+                  d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z" />
               </svg>
             </button>
             <a href="/" class="mx-12 md:mx-0"> <!-- Añadido el margen para separar el logo de los botones -->
@@ -27,7 +32,8 @@
               </button>
             </div>
             <div class="relative ml-6 hidden md:block">
-              <button class="text-indigo-900 hover:text-indigo-600 transition font-serif font-semibold focus:outline-none w-full">
+              <button
+                class="text-indigo-900 hover:text-indigo-600 transition font-serif font-semibold focus:outline-none w-full">
                 <a href="/blogs" class="ml-2 justify-between items-center py-1">
                   <span>Blog</span>
                 </a>
@@ -75,10 +81,7 @@
                           <div class="flex-grow p-2 md:p-0">
                             <div>
                               <h2 class="text-sm font-semibold hover:underline md:w-80">
-                                {{
-                                  course.title ||
-                                  "Aprende con este curso y descubre oportunidades"
-                                }}
+                                {{ course.title || "Aprende con este curso y descubre oportunidades" }}
                               </h2>
                               <p class="text-xs text-gray-600 pt-1">
                                 {{ course.source || "Curso" }}
@@ -124,7 +127,69 @@
           class="lg:hidden border-r border-l border-b border-gray-300 mx-2 shadow-xl p-4 bg-white text-black">
           <!-- <router-link v-if="!loggedInUsername" to="/login" class="block mb-4">Login</router-link> -->
           <!-- <a v-else @click="logout" class="block mb-4 cursor-pointer">Logout</a> -->
-          <ul>
+          <!-- Campo de búsqueda -->
+          <div class="max-w-xl m-0 p-0">
+            <form @submit.prevent="search"
+              class="flex bg-white items-center border border-gray-300 rounded-xl overflow-hidden">
+              <button type="submit" class="px-2">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960" width="24">
+                  <path
+                    d="M784-120 532-372q-30 24-69 38t-83 14q-109 0-184.5-75.5T120-580q0-109 75.5-184.5T380-840q109 0 184.5 75.5T640-580q0 44-14 83t-38 69l252 252-56 56ZM380-400q75 0 127.5-52.5T560-580q0-75-52.5-127.5T380-760q-75 0-127.5 52.5T200-580q0 75 52.5 127.5T380-400Z" />
+                </svg>
+              </button>
+              <input v-model="query" placeholder="Buscar cursos y más..."
+                class="rounded-xl py-2.5 w-80 flex-grow outline-none" @focus="setInputClicked(true)"
+                @blur="setInputClicked(false)" />
+              <button v-if="query" type="button" @click="clearSearch" class="p-2">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="18">
+                  <path
+                    d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z" />
+                </svg>
+              </button>
+            </form>
+            <div>
+
+              <!-- Resultados -->
+              <div class="flex flex-col md:flex-row container mx-0 justify-center">
+                <div v-if="courses.length > 0"
+                  class="md:absolute md:max-w-full mt-3 bg-white shadow-lg max-h-96 overflow-y-auto z-10">
+                  <p class="px-4 py-2 text-sm font-semibold text-indigo-600 border-b">
+                    Los cursos que se relacionan con "{{ query }}"
+                  </p>
+
+                  <ul>
+                    <li v-for="course in courses" :key="course.slug" class="border-b last:border-b-0 pb-2 md:pb-0">
+                      <a @click="redirectToCourse(course)"
+                        class="flex flex-col md:flex-row items-center p-4 hover:bg-gray-100 transition cursor-pointer">
+                        <img :src="course.image" alt=""
+                          class="w-full h-24 md:w-16 md:h-16 lg:w-20 lg:h-16 xl:w-24 xl:h-16 rounded object-cover md:mr-2" />
+                        <div class="flex-grow p-2 md:p-0">
+                          <div>
+                            <h2 class="text-sm font-semibold hover:underline md:w-80">
+                              {{ course.title || "Aprende con este curso y descubre oportunidades" }}
+                            </h2>
+                            <p class="text-xs text-gray-600 pt-1">
+                              {{ course.source || "Curso" }}
+                            </p>
+                          </div>
+                        </div>
+                        <div class="flex items-end text-sm font-semibold text-green-700">
+                          <p>{{ course.price || "Gratis" }}</p>
+                        </div>
+                      </a>
+                    </li>
+                  </ul>
+                  <div class="flex justify-center py-4">
+                    <button @click="toggleViewAll"
+                      class="px-4 py-2 border border-indigo-600 text-indigo-600 font-semibold rounded-lg hover:bg-indigo-600 hover:text-white focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-opacity-75 transition ease-in duration-300">
+                      {{ limitResults ? "Ver Más" : "Ver Menos" }}
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <ul class="pt-2">
             <span class="font-semibold text-indigo-700">Proveedores</span>
             <li class="border-b border-gray-300 pb-4">
               <a href="/cursos/udemy" class="flex justify-between items-center py-1">
@@ -190,16 +255,26 @@
                 </svg>
               </a>
             </li>
+            <li class="pt-2">
+              <a href="/blogs"
+                class="flex justify-between items-center py-1 font-serif text-indigo-900 font-bold border-t border-gray-300">
+                <span>Blog</span>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24">
+                  <path d="M9.41 7.41L14.83 12l-5.42 5.41L10 18l6-6-6-6-1.59 1.41Z" />
+                </svg>
+              </a>
+            </li>
           </ul>
         </div>
 
         <div v-if="menu2Visible"
           class="lg:hidden border-r border-l border-b border-gray-300 mx-2 shadow-xl bg-white text-black">
-          <router-link v-if="!loggedInUsername" to="/signUp"
+          <router-link v-if="!loggedInUsername" to="/signUp" @click="menu2Visible = false"
             class="block text-white hover:bg-indigo-700 transition bg-indigo-500 rounded-full px-3 py-2 mx-6 mt-6 font-bold text-center">Empezar</router-link>
-          <router-link v-if="!loggedInUsername" to="/login"
+          <router-link v-if="!loggedInUsername" to="/login" @click="menu2Visible = false"
             class="block text-black hover:underline px-3 py-2 font-bold text-center my-4">Acceso</router-link>
-          <router-link v-if="loggedInUsername" to="/profile" class="block m-4">Mi Perfil</router-link>
+          <router-link v-if="loggedInUsername" to="/profile" @click="menu2Visible = false" class="block m-4">Mi
+            Perfil</router-link>
         </div>
       </div>
       <!-- Desplegable -->
@@ -231,7 +306,8 @@
           class="border-l max-h-96 overflow-y-auto border-gray-100 absolute text-sm shadow-md bg-white py-4 w-60 left-80 mt-0 ml-28">
           <ul>
             <li class="my-0.5 flex items-center">
-              <a href="/cursos/udemy" class="hover:bg-gray-200 transition px-4 flex items-center w-full justify-between">
+              <a href="/cursos/udemy"
+                class="hover:bg-gray-200 transition px-4 flex items-center w-full justify-between">
                 <img class="w-8" src="../assets/instituciones/udemy.png" alt="Coursera" />
                 <span class="flex-1 text-gray-800 py-1.5 px-1">Udemy</span>
               </a>
@@ -297,6 +373,7 @@
     </div>
   </div>
 </template>
+
 <script>
 import { ref, watch, onMounted } from 'vue';
 import axios from 'axios';
@@ -318,6 +395,7 @@ export default {
     const dropdownActive = ref(false);
     const showModal = ref(false);
     const showModal2 = ref(false);
+    const isMenuOpen = ref(false);
 
     const search = async () => {
       try {
@@ -368,6 +446,16 @@ export default {
       search();
     };
 
+    const toggleMenu1 = () => {
+      menu1Visible.value = !menu1Visible.value;
+      isMenuOpen.value = !isMenuOpen.value;
+    };
+
+
+    const toggleMenu2 = () => {
+      menu2Visible.value = !menu2Visible.value;
+    };
+
     // Observadores y otros métodos aquí si es necesario
     watch(() => route.query.q, (newQuery) => {
       if (newQuery) {
@@ -375,6 +463,10 @@ export default {
         search();
       }
     });
+
+    const toggleDropdown = () => {
+      dropdownVisible.value = !dropdownVisible.value;
+    };
 
     // onMounted y otros ciclos de vida aquí si es necesario
     onMounted(() => {
@@ -396,12 +488,15 @@ export default {
       dropdownActive,
       showModal,
       showModal2,
+      toggleDropdown,
       search,
       clearSearch,
       setInputClicked,
       redirectToCourse,
       handleSearch,
       toggleViewAll,
+      toggleMenu1,
+      toggleMenu2,
     };
   },
 };
