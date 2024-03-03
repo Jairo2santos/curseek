@@ -7,11 +7,11 @@
       <!-- Contenido principal -->
       <main class="md:col-span-2">
         <!-- Título y Universidad -->
-        <section class="md:hidden block bg-white p-4 md:p-6 rounded mb-4 justify-between items-center">
+        <section class="hidden md:block bg-white p-4 md:p-6 rounded mb-4 justify-between items-center">
           <h1 class="md:text-3xl font-bold text-gray-800">{{ course.title }}</h1>
         </section>
 
-        <section class="md:hidden block bg-white p-4 md:p-6 rounded mb-4">
+        <section class="hidden md:block bg-white p-4 md:p-6 rounded mb-4">
           <!-- Resumen del curso con botón de expandir -->
           <h3 class="text-lg font-bold mb-2">Resumen</h3>
           <div :class="{ 'max-h-48 overflow-hidden': !expandDescription }" class="relative">
@@ -50,10 +50,10 @@
       <aside class="order-first md:order-last bg-white p-4 md:p-6 rounded">
         <img :src="course.imgUrl" alt="" class="block mx-auto rounded-sm mb-4 w-48" />
         <!-- Título y Universidad -->
-        <section class="hidden md:block bg-white p-4 md:p-6 rounded mb-4 justify-between items-center">
+        <section class="md:hidden block bg-white md:p-6 rounded mb-4 justify-between items-center">
           <h1 class="md:text-3xl font-bold text-gray-800">{{ course.title }}</h1>
         </section>
-        <section class="hidden md:block bg-white md:p-6 rounded mb-4">
+        <section class="md:hidden block bg-white md:p-6 rounded mb-6">
           <!-- Resumen del curso con botón de expandir -->
           <div :class="{ 'max-h-48 overflow-hidden': !expandDescription }" class="relative">
             <p>{{ course.longDescription }}</p>
