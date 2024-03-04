@@ -66,7 +66,7 @@ const notificationType = ref('');
 const deleteBlog = async (slug) => {
   if (!confirm('¿Estás seguro de que deseas eliminar este blog?')) return;
   try {
-    await axios.delete(`http://localhost:3333/api/blogs/slug/${slug}`, {
+    await axios.delete(`${import.meta.env.VITE_API_URL}/blogs/slug/${slug}`, {
       headers: {
         Authorization: `Bearer ${localStorage.getItem('token')}`
       }
@@ -88,7 +88,7 @@ const deleteBlog = async (slug) => {
 
 onMounted(async () => {
   try {
-    const response = await axios.get('http://localhost:3333/api/blogs');
+    const response = await axios.get(`${import.meta.env.VITE_API_URL}/blogs`);
     console.log(response.data);
     blogs.value = response.data;
   } catch (error) {

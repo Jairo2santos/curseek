@@ -93,7 +93,7 @@
   const totalPages = ref(1);
   const totalCourses = ref(0);
   const isLoading = ref(false);
-  axios.defaults.baseURL = "http://localhost:3333";
+  axios.defaults.baseURL = import.meta.env.VITE_API_URL;
   const isProfessorsExpanded = ref(false);
   
   // Redes sociales links
@@ -104,7 +104,7 @@
   // Cargar profesores
   const loadProfessors = async () => {
     try {
-      const response = await axios.get('/api/cursos/coursera/universidad/UpChile/profesores');
+      const response = await axios.get('/cursos/coursera/universidad/UpChile/profesores');
       professors.value = response.data;
     } catch (error) {
       console.error("Error al obtener los profesores:", error.message);
@@ -116,7 +116,7 @@
   const loadCourses = async () => {
     isLoading.value = true;
     try {
-      const response = await axios.get(`/api/cursos/coursera/universidad/UpChile?page=${currentPage.value}`);
+      const response = await axios.get(`/cursos/coursera/universidad/UpChile?page=${currentPage.value}`);
       courses.value = response.data.courses;
       totalPages.value = response.data.totalPages;
       totalCourses.value = response.data.totalCourses;

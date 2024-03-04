@@ -62,7 +62,7 @@ const toggleFavorite = async () => {
       return;
     }
     const action = isFavorited.value ? 'remove' : 'add';
-    const response = await axios.post(`http://localhost:3333/users/favorites/${action}`, {
+    const response = await axios.post(`${import.meta.env.VITE_API_URL}/users/favorites/${action}`, {
       userId,
       courseId: props.courseId,
       courseType: props.courseType

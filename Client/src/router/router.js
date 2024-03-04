@@ -2,7 +2,7 @@
 import { createRouter, createWebHistory } from 'vue-router';
 
 // Importaciones de vistas generales
-import Home from '../views/Home.vue';
+import Home from '../views/home.vue';
 import Nosotros from '../views/nosotros.vue';
 import Login from '../views/login.vue';
 import Profile from '../views/profile.vue';
@@ -12,7 +12,7 @@ import Error404 from '../views/error404.vue';
 // Importaciones de cursos (Lazy loading)
 const CursosUTN = () => import('../views/coursesViews/utn/cursosUTN.vue');
 const CursosUDEMY = () => import('../views/coursesViews/udemy/cursosUDEMY.vue');
-const CursosCoursera = () => import('../views/coursesViews/coursera/cursosCoursera.vue');
+const CursosCoursera = () => import('../views/coursesViews/coursera/cursosCOURSERA.vue');
 
 // Importaciones de detalles de cursos (Lazy loading)
 const DetalleCursoUTN = () => import('../views/coursesViews/utn/detalleCursoUTN.vue');

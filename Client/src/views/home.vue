@@ -7,7 +7,7 @@
         <!-- Título -->
         <h1 :class="{ 'blurred-background': isInputClicked }"
           class="text-left font-semibold text-3xl md:text-4xl text-black pb-3">
-          Encuentra hoy mismo tu próximo curso sin esfuerzo
+          Encuentra hoy mismo tu próximo curso
         </h1>
         <!-- Campo de búsqueda -->
         <div class="max-w-xl m-0 p-0">
@@ -203,7 +203,7 @@
                 <a href="/coursera/universidades/uab">
                   <button
                     class="hover:scale-110 hover:bg-indigo-200 rounded-lg transform transition duration-100 ease-in-out w-60 sm:w-60 flex items-center">
-                    <img class="w-12" src="../assets/instituciones/UAB.png" alt="Universidad Autónoma de Barcelona">
+                    <img class="w-12" src="../assets/instituciones/uab.png" alt="Universidad Autónoma de Barcelona">
                     <span class="ml-2 text-lg font-semibold text-black">UAB</span>
                   </button>
                 </a>
@@ -388,7 +388,8 @@ console.log(import.meta.env);
 const search = async () => {
   try {
     const response = await axios.get(
-      `http://localhost:3333/api/cursos/search?q=${query.value}&all=${!limitResults.value}`
+      `${baseURL}/cursos/search?q=${query.value
+      }&all=${!limitResults.value}`
     );
     courses.value = response.data;
   } catch (error) {

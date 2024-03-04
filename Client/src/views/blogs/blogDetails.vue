@@ -34,7 +34,7 @@ const blog = ref(null);
 onMounted(async () => {
   try {
     const slug = route.params.slug; // Asegúrate de obtener el slug de los parámetros de la ruta
-    const response = await axios.get(`http://localhost:3333/api/blogs/slug/${slug}`);
+    const response = await axios.get(`${import.meta.env.VITE_API_URL}/blogs/slug/${slug}`);
     blog.value = response.data;
   } catch (error) {
     console.error('Error al cargar el blog:', error);

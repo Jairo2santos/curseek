@@ -316,7 +316,7 @@
             <li class="my-0.5 flex items-center">
               <a href="/cursos/udemy"
                 class="hover:bg-gray-200 transition px-4 flex items-center w-full justify-between">
-                <img class="w-8" src="../assets/instituciones/udemy.png" alt="Coursera" />
+                <img class="w-8" src="../assets/instituciones/Udemy.png" alt="Coursera" />
                 <span class="flex-1 text-gray-800 py-1.5 px-1">Udemy</span>
               </a>
             </li>
@@ -409,7 +409,7 @@ export default {
     const search = async () => {
       try {
         const response = await axios.get(
-          `http://localhost:3333/api/cursos/search?q=${query.value}&all=${!limitResults.value}`
+          `${import.meta.env.VITE_API_URL}/cursos/search?q=${query.value}&all=${!limitResults.value}`
         );
         courses.value = response.data;
       } catch (error) {

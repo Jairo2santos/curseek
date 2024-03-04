@@ -152,7 +152,7 @@ onMounted(async () => {
   const courseSlug = route.params.slug;
   try {
     const response = await axios.get(
-      `http://localhost:3333/api/cursos/coursera/${courseSlug}`
+      `${import.meta.env.VITE_API_URL}/cursos/coursera/${courseSlug}`
     );
     course.value = response.data;
     processCourseDetailsText();
