@@ -34,7 +34,7 @@
         <!-- Resultados -->
         <div class="flex flex-col md:flex-row container mx-0 justify-center">
           <div v-if="courses.length > 0"
-            class="md:absolute md:max-w-full mt-1 bg-white shadow-lg max-h-96 overflow-y-auto z-10">
+            class="md:absolute md:max-w-full mt-3 bg-white shadow-lg max-h-96 overflow-y-auto z-10">
             <p class="px-4 py-2 text-sm font-semibold text-indigo-600 border-b">
               Los cursos que se relacionan con "{{ query }}"
             </p>
@@ -48,28 +48,24 @@
                   <div class="flex-grow p-2 md:p-0">
                     <div>
                       <h2 class="text-sm font-semibold hover:underline md:w-80">
-                        {{
-          course.title ||
-          "Aprende con este curso y descubre oportunidades"
-        }}
+                        {{ course.title || "Aprende con este curso y descubre oportunidades" }}
                       </h2>
                       <p class="text-xs text-gray-600 pt-1">
                         {{ course.source || "Curso" }}
                       </p>
                     </div>
                   </div>
-                  <div class="bg-gray-200 md:bg-white items-end m-2 rounded-lg md:m-0">
-                    <button class="mx-3" title="Agregar a Favoritos">
-                      <Favoritos :courseId="course._id" :courseType="'COURSERA'" :isFavorited="course.isFavorited" />
-                    </button>
-                  </div>
                   <div class="flex items-end text-sm font-semibold text-green-700">
                     <p>{{ course.price || "Gratis" }}</p>
                   </div>
-                  <!-- Sección 3: Botones (usando el componente Favoritos) -->
                 </a>
               </li>
             </ul>
+            <div class="flex justify-center py-4">
+              <button @click="toggleViewAll" class="mt-4 text-blue-600 hover:underline transition focus:outline-none">
+                {{ limitResults ? "Ver Más" : "Ver Menos" }}
+              </button>
+            </div>
           </div>
         </div>
 
