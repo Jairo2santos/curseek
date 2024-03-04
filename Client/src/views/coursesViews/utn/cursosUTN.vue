@@ -140,7 +140,7 @@ import Sidebar from "../../../components/Sidebar.vue";
 //import Filtros from "../../../components/Filtros.vue";
 import Favoritos from "../../../components/Favoritos.vue";
 
-axios.defaults.baseURL = "http://localhost:3333";
+axios.defaults.baseURL = import.meta.env.VITE_API_URL;
 
 // Estado
 const pageTitle = "Cursos de Universidad Tecnológica Nacional";
@@ -164,7 +164,7 @@ const loadCourses = async (page, filterType = null, selectedCategories = []) => 
     queryParams += `&categories=${selectedCategories.join(",")}`;
   }
   try {
-    const { data } = await axios.get(`api/cursos/utn?${queryParams}`);
+    const { data } = await axios.get(`/cursos/utn?${queryParams}`);
     courses.value = data.courses;
     totalPages.value =
       typeof data.totalPages === "number" ? data.totalPages : 1;

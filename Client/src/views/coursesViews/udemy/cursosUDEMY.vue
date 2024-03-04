@@ -153,7 +153,7 @@ import Sidebar from "../../../components/Sidebar.vue";
 import Favoritos from "../../../components/Favoritos.vue";
 const router = useRouter();
 
-axios.defaults.baseURL = "http://localhost:3333";
+axios.defaults.baseURL = import.meta.env.VITE_API_URL;
 
 // Estado
 const pageTitle = "Cursos de Udemy";
@@ -172,7 +172,7 @@ const loadCourses = async (page, selectedCategory = '') => {
     queryParams += `&category=${encodeURIComponent(selectedCategory)}`;
   }
   try {
-    const { data } = await axios.get(`api/cursos/udemy?${queryParams}`);
+    const { data } = await axios.get(`/cursos/udemy?${queryParams}`);
     courses.value = data.courses;
     totalPages.value = typeof data.totalPages === "number" ? data.totalPages : 1;
     totalCourses.value = data.totalCourses;
@@ -185,7 +185,7 @@ const loadCourses = async (page, selectedCategory = '') => {
 };
 const loadCategories = async () => {
   try {
-    const { data } = await axios.get("api/categorias/udemy");
+    const { data } = await axios.get("/categorias/udemy");
     categories.value = data;
   } catch (error) {
     console.error("Error al obtener las categorías de Udemy:", error);

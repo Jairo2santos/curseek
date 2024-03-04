@@ -91,7 +91,7 @@ const limitResults = ref(true);
 const search = async () => {
   try {
     const response = await axios.get(
-      `http://localhost:3333/api/cursos/api/search?q=${query.value
+      `${import.meta.env.VITE_API_URL}/cursos/api/search?q=${query.value
       }&all=${!limitResults.value}`
     );
     courses.value = response.data;

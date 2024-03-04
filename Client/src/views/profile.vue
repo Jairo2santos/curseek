@@ -198,7 +198,7 @@ const fetchUserProfile = async () => {
     return;
   }
   try {
-    const response = await axios.get(`http://localhost:3333/api/users/profile/id/${userId.value}`, {
+    const response = await axios.get(`${import.meta.env.VITE_API_URL}/users/profile/id/${userId.value}`, {
       headers: {
         Authorization: `Bearer ${localStorage.getItem('token')}`
       }
@@ -220,7 +220,7 @@ const removeFromFavorites = async (courseId) => {
   }
 
   try {
-    await axios.post('http://localhost:3333/api/users/favorites/remove', {
+    await axios.post(`${import.meta.env.VITE_API_URL}/users/favorites/remove`, {
       userId: userId.value, courseId
     }, {
       headers: {
@@ -240,7 +240,7 @@ const loadFavoriteCourses = async () => {
     return;
   }
   try {
-    const response = await axios.get(`http://localhost:3333/api/users/favorites/${userId.value}`, {
+    const response = await axios.get(`${import.meta.env.VITE_API_URL}/users/favorites/${userId.value}`, {
       headers: {
         Authorization: `Bearer ${localStorage.getItem('token')}`
       }
@@ -267,7 +267,7 @@ const saveProfile = async () => {
     password: newPassword.value ? newPassword.value : undefined
   };
   try {
-    const response = await axios.put(`http://localhost:3333/api/users/profile/${userId.value}`, updatedData);
+    const response = await axios.put(`${import.meta.env.VITE_API_URL}/users/profile/${userId.value}`, updatedData);
     console.log('Perfil actualizado exitosamente');
 
     notificationMessage.value = 'Perfil actualizado con éxito.';

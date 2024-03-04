@@ -149,7 +149,7 @@ const categories = ref([]);
 
 const fetchUdemyCourse = async (courseSlug) => {
   try {
-    const response = await axios.get(`http://localhost:3333/api/cursos/udemy/${courseSlug}`);
+    const response = await axios.get(`${import.meta.env.VITE_API_URL}/cursos/udemy/${courseSlug}`);
     if (response.data) {
       udemyCourse.value = { ...response.data, image: response.data.image_480x270 };
     } else {
@@ -165,7 +165,7 @@ const fetchUdemyCourse = async (courseSlug) => {
 
 const loadCategories = async () => {
   try {
-    const { data } = await axios.get("http://localhost:3333/api/categorias/udemy");
+    const { data } = await axios.get(`${import.meta.env.VITE_API_URL}/categorias/udemy`);
     categories.value = data;
   } catch (error) {
     console.error("Error al obtener las categorías de Udemy:", error);

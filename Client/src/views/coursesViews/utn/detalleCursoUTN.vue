@@ -136,7 +136,7 @@ export default {
   async created() {
     const courseSlug = this.$route.params.slug; 
     try {
-      const response = await axios.get(`http://localhost:3333/api/cursos/utn/${courseSlug}`);
+      const response = await axios.get(`${import.meta.env.VITE_API_URL}/cursos/utn/${courseSlug}`);
       this.course = response.data;
     } catch (error) {
       console.error("Error obteniendo el detalle del curso:", error);

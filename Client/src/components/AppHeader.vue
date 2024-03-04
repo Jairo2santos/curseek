@@ -400,7 +400,7 @@ export default {
     const search = async () => {
       try {
         const response = await axios.get(
-          `http://localhost:3333/api/cursos/search?q=${query.value}&all=${!limitResults.value}`
+          `${import.meta.env.VITE_API_URL}/cursos/search?q=${query.value}&all=${!limitResults.value}`
         );
         courses.value = response.data;
       } catch (error) {
