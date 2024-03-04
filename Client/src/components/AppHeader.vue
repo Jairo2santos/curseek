@@ -44,7 +44,7 @@
             </div>
           </div>
 
-          <nav class="hidden lg:flex space-x-4 text-md">
+          <nav class="hidden lg:flex space-x-4">
             <!-- Campo de búsqueda -->
             <div class="max-w-xl m-0 p-0">
               <form @submit.prevent="search"
@@ -109,7 +109,7 @@
 
             <!-- Añadido: Mostrar "Login" o "Logout" según el estado de autenticación -->
             <router-link v-if="!loggedInUsername" to="/signUp"
-              class="text-white hover:bg-indigo-700 transition bg-indigo-500 rounded-full px-3 py-3 font-bold">Empezar</router-link>
+              class="text-white hover:bg-indigo-700 transition bg-indigo-500 rounded-lg px-3 py-3 font-semibold">Empezar</router-link>
             <span class="border-r border-gray-300"></span>
             <router-link v-if="!loggedInUsername" to="/login"
               class="hover:underline font-bold px-3 py-3">Acceso</router-link>
@@ -278,7 +278,7 @@
         <div v-if="menu2Visible"
           class="lg:hidden border-r border-l border-b border-gray-300 mx-2 shadow-xl bg-white text-black">
           <router-link v-if="!loggedInUsername" to="/signUp" @click="menu2Visible = false"
-            class="block text-white hover:bg-indigo-700 transition bg-indigo-500 rounded-full px-3 py-2 mx-6 mt-6 font-bold text-center">Empezar</router-link>
+            class="block text-white hover:bg-indigo-700 transition bg-indigo-500 rounded-lg px-3 py-2 mx-6 mt-6 font-semibold text-center">Empezar</router-link>
           <router-link v-if="!loggedInUsername" to="/login" @click="menu2Visible = false"
             class="block text-black hover:underline px-3 py-2 font-bold text-center my-4">Acceso</router-link>
           <router-link v-if="loggedInUsername" to="/profile" @click="menu2Visible = false" class="block m-4">Mi
@@ -459,18 +459,39 @@ export default {
     };
 
     const toggleMenu1 = () => {
-      menu1Visible.value = !menu1Visible.value;
-      isMenuOpen.value = !isMenuOpen.value;
-    };
+  if (menu1Visible.value) {
+    menu1Visible.value = false;
+    isMenuOpen.value = false;
+  } else {
+    menu1Visible.value = true;
+    isMenuOpen.value = true;
+    menu2Visible.value = false; // Cerrar el otro menú si estaba abierto
+    menuBuscadorResponsive.value = false; // Cerrar el otro menú si estaba abierto
+  }
+};
 
-    const buscadorResponsive = () => {
-      menuBuscadorResponsive.value = !menuBuscadorResponsive.value;
-      isMenuOpen.value = !isMenuOpen.value;
-    };
+const buscadorResponsive = () => {
+  if (menuBuscadorResponsive.value) {
+    menuBuscadorResponsive.value = false;
+    isMenuOpen.value = false;
+  } else {
+    menuBuscadorResponsive.value = true;
+    isMenuOpen.value = true;
+    menu1Visible.value = false; // Cerrar el otro menú si estaba abierto
+    menu2Visible.value = false; // Cerrar el otro menú si estaba abierto
+  }
+};
 
-    const toggleMenu2 = () => {
-      menu2Visible.value = !menu2Visible.value;
-    };
+const toggleMenu2 = () => {
+  if (menu2Visible.value) {
+    menu2Visible.value = false;
+  } else {
+    menu2Visible.value = true;
+    menu1Visible.value = false; // Cerrar el otro menú si estaba abierto
+    menuBuscadorResponsive.value = false; // Cerrar el otro menú si estaba abierto
+  }
+};
+
 
     // Observadores y otros métodos aquí si es necesario
     watch(() => route.query.q, (newQuery) => {

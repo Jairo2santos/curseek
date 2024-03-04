@@ -86,56 +86,56 @@
         <div class="mt-4 pr-0 md:pr-20">
           <h2 class="text-lg text-black font-bold p-2">Búsquedas frecuentes</h2>
           <button @click="handleSearch('Java')" @focus="setInputClicked(true)" @blur="setInputClicked(false)"
-            class="text-sm bg-indigo-100 text-gray-800 hover:bg-green-100 border border-gray-200 transition py-1 px-2 rounded-full mb-1 mr-1">
+            class="text-sm bg-indigo-100 text-gray-800 hover:bg-green-100 border border-gray-200 transition py-1 px-2 rounded-lg mb-1 mr-1">
             Java
           </button>
           <button @click="handleSearch('Javascript')" @focus="setInputClicked(true)" @blur="setInputClicked(false)"
-            class="text-sm bg-indigo-100 text-gray-800 hover:bg-green-100 border border-gray-200 transition py-1 px-2 rounded-full mb-1 mr-1">
+            class="text-sm bg-indigo-100 text-gray-800 hover:bg-green-100 border border-gray-200 transition py-1 px-2 rounded-lg mb-1 mr-1">
             Javascript
           </button>
           <button @click="handleSearch('React js')" @focus="setInputClicked(true)" @blur="setInputClicked(false)"
-            class="text-sm bg-indigo-100 text-gray-800 hover:bg-green-100 border border-gray-200 transition py-1 px-2 rounded-full mb-1 mr-1">
+            class="text-sm bg-indigo-100 text-gray-800 hover:bg-green-100 border border-gray-200 transition py-1 px-2 rounded-lg mb-1 mr-1">
             React js
           </button>
           <button @click="handleSearch('seguridad')" @focus="setInputClicked(true)" @blur="setInputClicked(false)"
-            class="text-sm bg-indigo-100 text-gray-800 hover:bg-green-100 border border-gray-200 transition py-1 px-2 rounded-full mb-1 mr-1">
+            class="text-sm bg-indigo-100 text-gray-800 hover:bg-green-100 border border-gray-200 transition py-1 px-2 rounded-lg mb-1 mr-1">
             Seguridad
           </button>
           <button @click="handleSearch('Administración de empresas')" @focus="setInputClicked(true)"
             @blur="setInputClicked(false)"
-            class="text-sm bg-indigo-100 text-gray-800 hover:bg-green-100 border border-gray-200 transition py-1 px-2 rounded-full mb-1 mr-1">
+            class="text-sm bg-indigo-100 text-gray-800 hover:bg-green-100 border border-gray-200 transition py-1 px-2 rounded-lg mb-1 mr-1">
             Administración de empresas
           </button>
           <button @click="handleSearch('física')" @focus="setInputClicked(true)" @blur="setInputClicked(false)"
-            class="text-sm bg-indigo-100 text-gray-800 hover:bg-green-100 border border-gray-200 transition py-1 px-2 rounded-full mb-1 mr-1">
+            class="text-sm bg-indigo-100 text-gray-800 hover:bg-green-100 border border-gray-200 transition py-1 px-2 rounded-lg mb-1 mr-1">
             Física
           </button>
           <button @click="handleSearch('Matemática')" @focus="setInputClicked(true)" @blur="setInputClicked(false)"
-            class="text-sm bg-indigo-100 text-gray-800 hover:bg-green-100 border border-gray-200 transition py-1 px-2 rounded-full mb-1 mr-1">
+            class="text-sm bg-indigo-100 text-gray-800 hover:bg-green-100 border border-gray-200 transition py-1 px-2 rounded-lg mb-1 mr-1">
             Matemática
           </button>
           <button @click="handleSearch('YouTube')" @focus="setInputClicked(true)" @blur="setInputClicked(false)"
-            class="text-sm bg-indigo-100 text-gray-800 hover:bg-green-100 border border-gray-200 transition py-1 px-2 rounded-full mb-1 mr-1">
+            class="text-sm bg-indigo-100 text-gray-800 hover:bg-green-100 border border-gray-200 transition py-1 px-2 rounded-lg mb-1 mr-1">
             YouTube
           </button>
           <button @click="handleSearch('Vue 3')" @focus="setInputClicked(true)" @blur="setInputClicked(false)"
-            class="text-sm bg-indigo-100 text-gray-800 hover:bg-green-100 border border-gray-200 transition py-1 px-2 rounded-full mb-1 mr-1">
+            class="text-sm bg-indigo-100 text-gray-800 hover:bg-green-100 border border-gray-200 transition py-1 px-2 rounded-lg mb-1 mr-1">
             Vue 3
           </button>
           <button @click="handleSearch('Salud')" @focus="setInputClicked(true)" @blur="setInputClicked(false)"
-            class="text-sm bg-indigo-100 text-gray-800 hover:bg-green-100 border border-gray-200 transition py-1 px-2 rounded-full mb-1 mr-1">
+            class="text-sm bg-indigo-100 text-gray-800 hover:bg-green-100 border border-gray-200 transition py-1 px-2 rounded-lg mb-1 mr-1">
             Salud
           </button>
           <button @click="handleSearch('Programación')" @focus="setInputClicked(true)" @blur="setInputClicked(false)"
-            class="text-sm bg-indigo-100 text-gray-800 hover:bg-green-100 border border-gray-200 transition py-1 px-2 rounded-full mb-1 mr-1">
+            class="text-sm bg-indigo-100 text-gray-800 hover:bg-green-100 border border-gray-200 transition py-1 px-2 rounded-lg mb-1 mr-1">
             Programación
           </button>
           <button @click="handleSearch('Lengua')" @focus="setInputClicked(true)" @blur="setInputClicked(false)"
-            class="text-sm bg-indigo-100 text-gray-800 hover:bg-green-100 border border-gray-200 transition py-1 px-2 rounded-full mb-1 mr-1">
+            class="text-sm bg-indigo-100 text-gray-800 hover:bg-green-100 border border-gray-200 transition py-1 px-2 rounded-lg mb-1 mr-1">
             Lenguas
           </button>
           <button @click="handleSearch('Cocina')" @focus="setInputClicked(true)" @blur="setInputClicked(false)"
-            class="text-sm bg-indigo-100 text-gray-800 hover:bg-green-100 border border-gray-200 transition py-1 px-2 rounded-full mb-1 mr-1">
+            class="text-sm bg-indigo-100 text-gray-800 hover:bg-green-100 border border-gray-200 transition py-1 px-2 rounded-lg mb-1 mr-1">
             Cocina
           </button>
         </div>
@@ -143,7 +143,7 @@
 
       <div :class="{ 'blurred-background': isInputClicked }" class="md:w-1/2 object-cover md:h-full hidden md:block">
         <!-- Imagen -->
-        <img src="../assets/mirando_al_costado.jpg" alt="" />
+        <img src="../assets/mirando_al_costado-2.jpg" alt="" />
       </div>
     </div>
 
