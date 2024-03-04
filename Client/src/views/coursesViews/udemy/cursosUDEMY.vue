@@ -10,7 +10,7 @@
         <Sidebar :categories="categories" @filter-by-category="handleCategoryFilter" />
       </div>
       <!-- Contenido a la derecha del Sidebar -->
-      <div class="flex flex-col w-full md:ml-6">
+      <div class="flex flex-col w-full md:ml-6 md:mt-7">
         <!-- Filtros arriba -->
         <div class="mb-4">
         </div>

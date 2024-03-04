@@ -2,9 +2,9 @@
   <div class="bg-pastel-fucsia min-h-screen p-4">
     <!-- Verifica si el blog ha sido cargado -->
     <div v-if="blog" class="max-w-4xl mx-auto grid grid-cols-1 md:grid-cols-1 gap-4 pb-4">
-      <h1 class="text-4xl font-bold text-center pt-6 pb-4">{{ blog.title }}</h1>
+      <h1 class="text-4xl font-semibold text-center pt-6 pb-4">{{ blog.title }}</h1>
       <!-- Imagen del Blog -->
-      <img :src="blog.image" alt="" class="block mx-auto rounded-sm mb-4 w-full">
+      <img :src="blog.image" alt="" class="block mx-auto rounded-sm mb-4 w-1/2">
 
       <!-- Contenido del Blog -->
       <div class="md:col-span-1">

@@ -7,7 +7,7 @@
         <!-- Título -->
         <h1 :class="{ 'blurred-background': isInputClicked }"
           class="text-left font-semibold text-3xl md:text-4xl text-black pb-3">
-          Encuentra hoy mismo tu próximo curso sin esfuerzo.
+          Encuentra hoy mismo tu próximo curso sin esfuerzo
         </h1>
         <!-- Campo de búsqueda -->
         <div class="max-w-xl m-0 p-0">
@@ -19,8 +19,9 @@
                   d="M784-120 532-372q-30 24-69 38t-83 14q-109 0-184.5-75.5T120-580q0-109 75.5-184.5T380-840q109 0 184.5 75.5T640-580q0 44-14 83t-38 69l252 252-56 56ZM380-400q75 0 127.5-52.5T560-580q0-75-52.5-127.5T380-760q-75 0-127.5 52.5T200-580q0 75 52.5 127.5T380-400Z" />
               </svg>
             </button>
-            <input v-model="query" placeholder="Buscar más de 10,000 cursos..." class="rounded-xl p-3 flex-grow outline-none"
-              @focus="setInputClicked(true)" @blur="setInputClicked(false)" />
+            <input v-model="query" placeholder="Buscar más de 10,000 cursos..."
+              class="rounded-xl p-3 flex-grow outline-none" @focus="setInputClicked(true)"
+              @blur="setInputClicked(false)" />
             <button v-if="query" type="button" @click="clearSearch" class="p-2">
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="18">
                 <path
@@ -48,27 +49,27 @@
                     <div>
                       <h2 class="text-sm font-semibold hover:underline md:w-80">
                         {{
-                          course.title ||
-                          "Aprende con este curso y descubre oportunidades"
-                        }}
+          course.title ||
+          "Aprende con este curso y descubre oportunidades"
+        }}
                       </h2>
                       <p class="text-xs text-gray-600 pt-1">
                         {{ course.source || "Curso" }}
                       </p>
                     </div>
                   </div>
+                  <div class="bg-gray-200 md:bg-white items-end m-2 rounded-lg md:m-0">
+                    <button class="mx-3" title="Agregar a Favoritos">
+                      <Favoritos :courseId="course._id" :courseType="'COURSERA'" :isFavorited="course.isFavorited" />
+                    </button>
+                  </div>
                   <div class="flex items-end text-sm font-semibold text-green-700">
                     <p>{{ course.price || "Gratis" }}</p>
                   </div>
+                  <!-- Sección 3: Botones (usando el componente Favoritos) -->
                 </a>
               </li>
             </ul>
-            <div class="flex justify-center py-4">
-              <button @click="toggleViewAll"
-                class="px-4 py-2 border border-indigo-600 text-indigo-600 font-semibold rounded-lg hover:bg-indigo-600 hover:text-white focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-opacity-75 transition ease-in duration-300">
-                {{ limitResults ? "Ver Más" : "Ver Menos" }}
-              </button>
-            </div>
           </div>
         </div>
 
@@ -102,7 +103,7 @@
           </button>
           <button @click="handleSearch('seguridad')" @focus="setInputClicked(true)" @blur="setInputClicked(false)"
             class="text-sm bg-indigo-100 text-gray-800 hover:bg-green-100 border border-gray-200 transition py-1 px-2 rounded-full mb-1 mr-1">
-            seguridad
+            Seguridad
           </button>
           <button @click="handleSearch('Administración de empresas')" @focus="setInputClicked(true)"
             @blur="setInputClicked(false)"
@@ -111,7 +112,7 @@
           </button>
           <button @click="handleSearch('física')" @focus="setInputClicked(true)" @blur="setInputClicked(false)"
             class="text-sm bg-indigo-100 text-gray-800 hover:bg-green-100 border border-gray-200 transition py-1 px-2 rounded-full mb-1 mr-1">
-            física
+            Física
           </button>
           <button @click="handleSearch('Matemática')" @focus="setInputClicked(true)" @blur="setInputClicked(false)"
             class="text-sm bg-indigo-100 text-gray-800 hover:bg-green-100 border border-gray-200 transition py-1 px-2 rounded-full mb-1 mr-1">
@@ -144,13 +145,12 @@
         </div>
       </div>
 
-      <div :class="{ 'blurred-background': isInputClicked }" 
-        class="md:w-1/2 object-cover md:h-full hidden md:block">
+      <div :class="{ 'blurred-background': isInputClicked }" class="md:w-1/2 object-cover md:h-full hidden md:block">
         <!-- Imagen -->
         <img src="../assets/mirando_al_costado.jpg" alt="" />
       </div>
     </div>
-    
+
     <!-- El curso que quieras, cuando quieras -->
     <div :class="{ 'blurred-background': isInputClicked }"
       class="block flex-col md:flex-row max-w-screen-full bg-indigo-100">
@@ -207,25 +207,27 @@
                     <span class="ml-2 text-lg font-semibold text-black">UAB</span>
                   </button>
                 </a>
-              </li>              
+              </li>
               <li class="flex items-center justify-center">
                 <a href="/coursera/universidades/uchile">
                   <button
                     class="hover:scale-110 hover:bg-indigo-200 rounded-lg transform transition duration-100 ease-in-out w-60 sm:w-60 flex items-center">
-                    <img class="w-12" src="../assets/instituciones/Universidad_de_Chile.png" alt="Universidad Autónoma de Barcelona">
+                    <img class="w-12" src="../assets/instituciones/Universidad_de_Chile.png"
+                      alt="Universidad Autónoma de Barcelona">
                     <span class="ml-2 text-lg font-semibold text-black">U. de Chile</span>
                   </button>
                 </a>
-              </li>              
+              </li>
               <li class="flex items-center justify-center">
                 <a href="/coursera/universidades/udlac">
                   <button
                     class="hover:scale-110 hover:bg-indigo-200 rounded-lg transform transition duration-100 ease-in-out w-60 sm:w-60 flex items-center">
-                    <img class="w-12" src="../assets/instituciones/uniandes.png" alt="Universidad Autónoma de Barcelona">
+                    <img class="w-12" src="../assets/instituciones/uniandes.png"
+                      alt="Universidad Autónoma de Barcelona">
                     <span class="ml-2 text-lg font-semibold text-black">U. Andes Colombia</span>
                   </button>
                 </a>
-              </li>              
+              </li>
               <li class="flex items-center justify-center">
                 <a href="/coursera/universidades/unam">
                   <button
@@ -234,7 +236,7 @@
                     <span class="ml-2 text-lg font-semibold text-black">UNAM</span>
                   </button>
                 </a>
-              </li>              
+              </li>
               <li class="flex items-center justify-center">
                 <a href="/coursera/universidades/upchile">
                   <button
@@ -243,7 +245,7 @@
                     <span class="ml-2 text-lg font-semibold text-black">U. Católica de Chile</span>
                   </button>
                 </a>
-              </li>              
+              </li>
             </ul>
           </div>
           <!-- Contenido de Futuro -->
@@ -256,16 +258,6 @@
                     class="hover:scale-110 hover:bg-indigo-200 rounded-lg transform transition duration-100 ease-in-out w-60 sm:w-60 flex items-center">
                     <img class="w-12" src="../assets/instituciones/edX.png" alt="edX">
                     <span class="ml-2 text-lg font-semibold text-black">edX</span>
-                  </button>
-                </a>
-              </li>
-              <li class="flex items-center justify-center">
-                <a href="https://www.uade.edu.ar/" target="_blank">
-                  <button
-                    class="hover:scale-110 hover:bg-indigo-200 rounded-lg transform transition duration-100 ease-in-out w-60 sm:w-60 flex items-center">
-                    <img class="w-12" src="../assets/instituciones/UADE.png"
-                      alt="Universidad_Central_de_Venezuela">
-                    <span class="ml-2 text-lg font-semibold text-black">UADE</span>
                   </button>
                 </a>
               </li>
@@ -284,7 +276,7 @@
         </div>
       </div>
     </div>
-    
+
     <div :class="{ 'blurred-background': isInputClicked }"
       class="block flex-col md:flex-row max-w-screen-full bg-gray-100">
       <h2 class="text-center font-semibold text-3xl text-indigo-900 py-12">
@@ -294,7 +286,8 @@
         <!-- Card 1 -->
         <div
           class="max-w-xs mx-auto bg-white shadow-lg rounded-lg overflow-hidden transform transition-transform ease-in-out hover:scale-105 hover:shadow-xl px-4 py-2 mb-6">
-          <svg class="inline mr-2" fill="#6366f1" xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960" width="63">
+          <svg class="inline mr-2" fill="#6366f1" xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960"
+            width="63">
             <path
               d="M224.615-120q-26.846 0-45.731-18.884Q160-157.769 160-184.615v-444.846q-17.231-7.154-28.616-23.116Q120-668.538 120-689.231v-86.154q0-26.846 18.884-45.731Q157.769-840 184.615-840h590.77q26.846 0 45.731 18.884Q840-802.231 840-775.385v86.154q0 20.693-11.384 36.654-11.385 15.962-28.616 23.116v444.846q0 26.846-18.884 45.731Q762.231-120 735.385-120h-510.77ZM200-624.615v436.154q0 12.307 8.846 20.384T230.769-160h504.616q10.769 0 17.692-6.923T760-184.615v-440H200Zm-15.385-40h590.77q10.769 0 17.692-6.924Q800-678.462 800-689.231v-86.154q0-10.769-6.923-17.692T775.385-800h-590.77q-10.769 0-17.692 6.923T160-775.385v86.154q0 10.769 6.923 17.692 6.923 6.924 17.692 6.924Zm190.77 219.231h209.23V-480h-209.23v34.616ZM480-392.308Z" />
           </svg>
@@ -313,7 +306,8 @@
         <!-- Card 2 -->
         <div
           class="max-w-xs mx-auto bg-white shadow-lg rounded-lg overflow-hidden transform transition-transform ease-in-out hover:scale-105 hover:shadow-xl px-4 py-2 mb-6">
-          <svg class="inline mr-2" fill="#6366f1" xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960" width="63">
+          <svg class="inline mr-2" fill="#6366f1" xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960"
+            width="63">
             <path
               d="M184.615-200Q157-200 138.5-218.5 120-237 120-264.615v-430.77Q120-723 138.5-741.5 157-760 184.615-760h590.77Q803-760 821.5-741.5 840-723 840-695.385v430.77Q840-237 821.5-218.5 803-200 775.385-200h-590.77ZM480-475.384 160-684.615v420q0 10.769 6.923 17.692T184.615-240h590.77q10.769 0 17.692-6.923T800-264.615v-420L480-475.384ZM480-520l307.692-200H172.308L480-520ZM160-684.615V-720v455.385q0 10.769 6.923 17.692T184.615-240H160v-444.615Z" />
           </svg>
@@ -335,7 +329,8 @@
         <!-- Card 3 -->
         <div
           class="max-w-xs mx-auto bg-white shadow-lg rounded-lg overflow-hidden transform transition-transform ease-in-out hover:scale-105 hover:shadow-xl px-4 py-2 mb-6">
-          <svg class="inline mr-2" fill="#6366f1" xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960" width="63">
+          <svg class="inline mr-2" fill="#6366f1" xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960"
+            width="63">
             <path
               d="m480-173.846-30.308-27.385q-97.923-89.461-162-153.153-64.077-63.693-101.154-112.347-37.077-48.654-51.807-88.038Q120-594.154 120-634q0-76.308 51.846-128.154Q223.692-814 300-814q52.769 0 99 27t81 78.538Q514.769-760 561-787t99-27q76.308 0 128.154 51.846Q840-710.308 840-634q0 39.846-14.731 79.231-14.73 39.384-51.807 88.038-37.077 48.654-100.769 112.347Q609-290.692 510.308-201.231L480-173.846ZM480-228q96-86.769 158-148.654 62-61.884 98-107.384t50-80.616q14-35.115 14-69.346 0-60-40-100t-100-40q-47.769 0-88.154 27.269-40.384 27.269-72.307 82.116h-39.078q-32.692-55.616-72.692-82.5Q347.769-774 300-774q-59.231 0-99.615 40Q160-694 160-634q0 34.231 14 69.346 14 35.116 50 80.616t98 107q62 61.5 158 149.038Zm0-273Z" />
           </svg>
@@ -377,6 +372,7 @@
 import { ref } from "vue";
 import axios from "axios";
 import { useRouter } from "vue-router";
+
 const router = useRouter();
 const query = ref("");
 const courses = ref([]);
@@ -392,8 +388,7 @@ console.log(import.meta.env);
 const search = async () => {
   try {
     const response = await axios.get(
-      `${baseURL}/api/cursos/search?q=${query.value
-      }&all=${!limitResults.value}`
+      `http://localhost:3333/api/cursos/search?q=${query.value}&all=${!limitResults.value}`
     );
     courses.value = response.data;
   } catch (error) {
@@ -405,24 +400,23 @@ const clearSearch = () => {
   query.value = "";
   courses.value = [];
 };
+
 const setInputClicked = (clicked) => {
   isInputClicked.value = clicked;
 };
+
 const redirectToCourse = (course) => {
   if (course.source === "UDEMY") {
-    // Utiliza el slug en lugar del originalId
     router.push({
       name: "DetalleCursoUdemy",
       params: { slug: course.slug },
     });
   } else if (course.source === "UTN") {
-    // Utiliza el slug en lugar del originalId
     router.push({
       name: "DetalleCursoUTN",
       params: { slug: course.slug },
     });
   } else if (course.source === "COURSERA") {
-    // Utiliza el slug en lugar del originalId
     router.push({
       name: "DetalleCursoCoursera",
       params: { slug: course.slug },
@@ -432,7 +426,7 @@ const redirectToCourse = (course) => {
 
 const handleSearch = (value) => {
   query.value = value;
-  search(); 
+  search();
 };
 
 const toggleViewAll = () => {
@@ -440,6 +434,7 @@ const toggleViewAll = () => {
   search();
 };
 </script>
+
 <style scoped>
 .blurred-background {
   filter: blur(5px);

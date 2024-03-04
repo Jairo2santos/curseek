@@ -15,15 +15,15 @@
       </p>
       <h1 class="text-xl font-bold mb-4 text-center">Crea tu cuenta</h1>
       <div class="mb-4">
-        <label for="username" class="block text-sm font-medium text-gray-600">Nombre de Usuario</label>
+        <label for="username" class="block text-sm font-medium text-gray-600">Nombre de Usuario <span class="text-red-500">*</span></label>
         <input type="text" id="username" v-model="username" class="mt-1 p-2 w-full border rounded-md" required />
       </div>
       <div class="mb-4">
-        <label for="email" class="block text-sm font-medium text-gray-600">Email</label>
+        <label for="email" class="block text-sm font-medium text-gray-600">Email <span class="text-red-500">*</span></label>
         <input type="email" id="email" v-model="email" class="mt-1 p-2 w-full border rounded-md" required />
       </div>
       <div class="mb-4">
-        <label for="password" class="block text-sm font-medium text-gray-600">Contraseña</label>
+        <label for="password" class="block text-sm font-medium text-gray-600">Contraseña <span class="text-red-500">*</span></label>
         <div class="relative">
           <input :type="showPassword ? 'text' : 'password'" id="password" v-model="password" class="mt-1 p-2 w-full border rounded-md" required />
           <button type="button" @click="showPassword = !showPassword" class="absolute inset-y-0 right-0 flex items-center px-2">
@@ -35,7 +35,7 @@
         </div>
       </div>
       <div class="mb-4">
-        <label for="confirmPassword" class="block text-sm font-medium text-gray-600">Confirmar Contraseña</label>
+        <label for="confirmPassword" class="block text-sm font-medium text-gray-600">Confirmar Contraseña <span class="text-red-500">*</span></label>
         <div class="relative">
           <input :type="showPassword ? 'text' : 'password'" id="confirmPassword" v-model="confirmPassword" class="mt-1 p-2 w-full border rounded-md" required />
           <button type="button" @click="showPassword = !showPassword" class="absolute inset-y-0 right-0 flex items-center px-2">
@@ -50,7 +50,7 @@
         </p>
       </div>
       <div class="mb-4">
-        <label for="address" class="block text-sm font-medium text-gray-600">Dirección</label>
+        <label for="address" class="block text-sm font-medium text-gray-600">Dirección <span class="text-red-500">*</span></label>
         <textarea id="address" v-model="address" class="mt-1 p-2 w-full border rounded-md h-24"></textarea>
       </div>
       <div class="mb-4">

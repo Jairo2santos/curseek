@@ -12,11 +12,15 @@
                 <path d="M120-240v-80h720v80H120Zm0-200v-80h720v80H120Zm0-200v-80h720v80H120Z" />
               </svg>
               <svg v-else xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 -960 960 960" width="24">
-                <path
-                  d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z" />
+                <path d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z" />
               </svg>
             </button>
-            <a href="/" class="mx-12 md:mx-0"> <!-- Añadido el margen para separar el logo de los botones -->
+            <button @click="buscadorResponsive" class="lg:hidden ml-4">
+              <svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 -960 960 960" width="24">
+                <path d="M784-120 532-372q-30 24-69 38t-83 14q-109 0-184.5-75.5T120-580q0-109 75.5-184.5T380-840q109 0 184.5 75.5T640-580q0 44-14 83t-38 69l252 252-56 56ZM380-400q75 0 127.5-52.5T560-580q0-75-52.5-127.5T380-760q-75 0-127.5 52.5T200-580q0 75 52.5 127.5T380-400Z" />
+              </svg>
+            </button>
+            <a href="/" class="mx-12 ml-4 md:mx-0"> <!-- Añadido el margen para separar el logo de los botones -->
               <img src="../assets/logo-curseek.png" alt="CurSeek" width="194">
             </a>
             <button @click="toggleMenu2" class="lg:hidden">
@@ -32,8 +36,7 @@
               </button>
             </div>
             <div class="relative ml-6 hidden md:block">
-              <button
-                class="text-indigo-900 hover:text-indigo-600 transition font-serif font-semibold focus:outline-none w-full">
+              <button class="text-indigo-900 hover:text-indigo-600 transition focus:outline-none w-full">
                 <a href="/blogs" class="ml-2 justify-between items-center py-1">
                   <span>Blog</span>
                 </a>
@@ -63,7 +66,6 @@
                 </button>
               </form>
               <div>
-
                 <!-- Resultados -->
                 <div class="flex flex-col md:flex-row container mx-0 justify-center">
                   <div v-if="courses.length > 0"
@@ -96,7 +98,7 @@
                     </ul>
                     <div class="flex justify-center py-4">
                       <button @click="toggleViewAll"
-                        class="px-4 py-2 border border-indigo-600 text-indigo-600 font-semibold rounded-lg hover:bg-indigo-600 hover:text-white focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-opacity-75 transition ease-in duration-300">
+                        class="mt-4 text-blue-600 hover:underline transition focus:outline-none">
                         {{ limitResults ? "Ver Más" : "Ver Menos" }}
                       </button>
                     </div>
@@ -123,7 +125,7 @@
           </nav>
         </div>
 
-        <div v-if="menu1Visible"
+        <div v-if="menuBuscadorResponsive"
           class="lg:hidden border-r border-l border-b border-gray-300 mx-2 shadow-xl p-4 bg-white text-black">
           <!-- <router-link v-if="!loggedInUsername" to="/login" class="block mb-4">Login</router-link> -->
           <!-- <a v-else @click="logout" class="block mb-4 cursor-pointer">Logout</a> -->
@@ -181,7 +183,7 @@
                   </ul>
                   <div class="flex justify-center py-4">
                     <button @click="toggleViewAll"
-                      class="px-4 py-2 border border-indigo-600 text-indigo-600 font-semibold rounded-lg hover:bg-indigo-600 hover:text-white focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-opacity-75 transition ease-in duration-300">
+                      class="mt-4 text-blue-600 hover:underline transition focus:outline-none">
                       {{ limitResults ? "Ver Más" : "Ver Menos" }}
                     </button>
                   </div>
@@ -189,7 +191,13 @@
               </div>
             </div>
           </div>
-          <ul class="pt-2">
+        </div>
+
+        <div v-if="menu1Visible"
+          class="lg:hidden border-r border-l border-b border-gray-300 mx-2 shadow-xl p-4 bg-white text-black">
+          <!-- <router-link v-if="!loggedInUsername" to="/login" class="block mb-4">Login</router-link> -->
+          <!-- <a v-else @click="logout" class="block mb-4 cursor-pointer">Logout</a> -->
+          <ul>
             <span class="font-semibold text-indigo-700">Proveedores</span>
             <li class="border-b border-gray-300 pb-4">
               <a href="/cursos/udemy" class="flex justify-between items-center py-1">
@@ -257,7 +265,7 @@
             </li>
             <li class="pt-2">
               <a href="/blogs"
-                class="flex justify-between items-center py-1 font-serif text-indigo-900 font-bold border-t border-gray-300">
+                class="flex justify-between items-center py-1 text-indigo-900 border-t border-gray-300">
                 <span>Blog</span>
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24">
                   <path d="M9.41 7.41L14.83 12l-5.42 5.41L10 18l6-6-6-6-1.59 1.41Z" />
@@ -389,6 +397,7 @@ export default {
     const isInputClicked = ref(false);
     const limitResults = ref(true);
     const loggedInUsername = ref(localStorage.getItem('loggedInUsername'));
+    const menuBuscadorResponsive = ref(false);
     const menu1Visible = ref(false);
     const menu2Visible = ref(false);
     const dropdownVisible = ref(false);
@@ -434,6 +443,9 @@ export default {
           params: { slug: course.slug },
         });
       }
+
+      // Limpiar la búsqueda después de redirigir
+      clearSearch();
     };
 
     const handleSearch = (value) => {
@@ -451,6 +463,10 @@ export default {
       isMenuOpen.value = !isMenuOpen.value;
     };
 
+    const buscadorResponsive = () => {
+      menuBuscadorResponsive.value = !menuBuscadorResponsive.value;
+      isMenuOpen.value = !isMenuOpen.value;
+    };
 
     const toggleMenu2 = () => {
       menu2Visible.value = !menu2Visible.value;
@@ -482,6 +498,7 @@ export default {
       isInputClicked,
       limitResults,
       loggedInUsername,
+      menuBuscadorResponsive,
       menu1Visible,
       menu2Visible,
       dropdownVisible,
@@ -495,6 +512,7 @@ export default {
       redirectToCourse,
       handleSearch,
       toggleViewAll,
+      buscadorResponsive,
       toggleMenu1,
       toggleMenu2,
     };

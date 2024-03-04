@@ -4,8 +4,8 @@
       @close="showNotification = false" />
     <!-- Texto introductorio -->
     <div class="intro-text mb-4">
-      <h1 class="text-4xl text-center py-12 lg:text-5xl font-bold text-gray-800">
-        <span class="font-serif text-indigo-900">Blog | </span>Bienvenido
+      <h1 class="text-4xl text-center py-12 md:text-4xl font-semibold text-gray-800">
+        <span class="text-indigo-900">Blog | </span>Informes y Noticias
       </h1>
       <p class="text-md md:text-center text-left md:px-0 px-6 pb-4">
         Descubre las últimas tendencias, consejos y estrategias para potenciar tu carrera
@@ -28,8 +28,8 @@
           class="flex flex-col h-full bg-white rounded-lg shadow-sm hover:shadow-xl transition overflow-hidden">
           <img :src="blog.image" alt="Imagen del Blog" class="w-full h-48 object-cover">
           <div class="p-4 flex-grow">
-            <h2 class="text-lg font-bold text-pastel-verde mb-2">{{ blog.title }}</h2>
-            <p class="text-gray-700 text-md mb-4">{{ blog.content.substring(0, 150) + "..." }}</p>
+            <h2 class="text-lg font-semibold text-pastel-verde mb-2">{{ blog.title }}</h2>
+            <p class="text-gray-700 text-sm mb-4">{{ blog.content.substring(0, 150) + "..." }}</p>
             <div v-if="isAdmin" class="admin-buttons flex space-x-2 mt-4">
               <router-link :to="{ name: 'EditBlog', params: { slug: blog.slug } }"
                 class="inline-block bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded-lg transition-colors duration-200">Editar</router-link>

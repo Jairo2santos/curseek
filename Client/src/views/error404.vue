@@ -62,7 +62,7 @@
         </ul>
         <div class="flex justify-center py-4">
           <button @click="toggleViewAll"
-            class="px-4 py-2 border border-indigo-600 text-indigo-600 font-semibold rounded-lg hover:bg-indigo-600 hover:text-white focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-opacity-75 transition ease-in duration-300">
+            class="mt-4 text-blue-600 hover:underline transition focus:outline-none">
             {{ limitResults ? "Ver Más" : "Ver Menos" }}
           </button>
         </div>
@@ -87,12 +87,10 @@ const courses = ref([]);
 const isInputClicked = ref(false);
 const limitResults = ref(true);
 
-
 const search = async () => {
   try {
     const response = await axios.get(
-      `http://localhost:3333/api/cursos/api/search?q=${query.value
-      }&all=${!limitResults.value}`
+      `http://localhost:3333/api/cursos/search?q=${query.value}&all=${!limitResults.value}`
     );
     courses.value = response.data;
   } catch (error) {
@@ -104,30 +102,33 @@ const clearSearch = () => {
   query.value = "";
   courses.value = [];
 };
+
 const setInputClicked = (clicked) => {
   isInputClicked.value = clicked;
 };
+
 const redirectToCourse = (course) => {
   if (course.source === "UDEMY") {
-    // Utiliza el slug en lugar del originalId
     router.push({
       name: "DetalleCursoUdemy",
       params: { slug: course.slug },
     });
   } else if (course.source === "UTN") {
-    // Utiliza el slug en lugar del originalId
     router.push({
       name: "DetalleCursoUTN",
+      params: { slug: course.slug },
+    });
+  } else if (course.source === "COURSERA") {
+    router.push({
+      name: "DetalleCursoCoursera",
       params: { slug: course.slug },
     });
   }
 };
 
-
 const handleSearch = (value) => {
-  // Establece el contenido del campo de búsqueda al hacer clic en un botón de búsqueda frecuente
   query.value = value;
-  search(); // Realiza la búsqueda automáticamente al establecer el contenido del campo
+  search();
 };
 
 const toggleViewAll = () => {
