@@ -5,14 +5,14 @@
     <form class="bg-white rounded shadow-md p-6 w-80" @submit.prevent="login">
       <h2 class="text-xl mb-4 text-center">Iniciar Sesión</h2>
       <div class="mb-6">
-        <label for="username" class="block text-md mb-2">Nombre de Usuario <span class="text-red-500">*</span></label>
-        <input type="text" id="username" v-model="username" placeholder="" required
+        <label for="username" class="block text-md mb-2">Nombre de usuario <span class="text-red-500">*</span></label>
+        <input type="text" id="username" placeholder="Ingrese su nombre de usuario" v-model="username" required
           class="w-full px-3 py-2 border rounded-md focus:outline-none focus:ring focus:border-blue-300" />
       </div>
       <div class="mb-6">
         <label for="password" class="block text-md mb-2">Contraseña <span class="text-red-500">*</span></label>
         <div class="relative">
-          <input :type="showPassword ? 'text' : 'password'" id="password" v-model="password" class="mt-1 p-2 w-full border rounded-md" required />
+          <input :type="showPassword ? 'text' : 'password'" id="password" placeholder="Ingerse su contraseña" v-model="password" class="mt-1 p-2 w-full border rounded-md" required />
           <button type="button" @click="showPassword = !showPassword" class="absolute inset-y-0 right-0 flex items-center px-2">
             <svg :class="{'text-gray-500': !showPassword, 'text-gray-700': showPassword}" class="mr-1" xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960" width="24">
               <path v-if="showPassword" d="M480.181-353.846q60.973 0 103.473-42.681t42.5-103.654q0-60.973-42.681-103.473t-103.654-42.5q-60.973 0-103.473 42.681t-42.5 103.654q0 60.973 42.681 103.473t103.654 42.5ZM480-392q-45 0-76.5-31.5T372-500q0-45 31.5-76.5T480-608q45 0 76.5 31.5T588-500q0 45-31.5 76.5T480-392Zm.11 152q-129.956 0-236.879-70.731Q136.307-381.461 83.077-500q53.23-118.539 160.044-189.269Q349.934-760 479.89-760q129.956 0 236.879 70.731Q823.693-618.539 876.923-500q-53.23 118.539-160.044 189.269Q610.066-240 480.11-240ZM480-500Zm0 220q113 0 207.5-59.5T832-500q-50-101-144.5-160.5T480-720q-113 0-207.5 59.5T128-500q50 101 144.5 160.5T480-280Z"/>
