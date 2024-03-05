@@ -174,15 +174,7 @@ const checkIfCourseIsFavorited = async (userId, courseId) => {
     throw new Error('Error al verificar si el curso está en favoritos.');
   }
 };
-const getUserByEmail = async (email) => {
-  try {
-    const user = await User.findOne({ email: email });
-    return user;
-  } catch (error) {
-    console.error("Error buscando usuario por email:", error);
-    throw error; // Lanza el error para manejarlo más arriba en la cadena de llamadas
-  }
-};
+
 module.exports = {
   getUserById,
   addFavoriteToUser,
@@ -195,5 +187,4 @@ module.exports = {
   register,
   updateUserProfile,
   checkIfCourseIsFavorited,
-  getUserByEmail
 };

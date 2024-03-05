@@ -87,10 +87,12 @@ const courses = ref([]);
 const isInputClicked = ref(false);
 const limitResults = ref(true);
 
+const baseURL = import.meta.env.VITE_API_URL;
+
 const search = async () => {
   try {
     const response = await axios.get(
-      `${import.meta.env.VITE_API_URL}/cursos/api/search?q=${query.value
+      `${baseURL}/cursos/search?q=${query.value
       }&all=${!limitResults.value}`
     );
     courses.value = response.data;

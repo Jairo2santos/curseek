@@ -330,8 +330,11 @@ const saveProfile = async () => {
     password: newPassword.value ? newPassword.value : undefined
   };
   try {
-    const response = await axios.put(`${import.meta.env.VITE_API_URL}/users/profile/${userId.value}`, updatedData);
-    console.log('Perfil actualizado exitosamente');
+    const response = await axios.put(`${import.meta.env.VITE_API_URL}/users/profile/${userId.value}`, updatedData, {
+      headers: {
+        Authorization: `Bearer ${localStorage.getItem('token')}`
+      }
+    });    console.log('Perfil actualizado exitosamente');
 
     notificationMessage.value = 'Perfil actualizado con éxito.';
     notificationType.value = 'success';

@@ -195,7 +195,7 @@ const handleCategoryFilter = async (categories) => {
 };
 const loadCategories = async () => {
   try {
-    const { data } = await axios.get("api/categorias/utn");
+    const { data } = await axios.get("/categorias/utn");
     categories.value = data;
   } catch (error) {
     console.error("Error al obtener las categorías:", error);

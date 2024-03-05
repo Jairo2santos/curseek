@@ -2,7 +2,6 @@
 
 const userService = require('../../services/generals/user.services');
 const crypto = require('crypto');
-const nodemailerConfig = require('../../configs/nodemailerConfig'); // Asegúrate de tener este archivo configurado
 
 exports.getAllUsers = async (req, res) => {
   try {
@@ -142,61 +141,4 @@ exports.updateUserProfile = async (req, res) => {
   }
 };
 
-exports.solicitarRestablecimiento = async (req, res) => {
-  const { email } = req.body;
-  const user = await userService.getUserByEmail(email); // Asegúrate de implementar este método en tu userService
 
-  if (!user) {
-    return res.status(404).send('Usuario no encontrado.');
-  }
-
-  const token = crypto.randomBytes(20).toString('hex');
-  user.resetPasswordToken = token;
-  user.resetPasswordExpires = Date.now() + 3600000; // 1 hora
-
-  await user.save();
-
-  nodemailerConfig.enviarCorreoRestablecimiento(email, token); // Asegúrate de implementar este método en tu configuración de Nodemailer
-
-  res.send('Correo de restablecimiento enviado.');
-};
-
-exports.restablecerContrasena = async (req, res) => {
-  const { token } = req.params;
-  const { password } = req.body;
-
-  const user = await userService.getUserByResetPasswordToken(token); // Implementa este método
-
-  if (!user || user.resetPasswordExpires < Date.now()) {
-    return res.status(400).send('Token de restablecimiento no válido o expirado.');
-  }
-
-  user.password = await userService.hashPassword(password); // Implementa este método para hashear la contraseña
-  user.resetPasswordToken = undefined;
-  user.resetPasswordExpires = undefined;
-
-  await user.save();
-
-  res.send('Contraseña actualizada con éxito.');
-};
-exports.solicitarRestablecimiento = async (req, res) => {
-  const { email } = req.body;
-  try {
-    const user = await userService.getUserByEmail(email);
-    if (!user) {
-      return res.status(404).send('Usuario no encontrado.');
-    }
-
-    const token = crypto.randomBytes(20).toString('hex');
-    user.resetPasswordToken = token;
-    user.resetPasswordExpires = Date.now() + 3600000; // 1 hora
-
-    await user.save();
-    nodemailerConfig.enviarCorreoRestablecimiento(email, token);
-
-    res.send('Correo de restablecimiento enviado.');
-  } catch (error) {
-    console.error("Error en solicitarRestablecimiento:", error.message);
-    res.status(500).send("Error interno del servidor");
-  }
-};
