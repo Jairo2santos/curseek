@@ -32,7 +32,7 @@
       </p>
       <div>
         <p class="mt-4 text-center text-sm border-t border-gray-300 py-4">
-          ¿Olvidaste tu contraseña?, comunicate con nosotros: <a href="mailto:support@curseek.com" class="text-indigo-500">support@curseek.com</a>
+          ¿Olvidaste tu contraseña?, comunicate con nosotros: <a href="mailto:restore@curseek.com" class="text-indigo-500">restore@curseek.com</a>
         </p>
       </div>
     </form>
@@ -51,7 +51,6 @@ const showPassword = ref(false);
 const showNotification = ref(false);
 const notificationMessage = ref('');
 const notificationType = ref('');
-console.log('VITE_API_URL:', import.meta.env.VITE_API_URL);
 
 const login = async () => {
   console.log(`Attempting to login with username: ${username.value} and password: ${password.value}`);
@@ -62,7 +61,6 @@ const login = async () => {
       password: password.value,
     });
     if (response.status === 200) {
-      console.log('Login response:', response.data);
       notify('Inicio de sesión exitoso!', 'success');
       localStorage.setItem('token', response.data.token);
       localStorage.setItem('userRole', response.data.role);

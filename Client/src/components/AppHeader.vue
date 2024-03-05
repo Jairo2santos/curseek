@@ -536,6 +536,7 @@ const toggleMenu2 = () => {
       buscadorResponsive,
       toggleMenu1,
       toggleMenu2,
+      isMenuOpen
     };
   },
 };

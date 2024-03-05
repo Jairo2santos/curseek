@@ -232,6 +232,11 @@ const togglePasswordVisibility = () => {
 };
 // Función para cerrar sesión
 const logout = () => {
+  notificationMessage.value = 'Cerrando sesión...';
+  notificationType.value = 'success'; // o 'info', si prefieres
+  showNotification.value = true;
+  new Promise(resolve => setTimeout(resolve, 3000));
+
   localStorage.clear();
   router.push('/login');
 };
@@ -271,11 +276,25 @@ const removeFromFavorites = async (courseId) => {
         Authorization: `Bearer ${token}`
       }
     });
-
+ // Mostrar notificación de éxito
+   notificationMessage.value = 'Curso eliminado de favoritos con éxito.';
+    notificationType.value = 'success';
+    showNotification.value = true;
+    // Ocultar la notificación después de 3 segundos
+    setTimeout(() => {
+      showNotification.value = false;
+    }, 3000);
     // Filtrar el curso eliminado de la lista de favoritos
     favoriteCourses.value = favoriteCourses.value.filter(course => course._id !== courseId);
   } catch (error) {
     console.error('Error al eliminar curso de favoritos:', error);
+    notificationMessage.value = 'Error al eliminar curso de favoritos. Por favor, intente de nuevo.';
+    notificationType.value = 'error';
+    showNotification.value = true;
+    // Ocultar la notificación después de 3 segundos
+    setTimeout(() => {
+      showNotification.value = false;
+    }, 3000);
   }
 };
 // Función para cargar cursos favoritos
@@ -337,7 +356,19 @@ const saveProfile = async () => {
 };
 
 onMounted(() => {
-  fetchUserProfile();
-  loadFavoriteCourses();
+  if (!localStorage.getItem('token')) {
+    // Muestra una notificación indicando que necesita iniciar sesión
+    notificationMessage.value = 'Debe iniciar sesión para ver el perfil.';
+    notificationType.value = 'error';
+    showNotification.value = true;
+
+    // Redirecciona al login después de mostrar la notificación
+    setTimeout(() => {
+      router.push('/login');
+    }, 3000); // Ajusta este tiempo según lo rápido que quieras redireccionar
+  } else {
+    fetchUserProfile();
+    loadFavoriteCourses();
+  }
 });
 </script>

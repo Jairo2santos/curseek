@@ -22,4 +22,9 @@ router.get('/favorites/check/:userId/:courseId', verifyToken, userController.che
 router.get('/', verifyToken, isAdmin, userController.getAllUsers); // Solo el admin puede obtener todos los usuarios
 router.get('/:userId', verifyToken, isAdmin, userController.getUserById); // Solo el admin puede obtener información de un usuario específico
 
+// Rutas para el restablecimiento de contraseña
+router.post('/solicitar-restablecimiento', userController.solicitarRestablecimiento);
+router.post('/restablecer-contrasena/:token', userController.restablecerContrasena);
+
 module.exports = router;
+

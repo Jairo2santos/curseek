@@ -6,6 +6,8 @@ const userSchema = new mongoose.Schema({
   password: { type: String, required: true },
   profilePicture: String,
   address: String,
+  resetPasswordToken: String,
+  resetPasswordExpires: Date,
   favorites: [{
     courseId: { type: mongoose.Schema.Types.ObjectId, ref: 'Course' },
     courseType: { type: String, enum: ['UDEMY', 'UTN', 'COURSERA'] }
