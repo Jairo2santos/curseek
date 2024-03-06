@@ -316,7 +316,7 @@
             <li class="my-0.5 flex items-center">
               <a href="/cursos/udemy"
                 class="hover:bg-gray-200 transition px-4 flex items-center w-full justify-between">
-                <img class="w-8" src="../assets/instituciones/Udemy.png" alt="Coursera" />
+                <img class="w-8" src="../assets/instituciones/udemy.png" alt="Coursera" />
                 <span class="flex-1 text-gray-800 py-1.5 px-1">Udemy</span>
               </a>
             </li>
@@ -342,7 +342,7 @@
             <li class="my-0.5 flex items-center">
               <a href="/coursera/universidades/uab"
                 class="hover:bg-gray-200 transition px-4 flex items-center w-full justify-between">
-                <img class="w-8" src="../assets/instituciones/uab.png" alt="Coursera" />
+                <img class="w-8" src="../assets/instituciones/UAB.png" alt="Coursera" />
                 <span class="flex-1 text-gray-800 py-1.5 px-1">UAB</span>
               </a>
             </li>
@@ -363,7 +363,7 @@
             <li class="my-0.5 flex items-center">
               <a href="/coursera/universidades/unam"
                 class="hover:bg-gray-200 transition px-4 flex items-center w-full justify-between">
-                <img class="w-8" src="../assets/instituciones/unam.png" alt="Coursera" />
+                <img class="w-8" src="../assets/instituciones/UNAM.png" alt="Coursera" />
                 <span class="flex-1 text-gray-800 py-1.5 px-1">UNAM</span>
               </a>
             </li>
@@ -473,10 +473,10 @@ export default {
 const buscadorResponsive = () => {
   if (menuBuscadorResponsive.value) {
     menuBuscadorResponsive.value = false;
-    isMenuOpen.value = false;
+  //  isMenuOpen.value = false;
   } else {
     menuBuscadorResponsive.value = true;
-    isMenuOpen.value = true;
+  //  isMenuOpen.value = true;
     menu1Visible.value = false; // Cerrar el otro menú si estaba abierto
     menu2Visible.value = false; // Cerrar el otro menú si estaba abierto
   }

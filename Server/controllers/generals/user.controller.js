@@ -1,7 +1,9 @@
 // user.controller.js Server\controllers\generals\user.controller.js
 
 const userService = require('../../services/generals/user.services');
-const crypto = require('crypto');
+const fs = require('fs');
+const path = require('path');
+const { UPLOADS_DIR } = require('../../configs/uploadsDir');
 
 exports.getAllUsers = async (req, res) => {
   try {
@@ -49,27 +51,68 @@ exports.getUserProfileById = async (req, res) => {
   }
 };
 
+
+
 exports.updateUserProfile = async (req, res) => {
   const { id } = req.params;
   const updatedData = req.body;
+
   try {
-    await userService.updateUserProfile(id, updatedData);
-    res.status(200).send('Perfil actualizado con éxito');
+      // Obtener usuario actual antes de actualizar para acceder a la posible imagen antigua
+      const currentUser = await userService.getUserById(id);
+      let oldImagePath = null;
+
+      // Si hay una imagen actual y una nueva imagen, prepara la eliminación de la imagen antigua
+      if (currentUser && currentUser.profilePicture && req.file) {
+          oldImagePath = path.join(UPLOADS_DIR, currentUser.profilePicture);
+
+          // Verifica y elimina la imagen antigua si existe
+          if (fs.existsSync(oldImagePath)) {
+              fs.unlinkSync(oldImagePath);
+          }
+      }
+
+      // Prepara la nueva imagen para ser guardada
+      if (req.file) {
+          updatedData.profilePicture = req.file.filename; // Asegúrate de guardar solo el nombre del archivo o una ruta relativa
+      }
+
+      // Procede con la actualización del usuario
+      const updatedUser = await userService.updateUserProfile(id, updatedData);
+
+      res.status(200).json({ message: 'Perfil actualizado con éxito', user: updatedUser });
   } catch (error) {
-    res.status(error.status || 500).send(error.message);
+      console.error(`Error al actualizar el usuario con ID ${id}: ${error.message}`, error);
+
+      // Intenta eliminar la nueva imagen subida si el proceso de actualización falla, para evitar archivos huérfanos
+      if (req.file) {
+          const imagePath = path.join(UPLOADS_DIR, req.file.filename);
+          if (fs.existsSync(imagePath)) {
+              fs.unlinkSync(imagePath);
+          }
+      }
+
+      res.status(500).json({ message: 'Error al actualizar el perfil', error: error.message });
   }
 };
 
 exports.register = async (req, res) => {
   try {
     const newUser = req.body;
+
+    if (req.file) {
+      newUser.profilePicture = req.file.path; 
+    } else {
+      newUser.profilePicture = '/uploads/student.png';
+    }
+
     const user = await userService.register(newUser);
+    
     res.status(201).json({ message: 'Usuario creado exitosamente', user });
   } catch (error) {
     res.status(500).json({ message: 'Error al registrar el usuario', error: error.message });
   }
 };
-
 exports.addFavoriteCourse = async (req, res) => {
   const { userId, courseId, courseType } = req.body;
   try {
@@ -127,17 +170,6 @@ exports.getUserById = async (req, res) => {
     res.status(200).json(user);
   } catch (error) {
     res.status(error.status || 500).send(error.message);
-  }
-};
-
-exports.updateUserProfile = async (req, res) => {
-  const { id } = req.params;
-  const updatedData = req.body;
-  try {
-    const user = await userService.updateUserProfile(id, updatedData);
-    res.status(200).json(user);
-  } catch (error) {
-    res.status(500).send(error.message);
   }
 };
 

@@ -166,7 +166,7 @@
                 <a href="/cursos/udemy">
                   <button
                     class="hover:scale-110 hover:bg-indigo-200 rounded-lg transform transition duration-100 ease-in-out w-60 sm:w-60 flex items-center">
-                    <img class="w-12" src="../assets/instituciones/Udemy.png" alt="Udemy" />
+                    <img class="w-12" src="../assets/instituciones/udemy.png" alt="Udemy" />
                     <span class="ml-2 text-lg font-semibold text-black">Udemy</span>
                   </button>
                 </a>

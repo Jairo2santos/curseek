@@ -50,7 +50,7 @@
                     </div>
                     <div class="bg-gray-200 md:bg-white items-end m-2 rounded-lg md:m-0">
                       <button class="mx-3" title="Agregar a Favoritos">
-                        <Favoritos :courseId="course._id" :courseType="'UDEMY'" :isFavorited="course.isFavorited" />
+                        <Favoritos :courseId="course._id" :courseType="'COURSERA'" :isFavorited="course.isFavorited" />
                       </button>
                     </div>
                     <!-- <a href="/cursos/udemy">

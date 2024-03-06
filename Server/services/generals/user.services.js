@@ -135,27 +135,39 @@ const register = async ({ username, email, password, address, profilePicture }) 
     throw error; // Lanza el error para manejarlo en el controlador
   }
 };
-const updateUserProfile = async (userId, updatedData) => {
+const updateUserProfile = async (userId, updatedData, newImagePath) => {
   try {
     const user = await User.findById(userId);
     if (!user) {
       throw new Error('Usuario no encontrado');
     }
-    // Si se proporciona una nueva contraseña, hashearla
-    if (updatedData.password) {
-      const salt = await bcrypt.genSalt(10);
-      const hashedPassword = await bcrypt.hash(updatedData.password, salt);
-      updatedData.password = hashedPassword;
+
+    // Si hay una nueva imagen de perfil
+    if (newImagePath) {
+      // Verificar y eliminar la imagen de perfil anterior si existe
+      const oldImagePath = path.join(UPLOADS_DIR, user.profilePicture);
+      if (fs.existsSync(oldImagePath)) {
+        fs.unlinkSync(oldImagePath); // Asegúrate de manejar errores aquí
+      }
+      // Actualizar la ruta de la imagen de perfil en los datos actualizados
+      updatedData.profilePicture = newImagePath;
     }
-    // Actualizar los campos del usuario
+
+    // Actualizar los campos del usuario con los datos proporcionados
     Object.assign(user, updatedData);
-    // Guardar los cambios
+    
+    // Guardar los cambios en la base de datos
     await user.save();
-    return user;
+
+    return user; // O lo que necesites devolver
   } catch (error) {
-    throw new Error('Error al actualizar el perfil del usuario.');
+    console.error('Error al actualizar el perfil del usuario:', error);
+    // Asegúrate de manejar y loguear errores específicos aquí
+    throw error;
   }
 };
+
+
 const checkIfCourseIsFavorited = async (userId, courseId) => {
   try {
     // Verificar que el courseId es válido para convertir a ObjectId

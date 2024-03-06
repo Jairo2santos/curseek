@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
-const normalizeText = require('../middlewares/normalize.middleware'); // Asegúrate de que la ruta sea correcta
-const CourseraCourse = require('../models/courseraCourse.model'); // Asegúrate de que la ruta al modelo sea correcta
+const normalizeText = require('../middlewares/normalize.middleware'); // Ajusta la ruta según sea necesario
+const UTNCourse = require('../models/providers/utn.models'); // Ajusta la ruta según sea necesario
 
 // Conexión a MongoDB
 mongoose.connect('mongodb://localhost:27017/cursosApp', {
@@ -11,11 +11,11 @@ mongoose.connect('mongodb://localhost:27017/cursosApp', {
 
 const generateAndUpdateSlugs = async () => {
   try {
-    const courses = await CourseraCourse.find({}); // Obtiene todos los cursos
+    const courses = await UTNCourse.find({}); // Obtiene todos los cursos de la colección cursos_UTN
 
     for (let course of courses) {
       const slug = normalizeText(course.title); // Genera el slug a partir del título
-      await CourseraCourse.findByIdAndUpdate(course._id, { slug }); // Actualiza el curso con el nuevo slug
+      await UTNCourse.findByIdAndUpdate(course._id, { slug }); // Actualiza el curso con el nuevo slug
       console.log(`Slug actualizado para ${course.title}: ${slug}`);
     }
 
@@ -23,7 +23,7 @@ const generateAndUpdateSlugs = async () => {
   } catch (error) {
     console.error("Error al generar y actualizar slugs:", error);
   } finally {
-    mongoose.disconnect();
+    mongoose.disconnect(); // Cierra la conexión a la base de datos
   }
 };
 

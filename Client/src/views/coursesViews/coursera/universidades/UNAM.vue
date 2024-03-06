@@ -9,7 +9,7 @@
       <!-- Título y Descripción -->
       <div class="flex flex-col sm:flex-row pb-4 md:pb-0 items-center border-b border-gray-300">
         <!-- Imagen -->
-        <img src="../../../../assets/instituciones/unam.png" alt="Universidad Autonoma de Mexico logo" class="w-64 h-auto">
+        <img src="../../../../assets/instituciones/UNAM.png" alt="Universidad Autonoma de Mexico logo" class="w-64 h-auto">
 
         <!-- Texto -->
         <div>

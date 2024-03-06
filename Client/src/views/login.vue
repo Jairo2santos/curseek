@@ -53,7 +53,6 @@ const notificationMessage = ref('');
 const notificationType = ref('');
 
 const login = async () => {
-  console.log(`Attempting to login with username: ${username.value} and password: ${password.value}`);
 
   try {
     const response = await axios.post(`${import.meta.env.VITE_API_URL}/users/login`, {

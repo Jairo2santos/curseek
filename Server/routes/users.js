@@ -2,10 +2,12 @@ const express = require('express');
 const router = express.Router();
 const userController = require('../controllers/generals/user.controller');
 const { verifyToken, isAdmin } = require('../middlewares/auth.middleware');
+const upload = require('../middlewares/upload.middleware'); // Asegúrate de que la ruta sea correcta
 
-// Rutas públicas
+// Rutas auth
 router.post('/login', userController.login);
-router.post('/register', userController.register);
+router.post('/register', upload.single('profilePicture'), userController.register);
+router.put('/profile/:id', verifyToken, upload.single('profilePicture'), userController.updateUserProfile);
 
 // Ruta protegida para perfil de usuario
 router.get('/profile/username/:username', verifyToken, userController.getUserProfileByUsername);

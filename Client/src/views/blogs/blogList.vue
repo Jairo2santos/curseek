@@ -77,6 +77,9 @@ const deleteBlog = async (slug) => {
     showNotification.value = true;
     notificationMessage.value = 'Blog eliminado exitosamente';
     notificationType.value = 'success';
+    
+    // Redirige al usuario a la página principal de blogs o a cualquier otra página
+    router.push({ name: 'BlogList' }); // Asegúrate de que 'BlogList' sea el nombre correcto de la ruta a la que deseas redirigir.
   } catch (error) {
     console.error('Error al eliminar el blog:', error);
     // Mostrar notificación de error
@@ -85,6 +88,7 @@ const deleteBlog = async (slug) => {
     notificationType.value = 'error';
   }
 };
+
 
 onMounted(async () => {
   try {

@@ -32,7 +32,7 @@
 import { ref, onMounted } from 'vue';
 import { useRoute, useRouter } from 'vue-router';
 import axios from 'axios';
-import Notificacion from '../../components/Notificaciones.vue'; // Asegúrate de importar correctamente el componente
+import Notificacion from '../../components/Notificaciones.vue';
 
 const route = useRoute();
 const router = useRouter();
@@ -42,50 +42,65 @@ const showNotification = ref(false);
 const notificationMessage = ref('');
 const notificationType = ref('');
 
-// Cargar los datos del blog si estamos en modo de edición
 onMounted(async () => {
-  // Obtén el slug del blog desde los parámetros de la ruta
-  const { slug } = route.params;
-  try {
-    // Realiza una solicitud para obtener los datos del blog
-    const response = await axios.get(`${import.meta.env.VITE_API_URL}/blogs/slug/${slug}`);
-    blog.value = response.data;
-  } catch (error) {
-    console.error('Error al cargar el blog para editar:', error);
-    // Maneja el error, por ejemplo, mostrando un mensaje al usuario
+  const slug = route.params.slug;
+  if (slug) {
+    isEditMode.value = true;
+    try {
+      const response = await axios.get(`${import.meta.env.VITE_API_URL}/blogs/slug/${slug}`);
+      blog.value = response.data;
+      console.log('Blog cargado para editar:', blog.value);
+    } catch (error) {
+      console.error('Error al cargar el blog para editar:', error);
+      notificationMessage.value = 'No se pudo cargar el blog para editar';
+      notificationType.value = 'error';
+      showNotification.value = true;
+    }
   }
 });
+
 const submitForm = async () => {
+  const token = localStorage.getItem('token');
+
+  if (!token) {
+    console.error('No se ha proporcionado el token de autorización.');
+    notificationMessage.value = 'Falta el token de autorización.';
+    notificationType.value = 'error';
+    showNotification.value = true;
+    return;
+  }
+
   try {
-    const url = isEditMode.value ? `${import.meta.env.VITE_API_URL}/blogs/slug/${route.params.slug}` : 'http://localhost:3333/blogs';
+    const slug = route.params.slug; 
+    // Asegúrate de que la URL base no termine en `/api` si la ruta también comienza con `/api`
+    const baseURL = import.meta.env.VITE_API_URL
+    const url = isEditMode.value && slug ? `${baseURL}/blogs/slug/${slug}` : `${baseURL}/blogs`;
     const method = isEditMode.value ? 'put' : 'post';
+    console.log('Realizando solicitud:', method, 'a', url);
+    console.log('Datos del blog:', blog.value);
 
     const response = await axios({
-      method: method,
-      url: url,
+      method,
+      url,
       data: blog.value,
       headers: {
-        Authorization: `Bearer ${localStorage.getItem('token')}`
-      }
+       Authorization: `Bearer ${token}`,
+      },
     });
 
-    // Mostrar notificación de éxito
-    showNotification.value = true;
+    console.log('Respuesta de la solicitud:', response);
     notificationMessage.value = isEditMode.value ? 'Blog actualizado exitosamente' : 'Blog publicado exitosamente';
     notificationType.value = 'success';
+    showNotification.value = true;
     
-    // Redirigir al usuario a la lista de blogs después de 3 segundos
     setTimeout(() => {
       router.push({ name: 'BlogList' });
     }, 3000);
   } catch (error) {
     console.error('Error al guardar el blog:', error);
-    // Mostrar notificación de error
-    showNotification.value = true;
     notificationMessage.value = 'Error al guardar el blog';
     notificationType.value = 'error';
+    showNotification.value = true;
   }
 };
-
 </script>
-  

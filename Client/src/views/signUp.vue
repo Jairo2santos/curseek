@@ -1,3 +1,5 @@
+<!-- signUp.vue Client\src\views\signUp.vue -->
+
 <template>
   <div class="flex flex-col max-w-screen-full md:flex-row mx-auto md:px-60 bg-gray-100 p-6">
     <form class="bg-white px-6 md:px-16 py-8 max-w-screen-sm w-full" @submit.prevent="registerUser">
@@ -71,11 +73,13 @@
           Las contraseñas no coinciden.
         </p>
       </div>
-      <div class="mb-4">
-        <label for="profilePicture" class="block text-sm font-medium text-gray-600">Link URL de Imagen</label>
-        <input type="text" id="profilePicture" placeholder="Agregue su Link Url de Imagen" v-model="profilePicture"
-          class="mt-1 p-2 w-full border rounded-md" />
-      </div>
+
+<div class="mb-4">
+  <label for="profilePictureFile" class="block text-sm font-medium text-gray-600">O sube una imagen</label>
+  <input type="file" id="profilePictureFile" @change="handleFileUpload"
+    class="mt-1 p-2 w-full border rounded-md" />
+</div>
+
       <button type="submit" class="w-full bg-indigo-600 text-white p-2 rounded hover:bg-indigo-800">
         Registrarse
       </button>
@@ -122,7 +126,7 @@ const username = ref("");
 const email = ref("");
 const password = ref("");
 const confirmPassword = ref("");
-const profilePicture = ref("");
+const profilePictureUrl = ref(''); // Define profilePictureUrl aquí
 const passwordsDoNotMatch = ref(false);
 const registrationSuccess = ref(false);
 const registrationError = ref(false);
@@ -154,29 +158,42 @@ const countries = [
 ];
 
 
+// Nuevo ref para almacenar el archivo seleccionado
+const selectedFile = ref(null);
+
+const handleFileUpload = (event) => {
+  selectedFile.value = event.target.files[0];
+};
 
 const registerUser = async () => {
   if (password.value !== confirmPassword.value) {
     passwordsDoNotMatch.value = true;
     return;
   }
-  passwordsDoNotMatch.value = false;
+
+  const formData = new FormData();
+  formData.append('username', username.value);
+  formData.append('email', email.value);
+  formData.append('password', password.value);
+  formData.append('address', selectedCountry.value);
+
+  if (selectedFile.value) {
+    // Si se seleccionó un archivo, agrégalo al FormData
+    formData.append('profilePicture', selectedFile.value);
+  } 
+
   try {
-    await axios.post(`${import.meta.env.VITE_API_URL}/users/register`, {
-      username: username.value,
-      email: email.value,
-      password: password.value,
-      address: selectedCountry.value,
-      profilePicture: profilePicture.value,
+    await axios.post(`${import.meta.env.VITE_API_URL}/users/register`, formData, {
+      headers: {
+        'Content-Type': 'multipart/form-data',
+      },
     });
 
     registrationSuccess.value = true;
-    setTimeout(() => router.push("/login"), 2000);
+    setTimeout(() => router.push('/login'), 2000);
   } catch (error) {
     registrationError.value = true;
-    registrationErrorMessage.value = error.response.data.message || "Error desconocido";
-    console.error("Error al registrar el usuario:", error);
+    registrationErrorMessage.value = error.response.data.message || 'Error desconocido';
   }
 };
-
 </script>
