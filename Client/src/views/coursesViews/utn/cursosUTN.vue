@@ -44,7 +44,7 @@
                       </p>
                     </div>
                     <!-- Sección 3: Botones (usando el componente Favoritos) -->
-                    <div class="bg-gray-200 md:bg-white items-end m-2 rounded-lg md:m-0">
+                    <div class="bg-gray-200 md:bg-white items-end ml-auto rounded-lg md:m-0">
                       <button class="mx-3" title="Agregar a Favoritos">
                         <Favoritos :courseId="course._id" :courseType="'UTN'" :isFavorited="course.isFavorited" />
                       </button>
@@ -62,7 +62,7 @@
                   </div>
                 </div>
                 <!-- Sección derecha con categoría, precio y cursada -->
-                <div class="md:w-1/4 md:flex md:flex-col md:items-end text-left px-4 border-l border-gray-100">
+                <div class="md:w-1/4 md:ml-auto md:flex md:flex-col md:items-end text-left px-4 md:border-l md:border-gray-100">
                   <ul>
                     <!-- Institución -->
                     <li class="flex text-sm text-gray-800 p-2 border-b border-gray-100">
@@ -102,11 +102,7 @@
                     </li>
                     <!-- Precio -->
                     <li class="flex text-sm text-gray-800 p-2">
-                      <svg class="mr-2" fill="#057500" xmlns="http://www.w3.org/2000/svg" height="24"
-                        viewBox="0 -960 960 960" width="24">
-                        <path
-                          d="M542.308-131.692q-11.529 11.461-28.573 11.461-17.043 0-28.504-11.461l-352-352q-6.385-6.385-9.808-14.02T120-514v-286q0-16.077 11.961-28.039Q143.923-840 160-840h286q7.769 0 15.452 3.166 7.683 3.167 13.317 8.526l352 352.231Q839-463.846 839.385-446.5q.384 17.346-11.077 28.808l-286 286ZM259.91-660q16.629 0 28.359-11.64Q300-683.281 300-699.909q0-16.63-11.64-28.36Q276.72-740 260.09-740q-16.629 0-28.359 11.64Q220-716.719 220-700.091q0 16.63 11.64 28.36Q243.28-660 259.91-660Z" />
-                      </svg>
+                      <svg class="mr-2" fill="#057500" xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 -960 960 960" width="24"><path d="M542.308-131.692q-11.529 11.461-28.573 11.461-17.043 0-28.504-11.461l-352-352q-6.385-6.385-9.808-14.02T120-514v-286q0-16.077 11.961-28.039Q143.923-840 160-840h286q7.769 0 15.452 3.166 7.683 3.167 13.317 8.526l352 352.231Q839-463.846 839.385-446.5q.384 17.346-11.077 28.808l-286 286ZM513.425-160l286.344-286-353.425-354H160v286l353.425 354ZM259.91-660q16.629 0 28.359-11.64Q300-683.281 300-699.909q0-16.63-11.64-28.36Q276.72-740 260.09-740q-16.629 0-28.359 11.64Q220-716.719 220-700.091q0 16.63 11.64 28.36Q243.28-660 259.91-660ZM160-800Z"/></svg>
                       {{ course.price || 'Gratis' }}
                     </li>
                     <!-- Cursada -->
