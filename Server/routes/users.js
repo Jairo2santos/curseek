@@ -25,6 +25,5 @@ router.get('/', verifyToken, isAdmin, userController.getAllUsers); // Solo el ad
 router.get('/:userId', verifyToken, isAdmin, userController.getUserById); // Solo el admin puede obtener información de un usuario específico
 
 
-
 module.exports = router;
 

@@ -199,7 +199,7 @@
                 <a href="/coursera/universidades/uab">
                   <button
                     class="hover:scale-110 hover:bg-indigo-200 rounded-lg transform transition duration-100 ease-in-out w-60 sm:w-60 flex items-center">
-                    <img class="w-12" src="../assets/instituciones/uab.png" alt="Universidad Autónoma de Barcelona">
+                    <img class="w-12" src="../assets/instituciones/UAB.png" alt="Universidad Autónoma de Barcelona">
                     <span class="ml-2 text-lg font-semibold text-black">UAB</span>
                   </button>
                 </a>
@@ -228,7 +228,7 @@
                 <a href="/coursera/universidades/unam">
                   <button
                     class="hover:scale-110 hover:bg-indigo-200 rounded-lg transform transition duration-100 ease-in-out w-60 sm:w-60 flex items-center">
-                    <img class="w-12" src="../assets/instituciones/unam.png" alt="Universidad Autónoma de Barcelona">
+                    <img class="w-12" src="../assets/instituciones/UNAM.png" alt="Universidad Autónoma de Barcelona">
                     <span class="ml-2 text-lg font-semibold text-black">UNAM</span>
                   </button>
                 </a>

@@ -8,4 +8,7 @@
   html {
     font-family: Open Sans, sans-serif;
   }
+  div#app{
+    overflow-x: hidden;
+  }
 }
