@@ -28,7 +28,7 @@
     </div>
 
     <!-- Resultados -->
-    <div class="flex flex-col md:flex-row container mx-0 justify-center">
+    <div class="flex flex-col md:flex-row container mx-auto justify-center">
       <div v-if="courses.length > 0"
         class="md:absolute md:max-w-full mt-1 bg-white shadow-lg max-h-96 overflow-y-auto z-10">
         <p class="px-4 py-2 text-sm font-semibold text-indigo-600 border-b">
@@ -62,7 +62,7 @@
         </ul>
         <div class="flex justify-center py-4">
           <button @click="toggleViewAll"
-            class="mt-4 text-blue-600 hover:underline transition focus:outline-none">
+            class="text-blue-600 hover:underline transition focus:outline-none">
             {{ limitResults ? "Ver Más" : "Ver Menos" }}
           </button>
         </div>
