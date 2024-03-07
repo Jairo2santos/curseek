@@ -51,7 +51,7 @@
               placeholder="Correo Electrónico" />
           </span>
         </div>
-        <div class="flex flex-col">
+        <!-- <div class="flex flex-col">
           <label for="address" class="text-sm font-medium text-gray-700 mb-1">Ubicación</label>
           <span class="flex items-center">
             <svg class="mr-1" xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960" width="24">
@@ -65,7 +65,7 @@
               </option>
             </select>
           </span>
-        </div>
+        </div> -->
 
         <div class="flex flex-col">
           <label for="newPassword" class="text-sm font-medium text-gray-700">Nueva Contraseña</label>
