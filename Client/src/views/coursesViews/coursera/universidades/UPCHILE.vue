@@ -2,14 +2,14 @@
     <div class="bg-gray-100">
       <!-- Portada -->
       <!-- Imagen de Portada -->
-      <img :src="portadaImg" alt="campus de la universidad catolica de chile" class="w-full h-80 object-cover" />
+      <img :src="portadaImg" alt="campus de la universidad catolica de chile" class="w-full h-80 object-cover hidden md:block" />
   
       <!-- Contenido de la Portada -->
       <div class="text-sm bg-opacity-75 px-4 sm:px-20 lg:px-60">
         <!-- Título y Descripción -->
         <div class="flex flex-col sm:flex-row pb-4 md:pb-0 items-center border-b border-gray-300">
           <!-- Imagen -->
-          <img src="../../../../assets/instituciones/upchile.png" alt=" Pontificia Universidad Católica de Chile" class="w-64 h-auto">
+          <img src="../../../../assets/instituciones/upchile.png" alt="Pontificia Universidad Católica de Chile" class="w-64 h-auto">
   
           <!-- Texto -->
           <div>

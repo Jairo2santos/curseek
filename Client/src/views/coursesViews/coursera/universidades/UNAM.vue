@@ -2,7 +2,7 @@
   <div class="bg-gray-100">
     <!-- Portada -->
     <!-- Imagen de Portada -->
-    <img :src="portadaImg" alt="" class="w-full h-80 object-cover" />
+    <img :src="portadaImg" alt="" class="w-full h-80 object-cover hidden md:block" />
 
     <!-- Contenido de la Portada -->
     <div class="text-sm bg-opacity-75 px-4 sm:px-20 lg:px-60">

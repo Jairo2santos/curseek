@@ -7,14 +7,14 @@
     </button>
     <transition name="slide-up">
       <div v-if="showNotification" class="fixed bottom-0 inset-x-0 z-50">
-        <div :class="notificationClass" class="text-white text-center py-3 flex items-center justify-center">
+        <div :class="notificationClass" class="text-white text-center mx-auto py-3 flex items-center justify-center">
           <svg v-if="notificationType === 'success'" class="w-6 h-6 mr-2" fill="none" stroke="currentColor"
             viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+            <!-- <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path> -->
           </svg>
           <svg v-if="notificationType === 'error'" class="w-6 h-6 mr-2" fill="none" stroke="currentColor"
             viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+            <!-- <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path> -->
           </svg>
           {{ notificationMessage }}
         </div>

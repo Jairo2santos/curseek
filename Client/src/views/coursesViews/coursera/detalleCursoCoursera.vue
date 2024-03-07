@@ -75,10 +75,10 @@
         </a>
         <!-- Contenido de bajo -->
         <div class="px-2 py-6 text-md">
-          <div class="flex items-center">
+          <!-- <div class="flex items-center">
             <h4 class="text-lg font-semibold mb-2">Estrellas de este curso: {{ course.rating == "No rating found" ?
               "Sin calificación" : "..." }}</h4>
-          </div>
+          </div> -->
 
           <ul>
             <!-- Institución -->
