@@ -120,9 +120,10 @@
                       <li class="flex text-sm text-gray-800 p-2">
                         <svg class="mr-2" fill="#057500" xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 -960 960 960" width="24"><path d="M542.308-131.692q-11.529 11.461-28.573 11.461-17.043 0-28.504-11.461l-352-352q-6.385-6.385-9.808-14.02T120-514v-286q0-16.077 11.961-28.039Q143.923-840 160-840h286q7.769 0 15.452 3.166 7.683 3.167 13.317 8.526l352 352.231Q839-463.846 839.385-446.5q.384 17.346-11.077 28.808l-286 286ZM513.425-160l286.344-286-353.425-354H160v286l353.425 354ZM259.91-660q16.629 0 28.359-11.64Q300-683.281 300-699.909q0-16.63-11.64-28.36Q276.72-740 260.09-740q-16.629 0-28.359 11.64Q220-716.719 220-700.091q0 16.63 11.64 28.36Q243.28-660 259.91-660ZM160-800Z"/></svg>
 
-                        <span :class="course.is_free ? 'text-gray-500' : 'text-green-700'">
-                          {{ course.is_free ? 'Gratis' : course.price || 'Gratis'}}
-                        </span>
+                        <span :class="course.is_paid ? 'text-green-700' : 'text-gray-500'">
+    {{ displayPrice(course) }}
+  </span>
+
                       </li>
                     </ul>
                   </div>
@@ -139,7 +140,7 @@
 </template>
 
 <script setup>
-import { ref, onMounted } from "vue";
+import { ref, onMounted , computed } from "vue";
 import { useRouter } from 'vue-router';
 import axios from "axios";
 import Paginacion from "../../../components/Paginacion.vue";
@@ -203,6 +204,13 @@ const handleCategoryFilter = async (selectedCategory) => {
   console.log('Filtrando por la categoría:', selectedCategory);
   currentPage.value = 1; 
   await loadCourses(currentPage.value, selectedCategory);
+};
+const displayPrice = (course) => {
+  if (!course.is_paid) {
+    return 'Gratis';
+  } else {
+    return course.price !== 'Free' ? course.price : 'Gratis';
+  }
 };
 
 // Montaje

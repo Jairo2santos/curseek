@@ -73,13 +73,6 @@
           Las contraseñas no coinciden.
         </p>
       </div>
-
-<div class="mb-4">
-  <label for="profilePictureFile" class="block text-sm font-medium text-gray-600">O sube una imagen</label>
-  <input type="file" id="profilePictureFile" @change="handleFileUpload"
-    class="mt-1 p-2 w-full border rounded-md" />
-</div>
-
       <button type="submit" class="w-full bg-indigo-600 text-white p-2 rounded hover:bg-indigo-800">
         Registrarse
       </button>
@@ -161,9 +154,7 @@ const countries = [
 // Nuevo ref para almacenar el archivo seleccionado
 const selectedFile = ref(null);
 
-const handleFileUpload = (event) => {
-  selectedFile.value = event.target.files[0];
-};
+
 
 const registerUser = async () => {
   if (password.value !== confirmPassword.value) {

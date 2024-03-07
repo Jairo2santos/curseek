@@ -152,7 +152,7 @@
           class="bg-white hover:shadow-md transition overflow-hidden">
           <div class="flex flex-col md:flex-row cursor-pointer">
             <!-- Imagen del curso a la izquierda -->
-            <img :src="courseImage(course)" alt=""
+            <img :src="courseImage(course)" alt="imagenes de cursos favoritos"
               class="md:w-24 w-full object-contain rounded-t-lg md:rounded-t-none md:rounded-l-lg" />
             <!-- Contenido del curso a la derecha -->
             <div class="p-2 flex-grow">
@@ -500,14 +500,22 @@ const cancelEdit = () => {
 
 //ajustes para diferencia de utn y udemy
 const goToCourseDetail = (course) => {
+  // Asegúrate de que cada curso tenga un campo `slug`.
+  const courseSlug = course.slug; // Asume que tu objeto `course` tiene un campo `slug`.
+
+  if (!courseSlug) {
+    console.error("El curso no tiene un slug definido.");
+    return;
+  }
+
   if (course.courseType === "UDEMY") {
-    router.push({ name: "DetalleCursoUdemy", params: { id: course._id } });
+    router.push({ name: "DetalleCursoUdemy", params: { slug: courseSlug } });
   } else if (course.courseType === "UTN") {
-    router.push({ name: "DetalleCursoUTN", params: { id: course._id } });
+    router.push({ name: "DetalleCursoUTN", params: { slug: courseSlug } });
   } else if (course.courseType === "COURSERA") {
-    router.push({ name: "DetalleCursoCoursera", params: { id: course._id } });
+    router.push({ name: "DetalleCursoCoursera", params: { slug: courseSlug } });
   } else {
-    router.push({ name: "Home" });
+    console.error("Tipo de curso no soportado.");
   }
 };
 const courseImage = (course) => {
@@ -675,21 +683,12 @@ const handleProfilePictureChange = (event) => {
     }
   }
 };
-
 const resolveImagePath = (path) => {
-  console.log("Ruta de imagen original:", path);
+  if (!path) return "../src/assets/student.png"; // Imagen predeterminada
 
-  if (!path) return "";
-
-  // Reemplaza los separadores de directorio de Windows con separadores de URL estándar
-  const standardizedPath = path.replace(/\\+/g, "/");
-
-  // Asegura que la ruta no tenga un prefijo duplicado "/uploads"
-  const normalizedPath = standardizedPath.startsWith("uploads/")
-    ? standardizedPath.substring("uploads/".length)
-    : standardizedPath;
-
-  return `${import.meta.env.VITE_API_URL}/users/uploads/${normalizedPath}`;
+  // Si es la ruta por defecto o una ruta personalizada, asegúrate de añadir un sello de tiempo
+  // o un identificador único para evitar problemas de caché.
+  return `${import.meta.env.VITE_API_URL}/users/uploads/${path}?timestamp=${Date.now()}`;
 };
 
 onMounted(() => {
