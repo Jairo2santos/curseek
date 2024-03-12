@@ -8,10 +8,27 @@
         <!-- Columna 1 y 2 (Contenido principal) -->
         <div class="md:col-span-2">
           <!-- Sección de Título, Duración y Precio -->
-          <div class="hidden md:block bg-white p-4 md:p-6 rounded mb-4 justify-between items-center">
+          <div class="hidden md:block bg-white p-4 md:p-6 rounded mb-6 justify-between items-center">
             <h1 class="text-2xl md:text-3xl font-bold text-gray-800">{{ course.title || 'Aprende con este Curso de UTN' }}</h1>
+            <div class="flex items-center pt-2">
+            <a href="/cursos/utn">
+              <button class="flex hover:underline transition" title="Ir a cursos de Coursera">
+                <span>UTN</span>
+                <svg class="ml-1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="20" fill="#000000">
+                  <path d="M0 0h24v24H0V0z" fill="none" />
+                  <path
+                    d="M11.5 2C6.81 2 3 5.81 3 10.5S6.81 19 11.5 19h.5v3c4.86-2.34 8-7 8-11.5C20 5.81 16.19 2 11.5 2zm1 14.5h-2v-2h2v2zm0-3.5h-2c0-3.25 3-3 3-5 0-1.1-.9-2-2-2s-2 .9-2 2h-2c0-2.21 1.79-4 4-4s4 1.79 4 4c0 2.5-3 2.75-3 5z" />
+                </svg>
+              </button>
+            </a>
           </div>
-          <div class="hidden md:block bg-white p-4 md:p-6 rounded mb-4">
+          <div class="bg-gray-200 md:bg-white items-end ml-auto rounded-lg md:m-0 pt-2">
+            <button title="Agregar a Favoritos">
+              <Favoritos :courseId="course._id" :courseType="'UTN'" :isFavorited="course.isFavorited" />
+            </button>
+          </div>
+          </div>
+          <div class="hidden md:block bg-white p-4 md:p-6 rounded mb-6">
             <h3 class="text-xl mb-2 font-bold">Resumen</h3>
             <div class="text-md mb-2" v-if="!isExpanded && course.summary">
               {{ course.summary.substring(0, 300) }}{{ course.summary.length > 100 ? '...' : '' }}
@@ -20,15 +37,84 @@
             <button @click="isExpanded = !isExpanded" class="mt-4 text-blue-600 hover:underline transition focus:outline-none">
               {{ isExpanded ? 'Ver menos' : 'Ver más' }}
             </button>
-          </div>
 
           <!-- Sección de Modalidades -->
-          <div class="bg-white p-6 rounded mb-4">
-            <h3 class="text-lg mb-2 font-bold">Modalidades</h3>
+            <h3 class="text-lg mb-2 font-bold pt-6">Modalidades</h3>
             <ul class="list-disc pl-8">
               <li v-for="modality in course.modalities" :key="modality">{{ modality }}</li>
             </ul>
           </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+          <!-- Primera card -->
+          <section class="bg-white p-4 md:p-6 rounded flex-col justify-center">
+            <!-- Contenido de la primera card -->
+            <div class="flex items-center pb-2">
+              <svg class="mr-2" xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960" width="36"><path d="M340-260h280v-40H340v40Zm0-160h280v-40H340v40Zm-75.385 300Q237-120 218.5-138.5 200-157 200-184.615v-590.77Q200-803 218.5-821.5 237-840 264.615-840H580l180 180v475.385Q760-157 741.5-138.5 723-120 695.385-120h-430.77ZM560-640v-160H264.615q-9.23 0-16.923 7.692Q240-784.615 240-775.385v590.77q0 9.23 7.692 16.923Q255.385-160 264.615-160h430.77q9.23 0 16.923-7.692Q720-175.385 720-184.615V-640H560ZM240-800v160-160 640-640Z"/></svg>
+              <h3 class="text-xl mb-2 font-bold">Material de estudio</h3>
+            </div>
+            <div :class="{ 'max-h-48 overflow-hidden': !expandInfoComplementaria }" class="relative">
+              <p>
+                Facilitamos todos los apuntes, materiales de estudio y textos complementarios esenciales para tu
+                proceso de aprendizaje. Cada recurso es descargable, permitiéndote acceder al contenido en cualquier
+                momento y lugar que te resulte conveniente.
+              </p>
+            </div>
+          </section>
+          
+          <section class="bg-white p-4 md:p-6 rounded flex-col justify-center">
+            <!-- Contenido de la primera card -->
+            <div class="flex items-center pb-2">
+              <svg class="mr-2" xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960" width="36"><path d="M400-376.923 623.077-520 400-663.077v286.154ZM360-160v-80H184.615Q157-240 138.5-258.5 120-277 120-304.615v-430.77Q120-763 138.5-781.5 157-800 184.615-800h590.77Q803-800 821.5-781.5 840-763 840-735.385v430.77Q840-277 821.5-258.5 803-240 775.385-240H600v80H360ZM184.615-280h590.77q9.23 0 16.923-7.692Q800-295.385 800-304.615v-430.77q0-9.23-7.692-16.923Q784.615-760 775.385-760h-590.77q-9.23 0-16.923 7.692Q160-744.615 160-735.385v430.77q0 9.23 7.692 16.923Q175.385-280 184.615-280ZM160-280v-480 480Z"/></svg>
+              <h3 class="text-xl mb-2 font-bold">Clases en tiempo real</h3>
+            </div>
+            <div :class="{ 'max-h-48 overflow-hidden': !expandInfoComplementaria }" class="relative">
+              <p>
+                Ofreceremos clases en tiempo real de forma periódica para desarrollar y profundizar en las unidades temáticas. Tu participación no es obligatoria, ya que las sesiones quedarán grabadas para que puedas acceder a ellas en cualquier momento que te resulte conveniente.
+              </p>
+            </div>
+          </section>
+
+          <section class="bg-white p-4 md:p-6 rounded flex-col justify-center">
+            <!-- Contenido de la primera card -->
+            <div class="flex items-center pb-2">
+              <svg class="mr-2" xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960" width="36">
+                <path
+                  d="M295.384-80V-358.23L158.461-580l160.385-260h322.308l160.385 260-136.923 221.769V-80L480-143.846 295.384-80Zm40.001-58.692L480-187.077l144.615 48.385V-320h-289.23v181.308ZM340.769-800l-136 220 136 220h278.462l136-220-136-220H340.769ZM438-445.461 324.461-558 353-586.539l85 85 169-170L635.539-644 438-445.461ZM335.385-320h289.23-289.23Z" />
+              </svg>
+              <h3 class="text-xl mb-2 font-bold">Profesores certificados</h3>
+            </div>
+            <div :class="{ 'max-h-48 overflow-hidden': !expandInfoComplementaria }" class="relative">
+              <p>
+                Nuestros educadores poseen habilidades especializadas en la enseñanza a distancia y comparten una
+                profunda
+                pasión por educar, comprometiéndose a mantenerse continuamente actualizados para ofrecer lecciones
+                completas y de elevado estándar académico.
+              </p>
+            </div>
+          </section>
+
+          <!-- Segunda card -->
+          <section class="bg-white p-4 md:p-6 rounded flex-col justify-center">
+            <!-- Contenido de la segunda card -->
+            <div class="flex items-center pb-2">
+              <svg class="mr-2" xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960" width="36">
+                <path
+                  d="m437-408 198.539-197.539L607-634.077l-170 170-85-85-28.308 28.308L437-408ZM70.769-181.538v-40h818.462v40H70.769Zm113.846-80q-27.615 0-46.115-18.5-18.5-18.5-18.5-46.116v-390.769q0-27.616 18.5-46.116t46.115-18.5h590.77q27.615 0 46.115 18.5 18.5 18.5 18.5 46.116v390.769q0 27.616-18.5 46.116t-46.115 18.5h-590.77Zm0-40.001h590.77q9.23 0 16.923-7.692Q800-316.923 800-326.154v-390.769q0-9.231-7.692-16.923-7.693-7.693-16.923-7.693h-590.77q-9.23 0-16.923 7.693Q160-726.154 160-716.923v390.769q0 9.231 7.692 16.923 7.693 7.692 16.923 7.692Zm-24.615 0v-440 440Z" />
+              </svg>
+              <h3 class="text-xl mb-2 font-bold">¿Por qué elegirnos?</h3>
+            </div>
+            <div :class="{ 'max-h-48 overflow-hidden': !expandInfoComplementaria }" class="relative">
+              <p>
+                Adquiere saberes de la mano de educadores altamente experimentados en educación a distancia,
+                comprometidos con una actualización constante para proporcionar clases de excelencia académica. Contamos
+                con una sólida trayectoria en la enseñanza en línea, respaldada por la dedicación y la experiencia de
+                nuestro equipo docente.
+              </p>
+            </div>
+          </section>
+        </div>
+        
           <!-- Sección de Profesores -->
           <div class="bg-white p-6 rounded mb-4">
             <h3 class="text-xl mb-2 font-bold">Profesores</h3>
@@ -121,6 +207,7 @@
 
 <script>
 import axios from 'axios';
+import Favoritos from "../../../components/Favoritos.vue";
 
 export default {
   data() {

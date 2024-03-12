@@ -7,12 +7,30 @@
       <!-- Columna 1 y 2 (Contenido principal) -->
       <div class="md:col-span-2">
         <!-- Sección de Título y Precio -->
-        <div class="hidden md:block bg-white p-4 md:p-6 rounded mb-4 justify-between items-center">
+        <div class="hidden md:block bg-white p-4 md:p-6 rounded mb-6 justify-between items-center">
           <h1 class="md:text-3xl font-bold text-gray-800">{{ udemyCourse.title || 'Aprende con este Curso de Udemy' }}
           </h1>
+          <div class="flex items-center pt-2">
+            <a href="/cursos/udemy">
+              <button class="flex hover:underline transition" title="Ir a cursos de Udemy">
+                <span>Udemy</span>
+                <svg class="ml-1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="20" fill="#000000">
+                  <path d="M0 0h24v24H0V0z" fill="none" />
+                  <path
+                    d="M11.5 2C6.81 2 3 5.81 3 10.5S6.81 19 11.5 19h.5v3c4.86-2.34 8-7 8-11.5C20 5.81 16.19 2 11.5 2zm1 14.5h-2v-2h2v2zm0-3.5h-2c0-3.25 3-3 3-5 0-1.1-.9-2-2-2s-2 .9-2 2h-2c0-2.21 1.79-4 4-4s4 1.79 4 4c0 2.5-3 2.75-3 5z" />
+                </svg>
+              </button>
+            </a>
+          </div>
+          <div class="bg-gray-200 md:bg-white items-end ml-auto rounded-lg md:m-0 pt-2">
+            <button title="Agregar a Favoritos">
+              <Favoritos />
+              <!-- <Favoritos :courseId="course._id" :courseType="'UDEMY'" :isFavorited="course.isFavorited" /> -->
+            </button>
+          </div>
         </div>
         <!-- Sección de Descripción Larga -->
-        <div class="hidden md:block bg-white p-4 md:p-6 rounded mb-4">
+        <div class="hidden md:block bg-white p-4 md:p-6 rounded mb-6">
           <h3 class="text-xl mb-2 font-bold">Resumen</h3>
           <div :class="{ 'max-h-48 overflow-hidden': !expandDescription }" class="700 md:text-md bold-4 relative">
             <div v-html="udemyCourse.description"></div>
@@ -22,6 +40,48 @@
           <button @click="toggleDescription" class="mt-4 text-blue-600 hover:underline transition focus:outline-none">
             {{ expandDescription ? "Ver menos" : "Ver más" }}
           </button>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+          <!-- Primera card -->
+          <section class="bg-white p-4 md:p-6 rounded flex-col justify-center">
+            <!-- Contenido de la primera card -->
+            <div class="flex items-center pb-2">
+              <svg class="mr-2" xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960" width="36">
+                <path
+                  d="M295.384-80V-358.23L158.461-580l160.385-260h322.308l160.385 260-136.923 221.769V-80L480-143.846 295.384-80Zm40.001-58.692L480-187.077l144.615 48.385V-320h-289.23v181.308ZM340.769-800l-136 220 136 220h278.462l136-220-136-220H340.769ZM438-445.461 324.461-558 353-586.539l85 85 169-170L635.539-644 438-445.461ZM335.385-320h289.23-289.23Z" />
+              </svg>
+              <h3 class="text-xl mb-2 font-bold">Profesores certificados</h3>
+            </div>
+            <div :class="{ 'max-h-48 overflow-hidden': !expandInfoComplementaria }" class="relative">
+              <p>
+                Nuestros educadores poseen habilidades especializadas en la enseñanza a distancia y comparten una
+                profunda
+                pasión por educar, comprometiéndose a mantenerse continuamente actualizados para ofrecer lecciones
+                completas y de elevado estándar académico.
+              </p>
+            </div>
+          </section>
+
+          <!-- Segunda card -->
+          <section class="bg-white p-4 md:p-6 rounded flex-col justify-center">
+            <!-- Contenido de la segunda card -->
+            <div class="flex items-center pb-2">
+              <svg class="mr-2" xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960" width="36">
+                <path
+                  d="m437-408 198.539-197.539L607-634.077l-170 170-85-85-28.308 28.308L437-408ZM70.769-181.538v-40h818.462v40H70.769Zm113.846-80q-27.615 0-46.115-18.5-18.5-18.5-18.5-46.116v-390.769q0-27.616 18.5-46.116t46.115-18.5h590.77q27.615 0 46.115 18.5 18.5 18.5 18.5 46.116v390.769q0 27.616-18.5 46.116t-46.115 18.5h-590.77Zm0-40.001h590.77q9.23 0 16.923-7.692Q800-316.923 800-326.154v-390.769q0-9.231-7.692-16.923-7.693-7.693-16.923-7.693h-590.77q-9.23 0-16.923 7.693Q160-726.154 160-716.923v390.769q0 9.231 7.692 16.923 7.693 7.692 16.923 7.692Zm-24.615 0v-440 440Z" />
+              </svg>
+              <h3 class="text-xl mb-2 font-bold">¿Por qué elegirnos?</h3>
+            </div>
+            <div :class="{ 'max-h-48 overflow-hidden': !expandInfoComplementaria }" class="relative">
+              <p>
+                Adquiere saberes de la mano de educadores altamente experimentados en educación a distancia,
+                comprometidos con una actualización constante para proporcionar clases de excelencia académica. Contamos
+                con una sólida trayectoria en la enseñanza en línea, respaldada por la dedicación y la experiencia de
+                nuestro equipo docente.
+              </p>
+            </div>
+          </section>
         </div>
 
         <!-- Nueva Sección de Profesor -->
@@ -109,7 +169,11 @@
             </li>
             <!-- Precio -->
             <li class="flex text-sm text-gray-800 p-3">
-              <svg class="mr-2" fill="#057500" xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 -960 960 960" width="24"><path d="M542.308-131.692q-11.529 11.461-28.573 11.461-17.043 0-28.504-11.461l-352-352q-6.385-6.385-9.808-14.02T120-514v-286q0-16.077 11.961-28.039Q143.923-840 160-840h286q7.769 0 15.452 3.166 7.683 3.167 13.317 8.526l352 352.231Q839-463.846 839.385-446.5q.384 17.346-11.077 28.808l-286 286ZM513.425-160l286.344-286-353.425-354H160v286l353.425 354ZM259.91-660q16.629 0 28.359-11.64Q300-683.281 300-699.909q0-16.63-11.64-28.36Q276.72-740 260.09-740q-16.629 0-28.359 11.64Q220-716.719 220-700.091q0 16.63 11.64 28.36Q243.28-660 259.91-660ZM160-800Z"/></svg>
+              <svg class="mr-2" fill="#057500" xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 -960 960 960"
+                width="24">
+                <path
+                  d="M542.308-131.692q-11.529 11.461-28.573 11.461-17.043 0-28.504-11.461l-352-352q-6.385-6.385-9.808-14.02T120-514v-286q0-16.077 11.961-28.039Q143.923-840 160-840h286q7.769 0 15.452 3.166 7.683 3.167 13.317 8.526l352 352.231Q839-463.846 839.385-446.5q.384 17.346-11.077 28.808l-286 286ZM513.425-160l286.344-286-353.425-354H160v286l353.425 354ZM259.91-660q16.629 0 28.359-11.64Q300-683.281 300-699.909q0-16.63-11.64-28.36Q276.72-740 260.09-740q-16.629 0-28.359 11.64Q220-716.719 220-700.091q0 16.63 11.64 28.36Q243.28-660 259.91-660ZM160-800Z" />
+              </svg>
 
               <span :class="udemyCourse.is_paid ? 'text-gray-800' : 'text-gray-800'">
                 {{ displayedPrice }}
@@ -123,9 +187,10 @@
 </template>
 
 <script setup>
-import { ref, onMounted, watch, computed  } from 'vue';
+import { ref, onMounted, watch, computed } from 'vue';
 import { useRoute, useRouter } from 'vue-router';
 import axios from 'axios';
+import Favoritos from "../../../components/Favoritos.vue";
 
 const udemyCourse = ref({
   title: '',
@@ -173,7 +238,7 @@ const loadCategories = async () => {
 
 // Observar cambios en el slug de la ruta y reaccionar a estos
 watch(() => route.params.slug, (newSlug, oldSlug) => {
-  if(newSlug !== oldSlug) {
+  if (newSlug !== oldSlug) {
     fetchUdemyCourse(newSlug);
   }
 }, { immediate: true });
