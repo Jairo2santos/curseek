@@ -30,12 +30,13 @@
           </div>
           <div class="hidden md:block bg-white p-4 md:p-6 rounded mb-6">
             <h3 class="text-xl mb-2 font-bold">Resumen</h3>
-            <div class="text-md mb-2" v-if="!isExpanded && course.summary">
-              {{ course.summary.substring(0, 300) }}{{ course.summary.length > 100 ? '...' : '' }}
+            <div :class="{ 'max-h-48 overflow-hidden': !expandDescription }" class="700 md:text-md bold-4 relative">
+              <div>{{ course.summary || 'En el ámbito actual, al guiar a individuos, equipos y organizaciones a través de procesos de desarrollo del talento humano, se...' }}</div>
+              <div v-if="!expandDescription"
+                class="absolute bottom-0 left-0 right-0 h-16 bg-gradient-to-b from-transparent to-white"></div>
             </div>
-            <div v-if="isExpanded || !course.summary">{{ course.summary || 'En el ámbito actual, al guiar a individuos, equipos y organizaciones a través de procesos de desarrollo del talento humano, se...' }}</div>
-            <button @click="isExpanded = !isExpanded" class="mt-4 text-blue-600 hover:underline transition focus:outline-none">
-              {{ isExpanded ? 'Ver menos' : 'Ver más' }}
+            <button @click="toggleDescription" class="mt-4 text-blue-600 hover:underline transition focus:outline-none">
+              {{ expandDescription ? "Ver menos" : "Ver más" }}
             </button>
 
           <!-- Sección de Modalidades -->
@@ -45,7 +46,7 @@
             </ul>
           </div>
 
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6 bg-white">
           <!-- Primera card -->
           <section class="bg-white p-4 md:p-6 rounded flex-col justify-center">
             <!-- Contenido de la primera card -->
@@ -213,7 +214,7 @@ export default {
   data() {
     return {
       course: {},
-      isExpanded: false,
+      expandDescription: false,
     };
   },
   async created() {
@@ -229,6 +230,9 @@ export default {
     capitalizeFirstLetter(value) {
       if (!value) return '';
       return value.charAt(0).toUpperCase() + value.slice(1);
+    },
+    toggleDescription() {
+      this.expandDescription = !this.expandDescription;
     },
   },
 };

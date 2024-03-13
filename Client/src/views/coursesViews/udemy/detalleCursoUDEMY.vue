@@ -37,12 +37,12 @@
             <div v-if="!expandDescription"
               class="absolute bottom-0 left-0 right-0 h-16 bg-gradient-to-b from-transparent to-white"></div>
           </div>
-          <button @click="toggleDescription" class="mt-4 text-blue-600 hover:underline transition focus:outline-none">
+          <button @click="toggleDescription" class="mt-4 text-blue-600 hover:underline font-semibold transition focus:outline-none">
             {{ expandDescription ? "Ver menos" : "Ver más" }}
           </button>
         </div>
 
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6 bg-white">
           <!-- Primera card -->
           <section class="bg-white p-4 md:p-6 rounded flex-col justify-center">
             <!-- Contenido de la primera card -->

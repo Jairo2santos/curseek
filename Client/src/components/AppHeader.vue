@@ -98,7 +98,7 @@
                     </ul>
                     <div class="flex justify-center py-4">
                       <button @click="toggleViewAll"
-                        class="text-blue-600 hover:underline transition focus:outline-none">
+                        class="text-blue-600 hover:underline font-semibold transition focus:outline-none">
                         {{ limitResults ? "Ver Más" : "Ver Menos" }}
                       </button>
                     </div>
@@ -183,7 +183,7 @@
                   </ul>
                   <div class="flex justify-center py-4">
                     <button @click="toggleViewAll"
-                      class="text-blue-600 hover:underline transition focus:outline-none">
+                      class="text-blue-600 hover:underline font-semibold transition focus:outline-none">
                       {{ limitResults ? "Ver Más" : "Ver Menos" }}
                     </button>
                   </div>
