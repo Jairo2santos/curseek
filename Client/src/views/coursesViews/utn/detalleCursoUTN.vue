@@ -233,13 +233,21 @@ export default {
     };
   },
   async created() {
-    const courseSlug = this.$route.params.slug; 
-    try {
-      const response = await axios.get(`${import.meta.env.VITE_API_URL}/cursos/utn/${courseSlug}`);
+    const courseSlug = this.$route.params.slug;
+  try {
+    const response = await axios.get(`${import.meta.env.VITE_API_URL}/cursos/utn/${courseSlug}`);
+    if (response.data && Object.keys(response.data).length) {
+      // Si el curso existe, asigna los datos del curso a la variable de estado.
       this.course = response.data;
-    } catch (error) {
-      console.error("Error obteniendo el detalle del curso:", error);
+    } else {
+      // Si el curso no existe, redirige al usuario a la página de error 404.
+      this.$router.push({ name: 'Error404' });
     }
+  } catch (error) {
+    // Si hay un error en la solicitud (por ejemplo, un error 404), redirige igualmente.
+    console.error("Error obteniendo el detalle del curso:", error);
+    this.$router.push({ name: 'Error404' });
+  }
   },
   methods: {
     capitalizeFirstLetter(value) {

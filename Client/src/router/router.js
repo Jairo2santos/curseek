@@ -1,5 +1,6 @@
 // Importaciones agrupadas
 import { createRouter, createWebHistory } from 'vue-router';
+import { nextTick } from 'vue';
 
 // Importaciones de vistas generales
 import Home from '../views/home.vue';
@@ -32,32 +33,36 @@ const BlogDetail = () => import('../views/blogs/blogDetails.vue');
 const BlogForm = () => import('../views/blogs/blogForm.vue');
 
 const routes = [
-  { path: '/', name: 'Home', component: Home },
-  { path: '/nosotros', name: 'Nosotros', component: Nosotros },
-  { path: '/login', name: 'Login', component: Login },
-  { path: '/profile', name: 'Profile', component: Profile },
-  { path: '/signUp', name: 'SignUp', component: SignUp },
-  { path: '/blogs', name: 'BlogList', component: BlogList },
-  { path: '/blogs/:slug', name: 'BlogDetail', component: BlogDetail, props: true },
-  { path: '/blog/new', name: 'NewBlog', component: BlogForm }, 
-  { path: '/blog/edit/:slug', name: 'EditBlog', component: BlogForm, props: true },
-  { path: '/cursos/utn', name: 'CursosUTN', component: CursosUTN },
-  { path: '/cursos/udemy', name: 'CursosUDEMY', component: CursosUDEMY },
-  { path: '/cursos/coursera', name: 'CursosCoursera', component: CursosCoursera },
-  { path: '/utn/curso/:slug', name: 'DetalleCursoUTN', component: DetalleCursoUTN, props: true },
-  { path: '/udemy/cursos/:slug', name: 'DetalleCursoUdemy', component: DetalleCursoUdemy, props: true },
-  { path: '/coursera/cursos/:slug', name: 'DetalleCursoCoursera', component: DetalleCursoCoursera, props: true },
-  { path: '/coursera/universidades/uab', name: 'UAB', component: UAB, props: true },
-  { path: '/coursera/universidades/udlac', name: 'UDLAC', component: UDLAC, props: true },
-  { path: '/coursera/universidades/upchile', name: 'UPCHILE', component: UPCHILE, props: true },
-  { path: '/coursera/universidades/uchile', name: 'UCHILE', component: UCHILE, props: true },
-  { path: '/coursera/universidades/unam', name: 'UNAM', component: UNAM, props: true },
-  { path: '/:pathMatch(.*)*', name: 'Error404', component: Error404 },
+  { path: '/', name: 'Home', component: Home, meta: { title: 'Inicio - Curseek' } },
+  { path: '/nosotros', name: 'Nosotros', component: Nosotros, meta: { title: 'Nosotros - Curseek' } },
+  { path: '/login', name: 'Login', component: Login, meta: { title: 'Login - Curseek' } },
+  { path: '/profile', name: 'Profile', component: Profile, meta: { title: 'Perfil - Curseek' } },
+  { path: '/signUp', name: 'SignUp', component: SignUp, meta: { title: 'Registro - Curseek' } },
+  { path: '/blogs', name: 'BlogList', component: BlogList, meta: { title: 'Blog - Curseek' } },
+  { path: '/blogs/:slug', name: 'BlogDetail', component: BlogDetail, props: true, meta: { title: 'Detalles del Blog - Curseek' } },
+  { path: '/blog/new', name: 'NewBlog', component: BlogForm, meta: { title: 'Crear Blog - Curseek' } }, 
+  { path: '/blog/edit/:slug', name: 'EditBlog', component: BlogForm, props: true, meta: { title: 'Editar Blog - Curseek' } },
+  { path: '/cursos/utn', name: 'CursosUTN', component: CursosUTN, meta: { title: 'Cursos UTN - Curseek' } },
+  { path: '/cursos/udemy', name: 'CursosUDEMY', component: CursosUDEMY, meta: { title: 'Cursos UDEMY - Curseek' } },
+  { path: '/cursos/coursera', name: 'CursosCoursera', component: CursosCoursera, meta: { title: 'Cursos Coursera - Curseek' } },
+  { path: '/utn/curso/:slug', name: 'DetalleCursoUTN', component: DetalleCursoUTN, props: true, meta: { title: 'Detalle Curso UTN - Curseek' } },
+  { path: '/udemy/cursos/:slug', name: 'DetalleCursoUdemy', component: DetalleCursoUdemy, props: true, meta: { title: 'Detalle Curso Udemy - Curseek' } },
+  { path: '/coursera/cursos/:slug', name: 'DetalleCursoCoursera', component: DetalleCursoCoursera, props: true, meta: { title: 'Detalle Curso Coursera - Curseek' } },
+  { path: '/coursera/universidades/uab', name: 'UAB', component: UAB, props: true, meta: { title: 'Universidad Autónoma de Barcelona - Curseek' } },
+  { path: '/coursera/universidades/udlac', name: 'UDLAC', component: UDLAC, props: true, meta: { title: 'Universidad de Las Américas Puebla - Curseek' } },
+  { path: '/coursera/universidades/upchile', name: 'UPCHILE', component: UPCHILE, props: true, meta: { title: 'Universidad de Chile - Curseek' } },
+  { path: '/coursera/universidades/uchile', name: 'UCHILE', component: UCHILE, props: true, meta: { title: 'Universidad de Chile - Curseek' } },
+  { path: '/coursera/universidades/unam', name: 'UNAM', component: UNAM, props: true, meta: { title: 'Universidad Nacional Autónoma de México - Curseek' } },
+  { path: '/:pathMatch(.*)*', name: 'Error404', component: Error404, meta: { title: 'Página no encontrada - Curseek' } },
 ];
 
 const router = createRouter({
   history: createWebHistory(),
   routes,
 });
-
+router.afterEach((to, from) => {
+  nextTick(() => {
+    document.title = to.meta.title || 'Curseek';
+  });
+});
 export default router;
