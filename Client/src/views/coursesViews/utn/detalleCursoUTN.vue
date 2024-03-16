@@ -49,7 +49,7 @@
 
           <div class="bg-white p-4 md:p-6 rounded mb-6">
             <h3 class="text-xl mb-2 font-bold">Información institucional</h3>
-            <div :class="{ 'max-h-56 overflow-hidden': !expandInfoInstitucional }" class="700 md:text-md bold-4 relative">
+            <div :class="{ 'max-h-56 overflow-y-auto': !expandInfoInstitucional }" class="700 md:text-md bold-4 relative">
               <div>
                 <div class="bg-white rounded">
                     <div class="grid grid-cols-1 md:grid-cols-2 gap-6 bg-white">

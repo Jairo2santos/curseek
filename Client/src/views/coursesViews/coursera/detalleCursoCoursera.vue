@@ -60,7 +60,7 @@
           </button>
         </section>
 
-        <div class="hidden md:block bg-white p-4 md:p-6 rounded mb-6">
+        <div class="bg-white p-4 md:p-6 rounded mb-6">
           <h3 class="text-xl mb-2 font-bold">Información institucional</h3>
           <div class="grid grid-cols-1 md:grid-cols-2 gap-6 bg-white">
             <!-- Primera card -->
@@ -119,13 +119,32 @@
       <aside class="order-first md:order-last bg-white p-4 md:p-6 rounded">
         <img :src="course.imgUrl" alt="" class="block mx-auto rounded-sm mb-4 w-48" />
         <!-- Título y Universidad -->
-        <section class="md:hidden block bg-white md:p-6 rounded mb-4 justify-between items-center">
+        <section class="md:hidden bg-white md:p-6 rounded mb-4 flex justify-between items-center">
           <h1 class="md:text-3xl font-bold text-gray-800">{{ course.title }}</h1>
+          <div class="bg-gray-200 ml-auto rounded-lg">
+            <button class="mx-3" title="Agregar a Favoritos">
+              <Favoritos />
+              <!-- <Favoritos :courseId="course._id" :courseType="'UDEMY'" :isFavorited="course.isFavorited" /> -->
+            </button>
+          </div>
         </section>
         <section class="md:hidden block bg-white md:p-6 rounded mb-6">
           <!-- Resumen del curso con botón de expandir -->
           <div :class="{ 'max-h-48 overflow-hidden': !expandDescription }" class="relative">
             <p>{{ course.longDescription }}</p>
+            <!-- Detalles del Curso Mejorados -->
+            <h3 class="text-xl mb-2 font-bold mt-6">Formación</h3>
+            <div :class="{ 'max-h-56 overflow-y-auto': expandCourseDetails }">
+              <div v-if="courseModules.length === 0" class="p-4 mb-4 rounded-lg shadow">
+                <p class="text-sm">No se encontraron módulos disponibles.</p>
+              </div>
+              <div v-else>
+                <div v-for="(module, index) in courseModules" :key="index" class="p-4 mb-4 rounded-lg shadow">
+                  <h4 class="text-md font-semibold">{{ module.title}}</h4>
+                  <p class="text-sm">{{ module.details }}</p>
+                </div>
+              </div>
+            </div>
             <div v-if="!expandDescription"
               class="absolute bottom-0 left-0 right-0 h-16 bg-gradient-to-b from-transparent to-white"></div>
           </div>
