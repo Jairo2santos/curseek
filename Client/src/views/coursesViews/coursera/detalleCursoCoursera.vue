@@ -120,11 +120,10 @@
         <img :src="course.imgUrl" alt="" class="block mx-auto rounded-sm mb-4 w-48" />
         <!-- Título y Universidad -->
         <section class="md:hidden bg-white md:p-6 rounded mb-4 flex justify-between items-center">
-          <h1 class="md:text-3xl font-bold text-gray-800">{{ course.title }}</h1>
+          <h1 class="text-xl md:text-3xl font-bold text-gray-800">{{ course.title }}</h1>
           <div class="bg-gray-200 ml-auto rounded-lg">
             <button class="mx-3" title="Agregar a Favoritos">
-              <Favoritos />
-              <!-- <Favoritos :courseId="course._id" :courseType="'UDEMY'" :isFavorited="course.isFavorited" /> -->
+                <Favoritos :courseId="course._id" :courseType="'COURSERA'" :isFavorited="course.isFavorited" />
             </button>
           </div>
         </section>

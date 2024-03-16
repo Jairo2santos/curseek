@@ -35,7 +35,7 @@
                         <img :src="course.imgUrl" alt="" class="w-auto h-16 rounded mb-2 md:mb-0 md:mr-2" />
                       </div>
                       <!-- Título del curso -->
-                      <h2 class="md:text-lg mt-2 md:mt-0 font-semibold hover:underline">
+                      <h2 class="text-lg mt-2 md:mt-0 font-semibold hover:underline">
                         {{ course.title || 'Aprende con este Curso de Coursera' }}
                       </h2>
                     </div>

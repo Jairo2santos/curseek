@@ -106,7 +106,7 @@
         <img :src="udemyCourse.image" alt="" class="rounded-sm mb-4 w-full">
         <!-- Sección de Título y Precio -->
         <div class="md:hidden bg-white md:p-6 rounded mb-4 flex justify-between items-center">
-        <h1 class="md:text-3xl font-bold text-gray-800">{{ udemyCourse.title || 'Aprende con este Curso de Udemy' }}</h1>
+        <h1 class="text-xl md:text-3xl font-bold text-gray-800">{{ udemyCourse.title || 'Aprende con este Curso de Udemy' }}</h1>
         <div class="bg-gray-200 ml-auto rounded-lg">
           <button class="mx-3" title="Agregar a Favoritos">
             <Favoritos />
@@ -114,7 +114,6 @@
           </button>
         </div>
       </div>
-
         
         <!-- Sección de Descripción Larga -->
         <div class="md:hidden block bg-white md:p-6 rounded mb-6">

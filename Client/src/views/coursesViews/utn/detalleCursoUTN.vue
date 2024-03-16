@@ -154,9 +154,15 @@
         <div class="order-first md:order-last bg-white p-4 md:p-6 rounded">
           <img :src="course.imgUrl" alt="" class="rounded-sm mb-4 w-full">
           <!-- Sección de Título, Duración y Precio -->
-          <div class="md:hidden block bg-white md:p-6 rounded mb-4 justify-between items-center">
-            <h1 class="text-2xl md:text-3xl font-bold text-gray-800">{{ course.title || 'Aprende con este Curso de UTN' }}</h1>
+          <div class="md:hidden bg-white md:p-6 rounded mb-4 flex justify-between items-center">
+            <h1 class="text-xl md:text-3xl font-bold text-gray-800">{{ course.title || 'Aprende con este Curso de UTN' }}</h1>
+            <div class="bg-gray-200 ml-auto rounded-lg">
+              <button class="mx-3" title="Agregar a Favoritos">
+                <Favoritos :courseId="course._id" :courseType="'UDEMY'" :isFavorited="course.isFavorited" />
+              </button>
+            </div>
           </div>
+
           <div class="md:hidden block bg-white md:p-6 rounded mb-6">
             <div :class="{ 'max-h-48 overflow-hidden': !expandDescription }" class="700 md:text-md bold-4 relative">
               <div v-html="course.summary"></div>

@@ -32,7 +32,7 @@
                       <!-- Imagen del curso -->
                       <img :src="course.imgUrl" alt="" class="md:w-1/5 rounded mb-2 md:mb-0 md:mr-2">
                       <!-- Título del curso -->
-                      <h2 class="md:text-lg mt-2 md:mt-0 font-semibold hover:underline">
+                      <h2 class="text-lg mt-2 md:mt-0 font-semibold hover:underline">
                         {{ course.title || 'Aprende con este Curso de UTN' }}
                       </h2>
                     </div>
