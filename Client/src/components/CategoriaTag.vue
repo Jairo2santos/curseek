@@ -5,6 +5,7 @@
   </a>
 </template>
 
+<<<<<<< HEAD
 <script>
 export default {
   props: {
@@ -14,4 +15,8 @@ export default {
     }
   }
 }
+=======
+<script setup>
+const { categoria } = defineProps(['categoria']);
+>>>>>>> developer
 </script>

@@ -1,29 +1,36 @@
-# curseek
 proyecto de buscador de cursos
 
-
 Instrucciones de Instalación
-1. Clonar el Repositorio:
-2. Cliente:
-Dirígete a la carpeta del cliente:
 
-Instala las dependencias:
+Clonar el Repositorio:
 
-npm install
+### Dirígete a la carpeta del Client:
+cd Client
 
-Para ejecutar el cliente en modo desarrollo:
+### Instala las dependencias:
+npm i
 
-npm run dev
+### Para ejecutar el cliente:
+npm start
 
 El cliente debería ahora estar corriendo en http://localhost:5173 (o el puerto que Vite use por defecto).
 
-3. Configurar el lado del Servidor:
-
-cd server
-Instala las dependencias:
+Configurar el lado del Servidor:
+cd server Instala las dependencias:
 
 npm install
 
 Nota: Asegúrate de tener configurada la conexión a tu base de datos para eso corre mongo compass y agarra la direccion que te dan y la pones en la ruta de de servidor.js y el nombre de la base de datos ponle cursosApp asi te corre como a mi
 
 node servidor.js corres el server http://localhost:3000
+
+# MongoDB:
+
+nombre db: cursosApp
+
+Estructura_
+
+todos los cursos: cursos_ALL
+cursos: cursos_UTN
+cursos: cursos_UDEMY
+usuarios: users

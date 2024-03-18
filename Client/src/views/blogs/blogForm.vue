@@ -1,0 +1,106 @@
+<template>
+  <div class="max-w-4xl mx-auto my-10">
+    <Notificacion v-if="showNotification" :message="notificationMessage" :type="notificationType" @close="showNotification = false" />
+    <h2 class="text-3xl font-bold mb-5">{{ isEditMode ? 'Editar Blog' : 'Agregar Nuevo Blog' }}</h2>
+    <form @submit.prevent="submitForm">
+      <div class="mb-6">
+        <label for="title" class="block mb-2 text-sm font-medium text-gray-900">Título</label>
+        <input type="text" id="title" v-model="blog.title"
+          class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-pastel-verde focus:border-pastel-verde block w-full p-2.5"
+          required>
+      </div>
+      <div class="mb-6">
+        <label for="image" class="block mb-2 text-sm font-medium text-gray-900">URL de la Imagen</label>
+        <input type="text" id="image" v-model="blog.image"
+          class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-pastel-verde focus:border-pastel-verde block w-full p-2.5"
+          required>
+      </div>
+      <div class="mb-6">
+        <label for="content" class="block mb-2 text-sm font-medium text-gray-900">Contenido</label>
+        <textarea id="content" v-model="blog.content" rows="10"
+          class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-pastel-verde focus:border-pastel-verde block w-full p-2.5"
+          required></textarea>
+      </div>
+      <button type="submit"
+        class="text-white bg-blue-500 hover:bg-blue-700 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2">{{ isEditMode ? 'Actualizar' : 'Publicar' }}</button>
+    </form>
+  </div>
+</template>
+
+  
+<script setup>
+import { ref, onMounted } from 'vue';
+import { useRoute, useRouter } from 'vue-router';
+import axios from 'axios';
+import Notificacion from '../../components/Notificaciones.vue';
+
+const route = useRoute();
+const router = useRouter();
+const blog = ref({ title: '', image: '', content: '' });
+const isEditMode = ref(false);
+const showNotification = ref(false);
+const notificationMessage = ref('');
+const notificationType = ref('');
+
+onMounted(async () => {
+  const slug = route.params.slug;
+  if (slug) {
+    isEditMode.value = true;
+    try {
+      const response = await axios.get(`${import.meta.env.VITE_API_URL}/blogs/slug/${slug}`);
+      blog.value = response.data;
+      console.log('Blog cargado para editar:', blog.value);
+    } catch (error) {
+      console.error('Error al cargar el blog para editar:', error);
+      notificationMessage.value = 'No se pudo cargar el blog para editar';
+      notificationType.value = 'error';
+      showNotification.value = true;
+    }
+  }
+});
+
+const submitForm = async () => {
+  const token = localStorage.getItem('token');
+
+  if (!token) {
+    console.error('No se ha proporcionado el token de autorización.');
+    notificationMessage.value = 'Falta el token de autorización.';
+    notificationType.value = 'error';
+    showNotification.value = true;
+    return;
+  }
+
+  try {
+    const slug = route.params.slug; 
+    // Asegúrate de que la URL base no termine en `/api` si la ruta también comienza con `/api`
+    const baseURL = import.meta.env.VITE_API_URL
+    const url = isEditMode.value && slug ? `${baseURL}/blogs/slug/${slug}` : `${baseURL}/blogs`;
+    const method = isEditMode.value ? 'put' : 'post';
+    console.log('Realizando solicitud:', method, 'a', url);
+    console.log('Datos del blog:', blog.value);
+
+    const response = await axios({
+      method,
+      url,
+      data: blog.value,
+      headers: {
+       Authorization: `Bearer ${token}`,
+      },
+    });
+
+    console.log('Respuesta de la solicitud:', response);
+    notificationMessage.value = isEditMode.value ? 'Blog actualizado exitosamente' : 'Blog publicado exitosamente';
+    notificationType.value = 'success';
+    showNotification.value = true;
+    
+    setTimeout(() => {
+      router.push({ name: 'BlogList' });
+    }, 3000);
+  } catch (error) {
+    console.error('Error al guardar el blog:', error);
+    notificationMessage.value = 'Error al guardar el blog';
+    notificationType.value = 'error';
+    showNotification.value = true;
+  }
+};
+</script>
