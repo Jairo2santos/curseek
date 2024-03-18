@@ -1,13 +1,19 @@
 const express = require('express');
 const router = express.Router();
 const userController = require('../controllers/generals/user.controller');
-const { verifyToken, isAdmin } = require('../middlewares/auth.middleware');
+const { verifyToken, isAdmin , generatePasswordResetToken} = require('../middlewares/auth.middleware');
 const upload = require('../middlewares/upload.middleware'); // Asegúrate de que la ruta sea correcta
 
 // Rutas auth
 router.post('/login', userController.login);
 router.post('/register', upload.single('profilePicture'), userController.register);
 router.put('/profile/:id', verifyToken, upload.single('profilePicture'), userController.updateUserProfile);
+router.post('/password-recovery', generatePasswordResetToken, userController.sendPasswordResetEmail);
+router.post('/email-user-verification', userController.verifyUserByEmail);
+router.post('/reset-password', userController.resetPassword);
+
+//router.get('/send-test-email', userController.sendTestEmail);
+
 
 // Ruta protegida para perfil de usuario
 router.get('/profile/username/:username', verifyToken, userController.getUserProfileByUsername);

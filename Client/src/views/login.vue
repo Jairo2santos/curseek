@@ -5,9 +5,9 @@
     <form class="bg-white rounded shadow-md p-6 w-80" @submit.prevent="login">
       <h2 class="text-xl mb-4 text-center">Iniciar Sesión</h2>
       <div class="mb-6">
-        <label for="username" class="block text-md mb-2">Nombre de usuario <span class="text-red-500">*</span></label>
-        <input type="text" id="username" placeholder="Ingrese su nombre de usuario" v-model="username" required
-          class="w-full px-3 py-2 border rounded-md focus:outline-none focus:ring focus:border-blue-300" />
+        <label for="username" class="block text-md mb-2">Nombre de usuario o email <span class="text-red-500">*</span></label>
+        <input type="text" id="login" placeholder="Nombre de usuario o email" v-model="loginInput" required class="w-full px-3 py-2 border rounded-md focus:outline-none focus:ring focus:border-blue-300" />
+
       </div>
       <div class="mb-6">
         <label for="password" class="block text-md mb-2">Contraseña <span class="text-red-500">*</span></label>
@@ -32,8 +32,8 @@
       </p>
       <div>
         <p class="mt-4 text-center text-sm border-t border-gray-300 py-4">
-          ¿Olvidaste tu contraseña?, comunicate con nosotros: <a href="mailto:restore@curseek.com" class="text-indigo-500">restore@curseek.com</a>
-        </p>
+  ¿Olvidaste tu contraseña? <router-link to="/password-recovery" class="text-indigo-500">Restablecer aquí</router-link>
+</p>
       </div>
     </form>
   </div>
@@ -45,7 +45,7 @@ import { useRouter } from 'vue-router';
 import Notificationes from '../components/Notificaciones.vue'; 
 
 const router = useRouter();
-const username = ref('');
+const loginInput = ref(''); // Cambiado para usar un solo input que puede ser username o email
 const password = ref('');
 const showPassword = ref(false);
 const showNotification = ref(false);
@@ -53,10 +53,9 @@ const notificationMessage = ref('');
 const notificationType = ref('');
 
 const login = async () => {
-
   try {
     const response = await axios.post(`${import.meta.env.VITE_API_URL}/users/login`, {
-      username: username.value,
+      login: loginInput.value,
       password: password.value,
     });
     if (response.status === 200) {

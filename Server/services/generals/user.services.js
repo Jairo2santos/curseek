@@ -8,11 +8,17 @@ const jwt = require('jsonwebtoken');
 
 
 
-const authenticateUser = async (username, password) => {
-  console.log(`Authenticating user: ${username}`);
-  const user = await User.findOne({ username });
+const authenticateUser = async (login, password) => {
+  // El parámetro 'login' puede ser tanto el nombre de usuario como el correo electrónico
+  console.log(`Authenticating user: ${login}`);
+
+  // Buscar el usuario por nombre de usuario o correo electrónico
+  const user = await User.findOne({
+    $or: [{ username: login }, { email: login }]
+  });
+
   if (!user) {
-    throw new Error('Usuario no encontrado');
+    throw new Error('Usuario o correo electrónico no encontrado');
   }
 
   const isMatch = await bcrypt.compare(password, user.password);
@@ -20,8 +26,7 @@ const authenticateUser = async (username, password) => {
     throw new Error('Contraseña incorrecta');
   }
 
-  // Generar JWT
-
+  // Si la contraseña coincide, generar y devolver el token JWT
   const token = jwt.sign(
     { userId: user._id, role: user.role },
     process.env.JWT_SECRET,
@@ -30,6 +35,7 @@ const authenticateUser = async (username, password) => {
 
   return { user, token };
 };
+
 
 const getUserById = async (userId) => {
   try {
@@ -152,6 +158,12 @@ const updateUserProfile = async (userId, updatedData, newImagePath) => {
       // Actualizar la ruta de la imagen de perfil en los datos actualizados
       updatedData.profilePicture = newImagePath;
     }
+    if (updatedData.password) {
+      const salt = await bcrypt.genSalt(10);
+      const hashedPassword = await bcrypt.hash(updatedData.password, salt);
+      updatedData.password = hashedPassword;
+    }
+    
 
     // Actualizar los campos del usuario con los datos proporcionados
     Object.assign(user, updatedData);
@@ -187,6 +199,16 @@ const checkIfCourseIsFavorited = async (userId, courseId) => {
   }
 };
 
+const getUserByEmail = async (email) => {
+  try {
+    const user = await User.findOne({ email: email });
+    return user; // Si no se encuentra un usuario, esto será null
+  } catch (error) {
+    // Manejar errores inesperados, como problemas de conexión a la base de datos
+    throw new Error('Error al conectarse a la base de datos para buscar el usuario.');
+  }
+};
+
 module.exports = {
   getUserById,
   addFavoriteToUser,
@@ -199,4 +221,6 @@ module.exports = {
   register,
   updateUserProfile,
   checkIfCourseIsFavorited,
+  getUserByEmail,
+
 };

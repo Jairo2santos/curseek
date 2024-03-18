@@ -10,6 +10,10 @@ import Profile from '../views/profile.vue';
 import SignUp from '../views/signUp.vue';
 import Error404 from '../views/error404.vue';
 
+//recuperar pass
+const PasswordRecovery = () => import('../views/passwordRecovery.vue');
+const ResetPassword = () => import('../views/resetPassword.vue');
+
 // Importaciones de cursos (Lazy loading)
 const CursosUTN = () => import('../views/coursesViews/utn/cursosUTN.vue');
 const CursosUDEMY = () => import('../views/coursesViews/udemy/cursosUDEMY.vue');
@@ -53,6 +57,8 @@ const routes = [
   { path: '/coursera/universidades/upchile', name: 'UPCHILE', component: UPCHILE, props: true, meta: { title: 'Universidad de Chile - Curseek' } },
   { path: '/coursera/universidades/uchile', name: 'UCHILE', component: UCHILE, props: true, meta: { title: 'Universidad de Chile - Curseek' } },
   { path: '/coursera/universidades/unam', name: 'UNAM', component: UNAM, props: true, meta: { title: 'Universidad Nacional Autónoma de México - Curseek' } },
+  { path: '/password-recovery', name: 'PasswordRecovery', component: PasswordRecovery, meta: { title: 'Recuperación de Contraseña - Curseek' } },
+  { path: '/reset-password', name: 'ResetPassword ', component: ResetPassword,  meta: { title: 'Reseteo de Contraseña - Curseek' } },
   { path: '/:pathMatch(.*)*', name: 'Error404', component: Error404, meta: { title: 'Página no encontrada - Curseek' } },
 ];
 
