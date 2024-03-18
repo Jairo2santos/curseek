@@ -38,62 +38,71 @@
           </div>
           <button @click="expandDescription = !expandDescription"
             class="mt-4 text-blue-600 hover:underline font-semibold transition focus:outline-none">
-            {{ expandDescription ? "Ver menos" : "Ver más" }}
+            {{ expandDescription ? "" : "Ver más" }}
           </button>
           <!-- Detalles del Curso Mejorados -->
           <h3 class="text-xl mb-2 font-bold mt-6">Formación</h3>
           <div :class="{ 'max-h-56 overflow-y-auto': expandCourseDetails }">
-            <div v-for="(module, index) in courseModules" :key="index" class="p-4 mb-4 rounded-lg shadow">
-              <h4 class="text-md font-semibold">{{ module.title }}</h4>
-              <p class="text-sm">{{ module.details }}</p>
+            <div v-if="courseModules.length === 0" class="p-4 mb-4 rounded-lg shadow">
+              <p class="text-sm">No se encontraron módulos disponibles.</p>
+            </div>
+            <div v-else>
+              <div v-for="(module, index) in courseModules" :key="index" class="p-4 mb-4 rounded-lg shadow">
+                <h4 class="text-md font-semibold">{{ module.title}}</h4>
+                <p class="text-sm">{{ module.details }}</p>
+              </div>
             </div>
           </div>
+
           <button @click="expandCourseDetails = !expandCourseDetails"
             class="mt-4 text-blue-600 hover:underline font-semibold transition focus:outline-none">
-            {{ expandCourseDetails ? 'Ver más' : 'Ver menos' }}
+            {{ expandCourseDetails ? 'Ver más' : '' }}
           </button>
         </section>
 
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6 bg-white">
-          <!-- Primera card -->
-          <section class="bg-white p-4 md:p-6 rounded flex-col justify-center">
-            <!-- Contenido de la primera card -->
-            <div class="flex items-center pb-2">
-              <svg class="mr-2" xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960" width="36">
-                <path
-                  d="M295.384-80V-358.23L158.461-580l160.385-260h322.308l160.385 260-136.923 221.769V-80L480-143.846 295.384-80Zm40.001-58.692L480-187.077l144.615 48.385V-320h-289.23v181.308ZM340.769-800l-136 220 136 220h278.462l136-220-136-220H340.769ZM438-445.461 324.461-558 353-586.539l85 85 169-170L635.539-644 438-445.461ZM335.385-320h289.23-289.23Z" />
-              </svg>
-              <h3 class="text-xl mb-2 font-bold">Profesores certificados</h3>
-            </div>
-            <div :class="{ 'max-h-48 overflow-hidden': !expandInfoComplementaria }" class="relative">
-              <p>
-                Nuestros educadores poseen habilidades especializadas en la enseñanza a distancia y comparten una
-                profunda
-                pasión por educar, comprometiéndose a mantenerse continuamente actualizados para ofrecer lecciones
-                completas y de elevado estándar académico.
-              </p>
-            </div>
-          </section>
+        <div class="bg-white p-4 md:p-6 rounded mb-6">
+          <h3 class="text-xl mb-2 font-bold">Información institucional</h3>
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-6 bg-white">
+            <!-- Primera card -->
+            <section class="bg-white p-4 md:p-6 rounded flex-col justify-center">
+              <!-- Contenido de la primera card -->
+              <div class="flex items-center pb-2">
+                <svg class="mr-2" xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960" width="36">
+                  <path
+                    d="M295.384-80V-358.23L158.461-580l160.385-260h322.308l160.385 260-136.923 221.769V-80L480-143.846 295.384-80Zm40.001-58.692L480-187.077l144.615 48.385V-320h-289.23v181.308ZM340.769-800l-136 220 136 220h278.462l136-220-136-220H340.769ZM438-445.461 324.461-558 353-586.539l85 85 169-170L635.539-644 438-445.461ZM335.385-320h289.23-289.23Z" />
+                </svg>
+                <h3 class="text-xl mb-2 font-bold">Profesores certificados</h3>
+              </div>
+              <div :class="{ 'max-h-48 overflow-hidden': !expandInfoComplementaria }" class="relative">
+                <p>
+                  Nuestros educadores poseen habilidades especializadas en la enseñanza a distancia y comparten una
+                  profunda
+                  pasión por educar, comprometiéndose a mantenerse continuamente actualizados para ofrecer lecciones
+                  completas y de elevado estándar académico.
+                </p>
+              </div>
+            </section>
 
-          <!-- Segunda card -->
-          <section class="bg-white p-4 md:p-6 rounded flex-col justify-center">
-            <!-- Contenido de la segunda card -->
-            <div class="flex items-center pb-2">
-              <svg class="mr-2" xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960" width="36">
-                <path
-                  d="m437-408 198.539-197.539L607-634.077l-170 170-85-85-28.308 28.308L437-408ZM70.769-181.538v-40h818.462v40H70.769Zm113.846-80q-27.615 0-46.115-18.5-18.5-18.5-18.5-46.116v-390.769q0-27.616 18.5-46.116t46.115-18.5h590.77q27.615 0 46.115 18.5 18.5 18.5 18.5 46.116v390.769q0 27.616-18.5 46.116t-46.115 18.5h-590.77Zm0-40.001h590.77q9.23 0 16.923-7.692Q800-316.923 800-326.154v-390.769q0-9.231-7.692-16.923-7.693-7.693-16.923-7.693h-590.77q-9.23 0-16.923 7.693Q160-726.154 160-716.923v390.769q0 9.231 7.692 16.923 7.693 7.692 16.923 7.692Zm-24.615 0v-440 440Z" />
-              </svg>
-              <h3 class="text-xl mb-2 font-bold">¿Por qué elegirnos?</h3>
-            </div>
-            <div :class="{ 'max-h-48 overflow-hidden': !expandInfoComplementaria }" class="relative">
-              <p>
-                Adquiere saberes de la mano de educadores altamente experimentados en educación a distancia,
-                comprometidos con una actualización constante para proporcionar clases de excelencia académica. Contamos
-                con una sólida trayectoria en la enseñanza en línea, respaldada por la dedicación y la experiencia de
-                nuestro equipo docente.
-              </p>
-            </div>
-          </section>
+            <!-- Segunda card -->
+            <section class="bg-white p-4 md:p-6 rounded flex-col justify-center">
+              <!-- Contenido de la segunda card -->
+              <div class="flex items-center pb-2">
+                <svg class="mr-2" xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960" width="36">
+                  <path
+                    d="m437-408 198.539-197.539L607-634.077l-170 170-85-85-28.308 28.308L437-408ZM70.769-181.538v-40h818.462v40H70.769Zm113.846-80q-27.615 0-46.115-18.5-18.5-18.5-18.5-46.116v-390.769q0-27.616 18.5-46.116t46.115-18.5h590.77q27.615 0 46.115 18.5 18.5 18.5 18.5 46.116v390.769q0 27.616-18.5 46.116t-46.115 18.5h-590.77Zm0-40.001h590.77q9.23 0 16.923-7.692Q800-316.923 800-326.154v-390.769q0-9.231-7.692-16.923-7.693-7.693-16.923-7.693h-590.77q-9.23 0-16.923 7.693Q160-726.154 160-716.923v390.769q0 9.231 7.692 16.923 7.693 7.692 16.923 7.692Zm-24.615 0v-440 440Z" />
+                </svg>
+                <h3 class="text-xl mb-2 font-bold">Estudia en Coursera</h3>
+              </div>
+              <div :class="{ 'max-h-48 overflow-hidden': !expandInfoComplementaria }" class="relative">
+                <p>
+                  Adquiere saberes de la mano de educadores altamente experimentados en educación a distancia,
+                  comprometidos con una actualización constante para proporcionar clases de excelencia académica. Contamos
+                  con una sólida trayectoria en la enseñanza en línea, respaldada por la dedicación y la experiencia de
+                  nuestro equipo docente.
+                </p>
+              </div>
+            </section>
+          </div>
         </div>
 
         <!-- Profesores -->
@@ -110,13 +119,31 @@
       <aside class="order-first md:order-last bg-white p-4 md:p-6 rounded">
         <img :src="course.imgUrl" alt="" class="block mx-auto rounded-sm mb-4 w-48" />
         <!-- Título y Universidad -->
-        <section class="md:hidden block bg-white md:p-6 rounded mb-4 justify-between items-center">
-          <h1 class="md:text-3xl font-bold text-gray-800">{{ course.title }}</h1>
+        <section class="md:hidden bg-white md:p-6 rounded mb-4 flex justify-between items-center">
+          <h1 class="text-xl md:text-3xl font-bold text-gray-800">{{ course.title }}</h1>
+          <div class="bg-gray-200 ml-auto rounded-lg">
+            <button class="mx-3" title="Agregar a Favoritos">
+                <Favoritos :courseId="course._id" :courseType="'COURSERA'" :isFavorited="course.isFavorited" />
+            </button>
+          </div>
         </section>
         <section class="md:hidden block bg-white md:p-6 rounded mb-6">
           <!-- Resumen del curso con botón de expandir -->
           <div :class="{ 'max-h-48 overflow-hidden': !expandDescription }" class="relative">
             <p>{{ course.longDescription }}</p>
+            <!-- Detalles del Curso Mejorados -->
+            <h3 class="text-xl mb-2 font-bold mt-6">Formación</h3>
+            <div :class="{ 'max-h-56 overflow-y-auto': expandCourseDetails }">
+              <div v-if="courseModules.length === 0" class="p-4 mb-4 rounded-lg shadow">
+                <p class="text-sm">No se encontraron módulos disponibles.</p>
+              </div>
+              <div v-else>
+                <div v-for="(module, index) in courseModules" :key="index" class="p-4 mb-4 rounded-lg shadow">
+                  <h4 class="text-md font-semibold">{{ module.title}}</h4>
+                  <p class="text-sm">{{ module.details }}</p>
+                </div>
+              </div>
+            </div>
             <div v-if="!expandDescription"
               class="absolute bottom-0 left-0 right-0 h-16 bg-gradient-to-b from-transparent to-white"></div>
           </div>
