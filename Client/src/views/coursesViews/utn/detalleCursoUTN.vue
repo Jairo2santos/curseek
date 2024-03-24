@@ -1,7 +1,11 @@
 <template>
   <div class="bg-gray-100 p-4 md:p-6 max-w-screen-full mx-auto">
-    <p class="hidden md:block text-center pb-6 text-sm text-gray-500">CurSeek cuenta con el apoyo del alumno. Cuando
-      compra a través de enlaces en nuestro sitio, podemos ganar una comisión de afiliado.</p>
+    <seo-component
+      :title="pageTitleSEO"
+      :description="pageDescriptionSEO"
+      :breadcrumbs="breadcrumbs"
+    />
+    
     <div class="max-w-screen-xl mx-auto">
       <!-- Grilla Principal -->
       <div class="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-6">
@@ -178,15 +182,14 @@
               {{ expandDescription ? "Ver menos" : "Ver más" }}
             </button>
           </div>
-          <a :href="course.link" target="_blank"
-            class="flex bg-indigo-600 text-white text-center py-2 px-4 rounded hover:bg-indigo-800 transition-colors duration-300 ease-in-out w-full items-center text-md justify-center font-semibold">
+          <button @click="redirectToExternal(course.link)" class="flex bg-indigo-600 text-white text-center py-2 px-4 rounded hover:bg-indigo-800 transition-colors duration-300 ease-in-out w-full items-center text-md justify-center font-semibold">
             Ir al curso
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960" width="24" class="ml-2">
               <path
                 d="M200-120q-33 0-56.5-23.5T120-200v-560q0-33 23.5-56.5T200-840h280v80H200v560h560v-280h80v280q0 33-23.5 56.5T760-120H200Zm188-212-56-56 372-372H560v-80h280v280h-80v-144L388-332Z"
                 fill="#fff" />
             </svg>
-          </a>
+          </button>
           <div class="px-2 py-6 text-md">
             <ul>
               <!-- Institución -->
@@ -243,49 +246,89 @@
         </div>
       </div>
     </div>
+    <p class="hidden md:block text-center pb-6 text-sm text-gray-500">CurSeek cuenta con el apoyo del alumno. Cuando
+      compra a través de enlaces en nuestro sitio, podemos ganar una comisión de afiliado.</p>
   </div>
 </template>
 
-<script>
+<script setup>
+import { ref, onMounted } from 'vue';
 import axios from 'axios';
+import { useRouter, useRoute } from 'vue-router';
 import Favoritos from "../../../components/Favoritos.vue";
+import SeoComponent from '../../../components/SEO.vue';
+import { useMeta } from 'vue-meta';
 
-export default {
-  data() {
-    return {
-      course: {},
-      expandDescription: false,
-      expandInfoInstitucional: false,
-    };
-  },
-  async created() {
-    const courseSlug = this.$route.params.slug;
+const router = useRouter();
+const route = useRoute();
+
+const course = ref({});
+const expandDescription = ref(false);
+const expandInfoInstitucional = ref(false);
+const expandInfoComplementaria = ref(false);
+
+// SEO
+const defaultTitle = 'Descubre Cursos de la UTN';
+const defaultDescription = 'Explora los cursos ofrecidos por la Universidad Tecnológica Nacional.';
+
+const pageTitleSEO = ref(defaultTitle);
+const pageDescriptionSEO = ref(defaultDescription);
+const breadcrumbs = ref([]);
+
+// JSON-LD
+const structuredData = ref({});
+
+onMounted(async () => {
+  const courseSlug = route.params.slug;
   try {
     const response = await axios.get(`${import.meta.env.VITE_API_URL}/cursos/utn/${courseSlug}`);
     if (response.data && Object.keys(response.data).length) {
-      // Si el curso existe, asigna los datos del curso a la variable de estado.
-      this.course = response.data;
+      course.value = response.data;
+
+      // Actualizar SEO y JSON-LD aquí
+      pageTitleSEO.value = course.value.title ? `${course.value.title} - CurSeek` : defaultTitle;
+      pageDescriptionSEO.value = course.value.description || defaultDescription;
+      breadcrumbs.value = [
+        { text: 'Inicio', to: '/', active: route.path === '/' },
+        { text: 'UTN', to: '/cursos/utn', active: route.path.includes('/cursos/utn') },
+        { text: course.value.title, to: `/utn/cursos/${courseSlug}`, active: true },
+      ];
+
+      structuredData.value = {
+        "@context": "https://schema.org",
+        "@type": "Course",
+        "name": course.value.title,
+        "description": course.value.description,
+        // Ajusta estos valores según los datos específicos del curso de la UTN
+        "provider": {
+          "@type": "Organization",
+          "name": "Universidad Tecnológica Nacional",
+          "sameAs": "https://www.utn.edu.ar"
+        }
+      };
     } else {
-      // Si el curso no existe, redirige al usuario a la página de error 404.
-      this.$router.push({ name: 'Error404' });
+      router.push({ name: 'Error404' });
     }
   } catch (error) {
-    // Si hay un error en la solicitud (por ejemplo, un error 404), redirige igualmente.
     console.error("Error obteniendo el detalle del curso:", error);
-    this.$router.push({ name: 'Error404' });
+    router.push({ name: 'Error404' });
   }
-  },
-  methods: {
-    capitalizeFirstLetter(value) {
-      if (!value) return '';
-      return value.charAt(0).toUpperCase() + value.slice(1);
-    },
-    toggleDescription() {
-      this.expandDescription = !this.expandDescription;
-    },
-    toggleInfoInstitucional() {
-      this.expandInfoInstitucional = !this.expandInfoInstitucional;
-    },
-  },
+});
+
+// Métodos convertidos a funciones
+const capitalizeFirstLetter = (value) => {
+    if (!value) return '';
+    return value.charAt(0).toUpperCase() + value.slice(1);
+};
+
+const toggleDescription = () => {
+    expandDescription.value = !expandDescription.value;
+};
+
+const toggleInfoInstitucional = () => {
+    expandInfoInstitucional.value = !expandInfoInstitucional.value;
+};
+const redirectToExternal = (url) => {
+  router.push({ name: 'LinkSaliente', query: { url } });
 };
 </script>

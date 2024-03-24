@@ -665,7 +665,7 @@
                     <p>
                         Si tienes alguna pregunta sobre estos Términos y Condiciones, contáctanos por correo electrónico a
                         <a href="mailto:privacidad@curseek.com"
-                            class="hover:text-blue-600 transition underline">curseek@gmail.com</a>
+                            class="hover:text-blue-600 transition underline">support@curseek.com</a>
                     </p>
                 </section>
             </div>
@@ -684,7 +684,7 @@
                             ¿Tienes preguntas o comentarios? Estamos aquí para ayudarte.
                             Ponte en contacto con nuestro equipo:
                         </p>
-                        <a href="mailto:curseek@gmail.com" class="text-blue-500 hover:underline">curseek@gmail.com</a>
+                        <a href="mailto:support@curseek.com" class="text-blue-500 hover:underline">support@curseek.com</a>
                     </div>
                     <!-- Tarjeta para el número de teléfono -->
                     <div class="bg-white p-4 rounded-lg shadow-md">
@@ -692,7 +692,7 @@
                         <p>
                             ¿Prefieres hablar directamente con nosotros? Llámanos o envía un SMS al siguiente número:
                         </p>
-                        <a href="tel:+123456789" class="text-blue-500 hover:underline">+54 11 456 789</a>
+                        <a href="tel:1122559115" class="text-blue-500 hover:underline">+54 11 22559115</a>
                     </div>
                 </div>
             </div>

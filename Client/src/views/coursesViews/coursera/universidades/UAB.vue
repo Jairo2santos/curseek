@@ -1,5 +1,12 @@
 <template>
   <div class="bg-gray-100">
+    <!-- SEO -->
+    <seo-component
+      :title="pageTitleSEO"
+      :description="pageDescriptionSEO"
+      :breadcrumbs="breadcrumbs"
+    />
+    
     <!-- Portada -->
     <!-- Imagen de Portada -->
     <img :src="portadaImg" alt="" class="w-full h-80 object-cover hidden md:block" />
@@ -82,9 +89,12 @@
 import { ref, computed, onMounted } from 'vue';
 import axios from 'axios';
 import Paginacion from '../../../../components/Paginacion.vue';
-
 import portadaImg from "../../../../assets/instituciones/UAB_campus.png";
+import SeoComponent from '../../../../components/SEO.vue';
+import { useRoute } from 'vue-router';
 
+
+const route = useRoute();
 const pageTitle = 'Universidad de Barcelona - Coursera';
 const pageDescription = 'La Universidad de Barcelona (UB), fundada en 1450, es una de las instituciones educativas más antiguas de España y se ha destacado por su excelencia en la enseñanza e investigación. Ofrece una amplia gama de grados, másteres y programas de doctorado en diversos campos del conocimiento, desde las humanidades hasta las ciencias naturales y la salud. Ubicada en Barcelona, ha sido fundamental en la vida intelectual y cultural de Cataluña y España, contribuyendo al avance del conocimiento y la innovación. Su campus histórico y modernas instalaciones ofrecen un entorno estimulante para estudiantes y académicos de todo el mundo.';
 const courses = ref([]);
@@ -95,6 +105,29 @@ const totalCourses = ref(0);
 const isLoading = ref(false);
 axios.defaults.baseURL = import.meta.env.VITE_API_URL;
 const isProfessorsExpanded = ref(false);
+
+
+//SEO
+
+// Ejemplo de pageTitle y pageDescription
+const pageTitleSEO = 'Cursos Universidad de Barcelona - CurSeek';
+const pageDescriptionSEO = 'Explora cursos de la Universidad de Barcelona y amplía tus conocimientos con programas especializados.';
+
+// Usa la API de enrutamiento de Vue para obtener la ruta actual
+
+// Crea una estructura de breadcrumbs reactiva basada en la ruta actual
+const breadcrumbs = computed(() => {
+  // Aquí puedes construir la lógica para tus breadcrumbs basada en route.path o route.params
+  return [
+    { text: 'Inicio', to: '/', active: route.path === '/' },
+    { text: 'Coursera', to: '/cursos/coursera', active: route.path === '/cursos/coursera' },
+    { text: 'Universidad de Barcelona', to: '/coursera/universidades/udb', active: route.path === '/coursera/universidades/udlac' },
+    // La última ruta es siempre activa y no tiene enlace
+  ];
+});
+
+
+
 
 // Redes sociales links
 const instagramLink = 'https://www.instagram.com/exploreuab/';

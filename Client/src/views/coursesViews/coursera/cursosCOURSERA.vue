@@ -1,5 +1,11 @@
 <template>
   <div class="bg-white">
+    <!-- seo -->
+    <seo-component
+      :title="pageTitleSEO"
+      :description="pageDescriptionSEO"
+      :breadcrumbs="breadcrumbs"
+    />
     <Portada :title="pageTitle" :description="pageDescription" :totalCourses="totalCourses" :imageSrc="logoCoursera"
       :instagramLink="'https://www.instagram.com/coursera/'" :twitterLink="'https://twitter.com/coursera'"
       :facebookLink="'https://www.facebook.com/coursera/'" />
@@ -131,15 +137,15 @@
 </template>
 
 <script setup>
-import { ref, onMounted } from "vue";
+import { ref, computed, onMounted} from "vue";
+import {  useRouter } from "vue-router";
 import axios from "axios";
 import Paginacion from "../../../components/Paginacion.vue";
 import Portada from "../../../components/Portada.vue";
-import { useRouter } from "vue-router";
-//import logoUdemy from "../../../assets/logo-udemy.jpg";
 import Sidebar from "../../../components/Sidebar.vue";
 import Favoritos from "../../../components/Favoritos.vue";
 import logoCoursera from "../../../assets/Coursera-Logo.png";
+import SeoComponent from '../../../components/SEO.vue';
 
 // Estado y métodos actualizados para manejar los datos de Coursera
 const pageTitle = "Cursos de Coursera";
@@ -153,6 +159,21 @@ const categories = ref([]);
 const isLoading = ref(false);
 axios.defaults.baseURL = import.meta.env.VITE_API_URL;
 const router = useRouter();
+
+//SEO
+
+// Ejemplo de pageTitle y pageDescription
+const pageTitleSEO = 'Buscador de cursos de Coursera - CurSeek';
+const pageDescriptionSEO = 'Explora cursos de Coursera en un buscador diferente y amplía tus conocimientos con sus programas especializados.';
+const breadcrumbs = computed(() => {
+  // Aquí puedes construir la lógica para tus breadcrumbs basada en route.path o route.params
+  return [
+    { text: 'Inicio', to: '/', active: router.path === '/' },
+    { text: 'Coursera', to: '/cursos/udemy', active: router.path === '/cursos/udemy' },
+    // La última ruta es siempre activa y no tiene enlace
+  ];
+});
+
 
 const loadCourses = async (
   page = currentPage.value,

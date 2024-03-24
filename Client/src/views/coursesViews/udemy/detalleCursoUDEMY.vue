@@ -1,7 +1,11 @@
 <template>
   <div class="bg-gray-100 p-4 md:p-6 max-w-screen-full">
-    <p class="hidden md:block text-center pb-6 text-sm text-gray-500">CurSeek cuenta con el apoyo del alumno. Cuando
-      compra a través de enlaces en nuestro sitio, podemos ganar una comisión de afiliado.</p>
+    <seo-component
+      :title="pageTitleSEO"
+      :description="pageDescriptionSEO"
+      :breadcrumbs="breadcrumbs"
+    />
+    
     <!-- Grilla Principal -->
     <div class="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-6 max-w-screen-xl mx-auto">
       <!-- Columna 1 y 2 (Contenido principal) -->
@@ -24,7 +28,7 @@
           </div>
           <div class="bg-gray-200 md:bg-white items-end ml-auto rounded-lg md:m-0 pt-2">
             <button title="Agregar a Favoritos">
-              <Favoritos />
+              <Favoritos /> 
               <!-- <Favoritos :courseId="course._id" :courseType="'UDEMY'" :isFavorited="course.isFavorited" /> -->
             </button>
           </div>
@@ -56,7 +60,7 @@
                 </svg>
                 <h3 class="text-xl mb-2 font-bold">Profesores certificados</h3>
               </div>
-              <div :class="{ 'max-h-48 overflow-hidden': !expandInfoComplementaria }" class="relative">
+              <div class="relative">
                 <p>
                   Nuestros educadores poseen habilidades especializadas en la enseñanza a distancia y comparten una
                   profunda
@@ -76,7 +80,7 @@
                 </svg>
                 <h3 class="text-xl mb-2 font-bold">Estudia en Udemy</h3>
               </div>
-              <div :class="{ 'max-h-48 overflow-hidden': !expandInfoComplementaria }" class="relative">
+              <div class="relative">
                 <p>
                   Adquiere saberes de la mano de educadores altamente experimentados en educación a distancia,
                   comprometidos con una actualización constante para proporcionar clases de excelencia académica. Contamos
@@ -103,13 +107,13 @@
       </div>
       <!-- Columna 3 (Barra Lateral) -->
       <div class="order-first md:order-last bg-white p-4 md:p-6 rounded">
-        <img :src="udemyCourse.image" alt="" class="rounded-sm mb-4 w-full">
+        <img :src="udemyCourse.image_480x270" alt="imagen del curso de udemy" class="rounded-sm mb-4 w-full">
         <!-- Sección de Título y Precio -->
         <div class="md:hidden bg-white md:p-6 rounded mb-4 flex justify-between items-center">
         <h1 class="text-xl md:text-3xl font-bold text-gray-800">{{ udemyCourse.title || 'Aprende con este Curso de Udemy' }}</h1>
         <div class="bg-gray-200 ml-auto rounded-lg">
           <button class="mx-3" title="Agregar a Favoritos">
-            <Favoritos />
+            <Favoritos /> 
             <!-- <Favoritos :courseId="course._id" :courseType="'UDEMY'" :isFavorited="course.isFavorited" /> -->
           </button>
         </div>
@@ -126,15 +130,14 @@
             {{ expandDescription ? "Ver menos" : "Ver más" }}
           </button>
         </div>
-        <a :href="`https://www.udemy.com${udemyCourse.url}`" target="_blank"
-          class="flex bg-indigo-600 text-white text-center py-2 px-4 rounded hover:bg-indigo-800 transition-colors duration-300 ease-in-out w-full items-center text-md justify-center font-semibold">
+        <div @click="redirectToExternalCourse" class="flex bg-indigo-600 text-white text-center py-2 px-4 rounded hover:bg-indigo-800 transition-colors duration-300 ease-in-out w-full items-center text-md justify-center font-semibold">
           Ir al curso
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960" width="24" class="ml-2">
             <path
               d="M200-120q-33 0-56.5-23.5T120-200v-560q0-33 23.5-56.5T200-840h280v80H200v560h560v-280h80v280q0 33-23.5 56.5T760-120H200Zm188-212-56-56 372-372H560v-80h280v280h-80v-144L388-332Z"
               fill="#fff" />
           </svg>
-        </a>
+        </div>
         <div class="px-2 py-6 text-md">
           <ul>
             <!-- Institución -->
@@ -203,14 +206,19 @@
         </div>
       </div>
     </div>
+    <p class="hidden mt-3 md:block text-center pb-6 text-sm text-gray-500">CurSeek cuenta con el apoyo del alumno. Cuando
+      compra a través de enlaces en nuestro sitio, podemos ganar una comisión de afiliado.</p>
   </div>
 </template>
 
 <script setup>
-import { ref, onMounted, watch, computed } from 'vue';
+import { ref, onMounted, computed } from 'vue';
 import { useRoute, useRouter } from 'vue-router';
 import axios from 'axios';
 import Favoritos from "../../../components/Favoritos.vue";
+import SeoComponent from '../../../components/SEO.vue';
+import { useMeta } from 'vue-meta';
+
 
 const udemyCourse = ref({
   title: '',
@@ -230,24 +238,86 @@ const udemyCourse = ref({
 const route = useRoute();
 const router = useRouter();
 const categories = ref([]);
+//SEO
 
-const fetchUdemyCourse = async (courseSlug) => {
+
+// Cambia a los valores predeterminados apropiados para cuando los datos están cargando o no disponibles
+const defaultTitle = 'Aprende con este Curso de Udemy';
+const defaultDescription = 'Descubre cursos en Udemy para ampliar tus conocimientos en diversas áreas.';
+
+const pageTitleSEO = computed(() => {
+  return udemyCourse.value.title ? `${udemyCourse.value.title} - CurSeek` : defaultTitle;
+});
+
+const pageDescriptionSEO = computed(() => {
+  let description = udemyCourse.value.description.replace(/<[^>]+>/g, '') || defaultDescription;
+  if (description.length > 157) {
+    return `${description.substring(0, 157)}...`;
+  } else {
+    return description;
+  }
+});
+// Actualiza la estructura de breadcrumbs según tus necesidades
+const breadcrumbs = computed(() => {
+  const courseSlug = route.params.slug;
+  return [
+    { text: 'Inicio', to: '/', active: route.path === '/' },
+    { text: 'Udemy', to: '/cursos/udemy', active: route.path.includes('/cursos/udemy') },
+    { text: udemyCourse.value.title, to: `/udemy/cursos/${courseSlug}`, active: true },
+  ];
+});
+
+// Sección para el manejo de JSON-LD específico para el curso de Udemy
+const structuredData = ref({});
+
+onMounted(async () => {
+  const courseSlug = route.params.slug;
   try {
     const response = await axios.get(`${import.meta.env.VITE_API_URL}/cursos/udemy/${courseSlug}`);
-    if (response.data && Object.keys(response.data).length) {
-      // Si el curso existe, asigna los datos del curso a udemyCourse
-      udemyCourse.value = { ...response.data, image: response.data.image_480x270 };
+    if (response.data && Object.keys(response.data).length > 0) {
+      udemyCourse.value = response.data;
+      // Configura aquí tu estructura JSON-LD para el curso de Udemy
+
+      structuredData.value = {
+        "@context": "https://schema.org",
+        "@type": "Course",
+        "name": udemyCourse.value.title,
+        "description": udemyCourse.value.description,
+        // Asegúrate de ajustar estos valores según los datos de Udemy que tengas disponibles
+        "provider": {
+          "@type": "Organization",
+          "name": "Udemy",
+          "sameAs": "https://www.udemy.com"
+        }
+      };
     } else {
-      // Si la respuesta no contiene datos del curso, redirige a la página de error 404
       throw new Error('Curso no encontrado');
     }
   } catch (error) {
     console.error("Error obteniendo el detalle del curso de Udemy:", error);
-    // Si el error es debido a un curso no encontrado (por ejemplo, error 404),
-    // redirige al usuario a la página de error 404
     router.push({ name: 'Error404' });
   }
-};
+  loadCategories();
+
+});
+
+//seo2
+
+useMeta({
+  title: pageTitleSEO.value,
+  meta: [
+    {
+      name: 'description',
+      content: pageDescriptionSEO.value
+    },
+  ],
+  script: [
+    {
+      type: 'application/ld+json',
+      json: structuredData
+    },
+  ],
+});
 
 
 const loadCategories = async () => {
@@ -260,12 +330,6 @@ const loadCategories = async () => {
 };
 
 // Observar cambios en el slug de la ruta y reaccionar a estos
-watch(() => route.params.slug, (newSlug, oldSlug) => {
-  if (newSlug !== oldSlug) {
-    fetchUdemyCourse(newSlug);
-  }
-}, { immediate: true });
-
 const displayedPrice = computed(() => {
   if (!udemyCourse.value.is_paid) {
     return 'Gratuito';
@@ -273,10 +337,16 @@ const displayedPrice = computed(() => {
     return udemyCourse.value.price !== 'Free' ? udemyCourse.value.price : 'Gratuito';
   }
 });
-onMounted(() => {
-  loadCategories();
-});
 
+
+
+// método que maneja la redirección
+const redirectToExternalCourse = () => {
+  const courseUrl = `https://www.udemy.com${udemyCourse.value.url}`;
+  router.push({ name: 'LinkSaliente', query: { url: courseUrl } });
+};
+
+//
 const expandDescription = ref(false);
 
 const toggleDescription = () => {

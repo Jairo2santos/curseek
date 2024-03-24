@@ -1,5 +1,11 @@
 <template>
   <div class="bg-white">
+
+    <seo-component
+      :title="pageTitleSEO"
+      :description="pageDescriptionSEO"
+      :breadcrumbs="breadcrumbs"
+    />
     <Portada :title="pageTitle" :description="pageDescription" :totalCourses="totalCourses" 
     :instagramLink="'https://www.instagram.com/utn.rec.ar/'"
     :twitterLink="'https://twitter.com/frbautn'"
@@ -128,13 +134,15 @@
 import { useRouter } from 'vue-router';
 const router = useRouter();
 
-import { ref, onMounted } from "vue";
+import { ref, onMounted , computed} from "vue";
 import axios from "axios";
 import Paginacion from "../../../components/Paginacion.vue";
 import Portada from "../../../components/Portada.vue";
 import Sidebar from "../../../components/Sidebar.vue";
 //import Filtros from "../../../components/Filtros.vue";
 import Favoritos from "../../../components/Favoritos.vue";
+import SeoComponent from '../../../components/SEO.vue';
+
 
 axios.defaults.baseURL = import.meta.env.VITE_API_URL;
 
@@ -149,6 +157,25 @@ const categories = ref([]);
 const selectedCategories = ref([]);
 const filterType = ref(null);
 const isLoading = ref(false);
+
+
+
+//SEO
+
+// Ejemplo de pageTitle y pageDescription
+const pageTitleSEO = 'Buscador de cursos de UTN - CurSeek';
+const pageDescriptionSEO = 'Explora cursos de Universidad tecnologica de Buenos Aires en un buscador diferente y amplía tus conocimientos con sus programas especializados.';
+const breadcrumbs = computed(() => {
+  // Aquí puedes construir la lógica para tus breadcrumbs basada en route.path o route.params
+  return [
+  { text: 'Inicio', to: '/', active: router.path === '/' },
+    { text: 'Universidad Tecnológica Nacional', to: '/cursos/utn', active: router.path === '/cursos/utn' },
+    // La última ruta es siempre activa y no tiene enlace
+  ];
+});
+
+
+
 // Métodos y handlers
 const loadCourses = async (page, filterType = null, selectedCategories = []) => {
   isLoading.value = true;

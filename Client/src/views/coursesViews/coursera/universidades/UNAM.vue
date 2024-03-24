@@ -1,5 +1,12 @@
 <template>
+   
   <div class="bg-gray-100">
+   <seo-component
+      :title="pageTitleSEO"
+      :description="pageDescriptionSEO"
+      :breadcrumbs="breadcrumbs"
+    />
+    
     <!-- Portada -->
     <!-- Imagen de Portada -->
     <img :src="portadaImg" alt="" class="w-full h-80 object-cover hidden md:block" />
@@ -82,9 +89,11 @@
 import { ref, computed, onMounted } from 'vue';
 import axios from 'axios';
 import Paginacion from '../../../../components/Paginacion.vue';
-
 import portadaImg from "../../../../assets/instituciones/unam_campus.jpg";
+import SeoComponent from '../../../../components/SEO.vue';
+import { useRoute } from 'vue-router';
 
+const route = useRoute();
 const pageTitle = ' Universidad Nacional Autónoma de México - Coursera';
 const pageDescription = 'La Universidad Nacional Autónoma de México (UNAM) es una de las universidades más grandes y prestigiosas de América Latina. Fundada el 22 de septiembre de 1910, tiene su origen en la Real y Pontificia Universidad de México, establecida en 1551 por la Corona Española. Es una institución pública y autónoma que ofrece una amplia gama de programas académicos en todos los niveles de educación superior, incluyendo pregrado, posgrado y educación continua. La UNAM se destaca por su excelencia académica, su intensa actividad de investigación y su contribución significativa al desarrollo cultural, científico y tecnológico de México. Cuenta con múltiples facultades, escuelas, institutos y centros de investigación que abarcan áreas del conocimiento como las ciencias sociales, las humanidades, las ciencias exactas, las ingenierías, las artes, y más.';
 const courses = ref([]);
@@ -95,6 +104,26 @@ const totalCourses = ref(0);
 const isLoading = ref(false);
 axios.defaults.baseURL = import.meta.env.VITE_API_URL;
 const isProfessorsExpanded = ref(false);
+
+//SEO
+
+// Ejemplo de pageTitle y pageDescription
+const pageTitleSEO = 'Cursos de la Universidad Autónoma de México - CurSeek';
+const pageDescriptionSEO = 'Explora cursos de la UNAM y amplía tus conocimientos con programas especializados.';
+
+// Usa la API de enrutamiento de Vue para obtener la ruta actual
+
+// Crea una estructura de breadcrumbs reactiva basada en la ruta actual
+const breadcrumbs = computed(() => {
+  // Aquí puedes construir la lógica para tus breadcrumbs basada en route.path o route.params
+  return [
+    { text: 'Inicio', to: '/', active: route.path === '/' },
+    { text: 'Coursera', to: '/cursos/coursera', active: route.path === '/cursos/coursera' },
+    { text: 'Universidad Nacional de México', to: '/coursera/universidades/unam', active: route.path === '/coursera/universidades/unam' },
+    // La última ruta es siempre activa y no tiene enlace
+  ];
+});
+
 
 // Redes sociales links
 const instagramLink = 'https://www.instagram.com/unam_mx/';

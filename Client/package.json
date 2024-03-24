@@ -17,6 +17,7 @@
     "mavon-editor": "^2.10.4",
     "quill": "^2.0.0-rc.2",
     "vue": "^3.3.4",
+    "vue-meta": "^3.0.0-alpha.10",
     "vue-quill-editor": "^3.0.6",
     "vue-router": "^4.2.5",
     "vue-slick-carousel": "^1.0.5"

@@ -1,5 +1,12 @@
 <template>
     <div class="bg-gray-100">
+      <!-- SEO  -->
+      <seo-component
+      :title="pageTitleSEO"
+      :description="pageDescriptionSEO"
+      :breadcrumbs="breadcrumbs"
+    />
+    
       <!-- Portada -->
       <!-- Imagen de Portada -->
       <img :src="portadaImg" alt="" class="w-full h-80 object-cover hidden md:block" />
@@ -82,9 +89,11 @@
   import { ref, computed, onMounted } from 'vue';
   import axios from 'axios';
   import Paginacion from '../../../../components/Paginacion.vue';
-  
   import portadaImg from "../../../../assets/instituciones/uchile_campus.avif";
-  
+  import SeoComponent from '../../../../components/SEO.vue';
+  import { useRoute } from 'vue-router';
+
+const route = useRoute();
   const pageTitle = ' Universidad de Chile - Coursera';
   const pageDescription = 'La Universidad de Chile es una de las instituciones de educación superior más antiguas y prestigiosas de América Latina. Fundada el 19 de noviembre de 1842, esta universidad pública se ha destacado por su papel fundamental en la formación académica, científica y cultural de Chile. A lo largo de su historia, ha sido cuna de importantes figuras en el ámbito político, literario, científico y artístico del país y de la región. La universidad ofrece una amplia gama de programas de pregrado, posgrado y educación continua en diversas áreas del conocimiento, incluyendo las humanidades, las ciencias sociales, las ciencias naturales, la salud, las artes, y la ingeniería. Su compromiso con la excelencia académica y la investigación la ha posicionado como líder en la producción de conocimiento en Chile y en Latinoamérica.';
   const courses = ref([]);
@@ -96,6 +105,26 @@
   axios.defaults.baseURL = import.meta.env.VITE_API_URL;
   const isProfessorsExpanded = ref(false);
   
+
+//SEO
+
+// Ejemplo de pageTitle y pageDescription
+const pageTitleSEO = 'Cursos de la Universidad de Chile - CurSeek';
+const pageDescriptionSEO = 'Explora cursos de la Universidad de chile y amplía tus conocimientos con sus programas especializados.';
+
+// Usa la API de enrutamiento de Vue para obtener la ruta actual
+
+// Crea una estructura de breadcrumbs reactiva basada en la ruta actual
+const breadcrumbs = computed(() => {
+  // Aquí puedes construir la lógica para tus breadcrumbs basada en route.path o route.params
+  return [
+    { text: 'Inicio', to: '/', active: route.path === '/' },
+    { text: 'Coursera', to: '/cursos/coursera', active: route.path === '/cursos/coursera' },
+    { text: 'Universidad de Chile', to: '/coursera/universidades/uchile', active: route.path === '/coursera/universidades/uchile' },
+    // La última ruta es siempre activa y no tiene enlace
+  ];
+});
+
   // Redes sociales links
   const instagramLink = 'https://www.instagram.com/uchile/';
   const twitterLink = 'https://twitter.com/UCHILE';

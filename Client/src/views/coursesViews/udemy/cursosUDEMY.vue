@@ -1,5 +1,12 @@
 <template>
   <div class="bg-white">
+    <!-- seo -->
+    <seo-component
+      :title="pageTitleSEO"
+      :description="pageDescriptionSEO"
+      :breadcrumbs="breadcrumbs"
+    />
+    <!-- portada -->
     <Portada :title="pageTitle" :description="pageDescription" :totalCourses="totalCourses" :imageSrc="logoUdemy"
     :instagramLink="'https://www.instagram.com/udemy/'"
     :twitterLink="'https://twitter.com/udemy'"
@@ -149,11 +156,13 @@ import logoUdemy from "../../../assets/logo-udemy.jpg";
 import Sidebar from "../../../components/Sidebar.vue";
 //import Filtros from "../../../components/Filtros.vue";
 import Favoritos from "../../../components/Favoritos.vue";
+import SeoComponent from '../../../components/SEO.vue';
 const router = useRouter();
 
 axios.defaults.baseURL = import.meta.env.VITE_API_URL;
 
 // Estado
+
 const pageTitle = "Cursos de Udemy";
 const pageDescription = "Udemy.com es una plataforma de aprendizaje en línea. Está dirigido a adultos profesionales.​ A diferencia de los programas académicos MOOC conducidos por tradicionales cursos de trabajo creados por las universidades, Udemy utiliza contenido de creadores en línea para vender y así conseguir ganancias.​";
 const courses = ref([]);
@@ -162,6 +171,22 @@ const totalPages = ref(1);
 const totalCourses = ref(0);
 const categories = ref([]);
 const isLoading = ref(false);
+
+
+//SEO
+
+// Ejemplo de pageTitle y pageDescription
+const pageTitleSEO = 'Buscador de cursos de Udemy - CurSeek';
+const pageDescriptionSEO = 'Explora cursos de Udemy en un buscador diferente y amplía tus conocimientos con sus programas especializados.';
+const breadcrumbs = computed(() => {
+  // Aquí puedes construir la lógica para tus breadcrumbs basada en route.path o route.params
+  return [
+  { text: 'Inicio', to: '/', active: router.path === '/' },
+    { text: 'Udemy', to: '/cursos/udemy', active: router.path === '/cursos/udemy' },
+    // La última ruta es siempre activa y no tiene enlace
+  ];
+});
+
 
 const loadCourses = async (page, selectedCategory = '') => {
   let queryParams = `page=${page}`;

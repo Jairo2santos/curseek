@@ -4,26 +4,28 @@ const UtnCourse = require('../models/providers/utn.models');
 const UnifiedCourse = require('../models/generals/unifiedCourse.model');
 const CourseraCourse = require('../models/providers/courseraCourse.model');
 
-
 mongoose.connect('mongodb://localhost:27017/cursosApp');
 
 const combineCourses = async () => {
+  // Paso 1: Eliminar los cursos de UTN existentes
+  await UnifiedCourse.deleteMany({ source: 'UTN' });
+  console.log('Cursos de UTN existentes eliminados.');
+
   const udemyCourses = await UdemyCourse.find({});
   const utnCourses = await UtnCourse.find({});
+  const courseraCourses = await CourseraCourse.find({});
 
-  // Función para tratar de insertar o actualizar cursos unificados
   const tryInsertOrUpdate = async (unifiedCourseData) => {
     const existingCourse = await UnifiedCourse.findOne({ slug: unifiedCourseData.slug });
     if (existingCourse) {
       console.log(`El slug ya existe, omitiendo o actualizando: ${unifiedCourseData.slug}`);
-      // Opción 1: Omitir la inserción si el curso ya existe
-      // Opción 2: Actualizar el curso existente con nueva información
-      // await UnifiedCourse.updateOne({ _id: existingCourse._id }, unifiedCourseData);
+      // Aquí puedes elegir entre actualizar el curso existente o simplemente omitirlo.
     } else {
       const unifiedCourse = new UnifiedCourse(unifiedCourseData);
       await unifiedCourse.save();
     }
   };
+
 
   // Combinar los cursos de Udemy
   for (const course of udemyCourses) {
@@ -54,7 +56,6 @@ const combineCourses = async () => {
     });
   }
 
-  const courseraCourses = await CourseraCourse.find({});
 for (const course of courseraCourses) {
   // Extrayendo la información relevante de cada curso
   const instructorsNames = course.instructors.map(instructor => instructor.name).join(", ");

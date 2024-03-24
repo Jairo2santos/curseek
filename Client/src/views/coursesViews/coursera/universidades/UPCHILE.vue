@@ -1,5 +1,11 @@
 <template>
     <div class="bg-gray-100">
+      <!-- SEO -->
+      <seo-component
+      :title="pageTitleSEO"
+      :description="pageDescriptionSEO"
+      :breadcrumbs="breadcrumbs"
+    />
       <!-- Portada -->
       <!-- Imagen de Portada -->
       <img :src="portadaImg" alt="campus de la universidad catolica de chile" class="w-full h-80 object-cover hidden md:block" />
@@ -82,9 +88,11 @@
   import { ref, computed, onMounted } from 'vue';
   import axios from 'axios';
   import Paginacion from '../../../../components/Paginacion.vue';
-  
   import portadaImg from "../../../../assets/instituciones/upchile_campus.jpg";
-  
+  import SeoComponent from '../../../../components/SEO.vue';
+  import { useRoute } from 'vue-router';
+   
+const route = useRoute();
   const pageTitle = '  Pontificia Universidad Católica de Chile - Coursera';
   const pageDescription = 'La Pontificia Universidad Católica de Chile (PUC), fundada en 1888, es una institución privada y católica reconocida en Chile y América Latina por su excelencia académica y compromiso con la investigación. Ofrece programas en áreas como ingeniería, ciencias de la salud, ciencias sociales, humanidades, teología, derecho y arquitectura. Su enfoque en la investigación impulsa el desarrollo científico, tecnológico y cultural. Con campus en Santiago y otras regiones, la PUC fomenta la extensión y vinculación con la comunidad, siendo líder en la región y destacando en rankings internacionales.';
   const courses = ref([]);
@@ -96,6 +104,27 @@
   axios.defaults.baseURL = import.meta.env.VITE_API_URL;
   const isProfessorsExpanded = ref(false);
   
+
+  
+//SEO
+
+// Ejemplo de pageTitle y pageDescription
+const pageTitleSEO = 'Cursos de la Universidad Católica de Chile - CurSeek';
+const pageDescriptionSEO = 'Explora cursos de la UPCHILE y amplía tus conocimientos con sus programas especializados.';
+
+// Usa la API de enrutamiento de Vue para obtener la ruta actual
+
+// Crea una estructura de breadcrumbs reactiva basada en la ruta actual
+const breadcrumbs = computed(() => {
+  // Aquí puedes construir la lógica para tus breadcrumbs basada en route.path o route.params
+  return [
+    { text: 'Inicio', to: '/', active: route.path === '/' },
+    { text: 'Coursera', to: '/cursos/coursera', active: route.path === '/cursos/coursera' },
+    { text: 'pontificia universidad católica de chile', to: '/coursera/universidades/upchile', active: route.path === '/coursera/universidades/upchile' },
+    // La última ruta es siempre activa y no tiene enlace
+  ];
+});
+
   // Redes sociales links
   const instagramLink = 'https://www.instagram.com/ucatolicaoficial/';
   const twitterLink = 'https://twitter.com/ucatolica';

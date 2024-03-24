@@ -311,7 +311,7 @@
         </div>
 
         <div v-if="showModal" @mouseenter="showModal = true" @mouseleave="showModal = false"
-          class="border-l max-h-96 overflow-y-auto border-gray-100 absolute text-sm shadow-md bg-white py-4 w-60 left-80 mt-0 ml-28">
+          class=" max-h-96 overflow-y-auto border-gray-100 absolute text-sm shadow-md bg-white py-4 w-60 left-80 mt-0 ml-24">
           <ul>
             <li class="my-0.5 flex items-center">
               <a href="/cursos/udemy"
@@ -331,7 +331,7 @@
         </div>
 
         <div v-if="showModal2" @mouseenter="showModal2 = true" @mouseleave="showModal2 = false"
-          class="max-h-96 overflow-y-auto absolute text-sm shadow-md bg-white py-4 w-60 left-80 mt-0 ml-28">
+          class="max-h-96 overflow-y-auto absolute text-sm shadow-md bg-white py-4 w-60 left-80 mt-0 ml-24">
           <ul>
             <li class="my-0.5 flex items-center">
               <a href="/cursos/utn" class="hover:bg-gray-200 transition px-4 flex items-center w-full justify-between">

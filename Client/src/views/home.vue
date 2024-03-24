@@ -1,5 +1,13 @@
 <template>
   <div class="p-0 min-h-screen bg-white">
+    <div>
+    <seo-component
+      :title="pageTitle"
+      :description="pageDescription"
+      :breadcrumbs="pageBreadcrumbs"
+    />
+    <!-- El resto del contenido de tu página -->
+  </div>
     <!-- Buscador -->
     <div class="flex flex-col md:flex-row container mx-auto md:px-40 md:pt-20 md:pb-40 pl-0 bg-white pb-2">
       <!-- Contenedor del buscador y resultados -->
@@ -7,7 +15,7 @@
         <!-- Título -->
         <h1 :class="{ 'blurred-background': isInputClicked }"
           class="text-left font-semibold text-3xl md:text-4xl text-black pb-3">
-          Encuentra hoy mismo tu próximo curso
+         CurSeek un buscador de cursos gratuito 
         </h1>
         <!-- Campo de búsqueda -->
         <div class="max-w-xl m-0 p-0">
@@ -84,7 +92,7 @@
         </div>
         <!-- Botones de búsquedas frecuentes -->
         <div class="mt-4 pr-0 md:pr-20">
-          <h2 class="text-lg text-black font-bold p-2">Búsquedas frecuentes</h2>
+          <h2 class="text-lg text-black font-bold p-2">Búsquedas de cursos mas frecuentes</h2>
           <button @click="handleSearch('Java')" @focus="setInputClicked(true)" @blur="setInputClicked(false)"
             class="text-sm bg-indigo-100 text-gray-800 hover:bg-green-100 border border-gray-200 transition py-1 px-2 rounded-lg mb-1 mr-1">
             Java
@@ -126,18 +134,7 @@
             class="text-sm bg-indigo-100 text-gray-800 hover:bg-green-100 border border-gray-200 transition py-1 px-2 rounded-lg mb-1 mr-1">
             Salud
           </button>
-          <button @click="handleSearch('Programación')" @focus="setInputClicked(true)" @blur="setInputClicked(false)"
-            class="text-sm bg-indigo-100 text-gray-800 hover:bg-green-100 border border-gray-200 transition py-1 px-2 rounded-lg mb-1 mr-1">
-            Programación
-          </button>
-          <button @click="handleSearch('Lengua')" @focus="setInputClicked(true)" @blur="setInputClicked(false)"
-            class="text-sm bg-indigo-100 text-gray-800 hover:bg-green-100 border border-gray-200 transition py-1 px-2 rounded-lg mb-1 mr-1">
-            Lenguas
-          </button>
-          <button @click="handleSearch('Cocina')" @focus="setInputClicked(true)" @blur="setInputClicked(false)"
-            class="text-sm bg-indigo-100 text-gray-800 hover:bg-green-100 border border-gray-200 transition py-1 px-2 rounded-lg mb-1 mr-1">
-            Cocina
-          </button>
+
         </div>
       </div>
 
@@ -153,6 +150,9 @@
       <h2 class="text-center font-semibold text-3xl text-indigo-900 py-12">
         El curso que quieras, cuando quieras
       </h2>
+      <p class=" text-center  m-auto w-8-4 py-2 text-sm font-semibold text-indigo-600 border-b">
+ 
+Selecciona tu plataforma preferida para buscar tu curso y compara entre la amplia variedad de proveedores e instituciones que ofrecemos.</p>
       <img src="../assets/banner-curseek-2.png" alt="" class="object-cover md:w-full" />
 
       <!-- Lista de Proveedores y Universidades -->
@@ -368,6 +368,9 @@
 import { ref } from "vue";
 import axios from "axios";
 import { useRouter } from "vue-router";
+import SeoComponent from '../components/SEO.vue';
+
+
 
 const router = useRouter();
 const query = ref("");
@@ -377,8 +380,18 @@ const limitResults = ref(true);
 
 const baseURL = import.meta.env.VITE_API_URL;
 console.log("URL de la API:", baseURL);
-console.log(import.meta.env);
 
+//SEO
+console.log(import.meta.env);
+const pageTitle = ref('Buscador de cursos y formación online - CurSeek  ');
+const pageDescription = ref('Descubre y accede a cursos online de las mejores universidades y proveedores. Aprende a tu propio ritmo con CurSeek.');
+const pageBreadcrumbs = ref([
+  {
+    text: 'Inicio',
+    to: '/',
+    active: true 
+  },
+]);
 
 
 const search = async () => {

@@ -1,6 +1,12 @@
 <template>
     <div class="bg-gray-100">
-      <!-- Portada -->
+      <!-- seo -->
+      <seo-component
+      :title="pageTitleSEO"
+      :description="pageDescriptionSEO"
+      :breadcrumbs="breadcrumbs"
+    />
+    <!-- Portada -->
       <!-- Imagen de Portada -->
       <img :src="portadaImg" alt="" class="w-full h-80 object-cover hidden md:block" />
   
@@ -82,9 +88,11 @@
   import { ref, computed, onMounted } from 'vue';
   import axios from 'axios';
   import Paginacion from '../../../../components/Paginacion.vue';
-  
   import portadaImg from "../../../../assets/instituciones/universidad_de_los_andes_campus.jpg";
-  
+  import SeoComponent from '../../../../components/SEO.vue';
+  import { useRoute } from 'vue-router';
+
+  const route = useRoute();
   const pageTitle = ' Universidad de los Andes Colombia- Coursera';
   const pageDescription = 'La Universidad de los Andes en Bogotá, Colombia, es una institución privada líder en educación superior en América Latina. Fundada en 1948, se enfoca en la excelencia académica, la investigación y el desarrollo social. Ofrece programas en diversas áreas y destaca en ingeniería, ciencias, salud, ciencias sociales, humanidades y administración. Uniandes es reconocida por su calidad académica, investigación avanzada y compromiso con la sociedad, con centros e institutos de investigación que abordan desafíos locales y globales. Su campus moderno fomenta la innovación y el aprendizaje colaborativo. Uniandes se destaca en rankings internacionales como una de las mejores universidades de la región.';
   const courses = ref([]);
@@ -96,6 +104,25 @@
   axios.defaults.baseURL = import.meta.env.VITE_API_URL;
   const isProfessorsExpanded = ref(false);
   
+//SEO
+
+// Ejemplo de pageTitle y pageDescription
+const pageTitleSEO = 'Cursos Universidad de los Andes Colombia - CurSeek';
+const pageDescriptionSEO = 'Explora cursos de la Universidad de los Andes Colombia y amplía tus conocimientos con programas especializados.';
+
+// Usa la API de enrutamiento de Vue para obtener la ruta actual
+
+// Crea una estructura de breadcrumbs reactiva basada en la ruta actual
+const breadcrumbs = computed(() => {
+  // Aquí puedes construir la lógica para tus breadcrumbs basada en route.path o route.params
+  return [
+    { text: 'Inicio', to: '/', active: route.path === '/' },
+    { text: 'Coursera', to: '/cursos/coursera', active: route.path === '/cursos/coursera' },
+    { text: 'Universidad de los Andes Co', to: '/coursera/universidades/udlac', active: route.path === '/coursera/universidades/udlac' },
+    // La última ruta es siempre activa y no tiene enlace
+  ];
+});
+
   // Redes sociales links
   const instagramLink = 'https://www.instagram.com/uniandes/';
   const twitterLink = 'https://twitter.com/Uniandes';

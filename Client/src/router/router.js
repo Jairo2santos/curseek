@@ -9,6 +9,7 @@ import Login from '../views/login.vue';
 import Profile from '../views/profile.vue';
 import SignUp from '../views/signUp.vue';
 import Error404 from '../views/error404.vue';
+import { handleExternalLink } from '../middlewares/redirectMiddleware';
 
 //recuperar pass
 const PasswordRecovery = () => import('../views/passwordRecovery.vue');
@@ -59,6 +60,7 @@ const routes = [
   { path: '/coursera/universidades/unam', name: 'UNAM', component: UNAM, props: true, meta: { title: 'Universidad Nacional Autónoma de México - Curseek' } },
   { path: '/password-recovery', name: 'PasswordRecovery', component: PasswordRecovery, meta: { title: 'Recuperación de Contraseña - Curseek' } },
   { path: '/reset-password', name: 'ResetPassword ', component: ResetPassword,  meta: { title: 'Reseteo de Contraseña - Curseek' } },
+  { path: '/link-saliente', name: 'LinkSaliente',  component: () => import('../views/LinkSaliente.vue'),  meta: { title: 'Saliendo de Curseek - Curseek' } },
   { path: '/:pathMatch(.*)*', name: 'Error404', component: Error404, meta: { title: 'Página no encontrada - Curseek' } },
 ];
 
@@ -66,9 +68,20 @@ const router = createRouter({
   history: createWebHistory(),
   routes,
 });
+
+// Ahora que `router` está definido, puedes usar `router.beforeEach` y `router.afterEach`.
+router.beforeEach((to, from, next) => {
+  if (to.query.isExternal === 'true') {
+    handleExternalLink(next, to.query.url);
+  } else {
+    next();
+  }
+});
+
 router.afterEach((to, from) => {
   nextTick(() => {
     document.title = to.meta.title || 'Curseek';
   });
 });
+
 export default router;

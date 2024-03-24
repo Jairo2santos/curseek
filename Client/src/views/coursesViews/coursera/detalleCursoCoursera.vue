@@ -1,7 +1,11 @@
 <template>
   <div class="bg-gray-100 p-4 md:p-6 max-w-screen-full">
-    <p class="hidden md:block text-center pb-6 text-sm text-gray-500">CurSeek cuenta con el apoyo del alumno. Cuando
-      compra a través de enlaces en nuestro sitio, podemos ganar una comisión de afiliado.</p>
+    <seo-component
+      :title="pageTitleSEO"
+      :description="pageDescriptionSEO"
+      :breadcrumbs="breadcrumbs"
+    />
+    
 
     <div class="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-6 max-w-screen-xl mx-auto">
       <!-- Contenido principal -->
@@ -31,15 +35,13 @@
         <section class="hidden md:block bg-white p-4 md:p-6 rounded mb-6">
           <!-- Resumen del curso con botón de expandir -->
           <h3 class="text-xl mb-2 font-bold">Resumen</h3>
-          <div :class="{ 'max-h-48 overflow-hidden': !expandDescription }" class="relative">
-            <p>{{ course.longDescription }}</p>
-            <div v-if="!expandDescription"
-              class="absolute bottom-0 left-0 right-0 h-16 bg-gradient-to-b from-transparent to-white"></div>
-          </div>
-          <button @click="expandDescription = !expandDescription"
-            class="mt-4 text-blue-600 hover:underline font-semibold transition focus:outline-none">
-            {{ expandDescription ? "" : "Ver más" }}
-          </button>
+<div :class="{ 'max-h-48 overflow-hidden': !expandDescription }" class="relative">
+  <p>{{ course.longDescription }}</p>
+  <div v-if="!expandDescription" class="absolute bottom-0 left-0 right-0 h-16 bg-gradient-to-b from-transparent to-white"></div>
+</div>
+<button @click="expandDescription = !expandDescription" class="mt-4 text-blue-600 hover:underline font-semibold transition focus:outline-none">
+  {{ expandDescription ? "Ver menos" : "Ver más" }}
+</button>
           <!-- Detalles del Curso Mejorados -->
           <h3 class="text-xl mb-2 font-bold mt-6">Formación</h3>
           <div :class="{ 'max-h-56 overflow-y-auto': expandCourseDetails }">
@@ -73,7 +75,7 @@
                 </svg>
                 <h3 class="text-xl mb-2 font-bold">Profesores certificados</h3>
               </div>
-              <div :class="{ 'max-h-48 overflow-hidden': !expandInfoComplementaria }" class="relative">
+              <div class="relative">
                 <p>
                   Nuestros educadores poseen habilidades especializadas en la enseñanza a distancia y comparten una
                   profunda
@@ -93,7 +95,7 @@
                 </svg>
                 <h3 class="text-xl mb-2 font-bold">Estudia en Coursera</h3>
               </div>
-              <div :class="{ 'max-h-48 overflow-hidden': !expandInfoComplementaria }" class="relative">
+              <div class="relative">
                 <p>
                   Adquiere saberes de la mano de educadores altamente experimentados en educación a distancia,
                   comprometidos con una actualización constante para proporcionar clases de excelencia académica. Contamos
@@ -101,6 +103,7 @@
                   nuestro equipo docente.
                 </p>
               </div>
+          
             </section>
           </div>
         </div>
@@ -120,7 +123,7 @@
         <img :src="course.imgUrl" alt="" class="block mx-auto rounded-sm mb-4 w-48" />
         <!-- Título y Universidad -->
         <section class="md:hidden bg-white md:p-6 rounded mb-4 flex justify-between items-center">
-          <h1 class="text-xl md:text-3xl font-bold text-gray-800">{{ course.title }}</h1>
+          <h3 class="text-xl md:text-3xl font-bold text-gray-800">{{ course.title }}</h3>
           <div class="bg-gray-200 ml-auto rounded-lg">
             <button class="mx-3" title="Agregar a Favoritos">
                 <Favoritos :courseId="course._id" :courseType="'COURSERA'" :isFavorited="course.isFavorited" />
@@ -152,15 +155,14 @@
             {{ expandDescription ? "Ver menos" : "Ver más" }}
           </button>
         </section>
-        <a :href="course.courseUrl" target="_blank"
-          class="flex bg-indigo-600 text-white text-center py-2 px-4 rounded hover:bg-indigo-800 transition-colors duration-300 ease-in-out w-full items-center text-md justify-center font-semibold">
+        <div @click="redirectToCoursera" class=" cursor-pointer flex bg-indigo-600 text-white text-center py-2 px-4 rounded hover:bg-indigo-800 transition-colors duration-300 ease-in-out w-full items-center text-md justify-center font-semibold">
           Ir al curso
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960" width="24" class="ml-2">
             <path
               d="M200-120q-33 0-56.5-23.5T120-200v-560q0-33 23.5-56.5T200-840h280v80H200v560h560v-280h80v280q0 33-23.5 56.5T760-120H200Zm188-212-56-56 372-372H560v-80h280v280h-80v-144L388-332Z"
               fill="#fff" />
           </svg>
-        </a>
+        </div>
         <!-- Contenido de bajo -->
         <div class="px-2 py-6 text-md">
           <!-- <div class="flex items-center">
@@ -177,7 +179,7 @@
                     d="M400-420h139.231v-40H400v40Zm0-120h278.462v-40H400v40Zm0-120h278.462v-40H400v40Zm-75.385 380Q297-280 278.5-298.5 260-317 260-344.615v-430.77Q260-803 278.5-821.5 297-840 324.615-840h430.77Q783-840 801.5-821.5 820-803 820-775.385v430.77Q820-317 801.5-298.5 783-280 755.385-280h-430.77Zm0-40h430.77q9.231 0 16.923-7.692Q780-335.385 780-344.615v-430.77q0-9.23-7.692-16.923Q764.616-800 755.385-800h-430.77q-9.23 0-16.923 7.692Q300-784.615 300-775.385v430.77q0 9.23 7.692 16.923Q315.385-320 324.615-320Zm-120 160Q177-160 158.5-178.5 140-197 140-224.615v-470.77h40v470.77q0 9.231 7.692 16.923Q195.384-200 204.615-200h470.77v40h-470.77ZM300-800v480-480Z" />
                 </svg>
                 <a href="/cursos/Coursera">
-                  <button class="flex hover:underline transition" title="Ir a cursos de Coursera">
+                  <button class="flex hover:underline transition" title="Estos cursos provienen de nuestro proveedor: Coursera">
                     <span>Coursera - {{ course.university }}</span>
                     <svg class="ml-1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="20" fill="#000000">
                       <path d="M0 0h24v24H0V0z" fill="none" />
@@ -222,14 +224,19 @@
         </div>
       </aside>
     </div>
+    <p class="hidden  mt-3 md:block text-center pb-6 text-sm text-gray-500">CurSeek cuenta con el apoyo del alumno. Cuando
+      compra a través de enlaces en nuestro sitio, podemos ganar una comisión de afiliado.</p>
   </div>
+  
 </template>
 
 <script setup>
-import { ref, onMounted } from "vue";
+import { ref, computed, onMounted} from "vue";
 import axios from "axios";
 import { useRoute,useRouter  } from "vue-router";
 import Favoritos from "../../../components/Favoritos.vue";
+import SeoComponent from '../../../components/SEO.vue';
+import { useMeta } from 'vue-meta';
 
 const route = useRoute();
 const course = ref({});
@@ -237,7 +244,37 @@ const expandDescription = ref(false);
 const expandCourseDetails = ref(false);
 const courseModules = ref([]);
 const router = useRouter();
+const structuredData = ref({});
 
+
+//SEO
+
+// Ejemplo de pageTitle y pageDescription
+const pageTitleSEO = computed(() => {
+  return course.value.title ? `curso sobre ${course.value.title} - CurSeek` : 'Cargando...';
+});
+
+const pageDescriptionSEO = computed(() => {
+   let description = course.value.shortDescription && course.value.shortDescription !== "No short description found"
+                    ? course.value.shortDescription
+                    : course.value.longDescription || '';
+  
+  return description.length > 160 ? `${description.substring(0, 157)}...` : description;
+});
+
+
+// Usa la API de enrutamiento de Vue para obtener la ruta actual
+
+// Crea una estructura de breadcrumbs reactiva basada en la ruta actual
+const breadcrumbs = computed(() => {
+  const courseSlug = route.params.slug; // Obtienes el slug actual del curso desde la URL
+  return [
+    { text: 'Inicio', to: '/', active: route.path === '/' },
+    { text: 'Coursera', to: '/cursos/coursera', active: route.path.includes('/cursos/coursera') },
+    // Aquí usamos el slug real en lugar de ':slug'
+    { text: course.value.title, to: `/coursera/cursos/${courseSlug}`, active: true },
+  ];
+});
 onMounted(async () => {
   const courseSlug = route.params.slug;
   try {
@@ -245,18 +282,50 @@ onMounted(async () => {
       `${import.meta.env.VITE_API_URL}/cursos/coursera/${courseSlug}`
     );
     if (!response.data || Object.keys(response.data).length === 0) {
-      // Si no hay datos del curso, redirige al usuario a la página de error 404
       throw new Error('Curso no encontrado');
     }
     course.value = response.data;
-    processCourseDetailsText();
+    console.log("Título SEO:", pageTitleSEO.value);
+    console.log("Descripción SEO:", pageDescriptionSEO.value);
+    structuredData.value = {
+      "@context": "https://schema.org",
+      "@type": "Course",
+      "name": course.value.title,
+      "description": course.value.longDescription, 
+      "provider": {
+        "@type": "Organization",
+        "name": course.value.university, 
+      }
+    };
   } catch (error) {
     console.error("Error obteniendo el detalle del curso de Coursera:", error);
-    router.push({ name: 'Error404' }); // Redirección a la página de error 404
+    router.push({ name: 'Error404' });
   }
-  expandCourseDetails.value = true;
+
 });
 
+//seo2 
+
+useMeta({
+  title: pageTitleSEO.value,
+    meta: [
+    {
+      name: 'description',
+      content: pageDescriptionSEO.value
+    },
+    // Tus otros meta tags aquí
+  ],
+  script: [
+    {
+      type: 'application/ld+json',
+      json: structuredData
+    },
+  ],
+});
+const redirectToCoursera = () => {
+  const courseUrl = course.value.courseUrl;
+  router.push({ path: '/link-saliente', query: { url: courseUrl, isExternal: 'true' } });
+};
 const processCourseDetailsText = () => {
   const sections = course.value.courseDetailsText.split('\n').filter(line => line.trim() !== '');
   let currentModule = { title: '', details: '' };
@@ -274,4 +343,6 @@ const processCourseDetailsText = () => {
     courseModules.value.push(currentModule); // Asegurar que el último módulo se añada
   }
 };
+
+
 </script>
