@@ -212,14 +212,17 @@
 </template>
 
 <script setup>
-import { ref, onMounted, computed } from 'vue';
+import { ref, onBeforeMount, computed, watch  } from 'vue';
 import { useRoute, useRouter } from 'vue-router';
 import axios from 'axios';
 import Favoritos from "../../../components/Favoritos.vue";
+import { useHead } from '@vueuse/head';
 import SeoComponent from '../../../components/SEO.vue';
-import { useMeta } from 'vue-meta';
 
 
+const route = useRoute();
+const router = useRouter();
+const categories = ref([]);
 const udemyCourse = ref({
   title: '',
   price: '',
@@ -235,11 +238,10 @@ const udemyCourse = ref({
   instructorImage: '',
   category: '',
 });
-const route = useRoute();
-const router = useRouter();
-const categories = ref([]);
-//SEO
+const expandDescription = ref(false);
 
+
+//SEO
 
 // Cambia a los valores predeterminados apropiados para cuando los datos están cargando o no disponibles
 const defaultTitle = 'Aprende con este Curso de Udemy';
@@ -270,20 +272,18 @@ const breadcrumbs = computed(() => {
 // Sección para el manejo de JSON-LD específico para el curso de Udemy
 const structuredData = ref({});
 
-onMounted(async () => {
-  const courseSlug = route.params.slug;
+
+async function fetchCourseData(courseSlug) {
   try {
     const response = await axios.get(`${import.meta.env.VITE_API_URL}/cursos/udemy/${courseSlug}`);
     if (response.data && Object.keys(response.data).length > 0) {
       udemyCourse.value = response.data;
-      // Configura aquí tu estructura JSON-LD para el curso de Udemy
 
       structuredData.value = {
         "@context": "https://schema.org",
         "@type": "Course",
         "name": udemyCourse.value.title,
         "description": udemyCourse.value.description,
-        // Asegúrate de ajustar estos valores según los datos de Udemy que tengas disponibles
         "provider": {
           "@type": "Organization",
           "name": "Udemy",
@@ -297,27 +297,66 @@ onMounted(async () => {
     console.error("Error obteniendo el detalle del curso de Udemy:", error);
     router.push({ name: 'Error404' });
   }
-  loadCategories();
-
-});
+  loadCategories() 
+}
 
 //seo2
+// Invocar la carga de datos inmediatamente para SSR y cliente
 
-useMeta({
-  title: pageTitleSEO.value,
-  meta: [
-    {
-      name: 'description',
-      content: pageDescriptionSEO.value
-    },
-  ],
-  script: [
-    {
-      type: 'application/ld+json',
-      json: structuredData
-    },
-  ],
+onBeforeMount(() => {
+  fetchCourseData(route.params.slug);
 });
+// Computed para generar el script JSON-LD como string
+const jsonLdString = computed(() => {
+  if (!udemyCourse.value.title) return '';
+  
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@type": "Course",
+    "name": udemyCourse.value.title,
+    "description": udemyCourse.value.description,
+    "provider": {
+      "@type": "Organization",
+      "name": "Udemy",
+      "sameAs": "https://www.udemy.com"
+    }
+  };
+
+  return JSON.stringify(jsonLd);
+});
+
+// Utilizar useHead para incluir dinámicamente el JSON-LD
+watch(udemyCourse, (newValue) => {
+  if (newValue.title) {
+    useHead({
+      title: `${newValue.title} - CurSeek`,
+      meta: [
+        {
+          name: 'description',
+          content: pageDescriptionSEO.value,
+        },
+        // otros metadatos...
+      ],
+      script: [
+        {
+          type: 'application/ld+json',
+          innerHTML: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "Course",
+            "name": newValue.title,
+            "description": newValue.description,
+            "provider": {
+              "@type": "Organization",
+              "name": "Udemy",
+              "sameAs": "https://www.udemy.com"
+            }
+          }),
+          processTemplateParams: true // Si necesitas procesar parámetros de plantilla
+        }
+      ],
+    });
+  }
+}, { immediate: true, deep: true });
 
 
 const loadCategories = async () => {
@@ -339,7 +378,6 @@ const displayedPrice = computed(() => {
 });
 
 
-
 // método que maneja la redirección
 const redirectToExternalCourse = () => {
   const courseUrl = `https://www.udemy.com${udemyCourse.value.url}`;
@@ -347,9 +385,9 @@ const redirectToExternalCourse = () => {
 };
 
 //
-const expandDescription = ref(false);
 
 const toggleDescription = () => {
   expandDescription.value = !expandDescription.value;
 };
+
 </script>

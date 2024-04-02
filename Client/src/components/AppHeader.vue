@@ -386,6 +386,7 @@
 import { ref, watch, onMounted } from 'vue';
 import axios from 'axios';
 import { useRouter, useRoute } from 'vue-router';
+import { getFromLocalStorage } from '../utils/localStorage'; // Asegúrate de que la ruta sea correcta
 
 export default {
   name: 'AppHeader',
@@ -396,7 +397,7 @@ export default {
     const courses = ref([]);
     const isInputClicked = ref(false);
     const limitResults = ref(true);
-    const loggedInUsername = ref(localStorage.getItem('loggedInUsername'));
+    const loggedInUsername = ref(getFromLocalStorage('loggedInUsername'));
     const menuBuscadorResponsive = ref(false);
     const menu1Visible = ref(false);
     const menu2Visible = ref(false);

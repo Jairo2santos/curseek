@@ -93,7 +93,7 @@
   import { useRoute } from 'vue-router';
 
   const route = useRoute();
-  const pageTitle = ' Universidad de los Andes Colombia- Coursera';
+  const pageTitle = 'Cursos de la Universidad de los Andes Colombia';
   const pageDescription = 'La Universidad de los Andes en Bogotá, Colombia, es una institución privada líder en educación superior en América Latina. Fundada en 1948, se enfoca en la excelencia académica, la investigación y el desarrollo social. Ofrece programas en diversas áreas y destaca en ingeniería, ciencias, salud, ciencias sociales, humanidades y administración. Uniandes es reconocida por su calidad académica, investigación avanzada y compromiso con la sociedad, con centros e institutos de investigación que abordan desafíos locales y globales. Su campus moderno fomenta la innovación y el aprendizaje colaborativo. Uniandes se destaca en rankings internacionales como una de las mejores universidades de la región.';
   const courses = ref([]);
   const professors = ref([]);

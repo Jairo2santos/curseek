@@ -17,6 +17,7 @@ const checkRefererHeader = (req, res, next) => {
   const allowedDomains = [
     'http://localhost:5173',
     'https://curseek.com',
+    'http://localhost:3000', 
   ];
 
   // Verificar si el dominio del encabezado Referer está en la lista de permitidos
@@ -38,11 +39,14 @@ const apiRateLimiter = rateLimit({
 
 // Middleware cors
 app.use(cors({
-  origin: ['http://localhost:5173', 'http://localhost:3333'],
+  origin: [
+    'http://localhost:5173', // El cliente de desarrollo de Vite
+    'http://localhost:3000', // El servidor SSR
+    'https://curseek.com', // El dominio de producción
+  ],
   methods: ['GET', 'POST', 'PUT', 'DELETE'],
   credentials: true,
 }));
-
 app.use('/api/users/uploads', (req, res, next) => {
   res.header('Cross-Origin-Resource-Policy', 'cross-origin');
   next();

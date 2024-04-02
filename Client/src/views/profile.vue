@@ -215,12 +215,13 @@
 import { ref, reactive, onMounted, computed } from "vue";
 import axios from "axios";
 import { useRouter } from "vue-router";
+import { getFromLocalStorage, setToLocalStorage, clearLocalStorage } from '../utils/localStorage';
 
 const selectedProfilePicture = ref(null);
 const router = useRouter();
 const userData = ref({});
 const editableUserData = reactive({}); // Datos editables del usuario
-const userId = ref(localStorage.getItem("loggedInUserId"));
+const userId = ref(getFromLocalStorage("loggedInUserId")); 
 const newPassword = ref(""); // Nueva contraseña
 const isPasswordShown = ref(false);
 const editing = ref(false);
@@ -429,7 +430,7 @@ const countries = [
 ];
 //revisar credenciales y redirigir
 const checkAuth = () => {
-  const token = localStorage.getItem("token");
+  const token = getFromLocalStorage("token");
   if (!token) {
     redirectToLogin("Su sesión ha expirado, por favor inicie sesión de nuevo.");
   }
@@ -457,12 +458,12 @@ const fetchUserProfile = async () => {
       `${import.meta.env.VITE_API_URL}/users/profile/id/${userId.value}`,
       {
         headers: {
-          Authorization: `Bearer ${localStorage.getItem("token")}`,
+          Authorization: `Bearer ${getFromLocalStorage("token")}`,
         },
       }
     );
     userData.value = response.data;
-    Object.assign(editableUserData, response.data); // Copiar datos del usuario a editableUserData
+    Object.assign(editableUserData, response.data);
   } catch (error) {
     console.error("Error al obtener el perfil del usuario:", error);
   }
@@ -479,7 +480,7 @@ const loadFavoriteCourses = async () => {
       `${import.meta.env.VITE_API_URL}/users/favorites/${userId.value}`,
       {
         headers: {
-          Authorization: `Bearer ${localStorage.getItem("token")}`,
+          Authorization: `Bearer ${getFromLocalStorage("token")}`,
         },
       }
     );
@@ -534,13 +535,13 @@ const togglePasswordVisibility = () => {
 // Función para cerrar sesión
 const logout = () => {
   // Establecer mensaje de notificación para cerrar sesión
-  localStorage.clear();
+  clearLocalStorage();
   router.push("/login");
 };
 
 const removeFromFavorites = async (courseId) => {
   // Recuperar el token de autenticación almacenado
-  const token = localStorage.getItem("token");
+  const token = getFromLocalStorage("token");
 
   if (!token) {
     console.error("Token de autorización no encontrado.");
@@ -614,7 +615,7 @@ const saveProfile = async () => {
       {
         headers: {
           "Content-Type": "multipart/form-data",
-          Authorization: `Bearer ${localStorage.getItem("token")}`,
+          Authorization: `Bearer ${getFromLocalStorage("token")}`,
         },
       }
     );
@@ -695,7 +696,7 @@ const resolveImagePath = (path) => {
 };
 
 onMounted(() => {
-  if (!localStorage.getItem("token")) {
+  if (!getFromLocalStorage("token")) {
     redirectToLogin("Debe iniciar sesión para ver el perfil.");
   } else {
     fetchUserProfile();

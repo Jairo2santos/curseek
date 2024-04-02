@@ -163,7 +163,7 @@ axios.defaults.baseURL = import.meta.env.VITE_API_URL;
 
 // Estado
 
-const pageTitle = "Cursos de Udemy";
+const pageTitle = "Buscador de cursos de Udemy";
 const pageDescription = "Udemy.com es una plataforma de aprendizaje en línea. Está dirigido a adultos profesionales.​ A diferencia de los programas académicos MOOC conducidos por tradicionales cursos de trabajo creados por las universidades, Udemy utiliza contenido de creadores en línea para vender y así conseguir ganancias.​";
 const courses = ref([]);
 const currentPage = ref(1);

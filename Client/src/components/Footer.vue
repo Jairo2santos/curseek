@@ -72,16 +72,17 @@
 <script setup>
 import { ref, watch } from 'vue';
 import { useRouter } from 'vue-router';
+import { getFromLocalStorage, removeFromLocalStorage } from '../utils/localStorage'; 
 
-const loggedInUsername = ref(localStorage.getItem('loggedInUsername'));
+const loggedInUsername = ref(getFromLocalStorage('loggedInUsername'));
 const router = useRouter();
 
 watch(() => router.currentRoute, () => {
-  loggedInUsername.value = localStorage.getItem('loggedInUsername');
+  loggedInUsername.value = getFromLocalStorage('loggedInUsername');
 });
 
 const logout = () => {
-  localStorage.removeItem('loggedInUsername');
+  removeFromLocalStorage('loggedInUsername');
   loggedInUsername.value = null;
   router.push('/login');
 };

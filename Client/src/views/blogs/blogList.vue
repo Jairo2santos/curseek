@@ -1,5 +1,10 @@
 <template>
   <div class="flex-col max-w-screen-full md:flex-row mx-auto md:px-60 bg-gray-100 pb-12">
+    <seo-component
+      :title="pageTitleSEO"
+      :description="pageDescriptionSEO"
+      :breadcrumbs="breadcrumbs"
+    />
     <Notificacion v-if="showNotification" :message="notificationMessage" :type="notificationType"
       @close="showNotification = false" />
     <!-- Texto introductorio -->
@@ -29,7 +34,7 @@
           <img :src="blog.image" alt="Imagen del Blog" class="w-full h-48 object-cover">
           <div class="p-4 flex-grow">
             <h2 class="text-lg font-semibold text-pastel-verde mb-2">{{ blog.title }}</h2>
-            <p class="text-gray-700 text-sm mb-4">{{ blog.content.substring(0, 150) + "..." }}</p>
+            <p class="text-gray-700 text-sm mb-4">{{ extractTextFromHTML(blog.content) }}</p>
             <div v-if="isAdmin" class="admin-buttons flex space-x-2 mt-4">
               <router-link :to="{ name: 'EditBlog', params: { slug: blog.slug } }"
                 class="inline-block bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded-lg transition-colors duration-200">Editar</router-link>
@@ -51,16 +56,39 @@
 
 <script setup>
 import axios from 'axios';
-import { onMounted, ref } from 'vue';
+import { onMounted, ref , computed} from 'vue';
 import { useRouter } from 'vue-router';
 import Notificacion from '../../components/Notificaciones.vue';
+import { getFromLocalStorage} from '../../utils/localStorage'; // Importa tus utilidades
+import SeoComponent from '../../components/SEO.vue';
+import { useRoute } from 'vue-router';
 
 const blogs = ref([]);
 const router = useRouter();
-const isAdmin = ref(localStorage.getItem('userRole') === 'admin');
+const isAdmin = ref(getFromLocalStorage('userRole') === 'admin'); // Utiliza tu función de utilidad
 const showNotification = ref(false);
 const notificationMessage = ref('');
 const notificationType = ref('');
+const route = useRoute();
+
+//SEO
+
+// Ejemplo de pageTitle y pageDescription
+const pageTitleSEO = 'Blogs y noticias - CurSeek';
+const pageDescriptionSEO = 'Sección de blogs de Curseek, un buscador personalizado de cursos';
+
+// Usa la API de enrutamiento de Vue para obtener la ruta actual
+
+// Crea una estructura de breadcrumbs reactiva basada en la ruta actual
+const breadcrumbs = computed(() => {
+  // Aquí puedes construir la lógica para tus breadcrumbs basada en route.path o route.params
+  return [
+    { text: 'Inicio', to: '/', active: route.path === '/' },
+    { text: 'BLogs y contenidos', to: '/blogs', active: route.path === '/blogs' },
+  
+    // La última ruta es siempre activa y no tiene enlace
+  ];
+});
 
 // Asegúrate de usar slugs correctamente para eliminar blogs
 const deleteBlog = async (slug) => {
@@ -68,7 +96,7 @@ const deleteBlog = async (slug) => {
   try {
     await axios.delete(`${import.meta.env.VITE_API_URL}/blogs/slug/${slug}`, {
       headers: {
-        Authorization: `Bearer ${localStorage.getItem('token')}`
+        Authorization: `Bearer ${getFromLocalStorage('token')}` // Cambio aquí
       }
     });
     // Actualiza la lista de blogs eliminando el blog con el slug dado
@@ -88,12 +116,15 @@ const deleteBlog = async (slug) => {
     notificationType.value = 'error';
   }
 };
-
-
+const extractTextFromHTML = (htmlString, maxLength = 150) => {
+  const strippedString = htmlString.replace(/<[^>]+>/g, ''); // Eliminar etiquetas HTML
+  return strippedString.length > maxLength
+    ? strippedString.substring(0, maxLength) + '...'
+    : strippedString;
+};
 onMounted(async () => {
   try {
     const response = await axios.get(`${import.meta.env.VITE_API_URL}/blogs`);
-    console.log(response.data);
     blogs.value = response.data;
   } catch (error) {
     console.error('Error al cargar los blogs:', error);

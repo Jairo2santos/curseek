@@ -1,6 +1,5 @@
 // Importaciones agrupadas
-import { createRouter, createWebHistory } from 'vue-router';
-import { nextTick } from 'vue';
+import { createRouter as _createRouter, createWebHistory, createMemoryHistory } from 'vue-router';
 
 // Importaciones de vistas generales
 import Home from '../views/home.vue';
@@ -37,6 +36,10 @@ const BlogList = () => import('../views/blogs/blogList.vue');
 const BlogDetail = () => import('../views/blogs/blogDetails.vue');
 const BlogForm = () => import('../views/blogs/blogForm.vue');
 
+export default function createMyRouter(isServer) {
+  console.log('Creating router. Is server:', isServer);
+
+  const history = isServer ? createMemoryHistory() : createWebHistory();
 const routes = [
   { path: '/', name: 'Home', component: Home, meta: { title: 'Inicio - Curseek' } },
   { path: '/nosotros', name: 'Nosotros', component: Nosotros, meta: { title: 'Nosotros - Curseek' } },
@@ -60,16 +63,12 @@ const routes = [
   { path: '/coursera/universidades/unam', name: 'UNAM', component: UNAM, props: true, meta: { title: 'Universidad Nacional Autónoma de México - Curseek' } },
   { path: '/password-recovery', name: 'PasswordRecovery', component: PasswordRecovery, meta: { title: 'Recuperación de Contraseña - Curseek' } },
   { path: '/reset-password', name: 'ResetPassword ', component: ResetPassword,  meta: { title: 'Reseteo de Contraseña - Curseek' } },
-  { path: '/link-saliente', name: 'LinkSaliente',  component: () => import('../views/LinkSaliente.vue'),  meta: { title: 'Saliendo de Curseek - Curseek' } },
+  { path: '/link-saliente', name: 'LinkSaliente',  component: () => import('../views/linkSaliente.vue'),  meta: { title: 'Saliendo de Curseek - Curseek' } },
   { path: '/:pathMatch(.*)*', name: 'Error404', component: Error404, meta: { title: 'Página no encontrada - Curseek' } },
 ];
 
-const router = createRouter({
-  history: createWebHistory(),
-  routes,
-});
+const router = _createRouter({ history, routes });
 
-// Ahora que `router` está definido, puedes usar `router.beforeEach` y `router.afterEach`.
 router.beforeEach((to, from, next) => {
   if (to.query.isExternal === 'true') {
     handleExternalLink(next, to.query.url);
@@ -78,10 +77,5 @@ router.beforeEach((to, from, next) => {
   }
 });
 
-router.afterEach((to, from) => {
-  nextTick(() => {
-    document.title = to.meta.title || 'Curseek';
-  });
-});
-
-export default router;
+return router;
+}

@@ -94,7 +94,7 @@
   import { useRoute } from 'vue-router';
 
 const route = useRoute();
-  const pageTitle = ' Universidad de Chile - Coursera';
+  const pageTitle = 'Cursos de la Universidad de Chile - Curseek';
   const pageDescription = 'La Universidad de Chile es una de las instituciones de educación superior más antiguas y prestigiosas de América Latina. Fundada el 19 de noviembre de 1842, esta universidad pública se ha destacado por su papel fundamental en la formación académica, científica y cultural de Chile. A lo largo de su historia, ha sido cuna de importantes figuras en el ámbito político, literario, científico y artístico del país y de la región. La universidad ofrece una amplia gama de programas de pregrado, posgrado y educación continua en diversas áreas del conocimiento, incluyendo las humanidades, las ciencias sociales, las ciencias naturales, la salud, las artes, y la ingeniería. Su compromiso con la excelencia académica y la investigación la ha posicionado como líder en la producción de conocimiento en Chile y en Latinoamérica.';
   const courses = ref([]);
   const professors = ref([]);

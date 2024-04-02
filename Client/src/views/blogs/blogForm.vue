@@ -17,9 +17,8 @@
       </div>
       <div class="mb-6">
         <label for="content" class="block mb-2 text-sm font-medium text-gray-900">Contenido</label>
-        <textarea id="content" v-model="blog.content" rows="10"
-          class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-pastel-verde focus:border-pastel-verde block w-full p-2.5"
-          required></textarea>
+        <div id="editor"></div>
+
       </div>
       <button type="submit"
         class="text-white bg-blue-500 hover:bg-blue-700 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2">{{ isEditMode ? 'Actualizar' : 'Publicar' }}</button>
@@ -33,6 +32,9 @@ import { ref, onMounted } from 'vue';
 import { useRoute, useRouter } from 'vue-router';
 import axios from 'axios';
 import Notificacion from '../../components/Notificaciones.vue';
+import { getFromLocalStorage} from '../../utils/localStorage';
+import Quill from 'quill';
+import 'quill/dist/quill.snow.css';
 
 const route = useRoute();
 const router = useRouter();
@@ -41,6 +43,7 @@ const isEditMode = ref(false);
 const showNotification = ref(false);
 const notificationMessage = ref('');
 const notificationType = ref('');
+let editor = null; // Correctamente inicializada aquí
 
 onMounted(async () => {
   const slug = route.params.slug;
@@ -57,10 +60,28 @@ onMounted(async () => {
       showNotification.value = true;
     }
   }
+
+  // Solo inicializa Quill una vez
+  editor = new Quill('#editor', {
+    theme: 'snow',
+    modules: {
+      toolbar: [
+        [{ header: [1, 2, false] }],
+        ['bold', 'italic', 'underline'],
+        ['image', 'code-block']
+      ]
+    },
+    placeholder: 'Escribe algo increíble...',
+  });
+
+  // Establece el contenido del editor en modo de edición
+  if (isEditMode.value && blog.value.content) {
+    editor.root.innerHTML = blog.value.content;
+  }
 });
 
 const submitForm = async () => {
-  const token = localStorage.getItem('token');
+  const token = getFromLocalStorage('token');
 
   if (!token) {
     console.error('No se ha proporcionado el token de autorización.');
@@ -71,20 +92,29 @@ const submitForm = async () => {
   }
 
   try {
-    const slug = route.params.slug; 
-    // Asegúrate de que la URL base no termine en `/api` si la ruta también comienza con `/api`
-    const baseURL = import.meta.env.VITE_API_URL
+    const slug = route.params.slug;
+    const baseURL = import.meta.env.VITE_API_URL;
     const url = isEditMode.value && slug ? `${baseURL}/blogs/slug/${slug}` : `${baseURL}/blogs`;
     const method = isEditMode.value ? 'put' : 'post';
+
+    // Obtiene el contenido HTML del editor Quill
+    const contentHTML = editor.root.innerHTML; 
+
+    // Asegúrate de que la estructura de `blog.value` incluya el contenido HTML correctamente
+    const blogData = {
+    ...blog.value,
+    content: contentHTML, // Aquí asignas el contenido HTML al campo correcto
+  };
+
     console.log('Realizando solicitud:', method, 'a', url);
-    console.log('Datos del blog:', blog.value);
+    console.log('Datos del blog:', blogData);
 
     const response = await axios({
       method,
       url,
-      data: blog.value,
+      data: blogData,
       headers: {
-       Authorization: `Bearer ${token}`,
+        Authorization: `Bearer ${token}`,
       },
     });
 
@@ -103,4 +133,5 @@ const submitForm = async () => {
     showNotification.value = true;
   }
 };
+
 </script>

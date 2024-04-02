@@ -42,10 +42,11 @@
 import { ref } from 'vue';
 import axios from 'axios';
 import { useRouter } from 'vue-router';
-import Notificationes from '../components/Notificaciones.vue'; 
+import Notificationes from '../components/Notificaciones.vue';
+import { setToLocalStorage } from '../utils/localStorage'; // Importa la función desde tu archivo de utilidades
 
 const router = useRouter();
-const loginInput = ref(''); // Cambiado para usar un solo input que puede ser username o email
+const loginInput = ref('');
 const password = ref('');
 const showPassword = ref(false);
 const showNotification = ref(false);
@@ -60,14 +61,15 @@ const login = async () => {
     });
     if (response.status === 200) {
       notify('Inicio de sesión exitoso!', 'success');
-      localStorage.setItem('token', response.data.token);
-      localStorage.setItem('userRole', response.data.role);
-      localStorage.setItem('loggedInUsername', response.data.username);
-      localStorage.setItem('loggedInUserId', response.data.userId);
-      
+      // Usa la función de utilidad para configurar localStorage
+      setToLocalStorage('token', response.data.token);
+      setToLocalStorage('userRole', response.data.role);
+      setToLocalStorage('loggedInUsername', response.data.username);
+      setToLocalStorage('loggedInUserId', response.data.userId);
+
       setTimeout(() => {
-        router.push('/profile'); 
-      }, 1000); 
+        router.push('/profile');
+      }, 1000);
     } else {
       notify('Credenciales incorrectas. Por favor, intenta nuevamente.', 'error');
     }

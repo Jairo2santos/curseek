@@ -1,4 +1,5 @@
 <template>
+  
     <nav aria-label="breadcrumb" v-if="breadcrumbs.length > 1" class="text-xs py-2">
       <ol class="flex flex-wrap list-none pl-0 mb-0">
         <li v-for="(crumb, index) in breadcrumbs" :key="index" class="flex items-center">
@@ -12,47 +13,51 @@
         </li>
       </ol>
     </nav>
+
   </template>
   
-<script setup>
-import { computed } from 'vue';
-import { useMeta } from 'vue-meta';
 
-// Recibe las propiedades del componente padre
-const props = defineProps({
-  title: String,
-  description: String,
-  breadcrumbs: Array,
-});
-
-// Establece los metadatos SEO utilizando vue-meta
-useMeta(computed(() => ({
-  title: props.title,
-  meta: [
-    {
-      name: 'description',
-      content: props.description,
-    },
-    // ...otros metadatos si es necesario
-  ],
-  script: [
-    {
-      type: 'application/ld+json',
-      json: {
-        "@context": "https://schema.org",
-        "@type": "BreadcrumbList",
-        "itemListElement": props.breadcrumbs.map((breadcrumb, index) => ({
-          "@type": "ListItem",
-          "position": index + 1,
-          "name": breadcrumb.text,
-          "item": breadcrumb.active ? undefined : breadcrumb.to
-        })),
+  <script setup>
+  import { computed, defineProps } from 'vue';
+  import { useHead } from '@vueuse/head';
+  
+  // Recibe las propiedades del componente padre
+  const props = defineProps({
+    title: String,
+    description: String,
+    breadcrumbs: Array,
+  });
+  
+  // Se genera el string JSON-LD
+  const jsonLdString = computed(() => JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": props.breadcrumbs.map((breadcrumb, index) => ({
+      "@type": "ListItem",
+      "position": index + 1,
+      "name": breadcrumb.text,
+      "item": breadcrumb.to,
+    })),
+  }));
+  
+  // Uso de useHead para inyectar dinámicamente el título, descripción y JSON-LD
+  useHead({
+    title: props.title,
+    meta: [
+      {
+        name: 'description',
+        content: props.description,
       },
-    },
-  ],
-})));
-</script>
-
+    ],
+    script: [
+      {
+        type: 'application/ld+json',
+        innerHTML: jsonLdString.value,
+        key: 'breadcrumb-json-ld', // Proporcionar una clave única para la deduplicación
+      }
+    ]
+  });
+  </script>
 <style scoped>
 @media (min-width: 640px) {
   .breadcrumb li a,

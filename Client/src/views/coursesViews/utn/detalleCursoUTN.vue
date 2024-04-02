@@ -33,7 +33,7 @@
           </div>
           </div>
           <div class="hidden md:block bg-white p-4 md:p-6 rounded mb-6">
-            <h3 class="text-xl mb-2 font-bold">Resumen</h3>
+            <h2 class="text-xl mb-4 font-bold">¿De que se trata esta capacitación?</h2>
             <div :class="{ 'max-h-48 overflow-hidden': !expandDescription }" class="700 md:text-md bold-4 relative">
               <div>
                 {{ course.summary || 'En el ámbito actual, al guiar a individuos, equipos y organizaciones a través de procesos de desarrollo del talento humano, se...' }}
@@ -52,7 +52,7 @@
           </div>
 
           <div class="bg-white p-4 md:p-6 rounded mb-6">
-            <h3 class="text-xl mb-2 font-bold">Información institucional</h3>
+            <h2 class="text-xl mb-2 font-bold">Información institucionalde la UTN</h2>
             <div :class="{ 'max-h-56 overflow-y-auto': !expandInfoInstitucional }" class="700 md:text-md bold-4 relative">
               <div>
                 <div class="bg-white rounded">
@@ -150,7 +150,7 @@
         
           <!-- Sección de Profesores -->
           <div class="bg-white p-6 rounded mb-4">
-            <h3 class="text-xl mb-2 font-bold">Profesores</h3>
+            <h2 class="text-xl mb-2 font-bold">Profesores que dictan este curso</h2>
             <p>{{ course.teachers || 'Profesores' }}</p>
           </div>
         </div>
@@ -159,7 +159,7 @@
           <img :src="course.imgUrl" alt="" class="rounded-sm mb-4 w-full">
           <!-- Sección de Título, Duración y Precio -->
           <div class="md:hidden bg-white md:p-6 rounded mb-4 flex justify-between items-center">
-            <h1 class="text-xl md:text-3xl font-bold text-gray-800">{{ course.title || 'Aprende con este Curso de UTN' }}</h1>
+            <h2 class="text-xl md:text-3xl font-bold text-gray-800">{{ course.title || 'Aprende con este Curso de UTN' }}</h2>
             <div class="bg-gray-200 ml-auto rounded-lg">
               <button class="mx-3" title="Agregar a Favoritos">
                 <Favoritos :courseId="course._id" :courseType="'UDEMY'" :isFavorited="course.isFavorited" />
@@ -256,8 +256,8 @@ import { ref, onMounted } from 'vue';
 import axios from 'axios';
 import { useRouter, useRoute } from 'vue-router';
 import Favoritos from "../../../components/Favoritos.vue";
+import { useHead } from '@vueuse/head';
 import SeoComponent from '../../../components/SEO.vue';
-import { useMeta } from 'vue-meta';
 
 const router = useRouter();
 const route = useRoute();
@@ -284,28 +284,41 @@ onMounted(async () => {
     const response = await axios.get(`${import.meta.env.VITE_API_URL}/cursos/utn/${courseSlug}`);
     if (response.data && Object.keys(response.data).length) {
       course.value = response.data;
-
-      // Actualizar SEO y JSON-LD aquí
-      pageTitleSEO.value = course.value.title ? `${course.value.title} - CurSeek` : defaultTitle;
-      pageDescriptionSEO.value = course.value.description || defaultDescription;
-      breadcrumbs.value = [
-        { text: 'Inicio', to: '/', active: route.path === '/' },
-        { text: 'UTN', to: '/cursos/utn', active: route.path.includes('/cursos/utn') },
-        { text: course.value.title, to: `/utn/cursos/${courseSlug}`, active: true },
-      ];
-
-      structuredData.value = {
+ breadcrumbs.value = [
+  { text: 'Inicio', to: '/', active: false },
+  { text: 'Cursos UTN', to: '/cursos/utn', active: false },
+  { text: course.value.title, to: '', active: true }, // Ruta actual como activa sin enlace
+];
+       // Actualizar información de la página para SEO
+ // Dentro de onMounted o cualquier método adecuado después de cargar los datos del curso
+useHead({
+  title: course.value.title ? `${course.value.title} - CurSeek` : defaultTitle,
+  meta: [
+    {
+      name: 'description',
+      content: course.value.description || defaultDescription,
+    },
+  ],
+  script: [
+    {
+      type: 'application/ld+json',
+      innerHTML: JSON.stringify({
         "@context": "https://schema.org",
         "@type": "Course",
         "name": course.value.title,
         "description": course.value.description,
-        // Ajusta estos valores según los datos específicos del curso de la UTN
         "provider": {
           "@type": "Organization",
           "name": "Universidad Tecnológica Nacional",
           "sameAs": "https://www.utn.edu.ar"
         }
-      };
+        // Añadir otros campos necesarios aquí
+      }),
+      key: 'utn-course-json-ld', // Proporciona una clave única para evitar duplicados
+    }
+  ]
+});
+
     } else {
       router.push({ name: 'Error404' });
     }

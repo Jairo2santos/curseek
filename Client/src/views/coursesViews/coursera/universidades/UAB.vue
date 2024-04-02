@@ -95,7 +95,7 @@ import { useRoute } from 'vue-router';
 
 
 const route = useRoute();
-const pageTitle = 'Universidad de Barcelona - Coursera';
+const pageTitle = 'Cursos de la Universidad de Barcelona - Curseek';
 const pageDescription = 'La Universidad de Barcelona (UB), fundada en 1450, es una de las instituciones educativas más antiguas de España y se ha destacado por su excelencia en la enseñanza e investigación. Ofrece una amplia gama de grados, másteres y programas de doctorado en diversos campos del conocimiento, desde las humanidades hasta las ciencias naturales y la salud. Ubicada en Barcelona, ha sido fundamental en la vida intelectual y cultural de Cataluña y España, contribuyendo al avance del conocimiento y la innovación. Su campus histórico y modernas instalaciones ofrecen un entorno estimulante para estudiantes y académicos de todo el mundo.';
 const courses = ref([]);
 const professors = ref([]);

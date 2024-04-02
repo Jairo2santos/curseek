@@ -26,6 +26,7 @@
 <script setup>
 import { ref } from 'vue';
 import axios from 'axios';
+import { getFromLocalStorage } from '../utils/localStorage'; // Asegúrate de que la ruta sea correcta
 
 const props = defineProps({
   courseId: String,
@@ -55,8 +56,8 @@ const triggerNotification = (message, type) => {
 const isFavorited = ref(false);
 const toggleFavorite = async () => {
   try {
-    const userId = localStorage.getItem('loggedInUserId');
-    const token = localStorage.getItem('token'); // Obtener el token JWT
+    const userId =  getFromLocalStorage('loggedInUserId');
+    const token =  getFromLocalStorage('token'); // Obtener el token JWT
     if (!userId) {
       triggerNotification('Debes iniciar sesión para agregar a favoritos', 'error');
       return;
