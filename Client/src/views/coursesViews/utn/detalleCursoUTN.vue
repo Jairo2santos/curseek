@@ -182,7 +182,7 @@
               {{ expandDescription ? "Ver menos" : "Ver más" }}
             </button>
           </div>
-          <button @click="redirectToExternal(course.link)" class="flex bg-indigo-600 text-white text-center py-2 px-4 rounded hover:bg-indigo-800 transition-colors duration-300 ease-in-out w-full items-center text-md justify-center font-semibold">
+          <button @click="redirectToExternal(course.link)"  class="flex  bg-indigo-600 text-white text-center py-2 px-4 rounded hover:bg-indigo-800 transition-colors duration-300 ease-in-out w-full items-center text-md justify-center font-semibold">
             Ir al curso
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960" width="24" class="ml-2">
               <path
@@ -341,7 +341,11 @@ const toggleDescription = () => {
 const toggleInfoInstitucional = () => {
     expandInfoInstitucional.value = !expandInfoInstitucional.value;
 };
+// Dentro de tu componente o vista
 const redirectToExternal = (url) => {
-  router.push({ name: 'LinkSaliente', query: { url } });
+  const encodedUrl = encodeURIComponent(url);
+  const salidaUrl = `${window.location.origin}/link-saliente?url=${encodedUrl}`;
+  window.open(salidaUrl, '_blank');
 };
+
 </script>

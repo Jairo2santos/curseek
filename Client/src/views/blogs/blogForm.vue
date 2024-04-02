@@ -63,16 +63,27 @@ onMounted(async () => {
 
   // Solo inicializa Quill una vez
   editor = new Quill('#editor', {
-    theme: 'snow',
-    modules: {
-      toolbar: [
-        [{ header: [1, 2, false] }],
-        ['bold', 'italic', 'underline'],
-        ['image', 'code-block']
-      ]
-    },
-    placeholder: 'Escribe algo increíble...',
-  });
+  theme: 'snow',
+  modules: {
+    toolbar: [
+      [{ 'header': [1, 2, 3, 4, 5, 6, false] }],
+      [{ 'font': [] }],
+      [{ 'size': ['small', false, 'large', 'huge'] }],
+      ['bold', 'italic', 'underline', 'strike'],
+      [{ 'color': [] }, { 'background': [] }],
+      [{ 'script': 'sub'}, { 'script': 'super' }],
+      [{ 'list': 'ordered'}, { 'list': 'bullet'}, { 'list': 'check' }],
+      [{ 'indent': '-1'}, { 'indent': '+1' }],
+      [{ 'direction': 'rtl' }],
+      [{ 'align': [] }],
+      ['link', 'image', 'video'],
+      ['blockquote', 'code-block'],
+      ['clean']
+    ]
+  },
+  placeholder: 'Escribe algo increíble...',
+});
+
 
   // Establece el contenido del editor en modo de edición
   if (isEditMode.value && blog.value.content) {

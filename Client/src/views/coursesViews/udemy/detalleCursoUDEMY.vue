@@ -130,7 +130,7 @@
             {{ expandDescription ? "Ver menos" : "Ver más" }}
           </button>
         </div>
-        <div @click="redirectToExternalCourse" class="flex bg-indigo-600 text-white text-center py-2 px-4 rounded hover:bg-indigo-800 transition-colors duration-300 ease-in-out w-full items-center text-md justify-center font-semibold">
+        <div @click="redirectToExternalCourse" class="flex bg-indigo-600 text-white text-center py-2 px-4 rounded hover:bg-indigo-800 transition-colors duration-300 ease-in-out w-full items-center text-md justify-center font-semibold cursor-pointer">
           Ir al curso
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960" width="24" class="ml-2">
             <path
@@ -212,7 +212,7 @@
 </template>
 
 <script setup>
-import { ref, onBeforeMount, computed, watch  } from 'vue';
+import { ref, onBeforeMount, computed, watch ,  onMounted } from 'vue';
 import { useRoute, useRouter } from 'vue-router';
 import axios from 'axios';
 import Favoritos from "../../../components/Favoritos.vue";
@@ -377,12 +377,26 @@ const displayedPrice = computed(() => {
   }
 });
 
+onMounted(() => {
+  // Asegúrate de que el parámetro URL esté presente
+  if (route.query.url) {
+    externalUrl.value = decodeURIComponent(route.query.url);
+    // Esperar unos segundos y luego redirigir al curso de Udemy
+    setTimeout(() => {
+      window.location.href = externalUrl.value;
+    }, 3000); // Por ejemplo, espera 3 segundos antes de redirigir
+  }
+});
 
 // método que maneja la redirección
 const redirectToExternalCourse = () => {
   const courseUrl = `https://www.udemy.com${udemyCourse.value.url}`;
-  router.push({ name: 'LinkSaliente', query: { url: courseUrl } });
+  const encodedUrl = encodeURIComponent(courseUrl);
+  // Abrir una nueva pestaña que lleva al usuario a la vista LinkSaliente
+  window.open(`${location.origin}/link-saliente?url=${encodedUrl}`, '_blank');
 };
+
+
 
 //
 

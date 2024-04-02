@@ -12,7 +12,7 @@
       <img :src="blog.image" alt="Imagen destacada del blog" class="block mx-auto rounded-sm mb-4 w-1/2">
 
       <!-- Contenido del Blog -->
-      <div class="md:col-span-1">
+      <div class="md:col-span-1 m-auto">
         <!-- Utiliza v-html para renderizar el contenido HTML del blog -->
         <div class="text-gray-700 prose whitespace-pre-line text-lg px-4" v-html="blog.content"></div>
         <div class="text-right text-sm mt-6 pr-4">
@@ -38,7 +38,7 @@
   
   <script setup>
   import axios from 'axios';
-  import { onMounted, ref, computed} from 'vue';
+  import { onMounted, ref, computed, watch} from 'vue';
   import { useRoute, useRouter } from 'vue-router';
   import SeoComponent from '../../components/SEO.vue';
   import { getFromLocalStorage} from '../../utils/localStorage'; // Importa tus utilidades
@@ -50,10 +50,24 @@ const blog = ref(null);
 const isAdmin = ref(getFromLocalStorage('userRole') === 'admin'); 
   //SEO
 
-// Ejemplo de pageTitle y pageDescription
-const pageTitleSEO = 'Blogs y noticias - CurSeek';
-const pageDescriptionSEO = 'Sección de blogs de Curseek, un buscador personalizado de cursos';
+// Establece el título de la página basado en el título del blog
+const pageTitleSEO = computed(() => {
+  return blog.value ? `${blog.value.title} - CurSeek` : 'Blogs y noticias - CurSeek';
+});
 
+// Establece la descripción de la página usando los primeros 160 caracteres del contenido del blog
+const pageDescriptionSEO = computed(() => {
+  if (blog.value && blog.value.content) {
+    // Crea un elemento div temporal y establece su HTML al contenido del blog
+    const tempDiv = document.createElement('div');
+    tempDiv.innerHTML = blog.value.content;
+    // Extrae el texto y usa los primeros 160 caracteres para la descripción
+    const plainText = tempDiv.textContent || tempDiv.innerText || "";
+    return plainText.slice(0, 160);
+  } else {
+    return 'Sección de blogs de Curseek, un buscador personalizado de cursos';
+  }
+});
 // Usa la API de enrutamiento de Vue para obtener la ruta actual
 
 // Crea una estructura de breadcrumbs reactiva basada en la ruta actual
@@ -61,7 +75,7 @@ const breadcrumbs = computed(() => {
   // Aquí puedes construir la lógica para tus breadcrumbs basada en route.path o route.params
   return [
     { text: 'Inicio', to: '/', active: route.path === '/' },
-    { text: 'BLogs y contenidos', to: '/blogs', active: route.path === '/blogs' },
+    { text: 'Blogs y contenidos', to: '/blogs', active: route.path === '/blogs' },
     ...blog.value ? [{ text: blog.value.title, to: '', active: true }] : [],
   ];
 });
@@ -91,6 +105,25 @@ const deleteBlog = async (slug) => {
     console.error('Error al eliminar el blog:', error);
   }
 };
+
+
+watch(blog, (newValue) => {
+  if (newValue) {
+    document.title = `${newValue.title} - CurSeek`; // Actualiza el título de la página
+    // Actualiza la descripción de la meta etiqueta
+    const metaDescription = document.querySelector('meta[name="description"]');
+    if (metaDescription) {
+      metaDescription.setAttribute("content", extractText(newValue.content, 160));
+    }
+  }
+}, { deep: true, immediate: true });
+
+function extractText(html, length) {
+  const div = document.createElement("div");
+  div.innerHTML = html;
+  const text = div.textContent || div.innerText || "";
+  return text.substr(0, length);
+}
 
   </script>
 

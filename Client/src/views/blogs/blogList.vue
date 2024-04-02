@@ -84,7 +84,7 @@ const breadcrumbs = computed(() => {
   // Aquí puedes construir la lógica para tus breadcrumbs basada en route.path o route.params
   return [
     { text: 'Inicio', to: '/', active: route.path === '/' },
-    { text: 'BLogs y contenidos', to: '/blogs', active: route.path === '/blogs' },
+    { text: 'Blogs y contenidos', to: '/blogs', active: route.path === '/blogs' },
   
     // La última ruta es siempre activa y no tiene enlace
   ];

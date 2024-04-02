@@ -368,12 +368,23 @@ function updateSEO() {
   });
 }
 
+onMounted(() => {
+  // Asegúrate de que el parámetro URL esté presente
+  if (route.query.url) {
+    externalUrl.value = decodeURIComponent(route.query.url);
+    // Esperar unos segundos y luego redirigir al curso de Udemy
+    setTimeout(() => {
+      window.location.href = externalUrl.value;
+    }, 3000); // Por ejemplo, espera 3 segundos antes de redirigir
+  }
+});
 const redirectToCoursera = () => {
+
   const courseUrl = course.value.courseUrl;
-  router.push({
-    path: "/link-saliente",
-    query: { url: courseUrl, isExternal: "true" },
-  });
+  const encodedUrl = encodeURIComponent(courseUrl);
+  // Abrir una nueva pestaña que lleva al usuario a la vista LinkSaliente
+  window.open(`${location.origin}/link-saliente?url=${encodedUrl}`, '_blank');
+
 };
 
 
