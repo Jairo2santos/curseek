@@ -29,6 +29,8 @@ router.get('/favorites/check/:userId/:courseId', verifyToken, userController.che
 // Rutas protegidas para administradores
 router.get('/', verifyToken, isAdmin, userController.getAllUsers); // Solo el admin puede obtener todos los usuarios
 router.get('/:userId', verifyToken, isAdmin, userController.getUserById); // Solo el admin puede obtener información de un usuario específico
+router.post('/auth/validate', userController.validateToken);
+router.delete('/profile/:id', verifyToken, userController.deleteUser);
 
 
 module.exports = router;

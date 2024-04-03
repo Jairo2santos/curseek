@@ -18,9 +18,9 @@ const authenticateUser = async (login, password) => {
   });
 
   if (!user) {
-    throw new Error('Usuario o correo electrónico no encontrado');
+    return res.status(404).json({ message: 'Usuario o correo electrónico no registrado' });
   }
-
+  
   const isMatch = await bcrypt.compare(password, user.password);
   if (!isMatch) {
     throw new Error('Contraseña incorrecta');

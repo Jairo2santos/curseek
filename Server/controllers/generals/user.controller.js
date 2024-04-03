@@ -165,6 +165,22 @@ exports.login = async (req, res) => {
   }
 };
 
+exports.validateToken = (req, res) => {
+  // Asumiendo que el token viene en el header de autorización
+  const token = req.headers.authorization.split(' ')[1]; // Bearer <token>
+  if (!token) {
+    return res.status(403).json({ message: 'No se proporcionó un token' });
+  }
+
+  try {
+    const decoded = jwt.verify(token, process.env.JWT_SECRET);
+    // Si el token es válido, devuelve un estado de éxito
+    res.status(200).json({ valid: true, userId: decoded.userId });
+  } catch (error) {
+    // Si hay un error, como un token expirado, devuelve un error
+    res.status(401).json({ valid: false, message: 'Token inválido' });
+  }
+};
 
 exports.getUserProfileByUsername = async (req, res) => {
   const { username } = req.params;
@@ -230,8 +246,22 @@ exports.updateUserProfile = async (req, res) => {
 };
 
 exports.register = async (req, res) => {
+  // Extraer username y email del cuerpo de la solicitud
+  const { username, email } = req.body;
+  
   try {
-    const newUser = req.body;
+    const usernameExists = await User.findOne({ username });
+    if (usernameExists) {
+      return res.status(400).json({ field: 'username', message: 'El nombre de usuario ya está en uso.' });
+    }
+
+    const emailExists = await User.findOne({ email });
+    if (emailExists) {
+      return res.status(400).json({ field: 'email', message: 'El correo electrónico ya está en uso.' });
+    }
+
+    // Continuar con la creación del nuevo usuario
+    let newUser = req.body;
 
     if (req.file) {
       newUser.profilePicture = req.file.path; 
@@ -243,9 +273,11 @@ exports.register = async (req, res) => {
     
     res.status(201).json({ message: 'Usuario creado exitosamente', user });
   } catch (error) {
+    console.error(`Error al registrar el usuario: ${error.message}`);
     res.status(500).json({ message: 'Error al registrar el usuario', error: error.message });
   }
 };
+
 exports.addFavoriteCourse = async (req, res) => {
   const { userId, courseId, courseType } = req.body;
   try {
@@ -306,4 +338,16 @@ exports.getUserById = async (req, res) => {
   }
 };
 
+exports.deleteUser = async (req, res) => {
+  try {
+    const userId = req.userId; 
+
+    
+    await User.findByIdAndDelete(userId);
+    
+    res.status(200).json({ message: 'Cuenta eliminada con éxito.' });
+  } catch (error) {
+    res.status(500).json({ message: 'Error al eliminar la cuenta.' });
+  }
+};
 

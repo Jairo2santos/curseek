@@ -74,9 +74,11 @@ const login = async () => {
       notify('Credenciales incorrectas. Por favor, intenta nuevamente.', 'error');
     }
   } catch (error) {
-    notify('Ocurrió un error al intentar iniciar sesión. Por favor, revisa los datos ingresados', 'error');
-    console.error('Error al iniciar sesión:', error);
-  }
+  const errorMessage = error.response && error.response.data && error.response.data.message
+    ? error.response.data.message
+    : 'Ocurrió un error al intentar iniciar sesión. Por favor, intenta de nuevo más tarde.';
+  notify(errorMessage, 'error');
+}
 };
 
 const notify = (message, type) => {

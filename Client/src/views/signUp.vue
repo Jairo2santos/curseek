@@ -13,17 +13,24 @@
         Error en el registro: {{ registrationErrorMessage }}
       </p>
       <h1 class="text-xl font-bold mb-4 text-center">Crea tu cuenta</h1>
-      <!-- <div class="mb-4">
+     <div class="mb-4">
         <label for="username" class="block text-sm font-medium text-gray-600">Nombre y Apellido <span
             class="text-red-500">*</span></label>
         <input type="text" id="username" placeholder="Ingrese su nombre y apellido" v-model="username"
           class="mt-1 p-2 w-full border rounded-md" required />
-      </div> -->
+          <p v-if="usernameError" class="text-sm text-red-500">{{ usernameError }}</p>
+
+          
+      </div>
+      
       <div class="mb-4">
         <label for="email" class="block text-sm font-medium text-gray-600">Email <span
             class="text-red-500">*</span></label>
         <input type="email" id="email" placeholder="Ingrese su Email" v-model="email"
           class="mt-1 p-2 w-full border rounded-md" required />
+          <p v-if="emailError" class="text-sm text-red-500">{{ emailError }}</p>
+
+
       </div>
       <div class="mb-4">
         <label for="username" class="block text-sm font-medium text-gray-600">Nombre de usuario <span
@@ -125,12 +132,13 @@ const username = ref("");
 const email = ref("");
 const password = ref("");
 const confirmPassword = ref("");
-const profilePictureUrl = ref(''); // Define profilePictureUrl aquí
 const passwordsDoNotMatch = ref(false);
 const registrationSuccess = ref(false);
 const registrationError = ref(false);
 const registrationErrorMessage = ref("");
 const showPassword = ref(false);
+const usernameError = ref("");
+const emailError = ref("");
 
 const selectedCountry = ref("");
 const countries = [
@@ -168,6 +176,10 @@ const registerUser = async () => {
     return;
   }
 
+ // Resetear mensajes de error
+   usernameError.value = "";
+  emailError.value = "";
+  //formdata
   const formData = new FormData();
   formData.append('username', username.value);
   formData.append('email', email.value);
@@ -188,9 +200,24 @@ const registerUser = async () => {
 
     registrationSuccess.value = true;
     setTimeout(() => router.push('/login'), 2000);
-  } catch (error) {
+  }  catch (error) {
+  // Asumiendo que el error viene en un formato específico
+  if (error.response && error.response.data) {
+    const { field, message } = error.response.data;
+
+    if (field === 'username') {
+      usernameError.value = message;
+    } else if (field === 'email') {
+      emailError.value = message;
+    } else {
+      registrationError.value = true;
+      registrationErrorMessage.value = message || 'Error desconocido durante el registro.';
+    }
+  } else {
+    // Manejo de errores inesperados
     registrationError.value = true;
-    registrationErrorMessage.value = error.response.data.message || 'Error desconocido';
+    registrationErrorMessage.value = 'Error desconocido durante el registro.';
+  }
   }
 };
 </script>
