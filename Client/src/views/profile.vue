@@ -1,5 +1,5 @@
 <template>
-  <div class="min-h-screen bg-gray-100 flex flex-wrap justify-center items-start md:items-center p-4 gap-4">
+  <div class="bg-gray-100 flex flex-wrap justify-center items-start md:items-center p-4 md:p-12 gap-4">
     <!-- Notificación -->
     <transition name="slide-down">
       <div v-if="showNotification" class="fixed top-0 inset-x-0 z-50">
@@ -13,202 +13,172 @@
         </div>
       </div>
     </transition>
-    <!-- Perfil -->
-    <div class="profile-card bg-white p-6 rounded-lg shadow-lg w-full md:w-1/2">
-      <h1 class="text-center font-bold text-xl mb-4">Mi Perfil</h1>
-      <img :src="resolveImagePath(userData.profilePicture) ||
+    
+      <!-- Perfil -->
+      <div class="profile-card bg-white p-6 md:w-1/3 rounded-md mb-auto">
+        <h1 class="text-center font-bold text-xl mb-4 hidden">Mi Perfil</h1>
+        <img :src="resolveImagePath(userData.profilePicture) ||
         '../src/assets/student.png'
-        " alt="" class="w-32 h-32 rounded-full mx-auto mb-4" />
-      <!-- Campos editables -->
-      <div v-if="editing" class="space-y-4">
-        <!-- Campo para subir imagen de perfil -->
-        <div class="flex flex-col">
-          <label for="profilePicture" class="text-sm font-medium text-gray-700 mb-1">Imagen de perfil</label>
-          <input type="file" id="profilePicture" @change="handleProfilePictureChange" class="form-input" />
-        </div>
-
-        <div class="flex flex-col">
-          <label for="username" class="text-sm font-medium text-gray-700 mb-1">Nombre de Usuario</label>
-          <span class="flex items-center">
-            <svg class="mr-1" xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960" width="24">
-              <path
-                d="M480-120q-74.539 0-140.276-28.339-65.737-28.34-114.365-76.922-48.627-48.582-76.993-114.257Q120-405.194 120-479.866q0-74.673 28.339-140.41 28.34-65.737 76.922-114.365 48.582-48.627 114.257-76.993Q405.194-840 479.866-840q74.673 0 140.41 28.35t114.365 76.95q48.627 48.6 76.993 114.3Q840-554.7 840-480v39.539q0 50.538-34.714 85.5Q770.572-320 720-320q-35.769 0-65.231-19.615-29.461-19.615-43.538-52.231Q588.385-359 554.192-339.5 520-320 480-320q-66.846 0-113.423-46.577T320-480q0-66.846 46.577-113.423T480-640q66.846 0 113.423 46.577T640-480v39.539q0 32.923 23.539 56.692Q687.077-360 720-360t56.462-23.769Q800-407.538 800-440.461V-480q0-134-93-227t-227-93q-134 0-227 93t-93 227q0 134 93 227t227 93h200v40H480Zm0-240q50 0 85-35t35-85q0-50-35-85t-85-35q-50 0-85 35t-35 85q0 50 35 85t85 35Z" />
-            </svg>
-            <input id="username" type="text" v-model="editableUserData.username"
-              class="form-input text-sm mt-1 p-2 rounded-lg block w-full bg-gray-100" placeholder="Nombre de usuario" />
-          </span>
-        </div>
-        <!-- Campo de correo electrónico -->
-        <div class="flex flex-col">
-          <label for="email" class="text-sm font-medium text-gray-700 mb-1">Correo Electrónico</label>
-          <span class="flex items-center">
-            <svg class="mr-1" xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 -960 960 960" width="24">
-              <path
-                d="M184.615-200Q157-200 138.5-218.5 120-237 120-264.615v-430.77Q120-723 138.5-741.5 157-760 184.615-760h590.77Q803-760 821.5-741.5 840-723 840-695.385v430.77Q840-237 821.5-218.5 803-200 775.385-200h-590.77ZM480-475.384 160-684.615v420q0 10.769 6.923 17.692T184.615-240h590.77q10.769 0 17.692-6.923T800-264.615v-420L480-475.384ZM480-520l307.692-200H172.308L480-520ZM160-684.615V-720v455.385q0 10.769 6.923 17.692T184.615-240H160v-444.615Z" />
-            </svg>
-            <input id="email" type="email" v-model="editableUserData.email"
-              class="form-input text-sm mt-1 p-2 rounded-lg block w-full bg-gray-100"
-              placeholder="Correo Electrónico" />
-          </span>
-        </div>
-        <!-- <div class="flex flex-col">
-          <label for="address" class="text-sm font-medium text-gray-700 mb-1">Ubicación</label>
-          <span class="flex items-center">
-            <svg class="mr-1" xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960" width="24">
-              <path
-                d="M480.136-490.769q26.71 0 45.595-19.021 18.884-19.021 18.884-45.731t-19.02-45.594Q506.574-620 479.864-620t-45.595 19.021q-18.884 19.02-18.884 45.731 0 26.71 19.02 45.594 19.021 18.885 45.731 18.885ZM480-172.923q112.769-98.154 178.308-199.654 65.538-101.5 65.538-175.577 0-109.769-69.5-181.192T480-800.769q-104.846 0-174.346 71.423t-69.5 181.192q0 74.077 65.538 175.577Q367.231-271.077 480-172.923Zm0 53.692Q339-243.923 267.577-351.808q-71.423-107.884-71.423-196.346 0-126.923 82.654-209.385Q361.461-840 480-840t201.192 82.461q82.654 82.462 82.654 209.385 0 88.462-71.423 196.346Q621-243.923 480-119.231Zm0-436.154Z" />
-            </svg>
-            <select id="country" v-model="selectedCountry" class="mt-1 p-2 w-full border rounded-md">
-              <option value="" disabled selected>Seleccione su país</option>
-              <option v-for="(country, index) in countries" :key="index" :value="country">
-                {{ country }}
-              </option>
-            </select>
-          </span>
-        </div> -->
-
-        <div class="flex flex-col">
-          <label for="newPassword" class="text-sm font-medium text-gray-700">Nueva Contraseña</label>
-          <div class="relative">
-            <input :type="isPasswordShown ? 'text' : 'password'" id="newPassword" v-model="newPassword"
-              class="form-input text-sm mt-1 p-2 rounded-lg bg-gray-100 block w-full" placeholder="Nueva Contraseña" />
-            <button type="button" @click="togglePasswordVisibility"
-              class="absolute inset-y-0 right-0 pr-3 flex items-center text-sm leading-5">
-              <span>{{ isPasswordShown ? "" : "" }}</span>
-              <svg v-if="isPasswordShown" class="ml-1" xmlns="http://www.w3.org/2000/svg" height="24"
-                viewBox="0 -960 960 960" width="24">
-                <path
-                  d="M480.181-353.846q60.973 0 103.473-42.681t42.5-103.654q0-60.973-42.681-103.473t-103.654-42.5q-60.973 0-103.473 42.681t-42.5 103.654q0 60.973 42.681 103.473t103.654 42.5ZM480-392q-45 0-76.5-31.5T372-500q0-45 31.5-76.5T480-608q45 0 76.5 31.5T588-500q0 45-31.5 76.5T480-392Zm.11 152q-129.956 0-236.879-70.731Q136.307-381.461 83.077-500q53.23-118.539 160.044-189.269Q349.934-760 479.89-760q129.956 0 236.879 70.731Q823.693-618.539 876.923-500q-53.23 118.539-160.044 189.269Q610.066-240 480.11-240ZM480-500Zm0 220q113 0 207.5-59.5T832-500q-50-101-144.5-160.5T480-720q-113 0-207.5 59.5T128-500q50 101 144.5 160.5T480-280Z" />
-              </svg>
-              <svg v-else xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 -960 960 960" width="24">
-                <path
-                  d="M617.846-454.154 586-486q9-52.385-29.692-90.692Q517.615-615 466-606l-31.846-31.846q10.077-4.154 21.038-6.231 10.962-2.077 24.808-2.077 61.154 0 103.654 42.5 42.5 42.5 42.5 103.654 0 13.846-2.077 25.577-2.077 11.731-6.231 20.269Zm126.462 122.923L714-358q38-29 67.5-63.5T832-500q-50-101-143.5-160.5T480-720q-29 0-57 4t-55 12l-31.231-31.231q34.846-13.154 70.923-18.962Q443.769-760 480-760q130.231 0 238.231 71.577T876.923-500q-21.461 48.231-54.346 90.654-32.884 42.423-78.269 78.115Zm44.615 216.77L633.231-269.692q-26.539 11.769-65.885 20.731Q528-240 480-240q-131 0-238.231-71.577T83.077-500q23.307-53 61.461-99.269 38.154-46.269 81.462-77.654l-111.539-112 28.308-28.308 674.462 674.462-28.308 28.308ZM254.307-648.615Q219.923-624.154 184-584.308 148.077-544.461 128-500q50 101 143.5 160.5T480-280q34.615 0 69.769-6.731 35.154-6.73 52.846-13.577L537.385-366q-9.462 5.308-26.385 8.731-16.923 3.423-31 3.423-61.154 0-103.654-42.5-42.5-42.5-42.5-103.654 0-13.308 3.423-29.846 3.423-16.539 8.731-27.539l-91.693-91.23ZM541-531Zm-112.539 56.539Z" />
-              </svg>
-            </button>
+        " alt="" class="w-60 h-60 rounded-full mx-auto mb-4" />
+        <!-- Campos editables -->
+        <div v-if="editing" class="space-y-4">
+          <!-- Campo para subir imagen de perfil -->
+          <div class="flex flex-col">
+            <label for="profilePicture" class="text-sm font-medium text-gray-700 mb-1">Imagen de perfil</label>
+            <input type="file" id="profilePicture" @change="handleProfilePictureChange" class="form-input" />
           </div>
-        </div>
-        <div class="flex flex-col space-y-4">
-          <div class="flex gap-2 justify-end">
-            <button @click="saveProfile"
-              class="px-4 py-2 bg-indigo-600 text-white rounded-md hover:bg-indigo-800 transition">
-              Guardar
-            </button>
-            <button @click="cancelEdit" class="px-4 py-2 text-gray-700">
-              Cancelar
-            </button>
-          </div>
-        </div>
-      </div>
-      <!-- Campos de visualización -->
-      <div v-else>
-        <div class="md:mx-56">
-          <div class="flex flex-col mb-4">
-            <span class="flex justify-center">
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960" width="24">
+
+          <div class="flex flex-col">
+            <label for="username" class="text-sm font-medium text-gray-700 mb-1">Nombre usuario</label>
+            <span class="flex items-center">
+              <svg class="mr-1" xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960" width="24">
                 <path
                   d="M480-120q-74.539 0-140.276-28.339-65.737-28.34-114.365-76.922-48.627-48.582-76.993-114.257Q120-405.194 120-479.866q0-74.673 28.339-140.41 28.34-65.737 76.922-114.365 48.582-48.627 114.257-76.993Q405.194-840 479.866-840q74.673 0 140.41 28.35t114.365 76.95q48.627 48.6 76.993 114.3Q840-554.7 840-480v39.539q0 50.538-34.714 85.5Q770.572-320 720-320q-35.769 0-65.231-19.615-29.461-19.615-43.538-52.231Q588.385-359 554.192-339.5 520-320 480-320q-66.846 0-113.423-46.577T320-480q0-66.846 46.577-113.423T480-640q66.846 0 113.423 46.577T640-480v39.539q0 32.923 23.539 56.692Q687.077-360 720-360t56.462-23.769Q800-407.538 800-440.461V-480q0-134-93-227t-227-93q-134 0-227 93t-93 227q0 134 93 227t227 93h200v40H480Zm0-240q50 0 85-35t35-85q0-50-35-85t-85-35q-50 0-85 35t-35 85q0 50 35 85t85 35Z" />
               </svg>
-              <h2 class="text-xl font-bold mb-2">{{ userData.username }}</h2>
+              <input id="username" type="text" v-model="editableUserData.username"
+                class="form-input text-sm mt-1 p-2 rounded-lg block w-full bg-gray-100"
+                placeholder="Nombre de usuario" />
             </span>
           </div>
-          <div class="mb-4">
-            <div class="flex">
-              <svg class="mr-2" xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 -960 960 960" width="24">
-                <path
-                  d="M184.615-200Q157-200 138.5-218.5 120-237 120-264.615v-430.77Q120-723 138.5-741.5 157-760 184.615-760h590.77Q803-760 821.5-741.5 840-723 840-695.385v430.77Q840-237 821.5-218.5 803-200 775.385-200h-590.77ZM480-475.384 160-684.615v420q0 10.769 6.923 17.692T184.615-240h590.77q10.769 0 17.692-6.923T800-264.615v-420L480-475.384ZM480-520l307.692-200H172.308L480-520ZM160-684.615V-720v455.385q0 10.769 6.923 17.692T184.615-240H160v-444.615Z" />
-              </svg>
-              <!-- Usa el filtro capitalize -->
-              <span class="mb-2">{{ userData.email }}</span>
+
+          <div class="flex flex-col">
+            <label for="newPassword" class="text-sm font-medium text-gray-700">Nueva Contraseña</label>
+            <div class="relative">
+              <input :type="isPasswordShown ? 'text' : 'password'" id="newPassword" v-model="newPassword"
+                class="form-input text-sm mt-1 p-2 rounded-lg bg-gray-100 block w-full"
+                placeholder="Nueva Contraseña" />
+              <button type="button" @click="togglePasswordVisibility"
+                class="absolute inset-y-0 right-0 pr-3 flex items-center text-sm leading-5">
+                <span>{{ isPasswordShown ? "" : "" }}</span>
+                <svg v-if="isPasswordShown" class="ml-1" xmlns="http://www.w3.org/2000/svg" height="24"
+                  viewBox="0 -960 960 960" width="24">
+                  <path
+                    d="M480.181-353.846q60.973 0 103.473-42.681t42.5-103.654q0-60.973-42.681-103.473t-103.654-42.5q-60.973 0-103.473 42.681t-42.5 103.654q0 60.973 42.681 103.473t103.654 42.5ZM480-392q-45 0-76.5-31.5T372-500q0-45 31.5-76.5T480-608q45 0 76.5 31.5T588-500q0 45-31.5 76.5T480-392Zm.11 152q-129.956 0-236.879-70.731Q136.307-381.461 83.077-500q53.23-118.539 160.044-189.269Q349.934-760 479.89-760q129.956 0 236.879 70.731Q823.693-618.539 876.923-500q-53.23 118.539-160.044 189.269Q610.066-240 480.11-240ZM480-500Zm0 220q113 0 207.5-59.5T832-500q-50-101-144.5-160.5T480-720q-113 0-207.5 59.5T128-500q50 101 144.5 160.5T480-280Z" />
+                </svg>
+                <svg v-else xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 -960 960 960" width="24">
+                  <path
+                    d="M617.846-454.154 586-486q9-52.385-29.692-90.692Q517.615-615 466-606l-31.846-31.846q10.077-4.154 21.038-6.231 10.962-2.077 24.808-2.077 61.154 0 103.654 42.5 42.5 42.5 42.5 103.654 0 13.846-2.077 25.577-2.077 11.731-6.231 20.269Zm126.462 122.923L714-358q38-29 67.5-63.5T832-500q-50-101-143.5-160.5T480-720q-29 0-57 4t-55 12l-31.231-31.231q34.846-13.154 70.923-18.962Q443.769-760 480-760q130.231 0 238.231 71.577T876.923-500q-21.461 48.231-54.346 90.654-32.884 42.423-78.269 78.115Zm44.615 216.77L633.231-269.692q-26.539 11.769-65.885 20.731Q528-240 480-240q-131 0-238.231-71.577T83.077-500q23.307-53 61.461-99.269 38.154-46.269 81.462-77.654l-111.539-112 28.308-28.308 674.462 674.462-28.308 28.308ZM254.307-648.615Q219.923-624.154 184-584.308 148.077-544.461 128-500q50 101 143.5 160.5T480-280q34.615 0 69.769-6.731 35.154-6.73 52.846-13.577L537.385-366q-9.462 5.308-26.385 8.731-16.923 3.423-31 3.423-61.154 0-103.654-42.5-42.5-42.5-42.5-103.654 0-13.308 3.423-29.846 3.423-16.539 8.731-27.539l-91.693-91.23ZM541-531Zm-112.539 56.539Z" />
+                </svg>
+              </button>
             </div>
           </div>
-          <div class="mb-4">
-            <div class="flex">
-              <svg class="mr-2" xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 -960 960 960" width="24">
-                <path
-                  d="M480.136-490.769q26.71 0 45.595-19.021 18.884-19.021 18.884-45.731t-19.02-45.594Q506.574-620 479.864-620t-45.595 19.021q-18.884 19.02-18.884 45.731 0 26.71 19.02 45.594 19.021 18.885 45.731 18.885ZM480-172.923q112.769-98.154 178.308-199.654 65.538-101.5 65.538-175.577 0-109.769-69.5-181.192T480-800.769q-104.846 0-174.346 71.423t-69.5 181.192q0 74.077 65.538 175.577Q367.231-271.077 480-172.923Zm0 53.692Q339-243.923 267.577-351.808q-71.423-107.884-71.423-196.346 0-126.923 82.654-209.385Q361.461-840 480-840t201.192 82.461q82.654 82.462 82.654 209.385 0 88.462-71.423 196.346Q621-243.923 480-119.231Zm0-436.154Z" />
-              </svg>
-              <!-- Usa el filtro capitalize -->
-              <span class="mb-2">{{ userData.address }}</span>
+
+          <div class="flex flex-col space-y-4 pt-2 text-md">
+            <div class="flex gap-2 justify-start">
+              <button @click="saveProfile"
+                class="px-4 py-2 bg-indigo-600 text-white rounded-md hover:bg-indigo-800 transition">
+                Guardar
+              </button>
+              <button @click="cancelEdit" class="px-4 py-2 text-gray-700">
+                Cancelar
+              </button>
             </div>
           </div>
         </div>
-        <div class="text-right">
-          <button @click="startEdit"
-            class="btn text-sm font-bold text-black rounded-md border border-gray-300 p-2 mr-4">
-            Editar perfil
-          </button>
-          <button @click="logout" class="btn text-red-600 font-semibold text-lg mt-2">
-            Cerrar Sesión
-          </button>
+        <!-- Campos de visualización -->
+        <div v-else>
+          <div class="m-auto">
+            <div class="flex flex-col mb-1">
+              <span class="flex text-md">
+                <svg class="mr-2" xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960" width="24">
+                  <path
+                    d="M480-120q-74.539 0-140.276-28.339-65.737-28.34-114.365-76.922-48.627-48.582-76.993-114.257Q120-405.194 120-479.866q0-74.673 28.339-140.41 28.34-65.737 76.922-114.365 48.582-48.627 114.257-76.993Q405.194-840 479.866-840q74.673 0 140.41 28.35t114.365 76.95q48.627 48.6 76.993 114.3Q840-554.7 840-480v39.539q0 50.538-34.714 85.5Q770.572-320 720-320q-35.769 0-65.231-19.615-29.461-19.615-43.538-52.231Q588.385-359 554.192-339.5 520-320 480-320q-66.846 0-113.423-46.577T320-480q0-66.846 46.577-113.423T480-640q66.846 0 113.423 46.577T640-480v39.539q0 32.923 23.539 56.692Q687.077-360 720-360t56.462-23.769Q800-407.538 800-440.461V-480q0-134-93-227t-227-93q-134 0-227 93t-93 227q0 134 93 227t227 93h200v40H480Zm0-240q50 0 85-35t35-85q0-50-35-85t-85-35q-50 0-85 35t-35 85q0 50 35 85t85 35Z" />
+                </svg>
+                {{ userData.username }}
+              </span>
+            </div>
+
+            <div class="flex flex-col mb-1">
+              <div class="flex text-md">
+                <!-- Usa el filtro capitalize -->
+                <span class="mr-auto flex text-md">
+                  <svg class="mr-2" xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 -960 960 960" width="24">
+                    <path
+                      d="M184.615-200Q157-200 138.5-218.5 120-237 120-264.615v-430.77Q120-723 138.5-741.5 157-760 184.615-760h590.77Q803-760 821.5-741.5 840-723 840-695.385v430.77Q840-237 821.5-218.5 803-200 775.385-200h-590.77ZM480-475.384 160-684.615v420q0 10.769 6.923 17.692T184.615-240h590.77q10.769 0 17.692-6.923T800-264.615v-420L480-475.384ZM480-520l307.692-200H172.308L480-520ZM160-684.615V-720v455.385q0 10.769 6.923 17.692T184.615-240H160v-444.615Z" />
+                  </svg>
+                  {{ userData.email }}
+                </span>
+              </div>
+            </div>
+            <div class="flex flex-col mb-6">
+              <div class="flex">
+                <span class="mr-auto flex text-md">
+                  <svg class="mr-2" xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 -960 960 960" width="24">
+                    <path
+                      d="M480.136-490.769q26.71 0 45.595-19.021 18.884-19.021 18.884-45.731t-19.02-45.594Q506.574-620 479.864-620t-45.595 19.021q-18.884 19.02-18.884 45.731 0 26.71 19.02 45.594 19.021 18.885 45.731 18.885ZM480-172.923q112.769-98.154 178.308-199.654 65.538-101.5 65.538-175.577 0-109.769-69.5-181.192T480-800.769q-104.846 0-174.346 71.423t-69.5 181.192q0 74.077 65.538 175.577Q367.231-271.077 480-172.923Zm0 53.692Q339-243.923 267.577-351.808q-71.423-107.884-71.423-196.346 0-126.923 82.654-209.385Q361.461-840 480-840t201.192 82.461q82.654 82.462 82.654 209.385 0 88.462-71.423 196.346Q621-243.923 480-119.231Zm0-436.154Z" />
+                  </svg>
+                  {{ userData.address }}
+                </span>
+              </div>
+            </div>
+          </div>
+
+          <div class="text-center">
+            <button @click="startEdit"
+              class="btn flex items-center justify-center text-sm font-bold text-black w-full rounded-md border border-gray-300 py-1.5">
+              Editar perfil
+              <svg class="ml-2" xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960" width="24">
+                <path
+                  d="m405.384-120-14.461-115.692q-19.154-5.769-41.423-18.154-22.269-12.385-37.885-26.538L204.923-235l-74.616-130 92.231-69.539q-1.769-10.846-2.923-22.346-1.154-11.5-1.154-22.346 0-10.077 1.154-21.192t2.923-25.038L130.307-595l74.616-128.462 105.923 44.616q17.923-14.923 38.769-26.923 20.846-12 40.539-18.539L405.384-840h149.232l14.461 116.461q23 8.077 40.654 18.539 17.654 10.461 36.346 26.154l109-44.616L829.693-595l-95.308 71.846q3.308 12.385 3.692 22.731.385 10.346.385 20.423 0 9.308-.769 19.654-.77 10.346-3.539 25.038L827.923-365l-74.615 130-107.231-46.154q-18.692 15.693-37.615 26.923-18.923 11.231-39.385 17.77L554.616-120H405.384Zm73.539-260q41.846 0 70.923-29.077 29.077-29.077 29.077-70.923 0-41.846-29.077-70.923Q520.769-580 478.923-580q-42.077 0-71.039 29.077-28.961 29.077-28.961 70.923 0 41.846 28.961 70.923Q436.846-380 478.923-380Z" />
+              </svg>
+            </button>
+            <!-- <button @click="startEdit"
+              class="btn text-sm font-bold text-black p-2 mr-4">
+            </button> -->
+            <button @click="logout" class="btn text-red-600 font-semibold text-sm mt-4">
+              Cerrar Sesión
+            </button>
+          </div>
         </div>
       </div>
-    </div>
-    <!-- Cursos favoritos -->
-    <div class="profile-card bg-white p-6 rounded-lg shadow-lg w-full md:w-1/2 mx-auto">
-      <h2 class="text-2xl text-center md:text-left font-bold mb-4">
-        Mis Cursos Favoritos
-      </h2>
-      <div class="flex flex-col gap-4">
-        <!-- Bucle para los cursos favoritos -->
-        <div v-for="course in favoriteCourses" :key="course._id"
-          class="bg-white md:shadow-sm shadow-md md:p-0 p-4 hover:shadow-md transition overflow-hidden">
-          <div class="flex flex-col md:flex-row cursor-pointer">
-            <!-- Imagen del curso a la izquierda -->
-            <img :src="courseImage(course)" alt=""
-              class="md:w-24 w-36 mx-auto object-contain rounded-t-lg md:rounded-t-none md:rounded-l-lg" />
-            <!-- Contenido del curso a la derecha -->
-            <div class="p-2 flex-grow">
-              <h3 @click="() => goToCourseDetail(course)" class="font-semibold text-md hover:underline">
-                {{ course.title || "Curso Seleccionado" }}
-              </h3>
 
-              <div class="flex">
-                <svg class="mr-1" xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 -960 960 960" width="24">
-                  <path
-                    d="M400-420h139.231v-40H400v40Zm0-120h278.462v-40H400v40Zm0-120h278.462v-40H400v40Zm-75.385 380Q297-280 278.5-298.5 260-317 260-344.615v-430.77Q260-803 278.5-821.5 297-840 324.615-840h430.77Q783-840 801.5-821.5 820-803 820-775.385v430.77Q820-317 801.5-298.5 783-280 755.385-280h-430.77Zm0-40h430.77q9.231 0 16.923-7.692Q780-335.385 780-344.615v-430.77q0-9.23-7.692-16.923Q764.616-800 755.385-800h-430.77q-9.23 0-16.923 7.692Q300-784.615 300-775.385v430.77q0 9.23 7.692 16.923Q315.385-320 324.615-320Zm-120 160Q177-160 158.5-178.5 140-197 140-224.615v-470.77h40v470.77q0 9.231 7.692 16.923Q195.384-200 204.615-200h470.77v40h-470.77ZM300-800v480-480Z">
-                  </path>
-                </svg>
-                <h4 @click="() => goToCourseDetail(course)" class="text-sm mr-2 capitalize">
-                  {{
+      <!-- Cursos favoritos -->
+      <div class="profile-card bg-white p-6 rounded-md mb-auto md:w-1/2">
+        <h2 class="text-xl text-center md:text-left font-bold mb-4">
+          Mis Cursos Favoritos
+        </h2>
+        <div class="flex flex-col gap-4">
+          <!-- Bucle para los cursos favoritos -->
+          <div v-for="course in favoriteCourses" :key="course._id"
+            class="bg-white md:shadow-sm shadow-md md:p-0 p-4 hover:shadow-md transition overflow-hidden">
+            <div class="flex flex-col md:flex-row cursor-pointer">
+              <!-- Imagen del curso a la izquierda -->
+              <img :src="courseImage(course)" alt=""
+                class="md:w-24 w-36 mx-auto object-contain rounded-t-lg md:rounded-t-none md:rounded-l-lg" />
+              <!-- Contenido del curso a la derecha -->
+              <div class="p-2 flex-grow">
+                <h3 @click="() => goToCourseDetail(course)" class="font-semibold text-md hover:underline">
+                  {{ course.title || "Curso Seleccionado" }}
+                </h3>
+
+                <div class="flex">
+                  <svg class="mr-1" xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 -960 960 960" width="24">
+                    <path
+                      d="M400-420h139.231v-40H400v40Zm0-120h278.462v-40H400v40Zm0-120h278.462v-40H400v40Zm-75.385 380Q297-280 278.5-298.5 260-317 260-344.615v-430.77Q260-803 278.5-821.5 297-840 324.615-840h430.77Q783-840 801.5-821.5 820-803 820-775.385v430.77Q820-317 801.5-298.5 783-280 755.385-280h-430.77Zm0-40h430.77q9.231 0 16.923-7.692Q780-335.385 780-344.615v-430.77q0-9.23-7.692-16.923Q764.616-800 755.385-800h-430.77q-9.23 0-16.923 7.692Q300-784.615 300-775.385v430.77q0 9.23 7.692 16.923Q315.385-320 324.615-320Zm-120 160Q177-160 158.5-178.5 140-197 140-224.615v-470.77h40v470.77q0 9.231 7.692 16.923Q195.384-200 204.615-200h470.77v40h-470.77ZM300-800v480-480Z">
+                    </path>
+                  </svg>
+                  <h4 @click="() => goToCourseDetail(course)" class="text-sm mr-2 capitalize">
+                    {{
         course.courseType === "COURSERA"
           ? "Coursera"
           : course.courseType === "UTN"
             ? "UTN"
             : "Udemy" }}
-            {{ course.university }}
-                </h4>
-
-                <!-- <svg class="mr-1" fill="#6366f1" xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 -960 960 960"
-                  width="24">
-                  <path
-                    d="M260-318.462q52.385 0 101.885 12.039 49.5 12.038 98.115 39.192v-392.461q-43.308-30.923-95.462-46.385Q312.385-721.538 260-721.538q-36 0-63.039 4.307-27.038 4.308-60.038 16-9.231 3.077-13.077 8.846-3.846 5.77-3.846 12.693v360.615q0 10.769 7.692 15.769 7.693 5 16.923 1.154 21.923-7.384 50.654-11.846Q224-318.462 260-318.462Zm240 51.231q48.615-27.154 98.115-39.192 49.5-12.039 101.885-12.039 36 0 64.731 4.462 28.731 4.462 50.654 11.846 9.23 3.846 16.923-1.154 7.692-5 7.692-15.769v-360.615q0-6.923-3.846-12.308t-13.077-9.231q-33-11.692-60.038-16Q736-721.538 700-721.538q-52.385 0-104.538 15.461-52.154 15.462-95.462 46.385v392.461Zm-20 58.001q-48.769-33.385-104.769-51.308-56-17.923-115.231-17.923-31.231 0-61.346 5.231Q168.538-268 140-256.461q-21.769 8.692-40.885-5.231Q80-275.615 80-300.153v-386.616q0-14.847 7.807-27.539Q95.615-727 109.692-732q35.231-15.539 73.308-22.539 38.077-7 77-7 58.769 0 114.654 16.923Q430.538-727.693 480-695.385q49.462-32.308 105.346-49.231Q641.231-761.539 700-761.539q38.923 0 77 7T850.308-732q14.077 5 21.885 17.692Q880-701.616 880-686.769v386.616q0 24.538-20.654 37.692-20.653 13.154-43.961 4.461-27.769-10.769-56.731-15.615-28.962-4.846-58.654-4.846-59.231 0-115.231 17.923-56 17.923-104.769 51.308ZM290-499.385Z" />
-                </svg>
-                <h4 @click="() => goToCourseDetail(course)" class="text-sm mr-2 capitalize">
-                  {{ course.category || "Development" }}
-                </h4> -->
-
-                <!-- <svg class="mr-1" xmlns="http://www.w3.org/2000/svg" height="22" viewBox="0 -960 960 960" width="24">
-                  <path
-                    d="m625.846-305.846 28.308-28.308L500-488.326V-680h-40v208.308l165.846 165.846ZM480.134-120q-74.673 0-140.41-28.339-65.737-28.34-114.365-76.922-48.627-48.582-76.993-114.257Q120-405.194 120-479.866q0-74.673 28.339-140.41 28.34-65.737 76.922-114.365 48.582-48.627 114.257-76.993Q405.194-840 479.866-840q74.673 0 140.41 28.339 65.737 28.34 114.365 76.922 48.627 48.582 76.993 114.257Q840-554.806 840-480.134q0 74.673-28.339 140.41-28.34 65.737-76.922 114.365-48.582 48.627-114.257 76.993Q554.806-120 480.134-120ZM480-480Zm0 320q133 0 226.5-93.5T800-480q0-133-93.5-226.5T480-800q-133 0-226.5 93.5T160-480q0 133 93.5 226.5T480-160Z" />
-                </svg>
-                <h4 @click="() => goToCourseDetail(course)" class="text-sm">
-                  {{ course.duration || "Duración no disponible" }}
-                </h4> -->
+                    {{ course.university }}
+                  </h4>
+                </div>
               </div>
-
-              <!-- <p class="text-gray-600 text-sm mb-4">{{ courseInstitution(course) || 'En el ámbito actual, al guiar a individuos, equipos y organizaciones a través de procesos de desarrollo del talento humano, se...'}}</p> -->
+              <button @click="removeFromFavorites(course._id)" title="Eliminar curso" class="p-2 ml-auto">
+                <svg fill="#FF0000" xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960" width="24">
+                  <path
+                    d="M304.615-160q-26.846 0-45.731-18.884Q240-197.769 240-224.615V-720h-40v-40h160v-30.77h240V-760h160v40h-40v495.385Q720-197 701.5-178.5 683-160 655.385-160h-350.77ZM680-720H280v495.385q0 10.769 6.923 17.692T304.615-200h350.77q9.23 0 16.923-7.692Q680-215.385 680-224.615V-720ZM392.307-280h40.001v-360h-40.001v360Zm135.385 0h40.001v-360h-40.001v360ZM280-720v520-520Z" />
+                </svg>
+              </button>
             </div>
-            <button @click="removeFromFavorites(course._id)" title="Eliminar curso" class="p-2 ml-auto">
-              <svg fill="#FF0000" xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960" width="24">
-                <path
-                  d="M304.615-160q-26.846 0-45.731-18.884Q240-197.769 240-224.615V-720h-40v-40h160v-30.77h240V-760h160v40h-40v495.385Q720-197 701.5-178.5 683-160 655.385-160h-350.77ZM680-720H280v495.385q0 10.769 6.923 17.692T304.615-200h350.77q9.23 0 16.923-7.692Q680-215.385 680-224.615V-720ZM392.307-280h40.001v-360h-40.001v360Zm135.385 0h40.001v-360h-40.001v360ZM280-720v520-520Z" />
-              </svg>
-            </button>
           </div>
         </div>
       </div>
     </div>
-  </div>
 </template>
 
 <script setup>
@@ -221,7 +191,7 @@ const selectedProfilePicture = ref(null);
 const router = useRouter();
 const userData = ref({});
 const editableUserData = reactive({}); // Datos editables del usuario
-const userId = ref(getFromLocalStorage("loggedInUserId")); 
+const userId = ref(getFromLocalStorage("loggedInUserId"));
 const newPassword = ref(""); // Nueva contraseña
 const isPasswordShown = ref(false);
 const editing = ref(false);

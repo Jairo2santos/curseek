@@ -1,5 +1,5 @@
 <template>
-  <div class="flex-col max-w-screen-full md:flex-row mx-auto md:px-48 bg-gray-100 pb-12">
+  <div class="flex-col max-w-screen-full md:flex-row mx-auto md:px-40 bg-gray-100 pb-12">
     <Notificacion v-if="showNotification" :message="notificationMessage" :type="notificationType"
       @close="showNotification = false" />
     <!-- Texto introductorio -->
@@ -55,7 +55,6 @@
         </div>
       </div>
 
-      <!-- Segunda entrada del diario -->
       <div class="md:w-1/2 pt-6 md:pt-0">
         <!-- Listado de blogs -->
         <div v-if="blogs.length" class="max-w-6xl mx-auto flex flex-wrap px-4">

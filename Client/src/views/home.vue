@@ -78,7 +78,7 @@
         </div>
 
         <!-- Saber más -->
-        <div :class="{ 'blurred-background': isInputClicked }" class="border-b border-gray-200 mt-2 pb-8 ml-2">
+        <div :class="{ 'blurred-background': isInputClicked }" class="ml-auto mt-2 pb-4">
           <a href="/nosotros/#/preguntasFrecuentes" :class="{ 'blurred-background': isInputClicked }">
             <button class="flex text-sm font-semibold hover:underline transition text-black p-0">
               Ayuda
@@ -91,8 +91,8 @@
           </a>
         </div>
         <!-- Botones de búsquedas frecuentes -->
-        <div class="mt-4 pr-0 md:pr-20">
-          <h2 class="text-lg text-black font-bold p-2">Búsquedas de cursos mas frecuentes</h2>
+        <div class="mt-4 pr-0 md:pr-20 border-t border-gray-200">
+          <h2 class="text-lg text-black font-bold py-4">Búsquedas de cursos mas frecuentes</h2>
           <button @click="handleSearch('Java')" @focus="setInputClicked(true)" @blur="setInputClicked(false)"
             class="text-sm bg-indigo-100 text-gray-800 hover:bg-green-100 border border-gray-200 transition py-1 px-2 rounded-lg mb-1 mr-1">
             Java
@@ -105,14 +105,14 @@
             class="text-sm bg-indigo-100 text-gray-800 hover:bg-green-100 border border-gray-200 transition py-1 px-2 rounded-lg mb-1 mr-1">
             React js
           </button>
-          <button @click="handleSearch('seguridad')" @focus="setInputClicked(true)" @blur="setInputClicked(false)"
-            class="text-sm bg-indigo-100 text-gray-800 hover:bg-green-100 border border-gray-200 transition py-1 px-2 rounded-lg mb-1 mr-1">
-            Seguridad
-          </button>
           <button @click="handleSearch('Administración de empresas')" @focus="setInputClicked(true)"
             @blur="setInputClicked(false)"
             class="text-sm bg-indigo-100 text-gray-800 hover:bg-green-100 border border-gray-200 transition py-1 px-2 rounded-lg mb-1 mr-1">
             Administración de empresas
+          </button>
+          <button @click="handleSearch('seguridad')" @focus="setInputClicked(true)" @blur="setInputClicked(false)"
+            class="text-sm bg-indigo-100 text-gray-800 hover:bg-green-100 border border-gray-200 transition py-1 px-2 rounded-lg mb-1 mr-1">
+            Seguridad
           </button>
           <button @click="handleSearch('física')" @focus="setInputClicked(true)" @blur="setInputClicked(false)"
             class="text-sm bg-indigo-100 text-gray-800 hover:bg-green-100 border border-gray-200 transition py-1 px-2 rounded-lg mb-1 mr-1">

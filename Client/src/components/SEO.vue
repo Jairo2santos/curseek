@@ -1,19 +1,17 @@
-<template>
-  
-    <nav aria-label="breadcrumb" v-if="breadcrumbs.length > 1" class="text-xs py-2">
+<template>  
+    <nav aria-label="breadcrumb" v-if="breadcrumbs.length > 1" class="text-xs md:py-4">
       <ol class="flex flex-wrap list-none pl-0 mb-0">
         <li v-for="(crumb, index) in breadcrumbs" :key="index" class="flex items-center">
-          <router-link v-if="!crumb.active" :to="crumb.to" class="bg-gray-100 hover:bg-gray-200 text-indigo-600 hover:text-indigo-800 font-medium py-1 px-2 rounded transition-colors duration-200 ease-in-out">
+          <router-link v-if="!crumb.active" :to="crumb.to" class="text-indigo-600 hover:underline font-medium py-1 px-2 duration-200 ease-in-out">
             {{ crumb.text }}
           </router-link>
-          <span v-else class="bg-gray-200 text-gray-500 py-1 px-2 rounded">
+          <span v-else class="text-gray-500 py-1 px-2">
             {{ crumb.text }}
           </span>
-          <span v-if="index < breadcrumbs.length - 1" class="text-indigo-600 font-medium text-xs mx-1">➣</span>
+          <span v-if="index < breadcrumbs.length - 1" class="text-indigo-600 font-medium text-xs py-1 px-2">➣</span>
         </li>
       </ol>
     </nav>
-
   </template>
   
 

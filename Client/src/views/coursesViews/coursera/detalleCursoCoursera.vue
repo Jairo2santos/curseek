@@ -1,5 +1,5 @@
 <template>
-  <div class="bg-gray-100 p-4 md:p-6 max-w-screen-full">
+  <div class="bg-gray-100 px-4 pb-4 md:p-0 max-w-screen-full">
     <seo-component :title="pageTitleSEO" :description="pageDescriptionSEO" :breadcrumbs="breadcrumbs" />
 
     <div class="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-6 max-w-screen-xl mx-auto">
@@ -229,9 +229,8 @@
         </div>
       </aside>
     </div>
-    <p class="hidden mt-3 md:block text-center pb-6 text-sm text-gray-500">
-      CurSeek cuenta con el apoyo del alumno. Cuando compra a través de enlaces
-      en nuestro sitio, podemos ganar una comisión de afiliado.
+    <p class="hidden md:block py-4 text-center text-sm text-gray-500">
+      CurSeek cuenta con el apoyo del alumno. Cuando compra a través de enlaces en nuestro sitio, podemos ganar una comisión de afiliado.
     </p>
   </div>
 </template>
