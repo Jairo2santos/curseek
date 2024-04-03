@@ -15,7 +15,7 @@
     </transition>
     
       <!-- Perfil -->
-      <div class="profile-card bg-white p-6 md:w-1/3 rounded-md mb-auto">
+      <div class="bg-white p-6 md:w-1/3 rounded-md mb-auto">
         <h1 class="text-center font-bold text-xl mb-4 hidden">Mi Perfil</h1>
         <img :src="resolveImagePath(userData.profilePicture) ||
         '../src/assets/student.png'
@@ -134,50 +134,61 @@
 
       <!-- Cursos favoritos -->
       <div class="profile-card bg-white p-6 rounded-md mb-auto md:w-1/2">
-        <h2 class="text-xl text-center md:text-left font-bold mb-4">
+        <h2 class="text-xl text-center md:text-left font-bold mb-6">
           Mis Cursos Favoritos
         </h2>
-        <div class="flex flex-col gap-4">
-          <!-- Bucle para los cursos favoritos -->
-          <div v-for="course in favoriteCourses" :key="course._id"
-            class="bg-white md:shadow-sm shadow-md md:p-0 p-4 hover:shadow-md transition overflow-hidden">
-            <div class="flex flex-col md:flex-row cursor-pointer">
-              <!-- Imagen del curso a la izquierda -->
-              <img :src="courseImage(course)" alt=""
-                class="md:w-24 w-36 mx-auto object-contain rounded-t-lg md:rounded-t-none md:rounded-l-lg" />
-              <!-- Contenido del curso a la derecha -->
-              <div class="p-2 flex-grow">
-                <h3 @click="() => goToCourseDetail(course)" class="font-semibold text-md hover:underline">
-                  {{ course.title || "Curso Seleccionado" }}
-                </h3>
+        <div class="flex flex-col gap-1">
+          <div :class="{ 'max-h-96 overflow-y-auto': !expandDescription }" class="md:text-md bold-4 relative">
+            <div>
+              <!-- Bucle para los cursos favoritos -->
+              <div v-for="course in favoriteCourses" :key="course._id"
+                class="bg-white md:shadow-sm shadow-md md:p-0 my-1 p-2 hover:shadow-md transition overflow-hidden">
+                <div class="flex flex-col justify-center items-center md:flex-row cursor-pointer">
+                  <!-- Imagen del curso a la izquierda -->
+                  <img :src="courseImage(course)" alt=""
+                    class="md:w-12 md:h-12 w-full h-12 mx-auto object-cover rounded-md" />
+                  <!-- Contenido del curso a la derecha -->
+                  <div class="p-2 flex-grow">
+                    <h3 @click="() => goToCourseDetail(course)" class="font-semibold text-md hover:underline">
+                      {{ course.title || "Curso Seleccionado" }}
+                    </h3>
 
-                <div class="flex">
-                  <svg class="mr-1" xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 -960 960 960" width="24">
-                    <path
-                      d="M400-420h139.231v-40H400v40Zm0-120h278.462v-40H400v40Zm0-120h278.462v-40H400v40Zm-75.385 380Q297-280 278.5-298.5 260-317 260-344.615v-430.77Q260-803 278.5-821.5 297-840 324.615-840h430.77Q783-840 801.5-821.5 820-803 820-775.385v430.77Q820-317 801.5-298.5 783-280 755.385-280h-430.77Zm0-40h430.77q9.231 0 16.923-7.692Q780-335.385 780-344.615v-430.77q0-9.23-7.692-16.923Q764.616-800 755.385-800h-430.77q-9.23 0-16.923 7.692Q300-784.615 300-775.385v430.77q0 9.23 7.692 16.923Q315.385-320 324.615-320Zm-120 160Q177-160 158.5-178.5 140-197 140-224.615v-470.77h40v470.77q0 9.231 7.692 16.923Q195.384-200 204.615-200h470.77v40h-470.77ZM300-800v480-480Z">
-                    </path>
-                  </svg>
-                  <h4 @click="() => goToCourseDetail(course)" class="text-sm mr-2 capitalize">
-                    {{
-        course.courseType === "COURSERA"
-          ? "Coursera"
-          : course.courseType === "UTN"
-            ? "UTN"
-            : "Udemy" }}
-                    {{ course.university }}
-                  </h4>
+                    <div class="flex">
+                      <svg class="mr-1" xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 -960 960 960" width="24">
+                        <path
+                          d="M400-420h139.231v-40H400v40Zm0-120h278.462v-40H400v40Zm0-120h278.462v-40H400v40Zm-75.385 380Q297-280 278.5-298.5 260-317 260-344.615v-430.77Q260-803 278.5-821.5 297-840 324.615-840h430.77Q783-840 801.5-821.5 820-803 820-775.385v430.77Q820-317 801.5-298.5 783-280 755.385-280h-430.77Zm0-40h430.77q9.231 0 16.923-7.692Q780-335.385 780-344.615v-430.77q0-9.23-7.692-16.923Q764.616-800 755.385-800h-430.77q-9.23 0-16.923 7.692Q300-784.615 300-775.385v430.77q0 9.23 7.692 16.923Q315.385-320 324.615-320Zm-120 160Q177-160 158.5-178.5 140-197 140-224.615v-470.77h40v470.77q0 9.231 7.692 16.923Q195.384-200 204.615-200h470.77v40h-470.77ZM300-800v480-480Z">
+                        </path>
+                      </svg>
+                      <h4 @click="() => goToCourseDetail(course)" class="text-sm mr-2 capitalize">
+                        {{
+                  course.courseType === "COURSERA"
+                    ? "Coursera"
+                    : course.courseType === "UTN"
+                      ? "UTN"
+                      : "Udemy" }}
+                        {{ course.university }}
+                      </h4>
+                    </div>
+                  </div>
+                  <button @click="removeFromFavorites(course._id)" title="Eliminar curso" class="ml-auto pr-4">
+                    <svg fill="#FF0000" xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960" width="24">
+                      <path
+                        d="M304.615-160q-26.846 0-45.731-18.884Q240-197.769 240-224.615V-720h-40v-40h160v-30.77h240V-760h160v40h-40v495.385Q720-197 701.5-178.5 683-160 655.385-160h-350.77ZM680-720H280v495.385q0 10.769 6.923 17.692T304.615-200h350.77q9.23 0 16.923-7.692Q680-215.385 680-224.615V-720ZM392.307-280h40.001v-360h-40.001v360Zm135.385 0h40.001v-360h-40.001v360ZM280-720v520-520Z" />
+                    </svg>
+                  </button>
                 </div>
               </div>
-              <button @click="removeFromFavorites(course._id)" title="Eliminar curso" class="p-2 ml-auto">
-                <svg fill="#FF0000" xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960" width="24">
-                  <path
-                    d="M304.615-160q-26.846 0-45.731-18.884Q240-197.769 240-224.615V-720h-40v-40h160v-30.77h240V-760h160v40h-40v495.385Q720-197 701.5-178.5 683-160 655.385-160h-350.77ZM680-720H280v495.385q0 10.769 6.923 17.692T304.615-200h350.77q9.23 0 16.923-7.692Q680-215.385 680-224.615V-720ZM392.307-280h40.001v-360h-40.001v360Zm135.385 0h40.001v-360h-40.001v360ZM280-720v520-520Z" />
-                </svg>
-              </button>
             </div>
+            <!-- <div v-if="!expandDescription"
+              class="absolute bottom-0 left-0 right-0 h-16 bg-gradient-to-b from-transparent to-white"></div> -->
           </div>
+          <!-- <button @click="toggleDescription"
+            class="mt-4 text-blue-600 hover:underline font-semibold transition focus:outline-none">
+            {{ expandDescription ? "" : "Ver más" }}
+          </button> -->
         </div>
       </div>
+      
     </div>
 </template>
 
@@ -199,6 +210,11 @@ const favoriteCourses = ref([]);
 const showNotification = ref(false);
 const notificationMessage = ref("");
 const notificationType = ref("");
+const expandDescription = ref(false);
+
+const toggleDescription = () => {
+  expandDescription.value = !expandDescription.value;
+};
 
 const selectedCountry = ref("");
 const countries = [
