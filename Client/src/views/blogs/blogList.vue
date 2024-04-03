@@ -90,16 +90,39 @@
 
 <script setup>
 import axios from 'axios';
-import { onMounted, ref } from 'vue';
+import { onMounted, ref , computed} from 'vue';
 import { useRouter } from 'vue-router';
 import Notificacion from '../../components/Notificaciones.vue';
+import { getFromLocalStorage} from '../../utils/localStorage'; // Importa tus utilidades
+import SeoComponent from '../../components/SEO.vue';
+import { useRoute } from 'vue-router';
 
 const blogs = ref([]);
 const router = useRouter();
-const isAdmin = ref(localStorage.getItem('userRole') === 'admin');
+const isAdmin = ref(getFromLocalStorage('userRole') === 'admin'); // Utiliza tu función de utilidad
 const showNotification = ref(false);
 const notificationMessage = ref('');
 const notificationType = ref('');
+const route = useRoute();
+
+//SEO
+
+// Ejemplo de pageTitle y pageDescription
+const pageTitleSEO = 'Blogs y noticias - CurSeek';
+const pageDescriptionSEO = 'Sección de blogs de Curseek, un buscador personalizado de cursos';
+
+// Usa la API de enrutamiento de Vue para obtener la ruta actual
+
+// Crea una estructura de breadcrumbs reactiva basada en la ruta actual
+const breadcrumbs = computed(() => {
+  // Aquí puedes construir la lógica para tus breadcrumbs basada en route.path o route.params
+  return [
+    { text: 'Inicio', to: '/', active: route.path === '/' },
+    { text: 'Blogs y contenidos', to: '/blogs', active: route.path === '/blogs' },
+  
+    // La última ruta es siempre activa y no tiene enlace
+  ];
+});
 
 // Asegúrate de usar slugs correctamente para eliminar blogs
 const deleteBlog = async (slug) => {
@@ -107,7 +130,7 @@ const deleteBlog = async (slug) => {
   try {
     await axios.delete(`${import.meta.env.VITE_API_URL}/blogs/slug/${slug}`, {
       headers: {
-        Authorization: `Bearer ${localStorage.getItem('token')}`
+        Authorization: `Bearer ${getFromLocalStorage('token')}` // Cambio aquí
       }
     });
     // Actualiza la lista de blogs eliminando el blog con el slug dado
@@ -116,7 +139,7 @@ const deleteBlog = async (slug) => {
     showNotification.value = true;
     notificationMessage.value = 'Blog eliminado exitosamente';
     notificationType.value = 'success';
-
+    
     // Redirige al usuario a la página principal de blogs o a cualquier otra página
     router.push({ name: 'BlogList' }); // Asegúrate de que 'BlogList' sea el nombre correcto de la ruta a la que deseas redirigir.
   } catch (error) {
@@ -127,12 +150,15 @@ const deleteBlog = async (slug) => {
     notificationType.value = 'error';
   }
 };
-
-
+const extractTextFromHTML = (htmlString, maxLength = 150) => {
+  const strippedString = htmlString.replace(/<[^>]+>/g, ''); // Eliminar etiquetas HTML
+  return strippedString.length > maxLength
+    ? strippedString.substring(0, maxLength) + '...'
+    : strippedString;
+};
 onMounted(async () => {
   try {
     const response = await axios.get(`${import.meta.env.VITE_API_URL}/blogs`);
-    console.log(response.data);
     blogs.value = response.data;
   } catch (error) {
     console.error('Error al cargar los blogs:', error);
