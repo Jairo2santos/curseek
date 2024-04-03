@@ -4,10 +4,10 @@
       @close="showNotification = false" />
     <!-- Texto introductorio -->
     <div class="intro-text mb-4">
-      <h1 class="text-4xl text-center py-12 md:text-4xl font-semibold text-gray-800">
+      <h1 class="text-4xl text-center md:py-12 py-6 md:text-4xl font-semibold text-gray-800">
         <span class="text-indigo-900">Blog | </span>Informes y Noticias
       </h1>
-      <p class="text-md md:text-center text-left md:px-0 px-6 pb-4">
+      <p class="hidden md:block text-md md:text-center text-left md:px-0 px-6 pb-4">
         Descubre las últimas tendencias, consejos y estrategias para potenciar tu carrera
         profesional.
         En CurSeek, estamos comprometidos con tu desarrollo y éxito profesional. A través de este espacio, queremos
@@ -20,15 +20,30 @@
       <router-link to="/blog/new"
         class="inline-block bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded-lg transition-colors duration-200">Agregar
         nuevo blog</router-link>
-    </div>
-
-    <div class="flex">
-      <!-- Primera entrada del diario -->
-      <div class="w-1/2 p-2 rounded-sm mb-auto">
+      </div>
+      
+      <div class="md:flex">
+        <div class="md:w-1/2 px-6 rounded-sm mb-auto border-r border-gray-200">
+        <!-- Primera entrada del diario -->
         <div class="">
-          <h2 class="entry-title font-semibold text-3xl pb-2">
+          <h2 class="entry-title font-semibold md:text-3xl text-2xl pb-2">
+            Comparación entre Programación Tradicional y Inteligencia Artificial: Enfoques y Métodos
+          </h2>
+          <div class="entry-content text-justify text-md pb-4">
+            <p>
+              La programación tradicional se fundamenta en reglas lógicas y decisiones predefinidas que se aplican según
+              el contexto del programa que estamos desarrollando. En contraste, la Inteligencia Artificial (IA) se apoya
+              en el aprendizaje automático y la capacidad de adquirir conocimientos a partir de nuevos datos.
+            </p>
+          </div>
+          <img src="../../assets/programacion-vs-ai.png" alt="" class="w-full items-center justify-center">
+        </div>
+        
+        <div class="pt-6">
+          <h2 class="entry-title font-semibold md:text-3xl text-2xl pb-2">
             Fortalecimiento de la Transición Educativa: Acceso y Permanencia en la Educación Superior
           </h2>
+          <img src="../../assets/mujer-estudiando.jpg" alt="" class="w-full pt-2 pb-4 items-center justify-center">
           <div class="entry-content text-justify text-md pb-4">
             <p>
               Se busca mejorar la transición de estudiantes de secundaria a la Educación Superior, fortaleciendo la
@@ -37,12 +52,11 @@
               vocacional.
             </p>
           </div>
-          <img src="../../assets/mujer-estudiando.jpg" alt="" class="w-full items-center justify-center">
         </div>
       </div>
 
       <!-- Segunda entrada del diario -->
-      <div class="w-1/2">
+      <div class="md:w-1/2 pt-6 md:pt-0">
         <!-- Listado de blogs -->
         <div v-if="blogs.length" class="max-w-6xl mx-auto flex flex-wrap px-4">
           <div v-for="blog in blogs" :key="blog.slug" class="w-full md:w-1/2 lg:w-1/2 p-2">
@@ -69,20 +83,6 @@
           <p>Cargando blogs...</p>
         </div>
       </div>
-    </div>
-
-    <div class="pt-6 flex">
-      <div class="entry-content text-justify text-md pb-4">
-        <h2 class="text-left font-semibold text-3xl pb-2">
-          Comparación entre Programación Tradicional y Inteligencia Artificial: Enfoques y Métodos
-        </h2>
-        <p>
-          La programación tradicional se fundamenta en reglas lógicas y decisiones predefinidas que se aplican según
-          el contexto del programa que estamos desarrollando. En contraste, la Inteligencia Artificial (IA) se apoya
-          en el aprendizaje automático y la capacidad de adquirir conocimientos a partir de nuevos datos.
-        </p>
-      </div>
-      <img src="../../assets/programacion-vs-ai.png" alt="" class="w-96 items-center ml-4 justify-center">
     </div>
 
   </div>
