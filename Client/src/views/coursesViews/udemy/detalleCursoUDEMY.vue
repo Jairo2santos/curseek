@@ -1,5 +1,5 @@
 <template>
-  <div class="bg-gray-100 p-4 pb-4 md:p-0 max-w-screen-full">
+  <div class="bg-gray-100 p-4 pb-4 md:p-0 md:pb-6 max-w-screen-full">
     <p class="hidden md:block py-6 text-center text-sm text-gray-500">
       CurSeek cuenta con el apoyo del alumno. Cuando compra a través de enlaces en nuestro sitio, podemos ganar una comisión de afiliado.
     </p>
@@ -108,8 +108,9 @@
           </div>
         </div>
       </div>
+      
       <!-- Columna 3 (Barra Lateral) -->
-      <div class="order-first md:order-last bg-white p-4 md:p-6 rounded">
+      <div class="order-first md:order-last bg-white p-4 md:p-6 mb-auto rounded">
         <img :src="udemyCourse.image_480x270" alt="imagen del curso de udemy" class="block mb-4 w-full h-48 mx-auto object-cover rounded-sm">
         <div class="md:hidden text-right items-end ml-auto rounded-lg md:ml-0">
           <button class="" title="Agregar a Favoritos">
@@ -202,7 +203,7 @@
               fill="#fff" />
           </svg>
         </button>
-        
+
         <div class="px-2 py-6 text-md md:block hidden">
           <ul>
             <!-- Institución -->
