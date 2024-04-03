@@ -8,7 +8,7 @@
           <span v-else class="text-gray-500 py-1 px-2">
             {{ crumb.text }}
           </span>
-          <span v-if="index < breadcrumbs.length - 1" class="text-indigo-600 font-medium text-xs py-1 px-2">➣</span>
+          <span v-if="index < breadcrumbs.length - 1" class="text-indigo-600 font-medium text-xs py-1 px-2">/</span>
         </li>
       </ol>
     </nav>

@@ -7,7 +7,7 @@
       </svg>
       <span class="font-semibold ml-2 text-sm">Filtrar por</span>
       <button v-if="selectedCategories.length > 0" @click="clearSelectedCategory"
-        class="ml-24 text-sm bg-gray-200 text-blue-700 font-semibold px-2 rounded-full">
+        class="ml-auto text-sm bg-gray-200 text-blue-700 font-semibold px-2 rounded-full">
         Limpiar todo
       </button>
     </div>

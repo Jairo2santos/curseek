@@ -11,13 +11,13 @@
     :instagramLink="'https://www.instagram.com/udemy/'"
     :twitterLink="'https://twitter.com/udemy'"
     :facebookLink="'https://www.facebook.com/udemy'" />
-    <div class="flex flex-col max-w-screen-full md:flex-row mx-auto pt-6 md:px-40 bg-gray-100 p-4">
+    <div class="flex flex-col max-w-screen-full md:flex-row mx-auto pt-6 md:px-48 bg-gray-100 p-4">
       <!-- Sidebar a la izquierda -->
       <div class="mb-4 md:mb-0 w-full md:w-auto mt-4">
         <Sidebar :categories="categories" @filter-by-category="handleCategoryFilter" />
       </div>
       <!-- Contenido a la derecha del Sidebar -->
-      <div class="flex flex-col w-full md:ml-6 md:mt-7">
+      <div class="flex flex-col w-full md:ml-8 md:mt-7">
         <!-- Filtros arriba -->
         <div class="mb-4">
           <!-- <Filtros @filter-changed="handleFilterChange" /> -->
@@ -43,7 +43,7 @@
                       <div class="flex flex-col mb-2 items-center md:flex-row">
                         <!-- Imagen del curso -->
                         <img :src="course.image_480x270" alt=""
-                          class="md:w-1/5 rounded mb-2 md:mb-0 md:mr-2">
+                          class="md:w-28 md:h-16 w-full h-32 mx-auto object-cover rounded mr-2">
                         <!-- Título del curso -->
                         <h2 class="text-lg mt-2 md:mt-0 font-semibold hover:underline">
                           {{ course.title || 'Aprende con este Curso de Udemy' }}
@@ -51,15 +51,15 @@
                       </div>
 
                       <!-- Sección 2: Descripción -->
-                      <div class="mb-2 md:mb-2">
+                      <div class="mb-2 md:mb-1">
                         <!-- Descripción del curso -->
                         <p class="text-sm text-gray-700 mr-2">
                           {{ course.headline || 'En el ámbito actual, al guiar a individuos, equipos y organizaciones a través de procesos de desarrollo del talento humano, se...' }}
                         </p>
                       </div>
                       <!-- Sección 3: Botones (usando el componente Favoritos) -->
-                      <div class="bg-gray-200 md:bg-white items-end ml-auto rounded-lg md:m-0">
-                        <button class="mx-3" title="Agregar a Favoritos">
+                      <div class="items-end ml-auto rounded-lg md:ml-0">
+                        <button class="mx-" title="Agregar a Favoritos">
                           <Favoritos :courseId="course._id" :courseType="'UDEMY'" :isFavorited="course.isFavorited" />
                         </button>
                       </div>

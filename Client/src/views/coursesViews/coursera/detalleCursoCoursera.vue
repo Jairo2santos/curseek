@@ -13,7 +13,7 @@
           <div class="flex items-center pt-2">
             <a href="/cursos/Coursera">
               <button class="flex hover:underline transition" title="Ir a cursos de Coursera">
-                <span>Coursera, {{ course.university }}</span>
+                <span>Coursera - {{ course.university }}</span>
                 <svg class="ml-1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="20" fill="#000000">
                   <path d="M0 0h24v24H0V0z" fill="none" />
                   <path
@@ -118,7 +118,7 @@
 
       <!-- Barra lateral con detalles del curso -->
       <aside class="order-first md:order-last bg-white p-4 md:p-6 rounded">
-        <img :src="course.imgUrl" alt="" class="block mx-auto rounded-sm mb-4 w-48" />
+        <img :src="course.imgUrl" alt="imagen del curso de coursera" class="block mb-4 w-full h-48 mx-auto object-cover rounded-sm" />
         <!-- Título y Universidad -->
         <section class="md:hidden bg-white md:p-6 rounded mb-4 flex justify-between items-center">
           <h3 class="text-xl md:text-3xl font-bold text-gray-800">
@@ -246,7 +246,7 @@ import { useHead } from "@vueuse/head";
 const route = useRoute();
 const course = ref({});
 const expandDescription = ref(false);
-const expandCourseDetails = ref(false);
+const expandCourseDetails = ref(true);
 const courseModules = ref([]);
 const router = useRouter();
 
