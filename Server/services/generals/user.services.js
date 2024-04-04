@@ -7,26 +7,24 @@ const mongoose = require('mongoose');
 const jwt = require('jsonwebtoken');
 
 
-
 const authenticateUser = async (login, password) => {
-  // El parámetro 'login' puede ser tanto el nombre de usuario como el correo electrónico
-  console.log(`Authenticating user: ${login}`);
-
-  // Buscar el usuario por nombre de usuario o correo electrónico
   const user = await User.findOne({
     $or: [{ username: login }, { email: login }]
   });
 
   if (!user) {
-    return res.status(404).json({ message: 'Usuario o correo electrónico no registrado' });
-  }
-  
-  const isMatch = await bcrypt.compare(password, user.password);
-  if (!isMatch) {
-    throw new Error('Contraseña incorrecta');
+    const error = new Error('Usuario o correo electrónico no registrado');
+    error.statusCode = 404;
+    throw error;
   }
 
-  // Si la contraseña coincide, generar y devolver el token JWT
+  const isMatch = await bcrypt.compare(password, user.password);
+  if (!isMatch) {
+    const error = new Error('Contraseña incorrecta');
+    error.statusCode = 401;
+    throw error;
+  }
+
   const token = jwt.sign(
     { userId: user._id, role: user.role },
     process.env.JWT_SECRET,

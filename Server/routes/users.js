@@ -12,7 +12,6 @@ router.post('/password-recovery', generatePasswordResetToken, userController.sen
 router.post('/email-user-verification', userController.verifyUserByEmail);
 router.post('/reset-password', userController.resetPassword);
 
-//router.get('/send-test-email', userController.sendTestEmail);
 
 
 // Ruta protegida para perfil de usuario

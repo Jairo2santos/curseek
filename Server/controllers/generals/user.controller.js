@@ -150,7 +150,7 @@ exports.getAllUsers = async (req, res) => {
 };
 
 exports.login = async (req, res) => {
-  const { login, password } = req.body; 
+  const { login, password } = req.body;
   try {
     const { user, token } = await userService.authenticateUser(login, password);
     res.json({
@@ -161,9 +161,12 @@ exports.login = async (req, res) => {
       userId: user._id,
     });
   } catch (error) {
-    res.status(401).json({ message: error.message });
+    const status = error.statusCode || 500;
+    res.status(status).json({ message: error.message });
   }
 };
+
+
 
 exports.validateToken = (req, res) => {
   // Asumiendo que el token viene en el header de autorización
@@ -202,46 +205,62 @@ exports.getUserProfileById = async (req, res) => {
   }
 };
 
+
 exports.updateUserProfile = async (req, res) => {
   const { id } = req.params;
   const updatedData = req.body;
 
   try {
-      // Obtener usuario actual antes de actualizar para acceder a la posible imagen antigua
-      const currentUser = await userService.getUserById(id);
-      let oldImagePath = null;
-
-      // Si hay una imagen actual y una nueva imagen, prepara la eliminación de la imagen antigua
-      if (currentUser && currentUser.profilePicture && req.file) {
-          oldImagePath = path.join(UPLOADS_DIR, currentUser.profilePicture);
-
-          // Verifica y elimina la imagen antigua si existe
-          if (fs.existsSync(oldImagePath)) {
-              fs.unlinkSync(oldImagePath);
-          }
+    // Verificar unicidad del nombre de usuario y correo electrónico
+    if (updatedData.username) {
+      const existingUserByUsername = await User.findOne({ username: updatedData.username, _id: { $ne: id } });
+      if (existingUserByUsername) {
+        return res.status(400).json({ field: 'username', message: 'El nombre de usuario ya está en uso.' });
       }
+    }
 
-      // Prepara la nueva imagen para ser guardada
-      if (req.file) {
-          updatedData.profilePicture = req.file.filename; // Asegúrate de guardar solo el nombre del archivo o una ruta relativa
+    if (updatedData.email) {
+      const existingUserByEmail = await User.findOne({ email: updatedData.email, _id: { $ne: id } });
+      if (existingUserByEmail) {
+        return res.status(400).json({ field: 'email', message: 'El correo electrónico ya está en uso.' });
       }
+    }
 
-      // Procede con la actualización del usuario
-      const updatedUser = await userService.updateUserProfile(id, updatedData);
+    // Obtener usuario actual antes de actualizar para acceder a la posible imagen antigua
+    const currentUser = await userService.getUserById(id);
+    let oldImagePath = null;
 
-      res.status(200).json({ message: 'Perfil actualizado con éxito', user: updatedUser });
+    // Si hay una imagen actual y una nueva imagen, prepara la eliminación de la imagen antigua
+    if (currentUser && currentUser.profilePicture && req.file) {
+      oldImagePath = path.join(UPLOADS_DIR, currentUser.profilePicture);
+
+      // Verifica y elimina la imagen antigua si existe
+      if (fs.existsSync(oldImagePath)) {
+        fs.unlinkSync(oldImagePath);
+      }
+    }
+
+    // Prepara la nueva imagen para ser guardada
+    if (req.file) {
+      updatedData.profilePicture = req.file.filename; // Asegúrate de guardar solo el nombre del archivo o una ruta relativa
+    }
+
+    // Procede con la actualización del usuario
+    const updatedUser = await userService.updateUserProfile(id, updatedData);
+
+    res.status(200).json({ message: 'Perfil actualizado con éxito', user: updatedUser });
   } catch (error) {
-      console.error(`Error al actualizar el usuario con ID ${id}: ${error.message}`, error);
+    console.error(`Error al actualizar el usuario con ID ${id}: ${error.message}`, error);
 
-      // Intenta eliminar la nueva imagen subida si el proceso de actualización falla, para evitar archivos huérfanos
-      if (req.file) {
-          const imagePath = path.join(UPLOADS_DIR, req.file.filename);
-          if (fs.existsSync(imagePath)) {
-              fs.unlinkSync(imagePath);
-          }
+    // Intenta eliminar la nueva imagen subida si el proceso de actualización falla, para evitar archivos huérfanos
+    if (req.file) {
+      const imagePath = path.join(UPLOADS_DIR, req.file.filename);
+      if (fs.existsSync(imagePath)) {
+        fs.unlinkSync(imagePath);
       }
+    }
 
-      res.status(500).json({ message: 'Error al actualizar el perfil', error: error.message });
+    res.status(500).json({ message: 'Error al actualizar el perfil', error: error.message });
   }
 };
 

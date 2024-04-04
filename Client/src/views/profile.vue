@@ -44,11 +44,12 @@
           <label for="newPassword" class="text-sm font-medium text-gray-700">Nueva Contraseña</label>
           <div class="relative">
             <input :type="isPasswordShown ? 'text' : 'password'" id="newPassword" v-model="newPassword"
-              class="form-input text-sm mt-1 p-2 rounded-lg bg-gray-100 block w-full" placeholder="Nueva Contraseña" />
+              @input="evaluatePasswordStrength" class="form-input text-sm mt-1 p-2 rounded-lg bg-gray-100 block w-full"
+              placeholder="Nueva Contraseña" />
             <button type="button" @click="togglePasswordVisibility"
-              class="absolute inset-y-0 right-0 pr-3 flex items-center text-sm leading-5">
+              class="absolute inset-y-0 right-0 flex items-center px-2 mb-6">
               <span>{{ isPasswordShown ? "" : "" }}</span>
-              <svg v-if="isPasswordShown" class="ml-1" xmlns="http://www.w3.org/2000/svg" height="24"
+              <svg v-if="isPasswordShown" class="mb-1" xmlns="http://www.w3.org/2000/svg" height="24"
                 viewBox="0 -960 960 960" width="24">
                 <path
                   d="M480.181-353.846q60.973 0 103.473-42.681t42.5-103.654q0-60.973-42.681-103.473t-103.654-42.5q-60.973 0-103.473 42.681t-42.5 103.654q0 60.973 42.681 103.473t103.654 42.5ZM480-392q-45 0-76.5-31.5T372-500q0-45 31.5-76.5T480-608q45 0 76.5 31.5T588-500q0 45-31.5 76.5T480-392Zm.11 152q-129.956 0-236.879-70.731Q136.307-381.461 83.077-500q53.23-118.539 160.044-189.269Q349.934-760 479.89-760q129.956 0 236.879 70.731Q823.693-618.539 876.923-500q-53.23 118.539-160.044 189.269Q610.066-240 480.11-240ZM480-500Zm0 220q113 0 207.5-59.5T832-500q-50-101-144.5-160.5T480-720q-113 0-207.5 59.5T128-500q50 101 144.5 160.5T480-280Z" />
@@ -58,38 +59,44 @@
                   d="M617.846-454.154 586-486q9-52.385-29.692-90.692Q517.615-615 466-606l-31.846-31.846q10.077-4.154 21.038-6.231 10.962-2.077 24.808-2.077 61.154 0 103.654 42.5 42.5 42.5 42.5 103.654 0 13.846-2.077 25.577-2.077 11.731-6.231 20.269Zm126.462 122.923L714-358q38-29 67.5-63.5T832-500q-50-101-143.5-160.5T480-720q-29 0-57 4t-55 12l-31.231-31.231q34.846-13.154 70.923-18.962Q443.769-760 480-760q130.231 0 238.231 71.577T876.923-500q-21.461 48.231-54.346 90.654-32.884 42.423-78.269 78.115Zm44.615 216.77L633.231-269.692q-26.539 11.769-65.885 20.731Q528-240 480-240q-131 0-238.231-71.577T83.077-500q23.307-53 61.461-99.269 38.154-46.269 81.462-77.654l-111.539-112 28.308-28.308 674.462 674.462-28.308 28.308ZM254.307-648.615Q219.923-624.154 184-584.308 148.077-544.461 128-500q50 101 143.5 160.5T480-280q34.615 0 69.769-6.731 35.154-6.73 52.846-13.577L537.385-366q-9.462 5.308-26.385 8.731-16.923 3.423-31 3.423-61.154 0-103.654-42.5-42.5-42.5-42.5-103.654 0-13.308 3.423-29.846 3.423-16.539 8.731-27.539l-91.693-91.23ZM541-531Zm-112.539 56.539Z" />
               </svg>
             </button>
+            <!-- Medidor de fuerza de la contraseña -->
+            <div class="mt-2">
+              <div v-for="i in 4" :key="i" class="inline-block h-2 w-1/5 mr-1" :class="{
+        'bg-red-500': passwordStrength < i,
+        'bg-yellow-500': passwordStrength === i && i < 4,
+        'bg-green-500': passwordStrength >= i
+      }"></div>
+            </div>
+            <!-- Mensaje de validación de la contraseña -->
+            <p class="text-xs text-gray-600 mt-1" v-if="passwordRulesMessage">{{ passwordRulesMessage }}</p>
           </div>
         </div>
 
         <div class="flex flex-col space-y-4 pt-2 text-md">
           <div class="flex gap-2 justify-start">
-            <button @click="saveProfile"
-              class="px-4 py-2 bg-indigo-600 text-white rounded-md hover:bg-indigo-800 transition">
+            <button @click="saveProfile" :disabled="passwordStrength < 4"
+              class="px-4 py-2 bg-indigo-600 text-white rounded-md hover:bg-indigo-800 disabled:bg-indigo-400 transition">
               Guardar
             </button>
             <button @click="cancelEdit" class="px-4 py-2 text-gray-700">
               Cancelar
             </button>
           </div>
-          
-        <!-- Sección de aviso para eliminar cuenta -->
-        <div v-if="editing" class="mt-6 p-4 bg-red-100 rounded-lg">
-          <h3 class="text-sm font-semibold text-red-800 mb-2">
-            ¿Deseas eliminar tu cuenta?
-          </h3>
-          <p class="text-xs text-red-600">
-            Ten en cuenta que al eliminar tu cuenta, todos tus datos serán
-            borrados de forma <strong>permanente</strong>
-            y no podrás recuperarlos. Si estás seguro y comprendes las
-            consecuencias, puedes
-            <a
-              @click="confirmAccountDeletion"
-              class="text-red-600 hover:text-red-800 cursor-pointer"
-            >
-              eliminar tu cuenta permanentemente </a
-            >.
-          </p>
-        </div>
+
+          <!-- Sección de aviso para eliminar cuenta -->
+          <div v-if="editing" class="mt-6 p-4 bg-red-100 rounded-lg">
+            <h3 class="text-sm font-semibold text-red-800 mb-2">
+              ¿Deseas eliminar tu cuenta?
+            </h3>
+            <p class="text-xs text-red-600">
+              Ten en cuenta que al eliminar tu cuenta, todos tus datos serán
+              borrados de forma <strong>permanente</strong>
+              y no podrás recuperarlos. Si estás seguro y comprendes las
+              consecuencias, puedes
+              <a @click="confirmAccountDeletion" class="text-red-600 hover:text-red-800 cursor-pointer">
+                eliminar tu cuenta permanentemente </a>.
+            </p>
+          </div>
         </div>
       </div>
       <!-- Campos de visualización -->
@@ -183,7 +190,8 @@
           ? "Coursera"
           : course.courseType === "UTN"
             ? "UTN"
-            : "Udemy" }}
+            : "Udemy"
+      }}
                       {{ course.university }}
                     </h4>
                   </div>
@@ -206,12 +214,11 @@
           </button> -->
       </div>
     </div>
-
   </div>
 </template>
 
 <script setup>
-import { ref, reactive, onMounted, computed } from "vue";
+import { ref, reactive, onMounted, computed, watch } from "vue";
 import axios from "axios";
 import { useRouter } from "vue-router";
 import { getFromLocalStorage, clearLocalStorage } from "../utils/localStorage";
@@ -229,6 +236,8 @@ const showNotification = ref(false);
 const notificationMessage = ref("");
 const notificationType = ref("");
 const expandDescription = ref(false);
+const passwordStrength = ref(0);
+const passwordRulesMessage = ref('');
 
 const toggleDescription = () => {
   expandDescription.value = !expandDescription.value;
@@ -683,31 +692,35 @@ const saveProfile = async () => {
       Object.assign(userData.value, response.data.user);
 
       if (response.data.user.profilePicture) {
-        userData.value.profilePicture = `${import.meta.env.VITE_API_URL
-          }/users/uploads/${response.data.user.profilePicture
-          }?timestamp=${Date.now()}`;
+        userData.value.profilePicture = `${import.meta.env.VITE_API_URL}/users/uploads/${response.data.user.profilePicture}?timestamp=${Date.now()}`;
       }
 
       editing.value = false;
       newPassword.value = "";
       selectedProfilePicture.value = null;
 
-      // Opción A: Recargar datos de perfil después de 3 segundos
+      // Refrescar el perfil del usuario
       setTimeout(() => {
-        fetchUserProfile(); // Asegúrate de que esta función recargue adecuadamente los datos del perfil.
+        fetchUserProfile();
       }, 3000);
-
-      // Opción B: Recargar la página/ruta actual (comentada porque puede no ser la mejor UX)
-      // setTimeout(() => {
-      //   router.go();
-      // }, 3000);
     } else {
       throw new Error("No se recibieron los datos del usuario actualizados");
     }
   } catch (error) {
     console.error("Error al actualizar perfil:", error);
-    notificationMessage.value =
-      "Error al actualizar el perfil. Por favor, intente de nuevo.";
+    // Verificar si el error es por nombre de usuario o correo electrónico duplicado
+    if (error.response && error.response.data) {
+      const message = error.response.data.message;
+      if (message.includes('nombre de usuario')) {
+        notificationMessage.value = "El nombre de usuario ya está en uso. Por favor, elige otro.";
+      } else if (message.includes('correo electrónico')) {
+        notificationMessage.value = "El correo electrónico ya está en uso. Por favor, utiliza otro.";
+      } else {
+        notificationMessage.value = "Error al actualizar el perfil. Por favor, intenta de nuevo.";
+      }
+    } else {
+      notificationMessage.value = "Error al actualizar el perfil. Por favor, intenta de nuevo.";
+    }
     notificationType.value = "error";
   } finally {
     showNotification.value = true;
@@ -715,6 +728,26 @@ const saveProfile = async () => {
       showNotification.value = false;
     }, 3000);
   }
+};
+const evaluatePasswordStrength = () => {
+  const password = newPassword.value;
+  const lengthCriteria = password.length >= 8;
+  const lowerCaseCriteria = /[a-z]/.test(password);
+  const upperCaseCriteria = /[A-Z]/.test(password);
+  const numberCriteria = /[0-9]/.test(password);
+  const specialCharacterCriteria = /[^A-Za-z0-9]/.test(password);
+
+  const strength = [
+    lengthCriteria,
+    lowerCaseCriteria,
+    upperCaseCriteria,
+    numberCriteria,
+    specialCharacterCriteria,
+  ].filter(Boolean).length;
+
+  passwordStrength.value = strength;
+  // Actualizar el mensaje de reglas según la validación
+  passwordRulesMessage.value = strength < 3 ? "Use 8 o más caracteres con una mezcla de letras, números y símbolos." : "";
 };
 
 const handleProfilePictureChange = (event) => {
@@ -764,4 +797,7 @@ onMounted(() => {
     loadFavoriteCourses();
   }
 });
+
+watch(newPassword, evaluatePasswordStrength);
+
 </script>
