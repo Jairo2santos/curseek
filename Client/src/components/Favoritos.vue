@@ -76,7 +76,7 @@ const toggleFavorite = async () => {
     triggerNotification(`Curso ${action === 'add' ? 'agregado a' : 'eliminado de'} favoritos`, action === 'add' ? 'success' : 'error');
   } catch (error) {
     console.error('Error al actualizar favoritos:', error);
-    triggerNotification('No se pudo actualizar la lista de favoritos', 'error');
+    triggerNotification('No se pudo actualizar la lista de favoritos, recuerda iniciar sesión', 'error');
   }
 };
 

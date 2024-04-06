@@ -59,8 +59,11 @@
         </div>
   
         <!-- Paginación -->
-        <Paginacion :currentPage="currentPage" :totalPages="totalPages" @changePage="handlePageChange" />
-  
+        <Paginacion
+  :currentPage="currentPage"
+  :totalPages="totalPages"
+  @pageChange="handlePageChange"
+/>     
         <!-- Profesores -->
         <div class="mt-8">
           <h2 class="text-xl font-semibold mb-4">Profesores</h2>
@@ -85,24 +88,29 @@
   </template>
   
   <script setup>
-  import { ref, computed, onMounted } from 'vue';
-  import axios from 'axios';
-  import Paginacion from '../../../../components/Paginacion.vue';
-  import portadaImg from "../../../../assets/instituciones/universidad_de_los_andes_campus.jpg";
-  import SeoComponent from '../../../../components/SEO.vue';
-  import { useRoute } from 'vue-router';
+import { ref, computed, onMounted, watch } from 'vue';
+import axios from 'axios';
+import Paginacion from '../../../../components/Paginacion.vue';
+import portadaImg from "../../../../assets/instituciones/UAB_campus.png";
+import SeoComponent from '../../../../components/SEO.vue';
+import { useRoute, useRouter } from 'vue-router';
 
-  const route = useRoute();
-  const pageTitle = 'Cursos de la Universidad de los Andes Colombia';
-  const pageDescription = 'La Universidad de los Andes en Bogotá, Colombia, es una institución privada líder en educación superior en América Latina. Fundada en 1948, se enfoca en la excelencia académica, la investigación y el desarrollo social. Ofrece programas en diversas áreas y destaca en ingeniería, ciencias, salud, ciencias sociales, humanidades y administración. Uniandes es reconocida por su calidad académica, investigación avanzada y compromiso con la sociedad, con centros e institutos de investigación que abordan desafíos locales y globales. Su campus moderno fomenta la innovación y el aprendizaje colaborativo. Uniandes se destaca en rankings internacionales como una de las mejores universidades de la región.';
-  const courses = ref([]);
-  const professors = ref([]);
-  const currentPage = ref(1);
-  const totalPages = ref(1);
-  const totalCourses = ref(0);
-  const isLoading = ref(false);
-  axios.defaults.baseURL = import.meta.env.VITE_API_URL;
-  const isProfessorsExpanded = ref(false);
+const router = useRouter();
+const route = useRoute();
+const pageTitle = 'Cursos de la Universidad de Barcelona - Curseek';
+const pageDescription = 'La Universidad de Barcelona (UB), fundada en 1450, es una de las instituciones educativas más antiguas de España y se ha destacado por su excelencia en la enseñanza e investigación. Ofrece una amplia gama de grados, másteres y programas de doctorado en diversos campos del conocimiento, desde las humanidades hasta las ciencias naturales y la salud. Ubicada en Barcelona, ha sido fundamental en la vida intelectual y cultural de Cataluña y España, contribuyendo al avance del conocimiento y la innovación. Su campus histórico y modernas instalaciones ofrecen un entorno estimulante para estudiantes y académicos de todo el mundo.';
+const courses = ref([]);
+const professors = ref([]);
+const currentPage = ref(1);
+const totalPages = ref(1);
+const totalCourses = ref(0);
+const isLoading = ref(false);
+axios.defaults.baseURL = import.meta.env.VITE_API_URL;
+const isProfessorsExpanded = ref(false);
+const visibleCourses = ref(8);
+const displayedCourses = computed(() => courses.value.slice(0, visibleCourses.value));
+
+
   
 //SEO
 
@@ -141,6 +149,8 @@ const breadcrumbs = computed(() => {
   // Cargar cursos
   const loadCourses = async () => {
     isLoading.value = true;
+    const page = route.query.page ? parseInt(route.query.page, 10) : 1;
+
     try {
       const response = await axios.get(`/cursos/coursera/universidad/UDeLosAndesCo?page=${currentPage.value}`);
       courses.value = response.data.courses;
@@ -153,16 +163,21 @@ const breadcrumbs = computed(() => {
     }
   };
   
-  // Manejo del cambio de página
-  const handlePageChange = (newPage) => {
-    currentPage.value = newPage;
+// Manejo del cambio de página
+const handlePageChange = (newPage) => {
+  // Asegúrate de que newPage sea un número antes de actualizar la URL
+  const pageNumber = Number(newPage);
+  router.push({ query: { ...route.query, page: pageNumber.toString() } });
+};
+watch(() => route.query.page, (newPage, oldPage) => {
+  // Convertir la página nueva en número y luego asignar
+  const pageNumber = Number(newPage) || 1;
+  if (pageNumber !== currentPage.value) {
+    currentPage.value = pageNumber;
     loadCourses();
-  };
-  
-  // Mostrar una cantidad limitada de cursos
-  const visibleCourses = ref(8);
-  const displayedCourses = computed(() => courses.value.slice(0, visibleCourses.value));
-  
+  }
+}, { immediate: true });
+
   // Toggle para la visibilidad de los profesores
   const toggleProfessorsVisibility = () => {
     isProfessorsExpanded.value = !isProfessorsExpanded.value;

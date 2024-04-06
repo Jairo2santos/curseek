@@ -31,7 +31,7 @@ const checkRefererHeader = (req, res, next) => {
 // Configuración del limitador de tasa de peticiones
 const apiRateLimiter = rateLimit({
   windowMs: 15 * 60 * 1000, // 15 minutos
-  max: 100, // Limita cada IP a 100 solicitudes por ventana de tiempo (aquí, por 15 minutos)
+  max: 500, // Limita cada IP a 100 solicitudes por ventana de tiempo (aquí, por 15 minutos)
   standardHeaders: true, // Devuelve la información del límite de tasa en los headers `RateLimit-*`
   legacyHeaders: false, // Deshabilita los headers `X-RateLimit-*`
   message: "Demasiadas solicitudes desde esta IP, por favor intente de nuevo más tarde.",

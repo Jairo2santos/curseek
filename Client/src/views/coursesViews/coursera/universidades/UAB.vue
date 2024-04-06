@@ -60,8 +60,11 @@
       </div>
 
       <!-- Paginación -->
-      <Paginacion :currentPage="currentPage" :totalPages="totalPages" @changePage="handlePageChange" />
-
+      <Paginacion
+  :currentPage="currentPage"
+  :totalPages="totalPages"
+  @pageChange="handlePageChange"
+/>   
       <!-- Profesores -->
       <div class="mt-8">
         <h2 class="text-xl font-semibold mb-4">Profesores</h2>
@@ -86,14 +89,14 @@
 </template>
 
 <script setup>
-import { ref, computed, onMounted } from 'vue';
+import { ref, computed, onMounted, watch } from 'vue';
 import axios from 'axios';
 import Paginacion from '../../../../components/Paginacion.vue';
 import portadaImg from "../../../../assets/instituciones/UAB_campus.png";
 import SeoComponent from '../../../../components/SEO.vue';
-import { useRoute } from 'vue-router';
+import { useRoute, useRouter } from 'vue-router';
 
-
+const router = useRouter();
 const route = useRoute();
 const pageTitle = 'Cursos de la Universidad de Barcelona - Curseek';
 const pageDescription = 'La Universidad de Barcelona (UB), fundada en 1450, es una de las instituciones educativas más antiguas de España y se ha destacado por su excelencia en la enseñanza e investigación. Ofrece una amplia gama de grados, másteres y programas de doctorado en diversos campos del conocimiento, desde las humanidades hasta las ciencias naturales y la salud. Ubicada en Barcelona, ha sido fundamental en la vida intelectual y cultural de Cataluña y España, contribuyendo al avance del conocimiento y la innovación. Su campus histórico y modernas instalaciones ofrecen un entorno estimulante para estudiantes y académicos de todo el mundo.';
@@ -105,6 +108,8 @@ const totalCourses = ref(0);
 const isLoading = ref(false);
 axios.defaults.baseURL = import.meta.env.VITE_API_URL;
 const isProfessorsExpanded = ref(false);
+const visibleCourses = ref(8);
+const displayedCourses = computed(() => courses.value.slice(0, visibleCourses.value));
 
 
 //SEO
@@ -121,7 +126,7 @@ const breadcrumbs = computed(() => {
   return [
     { text: 'Inicio', to: '/', active: route.path === '/' },
     { text: 'Coursera', to: '/cursos/coursera', active: route.path === '/cursos/coursera' },
-    { text: 'Universidad de Barcelona', to: '/coursera/universidades/udb', active: route.path === '/coursera/universidades/udlac' },
+    { text: 'Universidad de Barcelona', to: '/coursera/universidades/uab', active: route.path === '/coursera/universidades/uab' },
     // La última ruta es siempre activa y no tiene enlace
   ];
 });
@@ -147,6 +152,7 @@ const loadProfessors = async () => {
 // Cargar cursos
 const loadCourses = async () => {
   isLoading.value = true;
+  const page = route.query.page ? parseInt(route.query.page, 10) : 1;
   try {
     const response = await axios.get(`/cursos/coursera/universidad/UAB?page=${currentPage.value}`);
     courses.value = response.data.courses;
@@ -161,13 +167,19 @@ const loadCourses = async () => {
 
 // Manejo del cambio de página
 const handlePageChange = (newPage) => {
-  currentPage.value = newPage;
-  loadCourses();
+  // Asegúrate de que newPage sea un número antes de actualizar la URL
+  const pageNumber = Number(newPage);
+  router.push({ query: { ...route.query, page: pageNumber.toString() } });
 };
-
+watch(() => route.query.page, (newPage, oldPage) => {
+  // Convertir la página nueva en número y luego asignar
+  const pageNumber = Number(newPage) || 1;
+  if (pageNumber !== currentPage.value) {
+    currentPage.value = pageNumber;
+    loadCourses();
+  }
+}, { immediate: true });
 // Mostrar una cantidad limitada de cursos
-const visibleCourses = ref(8);
-const displayedCourses = computed(() => courses.value.slice(0, visibleCourses.value));
 
 // Toggle para la visibilidad de los profesores
 const toggleProfessorsVisibility = () => {

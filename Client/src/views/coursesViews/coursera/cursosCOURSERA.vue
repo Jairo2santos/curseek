@@ -21,16 +21,13 @@
           <!-- <Filtros @filter-changed="handleFilterChange" /> -->
         </div>
         <!-- loader -->
-        <div v-if="isLoading" class="flex justify-center items-center h-64">
-          <div class="animate-spin rounded-full h-32 w-32 border-b-2 border-gray-900"></div>
-        </div>
-        <div v-else class="transition-opacity duration-500"
-          :class="{ 'opacity-0': isLoading, 'opacity-100': !isLoading }">
+        <transition name="fade" mode="out-in">
+            <div v-if="!isLoading">
           <div v-for="course in courses" :key="course.slug" class="mb-5">
 
             <!-- Tarjeta individual para cada curso -->
-            <div @click="navigateToCourse(course.slug)"
-              class="block max-w-full bg-white mt-2 rounded-lg p-4 hover:shadow-md transition cursor-pointer">
+            <article class="block max-w-full bg-white mt-2 rounded-lg p-4 hover:shadow-md transition cursor-pointer">
+               <router-link :to="`/cursos/detalles/${course.slug}`" class="flex flex-col md:flex-row items-start md:items-start">
               <div class="flex flex-col md:flex-row items-start md:items-start">
                 <div class="flex flex-col">
                   <div class="flex flex-col items-start">
@@ -50,7 +47,7 @@
                       <!-- Descripción del curso -->
                       <p class="text-sm text-gray-700 mr-2">
                         {{ course.shortDescription !== "No short description found" ? course.shortDescription :
-      course.longDescription.substring(0, 150) + "..." }}
+                course.longDescription.substring(0, 150) + "..." }}
                       </p>
                     </div>
                     <div class="items-end ml-auto rounded-lg md:ml-0">
@@ -58,16 +55,6 @@
                         <Favoritos :courseId="course._id" :courseType="'COURSERA'" :isFavorited="course.isFavorited" />
                       </button>
                     </div>
-                    <!-- <a href="/cursos/udemy">
-                          <button class="rounded-full border border-gray-300 hover:border-gray-500 transition pr-2">
-                            <div class="flex">
-                              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960" width="22">
-                                <path d="M460-300h40v-160h160v-40H500v-160h-40v160H300v40h160v160Zm20.134 180q-74.673 0-140.41-28.339-65.737-28.34-114.365-76.922-48.627-48.582-76.993-114.257Q120-405.194 120-479.866q0-74.673 28.339-140.41 28.34-65.737 76.922-114.365 48.582-48.627 114.257-76.993Q405.194-840 479.866-840q74.673 0 140.41 28.339 65.737 28.34 114.365 76.922 48.627 48.582 76.993 114.257Q840-554.806 840-480.134q0 74.673-28.339 140.41-28.34 65.737-76.922 114.365-48.582 48.627-114.257 76.993Q554.806-120 480.134-120ZM480-160q134 0 227-93t93-227q0-134-93-227t-227-93q-134 0-227 93t-93 227q0 134 93 227t227 93Zm0-320Z"/>
-                              </svg>
-                              <p class="text-sm">Agregar</p>
-                            </div>
-                          </button>
-                        </a> -->
                   </div>
                 </div>
 
@@ -122,22 +109,27 @@
                       </span>
                     </li>
                   </ul>
-                </div>
-              </div>
+                </div>  
             </div>
+          </router-link>
+         </article>
+         
           </div>
-
         </div>
+</transition>
         <!-- Paginación -->
-        <Paginacion :currentPage="currentPage" :totalPages="totalPages" @changePage="handlePageChange" />
-      </div>
+        <Paginacion
+  :currentPage="currentPage"
+  :totalPages="totalPages"
+  @pageChange="handlePageChange"
+/>      </div>
     </div>
   </div>
 </template>
 
 <script setup>
-import { ref, computed, onMounted} from "vue";
-import {  useRouter } from "vue-router";
+import { ref, computed, onMounted, watch, nextTick  } from "vue";
+import { useRouter, useRoute } from "vue-router";
 import axios from "axios";
 import Paginacion from "../../../components/Paginacion.vue";
 import Portada from "../../../components/Portada.vue";
@@ -158,6 +150,8 @@ const categories = ref([]);
 const isLoading = ref(false);
 axios.defaults.baseURL = import.meta.env.VITE_API_URL;
 const router = useRouter();
+const route = useRoute(); 
+const selectedCategories = ref([]);
 
 //SEO
 
@@ -168,32 +162,35 @@ const breadcrumbs = computed(() => {
   // Aquí puedes construir la lógica para tus breadcrumbs basada en route.path o route.params
   return [
     { text: 'Inicio', to: '/', active: router.path === '/' },
-    { text: 'Coursera', to: '/cursos/udemy', active: router.path === '/cursos/udemy' },
+    { text: 'Coursera', to: '/cursos/coursera', active: router.path === '/cursos/coursera' },
     // La última ruta es siempre activa y no tiene enlace
   ];
 });
 
-
-const loadCourses = async (
-  page = currentPage.value,
-  selectedCategories = []
-) => {
+const loadCourses = async () => {
   isLoading.value = true;
-  let queryParams = `page=${page}`;
-  if (selectedCategories.length > 0) {
-    queryParams += `&category=${encodeURIComponent(selectedCategories[0])}`;
-  }
+  // Obtiene la página actual y la categoría desde la URL
+  let page = Number(route.query.page) || 1;
+  let category = route.query.categories || '';
+
   try {
-    const response = await axios.get(`/cursos/coursera?${queryParams}`);
-    courses.value = response.data.courses;
-    totalPages.value = response.data.totalPages || 1;
-    totalCourses.value = response.data.totalCourses || 0;
+    // Construye los parámetros de consulta basados en la URL
+    let queryParams = `page=${page}`;
+    if (category) {
+      queryParams += `&category=${encodeURIComponent(category)}`;
+    }
+    const { data } = await axios.get(`/cursos/coursera?${queryParams}`);
+    await nextTick();
+    courses.value = data.courses;
+    totalPages.value = data.totalPages || 1;
+    totalCourses.value = data.totalCourses || 0;
   } catch (error) {
     console.error("Error al obtener los cursos de Coursera:", error);
   } finally {
     isLoading.value = false;
   }
 };
+
 
 const loadCategories = async () => {
   try {
@@ -211,19 +208,30 @@ const navigateToCourse = (courseSlug) => {
   router.push({ name: "DetalleCursoCoursera", params: { slug: courseSlug } });
 };
 const handlePageChange = (newPage) => {
-  currentPage.value = newPage;
-  loadCourses(currentPage.value);
+  const currentQuery = { ...route.query, page: newPage };
+  // Aquí, asegúrate de convertir newPage a un string si es necesario o simplemente pásalo tal cual si ya es un string
+  router.push({ name: route.name, query: currentQuery });
 };
-const handleCategoryFilter = async (selectedCategory) => {
-  console.log("Filtrando por la categoría:", selectedCategory);
-  currentPage.value = 1;
-  await loadCourses(currentPage.value, selectedCategory);
+// Manejar filtro por categoría
+const handleCategoryFilter = (category) => {
+  router.push({ name: 'CursosCoursera', query: { categories: category, page: 1 } });
 };
-//loader
+
+// Observar cambios en la ruta para recargar cursos
+watch([() => route.query.page, () => route.query.categories], () => {
+  currentPage.value = Number(route.query.page) || 1;
+  loadCourses(); 
+}, { immediate: true });
 // Montaje
 onMounted(() => {
-  loadCourses(currentPage.value);
   loadCategories();
-  console.log(courses.value);
 });
 </script>
+<style>
+.fade-enter-active, .fade-leave-active {
+  transition: opacity 0.4s ease !important ; 
+}
+.fade-enter, .fade-leave-to {
+  opacity: 0 !important;
+}
+</style>

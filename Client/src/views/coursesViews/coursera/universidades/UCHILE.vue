@@ -60,8 +60,11 @@
         </div>
   
         <!-- Paginación -->
-        <Paginacion :currentPage="currentPage" :totalPages="totalPages" @changePage="handlePageChange" />
-  
+        <Paginacion
+  :currentPage="currentPage"
+  :totalPages="totalPages"
+  @pageChange="handlePageChange"
+/>     
         <!-- Profesores -->
         <div class="mt-8">
           <h2 class="text-xl font-semibold mb-4">Profesores</h2>
@@ -86,13 +89,14 @@
   </template>
   
   <script setup>
-  import { ref, computed, onMounted } from 'vue';
+import { ref, computed, onMounted, watch } from 'vue';
   import axios from 'axios';
   import Paginacion from '../../../../components/Paginacion.vue';
   import portadaImg from "../../../../assets/instituciones/uchile_campus.avif";
   import SeoComponent from '../../../../components/SEO.vue';
-  import { useRoute } from 'vue-router';
+  import { useRoute, useRouter } from 'vue-router';
 
+const router = useRouter();
 const route = useRoute();
   const pageTitle = 'Cursos de la Universidad de Chile - Curseek';
   const pageDescription = 'La Universidad de Chile es una de las instituciones de educación superior más antiguas y prestigiosas de América Latina. Fundada el 19 de noviembre de 1842, esta universidad pública se ha destacado por su papel fundamental en la formación académica, científica y cultural de Chile. A lo largo de su historia, ha sido cuna de importantes figuras en el ámbito político, literario, científico y artístico del país y de la región. La universidad ofrece una amplia gama de programas de pregrado, posgrado y educación continua en diversas áreas del conocimiento, incluyendo las humanidades, las ciencias sociales, las ciencias naturales, la salud, las artes, y la ingeniería. Su compromiso con la excelencia académica y la investigación la ha posicionado como líder en la producción de conocimiento en Chile y en Latinoamérica.';
@@ -105,6 +109,9 @@ const route = useRoute();
   axios.defaults.baseURL = import.meta.env.VITE_API_URL;
   const isProfessorsExpanded = ref(false);
   
+  // Mostrar una cantidad limitada de cursos
+  const visibleCourses = ref(8);
+  const displayedCourses = computed(() => courses.value.slice(0, visibleCourses.value));
 
 //SEO
 
@@ -143,6 +150,7 @@ const breadcrumbs = computed(() => {
   // Cargar cursos
   const loadCourses = async () => {
     isLoading.value = true;
+    const page = route.query.page ? parseInt(route.query.page, 10) : 1;
     try {
       const response = await axios.get(`/cursos/coursera/universidad/UChile?page=${currentPage.value}`);
       courses.value = response.data.courses;
@@ -157,13 +165,20 @@ const breadcrumbs = computed(() => {
   
   // Manejo del cambio de página
   const handlePageChange = (newPage) => {
-    currentPage.value = newPage;
+  // Asegúrate de que newPage sea un número antes de actualizar la URL
+  const pageNumber = Number(newPage);
+  router.push({ query: { ...route.query, page: pageNumber.toString() } });
+};
+
+watch(() => route.query.page, (newPage, oldPage) => {
+  // Convertir la página nueva en número y luego asignar
+  const pageNumber = Number(newPage) || 1;
+  if (pageNumber !== currentPage.value) {
+    currentPage.value = pageNumber;
     loadCourses();
-  };
-  
-  // Mostrar una cantidad limitada de cursos
-  const visibleCourses = ref(8);
-  const displayedCourses = computed(() => courses.value.slice(0, visibleCourses.value));
+  }
+}, { immediate: true });
+
   
   // Toggle para la visibilidad de los profesores
   const toggleProfessorsVisibility = () => {
