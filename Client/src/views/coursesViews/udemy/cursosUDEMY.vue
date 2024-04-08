@@ -28,7 +28,7 @@
                   <div class="flex flex-col">
                     <div class="flex flex-col items-start">
                       <!-- Sección 1: Imagen y Título -->
-                      <router-link :to="`/cursos/detalles/${course.slug}`"
+                      <router-link :to="`/udemy/cursos/${course.slug}`"
                         class="flex flex-col mb-2 items-center md:flex-row">
                         <!-- Imagen del curso -->
                         <img :src="course.image_480x270" alt=""

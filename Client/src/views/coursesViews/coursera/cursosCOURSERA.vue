@@ -27,7 +27,7 @@
 
             <!-- Tarjeta individual para cada curso -->
             <article class="block max-w-full bg-white mt-2 rounded-lg p-4 hover:shadow-md transition cursor-pointer">
-               <router-link :to="`/cursos/detalles/${course.slug}`" class="flex flex-col md:flex-row items-start md:items-start">
+               <router-link :to="`/coursera/cursos/${course.slug}`" class="flex flex-col md:flex-row items-start md:items-start">
               <div class="flex flex-col md:flex-row items-start md:items-start">
                 <div class="flex flex-col">
                   <div class="flex flex-col items-start">
