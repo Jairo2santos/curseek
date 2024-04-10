@@ -93,7 +93,7 @@
               datos serán borrados de forma permanente y no podrás recuperarlos</strong>. Si estás seguro y comprendes las
               consecuencias, puedes proceder a eliminar tu cuenta de manera permanente
               <a @click="confirmAccountDeletion" class="hover:text-red-800 hover:underline cursor-pointer">
-                haciendo clic aquí.</a>
+                haciendo click aquí.</a>
             </p>
           </div>
         </div>

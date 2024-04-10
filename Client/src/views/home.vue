@@ -15,7 +15,7 @@
         <!-- Título -->
         <h1 :class="{ 'blurred-background': isInputClicked }"
           class="text-left font-semibold text-3xl md:text-4xl text-black pb-3">
-         CurSeek un buscador de cursos gratuito 
+            Encuentra tu curso ideal de forma gratuita con CurSeek
         </h1>
         <!-- Campo de búsqueda -->
         <div class="max-w-xl m-0 p-0">
