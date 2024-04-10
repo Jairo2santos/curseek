@@ -147,12 +147,12 @@
     <!-- El curso que quieras, cuando quieras -->
     <div :class="{ 'blurred-background': isInputClicked }"
       class="block flex-col md:flex-row max-w-screen-full bg-indigo-100">
-      <h2 class="text-center font-semibold text-3xl text-indigo-900 py-12">
+      <h2 class="text-center font-semibold text-3xl text-indigo-900 pt-12 pb-8">
         El curso que quieras, cuando quieras
       </h2>
-      <p class=" text-center  m-auto w-8-4 py-2 text-sm font-semibold text-indigo-600 border-b">
- 
-Selecciona tu plataforma preferida para buscar tu curso y compara entre la amplia variedad de proveedores e instituciones que ofrecemos.</p>
+      <p class="text-center text-lg pb-6 md:mx-64 mx-12">
+        Selecciona tu plataforma preferida para buscar tu curso y compara entre la amplia variedad de proveedores e instituciones que ofrecemos.
+      </p> 
       <img src="../assets/banner-curseek-2.png" alt="" class="object-cover md:w-full" />
 
       <!-- Lista de Proveedores y Universidades -->
