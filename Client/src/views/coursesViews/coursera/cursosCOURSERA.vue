@@ -27,21 +27,24 @@
 
             <!-- Tarjeta individual para cada curso -->
             <article class="block max-w-full bg-white mt-2 rounded-lg p-4 hover:shadow-md transition cursor-pointer">
-               <router-link :to="`/coursera/cursos/${course.slug}`" class="flex flex-col md:flex-row items-start md:items-start">
+               
               <div class="flex flex-col md:flex-row items-start md:items-start">
                 <div class="flex flex-col">
                   <div class="flex flex-col items-start">
                     <!-- Sección 1: Imagen y Título -->
                     <div class="flex flex-col mb-2 items-center md:flex-row">
+                      <router-link :to="`/coursera/cursos/${course.slug}`" class="flex flex-col md:flex-row items-start md:items-start">
                       <!-- Imagen del curso -->
                         <img :src="course.imgUrl" alt="" 
                         class="md:w-28 md:h-16 w-full h-32 mx-auto object-cover rounded mr-2" />
                       <!-- Título del curso -->
-                      <h2 class="text-lg mt-2 md:mt-0 font-semibold hover:underline">
+                         <h2 class="text-lg mt-2 md:mt-0 font-semibold hover:underline">
                         {{ course.title || 'Aprende con este Curso de Coursera' }}
-                      </h2>
-                    </div>
+                          </h2>
+                        </router-link>
 
+                    </div>
+              
                     <!-- Sección 2: Descripción -->
                     <div class="mb-2 md:mb-1">
                       <!-- Descripción del curso -->
@@ -111,7 +114,6 @@
                   </ul>
                 </div>  
             </div>
-          </router-link>
          </article>
          
           </div>
