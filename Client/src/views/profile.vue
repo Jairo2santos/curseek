@@ -85,16 +85,15 @@
 
           <!-- Sección de aviso para eliminar cuenta -->
           <div v-if="editing" class="mt-6 p-4 bg-red-100 rounded-lg">
-            <h3 class="text-sm font-semibold text-red-800 mb-2">
+            <h3 class="text-sm font-semibold text-red-600 mb-2">
               ¿Deseas eliminar tu cuenta?
             </h3>
             <p class="text-xs text-red-600">
-              Ten en cuenta que al eliminar tu cuenta, todos tus datos serán
-              borrados de forma <strong>permanente</strong>
-              y no podrás recuperarlos. Si estás seguro y comprendes las
-              consecuencias, puedes
-              <a @click="confirmAccountDeletion" class="text-red-600 hover:text-red-800 cursor-pointer">
-                eliminar tu cuenta permanentemente </a>.
+              Si has decidido desvincularte de nuestra plataforma, ten en cuenta que al eliminar tu cuenta, <strong>todos tus
+              datos serán borrados de forma permanente y no podrás recuperarlos</strong>. Si estás seguro y comprendes las
+              consecuencias, puedes proceder a eliminar tu cuenta de manera permanente
+              <a @click="confirmAccountDeletion" class="hover:text-red-800 hover:underline cursor-pointer">
+                haciendo click aquí.</a>
             </p>
           </div>
         </div>
