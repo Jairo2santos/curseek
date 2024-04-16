@@ -9,14 +9,18 @@
     "preview": "vite preview",
     "build:client": "vite build --outDir dist/client --ssrManifest",
     "build:server": "vite build --ssr src/entry-server.js --outDir dist/server",
-    "serve": "node server"
+    "serve": "cross-env NODE_ENV=development node server",
+    "serve:prod": "cross-env NODE_ENV=production node server"
   },
   "dependencies": {
     "@tailwindcss/typography": "^0.5.12",
     "@unhead/ssr": "^1.9.1",
     "@vueuse/head": "^2.0.0",
     "axios": "^1.5.1",
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.5",
     "express": "^4.19.1",
+    "http-proxy-middleware": "^3.0.0",
     "jwt-decode": "^4.0.0",
     "mavon-editor": "^2.10.4",
     "quill": "^2.0.0-rc.4",
@@ -30,6 +34,7 @@
     "@vitejs/plugin-vue": "^4.2.3",
     "autoprefixer": "^10.4.16",
     "concurrently": "^8.2.2",
+    "cross-env": "^7.0.3",
     "postcss": "^8.4.31",
     "tailwindcss": "^3.3.3",
     "vite": "^5.2.6"

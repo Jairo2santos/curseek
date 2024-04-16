@@ -132,13 +132,13 @@
 <script setup>
 import { ref, computed, onMounted, watch, nextTick  } from "vue";
 import { useRouter, useRoute } from "vue-router";
-import axios from "axios";
 import Paginacion from "../../../components/Paginacion.vue";
 import Portada from "../../../components/Portada.vue";
 import Sidebar from "../../../components/Sidebar.vue";
 import Favoritos from "../../../components/Favoritos.vue";
 import logoCoursera from "../../../assets/Coursera-Logo.png";
 import SeoComponent from '../../../components/SEO.vue';
+import axios from '../../../axiosConfig.js' 
 
 // Estado y métodos actualizados para manejar los datos de Coursera
 const pageTitle = "Cursos de Coursera";
@@ -150,7 +150,7 @@ const totalPages = ref(1);
 const totalCourses = ref(0);
 const categories = ref([]);
 const isLoading = ref(false);
-axios.defaults.baseURL = import.meta.env.VITE_API_URL;
+
 const router = useRouter();
 const route = useRoute(); 
 const selectedCategories = ref([]);

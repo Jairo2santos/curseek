@@ -12,21 +12,20 @@ const rateLimit = require('express-rate-limit');
 // Middleware para verificar el encabezado Referer
 const checkRefererHeader = (req, res, next) => {
   const referer = req.get('Referer');
-  
-  // Lista de dominios permitidos
+  console.log('Received Referer:', referer);  // Log the Referer header
   const allowedDomains = [
     'http://localhost:5173',
     'https://curseek.com',
-    'http://localhost:3000', 
+    'http://localhost:2222', 
   ];
 
-  // Verificar si el dominio del encabezado Referer está en la lista de permitidos
   if (referer && allowedDomains.some(domain => referer.startsWith(domain))) {
-    next(); // Si coincide, continuar con la siguiente función de middleware
+    next();
   } else {
     res.status(403).send('Acceso denegado. Origen no permitido.');
   }
 };
+
 
 // Configuración del limitador de tasa de peticiones
 const apiRateLimiter = rateLimit({
@@ -38,15 +37,23 @@ const apiRateLimiter = rateLimit({
 });
 
 // Middleware cors
-app.use(cors({
-  origin: [
-    'http://localhost:5173', // El cliente de desarrollo de Vite
-    'http://localhost:3000', // El servidor SSR
-    'https://curseek.com', // El dominio de producción
-  ],
-  methods: ['GET', 'POST', 'PUT', 'DELETE'],
+const whitelist = ['http://localhost:2222', 'https://curseek.com', 'http://localhost:5173'];
+const corsOptions = {
+  origin: function (origin, callback) {
+    if (whitelist.indexOf(origin) !== -1 || !origin) {
+      callback(null, true);
+    } else {
+      callback(new Error('Not allowed by CORS'));
+    }
+  },
   credentials: true,
-}));
+  methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
+  allowedHeaders: ['Content-Type', 'Authorization', 'X-Requested-With', 'Accept', 'Origin', 'User-Agent']
+};
+
+app.use(cors(corsOptions));
+
+
 app.use('/api/users/uploads', (req, res, next) => {
   res.header('Cross-Origin-Resource-Policy', 'cross-origin');
   next();
@@ -74,6 +81,8 @@ db.once('open', () => {
 
 // Manejador de errores globales
 app.use((error, req, res, next) => {
+  console.log('Origin:', req.origin);
+  console.log('Referer:', req.get('Referer'));
   console.error(error.message);
   res.status(500).send("Error interno del servidor");
 });
