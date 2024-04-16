@@ -130,15 +130,15 @@
 <script setup>
 import { useRoute, useRouter } from 'vue-router';
 import { ref, onMounted, computed, watch, nextTick } from "vue";
-import axios from "axios";
 import Paginacion from "../../../components/Paginacion.vue";
 import Portada from "../../../components/Portada.vue";
 import Sidebar from "../../../components/Sidebar.vue";
 import Favoritos from "../../../components/Favoritos.vue";
 import SeoComponent from '../../../components/SEO.vue';
+import axios from '../../../axiosConfig.js' 
 
 
-axios.defaults.baseURL = import.meta.env.VITE_API_URL;
+
 
 // Estado
 const route = useRoute();
