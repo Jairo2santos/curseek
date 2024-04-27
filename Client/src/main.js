@@ -3,7 +3,7 @@ import { createApp } from 'vue';
 import { createHead } from '@vueuse/head';
 import App from './App.vue';
 import router from './router/router.js';
-import axios from 'axios';
+import axios from './axiosConfig.js' 
 
 axios.interceptors.response.use(
     response => response,

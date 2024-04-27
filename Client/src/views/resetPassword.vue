@@ -30,7 +30,7 @@
 </template>
 <script setup>
 import { ref } from 'vue';
-import axios from 'axios';
+import axios from '../axiosConfig.js' 
 import Notificaciones from '../components/Notificaciones.vue';
 import { useRoute, useRouter } from 'vue-router';
 
@@ -43,7 +43,7 @@ const confirmPassword = ref('');
 const showNotification = ref(false);
 const notificationMessage = ref('');
 const notificationType = ref('');
-axios.defaults.baseURL = import.meta.env.VITE_API_URL;
+
 
 const submitNewPassword = async () => {
     if (newPassword.value !== confirmPassword.value) {

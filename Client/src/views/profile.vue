@@ -186,7 +186,7 @@
 
 <script setup>
 import { ref, reactive, onMounted, computed, watch } from "vue";
-import axios from "axios";
+import axios from '../axiosConfig.js' 
 import { useRouter } from "vue-router";
 import { getFromLocalStorage, clearLocalStorage } from "../utils/localStorage";
 
@@ -415,8 +415,7 @@ const checkAuth = async () => {
   const token = getFromLocalStorage("token");
   if (token) {
     try {
-      const response = await axios.post(
-        `${import.meta.env.VITE_API_URL}/users/auth/validate`,
+      const response = await axios.post(`/users/auth/validate`,
         {},
         {
           headers: {
@@ -457,7 +456,7 @@ const fetchUserProfile = async () => {
   }
   try {
     const response = await axios.get(
-      `${import.meta.env.VITE_API_URL}/users/profile/id/${userId.value}`,
+      `/users/profile/id/${userId.value}`,
       {
         headers: {
           Authorization: `Bearer ${getFromLocalStorage("token")}`,
@@ -479,7 +478,7 @@ const loadFavoriteCourses = async () => {
   }
   try {
     const response = await axios.get(
-      `${import.meta.env.VITE_API_URL}/users/favorites/${userId.value}`,
+      `/users/favorites/${userId.value}`,
       {
         headers: {
           Authorization: `Bearer ${getFromLocalStorage("token")}`,
@@ -552,7 +551,7 @@ const removeFromFavorites = async (courseId) => {
 
   try {
     await axios.post(
-      `${import.meta.env.VITE_API_URL}/users/favorites/remove`,
+      `/users/favorites/remove`,
       {
         userId: userId.value,
         courseId,
@@ -601,7 +600,7 @@ const confirmAccountDeletion = () => {
 const deleteAccount = async () => {
   try {
     const response = await axios.delete(
-      `${import.meta.env.VITE_API_URL}/users/profile/${userId.value}`,
+      `/users/profile/${userId.value}`,
       {
         headers: {
           Authorization: `Bearer ${getFromLocalStorage("token")}`,
@@ -639,7 +638,7 @@ const saveProfile = async () => {
 
   try {
     const response = await axios.put(
-      `${import.meta.env.VITE_API_URL}/users/profile/${userId.value}`,
+      `/users/profile/${userId.value}`,
       formData,
       {
         headers: {

@@ -30,7 +30,7 @@
 <script setup>
 import { ref, onMounted } from 'vue';
 import { useRoute, useRouter } from 'vue-router';
-import axios from 'axios';
+import axios from '../../axiosConfig.js' 
 import Notificacion from '../../components/Notificaciones.vue';
 import { getFromLocalStorage} from '../../utils/localStorage';
 import 'quill/dist/quill.snow.css';

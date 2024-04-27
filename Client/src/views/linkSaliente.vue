@@ -20,7 +20,7 @@ const externalUrl = ref('');
 
 onMounted(() => {
   // Decodifica el URL recibido como parámetro
-  externalUrl.value = decodeURIComponent(route.query.url || 'https://www.ejemplo.com');
+  externalUrl.value = decodeURIComponent(route.query.url);
   
   setTimeout(() => {
     // Redirige al usuario al enlace externo

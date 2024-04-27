@@ -293,7 +293,7 @@
 
 <script setup>
 import { ref, onMounted, computed, watch } from 'vue';
-import axios from 'axios';
+import axios from '../../../axiosConfig.js' 
 import { useRouter, useRoute } from 'vue-router';
 import Favoritos from "../../../components/Favoritos.vue";
 import { useHead } from '@vueuse/head';
@@ -330,7 +330,7 @@ const breadcrumbs = computed(() => {
 onMounted(async () => {
   const courseSlug = route.params.slug;
   try {
-    const response = await axios.get(`${import.meta.env.VITE_API_URL}/cursos/utn/${courseSlug}`);
+    const response = await axios.get(`/cursos/utn/${courseSlug}`);
     if (response.data) {
       course.value = response.data;
       updateSEO();  

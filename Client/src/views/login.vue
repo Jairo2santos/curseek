@@ -40,7 +40,7 @@
 </template>
 <script setup>
 import { ref } from 'vue';
-import axios from 'axios';
+import axios from '../axiosConfig.js' 
 import { useRouter } from 'vue-router';
 import Notificationes from '../components/Notificaciones.vue';
 import { setToLocalStorage } from '../utils/localStorage'; // Importa la función desde tu archivo de utilidades
@@ -55,7 +55,7 @@ const notificationType = ref('');
 
 const login = async () => {
   try {
-    const response = await axios.post(`${import.meta.env.VITE_API_URL}/users/login`, {
+    const response = await axios.post(`/users/login`, {
       login: loginInput.value,
       password: password.value,
     });

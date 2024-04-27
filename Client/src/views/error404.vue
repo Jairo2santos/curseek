@@ -79,7 +79,7 @@
 
 <script setup>
 import { ref } from "vue";
-import axios from "axios";
+import axios from '../axiosConfig.js' 
 import { useRouter } from "vue-router";
 const router = useRouter();
 const query = ref("");
@@ -87,12 +87,12 @@ const courses = ref([]);
 const isInputClicked = ref(false);
 const limitResults = ref(true);
 
-const baseURL = import.meta.env.VITE_API_URL;
+
 
 const search = async () => {
   try {
     const response = await axios.get(
-      `${baseURL}/cursos/search?q=${query.value
+      `/cursos/search?q=${query.value
       }&all=${!limitResults.value}`
     );
     courses.value = response.data;

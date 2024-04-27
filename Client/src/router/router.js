@@ -1,31 +1,40 @@
 // Importaciones agrupadas
 import { createRouter as _createRouter, createWebHistory, createMemoryHistory } from 'vue-router';
 
+// Importaciones de vistas generales
 import Home from '../views/home.vue';
 import Nosotros from '../views/nosotros.vue';
 import Login from '../views/login.vue';
 import Profile from '../views/profile.vue';
 import SignUp from '../views/signUp.vue';
 import Error404 from '../views/error404.vue';
-import PasswordRecovery from '../views/passwordRecovery.vue';
-import ResetPassword from '../views/resetPassword.vue';
-import CursosUTN from '../views/coursesViews/utn/cursosUTN.vue';
-import CursosUDEMY from '../views/coursesViews/udemy/cursosUDEMY.vue';
-import CursosCoursera from '../views/coursesViews/coursera/cursosCOURSERA.vue';
-import DetalleCursoUTN from '../views/coursesViews/utn/detalleCursoUTN.vue';
-import DetalleCursoUdemy from '../views/coursesViews/udemy/detalleCursoUDEMY.vue';
-import DetalleCursoCoursera from '../views/coursesViews/coursera/detalleCursoCoursera.vue';
-import UAB from '../views/coursesViews/coursera/universidades/UAB.vue';
-import UDLAC from '../views/coursesViews/coursera/universidades/UDLAC.vue';
-import UPCHILE from '../views/coursesViews/coursera/universidades/UPCHILE.vue';
-import UCHILE from '../views/coursesViews/coursera/universidades/UCHILE.vue';
-import UNAM from '../views/coursesViews/coursera/universidades/UNAM.vue';
-import BlogList from '../views/blogs/blogList.vue';
-import BlogDetail from '../views/blogs/blogDetails.vue';
-import BlogForm from '../views/blogs/blogForm.vue';
-import LinkSaliente from '../views/linkSaliente.vue';
-
 import { handleExternalLink } from '../middlewares/redirectMiddleware';
+
+//recuperar pass
+const PasswordRecovery = () => import('../views/passwordRecovery.vue');
+const ResetPassword = () => import('../views/resetPassword.vue');
+
+// Importaciones de cursos (Lazy loading)
+const CursosUTN = () => import('../views/coursesViews/utn/cursosUTN.vue');
+const CursosUDEMY = () => import('../views/coursesViews/udemy/cursosUDEMY.vue');
+const CursosCoursera = () => import('../views/coursesViews/coursera/cursosCOURSERA.vue');
+
+// Importaciones de detalles de cursos (Lazy loading)
+const DetalleCursoUTN = () => import('../views/coursesViews/utn/detalleCursoUTN.vue');
+const DetalleCursoUdemy = () => import('../views/coursesViews/udemy/detalleCursoUDEMY.vue');
+const DetalleCursoCoursera = () => import('../views/coursesViews/coursera/detalleCursoCoursera.vue');
+
+// Importaciones de universidades (Lazy loading)
+const UAB = () => import('../views/coursesViews/coursera/universidades/UAB.vue');
+const UDLAC = () => import('../views/coursesViews/coursera/universidades/UDLAC.vue');
+const UPCHILE = () => import('../views/coursesViews/coursera/universidades/UPCHILE.vue');
+const UCHILE = () => import('../views/coursesViews/coursera/universidades/UCHILE.vue');
+const UNAM = () => import('../views/coursesViews/coursera/universidades/UNAM.vue');
+
+// Blogs (Aplicando Lazy Loading)
+const BlogList = () => import('../views/blogs/blogList.vue');
+const BlogDetail = () => import('../views/blogs/blogDetails.vue');
+const BlogForm = () => import('../views/blogs/blogForm.vue');
 
 export default function createMyRouter(isServer) {
   console.log('Creating router. Is server:', isServer);
@@ -54,7 +63,7 @@ const routes = [
   { path: '/coursera/universidades/unam', name: 'UNAM', component: UNAM, props: true, meta: { title: 'Universidad Nacional Autónoma de México - Curseek' } },
   { path: '/password-recovery', name: 'PasswordRecovery', component: PasswordRecovery, meta: { title: 'Recuperación de Contraseña - Curseek' } },
   { path: '/reset-password', name: 'ResetPassword ', component: ResetPassword,  meta: { title: 'Reseteo de Contraseña - Curseek' } },
-  { path: '/link-saliente', name: 'LinkSaliente', component: LinkSaliente, meta: { title: 'Saliendo de Curseek - Curseek' } },
+  { path: '/link-saliente', name: 'LinkSaliente',  component: () => import('../views/linkSaliente.vue'),  meta: { title: 'Saliendo de Curseek - Curseek' } },
   { path: '/:pathMatch(.*)*', name: 'Error404', component: Error404, meta: { title: 'Página no encontrada - Curseek' } },
 ];
 
@@ -67,8 +76,6 @@ router.beforeEach((to, from, next) => {
     next();
   }
 });
-
-
 
 return router;
 }

@@ -25,7 +25,7 @@
 
 <script setup>
 import { ref } from 'vue';
-import axios from 'axios';
+import axios from '../../src/axiosConfig.js' 
 import { getFromLocalStorage } from '../utils/localStorage'; // Asegúrate de que la ruta sea correcta
 
 const props = defineProps({
@@ -63,7 +63,7 @@ const toggleFavorite = async () => {
       return;
     }
     const action = isFavorited.value ? 'remove' : 'add';
-    const response = await axios.post(`${import.meta.env.VITE_API_URL}/users/favorites/${action}`, {
+    const response = await axios.post(`/users/favorites/${action}`, {
       userId,
       courseId: props.courseId,
       courseType: props.courseType

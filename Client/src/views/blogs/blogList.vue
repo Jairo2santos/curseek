@@ -1,4 +1,9 @@
 <template>
+      <seo-component
+      :title="pageTitleSEO"
+      :description="pageDescriptionSEO"
+      :breadcrumbs="breadcrumbs"
+    />
   <div class="flex-col max-w-screen-full md:flex-row mx-auto md:px-40 bg-gray-100 pb-12">
     <Notificacion v-if="showNotification" :message="notificationMessage" :type="notificationType"
       @close="showNotification = false" />
@@ -88,7 +93,7 @@
 </template>
 
 <script setup>
-import axios from 'axios';
+import axios from '../../axiosConfig.js' 
 import { onMounted, ref , computed} from 'vue';
 import { useRouter } from 'vue-router';
 import Notificacion from '../../components/Notificaciones.vue';

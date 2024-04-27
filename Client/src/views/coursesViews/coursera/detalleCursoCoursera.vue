@@ -275,7 +275,7 @@
 
 <script setup>
 import { ref, computed, onMounted, watch } from "vue";
-import axios from "axios";
+import axios from '../../../axiosConfig.js' 
 import { useRoute, useRouter } from "vue-router";
 import Favoritos from "../../../components/Favoritos.vue";
 import SeoComponent from "../../../components/SEO.vue";
@@ -356,7 +356,7 @@ onMounted(async () => {
   const courseSlug = route.params.slug;
   try {
     const response = await axios.get(
-      `${import.meta.env.VITE_API_URL}/cursos/coursera/${courseSlug}`
+      `/cursos/coursera/${courseSlug}`
     );
     if (response.data) {
       course.value = response.data;

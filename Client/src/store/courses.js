@@ -1,6 +1,6 @@
 // src/store/courses.js
 import { defineStore } from 'pinia';
-import axios from '../axiosConfig';
+import axios from '../axiosConfig.js';
 
 export const useCoursesStore = defineStore('courses', {
   state: () => ({

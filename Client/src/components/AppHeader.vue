@@ -384,7 +384,7 @@
 
 <script>
 import { ref, watch, onMounted } from 'vue';
-import axios from 'axios';
+import axios from '../../src/axiosConfig.js' 
 import { useRouter, useRoute } from 'vue-router';
 import { getFromLocalStorage } from '../utils/localStorage'; // Asegúrate de que la ruta sea correcta
 
@@ -410,7 +410,7 @@ export default {
     const search = async () => {
       try {
         const response = await axios.get(
-          `${import.meta.env.VITE_API_URL}/cursos/search?q=${query.value}&all=${!limitResults.value}`
+          `/cursos/search?q=${query.value}&all=${!limitResults.value}`
         );
         courses.value = response.data;
       } catch (error) {

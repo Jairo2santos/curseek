@@ -130,7 +130,7 @@
 
 <script setup>
 import { ref } from 'vue';
-import axios from 'axios';
+import axios from '../axiosConfig.js' 
 import { useRouter } from 'vue-router';
 
 const router = useRouter();
@@ -220,7 +220,7 @@ const registerUser = async () => {
   }
 
   try {
-    await axios.post(`${import.meta.env.VITE_API_URL}/users/register`, formData, {
+    await axios.post(`/users/register`, formData, {
       headers: {
         'Content-Type': 'multipart/form-data',
       },

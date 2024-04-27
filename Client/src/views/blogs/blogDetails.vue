@@ -45,7 +45,7 @@
 
 
 <script setup>
-import axios from 'axios';
+import axios from '../../axiosConfig.js' 
 import { onMounted, ref, computed, watch } from 'vue';
 import { useRoute, useRouter } from 'vue-router';
 import SeoComponent from '../../components/SEO.vue';

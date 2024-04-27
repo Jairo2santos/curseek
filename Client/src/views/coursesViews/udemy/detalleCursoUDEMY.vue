@@ -278,7 +278,7 @@
 <script setup>
 import { ref, onBeforeMount, computed, watch ,  onMounted } from 'vue';
 import { useRoute, useRouter } from 'vue-router';
-import axios from 'axios';
+import axios from '../../../axiosConfig.js' 
 import Favoritos from "../../../components/Favoritos.vue";
 import { useHead } from '@vueuse/head';
 import SeoComponent from '../../../components/SEO.vue';
@@ -339,7 +339,7 @@ const structuredData = ref({});
 
 async function fetchCourseData(courseSlug) {
   try {
-    const response = await axios.get(`${import.meta.env.VITE_API_URL}/cursos/udemy/${courseSlug}`);
+    const response = await axios.get(`/cursos/udemy/${courseSlug}`);
     if (response.data && Object.keys(response.data).length > 0) {
       udemyCourse.value = response.data;
     } else {
@@ -402,7 +402,7 @@ watch(udemyCourse, (newValue) => {
 
 const loadCategories = async () => {
   try {
-    const { data } = await axios.get(`${import.meta.env.VITE_API_URL}/categorias/udemy`);
+    const { data } = await axios.get(`/categorias/udemy`);
     categories.value = data;
   } catch (error) {
     console.error("Error al obtener las categorías de Udemy:", error);

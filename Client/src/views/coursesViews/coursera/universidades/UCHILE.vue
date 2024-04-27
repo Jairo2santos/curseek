@@ -90,7 +90,7 @@
   
   <script setup>
 import { ref, computed, onMounted, watch } from 'vue';
-  import axios from 'axios';
+import axios from '../../../../axiosConfig.js' 
   import Paginacion from '../../../../components/Paginacion.vue';
   import portadaImg from "../../../../assets/instituciones/uchile_campus.avif";
   import SeoComponent from '../../../../components/SEO.vue';
@@ -106,7 +106,6 @@ const route = useRoute();
   const totalPages = ref(1);
   const totalCourses = ref(0);
   const isLoading = ref(false);
-  axios.defaults.baseURL = import.meta.env.VITE_API_URL;
   const isProfessorsExpanded = ref(false);
   
   // Mostrar una cantidad limitada de cursos

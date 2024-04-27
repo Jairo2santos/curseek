@@ -366,7 +366,7 @@
 
 <script setup>
 import { ref } from "vue";
-import axios from "axios";
+import axios from '../axiosConfig.js' 
 import { useRouter } from "vue-router";
 import SeoComponent from '../components/SEO.vue';
 
@@ -377,9 +377,6 @@ const query = ref("");
 const courses = ref([]);
 const isInputClicked = ref(false);
 const limitResults = ref(true);
-
-const baseURL = import.meta.env.VITE_API_URL;
-console.log("URL de la API:", baseURL);
 
 //SEO
 console.log(import.meta.env);
@@ -397,7 +394,7 @@ const pageBreadcrumbs = ref([
 const search = async () => {
   try {
     const response = await axios.get(
-      `${baseURL}/cursos/search?q=${query.value
+      `/cursos/search?q=${query.value
       }&all=${!limitResults.value}`
     );
     courses.value = response.data;

@@ -24,14 +24,14 @@
   
   <script setup>
   import { ref } from 'vue';
-  import axios from 'axios';
+  import axios from '../axiosConfig.js' 
   import Notificaciones from '../components/Notificaciones.vue'; // Asegúrate de que la ruta sea correcta
   
   const userEmail = ref('');
   const showNotification = ref(false);
   const notificationMessage = ref('');
   const notificationType = ref('');
-  axios.defaults.baseURL = import.meta.env.VITE_API_URL;
+  
 
 
   
