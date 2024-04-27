@@ -599,8 +599,8 @@
                     <h3 class="text-xl font-bold mb-4 mt-8">Contactanos</h3>
                     <p>
                         Si tienes alguna pregunta sobre esta Política de privacidad, contáctanos por correo electrónico a
-                        <a href="mailto:privacidad@curseek.com"
-                            class="hover:text-blue-600 transition underline">curseek@gmail.com</a>
+                        <a href="mailto:support@curseek.com"
+                            class="hover:text-blue-600 transition underline">support@curseek.com</a>
                     </p>
                 </section>
 
@@ -664,7 +664,7 @@
                     <h3 class="text-xl font-bold mb-4">Contactanos</h3>
                     <p>
                         Si tienes alguna pregunta sobre estos Términos y Condiciones, contáctanos por correo electrónico a
-                        <a href="mailto:privacidad@curseek.com"
+                        <a href="mailto:support@curseek.com"
                             class="hover:text-blue-600 transition underline">support@curseek.com</a>
                     </p>
                 </section>

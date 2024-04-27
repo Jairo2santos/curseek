@@ -16,21 +16,21 @@
           <div class="flex items-center">
             <a :href="instagramLink" target="_blank" 
             class="flex items-center mr-2 text-sm transition hover:scale-110 font-bold text-indigo-900 rounded-full">
-              <!-- <img src="../assets/redes/instagram.png" alt="instagram" class="w-8 mr-1"> -->
+              <!-- <img src="../assets/redes/instagram.png" alt="instagram" class="w-7 mr-2"> -->
               <!-- <span>Instagram</span> -->
-              <i class="fab fa-instagram fa-lg w-8 mr-1 ml-4"></i>
+              <img src="../assets/redes/instagram.png" alt="Instagram" class="w-7 mr-2">            
             </a>
             <a :href="twitterLink" target="_blank" 
             class="flex items-center mr-2 text-sm transition hover:scale-110 font-bold text-indigo-900 rounded-full">
-              <!-- <img src="../assets/redes/twitter.png" alt="twitter" class="w-8 mr-1"> -->
+              <!-- <img src="../assets/redes/twitter.png" alt="twitter" class="w-8 mr-2"> -->
               <!-- <span>Twitter</span> -->
-              <i class="fab fa-twitter fa-lg w-8 mr-1"></i>
+              <img src="../assets/redes/twitter.png" alt="Twitter" class="w-7 mr-2">            
             </a>
             <a :href="facebookLink" target="_blank" 
             class="flex items-center text-sm transition hover:scale-110 font-bold text-indigo-900 rounded-full">
-              <!-- <img src="../assets/redes/facebook.png" alt="facebook" class="w-8 mr-1"> -->
+              <!-- <img src="../assets/redes/facebook.png" alt="facebook" class="w-8 mr-2"> -->
               <!-- <span>Facebook</span> -->
-              <i class="fab fa-facebook fa-lg w-8 mr-1"></i>
+              <img src="../assets/redes/facebook.png" alt="Facebook" class="w-7 mr-2">            
             </a>
           </div>
 
