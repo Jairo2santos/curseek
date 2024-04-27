@@ -284,10 +284,6 @@
                 <svg class="mr-2" fill="#057500" xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 -960 960 960" width="24"><path d="M542.308-131.692q-11.529 11.461-28.573 11.461-17.043 0-28.504-11.461l-352-352q-6.385-6.385-9.808-14.02T120-514v-286q0-16.077 11.961-28.039Q143.923-840 160-840h286q7.769 0 15.452 3.166 7.683 3.167 13.317 8.526l352 352.231Q839-463.846 839.385-446.5q.384 17.346-11.077 28.808l-286 286ZM513.425-160l286.344-286-353.425-354H160v286l353.425 354ZM259.91-660q16.629 0 28.359-11.64Q300-683.281 300-699.909q0-16.63-11.64-28.36Q276.72-740 260.09-740q-16.629 0-28.359 11.64Q220-716.719 220-700.091q0 16.63 11.64 28.36Q243.28-660 259.91-660ZM160-800Z"/></svg>
                 <h4 class="text-sm">{{ course.price || 'Gratis' }}</h4>
               </li>
-              <!-- Cursada -->
-              <!-- <li class="flex text-sm p-2 text-red-700">
-                <h4>{{ course.startDate || 'Inicio de cursada a verificar' }}</h4>
-              </li> -->
             </ul>
           </div>
         </div>
@@ -296,7 +292,7 @@
 </template>
 
 <script setup>
-import { ref, onMounted } from 'vue';
+import { ref, onMounted, computed, watch } from 'vue';
 import axios from 'axios';
 import { useRouter, useRoute } from 'vue-router';
 import Favoritos from "../../../components/Favoritos.vue";
@@ -315,62 +311,80 @@ const expandInfoComplementaria = ref(false);
 const defaultTitle = 'Descubre Cursos de la UTN';
 const defaultDescription = 'Explora los cursos ofrecidos por la Universidad Tecnológica Nacional.';
 
-const pageTitleSEO = ref(defaultTitle);
-const pageDescriptionSEO = ref(defaultDescription);
-const breadcrumbs = ref([]);
-
-// JSON-LD
+const pageTitleSEO = computed(() => course.value.title ? `${course.value.title} - CurSeek` : defaultTitle);
+const pageDescriptionSEO = computed(() => {
+  let description = course.value.summary ? course.value.summary : defaultDescription;
+  return description.length > 160 ? `${description.substring(0, 157)}...` : description;
+});
 const structuredData = ref({});
+// Actualiza la estructura de breadcrumbs según tus necesidades
+const breadcrumbs = computed(() => {
+  return [
+    { text: 'Inicio', to: '/', active: route.path === '/' },
+    { text: 'UTN', to: '/cursos/utn', active: route.path.includes('/cursos/utn') },
+    { text: course.value.title, to: '', active: true },
+  ];
+});
+// JSON-LD
 
 onMounted(async () => {
   const courseSlug = route.params.slug;
   try {
     const response = await axios.get(`${import.meta.env.VITE_API_URL}/cursos/utn/${courseSlug}`);
-    if (response.data && Object.keys(response.data).length) {
+    if (response.data) {
       course.value = response.data;
- breadcrumbs.value = [
-  { text: 'Inicio', to: '/', active: false },
-  { text: 'Cursos UTN', to: '/cursos/utn', active: false },
-  { text: course.value.title, to: '', active: true }, // Ruta actual como activa sin enlace
-];
-       // Actualizar información de la página para SEO
- // Dentro de onMounted o cualquier método adecuado después de cargar los datos del curso
-useHead({
-  title: course.value.title ? `${course.value.title} - CurSeek` : defaultTitle,
-  meta: [
-    {
-      name: 'description',
-      content: course.value.description || defaultDescription,
-    },
-  ],
-  script: [
-    {
-      type: 'application/ld+json',
-      innerHTML: JSON.stringify({
-        "@context": "https://schema.org",
-        "@type": "Course",
-        "name": course.value.title,
-        "description": course.value.description,
-        "provider": {
-          "@type": "Organization",
-          "name": "Universidad Tecnológica Nacional",
-          "sameAs": "https://www.utn.edu.ar"
-        }
-        // Añadir otros campos necesarios aquí
-      }),
-      key: 'utn-course-json-ld', // Proporciona una clave única para evitar duplicados
-    }
-  ]
-});
-
+      updateSEO();  
     } else {
-      router.push({ name: 'Error404' });
+      throw new Error('Curso no encontrado');
     }
   } catch (error) {
     console.error("Error obteniendo el detalle del curso:", error);
     router.push({ name: 'Error404' });
   }
 });
+
+function updateSEO() {
+  useHead({
+    title: pageTitleSEO.value,
+    meta: [
+      {
+        name: 'description',
+        content: pageDescriptionSEO.value
+      }
+    ],
+    script: [
+      {
+        type: 'application/ld+json',
+        innerHTML: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "Course",
+          "name": pageTitleSEO.value,
+          "description": pageDescriptionSEO.value,
+          "provider": {
+            "@type": "Organization",
+            "name": "Universidad Tecnológica Nacional",
+            "sameAs": "https://www.utn.edu.ar"
+          },
+          "hasCourseInstance": {
+            "@type": "CourseInstance",
+            "courseMode": "online"
+          },
+          "offers": {
+            "@type": "Offer",
+            "priceCurrency": "USD",
+            "price": "0", // Asegúrate de ajustar o quitar si el curso no tiene precio
+            "availability": "https://schema.org/InStock"
+          }
+        }),
+        key: 'utn-course-json-ld'
+      }
+    ]
+  });
+}
+
+watch(course, () => {
+  updateSEO();
+}, { deep: true });
 
 // Métodos convertidos a funciones
 const capitalizeFirstLetter = (value) => {

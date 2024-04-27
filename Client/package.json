@@ -5,12 +5,9 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "npm run build:client && npm run build:server",
+    "build": "vite build",
     "preview": "vite preview",
-    "build:client": "vite build --outDir dist/client --ssrManifest",
-    "build:server": "vite build --ssr src/entry-server.js --outDir dist/server",
-    "serve": "cross-env NODE_ENV=development node server",
-    "serve:prod": "cross-env NODE_ENV=production node server"
+    "serve": "node server"
   },
   "dependencies": {
     "@tailwindcss/typography": "^0.5.12",
@@ -20,10 +17,14 @@
     "cors": "^2.8.5",
     "dotenv": "^16.4.5",
     "express": "^4.19.1",
+    "fs": "^0.0.1-security",
     "http-proxy-middleware": "^3.0.0",
     "jwt-decode": "^4.0.0",
     "mavon-editor": "^2.10.4",
+    "node-fetch": "^3.3.2",
+    "pinia": "^2.1.7",
     "quill": "^2.0.0-rc.4",
+    "sitemap": "^7.1.1",
     "unhead": "^1.9.1",
     "vue": "^3.3.4",
     "vue-router": "^4.2.5",

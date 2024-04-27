@@ -33,7 +33,6 @@ import { useRoute, useRouter } from 'vue-router';
 import axios from 'axios';
 import Notificacion from '../../components/Notificaciones.vue';
 import { getFromLocalStorage} from '../../utils/localStorage';
-import Quill from 'quill';
 import 'quill/dist/quill.snow.css';
 
 const route = useRoute();
@@ -43,7 +42,8 @@ const isEditMode = ref(false);
 const showNotification = ref(false);
 const notificationMessage = ref('');
 const notificationType = ref('');
-let editor = null; // Correctamente inicializada aquí
+let editor = null;
+
 
 onMounted(async () => {
   const slug = route.params.slug;
@@ -60,7 +60,8 @@ onMounted(async () => {
       showNotification.value = true;
     }
   }
-
+  if (typeof window !== 'undefined') {
+    const Quill = await import('quill');
   // Solo inicializa Quill una vez
   editor = new Quill('#editor', {
   theme: 'snow',
@@ -89,6 +90,7 @@ onMounted(async () => {
   if (isEditMode.value && blog.value.content) {
     editor.root.innerHTML = blog.value.content;
   }
+}
 });
 
 const submitForm = async () => {

@@ -28,7 +28,7 @@
                   <div class="flex flex-col">
                     <div class="flex flex-col items-start">
                       <!-- Sección 1: Imagen y Título -->
-                      <router-link :to="`/udemy/cursos/${course.slug}`"
+                      <router-link :to="`/udemy/cursos/${course.slug}`" :href="`/udemy/cursos/${course.slug}`"
                         class="flex flex-col mb-2 items-center md:flex-row">
                         <!-- Imagen del curso -->
                         <img :src="course.image_480x270" alt=""
@@ -133,16 +133,16 @@
 <script setup>
 import { ref, onMounted, computed, watch, nextTick } from "vue";
 import { useRouter } from 'vue-router';
-import axios from "axios";
 import Paginacion from "../../../components/Paginacion.vue";
 import Portada from "../../../components/Portada.vue";
 import logoUdemy from "../../../assets/logo-udemy.jpg";
 import Sidebar from "../../../components/Sidebar.vue";
 import Favoritos from "../../../components/Favoritos.vue";
 import SeoComponent from '../../../components/SEO.vue';
+import axios from '../../../axiosConfig.js' 
+
 const router = useRouter();
 
-axios.defaults.baseURL = import.meta.env.VITE_API_URL;
 
 // Estado
 
@@ -175,7 +175,6 @@ const breadcrumbs = computed(() => {
 
 const loadCourses = async (page = 1, selectedCategory = '') => {
   let queryParams = `page=${page}`;
-  isLoading.value = true;
   if (selectedCategory) {
     queryParams += `&category=${encodeURIComponent(selectedCategory)}`;
   }
@@ -184,16 +183,15 @@ const loadCourses = async (page = 1, selectedCategory = '') => {
     await nextTick();
 
     courses.value = data.courses;
-    totalPages.value = typeof data.totalPages === "number" ? data.totalPages : 1;
+    totalPages.value = data.totalPages;
     totalCourses.value = data.totalCourses;
   } catch (error) {
     console.error("Error al obtener los cursos de Udemy:", error);
-    alert("Error al cargar los cursos");
   } finally {
     isLoading.value = false;
   }
 };
-
+// Uso de onServerPrefetch
 
 const loadCategories = async () => {
   try {
@@ -250,9 +248,10 @@ watch(() => router.currentRoute.value.query, () => {
 
 // Montaje
 onMounted(() => {
-  loadCourses(currentPage.value);
+  if (courses.value.length === 0) {
+    loadCourses(currentPage.value); 
+  }
   loadCategories();
-  console.log(courses.value);
 });
 
 </script>

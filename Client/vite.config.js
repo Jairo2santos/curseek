@@ -1,3 +1,4 @@
+//vite.config
 import { defineConfig } from 'vite';
 import vue from '@vitejs/plugin-vue';
 import { resolve } from 'path'; // Asegúrate de importar 'resolve'

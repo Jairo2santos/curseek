@@ -38,7 +38,7 @@
                           </router-link>
                           <!-- Título del curso -->
                           <h2 class="text-lg mt-2 md:mt-0 font-semibold">
-                            <router-link :to="`/cursos/detalles/${course.slug}`" class="hover:underline">
+                            <router-link :to="`/cursos/detalles/${course.slug}`" :href="`/cursos/detalles/${course.slug}`"  class="hover:underline">
                               {{ course.title || 'Aprende con este Curso de UTN' }}
                             </router-link>
                           </h2>

@@ -33,7 +33,7 @@
                   <div class="flex flex-col items-start">
                     <!-- Sección 1: Imagen y Título -->
                     <div class="flex flex-col mb-2 items-center md:flex-row">
-                      <router-link :to="`/coursera/cursos/${course.slug}`" class="flex flex-col md:flex-row items-start md:items-start">
+                      <router-link :to="`/coursera/cursos/${course.slug}`" :href="`/coursera/cursos/${course.slug}`"  class="flex flex-col md:flex-row items-start md:items-start">
                       <!-- Imagen del curso -->
                         <img :src="course.imgUrl" alt="" 
                         class="md:w-28 md:h-16 w-full h-32 mx-auto object-cover rounded mr-2" />

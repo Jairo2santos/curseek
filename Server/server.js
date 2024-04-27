@@ -9,38 +9,27 @@ const apiRouter = require('./routes/api');
 const path = require('path');
 const rateLimit = require('express-rate-limit');
 
-// Middleware para verificar el encabezado Referer
-const checkRefererHeader = (req, res, next) => {
-  const referer = req.get('Referer');
-  console.log('Received Referer:', referer);  // Log the Referer header
-  const allowedDomains = [
-    'http://localhost:5173',
-    'https://curseek.com',
-    'http://localhost:2222', 
-  ];
+const whitelist = ['http://localhost:5173', 'https://curseek.com', 'http://localhost:2222'];
 
-  if (referer && allowedDomains.some(domain => referer.startsWith(domain))) {
-    next();
-  } else {
-    res.status(403).send('Acceso denegado. Origen no permitido.');
-  }
-};
 
 
 // Configuración del limitador de tasa de peticiones
 const apiRateLimiter = rateLimit({
-  windowMs: 15 * 60 * 1000, // 15 minutos
-  max: 500, // Limita cada IP a 100 solicitudes por ventana de tiempo (aquí, por 15 minutos)
-  standardHeaders: true, // Devuelve la información del límite de tasa en los headers `RateLimit-*`
-  legacyHeaders: false, // Deshabilita los headers `X-RateLimit-*`
+  windowMs: 15 * 60 * 1000, 
+  max: 500,
+  standardHeaders: true, 
+  legacyHeaders: false, 
   message: "Demasiadas solicitudes desde esta IP, por favor intente de nuevo más tarde.",
 });
 
+
+
 // Middleware cors
-const whitelist = ['http://localhost:2222', 'https://curseek.com', 'http://localhost:5173'];
 const corsOptions = {
   origin: function (origin, callback) {
-    if (whitelist.indexOf(origin) !== -1 || !origin) {
+    if (!origin) {
+      callback(null, true);
+    } else if (whitelist.indexOf(origin) !== -1) {
       callback(null, true);
     } else {
       callback(new Error('Not allowed by CORS'));
@@ -53,17 +42,19 @@ const corsOptions = {
 
 app.use(cors(corsOptions));
 
-
+// Uso de CORS con las opciones especificadas
+app.use(cors(corsOptions));
+app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
+app.use(helmet());
+app.use(compression());
 app.use('/api/users/uploads', (req, res, next) => {
   res.header('Cross-Origin-Resource-Policy', 'cross-origin');
   next();
 }, express.static(path.join(__dirname, 'uploads')));
 
-app.use(checkRefererHeader);
-app.use(express.json());
-app.use(express.urlencoded({ extended: true }));
-app.use(helmet());
-app.use(compression());
+
+
 
 // Aplicar el middleware de limitación de tasa a todas las rutas API
 app.use('/api', apiRateLimiter, apiRouter);

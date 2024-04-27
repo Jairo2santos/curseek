@@ -1,5 +1,6 @@
 
 const courseService = require('../../services/providers/udemy.services.js')
+const CourseModel = require('../../models/generals/unifiedCourse.model.js'); // Asegúrate de que la ruta es correcta
 
 
 exports.getAllCourses = async (req, res) => {
@@ -20,3 +21,12 @@ exports.getAllCourses = async (req, res) => {
     }
 }
 
+exports.getAllCourseSlugs = async (req, res) => {
+    try {
+      const courses = await CourseModel.find({}, 'slug source -_id').lean();
+      res.json({ slugs: courses.map(course => ({ slug: course.slug, source: course.source })) });
+    } catch (error) {
+      console.error("Error al obtener slugs de los cursos:", error);
+      res.status(500).send('Error interno del servidor');
+    }
+};

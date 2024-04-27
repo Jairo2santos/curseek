@@ -38,7 +38,6 @@
     })),
   }));
   
-  // Uso de useHead para inyectar dinámicamente el título, descripción y JSON-LD
   useHead({
     title: props.title,
     meta: [
@@ -51,7 +50,7 @@
       {
         type: 'application/ld+json',
         innerHTML: jsonLdString.value,
-        key: 'breadcrumb-json-ld', // Proporcionar una clave única para la deduplicación
+        key: 'breadcrumb-json-ld', 
       }
     ]
   });

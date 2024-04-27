@@ -1,0 +1,11 @@
+# Permitir todo el acceso a los motores de búsqueda
+User-agent: *
+Disallow: /api/
+Disallow: /login
+Disallow: /profile
+Disallow: /signUp
+Disallow: /reset-password
+Disallow: /password-recovery
+
+# Sitemaps
+Sitemap: https://curseek.com/sitemap.xml

@@ -327,6 +327,7 @@ const breadcrumbs = computed(() => {
   ];
 });
 
+
 // Invocar actualización de SEO y JSON-LD cuando los datos del curso cambian
 watch(
   course,
@@ -351,6 +352,7 @@ function formatDescription(description) {
 }
 
 onMounted(async () => {
+
   const courseSlug = route.params.slug;
   try {
     const response = await axios.get(
@@ -382,7 +384,7 @@ function updateSEO() {
       {
         name: "description",
         content:
-          course.value.description || "Descripción del curso no disponible.",
+        pageDescriptionSEO.value || "Descripción del curso no disponible.",
       },
     ],
     script: [
@@ -392,19 +394,28 @@ function updateSEO() {
           "@context": "https://schema.org",
           "@type": "Course",
           name: course.value.title,
-          description: course.value.description,
+          description: pageDescriptionSEO.value ,
           provider: {
             "@type": "Organization",
             name: "Coursera",
             sameAs: "https://www.coursera.org",
           },
+          "hasCourseInstance": {
+         "@type": "CourseInstance",
+          "courseMode": "online"     
+         },
+         "offers": {
+          "@type": "Offer",
+            "priceCurrency": "USD",
+         "price": "0", 
+             "availability": "https://schema.org/InStock",            
+  }
         }),
         key: "coursera-course-json-ld", // Asegura que el script sea único
       },
     ],
   });
 }
-
 onMounted(() => {
   // Asegúrate de que el parámetro URL esté presente
   if (route.query.url) {

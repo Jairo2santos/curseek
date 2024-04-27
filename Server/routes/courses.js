@@ -20,6 +20,7 @@ router.get('/udemy/:slug', udemyController.getSingleUdemyCourse);
 router.get('/coursera/:slug', courseraController.getSingleCourseraCourse);
 router.get('/coursera/universidad/:university', courseraController.getCourseraCoursesByUni);
 router.get('/coursera/universidad/:university/profesores', courseraController.getCourseraProfessorsByUni);
+router.get('/slugs', coursesController.getAllCourseSlugs);
 
 // Ruta para obtener todos los cursos de Coursera
 router.get('/coursera', courseraController.getCourseraCourses);

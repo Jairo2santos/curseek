@@ -342,18 +342,6 @@ async function fetchCourseData(courseSlug) {
     const response = await axios.get(`${import.meta.env.VITE_API_URL}/cursos/udemy/${courseSlug}`);
     if (response.data && Object.keys(response.data).length > 0) {
       udemyCourse.value = response.data;
-
-      structuredData.value = {
-        "@context": "https://schema.org",
-        "@type": "Course",
-        "name": udemyCourse.value.title,
-        "description": udemyCourse.value.description,
-        "provider": {
-          "@type": "Organization",
-          "name": "Udemy",
-          "sameAs": "https://www.udemy.com"
-        }
-      };
     } else {
       throw new Error('Curso no encontrado');
     }
@@ -370,24 +358,6 @@ async function fetchCourseData(courseSlug) {
 onBeforeMount(() => {
   fetchCourseData(route.params.slug);
 });
-// Computed para generar el script JSON-LD como string
-const jsonLdString = computed(() => {
-  if (!udemyCourse.value.title) return '';
-  
-  const jsonLd = {
-    "@context": "https://schema.org",
-    "@type": "Course",
-    "name": udemyCourse.value.title,
-    "description": udemyCourse.value.description,
-    "provider": {
-      "@type": "Organization",
-      "name": "Udemy",
-      "sameAs": "https://www.udemy.com"
-    }
-  };
-
-  return JSON.stringify(jsonLd);
-});
 
 // Utilizar useHead para incluir dinámicamente el JSON-LD
 watch(udemyCourse, (newValue) => {
@@ -399,23 +369,30 @@ watch(udemyCourse, (newValue) => {
           name: 'description',
           content: pageDescriptionSEO.value,
         },
-        // otros metadatos...
       ],
       script: [
         {
           type: 'application/ld+json',
           innerHTML: JSON.stringify({
             "@context": "https://schema.org",
-            "@type": "Course",
-            "name": newValue.title,
-            "description": newValue.description,
-            "provider": {
-              "@type": "Organization",
-              "name": "Udemy",
-              "sameAs": "https://www.udemy.com"
-            }
+    "@type": "Course",
+    "name": udemyCourse.value.title,
+    "description": udemyCourse.value.description,
+    "provider": {
+      "@type": "Organization",
+      "name": "Udemy",
+      "sameAs": "https://www.udemy.com"
+            },
+            "hasCourseInstance": {
+         "@type": "CourseInstance",
+          "courseMode": "online"     
+         },
+         "offers": {
+             "@type": "Offer",
+             "availability": "https://schema.org/InStock",            
+  }
           }),
-          processTemplateParams: true // Si necesitas procesar parámetros de plantilla
+          processTemplateParams: true 
         }
       ],
     });
