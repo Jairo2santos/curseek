@@ -28,15 +28,16 @@
   
   // Se genera el string JSON-LD
   const jsonLdString = computed(() => JSON.stringify({
-    "@context": "https://schema.org",
-    "@type": "BreadcrumbList",
-    "itemListElement": props.breadcrumbs.map((breadcrumb, index) => ({
-      "@type": "ListItem",
-      "position": index + 1,
-      "name": breadcrumb.text,
-      "item": breadcrumb.to,
-    })),
-  }));
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": props.breadcrumbs.map((breadcrumb, index) => ({
+    "@type": "ListItem",
+    "position": index + 1,
+    "name": breadcrumb.text || breadcrumb.name,
+    "item": `${window.location.origin}${breadcrumb.to}` 
+  })),
+}));
+
   
   useHead({
     title: props.title,

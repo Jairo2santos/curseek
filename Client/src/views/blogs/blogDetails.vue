@@ -94,7 +94,7 @@ const breadcrumbs = computed(() => {
 onMounted(async () => {
   try {
     const slug = route.params.slug; // Asegúrate de obtener el slug de los parámetros de la ruta
-    const response = await axios.get(`${import.meta.env.VITE_API_URL}/blogs/slug/${slug}`);
+    const response = await axios.get(`$/blogs/slug/${slug}`);
     blog.value = response.data;
   } catch (error) {
     console.error('Error al cargar el blog:', error);
@@ -104,7 +104,7 @@ const deleteBlog = async (slug) => {
   if (!confirm('¿Estás seguro de que deseas eliminar este blog?')) return;
 
   try {
-    await axios.delete(`${import.meta.env.VITE_API_URL}/blogs/${slug}`, {
+    await axios.delete(`/blogs/${slug}`, {
       headers: {
         Authorization: `Bearer ${getFromLocalStorage('token')}`
       }

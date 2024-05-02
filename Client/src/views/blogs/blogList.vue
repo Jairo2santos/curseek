@@ -132,7 +132,7 @@ const breadcrumbs = computed(() => {
 const deleteBlog = async (slug) => {
   if (!confirm('¿Estás seguro de que deseas eliminar este blog?')) return;
   try {
-    await axios.delete(`${import.meta.env.VITE_API_URL}/blogs/slug/${slug}`, {
+    await axios.delete(`/blogs/slug/${slug}`, {
       headers: {
         Authorization: `Bearer ${getFromLocalStorage('token')}` // Cambio aquí
       }
@@ -162,7 +162,7 @@ const extractTextFromHTML = (htmlString, maxLength = 150) => {
 };
 onMounted(async () => {
   try {
-    const response = await axios.get(`${import.meta.env.VITE_API_URL}/blogs`);
+    const response = await axios.get(`/blogs`);
     blogs.value = response.data;
   } catch (error) {
     console.error('Error al cargar los blogs:', error);

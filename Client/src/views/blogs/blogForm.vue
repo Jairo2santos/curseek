@@ -50,7 +50,7 @@ onMounted(async () => {
   if (slug) {
     isEditMode.value = true;
     try {
-      const response = await axios.get(`${import.meta.env.VITE_API_URL}/blogs/slug/${slug}`);
+      const response = await axios.get(`/blogs/slug/${slug}`);
       blog.value = response.data;
       console.log('Blog cargado para editar:', blog.value);
     } catch (error) {
@@ -106,8 +106,7 @@ const submitForm = async () => {
 
   try {
     const slug = route.params.slug;
-    const baseURL = import.meta.env.VITE_API_URL;
-    const url = isEditMode.value && slug ? `${baseURL}/blogs/slug/${slug}` : `${baseURL}/blogs`;
+    const url = isEditMode.value && slug ? `/blogs/slug/${slug}` : `/blogs`;
     const method = isEditMode.value ? 'put' : 'post';
 
     // Obtiene el contenido HTML del editor Quill
