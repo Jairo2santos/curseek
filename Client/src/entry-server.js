@@ -22,19 +22,28 @@ export default async (context) => {
   try {
     await router.push(context.url || '/');
     await router.isReady();
+
+    if (router.currentRoute.value.matched.length === 0) {
+      // No se encontraron rutas coincidentes, establece el código de estado 404
+      context.res.statusCode = 404;
+    }
     const appHtml = await renderToString(app, context);
     const payload = await renderSSRHead(head);
-
     const state = JSON.stringify(pinia.state.value);  
 
     return {
       appHtml,
       initialState: state,  
       headTags: payload.headTags,
+      statusCode: context.res ? context.res.statusCode : 200,
+
     };
   } catch (error) {
     console.error("Error al renderizar el servidor:", error);
         console.error(error.stack);
+        if (context.res) {
+          context.res.statusCode = 500;
+        }
 
     return { appHtml: '<h1>Error durante el renderizado del servidor</h1>', headTags: '' };
   }

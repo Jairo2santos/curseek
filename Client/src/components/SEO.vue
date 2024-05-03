@@ -14,48 +14,54 @@
     </nav>
   </template>
   
+<script setup>
+import { computed, onMounted, ref } from 'vue';
+import { useHead } from '@vueuse/head';
+import { useRouter } from 'vue-router';
 
-  <script setup>
-  import { computed, defineProps } from 'vue';
-  import { useHead } from '@vueuse/head';
-  
-  // Recibe las propiedades del componente padre
-  const props = defineProps({
-    title: String,
-    description: String,
-    breadcrumbs: Array,
-  });
-  
-  // Se genera el string JSON-LD
-  const jsonLdString = computed(() => JSON.stringify({
+const props = defineProps({
+  title: String,
+  description: String,
+  breadcrumbs: Array,
+});
+
+const router = useRouter();
+const fullUrl = ref('');
+
+onMounted(() => {
+  if (typeof window !== 'undefined') {
+    fullUrl.value = window.location.origin;
+  }
+});
+
+const jsonLdString = computed(() => JSON.stringify({
   "@context": "https://schema.org",
   "@type": "BreadcrumbList",
   "itemListElement": props.breadcrumbs.map((breadcrumb, index) => ({
     "@type": "ListItem",
     "position": index + 1,
     "name": breadcrumb.text || breadcrumb.name,
-    "item": `${window.location.origin}${breadcrumb.to}` 
+    "item": `${fullUrl.value}${breadcrumb.to}`
   })),
 }));
 
-  
-  useHead({
-    title: props.title,
-    meta: [
-      {
-        name: 'description',
-        content: props.description,
-      },
-    ],
-    script: [
-      {
-        type: 'application/ld+json',
-        innerHTML: jsonLdString.value,
-        key: 'breadcrumb-json-ld', 
-      }
-    ]
-  });
-  </script>
+useHead({
+  title: props.title,
+  meta: [
+    {
+      name: 'description',
+      content: props.description,
+    },
+  ],
+  script: [
+    {
+      type: 'application/ld+json',
+      innerHTML: jsonLdString.value,
+      key: 'breadcrumb-json-ld', 
+    }
+  ]
+});
+</script>
 <style scoped>
 @media (min-width: 640px) {
   .breadcrumb li a,

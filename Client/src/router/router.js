@@ -68,6 +68,13 @@ router.beforeEach((to, from, next) => {
   }
 });
 
+router.beforeEach((to, from, next) => {
+  if (to.matched.length === 0) {
+    next({ name: 'Error404' });
+  } else {
+    next(); 
+  }
+});
 
 
 return router;

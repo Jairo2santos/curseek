@@ -227,6 +227,9 @@ watch([() => route.query.page, () => route.query.categories], () => {
 // Montaje
 onMounted(() => {
   loadCategories();
+  if (typeof window !== 'undefined') {
+    console.log(window.location.href);  // Ejemplo seguro de uso de `window`
+  }
 });
 </script>
 <style>

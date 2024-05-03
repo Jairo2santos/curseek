@@ -417,6 +417,9 @@ function updateSEO() {
   });
 }
 onMounted(() => {
+  if (typeof window !== 'undefined') {
+    console.log(window.location.href);  // Ejemplo seguro de uso de `window`
+  }
   // Asegúrate de que el parámetro URL esté presente
   if (route.query.url) {
     externalUrl.value = decodeURIComponent(route.query.url);

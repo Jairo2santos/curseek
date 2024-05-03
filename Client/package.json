@@ -23,6 +23,7 @@
     "http-proxy-middleware": "^3.0.0",
     "jwt-decode": "^4.0.0",
     "mavon-editor": "^2.10.4",
+    "node-cache": "^5.1.2",
     "node-fetch": "^3.3.2",
     "pinia": "^2.1.7",
     "quill": "^2.0.0-rc.4",
