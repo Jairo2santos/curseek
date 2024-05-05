@@ -26,7 +26,7 @@
           <div v-for="course in courses" :key="course.slug" class="mb-5">
 
             <!-- Tarjeta individual para cada curso -->
-            <article class="block max-w-full bg-white mt-2 rounded-lg p-4 hover:shadow-md transition cursor-pointer">
+            <article class="block max-w-full bg-white mt-2 rounded-md p-4 hover:shadow-md transition cursor-pointer">
                
               <div class="flex flex-col md:flex-row items-start md:items-start">
                 <div class="flex flex-col">
