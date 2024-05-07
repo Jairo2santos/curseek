@@ -26,8 +26,7 @@
           <div v-for="course in courses" :key="course.slug" class="mb-5">
 
             <!-- Tarjeta individual para cada curso -->
-            <article class="block max-w-full bg-white mt-2 rounded-lg p-4 hover:shadow-md transition cursor-pointer">
-               
+            <article class="block max-w-full bg-white mt-2 rounded-md p-4 hover:shadow-md transition cursor-pointer">
               <div class="flex flex-col md:flex-row items-start md:items-start">
                 <div class="flex flex-col">
                   <div class="flex flex-col items-start">
@@ -38,7 +37,7 @@
                         <img :src="course.imgUrl" alt="" 
                         class="md:w-28 md:h-16 w-full h-32 mx-auto object-cover rounded mr-2" />
                       <!-- Título del curso -->
-                         <h2 class="text-lg mt-2 md:mt-0 font-semibold hover:underline">
+                        <h2 class="text-lg mt-2 md:mt-0 font-semibold hover:underline">
                         {{ course.title || 'Aprende con este Curso de Coursera' }}
                           </h2>
                         </router-link>
@@ -53,7 +52,7 @@
                 course.longDescription.substring(0, 150) + "..." }}
                       </p>
                     </div>
-                    <div class="items-end ml-auto rounded-lg md:ml-0">
+                    <div class="items-end ml-auto rounded-md md:ml-0">
                       <button class="mx-" title="Agregar a Favoritos">
                         <Favoritos :courseId="course._id" :courseType="'COURSERA'" :isFavorited="course.isFavorited" />
                       </button>
