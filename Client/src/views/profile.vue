@@ -191,7 +191,7 @@ import { useRouter } from "vue-router";
 import { getFromLocalStorage, clearLocalStorage } from "../utils/localStorage";
 
 
-const defaultProfilePicturePath = `${import.meta.env.VITE_API_URL}/users/uploads/student.png`;
+const defaultProfilePicturePath = `${import.meta.env.VITE_API_URL}/users/uploads/student.jpg`;
 const selectedProfilePicture = ref(null);
 const router = useRouter();
 const userData = ref({});

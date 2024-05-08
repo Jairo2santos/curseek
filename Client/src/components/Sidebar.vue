@@ -8,7 +8,7 @@
       <span class="font-semibold ml-2 text-sm">Filtrar por</span>
       <button v-if="selectedCategories.length > 0" @click="clearSelectedCategory"
         class="ml-auto text-sm bg-gray-200 text-blue-700 font-semibold px-2 rounded-full">
-        Limpiar selección
+        Limpiar todo
       </button>
     </div>
     <div class="md:text-md bg-white md:max-w-md lg:max-w-lg rounded-t-md">
