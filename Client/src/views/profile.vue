@@ -427,7 +427,6 @@ const checkAuth = async () => {
         return true;
       }
     } catch (error) {
-      // Manejar el error
       console.error("Error validando el token:", error);
     }
   }

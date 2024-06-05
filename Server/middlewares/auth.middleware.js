@@ -39,7 +39,7 @@ exports.generatePasswordResetToken = async (req, res, next) => {
     const resetToken = jwt.sign(
       { id: user._id },
       process.env.JWT_SECRET,
-      { expiresIn: '1h' } // Expira en una hora
+      { expiresIn: '1h' } 
     );
 
     // Guardar el token en el usuario

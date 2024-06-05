@@ -2,7 +2,7 @@ const express = require('express');
 const router = express.Router();
 const userController = require('../controllers/generals/user.controller');
 const { verifyToken, isAdmin , generatePasswordResetToken} = require('../middlewares/auth.middleware');
-const upload = require('../middlewares/upload.middleware'); // Asegúrate de que la ruta sea correcta
+const upload = require('../middlewares/upload.middleware'); 
 
 // Rutas auth
 router.post('/login', userController.login);

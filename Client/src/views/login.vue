@@ -43,7 +43,7 @@ import { ref } from 'vue';
 import axios from '../axiosConfig.js' 
 import { useRouter } from 'vue-router';
 import Notificationes from '../components/Notificaciones.vue';
-import { setToLocalStorage } from '../utils/localStorage'; // Importa la función desde tu archivo de utilidades
+import { setToLocalStorage } from '../utils/localStorage'; 
 
 const router = useRouter();
 const loginInput = ref('');

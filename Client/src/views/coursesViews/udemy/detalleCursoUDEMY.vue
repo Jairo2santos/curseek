@@ -126,7 +126,7 @@
 
         <!-- Sección de Título y Precio -->
         <div class="md:hidden bg-white md:p-6 rounded justify-between items-center">
-          <h1 class="text-2xl md:text-3xl font-bold pt-2 text-gray-800">{{ udemyCourse.title || 'Aprende con este Curso de Udemy' }}</h1>
+          <h2 class="text-2xl md:text-3xl font-bold pt-2 text-gray-800">{{ udemyCourse.title || 'Aprende con este Curso de Udemy' }}</h2>
           <div class="p-2 text-md">
             <ul>
               <!-- Institución -->
@@ -312,7 +312,7 @@ const defaultTitle = 'Aprende con este Curso de Udemy';
 const defaultDescription = 'Descubre cursos en Udemy para ampliar tus conocimientos en diversas áreas.';
 
 const pageTitleSEO = computed(() => {
-  return udemyCourse.value.title ? `${udemyCourse.value.title} - CurSeek` : defaultTitle;
+  return `${udemyCourse.value.title}`  ? `${udemyCourse.value.title} - Curso UDEMY | CurSeek` : defaultTitle;
 });
 
 const pageDescriptionSEO = computed(() => {
@@ -363,7 +363,7 @@ onBeforeMount(() => {
 watch(udemyCourse, (newValue) => {
   if (newValue.title) {
     useHead({
-      title: `${newValue.title} - CurSeek`,
+      title: `${newValue.title} - Curso UDEMY | CurSeek`,
       meta: [
         {
           name: 'description',

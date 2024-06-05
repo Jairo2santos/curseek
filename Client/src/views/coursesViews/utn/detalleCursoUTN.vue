@@ -317,7 +317,6 @@ const pageDescriptionSEO = computed(() => {
   return description.length > 160 ? `${description.substring(0, 157)}...` : description;
 });
 const structuredData = ref({});
-// Actualiza la estructura de breadcrumbs según tus necesidades
 const breadcrumbs = computed(() => {
   return [
     { text: 'Inicio', to: '/', active: route.path === '/' },
@@ -372,7 +371,7 @@ function updateSEO() {
           "offers": {
             "@type": "Offer",
             "priceCurrency": "USD",
-            "price": "0", // Asegúrate de ajustar o quitar si el curso no tiene precio
+            "price": "0", 
             "availability": "https://schema.org/InStock"
           }
         }),
@@ -399,7 +398,6 @@ const toggleDescription = () => {
 const toggleInfoInstitucional = () => {
     expandInfoInstitucional.value = !expandInfoInstitucional.value;
 };
-// Dentro de tu componente o vista
 const redirectToExternal = (url) => {
   const encodedUrl = encodeURIComponent(url);
   const salidaUrl = `${window.location.origin}/link-saliente?url=${encodedUrl}`;

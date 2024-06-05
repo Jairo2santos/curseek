@@ -139,9 +139,7 @@
         </section>
         
         <div class="md:hidden bg-white md:p-6 rounded justify-between items-center">
-          <h1 class="text-2xl md:text-3xl font-bold pt-2 text-gray-800">
-            {{ course.title }}
-          </h1>
+      
           <div class="p-2 text-md">
             <ul>
               <!-- Institución -->
@@ -292,8 +290,8 @@ const router = useRouter();
 
 // Ejemplo de pageTitle y pageDescription
 const pageTitleSEO = computed(() => {
-  return course.value.title
-    ? `curso sobre ${course.value.title} - CurSeek`
+  return `${course.value.title} - Coursera | CurSeek`
+    ? `${course.value.title}`
     : "Cargando...";
 });
 
@@ -379,7 +377,7 @@ onMounted(async () => {
 });
 function updateSEO() {
   useHead({
-    title: course.value.title || "Cargando...",
+    title: `${course.value.title} - Coursera | CurSeek`,
     meta: [
       {
         name: "description",

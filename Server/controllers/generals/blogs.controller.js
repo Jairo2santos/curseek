@@ -32,7 +32,7 @@ const createBlog = async (req, res) => {
   const slug = slugify(title, { lower: true, strict: true });
 
   try {
-    // Verifica si el slug ya existe
+    // slug ya existe?
     const existingBlog = await Blog.findOne({ slug });
     if (existingBlog) {
       return res.status(400).json({ message: 'Ya existe un blog con este título' });

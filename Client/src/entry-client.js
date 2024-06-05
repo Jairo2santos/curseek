@@ -1,4 +1,3 @@
-// src/entry-client.js
 import { createApp } from 'vue';
 import App from './App.vue';
 import createMyRouter from './router/router';
@@ -10,7 +9,25 @@ const head = createHead();
 const router = createMyRouter(false);
 const pinia = createPinia();
 
-// Asumiendo que estás serializando el estado de Pinia para SSR y quieres rehidratarlo
+// Google Analytics script
+head.push({
+  script: [
+    {
+      src: 'https://www.googletagmanager.com/gtag/js?id=G-QNT69M33WS',
+      async: true
+    },
+    {
+      innerHTML: `
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-QNT69M33WS');
+      `,
+      type: 'text/javascript'
+    }
+  ]
+});
+
 if (window.__INITIAL_STATE__) {
   pinia.state.value = JSON.parse(window.__INITIAL_STATE__);
 }
