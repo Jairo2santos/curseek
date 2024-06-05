@@ -32,7 +32,7 @@
       </p>
       <div>
         <p class="mt-4 text-center text-sm border-t border-gray-300 py-4">
-  ¿Olvidaste tu contraseña? <router-link to="/password-recovery" class="text-indigo-500">Restablecer aquí</router-link>
+          <router-link to="/password-recovery" class="text-indigo-500">¿Olvidaste tu contraseña?</router-link>
 </p>
       </div>
     </form>
